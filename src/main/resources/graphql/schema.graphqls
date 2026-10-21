@@ -1,3 +1,5 @@
+scalar Date @specifiedBy(url: "https://scalars.graphql.org/andimarek/local-date")
+
 # The entry point of our API. This line is a comment:
 # comments start with # and are only for people reading this file.
 """
@@ -30,6 +32,9 @@ type Query {
 
     "One vet. The vets query gives the ids of vets."
     vet(id: ID!): Vet
+
+    "The kinds of pet the clinic treats, sorted by name. The addPet and updatePet mutations take their ids as typeId."
+    petTypes: [PetType!]!
 }
 
 "A client of the clinic, who owns one or more pets."
@@ -49,7 +54,7 @@ type Owner {
 type Pet {
     id: ID!
     name: String!
-    birthDate: String
+    birthDate: Date
     type: PetType!
     owner: Owner!
     "The pet's visits to the clinic, oldest first."
@@ -111,7 +116,7 @@ type Vet {
 "A pet's visit to the clinic, in the past or booked for later."
 type Visit {
     id: ID!
-    date: String!
+    date: Date!
     description: String!
     pet: Pet!
     "The vet who sees the pet, or null when the visit was booked without one, as the Petclinic web pages do."
@@ -122,4 +127,80 @@ type Visit {
 type Specialty {
     id: ID!
     name: String!
+}
+
+"Changes the clinic's data."
+type Mutation {
+    """
+    Books a visit for a pet. Every call books one more visit, so after a call that failed or timed out,
+    check the pet's visits before calling again.
+    """
+    addVisit(input: AddVisitInput!): Visit!
+
+    """
+    Registers a new owner. Every call registers one more owner, so calling it twice with the same input
+    creates two owners.
+    """
+    addOwner(input: AddOwnerInput!): Owner!
+
+    "Changes the details of an owner. Calling it again with the same input leaves the owner as it is."
+    updateOwner(input: UpdateOwnerInput!): Owner!
+
+    """
+    Registers a new pet for an owner. An owner cannot have two pets with the same name,
+    so a second call with the same name is refused.
+    """
+    addPet(input: AddPetInput!): Pet!
+
+    "Changes the details of a pet. Calling it again with the same input leaves the pet as it is."
+    updatePet(input: UpdatePetInput!): Pet!
+}
+
+input AddVisitInput {
+    "The id of the pet the visit is for. The owner query gives the ids of pets."
+    petId: ID!
+    "The id of the vet who sees the pet, from the vets query. Leave it out to book the visit without a vet."
+    vetId: ID
+    "The day of the visit, written as 2026-10-21. Leave it out to book the visit for tomorrow."
+    date: Date
+    "The reason for the visit, at most 255 characters, for example a rabies shot."
+    description: String!
+}
+
+input AddOwnerInput {
+    firstName: String!
+    lastName: String!
+    address: String!
+    city: String!
+    "The owner's telephone number as ten digits, for example 2221234567."
+    telephone: String!
+}
+
+"The details to change for one owner. A field left out keeps its value."
+input UpdateOwnerInput {
+    id: ID!
+    firstName: String
+    lastName: String
+    address: String
+    city: String
+    telephone: String
+}
+
+input AddPetInput {
+    "The id of the owner the pet belongs to. The owners query gives the ids of owners."
+    ownerId: ID!
+    "The pet's name, which must differ from the names of the owner's other pets."
+    name: String!
+    "The day the pet was born, written as 2024-05-01, today or earlier."
+    birthDate: Date!
+    "The id of the kind of pet, from the petTypes query."
+    typeId: ID!
+}
+
+"The details to change for one pet. A field left out keeps its value."
+input UpdatePetInput {
+    id: ID!
+    name: String
+    birthDate: Date
+    typeId: ID
 }
