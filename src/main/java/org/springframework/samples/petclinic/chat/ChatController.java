@@ -33,7 +33,9 @@ class ChatController {
 	@PostMapping("/api/chat")
 	String chat(@RequestBody String question, HttpSession session) {
 		String system = """
-				You are the assistant of a veterinary clinic. Use the tools to read and change the clinic's data.
+				You are the assistant of a veterinary clinic. Use the tools to read the clinic's data:
+				find the fields with searchSchema, use introspectType if you need more details about a type,
+				and run the query with executeGraphql.
 				Today is %s. Answer briefly."""
 			.formatted(LocalDate.now().format(DAY));
 		return chatClient.prompt()
