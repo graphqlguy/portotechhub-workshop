@@ -1,24 +1,23 @@
-# Chapter 12: An assistant inside the application
+# Chapter 5: An assistant inside the application
 
 > **User story** · As a receptionist, I want to ask the clinic's assistant in my own words, so that I can find owners and book visits without clicking through the pages.
 
-In chapters 10 and 11, an AI application outside ours called our tools over MCP. In this chapter, the AI application is ours: a chat in the frontend, answered by a model in Ollama through [Spring AI](https://docs.spring.io/spring-ai/reference/), with chapter 11's operation files as its tools. The tools run inside the application, as the user who asks.
+In chapter 4, an AI application outside ours called our tools over MCP. In this chapter, the AI application is ours: a chat in the frontend, answered by a model in Ollama through [Spring AI](https://docs.spring.io/spring-ai/reference/), with chapter 4's operation files as its tools. The tools run inside the application.
 
 By the end of this chapter, you will:
 
 - Give a Spring AI `ChatClient` the operation files as in-process tools
 - Run the chat on a model in Ollama, or on a hosted model
-- See a tool call act as the signed-in user
 - Check what the assistant did, and give it errors it can act on
 
 ## 1. How a question becomes an answer
 
 | Step | What happens |
 |---|---|
-| 1 | The frontend sends the question to `POST /api/chat`, with the user's token when someone is signed in. |
-| 2 | Spring AI's `ChatClient` sends the model a system prompt, the question and the 11 tools. |
+| 1 | The frontend sends the question to `POST /api/chat`. |
+| 2 | Spring AI's `ChatClient` sends the model a system prompt, the question and the 10 tools. |
 | 3 | The model answers, or asks for a tool with its arguments. |
-| 4 | Spring AI runs the tool: GATool runs the tool's operation file in our GraphQL engine, as the user who asked. |
+| 4 | Spring AI runs the tool: GATool runs the tool's operation file in our GraphQL engine. |
 | 5 | The model reads the tool's result, then asks for another tool or answers. |
 
 The frontend has had the chat panel since the starting point. It shows the panel once `GET /api/chat` answers `405 Method Not Allowed`, which tells it that the endpoint exists.
@@ -50,7 +49,7 @@ Add two starters next to GATool's:
 > [!NOTE]
 > With Gradle, add `implementation 'io.gatool:gatool-in-process-spring-boot-starter:0.1.0'` and `implementation 'org.springframework.ai:spring-ai-starter-model-ollama:2.0.1'` to `build.gradle`.
 
-If Ollama cannot run on your laptop, do step 9 now, and from then on start the backend the way it says.
+If Ollama cannot run on your laptop, do step 8 now, and from then on start the backend the way it says.
 
 ## 3. Configure the model
 
@@ -62,8 +61,10 @@ Add a Chat section below the MCP section:
 # Chat
 # The assistant in the frontend gets the same operation files as tools, inside the application
 gatool.in-process.operations.locations=classpath*:operations/
-# The chat model in Ollama, pulled in the setup with: ollama pull granite4.1:8b
-spring.ai.ollama.chat.model=granite4.1:8b
+# The chat model in Ollama, pulled in the setup with: ollama pull qwen3:8b
+spring.ai.ollama.chat.model=qwen3:8b
+# The model reasons before it answers: slower, and its bookings come out right more often
+spring.ai.ollama.chat.think=true
 # The model reads the tools, the question and the tool results within this many tokens.
 # Ollama picks a size from your memory when this is unset, so set it for the same result on every laptop.
 spring.ai.ollama.chat.num-ctx=8192
@@ -81,7 +82,8 @@ logging.level.org.springframework.ai.model.tool=DEBUG
 |---|---|
 | `gatool.in-process.operations.locations` | The operation files of the in-process tools. It is separate from the MCP server's setting, so the application's own assistant can get other tools. |
 | `spring.ai.ollama.chat.model` | The model from the setup. Ollama must be running: `ollama list` answers when it is. |
-| `spring.ai.ollama.chat.num-ctx` | Everything the model reads for one answer must fit in this many tokens. A booking takes up to about 2,800. On a laptop with 128 GB, Ollama gave the model 131,072 tokens and 27 GB of memory; with 8192, it takes 6.9 GB. |
+| `spring.ai.ollama.chat.think` | `qwen3:8b` can reason before it answers. Step 6 shows what that costs and what it buys. |
+| `spring.ai.ollama.chat.num-ctx` | Everything the model reads for one answer must fit in this many tokens. In our runs, a booking used up to about 4,500, the model's reasoning included. With 8192, `qwen3:8b` takes 5.8 GB of memory. |
 
 ## 4. The chat endpoint
 
@@ -121,7 +123,6 @@ class ChatController {
 	String chat(@RequestBody String question) {
 		String system = """
 				You are the assistant of a veterinary clinic. Use the tools to read and change the clinic's data.
-				Changing data needs a signed-in staff member, so when a tool answers Unauthorized, ask the user to sign in.
 				Today is %s. Answer briefly."""
 			.formatted(LocalDate.now().format(DAY));
 		return chatClient.prompt().system(system).user(question).call().content();
@@ -139,8 +140,8 @@ class ChatController {
 | Element | Meaning |
 |---|---|
 | `ChatClient.Builder` | Spring AI's builder, set up for the model of step 3. |
-| `defaultTools(tools.toolCallbackProvider())` | Gives every prompt of this client the 11 in-process tools. |
-| The system prompt | What the model needs and cannot know: its role, what to do when a tool refuses, and today's date, which goes with every question. |
+| `defaultTools(tools.toolCallbackProvider())` | Gives every prompt of this client the 10 in-process tools. |
+| The system prompt | What the model needs and cannot know: its role, and today's date, which goes with every question. |
 | `call().content()` | Sends the prompt, runs every tool the model asks for, and returns the model's last answer as text. |
 | `@PostMapping` | The frontend sends the question as plain text. A `GET` answers `405`. |
 | `@ExceptionHandler` | When the model cannot be reached, the chat shows one line, such as `The model did not answer: I/O error on POST request for "http://localhost:11434/api/chat": Connection refused`. |
@@ -150,22 +151,21 @@ class ChatController {
 Restart. After the MCP tools, GATool lists the in-process tools:
 
 ```text
-GATool serves 11 in-process tools:
+GATool serves 10 in-process tools:
   addOwner from file:.../target/classes/operations/mutations/addOwner.graphql (about 164 tokens)
-  addPet from file:.../target/classes/operations/mutations/addPet.graphql (about 260 tokens)
-  addVisit from file:.../target/classes/operations/mutations/addVisit.graphql (about 305 tokens)
-  updateOwner from file:.../target/classes/operations/mutations/updateOwner.graphql (about 163 tokens)
-  updatePet from file:.../target/classes/operations/mutations/updatePet.graphql (about 173 tokens)
-  findOwners from file:.../target/classes/operations/queries/findOwners.graphql (about 323 tokens)
-  getOwnerDetails from file:.../target/classes/operations/queries/getOwnerDetails.graphql (about 105 tokens)
-  getVetDetails from file:.../target/classes/operations/queries/getVetDetails.graphql (about 105 tokens)
+  addPet from file:.../target/classes/operations/mutations/addPet.graphql (about 254 tokens)
+  addVisit from file:.../target/classes/operations/mutations/addVisit.graphql (about 299 tokens)
+  updateOwner from file:.../target/classes/operations/mutations/updateOwner.graphql (about 160 tokens)
+  updatePet from file:.../target/classes/operations/mutations/updatePet.graphql (about 170 tokens)
+  findOwners from file:.../target/classes/operations/queries/findOwners.graphql (about 318 tokens)
+  getOwnerDetails from file:.../target/classes/operations/queries/getOwnerDetails.graphql (about 102 tokens)
+  getVetDetails from file:.../target/classes/operations/queries/getVetDetails.graphql (about 102 tokens)
   listPetTypes from file:.../target/classes/operations/queries/listPetTypes.graphql (about 67 tokens)
   listVets from file:.../target/classes/operations/queries/listVets.graphql (about 82 tokens)
-  search from file:.../target/classes/operations/queries/search.graphql (about 111 tokens)
-  about 1858 tokens in all, which every agent that lists these tools reads before it calls one
+  about 1718 tokens in all, which every agent that lists these tools reads before it calls one
 ```
 
-Refresh the frontend. The home page lists *Chapter 12 Clinic assistant*, and every page has an **Ask the assistant** button at the bottom right. Open it and ask:
+Refresh the frontend. The home page lists *Chapter 5 Clinic assistant*, and every page has an **Ask the assistant** button at the bottom right. Open it and ask:
 
 ```text
 Which vets work at the clinic, and what are their specialties?
@@ -177,126 +177,49 @@ The first answer takes longer, while Ollama loads the model. The backend's log s
 DEBUG ... o.s.a.m.tool.DefaultToolCallingManager   : Executing tool call: listVets
 ```
 
-The answer is a table of the six vets. Models write Markdown, and the panel renders it.
+The answer lists the six vets with their specialties, in about 6 seconds once the model is loaded. Models write Markdown, and the panel renders it.
 
-## 6. The tools act as the user who asks
+## 6. Check what the assistant did
 
-Without signing in, ask:
-
-```text
-Book an x-ray for Perla, the pet of Pablo Morales, with Helen Leary tomorrow.
-```
-
-The log shows which tools the model called, and they vary from run to run: one of our runs called `findOwners`, `search`, `listVets` and `addVisit`. All 5 of our runs ended with `addVisit`, which answered `Unauthorized`, and the assistant asks you to sign in:
-
-> I need you to sign in so that I can book the x-ray for Perla with Helen Leary for tomorrow.
-
-Sign in as `staff` / `staff` and ask again. A notification for the visit appears at the top right, and the assistant answers:
-
-> The x-ray for Perla, owned by Pablo Morales, has been booked with Helen Leary for tomorrow, 2026-10-27.
-
-| Part | What it does |
-|---|---|
-| The chat panel | Sends the signed-in user's token in the `Authorization` header, as the pages do for `/graphql`. |
-| Spring Security | Checks the token and puts the user on the request's thread, as in chapter 5. |
-| Spring AI | Runs each tool on that same thread, inside `call()`. |
-| GATool | Runs the operation with that thread's security context, so the `@PreAuthorize` on `addVisit` decides. |
-
-GATool says so in a warning at startup:
+Ask:
 
 ```text
-A tool call in embedded mode reaches the GraphQL engine directly, so every servlet filter and every authorizeHttpRequests rule on the GraphQL path stays out of it. The security context travels with the call, so method security on a resolver still decides, which is where authorization belongs for this mode.
+Book a check-up for Leo, the cat of George Franklin, with Helen Leary next Wednesday.
 ```
 
-Our rules have been on the controllers since chapter 5, so the assistant can do what the user who asks can do.
+Then open George Franklin on the **Find owners** page, and look for the date and the vet under Leo's visits. We asked the same question with three different days, 5 times each, on Wednesday 2026-11-04, with `think` on and off:
 
-## 7. Check what the assistant did
+| Asked | `think=true` | `think=false` |
+|---|---|---|
+| "tomorrow" | Thursday 2026-11-05 every time, and once without the vet | Thursday 2026-11-05 every time, always without the vet |
+| "next Wednesday" | 2026-11-11 every time, and once without the vet | Monday 2026-11-09 every time |
+| "next Monday" | 2026-11-09 every time | Sunday 2026-11-08 every time |
+| Time for one booking | 21 to 54 seconds | about 1 second |
 
-Signed in as staff, ask:
+With `think` on, the model works out the date before it calls a tool, which takes time. With `think` off, it answers at once, and turning a weekday into a date is arithmetic that it gets wrong. A booking without a vet came each time the model skipped `listVets`: `vetId` is optional, so `addVisit` booked the visit without one. With `think` on, the answer said so; with `think` off, it reported a plain success. The owner's page shows every booking, so an assistant's changes are there to check, whichever model makes them.
 
-```text
-Book a check-up for Perla, the pet of Pablo Morales, with Helen Leary next Wednesday.
-```
+Names trip a small model up as well. We asked 19 times for *a check-up for Rosa, the cat of Porto Tech, with Helen Leary tomorrow*. In 7 runs the model searched for an owner whose last name is `Porto Tech`, got an empty page, and stopped. In one more, it registered a second Porto Tech with a second Rosa, and booked the visit for her. Only 4 runs booked Rosa with Helen Leary. With an owner whose name reads as a first and a last name, such as George Franklin, the search found the owner every time.
 
-Then open Pablo Morales on the **Find owners** page and look for the date under Perla's visits. These are mistakes `granite4.1:8b` made in our test runs on Monday 2026-10-26:
+## 7. Errors the model can act on
 
-| Asked | What it did |
-|---|---|
-| "next Wednesday" | Booked Friday 2026-10-30 in all five runs, and called that day Wednesday |
-| "next Monday" | Booked a wrong date in all five runs, from 2026-10-28 to 2026-10-30, where next Monday is 2026-11-02 |
-| "tomorrow" | Booked the right day every time |
-
-The system prompt gives the model today's date, and turning a weekday into a date is arithmetic, which a model of this size gets wrong more often than right. "Tomorrow" works because `addVisit`'s description says *Leave the date out to book the visit for tomorrow*, and the model follows it. Every booking shows a notification as it happens, so an assistant's changes are there to check, whichever model makes them. The hosted models of step 9 are larger: try the same questions there.
-
-## 8. Errors the model can act on
-
-The model sometimes passes a name where an id belongs. In our runs, it called `addVisit` with `petId: "pet_1"` and `vetId: "vet_2"`, and `getOwnerDetails` with `id: "pablo_morales"`. Send the second one in GraphiQL:
-
-```graphql
-query {
-  owner(id: "pablo_morales") {
-    lastName
-  }
-}
-```
+With `think` off, the model guesses ids before it looks them up. In our runs it called `addVisit` with `petId: 123`, and got chapter 4's error:
 
 ```json
 {
   "errors": [
     {
-      "message": "INTERNAL_ERROR for e122b4ae-7906-176b-0407-ba41b75165a3",
-      "path": ["owner"],
-      "extensions": { "classification": "INTERNAL_ERROR" }
+      "message": "Pet with id 123 does not exist",
+      "path": ["addVisit"],
+      "extensions": { "classification": "NOT_FOUND" }
     }
   ],
-  "data": { "owner": null }
+  "data": null
 }
 ```
 
-GraphQL's `ID` type accepts any text, so the request reaches `OwnerGraphQLController`, whose `Integer` parameter cannot take `pablo_morales`. The log says `Unresolved BindException`. Given `INTERNAL_ERROR`, the model in our runs told the user that the clinic's system was having internal errors.
+The model then tried `getOwnerDetails` with another guessed id, which returned `null`, and called `findOwners` with the last name `Tech` and the city `Porto`. It found Rosa's id, 15, and booked her visit, without the vet. A guessed id that belongs to another pet passes every check: in two runs, the model guessed Leo's id, booked Leo, and answered that Rosa was booked. Only a person who looks at the owner's page finds that mistake.
 
-Add a handler to the class from chapter 4, after `invalidInput`:
-
-`src/main/java/org/springframework/samples/petclinic/system/GraphQLExceptionHandlers.java`
-
-```java
-	@GraphQlExceptionHandler
-	List<GraphQLError> notAnId(BindException ex, DataFetchingEnvironment environment) {
-		return ex.getFieldErrors()
-			.stream()
-			.map((error) -> GraphqlErrorBuilder.newError(environment)
-				.errorType(ErrorType.BAD_REQUEST)
-				.message("'" + error.getRejectedValue()
-						+ "' is not an id. An id is a number, which queries such as search, owners and vets return.")
-				.build())
-			.toList();
-	}
-```
-
-and its import:
-
-```java
-import org.springframework.validation.BindException;
-```
-
-Restart, and send the query again:
-
-```json
-{
-  "errors": [
-    {
-      "message": "'pablo_morales' is not an id. An id is a number, which queries such as search, owners and vets return.",
-      "path": ["owner"],
-      "extensions": { "classification": "BAD_REQUEST" }
-    }
-  ],
-  "data": { "owner": null }
-}
-```
-
-`BindException` holds one error for each value that could not be converted, so `addVisit` with `pet_1` and `vet_2` gets two. With this answer, the model in our runs looked the ids up with `search` and booked the visit. The message says where ids come from, as chapter 9's descriptions do, and MCP clients get the same error.
-
-## 9. Use a hosted model instead of Ollama
+## 8. Use a hosted model instead of Ollama
 
 Spring AI has a starter for each provider. A Maven profile adds one, and runs the application with the Spring profile of the same name. Add three profiles at the top of the `<profiles>` section:
 
@@ -395,17 +318,17 @@ On Windows, set the key with `set MISTRAL_API_KEY=your-key` in Command Prompt or
 
 ## Exercise: a conversation
 
-Signed in as staff, ask one question after the other:
+Ask one question after the other:
 
 ```text
-Which pets does Pablo Morales have?
+Which pets does Carlos Estaban have?
 ```
 
 ```text
-Book an x-ray for the cat with Helen Leary tomorrow.
+Book an x-ray for his cat tomorrow, with the vet Helen Leary.
 ```
 
-The second answer shows that the model has lost the first: *I'm unable to locate an owner named Helen Leary in the clinic's records.* Each call sends the model one question. Give the assistant the conversation so far.
+The second answer shows that the model has lost the first: *The owner with last name "Leary" does not exist.* Each call sends the model one question. Give the assistant the conversation so far.
 
 - Spring AI configures a `ChatMemory` bean, which keeps the last 20 messages of each conversation in memory.
 - A `MessageChatMemoryAdvisor` adds a conversation's messages to each prompt, and stores the new ones.
@@ -453,7 +376,6 @@ class ChatController {
 	String chat(@RequestBody String question, HttpSession session) {
 		String system = """
 				You are the assistant of a veterinary clinic. Use the tools to read and change the clinic's data.
-				Changing data needs a signed-in staff member, so when a tool answers Unauthorized, ask the user to sign in.
 				Today is %s. Answer briefly."""
 			.formatted(LocalDate.now().format(DAY));
 		return chatClient.prompt()
@@ -475,19 +397,18 @@ class ChatController {
 
 Restart and ask the two questions again:
 
-> An x-ray visit has been scheduled for Perla (Pablo Morales's cat) with Helen Leary for tomorrow, 2026-10-23. The visit ID is 33.
+> The x-ray for Sly (cat) is booked for 2026-11-05 with Dr. Helen Leary.
 
-The memory lives in the backend, one conversation for each session, and a restart empties it. In one of our four runs, the model booked another owner's cat, so check the notification here too.
+The memory lives in the backend, one conversation for each session, and a restart empties it. In all 3 of our runs with the memory, the model booked Sly with Helen Leary for tomorrow, and all 3 runs without it ended without a booking.
 
 </details>
 
 ## Recap
 
 - `gatool.in-process.operations.locations` gives the application's own `ChatClient` the operation files as tools, through the `GAToolCallbacks` bean.
-- A tool call runs on the request's thread, so it acts as the signed-in user, and `@PreAuthorize` decides what the assistant may change.
 - The model knows only what the prompt tells it, today's date included, and a small model gets dates and names wrong often enough that its changes need checking.
 - An error message that says how to correct the call lets the model try again.
 - A Maven profile switches the chat to Mistral, OpenAI or Anthropic.
 - `ChatMemory` and `MessageChatMemoryAdvisor` give the model the conversation so far.
 
-Chapter 13 secures the MCP endpoint, with an authorization server inside the application.
+Chapter 6 gives the assistant three tools with which it writes its own queries.
