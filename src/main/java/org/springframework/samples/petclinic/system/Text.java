@@ -19,7 +19,7 @@ import java.text.Normalizer;
 import java.util.Locale;
 
 /**
- * Text as the searches and filters compare it.
+ * Text as the filters compare it.
  */
 public final class Text {
 
@@ -27,7 +27,7 @@ public final class Text {
 	}
 
 	/**
-	 * The text in lower case and without accents, so that "Málaga", "MALAGA" and "malaga"
+	 * The text in lower case and without accents, so that "Guimarães", "GUIMARAES" and "guimaraes"
 	 * compare as equal.
 	 */
 	public static String withoutAccents(String text) {

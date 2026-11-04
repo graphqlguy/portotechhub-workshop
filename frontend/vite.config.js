@@ -11,7 +11,7 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
     proxy: {
-      '/graphql': { target: backend, ws: true },
+      '/graphql': backend,
       '/api': backend,
     },
     // The GraphQL operations live with the backend, in ../src/main/resources

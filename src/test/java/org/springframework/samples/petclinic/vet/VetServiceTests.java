@@ -46,10 +46,5 @@ class VetServiceTests {
 		assertThatExceptionOfType(EntityNotFoundException.class).isThrownBy(() -> vets.findById(99));
 	}
 
-	@Test
-	void searchMatchesFirstOrLastName() {
-		assertThat(vets.search("HELEN")).extracting(Vet::getLastName).containsExactly("Leary");
-		assertThat(vets.search("helen lea")).extracting(Vet::getLastName).containsExactly("Leary");
-	}
 
 }

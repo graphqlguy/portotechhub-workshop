@@ -4,12 +4,6 @@ import { personName } from '../format'
 import { useGraphQL } from '../context/GraphQLContext'
 import { useQuery } from '../graphql/hooks'
 
-// The field-level errors go next to their field; the rest go in the list
-function split(errors) {
-  const hidden = new Set((errors ?? []).filter((e) => e.path?.length === 2).map((e) => e.path[1]))
-  return { hidden, others: (errors ?? []).filter((e) => e.path?.length !== 2) }
-}
-
 function Pet({ ownerId, pet }) {
   const { available } = useGraphQL()
   return (
@@ -69,7 +63,7 @@ export default function OwnerDetailPage() {
     return <Loading />
   }
   const owner = data?.owner
-  const { hidden, others } = split(errors)
+  const others = errors ?? []
   if (!owner) {
     return (
       <div>
@@ -78,8 +72,7 @@ export default function OwnerDetailPage() {
       </div>
     )
   }
-  const value = (field) =>
-    hidden.has(field) ? <span className="text-spring-grey">🔒 visible to staff</span> : owner[field]
+  const value = (field) => owner[field]
 
   return (
     <div>

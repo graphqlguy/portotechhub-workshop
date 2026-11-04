@@ -34,8 +34,6 @@ import org.springframework.samples.petclinic.owner.pet.Pet;
 import org.springframework.test.context.aot.DisabledInAotMode;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.context.annotation.Import;
-import org.springframework.samples.petclinic.system.SecurityConfiguration;
 
 import java.time.LocalDate;
 import java.util.Optional;
@@ -46,7 +44,6 @@ import java.util.Optional;
  * @author Colin But
  * @author Wick Dynex
  */
-@Import(SecurityConfiguration.class)
 @WebMvcTest(VisitController.class)
 @DisabledInNativeImage
 @DisabledInAotMode

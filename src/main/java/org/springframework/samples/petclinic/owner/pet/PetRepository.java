@@ -15,30 +15,13 @@
  */
 package org.springframework.samples.petclinic.owner.pet;
 
-import java.util.List;
-
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 
 /**
  * Repository class for <code>Pet</code> domain objects.
  */
 public interface PetRepository extends JpaRepository<Pet, Integer> {
 
-	/**
-	 * Pets whose name contains the given text, in any case and with or without accents.
-	 * The service passes the text in lower case and without accents, and the query folds
-	 * the name the same way, for the accented letters of Spanish.
-	 */
-	@Query("""
-			SELECT pet FROM Pet pet
-			WHERE replace(replace(replace(replace(replace(replace(replace(
-				LOWER(pet.name),
-				'á', 'a'), 'é', 'e'), 'í', 'i'), 'ó', 'o'), 'ú', 'u'), 'ü', 'u'), 'ñ', 'n')
-				LIKE CONCAT('%', :text, '%')
-			ORDER BY pet.name""")
-	List<Pet> search(@Param("text") String text);
 
 	boolean existsByOwnerIdAndNameIgnoreCase(Integer ownerId, String name);
 

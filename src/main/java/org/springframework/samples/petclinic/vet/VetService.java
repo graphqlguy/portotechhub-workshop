@@ -20,7 +20,6 @@ import java.util.List;
 
 import org.springframework.samples.petclinic.system.EntityNotFoundException;
 import org.springframework.samples.petclinic.system.LatencySimulator;
-import org.springframework.samples.petclinic.system.Text;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -57,13 +56,5 @@ public class VetService {
 		return vets.findById(id).orElseThrow(() -> new EntityNotFoundException("Vet", id));
 	}
 
-	/**
-	 * Vets whose first or last name contains the text, in any case and with or without
-	 * accents.
-	 */
-	public List<Vet> search(String text) {
-		latency.pause();
-		return vets.search(Text.withoutAccents(text));
-	}
 
 }

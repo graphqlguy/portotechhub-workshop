@@ -89,14 +89,6 @@ public class OwnerService {
 				result.hasPrevious());
 	}
 
-	/**
-	 * Owners whose first or last name contains the text, in any case and with or without
-	 * accents.
-	 */
-	public List<Owner> search(String text) {
-		latency.pause();
-		return owners.search(Text.withoutAccents(text));
-	}
 
 	@Transactional
 	public Owner addOwner(AddOwnerInput input) {

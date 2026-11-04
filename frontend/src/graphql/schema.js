@@ -47,7 +47,7 @@ function hasRootType(schema, document) {
     .every((definition) => schema.getRootType(definition.operation) != null)
 }
 
-// The chat endpoint from chapter 12 takes POST alone, so a GET gets 405 once it exists
+// The chat endpoint from chapter 5 takes POST alone, so a GET gets 405 once it exists
 // and 404 before.
 export async function checkChat() {
   try {

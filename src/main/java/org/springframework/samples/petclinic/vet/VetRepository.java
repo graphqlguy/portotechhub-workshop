@@ -19,13 +19,10 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.Repository;
-import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.Optional;
 
 /**
@@ -62,17 +59,5 @@ public interface VetRepository extends Repository<Vet, Integer> {
 	@Transactional(readOnly = true)
 	Optional<Vet> findById(Integer id);
 
-	/**
-	 * Vets whose first or last name contains the given text, in any case.
-	 */
-	@Transactional(readOnly = true)
-	@Query("""
-			SELECT vet FROM Vet vet
-			WHERE replace(replace(replace(replace(replace(replace(replace(
-				LOWER(CONCAT(vet.firstName, ' ', vet.lastName)),
-				'á', 'a'), 'é', 'e'), 'í', 'i'), 'ó', 'o'), 'ú', 'u'), 'ü', 'u'), 'ñ', 'n')
-				LIKE CONCAT('%', :text, '%')
-			ORDER BY vet.lastName, vet.firstName""")
-	List<Vet> search(@Param("text") String text);
 
 }

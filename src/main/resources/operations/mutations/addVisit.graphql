@@ -1,5 +1,5 @@
 # Books a visit for a pet and returns its id and date.
-# The getOwnerDetails and search tools give the petId, and the listVets tool gives the vetId, which can be left out.
+# The getOwnerDetails tool gives the petId, and the listVets tool gives the vetId, which can be left out.
 # Leave the date out to book the visit for tomorrow. Every call books one more visit,
 # so after a call that failed or timed out, check the pet's visits with the getOwnerDetails tool before calling again.
 mutation AddVisit($petId: ID!, $vetId: ID, $date: Date, $description: String!) {

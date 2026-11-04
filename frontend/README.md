@@ -17,6 +17,3 @@ The frontend sends only the operations in `../src/main/resources/operations` and
 schema and validates every operation against it. A page lights up when its operations validate, so
 each chapter of the workshop turns on another part of the UI. `src/features.js` lists which
 operations each part needs.
-
-Every request carries the operation's text and the SHA-256 hash of its file. The hash matters from
-chapter 11 on, when the backend accepts the known operations by their hash alone.

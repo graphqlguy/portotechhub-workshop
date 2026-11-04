@@ -23,7 +23,6 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.samples.petclinic.owner.pet.Pet;
 import org.springframework.samples.petclinic.owner.pet.PetRepository;
 import org.springframework.samples.petclinic.system.EntityNotFoundException;
@@ -36,7 +35,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 /**
- * Reads and books visits. Booking a visit publishes a {@link VisitBookedEvent}.
+ * Reads and books visits.
  */
 @Service
 @Transactional(readOnly = true)
@@ -50,16 +49,12 @@ public class VisitService {
 
 	private final VetRepository vets;
 
-	private final ApplicationEventPublisher events;
-
 	private final LatencySimulator latency;
 
-	VisitService(VisitRepository visits, PetRepository pets, VetRepository vets, ApplicationEventPublisher events,
-			LatencySimulator latency) {
+	VisitService(VisitRepository visits, PetRepository pets, VetRepository vets, LatencySimulator latency) {
 		this.visits = visits;
 		this.pets = pets;
 		this.vets = vets;
-		this.events = events;
 		this.latency = latency;
 	}
 
@@ -88,17 +83,9 @@ public class VisitService {
 		return visitsByVetId;
 	}
 
-	/**
-	 * A visit with its pet, owner, pet type and vet already read, for code that runs
-	 * after the transaction, such as a subscription.
-	 * @throws EntityNotFoundException when no visit has the id
-	 */
-	public Visit findWithDetails(Integer id) {
-		return visits.findWithDetailsById(id).orElseThrow(() -> new EntityNotFoundException("Visit", id));
-	}
 
 	/**
-	 * Books a visit for a pet, and publishes a {@link VisitBookedEvent}.
+	 * Books a visit for a pet.
 	 * @throws EntityNotFoundException when the pet or the vet does not exist
 	 * @throws InvalidInputException when the description is missing or too long
 	 */
@@ -122,9 +109,7 @@ public class VisitService {
 		visit.setDescription(input.description().trim());
 		visit.setVet(vet);
 		pet.addVisit(visit);
-		Visit saved = visits.save(visit);
-		events.publishEvent(new VisitBookedEvent(saved.getId()));
-		return saved;
+		return visits.save(visit);
 	}
 
 }

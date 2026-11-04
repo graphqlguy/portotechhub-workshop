@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useGraphQL } from '../context/GraphQLContext'
-import { execute, subscribe } from './client'
+import { execute } from './client'
 
 // Runs a query when the component shows, and again when the variables change.
 export function useQuery(name, variables, { skip = false } = {}) {
@@ -50,29 +50,4 @@ export function useMutation(name) {
     [operation, name],
   )
   return [mutate, state]
-}
-
-// Calls onData with each event of a subscription while the component shows.
-export function useSubscription(name, onData, { skip = false } = {}) {
-  const { operation } = useGraphQL()
-  const op = operation(name)
-  const handler = useRef(onData)
-  const [error, setError] = useState(null)
-
-  useEffect(() => {
-    handler.current = onData
-  })
-
-  useEffect(() => {
-    if (skip || !op) {
-      return undefined
-    }
-    return subscribe(op, {}, {
-      next: (event) => (event.data ? handler.current(event.data) : setError(event.errors)),
-      error: (problem) => setError([{ message: problem?.reason || problem?.message || 'The subscription failed' }]),
-      complete: () => {},
-    })
-  }, [op, skip])
-
-  return { error }
 }

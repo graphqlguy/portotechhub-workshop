@@ -92,11 +92,6 @@ class OwnerServiceTests {
 		assertThat(byCity.content().get(0).getCity()).isEqualTo("Windsor");
 	}
 
-	@Test
-	void searchMatchesFirstOrLastName() {
-		assertThat(owners.search("tech")).extracting(Owner::getFirstName).containsExactly("Porto");
-		assertThat(owners.search("PORTO TE")).extracting(Owner::getLastName).containsExactly("Tech");
-	}
 
 	@Test
 	void addOwner() {

@@ -25,7 +25,6 @@ import org.springframework.samples.petclinic.owner.OwnerRepository;
 import org.springframework.samples.petclinic.system.EntityNotFoundException;
 import org.springframework.samples.petclinic.system.InvalidInputException;
 import org.springframework.samples.petclinic.system.LatencySimulator;
-import org.springframework.samples.petclinic.system.Text;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
@@ -70,13 +69,6 @@ public class PetService {
 		return petTypes.findPetTypes();
 	}
 
-	/**
-	 * Pets whose name contains the text, in any case and with or without accents.
-	 */
-	public List<Pet> search(String text) {
-		latency.pause();
-		return pets.search(Text.withoutAccents(text));
-	}
 
 	/**
 	 * Registers a new pet for an owner.

@@ -3,7 +3,7 @@ import pets from '../assets/pets.png'
 import { useGraphQL } from '../context/GraphQLContext'
 import { FEATURES } from '../features'
 
-const PATHS = { owners: '/owners', vets: '/vets', login: '/login' }
+const PATHS = { owners: '/owners', vets: '/vets' }
 
 function BackendStatus({ status }) {
   if (status === 'loading') {
@@ -57,7 +57,7 @@ export default function HomePage() {
           })}
           <li className="flex items-center gap-3">
             <span className="w-5 text-center">{chat ? '✅' : '🚧'}</span>
-            <span className="w-20 text-spring-grey">Chapter 12</span>
+            <span className="w-20 text-spring-grey">Chapter 5</span>
             <span className={chat ? '' : 'text-spring-grey'}>Clinic assistant</span>
           </li>
         </ul>

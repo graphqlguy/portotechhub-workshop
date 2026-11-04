@@ -2,10 +2,9 @@ import { useEffect, useRef, useState } from 'react'
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { useGraphQL } from '../context/GraphQLContext'
-import { tokenStore } from '../graphql/client'
 
-// The clinic assistant from chapter 12. It sends the question to /api/chat with the
-// signed-in user's token, so the agent's tools act as that user.
+// The clinic assistant from chapter 5. It sends the question to /api/chat, where the
+// model answers it with the operation files as tools.
 export default function ChatPanel() {
   const { chat } = useGraphQL()
   const [open, setOpen] = useState(false)
@@ -34,13 +33,8 @@ export default function ChatPanel() {
     setQuestion('')
     setMessages((previous) => [...previous, { from: 'you', text }])
     setWaiting(true)
-    const headers = { 'Content-Type': 'text/plain' }
-    const token = tokenStore.get()
-    if (token) {
-      headers.Authorization = `Bearer ${token}`
-    }
     try {
-      const response = await fetch('/api/chat', { method: 'POST', headers, body: text })
+      const response = await fetch('/api/chat', { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: text })
       const answer = await response.text()
       setMessages((previous) => [
         ...previous,

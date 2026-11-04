@@ -30,9 +30,6 @@ import org.springframework.samples.petclinic.system.EntityNotFoundException;
 import org.springframework.samples.petclinic.system.InvalidInputException;
 import org.springframework.samples.petclinic.vet.Vet;
 import org.springframework.samples.petclinic.vet.VetService;
-import org.springframework.test.context.event.ApplicationEvents;
-import org.springframework.test.context.event.RecordApplicationEvents;
-import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
@@ -40,7 +37,6 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @SpringBootTest
 @Transactional
-@RecordApplicationEvents
 class VisitServiceTests {
 
 	@Autowired
@@ -69,11 +65,10 @@ class VisitServiceTests {
 	}
 
 	@Test
-	void addVisitBooksForTomorrowAndPublishesAnEvent(ApplicationEvents events) {
+	void addVisitBooksForTomorrow() {
 		Visit visit = visits.addVisit(new AddVisitInput(7, 1, null, "check-up"));
 		assertThat(visit.getDate()).isEqualTo(LocalDate.now().plusDays(1));
 		assertThat(visit.getPet().getName()).isEqualTo("Samantha");
-		assertThat(events.stream(VisitBookedEvent.class)).containsExactly(new VisitBookedEvent(visit.getId()));
 	}
 
 	@Test
@@ -86,13 +81,5 @@ class VisitServiceTests {
 			.isThrownBy(() -> visits.addVisit(new AddVisitInput(7, 99, null, "check-up")));
 	}
 
-	@Test
-	@Transactional(propagation = Propagation.NOT_SUPPORTED)
-	void findWithDetailsCanBeReadAfterTheTransaction() {
-		Visit visit = visits.findWithDetails(1);
-		assertThat(visit.getPet().getOwner().getLastName()).isNotBlank();
-		assertThat(visit.getPet().getType().getName()).isNotBlank();
-		assertThat(visit.getVet().getLastName()).isNotBlank();
-	}
 
 }
