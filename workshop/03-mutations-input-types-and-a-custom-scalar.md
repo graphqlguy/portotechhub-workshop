@@ -57,7 +57,7 @@ Declare the scalar on the first line of the schema, above the comment from chapt
 `src/main/resources/graphql/schema.graphqls`
 
 ```graphql
-scalar Date @specifiedBy(url: "https://tools.ietf.org/html/rfc3339")
+scalar Date @specifiedBy(url: "https://scalars.graphql.org/andimarek/local-date")
 ```
 
 ```graphql
@@ -80,9 +80,9 @@ GraphQL accepts the definitions of a schema in any order, so a field may use a t
 |---|---|
 | `scalar Date` | Declares a type whose values are single pieces of text or numbers, with rules the server applies. |
 | `RuntimeWiringConfigurer` | Hands the engine the Java code behind the scalar. The schema declares it, the wiring implements it. |
-| `@specifiedBy` | Points clients to the scalar's specification, here RFC 3339 dates such as `2026-10-21`. |
+| `@specifiedBy` | Points clients to the scalar's specification. The [LocalDate](https://scalars.graphql.org/andimarek/local-date) entry of the GraphQL scalars registry describes a date without a time, such as `2026-10-21`. Tools read the URL: in chapter 4, GATool gives the tools' dates a type and a format from it. |
 
-Restart and run the query from chapter 2 again. The dates look the same, `"2023-09-30"`, but the documentation explorer now shows them as `Date`, described as *An RFC-3339 compliant Full Date Scalar*. In Java, they arrive and leave as `LocalDate`.
+Restart and run the query from chapter 2 again. The dates look the same, `"2026-01-01"`, but the documentation explorer now shows them as `Date`, described as *An RFC-3339 compliant Full Date Scalar*. In Java, they arrive and leave as `LocalDate`.
 
 ## 2. Your first mutation: book a visit
 
@@ -91,20 +91,28 @@ Queries read, and **mutations** change data. A schema declares them in a second 
 `src/main/resources/graphql/schema.graphqls`
 
 ```graphql
-"Changes to the clinic's data."
+"Changes the clinic's data."
 type Mutation {
+    """
+    Books a visit for a pet. Every call books one more visit, so after a call that failed or timed out,
+    check the pet's visits before calling again.
+    """
     addVisit(input: AddVisitInput!): Visit!
 }
 
 input AddVisitInput {
+    "The id of the pet the visit is for. The owner query gives the ids of pets."
     petId: ID!
-    "Leave it out to book the visit without a vet."
+    "The id of the vet who sees the pet, from the vets query. Leave it out to book the visit without a vet."
     vetId: ID
-    "Leave it out to book the visit for tomorrow."
+    "The day of the visit, written as 2026-10-21. Leave it out to book the visit for tomorrow."
     date: Date
+    "The reason for the visit, at most 255 characters, for example a rabies shot."
     description: String!
 }
 ```
+
+The description of a mutation says what a second call does. A client that loses the answer to a call, such as an agent whose connection timed out, needs to know whether it may simply call again.
 
 The Java side is one method. The starting point has a matching `AddVisitInput` record, and Spring for GraphQL fills it in by matching the field names. **Create a new class** named `VisitGraphQLController` in the `org.springframework.samples.petclinic.owner.visit` package:
 
@@ -134,12 +142,12 @@ class VisitGraphQLController {
 }
 ```
 
-Restart and book a visit for Woofy, the conference dog (pet 21), with James Carter (vet 1):
+Restart and book a visit for Ronaldo, Porto Tech's dog (pet 14), with James Carter (vet 1):
 
 ```graphql
 mutation {
   addVisit(
-    input: { petId: 21, vetId: 1, date: "2026-10-30", description: "check-up after the conference" }
+    input: { petId: 14, vetId: 1, date: "2026-10-30", description: "vaccination booster" }
   ) {
     id
     date
@@ -153,7 +161,7 @@ mutation {
 }
 ```
 
-The answer is the new visit, with id 33: the seed data has 32. A mutation returns an object like any query, so the client asks for exactly the fields it needs next. When an operation has several mutation fields, GraphQL runs them one after another, in order, where it may run the fields of a query in parallel.
+The answer is the new visit, with id 11: the seed data has 10. A mutation returns an object like any query, so the client asks for exactly the fields it needs next. When an operation has several mutation fields, GraphQL runs them one after another, in order, where it may run the fields of a query in parallel.
 
 `date` is a `Date`, so the scalar also checks what clients send. Run the mutation again with the date written the way many people do, `date: "30/10/2026"`. The engine refuses it during validation, before our code runs, so the clinic's visits stay as they were:
 
@@ -170,6 +178,11 @@ So far every value sat inside the query text. Real clients keep the operation fi
 ```graphql
 type Mutation {
     # ...existing mutations...
+
+    """
+    Registers a new owner. Every call registers one more owner, so calling it twice with the same input
+    creates two owners.
+    """
     addOwner(input: AddOwnerInput!): Owner!
 }
 
@@ -178,7 +191,7 @@ input AddOwnerInput {
     lastName: String!
     address: String!
     city: String!
-    "The owner's telephone number as ten digits, for example 9521234567."
+    "The owner's telephone number as ten digits, for example 2221234567."
     telephone: String!
 }
 ```
@@ -214,15 +227,15 @@ Open the **Variables** tab below the editor and give the variable a value, as JS
 {
   "input": {
     "firstName": "Ana",
-    "lastName": "Lozano",
-    "address": "Calle Larios 3",
-    "city": "Málaga",
-    "telephone": "9521234567"
+    "lastName": "Sousa",
+    "address": "Rua de Santa Catarina 3",
+    "city": "Porto",
+    "telephone": "2221234567"
   }
 }
 ```
 
-Run it, and Ana Lozano is owner 16.
+Run it, and Ana Sousa is owner 12.
 
 | Syntax | Meaning |
 |---|---|
@@ -230,7 +243,7 @@ Run it, and Ana Lozano is owner 16.
 | `$input: AddOwnerInput!` | A **variable** with its type. The engine checks the value against the type, as it checks a literal. |
 | `addOwner(input: $input)` | Uses the variable where a literal value would go. |
 
-Every operation the frontend sends is written this way: open `src/main/resources/operations/mutations/addOwner.graphql`. The text of the operation stays the same, and only the variables change. Chapter 11 relies on that.
+Every operation the frontend sends is written this way: open `src/main/resources/operations/mutations/addOwner.graphql`. The text of the operation stays the same, and only the variables change. Chapter 4 relies on that.
 
 Leave `telephone` out of the variables and run it again. The engine refuses the input, because the schema says the field is required:
 
@@ -249,6 +262,8 @@ An update should change the fields the client sends and keep the rest. Make ever
 ```graphql
 type Mutation {
     # ...existing mutations...
+
+    "Changes the details of an owner. Calling it again with the same input leaves the owner as it is."
     updateOwner(input: UpdateOwnerInput!): Owner!
 }
 
@@ -272,11 +287,11 @@ Owner updateOwner(@Argument UpdateOwnerInput input) {
 }
 ```
 
-Restart and move Ana to Nerja:
+Restart and move Ana to Matosinhos:
 
 ```graphql
 mutation {
-  updateOwner(input: { id: 16, city: "Nerja" }) {
+  updateOwner(input: { id: 12, city: "Matosinhos" }) {
     firstName
     lastName
     city
@@ -307,18 +322,29 @@ The **Add pet** form needs two operations: a `petTypes` query for its list of ty
 ```graphql
 type Query {
     # ...existing queries...
+
+    "The kinds of pet the clinic treats, sorted by name. The addPet and updatePet mutations take their ids as typeId."
     petTypes: [PetType!]!
 }
 
 type Mutation {
     # ...existing mutations...
+
+    """
+    Registers a new pet for an owner. An owner cannot have two pets with the same name,
+    so a second call with the same name is refused.
+    """
     addPet(input: AddPetInput!): Pet!
 }
 
 input AddPetInput {
+    "The id of the owner the pet belongs to. The owners query gives the ids of owners."
     ownerId: ID!
+    "The pet's name, which must differ from the names of the owner's other pets."
     name: String!
+    "The day the pet was born, written as 2024-05-01, today or earlier."
     birthDate: Date!
+    "The id of the kind of pet, from the petTypes query."
     typeId: ID!
 }
 ```
@@ -371,6 +397,8 @@ Add an `updatePet` mutation that changes the fields it gets and keeps the rest, 
 ```graphql
 type Mutation {
     # ...existing mutations...
+
+    "Changes the details of a pet. Calling it again with the same input leaves the pet as it is."
     updatePet(input: UpdatePetInput!): Pet!
 }
 

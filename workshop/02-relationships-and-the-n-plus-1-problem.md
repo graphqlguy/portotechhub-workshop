@@ -45,7 +45,7 @@ Restart the application and run a nested query in GraphiQL:
 
 ```graphql
 query {
-  owner(id: 12) {
+  owner(id: 11) {
     firstName
     lastName
     pets {
@@ -63,11 +63,11 @@ query {
 {
   "data": {
     "owner": {
-      "firstName": "Lucía",
-      "lastName": "Navarro",
+      "firstName": "Porto",
+      "lastName": "Tech",
       "pets": [
-        { "name": "Nala", "birthDate": "2023-09-30", "type": { "name": "cat" } },
-        { "name": "Simba", "birthDate": "2020-01-22", "type": { "name": "cat" } }
+        { "name": "Ronaldo", "birthDate": "2026-01-01", "type": { "name": "dog" } },
+        { "name": "Rosa", "birthDate": "2025-06-14", "type": { "name": "cat" } }
       ]
     }
   }
@@ -179,7 +179,7 @@ class VetGraphQLController {
 | `@SchemaMapping` | Binds the method to a field. By convention, the method name is the field (`visits`), and the parameter's type is the type the field belongs to (`Vet`). |
 | `Vet vet` | The parent object, as the resolver above it produced it. GraphQL hands it over, so that we can resolve the child field. |
 
-Restart and run the query again: Linda Douglas has 7 visits. `@QueryMapping`, from chapter 1, is a shorthand for `@SchemaMapping` on the `Query` type.
+Restart and run the query again: Linda Douglas has 2 visits. `@QueryMapping`, from chapter 1, is a shorthand for `@SchemaMapping` on the `Query` type.
 
 Refresh the frontend and open a vet from the **Veterinarians** page: the vet page now lists the visits, and step 5 adds each visit's pet and owner.
 
@@ -347,9 +347,9 @@ query {
 }
 ```
 
-The first visit is a dental cleaning for Pelusa, Marta Ramos's cat. Refresh the frontend and open a vet again: each visit now shows its pet and the pet's owner.
+The first visit is for Rosa, Porto Tech's cat, who had a wound stitched after a fight. Refresh the frontend and open a vet again: each visit now shows its pet and the pet's owner.
 
-A client can follow these fields as deep as it likes, `owner { pets { owner { pets ... } } }`, and the server answers every level. Chapter 9 puts a limit on that.
+A client can follow these fields as deep as it likes, `owner { pets { owner { pets ... } } }`, and the server answers every level. A public API limits how deep a query may go, for example with GraphQL Java's `MaxQueryDepthInstrumentation`.
 
 ## Exercise: a pet's visits and their vets
 

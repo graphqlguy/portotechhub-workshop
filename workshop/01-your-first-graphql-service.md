@@ -47,16 +47,16 @@ This is schema-first development: we describe the API in the GraphQL Schema Defi
 ```graphql
 # The entry point of our API. This line is a comment:
 # comments start with # and are only for people reading this file.
-"The queries a client can send."
+"""
+Reads the clinic's data.
+An id identifies an object within its type, so an owner and a vet can have the same id.
+"""
 type Query {
     "Every owner of the clinic, in one list, without filters."
     ownersAll: [Owner!]!
 }
 
-"""
-A client of the clinic, who owns one or more pets.
-Triple quotes allow a description over several lines.
-"""
+"A client of the clinic, who owns one or more pets."
 # We extend the Owner type as the workshop goes on
 type Owner {
     id: ID!
@@ -64,7 +64,7 @@ type Owner {
     lastName: String!
     address: String!
     city: String!
-    "The owner's telephone number as ten digits, for example 9521234567."
+    "The owner's telephone number as ten digits, for example 2221234567."
     telephone: String!
 }
 ```
@@ -87,6 +87,19 @@ SDL has two kinds of text, for different readers:
 
 > [!IMPORTANT]
 > When a type or a field lacks a description, GraphQL Java takes the comment lines directly above it as its description, and sends them to every client. That is why `Query` has a description here: the comment above it then stays in the file.
+
+### What an agent reads
+
+In chapter 4 the client is an AI agent. It reads the schema the way GraphiQL does, and decides what to call from the names and the descriptions alone: a developer who is unsure can ask a colleague, and an agent acts on what the schema says. So we write each description for that reader, and answer the questions a caller has before it calls:
+
+| Say | Example |
+|---|---|
+| Where an id comes from | "The owners query gives the ids of owners." |
+| What `null` means | "or null when no owner has the id" |
+| What a repeated call does | "Every call books one more visit." |
+| How to write a value | "written as 2026-10-21", "ten digits" |
+
+An agent that knows where an id comes from calls that query first, and avoids guessing a number. We write the descriptions as the schema grows, so it is ready for agents by chapter 4.
 
 ## 4. Start the server and explore
 
@@ -181,7 +194,7 @@ class OwnerGraphQLController {
 | `@QueryMapping` | Binds the method to the `Query` field with the same name, `ownersAll`. |
 | The constructor | Spring passes in the `OwnerService` bean. |
 
-Restart the application: stop it with `Ctrl+C`, and run `./mvnw spring-boot:run` again. The startup report now says `Unmapped fields: {}`. Run the query again, and the answer holds all 15 owners.
+Restart the application: stop it with `Ctrl+C`, and run `./mvnw spring-boot:run` again. The startup report now says `Unmapped fields: {}`. Run the query again, and the answer holds all 11 owners.
 
 Remove `id` from the query, or add `firstName` and `city`, and run it again. The answer always has exactly the fields you asked for: in GraphQL, **the client decides the shape of the response**.
 
@@ -199,6 +212,8 @@ Schema first:
 ```graphql
 type Query {
     # ...existing queries...
+
+    "One owner, or null when no owner has the id. The owners query gives the ids of owners."
     owner(id: ID!): Owner
 }
 ```
@@ -222,7 +237,7 @@ Owner owner(@Argument Integer id) {
 
 ```graphql
 query {
-  owner(id: 15) {
+  owner(id: 11) {
     firstName
     lastName
     address
@@ -235,10 +250,10 @@ query {
 {
   "data": {
     "owner": {
-      "firstName": "J On The",
-      "lastName": "Beach",
-      "address": "Calle México 3",
-      "city": "Torremolinos"
+      "firstName": "Porto",
+      "lastName": "Tech",
+      "address": "Alfândega do Porto, Rua Nova da Alfândega",
+      "city": "Porto"
     }
   }
 }
@@ -248,7 +263,7 @@ Try `owner(id: 999)` as well. The answer is `{"data": {"owner": null}}`, as the 
 
 ## 7. Evolve the API: filtering, sorting and paging
 
-`ownersAll` returns every owner in one response. That works for 15 owners, and it stops working for a clinic with thousands: the response and the memory it takes grow with every new client, so we need paging and filtering. Clients may already depend on `ownersAll`, so we mark it as deprecated and add a better query next to it. Change the `ownersAll` line:
+`ownersAll` returns every owner in one response. That works for 11 owners, and it stops working for a clinic with thousands: the response and the memory it takes grow with every new client, so we need paging and filtering. Clients may already depend on `ownersAll`, so we mark it as deprecated and add a better query next to it. Change the `ownersAll` line:
 
 `src/main/resources/graphql/schema.graphqls`
 
@@ -256,12 +271,25 @@ Try `owner(id: 999)` as well. The answer is `{"data": {"owner": null}}`, as the 
     ownersAll: [Owner!]! @deprecated(reason: "Unbounded. Use 'owners' instead.")
 ```
 
-Add the new query to the `Query` type:
+Add the new query to the `Query` type. A description goes right before the argument it describes, so the arguments stand one per line:
 
 ```graphql
 type Query {
     # ...existing queries...
-    owners(filter: OwnerFilter, page: Int! = 0, size: Int! = 10, sort: OwnerSort): OwnerPage!
+
+    """
+    Owners, one page at a time, sorted by last name unless the sort argument says otherwise.
+    A page past the last one holds an empty list.
+    """
+    owners(
+        "Narrows the list by the start of the last name and by city. Leave it out to list every owner."
+        filter: OwnerFilter
+        "The page to return. Pages count from 0."
+        page: Int! = 0
+        "The number of owners on a page."
+        size: Int! = 10
+        sort: OwnerSort
+    ): OwnerPage!
 }
 ```
 
@@ -323,12 +351,12 @@ OwnerPage owners(@Argument OwnerFilter filter, @Argument int page, @Argument int
 }
 ```
 
-Restart, open the documentation explorer again, and look at `ownersAll`: GraphiQL now marks it as deprecated and shows our reason. Chapter 10 uses the same mark to leave `ownersAll` out of the tools it generates for AI agents. Try the new query:
+Restart, open the documentation explorer again, and look at `ownersAll`: GraphiQL now marks it as deprecated and shows our reason. Chapter 6 uses the same mark to leave `ownersAll` out of the schema search it gives AI agents. Try the new query:
 
 ```graphql
 query {
   owners(
-    filter: { city: "Torremolinos" }
+    filter: { city: "Madison" }
     sort: { field: FIRST_NAME, order: DESC }
     page: 0
     size: 2
@@ -343,7 +371,7 @@ query {
 }
 ```
 
-Three owners live in Torremolinos, so there are 2 pages of 2, starting with Pablo Morales. Then try `owners(page: null)`. The engine refuses it during validation, before any Java runs:
+Four owners live in Madison, so there are 2 pages of 2, starting with Peter McTavish. Then try `owners(page: null)`. The engine refuses it during validation, before any Java runs:
 
 ```text
 Validation error (WrongType@[owners]) : argument 'page' with value 'NullValue{}' must not be null
@@ -361,7 +389,7 @@ npm run dev
 
 Open [http://localhost:5173](http://localhost:5173). The home page lists what the API can do so far, and **Find owners** is live: filtering by last name and city, sorting and paging, all through the `owners` query you just wrote. Click an owner to open their page.
 
-The frontend sends only the operations in `src/main/resources/operations`. Open `queries/findOwners.graphql`: it is a query like the ones you wrote in GraphiQL, with variables in place of the values. We come back to this folder in chapter 11.
+The frontend sends only the operations in `src/main/resources/operations`. Open `queries/findOwners.graphql`: it is a query like the ones you wrote in GraphiQL, with variables in place of the values. We come back to this folder in chapter 4.
 
 > [!TIP]
 > Each time you extend the schema from now on: restart the backend, then refresh the browser. The frontend reads the schema again and turns on whatever is new.
@@ -382,6 +410,8 @@ Add a `vets` query that returns every vet. A vet has an `id`, a `firstName`, a `
 ```graphql
 type Query {
     # ...existing queries...
+
+    "Every vet of the clinic, with their specialties."
     vets: [Vet!]!
 }
 
@@ -443,6 +473,8 @@ Add a `vet(id: ID!)` query. `VetService.findById` returns the vet, or throws an 
 ```graphql
 type Query {
     # ...existing queries...
+
+    "One vet. The vets query gives the ids of vets."
     vet(id: ID!): Vet
 }
 ```
