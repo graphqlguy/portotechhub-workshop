@@ -30,7 +30,7 @@ type Query {
     "Every vet of the clinic, with their specialties."
     vets: [Vet!]!
 
-    "One vet. The vets query gives the ids of vets."
+    "One vet. The vets query gives the ids of vets. An id that no vet has returns a NOT_FOUND error."
     vet(id: ID!): Vet
 
     "The kinds of pet the clinic treats, sorted by name. The addPet and updatePet mutations take their ids as typeId."
@@ -129,7 +129,11 @@ type Specialty {
     name: String!
 }
 
-"Changes the clinic's data."
+"""
+Changes the clinic's data.
+A value that breaks a rule returns one BAD_REQUEST error for each field, and the data stays as it was.
+An id that does not exist returns a NOT_FOUND error.
+"""
 type Mutation {
     """
     Books a visit for a pet. Every call books one more visit, so after a call that failed or timed out,
