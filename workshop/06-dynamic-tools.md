@@ -1,8 +1,8 @@
-# Chapter 14: Dynamic tools
+# Chapter 6: Dynamic tools
 
 > **User story** · As the clinic manager, I want to ask the assistant any question about the clinic's data, such as whether the clinic has a surgeon, so that I get the answer without waiting for a new operation file.
 
-Each operation file answers a question we planned for, and every new question needs a new file and a new release. With three other tools from GATool, the model writes its own query: it searches the schema for the fields it needs, reads a type when it needs more details, and runs the query. In this chapter, MCP clients and the assistant get those three tools alone, on the clinic's small schema, and chapter 15 gives them a large one.
+Each operation file answers a question we planned for, and every new question needs a new file and a new release. With three other tools from GATool, the model writes its own query: it searches the schema for the fields it needs, reads a type when it needs more details, and runs the query. In this chapter, MCP clients and the assistant get those three tools alone.
 
 By the end of this chapter, you will:
 
@@ -19,7 +19,7 @@ By the end of this chapter, you will:
 | `introspectType` | The name of a type | The type's fields, with their arguments and descriptions |
 | `executeGraphql` | A query and its variables | The result, as an operation file's tool returns it |
 
-The search ranks **schema coordinates**: a coordinate names one field of one type, such as `Vet.visits`. One search returns at most 2000 tokens, however large the schema is, so the model reads only the part of the schema it needs. Chapter 15 relies on that, with a schema too large to read whole.
+The search ranks **schema coordinates**: a coordinate names one field of one type, such as `Vet.visits`. One search returns at most 2000 tokens, however large the schema is, so the model reads only the part of the schema it needs, and a schema too large to read whole stays usable.
 
 Here the three tools replace the operation tools, so you can follow the model's steps on their own. `executeGraphql` runs queries only, so from this chapter on, MCP clients and the assistant can only read the clinic's data.
 
@@ -57,7 +57,7 @@ In `application.properties`, point both operation locations at a folder that doe
 
 ```properties
 # GATool serves the three dynamic tools below alone at /mcp: this folder does not exist, so GATool
-# skips the operation files. Chapter 11's trusted documents still read them from operations/.
+# skips the operation files, which the frontend still sends from operations/
 gatool.mcp.operations.locations=optional:classpath*:none/
 ```
 
@@ -86,20 +86,20 @@ Restart:
 
 ```text
 WARN ... i.g.b.a.GAToolAutoConfiguration          : GATool serves zero MCP tools. These locations were read: optional:classpath*:none/. An operation file there becomes a tool, and gatool.mcp.operations.locations names the folders.
-INFO ... i.g.b.i.search.EmbeddingSchemaSearch     : GATool is embedding 46 schema coordinates, which is one call to your embedding model for each of them. The result is cached, so later starts read it.
+INFO ... i.g.b.i.search.EmbeddingSchemaSearch     : GATool is embedding 41 schema coordinates, which is one call to your embedding model for each of them. The result is cached, so later starts read it.
 INFO ... i.g.b.i.search.EmbeddingSchemaSearch     : GATool cached them in /var/folders/.../T/gatool-<you>/vectors/<hash>.vectors.
-WARN ... i.g.b.a.GAToolAutoConfiguration          : gatool.dev.experimental.generate-tools is dynamic-three-step, so a model can search your schema and run GraphQL it wrote against your API. The trusted documents keep working beside it. Turn this off before you deploy.
-INFO ... i.g.b.a.GAToolAutoConfiguration          : GATool publishes searchSchema, introspectType, executeGraphql, ranking 46 schema coordinates with EMBEDDING and returning up to 2000 tokens of results per call.
+WARN ... i.g.b.a.GAToolAutoConfiguration          : gatool.dev.experimental.generate-tools is dynamic-three-step, so a model can search your schema and run GraphQL it wrote against your API. ... Turn this off before you deploy.
+INFO ... i.g.b.a.GAToolAutoConfiguration          : GATool publishes searchSchema, introspectType, executeGraphql, ranking 41 schema coordinates with EMBEDDING and returning up to 2000 tokens of results per call.
 ```
 
-GATool warns that it serves zero MCP tools, which is what the empty folder is for, and that a model can now run queries it wrote itself: step 6 shows the checks that still apply. The 46 coordinates are the fields a query can reach: 7 on `Query`, and 39 on the types behind them, such as `Owner`, `Pet` and `Visit`. The mutations, the subscription and the deprecated `ownersAll` stay out of the search. On our laptop, embedding them took under a second, and the next start reads them from the cache.
+GATool warns that it serves zero MCP tools, which is what the empty folder is for, and that a model can now run queries it wrote itself: step 6 shows the checks that still apply. The 41 coordinates are the fields a query can reach: 5 on `Query`, and 36 on the types behind them, such as `Owner`, `Pet` and `Visit`. The mutations and the deprecated `ownersAll` stay out of the search. On our laptop, embedding them took under a second, and the next start reads them from the cache.
 
 > [!NOTE]
-> The embedding model runs in Ollama. With a hosted model from chapter 12, add `gatool.dev.experimental.dynamic-operations.search-backend=bm25` to its `application-<name>.properties`: BM25 ranks the fields by their words, and runs without a model. With the Mistral or OpenAI starter, the application holds two embedding models, and GATool stops at startup and asks which one to use. The tests run without Ollama, so `src/test/resources/config/application.properties` sets `bm25` for them.
+> The embedding model runs in Ollama. With a hosted model from chapter 5, add `gatool.dev.experimental.dynamic-operations.search-backend=bm25` to its `application-<name>.properties`: BM25 ranks the fields by their words, and runs without a model. With the Mistral or OpenAI starter, the application holds two embedding models, and GATool stops at startup and asks which one to use. The tests run without Ollama, so `src/test/resources/config/application.properties` sets `bm25` for them.
 
 ## 4. Follow the three steps in the Inspector
 
-Reload the Inspector's page and flip the switch on the card. It reconnects with its token from chapter 13. If you stopped the Inspector, start it with the command of chapter 13 and sign in. The **Tools** tab lists three tools.
+Reload the Inspector's page and flip the switch on the card. If you stopped the Inspector, start it with the command of chapter 4. The **Tools** tab lists three tools.
 
 Run `searchSchema` with:
 
@@ -119,7 +119,7 @@ vet: Vet  # on type Visit
 ...
 ```
 
-The answer lists all 46 coordinates, best first, because the whole schema fits in 2000 tokens. A field below the root comes with the path that reaches it, such as `Query.vets -> Vet.visits` for `Visit.vet`. `Vet.specialties` and `Specialty.name` come third and fourth, so this result already holds every field the query needs. To see a whole type at once, read it with `introspectType`:
+The answer lists all 41 coordinates, best first, because the whole schema fits in 2000 tokens. A field below the root comes with the path that reaches it, such as `Query.vets -> Vet.visits` for `Visit.vet`. `Vet.specialties` and `Specialty.name` come third and fourth, so this result already holds every field the query needs. To see a whole type at once, read it with `introspectType`:
 
 ```json
 {"name": "Specialty"}
@@ -149,11 +149,11 @@ These are the calls a model makes, and it needs `introspectType` only when the s
 |---|---|---|
 | `doctors` | `Query.vets`, then `Vet.specialties` | *Nothing in this schema matched "doctors".* |
 | `contact details` | `Owner.telephone`, then `Owner.address` | *Nothing in this schema matched "contact details".* |
-| `¿Cuántas visitas ha tenido cada veterinario?` | `Vet.visits`, then `Visit.vet` | `OwnerPage.hasNext`, then `OwnerPage.hasPrevious`, then `Vet.visits` |
+| `Quantas consultas teve cada veterinário?` | `Query.vets`, then `Vet.visits` | *Nothing in this schema matched "Quantas consultas teve cada veterinário?".* |
 
 ## 5. Ask the assistant
 
-The assistant can only read now, so the first two lines of chapter 12's system prompt change: the first says how to use the three tools, and the second names the error a guest gets for an owner's telephone. Change the start of the system prompt:
+The assistant can only read now, so the first line of chapter 5's system prompt changes, and says how to use the three tools. Change the start of the system prompt:
 
 `src/main/java/org/springframework/samples/petclinic/chat/ChatController.java` (excerpt)
 
@@ -162,8 +162,6 @@ The assistant can only read now, so the first two lines of chapter 12's system p
 				You are the assistant of a veterinary clinic. Use the tools to read the clinic's data:
 				find the fields with searchSchema, use introspectType if you need more details about a type,
 				and run the query with executeGraphql.
-				Some fields, such as an owner's telephone, need a signed-in staff member, so when a tool answers
-				Forbidden, ask the user to sign in.
 				Today is %s. Answer briefly."""
 			.formatted(LocalDate.now().format(DAY));
 ```
@@ -174,15 +172,14 @@ Restart, open the assistant in the frontend, and ask:
 Does the clinic have a surgeon?
 ```
 
-The log shows the model's three steps:
+The log shows the model's steps:
 
 ```text
 DEBUG ... o.s.a.m.tool.DefaultToolCallingManager   : Executing tool call: searchSchema
-DEBUG ... o.s.a.m.tool.DefaultToolCallingManager   : Executing tool call: introspectType
 DEBUG ... o.s.a.m.tool.DefaultToolCallingManager   : Executing tool call: executeGraphql
 ```
 
-In our 5 runs with `granite4.1:8b`, every answer said yes and named Linda Douglas and Rafael Ortega, within 6 seconds. Four of the five answers also added a surgeon the data does not hold, such as "others" or "another vet". Asked for Lucía Navarro's telephone as a guest, the model asked us to sign in in all 3 of our runs.
+In our 10 runs with `qwen3:8b`, the model called `searchSchema` first every time, and `introspectType` in 2 of them. Nine runs ran a query and named the two surgeons, Linda Douglas and Rafael Ortega, one of them by id alone (*Vets 3 and 4 specialize in surgery*), within 11 to 41 seconds. The tenth answered yes after the search alone.
 
 Now ask:
 
@@ -190,17 +187,9 @@ Now ask:
 What kinds of pets does the clinic treat?
 ```
 
-In all 5 of our runs, the model answered with cats and dogs, guessed from the type `PetType`, before it ran a query. Four of the runs called `searchSchema` and `introspectType` first, and one called `searchSchema` alone. The clinic treats birds, cats, dogs, hamsters, lizards and snakes. Two stronger system prompts kept the same two calls in 10 more runs. The operation file `listPetTypes` answers this question in one call.
+In 2 of our 5 runs, the model ran a query and named the six kinds the clinic treats: birds, cats, dogs, hamsters, lizards and snakes. The other 3 stopped after `searchSchema` and answered from the schema, with a guess such as *dogs, cats, birds*. The operation file `listPetTypes` answers this question in one call.
 
-A real application can serve both kinds of tools: the operation files to every caller, and the three tools to signed-in staff. One property makes the three tools need the scope that chapter 13 gives staff:
-
-```properties
-gatool.mcp.operations.locations=classpath*:operations/
-# The three tools need the scope that chapter 13 gives staff, on top of mcp:tools
-gatool.dev.experimental.dynamic-operations.required-scopes=petclinic:write
-```
-
-A guest still sees the 14 tools, and a call to `searchSchema` gets `403` with `error="insufficient_scope"`: *searchSchema needs mcp:tools petclinic:write. The token holds mcp:tools and lacks petclinic:write.* We skip this setup in the workshop for time.
+A real application can serve both kinds of tools: the operation files to every caller, and the three tools to the callers it trusts with them, once the MCP endpoint has sign-in.
 
 ## 6. What a query from the model can do
 
@@ -208,65 +197,15 @@ A guest still sees the 14 tools, and a call to `searchSchema` gets `403` with `e
 
 | Document | Answer |
 |---|---|
-| `mutation { addVisit(input: {petId: 17, description: "x-ray"}) { id } }` | A **Tool Error**: *This server runs queries here, and that document is a mutation. gatool.dev.experimental.dynamic-operations.allow-mutations turns writing on, and it is an unsafe switch because the operation is one nobody reviewed.* |
+| `mutation { addVisit(input: {petId: 15, description: "x-ray"}) { id } }` | A **Tool Error**: *This server runs queries here, and that document is a mutation. gatool.dev.experimental.dynamic-operations.allow-mutations turns writing on, and it is an unsafe switch because the operation is one nobody reviewed.* |
 | `{ __schema { types { name } } }` | A **Tool Error**: *That document selects __schema, and introspection runs through the schema tools here: search the schema for what you need, and read one type in full by its name. __typename inside a selection is fine.* |
-| `{ vets { visits { pet { owner { pets { visits { vet { visits { pet { name } } } } } } } } } }` | A **Tool Error**: `maximum query depth exceeded 10 > 5`, from chapter 9's depth limit |
-| `{ owner(id: 12) { firstName lastName telephone } }` | Signed in as guest: `"telephone": null`, with a `FORBIDDEN` error from chapter 5's `@PreAuthorize`. Signed in as staff: `"telephone": "9521471193"`. |
+| A query that nests 16 levels, `{ vets { visits { pet { owner { pets { visits { vet { visits { pet { owner { pets { visits { vet { visits { pet { name } } } } } } } } } } } } } } } }` | A **Tool Error**: *That document is larger than this server runs: it nests fields 16 levels deep, and the limit is 15. Select fewer fields, nest less deeply, or split the question into two operations.* |
 
-GATool refuses mutations and introspection before the API sees the document. GATool's own size limits are 15 levels, 500 fields and 30 aliases, so chapter 9's stricter limits decide, and our resolvers check the caller's rights as they do for the operation files.
-
-## Exercise: count the visits
-
-Ask the assistant:
-
-```text
-How many visits has each vet had? Give their names.
-```
-
-The schema holds each vet's visits as a list, so the model reads every visit and counts them. In our 5 runs, every answer had at least one count wrong. Linda Douglas has 7 visits, and three answers said 6. James Carter has 15, and three answers said 13. A model reads text in tokens, and it miscounts the ids in a JSON answer, even in a list of 7. Make the counts right.
-
-<details>
-<summary>Show solution</summary>
-
-A field that counts the visits of a vet moves the arithmetic into the API. Replace the `Vet` type:
-
-`src/main/resources/graphql/schema.graphqls`
-
-```graphql
-"A veterinarian who works at the clinic."
-type Vet implements Person {
-    id: ID!
-    firstName: String!
-    lastName: String!
-    specialties: [Specialty!]!
-    "The visits this vet has seen or will see, newest first."
-    visits: [Visit!]!
-    "The number of visits this vet has seen or will see."
-    visitCount: Int!
-}
-```
-
-In `VetGraphQLController`, add this method below the `visits` method:
-
-`src/main/java/org/springframework/samples/petclinic/vet/VetGraphQLController.java`
-
-```java
-	@BatchMapping
-	Map<Vet, Integer> visitCount(List<Vet> vets) {
-		Map<Vet, List<Visit>> visits = visits(vets);
-		return vets.stream().collect(Collectors.toMap((vet) -> vet, (vet) -> visits.get(vet).size()));
-	}
-```
-
-`visitCount` calls the batch method of chapter 2, which reads the visits of every vet in one SQL statement, and returns the size of each list. Restart: the schema changed, so GATool embeds it again, and the log says `GATool is embedding 47 schema coordinates`. For the question `How many visits has each vet had?`, `searchSchema` now ranks `Vet.visitCount` first, because its description says what it holds. Ask the assistant again: the counts were right in all 5 of our runs, each within 4 seconds. A field that does the arithmetic gives every agent the right number.
-
-</details>
+GATool refuses mutations and introspection before the API sees the document, and its size limits of 15 levels, 500 fields and 30 aliases keep one query from reading the whole database. Every query that passes runs through our resolvers, as the operation files do.
 
 ## Recap
 
 - `generate-tools=dynamic-three-step` publishes `searchSchema`, `introspectType` and `executeGraphql`, with which a model writes its own query, and an operation location that does not exist serves them alone.
 - An embedding model turns a text into a vector, and the search ranks the fields by how close their vectors are to the question's, so `doctors` finds the vets.
-- A small model can answer before it runs a query, where an operation file answers in one call. `required-scopes` serves both kinds of tools, with the three for staff alone.
-- A query from the model runs only as a read, without introspection, within the size limits, and with the caller's rights.
-
-Chapter 15 builds a large schema from Spanish open data, and the assistant explores it with the same three tools.
+- A small model can answer before it runs a query, where an operation file answers in one call.
+- A query from the model runs only as a read, without introspection, and within the size limits.
