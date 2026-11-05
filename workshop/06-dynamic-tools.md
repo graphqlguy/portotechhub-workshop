@@ -2,14 +2,7 @@
 
 > **User story** · As the clinic manager, I want to ask the assistant any question about the clinic's data, such as whether the clinic has a surgeon, so that I get the answer without waiting for a new operation file.
 
-Each operation file answers a question we planned for, and every new question needs a new file and a new release. With three other tools from GATool, the model writes its own query: it searches the schema for the fields it needs, reads a type when it needs more details, and runs the query. In this chapter, MCP clients and the assistant get those three tools alone.
-
-By the end of this chapter, you will:
-
-- Know what an embedding is, and why the search uses one
-- Serve the three tools to MCP clients and to the assistant
-- Follow the model's three steps in the MCP Inspector
-- Know which checks apply to a query that the model wrote
+Each operation file answers a question we planned for, and every new question needs a new file and a new release. With three other tools from GATool, the model writes its own query: it searches the schema for the fields it needs, reads a type when it needs more details, and runs the query.
 
 ## 1. The three tools
 
@@ -19,15 +12,15 @@ By the end of this chapter, you will:
 | `introspectType` | The name of a type | The type's fields, with their arguments and descriptions |
 | `executeGraphql` | A query and its variables | The result, as an operation file's tool returns it |
 
-The search ranks **schema coordinates**: a coordinate names one field of one type, such as `Vet.visits`. One search returns at most 2000 tokens, however large the schema is, so the model reads only the part of the schema it needs, and a schema too large to read whole stays usable.
+The search ranks **schema coordinates**: a coordinate names one field of one type, such as `Vet.visits`. One search returns at most 2000 tokens however large the schema is, so a schema too large to read whole stays usable.
 
-Here the three tools replace the operation tools, so you can follow the model's steps on their own. `executeGraphql` runs queries only, so from this chapter on, MCP clients and the assistant can only read the clinic's data.
+Here the three tools replace the operation tools, so the model's steps are easy to follow. `executeGraphql` runs queries only, so MCP clients and the assistant can now only read the clinic's data.
 
 ## 2. Search by meaning
 
 A question often uses other words than the schema: a user asks for doctors, and the schema says vet. An **embedding model** turns a text into a vector, a list of numbers, and texts with a similar meaning get vectors that point the same way.
 
-Ollama serves an HTTP API on port 11434 for the models it runs. It runs on its own, apart from our application: on macOS and Windows the Ollama app starts it, and on Linux the installer sets it up as a service. Spring AI calls its `/api/embed` endpoint for every vector GATool needs: the schema's fields at startup, and each question. You can send the same request for one word with `curl`, on macOS, Linux or Git Bash. PowerShell handles the quotes differently, so you might need to adjust the command there.
+Spring AI asks Ollama's `/api/embed` endpoint, on port 11434, for every vector GATool needs: one for each schema field at startup, and one for each question. This is the same request for one word (PowerShell needs different quotes):
 
 ```bash
 curl -s http://localhost:11434/api/embed -d '{"model": "qwen3-graphql-embedder", "input": "doctors"}'
@@ -45,13 +38,13 @@ The vector holds 1,024 numbers. Two vectors are compared by the angle between th
 | The kinds of pet the clinic treats, sorted by name. | `Query.petTypes` | 0.31 |
 | Owners, one page at a time, sorted by last name unless the sort argument says otherwise. | `Query.owners` | 0.09 |
 
-`searchSchema` works the same way. At startup, GATool asks the embedding model for the vector of every field a query can reach: the root fields, such as `Query.vets`, and the fields of the types behind them, such as `Vet.visits`. GATool embeds the nested fields too, because a question often asks about a detail, such as a vet's visits, and each result names the root field the query starts from. GATool writes each field as a declaration with its description, and caches the vectors on disk. For each question, it ranks the fields by their similarity to the question's vector and returns the best ones within 2000 tokens.
+`searchSchema` works the same way. At startup, GATool embeds every field a query can reach, written as its declaration with its description: the root fields, such as `Query.vets`, and the fields behind them, such as `Vet.visits`, because a question often asks about a detail. It caches the vectors on disk. For each question, it ranks the fields by similarity and returns the best ones within 2000 tokens, each with the root field its query starts from.
 
-The model the setup pulled is Qwen3-Embedding-0.6B, fine-tuned on 4,788 pairs of a question and the field that answers it, because a schema is camelCase names and type signatures, while most embedding models learn from prose. Its model card gives the right field among the first 50 results for 63.6% of the 816 questions of the GraphQL AI Working Group's benchmark, against 59.8% for OpenAI's `text-embedding-3-large` and 58.5% for the model before the fine-tune.
+The setup pulled Qwen3-Embedding-0.6B, fine-tuned on 4,788 pairs of a question and the field that answers it, because a schema is camelCase names and type signatures, and most embedding models learn from prose. Its model card reports the right field among the first 50 results for 63.6% of the 816 questions in the GraphQL AI Working Group's benchmark, against 59.8% for OpenAI's `text-embedding-3-large` and 58.5% before the fine-tune.
 
 ## 3. Serve the three tools
 
-In `application.properties`, point both operation locations at a folder that does not exist. The `optional:` prefix lets Spring accept a missing folder, so GATool reads zero operation files and leaves the files where they are. Replace the first two lines below `# MCP`:
+In `application.properties`, point both operation locations at a missing folder. The `optional:` prefix lets Spring accept it, so GATool reads zero operation files, and the files stay where they are. Replace the first two lines below `# MCP`:
 
 `src/main/resources/application.properties` (excerpt)
 
@@ -73,7 +66,7 @@ gatool.dev.experimental.dynamic-operations.search-backend=embedding
 spring.ai.ollama.embedding.model=qwen3-graphql-embedder
 ```
 
-`spring.ai.ollama.embedding.model` names the model that Spring AI asks Ollama for, the name that `ollama cp` gave it in the setup. Ollama loads the model into memory at the first request that names it, and unloads it after 5 minutes without requests: `ollama ps` lists the models it holds.
+`spring.ai.ollama.embedding.model` is the name that `ollama cp` gave the model in the setup. Ollama loads it at the first request and unloads it after 5 idle minutes.
 
 Replace the first two lines below `# Chat`:
 
@@ -92,10 +85,10 @@ WARN ... i.g.b.a.GAToolAutoConfiguration          : gatool.dev.experimental.gene
 INFO ... i.g.b.a.GAToolAutoConfiguration          : GATool publishes searchSchema, introspectType, executeGraphql, ranking 41 schema coordinates with EMBEDDING and returning up to 2000 tokens of results per call.
 ```
 
-GATool warns that it serves zero MCP tools, which is what the empty folder is for, and that a model can now run queries it wrote itself: step 6 shows the checks that still apply. The 41 coordinates are the fields a query can reach: 5 on `Query`, and 36 on the types behind them, such as `Owner`, `Pet` and `Visit`. The mutations and the deprecated `ownersAll` stay out of the search. On our laptop, embedding them took under a second, and the next start reads them from the cache.
+The first warning is what the missing folder is for, and the second concerns queries the model writes, which step 6 covers. The 41 coordinates are 5 fields on `Query` and 36 on the types behind them. The mutations and the deprecated `ownersAll` stay out of the search. On our laptop, embedding them took under a second, and the next start reads them from the cache.
 
 > [!NOTE]
-> The embedding model runs in Ollama. With a hosted model from chapter 5, add `gatool.dev.experimental.dynamic-operations.search-backend=bm25` to its `application-<name>.properties`: BM25 ranks the fields by their words, and runs without a model. With the Mistral or OpenAI starter, the application holds two embedding models, and GATool stops at startup and asks which one to use. The tests run without Ollama, so `src/test/resources/config/application.properties` sets `bm25` for them.
+> With a hosted model from chapter 5, add `gatool.dev.experimental.dynamic-operations.search-backend=bm25` to its `application-<name>.properties`: BM25 ranks the fields by their words and works without an embedding model. With the Mistral or OpenAI starter, the application holds two embedding models, and GATool stops at startup and asks which one to use. The tests run without Ollama, so `src/test/resources/config/application.properties` sets `bm25` for them.
 
 ## 4. Follow the three steps in the Inspector
 
@@ -143,7 +136,7 @@ Run `executeGraphql` with:
 {"data":{"vets":[{"firstName":"James","lastName":"Carter","specialties":[]},{"firstName":"Helen","lastName":"Leary","specialties":[{"name":"radiology"}]},{"firstName":"Linda","lastName":"Douglas","specialties":[{"name":"dentistry"},{"name":"surgery"}]},...
 ```
 
-These are the calls a model makes, and it needs `introspectType` only when the search result leaves out a field it wants. Run `searchSchema` with these three questions to see the search by meaning. The last column shows what the same searches return with BM25, the search by words that the tests use:
+A model calls `introspectType` only when the search result lacks a field it wants. Run `searchSchema` with these three questions to see the search by meaning. The last column shows what BM25, the search by words, returns for them:
 
 | Question | By meaning | By words (BM25) |
 |---|---|---|
@@ -153,7 +146,7 @@ These are the calls a model makes, and it needs `introspectType` only when the s
 
 ## 5. Ask the assistant
 
-The assistant can only read now, so the first line of chapter 5's system prompt changes, and says how to use the three tools. Change the start of the system prompt:
+The assistant can only read now, and the system prompt says how to use the three tools. Change its start:
 
 `src/main/java/org/springframework/samples/petclinic/chat/ChatController.java` (excerpt)
 
@@ -193,7 +186,7 @@ A real application can serve both kinds of tools: the operation files to every c
 
 ## 6. What a query from the model can do
 
-`executeGraphql` runs a query the model wrote, so it passes through every check of the API, and GATool adds checks of its own. These are documents we sent with `executeGraphql` from the Inspector, and the answers they got:
+A query the model wrote passes through every check of the API, and GATool adds checks of its own. We sent these documents with `executeGraphql` from the Inspector:
 
 | Document | Answer |
 |---|---|
