@@ -2,18 +2,13 @@
 
 > **User story** · As the receptionist, I want to book visits, register new clients and their pets, and correct their details, so that the front desk works from one screen.
 
-So far the API only reads. In this chapter it starts to change data. First we give dates a type of their own, because the new operations take dates as input. Then we add the `Mutation` type, input types, variables, and an update that changes only the fields a client sends.
-
-By the end of this chapter, you will:
-
-- Add a custom scalar and use it in results and in input
-- Write mutations with `@MutationMapping`
-- Pass structured input with `input` types, and values with variables
-- Write a partial update: a mutation that changes the fields the client sends, and keeps the others as they are
+This chapter gives dates a type of their own, because the new operations take dates as input, and then lets the API change data.
 
 ## 1. A type for dates
 
-`birthDate` and `date` are strings at the moment. A client cannot tell a date from a name, and the API would accept any text where a date belongs. GraphQL has five built-in scalars, `Int`, `Float`, `String`, `Boolean` and `ID`, and lets a schema add its own. The GraphQL Java project publishes common ones, among them a `Date`. Add the library next to the GraphQL starter:
+> **In REST** · A date travels as a JSON string, and only the documentation, such as an OpenAPI `format: date`, says how to write it. A GraphQL scalar puts that rule in the schema, and the engine checks every value.
+
+`birthDate` and `date` are strings at the moment. A client cannot tell a date from a name, and the API would accept any text where a date belongs. GraphQL has five built-in scalars, `Int`, `Float`, `String`, `Boolean` and `ID`, and lets a schema add its own. The GraphQL Java project publishes common ones, among them a `Date`, in a library. Add it next to the GraphQL starter:
 
 `pom.xml`
 
@@ -28,7 +23,7 @@ By the end of this chapter, you will:
 > [!NOTE]
 > With Gradle, add `implementation 'com.graphql-java:graphql-java-extended-scalars:24.0'` to `build.gradle`.
 
-A scalar needs Java code that turns values into text and back, and the library provides it. We register it with the engine. **Create a new class** named `GraphQLScalarsConfiguration` in the `org.springframework.samples.petclinic.system` package:
+A scalar needs Java code that turns values into text and back. The library provides it, and we register it with the engine: **create a new class** named `GraphQLScalarsConfiguration` in the `org.springframework.samples.petclinic.system` package:
 
 `src/main/java/org/springframework/samples/petclinic/system/GraphQLScalarsConfiguration.java`
 
@@ -74,19 +69,21 @@ type Visit {
 
 Change the existing `birthDate` and `date` lines; do not add second ones.
 
-GraphQL accepts the definitions of a schema in any order, so a field may use a type that is declared further down. We declare scalars first, so that a reader meets `Date` before the fields that use it.
+GraphQL accepts the definitions of a schema in any order. We declare scalars first, so that a reader meets `Date` before the fields that use it.
 
 | Element | Meaning |
 |---|---|
 | `scalar Date` | Declares a type whose values are single pieces of text or numbers, with rules the server applies. |
 | `RuntimeWiringConfigurer` | Hands the engine the Java code behind the scalar. The schema declares it, the wiring implements it. |
-| `@specifiedBy` | Points clients to the scalar's specification. The [LocalDate](https://scalars.graphql.org/andimarek/local-date) entry of the GraphQL scalars registry describes a date without a time, such as `2026-10-21`. Tools read the URL: in chapter 4, GATool gives the tools' dates a type and a format from it. |
+| `@specifiedBy` | Points clients to the scalar's specification. The [LocalDate](https://scalars.graphql.org/andimarek/local-date) entry of the GraphQL scalars registry describes a date without a time, such as `2026-10-21`. |
 
 Restart and run the query from chapter 2 again. The dates look the same, `"2026-01-01"`, but the documentation explorer now shows them as `Date`, described as *An RFC-3339 compliant Full Date Scalar*. In Java, they arrive and leave as `LocalDate`.
 
 ## 2. Your first mutation: book a visit
 
-Queries read, and **mutations** change data. A schema declares them in a second root type, `Mutation`. Booking a visit takes four values, so we group them in an **input type**. Add both to the schema:
+> **In REST** · Booking a visit would be `POST /pets/{petId}/visits`, with the visit as a JSON body. In GraphQL, every request goes to `POST /graphql`: the `Mutation` type holds the fields that change data, and an input type takes the place of the request body.
+
+**Mutations** change data, and a schema declares them in a second root type, `Mutation`. Booking a visit takes four values, so we group them in an **input type**. Add both to the schema:
 
 `src/main/resources/graphql/schema.graphqls`
 
@@ -112,9 +109,9 @@ input AddVisitInput {
 }
 ```
 
-The description of a mutation says what a second call does. A client that loses the answer to a call, such as an agent whose connection timed out, needs to know whether it may simply call again.
+The description of a mutation says what a second call does. A client that loses the answer to a call, such as a mobile app whose connection timed out, needs to know whether it may simply call again.
 
-The Java side is one method. The starting point has a matching `AddVisitInput` record, and Spring for GraphQL fills it in by matching the field names. **Create a new class** named `VisitGraphQLController` in the `org.springframework.samples.petclinic.owner.visit` package:
+The starting point has a matching `AddVisitInput` record, and Spring for GraphQL fills it in by matching the field names. **Create a new class** named `VisitGraphQLController` in the `org.springframework.samples.petclinic.owner.visit` package:
 
 `src/main/java/org/springframework/samples/petclinic/owner/visit/VisitGraphQLController.java`
 
@@ -161,9 +158,9 @@ mutation {
 }
 ```
 
-The answer is the new visit, with id 11: the seed data has 10. A mutation returns an object like any query, so the client asks for exactly the fields it needs next. When an operation has several mutation fields, GraphQL runs them one after another, in order, where it may run the fields of a query in parallel.
+The answer is the new visit, with id 11: the seed data has 10. A mutation returns an object like any query, so the client asks for the fields it needs next. When an operation has several mutation fields, GraphQL runs them one after another, in order, where it may run the fields of a query in parallel.
 
-`date` is a `Date`, so the scalar also checks what clients send. Run the mutation again with the date written the way many people do, `date: "30/10/2026"`. The engine refuses it during validation, before our code runs, so the clinic's visits stay as they were:
+The scalar also checks what clients send. Run the mutation again with `date: "30/10/2026"`. The engine refuses it during validation, before our code runs, so the clinic's visits stay as they were:
 
 ```text
 Validation error (WrongType@[addVisit]) : argument 'input.date' with value 'StringValue{value='30/10/2026'}' is not a valid 'Date' - Invalid RFC3339 full date value : '30/10/2026'. ...
@@ -171,7 +168,11 @@ Validation error (WrongType@[addVisit]) : argument 'input.date' with value 'Stri
 
 ## 3. Variables: register an owner
 
-So far every value sat inside the query text. Real clients keep the operation fixed and send the values separately, as **variables**. Add the mutation and its input:
+So far every value sat inside the query text. Real clients keep the operation fixed and send the values separately, as **variables**.
+
+> **In REST** · The endpoint stays the same, and each call sends its own values in the path, the query string or the JSON body. Variables give GraphQL the same split: one operation text, and the values of each call next to it as JSON.
+
+Add the mutation and its input:
 
 `src/main/resources/graphql/schema.graphqls`
 
@@ -243,7 +244,7 @@ Run it, and Ana Sousa is owner 12.
 | `$input: AddOwnerInput!` | A **variable** with its type. The engine checks the value against the type, as it checks a literal. |
 | `addOwner(input: $input)` | Uses the variable where a literal value would go. |
 
-Every operation the frontend sends is written this way: open `src/main/resources/operations/mutations/addOwner.graphql`. The text of the operation stays the same, and only the variables change. Chapter 4 relies on that.
+Every operation the frontend sends is written this way, as a file such as `src/main/resources/operations/mutations/addOwner.graphql`. Chapter 4 relies on that.
 
 Leave `telephone` out of the variables and run it again. The engine refuses the input, because the schema says the field is required:
 
@@ -251,11 +252,15 @@ Leave `telephone` out of the variables and run it again. The engine refuses the 
 Variable 'input' has an invalid value: Field 'telephone' has coerced Null value for NonNull type 'String!'
 ```
 
-Then send a telephone of `"123"`. That value is a valid `String`, so the engine passes it to our code, and the service refuses it. The answer is an `INTERNAL_ERROR`, with the reason hidden in the log. Chapter 4 turns it into an error a client can act on.
+Then send a telephone of `"123"`. That value is a valid `String`, so the engine passes it to our code, and the service refuses it. The answer is an `INTERNAL_ERROR`, and the reason stays in the log. Chapter 4 turns it into an error a client can act on.
 
 ## 4. Partial updates: correct an owner's details
 
-An update should change the fields the client sends and keep the rest. Make every field optional except the id:
+An update should change the fields the client sends and keep the rest.
+
+> **In REST** · This is `PATCH /owners/{id}`, with only the changed fields in the body. A `PUT` would replace the whole owner.
+
+Make every field optional except the id:
 
 `src/main/resources/graphql/schema.graphqls`
 
@@ -310,9 +315,11 @@ Refresh the frontend. The owner pages now have **Add owner** and **Edit owner**,
 
 ## Exercises
 
+The frontend's pet forms and the later chapters use the code of both exercises, so paste each solution and restart.
+
 ### Exercise 1: add a pet
 
-The **Add pet** form needs two operations: a `petTypes` query for its list of types, and an `addPet` mutation. Write both. `PetService` has `findPetTypes()` and `addPet(AddPetInput)`, and `AddPetInput` has `ownerId`, `name`, `birthDate` and `typeId`. Put them in a new `PetGraphQLController` in the `owner.pet` package. Then add a pet in the frontend.
+The **Add pet** form needs a `petTypes` query for its list of types and an `addPet` mutation, both in a new `PetGraphQLController` that calls `PetService`. Paste the solution, restart, and add a pet in the frontend.
 
 <details>
 <summary>Show solution</summary>
@@ -387,7 +394,7 @@ class PetGraphQLController {
 
 ### Exercise 2: edit a pet
 
-Add an `updatePet` mutation that changes the fields it gets and keeps the rest, like `updateOwner`. `PetService.updatePet` takes an `UpdatePetInput` with `id`, `name`, `birthDate` and `typeId`. Then rename a pet in the frontend, and try giving it the name of its sibling: you get an `INTERNAL_ERROR`, which chapter 4 improves.
+`updatePet` changes the fields it gets and keeps the rest, like `updateOwner`. Paste the solution, restart, and rename a pet in the frontend. Giving it the name of its sibling returns an `INTERNAL_ERROR`, which chapter 4 improves.
 
 <details>
 <summary>Show solution</summary>
@@ -429,5 +436,3 @@ Pet updatePet(@Argument UpdatePetInput input) {
 - `input` types group the values of an argument, and Spring for GraphQL fills a matching record.
 - Variables keep the operation fixed and send the values separately.
 - An update with optional fields changes the fields the client sends, and keeps the others as they are.
-
-Chapter 4 turns exceptions into errors a client can act on.
