@@ -2,18 +2,11 @@
 
 > **User story** · As the clinic's receptionist, I want to look up owners by last name or city, a page at a time, so that I can find a client while they wait at the desk.
 
-GraphQL lets a client ask for exactly the fields it needs. In this chapter we turn Petclinic into a GraphQL service: we add the dependency, write our first schema, connect it to the services that are already there, and finish with a query that filters, sorts and pages.
-
-By the end of this chapter, you will:
-
-- Have a running GraphQL endpoint with an in-browser IDE (GraphiQL)
-- Understand schema-first development: the schema is the contract, and Java implements it
-- Write queries with arguments, default values and input types
-- Change an API without breaking its clients, using `@deprecated`
+GraphQL lets a client ask for exactly the fields it needs.
 
 ## 1. Add the dependency
 
-Spring for GraphQL builds on GraphQL Java and wires it up the Spring way, so you rarely touch the engine directly. One starter brings in everything we need. Add it to the `<dependencies>` section, next to `spring-boot-starter-webmvc`:
+Spring for GraphQL runs GraphQL Java, the engine that checks and executes queries, and one starter brings in both. Add it to the `<dependencies>` section, next to `spring-boot-starter-webmvc`:
 
 `pom.xml`
 
@@ -29,7 +22,7 @@ Spring for GraphQL builds on GraphQL Java and wires it up the Spring way, so you
 
 ## 2. Turn on GraphiQL
 
-GraphiQL is an in-browser IDE for GraphQL: a query editor with autocomplete and the API's documentation, served by our own application. It is off by default. Add these two lines below the `# Web` section:
+GraphiQL is an in-browser IDE for GraphQL: a query editor with autocomplete and the API's documentation. It is off by default. Add these two lines below the `# Web` section:
 
 `src/main/resources/application.properties`
 
@@ -39,6 +32,8 @@ spring.graphql.graphiql.enabled=true
 ```
 
 ## 3. Write your first schema
+
+> **In REST** · We would add an endpoint, `GET /owners`, that returns every owner as JSON. In GraphQL, the same request is a field of the `Query` type, `ownersAll`, and we declare it in the schema below.
 
 This is schema-first development: we describe the API in the GraphQL Schema Definition Language (SDL), and only then implement it. Spring reads the `.graphqls` files under `src/main/resources/graphql/`, so **create a folder named `graphql`** under `src/main/resources`, and in it **a file named `schema.graphqls`** with one query and one type:
 
@@ -82,24 +77,11 @@ SDL has two kinds of text, for different readers:
 
 | Syntax | Who reads it | Use it for |
 |---|---|---|
-| `"..."`, or `"""..."""` for several lines | **Clients.** A description is part of the schema: introspection returns it, GraphiQL shows it, and the AI agents of the second half read it. | What a client of the API needs to know |
+| `"..."`, or `"""..."""` for several lines | **Clients.** A description is part of the schema: introspection returns it, and GraphiQL shows it. | What a client of the API needs to know |
 | `# ...` | **People reading the file**, as long as the definition below it has a description | Notes for whoever edits the schema |
 
 > [!IMPORTANT]
 > When a type or a field lacks a description, GraphQL Java takes the comment lines directly above it as its description, and sends them to every client. That is why `Query` has a description here: the comment above it then stays in the file.
-
-### What an agent reads
-
-In chapter 4 the client is an AI agent. It reads the schema the way GraphiQL does, and decides what to call from the names and the descriptions alone: a developer who is unsure can ask a colleague, and an agent acts on what the schema says. So we write each description for that reader, and answer the questions a caller has before it calls:
-
-| Say | Example |
-|---|---|
-| Where an id comes from | "The owners query gives the ids of owners." |
-| What `null` means | "or null when no owner has the id" |
-| What a repeated call does | "Every call books one more visit." |
-| How to write a value | "written as 2026-10-21", "ten digits" |
-
-An agent that knows where an id comes from calls that query first, and avoids guessing a number. We write the descriptions as the schema grows, so it is ready for agents by chapter 4.
 
 ## 4. Start the server and explore
 
@@ -125,7 +107,16 @@ GraphQL endpoint HTTP POST /graphql
 > [!NOTE]
 > If startup fails with `Port 8080 was already in use`, another program holds the port. See [changing the port](../README.md#changing-the-port), and use your port in place of `8080` in the addresses below.
 
-Open GraphiQL at [http://localhost:8080/graphiql](http://localhost:8080/graphiql) and click the book icon at the top left to open the documentation explorer. `ownersAll` and the `Owner` type are there, with their descriptions. Nobody wrote this documentation by hand: GraphiQL asked the API for its own schema. This is called **introspection**, and the frontend and the agents use it too. Compare the two kinds of text: the descriptions of `Query`, `ownersAll`, `Owner` and `telephone` are there, and the `#` comments are missing.
+Open GraphiQL at [http://localhost:8080/graphiql](http://localhost:8080/graphiql) and click the book icon at the top left to open the documentation explorer. It shows `ownersAll` and `Owner` with their descriptions, and leaves out the `#` comments. GraphiQL read all of it from the API: a client can ask a GraphQL API for its schema, which is called **introspection**.
+
+> [!NOTE]
+> The browser downloads GraphiQL's code from the `esm.sh` CDN. If the page stays on **Loading...**, check in this order:
+>
+> 1. **Can the browser reach the CDN?** Open [https://esm.sh/graphiql@5.2.1/dist/style.css](https://esm.sh/graphiql@5.2.1/dist/style.css) in the same browser. If it fails, a VPN, a company proxy, a DNS filter or the venue Wi-Fi is blocking it.
+> 2. **Browser extensions.** Ad and script blockers can block `esm.sh`. Try a private window, where most extensions are off.
+> 3. **An old browser.** GraphiQL loads its code with import maps, which need Chrome 89, Firefox 108 or Safari 16.4 or newer.
+>
+> If the page still stays on **Loading...**, send the queries of this workshop from the Postman desktop app to `http://localhost:8080/graphql`, as [Create GraphQL requests in Postman](https://learning.postman.com/docs/use/send-requests/protocols/graphql/graphql-client-first-request/) shows.
 
 Now run this query in the editor, with the ▶ button:
 
@@ -153,13 +144,13 @@ The answer is an error:
 }
 ```
 
-The error is expected: the schema promises a non-null list, and GraphQL checks that promise on every response. The Java code that keeps it comes next.
+The error is expected: the schema promises a non-null list, and GraphQL checks that promise on every response.
 
 ## 5. Implement the controller
 
-The service layer is ready: `OwnerService` reads the owners from the database. We add the GraphQL entry point, a controller whose methods Spring for GraphQL maps to schema fields.
+`OwnerService` already reads the owners from the database. We add a controller whose methods Spring for GraphQL maps to schema fields.
 
-**Create a new Java class** named `OwnerGraphQLController` in the `org.springframework.samples.petclinic.owner` package, next to `OwnerService` in `src/main/java/org/springframework/samples/petclinic/owner/`. That package already has an `OwnerController`, which serves the Petclinic web pages, so ours gets `GraphQL` in its name.
+**Create a new Java class** named `OwnerGraphQLController` in the `org.springframework.samples.petclinic.owner` package, next to `OwnerService`. The name differs from `OwnerController`, which serves the Petclinic web pages.
 
 `src/main/java/org/springframework/samples/petclinic/owner/OwnerGraphQLController.java`
 
@@ -198,12 +189,14 @@ Restart the application: stop it with `Ctrl+C`, and run `./mvnw spring-boot:run`
 
 Remove `id` from the query, or add `firstName` and `city`, and run it again. The answer always has exactly the fields you asked for: in GraphQL, **the client decides the shape of the response**.
 
+> **In REST** · `GET /owners` returns the fields its server chose, the same ones to every client.
+
 ## 6. Fetch a single owner
 
-Clients also need one owner at a time. This query takes an argument.
+> **In REST** · One owner is `GET /owners/{id}`, and an unknown id answers `404 Not Found`. In GraphQL, the id is an argument of the `owner` field.
 
 > [!NOTE]
-> From here on, the code shows only **what changes**. A `# ...existing queries...` comment stands for what is already in the file and stays as it is. Add the new lines to the existing `Query` type; do not replace the whole block.
+> From here on, the code shows only **what changes**: `# ...existing queries...` stands for what is already in the file. Add the new lines to the existing `Query` type, and keep the rest of the block.
 
 Schema first:
 
@@ -263,7 +256,11 @@ Try `owner(id: 999)` as well. The answer is `{"data": {"owner": null}}`, as the 
 
 ## 7. Evolve the API: filtering, sorting and paging
 
-`ownersAll` returns every owner in one response. That works for 11 owners, and it stops working for a clinic with thousands: the response and the memory it takes grow with every new client, so we need paging and filtering. Clients may already depend on `ownersAll`, so we mark it as deprecated and add a better query next to it. Change the `ownersAll` line:
+`ownersAll` returns every owner in one response, so the response and the memory it takes grow with every new client. We add a query with paging and filtering, and since clients may already use `ownersAll`, we keep it and mark it as deprecated.
+
+> **In REST** · Paging, filtering and sorting go in query parameters, such as `GET /owners?city=Madison&sort=firstName,desc&page=0&size=2`, and a changed endpoint often gets a new version, such as `/v2/owners`. In GraphQL, they are arguments of a new field, and `@deprecated` marks the old one.
+
+Change the `ownersAll` line:
 
 `src/main/resources/graphql/schema.graphqls`
 
@@ -351,7 +348,7 @@ OwnerPage owners(@Argument OwnerFilter filter, @Argument int page, @Argument int
 }
 ```
 
-Restart, open the documentation explorer again, and look at `ownersAll`: GraphiQL now marks it as deprecated and shows our reason. Chapter 6 uses the same mark to leave `ownersAll` out of the schema search it gives AI agents. Try the new query:
+Restart, open the documentation explorer again, and look at `ownersAll`: GraphiQL now marks it as deprecated and shows our reason. Try the new query:
 
 ```graphql
 query {
@@ -389,14 +386,12 @@ npm run dev
 
 Open [http://localhost:5173](http://localhost:5173). The home page lists what the API can do so far, and **Find owners** is live: filtering by last name and city, sorting and paging, all through the `owners` query you just wrote. Click an owner to open their page.
 
-The frontend sends only the operations in `src/main/resources/operations`. Open `queries/findOwners.graphql`: it is a query like the ones you wrote in GraphiQL, with variables in place of the values. We come back to this folder in chapter 4.
-
 > [!TIP]
 > Each time you extend the schema from now on: restart the backend, then refresh the browser. The frontend reads the schema again and turns on whatever is new.
 
 ## Exercises
 
-The **Veterinarians** page needs two queries. `VetService` is ready, and so are the `Vet` and `Specialty` entities. You write the schema and the controller, in the same order as above: schema first, then Java. The frontend and the later chapters use both queries, so if you are short of time, copy the solutions.
+The **Veterinarians** page needs two queries, and the later chapters use both. `VetService` and the `Vet` and `Specialty` entities are ready. Write the first query yourself, schema and then controller, and paste the solution of the second.
 
 ### Exercise 1: list the vets
 
@@ -463,7 +458,7 @@ class VetGraphQLController {
 
 ### Exercise 2: fetch a single vet
 
-Add a `vet(id: ID!)` query. `VetService.findById` returns the vet, or throws an `EntityNotFoundException` when no vet has the id. Query `vet(id: 99)` and look at what GraphQL makes of the exception, in the response and in the application's log. Chapter 4 turns it into a clear error. With this query, clicking a vet in the frontend opens their page.
+Paste the solution: it adds a `vet(id: ID!)` query, and clicking a vet in the frontend then opens their page. `VetService.findById` throws an `EntityNotFoundException` for an unknown id, so query `vet(id: 99)` and look at what GraphQL makes of the exception, in the response and in the application's log. Chapter 4 turns it into a clear error.
 
 <details>
 <summary>Show solution</summary>
@@ -516,5 +511,3 @@ The log has the details: `Unresolved EntityNotFoundException for executionId e93
 - `@QueryMapping` binds a `Query` field to a controller method, and `@Argument` binds its arguments.
 - The client chooses the fields, and the response has exactly those.
 - An API grows in place: `@deprecated` and a better query, without a `/v2`.
-
-Chapter 2 connects owners to their pets, pets to their visits, and visits to the vets who saw them.
