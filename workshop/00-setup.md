@@ -76,7 +76,7 @@ The chat model needs about 8 GB of free memory, so a laptop with 16 GB of RAM wo
 | Windows | Settings > System > About > Installed RAM |
 | Linux | `free -h` |
 
-> **With 8 GB of RAM**, the operating system, the IDE, the browser and the application already use most of it, so `qwen3:8b` may fail to load or answer very slowly. Pull `qwen3:4b` instead (2.5 GB, [all sizes](https://ollama.com/library/qwen3)), and in chapter 5 set `spring.ai.ollama.chat.model=qwen3:4b`. If both run too slowly, chapter 5 shows how to use a hosted model instead.
+> **With 8 GB of RAM**, the operating system, the IDE, the browser and the application already use most of it, so `qwen3:8b` may fail to load or answer very slowly. Pull `qwen3:4b` instead (2.5 GB, [all sizes](https://ollama.com/library/qwen3)), and in chapter 5 set `spring.ai.ollama.chat.model=qwen3:4b`. It took 3.9 GB in our runs, and booked chapter 5's visit on the right day with the right vet 5 times in 5, in 35 to 48 seconds. If both run too slowly, chapter 5 shows how to use a hosted model instead.
 
 RAM decides whether a model can run at all, and a graphics card decides how fast it runs. The card helps when the whole model fits in its own memory. When it does not fit, Ollama runs the model, or part of it, on the CPU, which works but is slower. On a Mac with Apple Silicon the CPU and GPU share the same memory, so RAM is the only number to check. While a model runs, `ollama ps` shows where it loaded, for example `100% GPU` or `48%/52% CPU/GPU` ([Ollama FAQ](https://docs.ollama.com/faq)).
 
