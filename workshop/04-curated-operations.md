@@ -2,15 +2,7 @@
 
 > **User story** · As the clinic manager, I want the AI assistants the staff already use to work with our API through the operations our frontend already sends, so that they can look up owners and book visits by asking in their own words.
 
-The Model Context Protocol (MCP) is an open standard for connecting AI applications to the systems they work with. A server publishes **tools**, and the AI application hands them to its model, which picks a tool and its arguments. In this chapter, [GATool](https://github.com/api-agent-bridge/gatool) publishes the frontend's operation files as MCP tools. Each file is an operation written for one question and described for its reader, so each tool selects what its question needs.
-
-By the end of this chapter, you will:
-
-- Know how an MCP server, its tools and an AI application fit together
-- Publish operation files as MCP tools with GATool
-- List and call the tools with the MCP Inspector
-- Know what an operation file decides about its tool
-- Turn exceptions into errors a model can act on
+The Model Context Protocol (MCP) is an open standard for connecting AI applications to the systems they work with. In this chapter, [GATool](https://github.com/api-agent-bridge/gatool) publishes the frontend's operation files as MCP tools, one tool for each file.
 
 ## 1. MCP in brief
 
@@ -21,11 +13,9 @@ By the end of this chapter, you will:
 | MCP client | The part of an AI application that connects to a server, lists its tools, and calls the one the model picks. The MCP Inspector is a client for trying a server by hand. |
 | `tools/list`, `tools/call` | The two requests this chapter uses. They are JSON-RPC messages, sent with HTTP POST to the endpoint (the **Streamable HTTP** transport). |
 
-GATool turns each operation file into one tool. The tool's arguments are the operation's variables, its description comes from the file's comments and from the schema descriptions of chapters 1 to 3, and a call runs the operation inside our application.
-
 ## 2. The frontend's operations
 
-The frontend sends only the operations in two folders, one `.graphql` file each:
+The frontend's operations live in two folders, one `.graphql` file each:
 
 | Folder | Holds |
 |---|---|
@@ -59,7 +49,7 @@ query FindOwners($lastName: String, $city: String, $page: Int = 0, $size: Int = 
 }
 ```
 
-The `#` lines say what the operation is for and which operation to call next, written the way the schema's descriptions are. The selection leaves `telephone` out, since the list of owners does not show it. Somebody decided what the answer to this question holds, and the tool inherits that decision: an agent gets the same small answer the frontend gets.
+The `#` lines say what the operation is for and which operation to call next. The selection decides what the answer holds: it leaves `telephone` out, because the list of owners does not show it. The tool inherits that decision, so an agent gets the same small answer the frontend gets.
 
 ## 3. Add GATool
 
@@ -145,28 +135,8 @@ The Inspector opens in your browser, with one server card, `localhost:8080`.
 
 1. Flip the switch on the card. It says **Connected**, and the **Messages** panel on the right lists the requests the Inspector sent, `INITIALIZE` and `TOOLS/LIST` among them.
 2. Open the **Tools** tab at the top. It lists the 10 tools.
-3. Select `findOwners`. The description is the four `#` lines of the file. The arguments are the variables, with their defaults, and `sortBy` and `order` are lists to choose from, filled with the values of their enums. `lastName` reads *Keeps the owners whose last name starts with this text*: the variable fills `OwnerFilter.lastName`, and GATool takes that field's description from the schema.
-4. Type `Madison` in **city** and click **Execute Tool**:
-
-```json
-{
-  "data": {
-    "owners": {
-      "totalElements": 4,
-      "totalPages": 1,
-      "currentPage": 0,
-      "hasNext": false,
-      "hasPrevious": false,
-      "content": [
-        { "id": "8", "firstName": "Maria", "lastName": "Escobito", "address": "345 Maple St.", "city": "Madison" },
-        { "id": "1", "firstName": "George", "lastName": "Franklin", "address": "110 W. Liberty St.", "city": "Madison" },
-        { "id": "5", "firstName": "Peter", "lastName": "McTavish", "address": "2387 S. Fair Way", "city": "Madison" },
-        { "id": "9", "firstName": "David", "lastName": "Schroeder", "address": "2749 Blackhawk Trail", "city": "Madison" }
-      ]
-    }
-  }
-}
-```
+3. Select `findOwners`. `sortBy` and `order` are lists filled with the values of their enums, and `lastName` carries the schema's description of `OwnerFilter.lastName`, *Keeps the owners whose last name starts with this text*.
+4. Type `Madison` in **city** and click **Execute Tool**. The answer holds the 4 owners who live in Madison, with the fields the file selects.
 
 Each part of a tool comes from the file:
 
@@ -180,7 +150,7 @@ Each part of a tool comes from the file:
 
 Run `listVets`: every vet with their specialties, in 574 characters, because the file selects only the names and the specialties.
 
-The dates have a type as well. Click the arrow ↕ on the `TOOLS/LIST` entry in the **Messages** panel, and find `addPet` in the response. Its `birthDate` is a string in the `date` format, which GATool took from the `@specifiedBy` URL of chapter 3, so a model and a client can check a date before they call:
+Dates have a type too. Click the arrow ↕ on the `TOOLS/LIST` entry in the **Messages** panel and find `addPet`: its `birthDate` is a string in the `date` format, taken from the `@specifiedBy` URL of chapter 3, so a client can check a date before it calls:
 
 ```json
 "birthDate": {
@@ -192,23 +162,7 @@ The dates have a type as well. Click the arrow ↕ on the `TOOLS/LIST` entry in 
 
 ## 6. Errors a model can act on
 
-Run `getVetDetails` with `99` as the **id**. The Inspector shows a **Tool Error**:
-
-```json
-{
-  "data": { "vet": null },
-  "errors": [
-    {
-      "message": "INTERNAL_ERROR for c2494fb8-5c77-fb02-9dc0-d23080b8431b",
-      "locations": [{ "line": 2, "column": 3 }],
-      "path": ["vet"],
-      "extensions": { "classification": "INTERNAL_ERROR" }
-    }
-  ]
-}
-```
-
-This is the answer of chapter 1's second exercise: GraphQL sends an exception it does not know as `INTERNAL_ERROR`, and the reason stays in the log. A person can read the log. A model reads only the answer, and `INTERNAL_ERROR` leaves it to guess whether to call again, try another id, or stop.
+Run `getVetDetails` with `99` as the **id**. The Inspector shows a **Tool Error** classified as `INTERNAL_ERROR`, the answer of chapter 1's second exercise: GraphQL sends an exception it does not know as `INTERNAL_ERROR`, and the reason stays in the log. A person can read the log, but a model reads only the answer, and `INTERNAL_ERROR` leaves it to guess whether to call again, try another id, or stop.
 
 The services throw two exceptions of their own:
 
@@ -271,7 +225,7 @@ class GraphQLExceptionHandlers {
 | `extensions` | A map for anything else a client needs. Ours names the input field. |
 | `List<GraphQLError>` | One failure can produce several errors: here, one per broken field. |
 
-The schema can now say what an error means, in the descriptions an agent reads. Change the description of `vet`, and the description of `Mutation`:
+The schema's descriptions can now say what each error means. Change the descriptions of `vet` and `Mutation`:
 
 `src/main/resources/graphql/schema.graphqls`
 
@@ -333,7 +287,7 @@ Run `addOwner` with an empty **lastName** and `123` as the **telephone**. Each b
 
 ## Exercise: one call less
 
-Porto Tech asks for an x-ray for their cat Rosa, with a vet who does radiology. With the tools, the booking takes four calls: `findOwners` for the owner's id, `getOwnerDetails` for the pet's id, `listVets` for the vet's id, and `addVisit`. Change `findOwners.graphql` so that the booking takes three, and say so in its description. Then book the x-ray in the Inspector.
+Booking an x-ray for Rosa, Porto Tech's cat, takes four calls: `findOwners` for the owner's id, `getOwnerDetails` for the pet's id, `listVets` for the vet's id, and `addVisit`. The solution adds each owner's pets to `findOwners.graphql`, which makes it three calls, and chapter 5 relies on it, so paste it and book the x-ray in the Inspector.
 
 <details>
 <summary>Show solution</summary>
@@ -397,5 +351,3 @@ The arguments are the file's variables, so they arrive one by one, and the file'
 - The file decides the tool: its name, its description from the `#` lines, its arguments from the variables, and its answer from the selection.
 - `@GraphQlExceptionHandler` turns our exceptions into `NOT_FOUND` and `BAD_REQUEST` errors, which a model can act on, and the descriptions say what each one means.
 - The agent's tools and the frontend use the same files, so a change to a file changes both, after a restart.
-
-Chapter 5 gives these tools to an assistant inside the application, in a chat on the frontend.
