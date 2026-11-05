@@ -290,9 +290,9 @@ The presenter then sets both switches back to `false` and `0s`.
 
 ## 5. Follow the graph both ways
 
-So far an owner lists their pets, and a vet lists their visits. The vet page also needs the pet of each visit and the pet's owner. A field in the other direction lets a client follow those links in one query, where a REST client would send one more request per visit.
+So far an owner lists their pets, and a vet lists their visits. The vet page also needs the pet of each visit and the pet's owner, and the owner page needs each pet's visits and the vet who saw it. A field in the other direction lets a client follow those links in one query, where a REST client would send one more request per visit.
 
-The starting point gave `Pet` a `getOwner()` and `Visit` a `getPet()`, so both directions resolve through getters. Add the two fields:
+The starting point gave `Pet` a `getOwner()` and a `getVisits()`, and `Visit` a `getPet()` and a `getVet()`, so all four fields resolve through getters. Add them:
 
 `src/main/resources/graphql/schema.graphqls`
 
@@ -300,13 +300,19 @@ The starting point gave `Pet` a `getOwner()` and `Visit` a `getPet()`, so both d
 type Pet {
     # ...existing fields...
     owner: Owner!
+    "The pet's visits to the clinic, oldest first."
+    visits: [Visit!]!
 }
 
 type Visit {
     # ...existing fields...
     pet: Pet!
+    "The vet who sees the pet, or null when the visit was booked without one, as the Petclinic web pages do."
+    vet: Vet
 }
 ```
+
+`vet` may be `null`, because the Petclinic web pages book visits without a vet.
 
 Restart, and follow the graph from a vet to the owners of their patients:
 
@@ -329,36 +335,9 @@ query {
 }
 ```
 
-The first visit is for Rosa, Porto Tech's cat, who had a wound stitched after a fight. Refresh the frontend and open a vet again: each visit now shows its pet and the pet's owner.
+The first visit is for Rosa, Porto Tech's cat, who had a wound stitched after a fight. Refresh the frontend and open a vet again: each visit now shows its pet and the pet's owner. Open an owner as well: each pet now lists its visits and the vet who saw it.
 
 A client can follow these fields as deep as it likes, `owner { pets { owner { pets ... } } }`, and the server answers every level. A public API limits how deep a query may go, for example with GraphQL Java's `MaxQueryDepthInstrumentation`.
-
-## Exercise: a pet's visits and their vets
-
-This code adds `Pet.visits` and `Visit.vet`, which the owner page uses to show each pet's visits with the vet who saw it. Later chapters need both fields, so paste the solution, restart, and open an owner in the frontend.
-
-<details>
-<summary>Show solution</summary>
-
-`src/main/resources/graphql/schema.graphqls`
-
-```graphql
-type Pet {
-    # ...existing fields...
-    "The pet's visits to the clinic, oldest first."
-    visits: [Visit!]!
-}
-
-type Visit {
-    # ...existing fields...
-    "The vet who sees the pet, or null when the visit was booked without one, as the Petclinic web pages do."
-    vet: Vet
-}
-```
-
-`vet` may be `null`, because the web pages book visits without a vet. Both fields resolve through getters, so the Java stays as it is, and Hibernate's batch fetching keeps the number of statements low.
-
-</details>
 
 ## Recap
 
