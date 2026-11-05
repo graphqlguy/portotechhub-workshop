@@ -313,13 +313,11 @@ GraphQL tells apart a field the client **left out** and a field it **set to `nul
 
 Refresh the frontend. The owner pages now have **Add owner** and **Edit owner**, and every pet has **Book visit**. Book a visit: the form takes you back to the owner's page, which lists the new visit under the pet.
 
-## Exercises
+## Exercise: add and edit pets
 
-The frontend's pet forms and the later chapters use the code of both exercises, so paste each solution and restart.
+The **Add pet** and **Edit pet** forms need a `petTypes` query for their list of types, an `addPet` mutation and an `updatePet` mutation, all in a new `PetGraphQLController` that calls `PetService`. `updatePet` changes the fields it gets and keeps the rest, like `updateOwner`. The later chapters use all three, so paste the solution and restart.
 
-### Exercise 1: add a pet
-
-The **Add pet** form needs a `petTypes` query for its list of types and an `addPet` mutation, both in a new `PetGraphQLController` that calls `PetService`. Paste the solution, restart, and add a pet in the frontend.
+Add a pet in the frontend, then rename it. Giving it the name of its sibling returns an `INTERNAL_ERROR`, which chapter 4 improves.
 
 <details>
 <summary>Show solution</summary>
@@ -342,6 +340,9 @@ type Mutation {
     so a second call with the same name is refused.
     """
     addPet(input: AddPetInput!): Pet!
+
+    "Changes the details of a pet. Calling it again with the same input leaves the pet as it is."
+    updatePet(input: UpdatePetInput!): Pet!
 }
 
 input AddPetInput {
@@ -353,6 +354,14 @@ input AddPetInput {
     birthDate: Date!
     "The id of the kind of pet, from the petTypes query."
     typeId: ID!
+}
+
+"The details to change for one pet. A field left out keeps its value."
+input UpdatePetInput {
+    id: ID!
+    name: String
+    birthDate: Date
+    typeId: ID
 }
 ```
 
@@ -387,43 +396,11 @@ class PetGraphQLController {
 		return petService.addPet(input);
 	}
 
-}
-```
+	@MutationMapping
+	Pet updatePet(@Argument UpdatePetInput input) {
+		return petService.updatePet(input);
+	}
 
-</details>
-
-### Exercise 2: edit a pet
-
-`updatePet` changes the fields it gets and keeps the rest, like `updateOwner`. Paste the solution, restart, and rename a pet in the frontend. Giving it the name of its sibling returns an `INTERNAL_ERROR`, which chapter 4 improves.
-
-<details>
-<summary>Show solution</summary>
-
-`src/main/resources/graphql/schema.graphqls`
-
-```graphql
-type Mutation {
-    # ...existing mutations...
-
-    "Changes the details of a pet. Calling it again with the same input leaves the pet as it is."
-    updatePet(input: UpdatePetInput!): Pet!
-}
-
-"The details to change for one pet. A field left out keeps its value."
-input UpdatePetInput {
-    id: ID!
-    name: String
-    birthDate: Date
-    typeId: ID
-}
-```
-
-`src/main/java/org/springframework/samples/petclinic/owner/pet/PetGraphQLController.java`
-
-```java
-@MutationMapping
-Pet updatePet(@Argument UpdatePetInput input) {
-	return petService.updatePet(input);
 }
 ```
 
