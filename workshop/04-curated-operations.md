@@ -2,7 +2,7 @@
 
 > **User story** · As the clinic manager, I want the AI assistants the staff already use to work with our API through the operations our frontend already sends, so that they can look up owners and book visits by asking in their own words.
 
-The Model Context Protocol (MCP) is an open standard for connecting AI applications to the systems they work with. In this chapter, [GATool](https://github.com/api-agent-bridge/gatool) publishes the frontend's operation files as MCP tools, one tool for each file.
+The Model Context Protocol (MCP) is an open standard for connecting AI applications to the systems they work with. In this chapter, [GATool](https://github.com/api-agent-bridge/gatool) turns GraphQL operations into MCP tools: first one operation you write yourself, then the frontend's operation files.
 
 ## 1. MCP in brief
 
@@ -13,45 +13,7 @@ The Model Context Protocol (MCP) is an open standard for connecting AI applicati
 | MCP client | The part of an AI application that connects to a server, lists its tools, and calls the one the model picks. The MCP Inspector is a client for trying a server by hand. |
 | `tools/list`, `tools/call` | The two requests this chapter uses. They are JSON-RPC messages, sent with HTTP POST to the endpoint (the **Streamable HTTP** transport). |
 
-## 2. The frontend's operations
-
-The frontend's operations live in two folders, one `.graphql` file each:
-
-| Folder | Holds |
-|---|---|
-| `src/main/resources/operations` | The queries and mutations of the pages: 5 in `queries/` and 5 in `mutations/` |
-| `src/main/resources/operations-ui` | What the frontend alone needs: the schema check, the two summaries of chapter 1, and the owner's pets and the vet's visits of chapter 2 |
-
-Open one of them:
-
-`src/main/resources/operations/queries/findOwners.graphql`
-
-```graphql
-# Finds owners by the start of their last name, by their city, or both, and returns one page of them with their id and address.
-# The last name and the city match in upper or lower case, and leaving both out lists every owner.
-# Pages count from 0. To answer a question about all owners, read every page.
-# The getOwnerDetails tool gives the telephone, the pets and the visits of one owner.
-query FindOwners($lastName: String, $city: String, $page: Int = 0, $size: Int = 10, $sortBy: OwnerSortField = LAST_NAME, $order: SortOrder = ASC) {
-  owners(filter: {lastName: $lastName, city: $city}, page: $page, size: $size, sort: {field: $sortBy, order: $order}) {
-    totalElements
-    totalPages
-    currentPage
-    hasNext
-    hasPrevious
-    content {
-      id
-      firstName
-      lastName
-      address
-      city
-    }
-  }
-}
-```
-
-The `#` lines say what the operation is for and which operation to call next. The selection decides what the answer holds: it leaves `telephone` out, because the list of owners does not show it. The tool inherits that decision, so an agent gets the same small answer the frontend gets.
-
-## 3. Add GATool
+## 2. Add GATool
 
 Add the starter next to the GraphQL starter:
 
@@ -76,54 +38,67 @@ Add an MCP section below the `# GraphQL` section:
 
 ```properties
 # MCP
-# GATool serves the frontend's operations as MCP tools at /mcp, one tool for each file
-gatool.mcp.operations.locations=classpath*:operations/
 # An MCP client connects without signing in, which suits a laptop. A deployed server secures /mcp.
 gatool.mcp.security.unsafe.allow-mcp-calls-without-authentication=true
 ```
 
-| Property | Meaning |
-|---|---|
-| `operations.locations` | A folder. GATool reads every `.graphql` file in it and in its subfolders, and publishes each one as a tool. `operations-ui` stays out, since its files serve the frontend alone. |
-| `allow-mcp-calls-without-authentication` | GATool secures the endpoint by default. Without this line, startup stops with *GATool secures the MCP endpoint with Spring Security, which is missing from this application, so every caller that reaches the port would call every tool on it.* `/graphql` has been open the same way since chapter 1, and a deployed server puts Spring Security in front of both. |
+GATool secures the MCP endpoint by default. Without this line, startup stops with *GATool secures the MCP endpoint with Spring Security, which is missing from this application, so every caller that reaches the port would call every tool on it.* `/graphql` has been open the same way since chapter 1, and a deployed server puts Spring Security in front of both.
 
-## 4. Restart and read the log
+## 3. Your first tool
 
-Restart. GATool checks every file against the schema, then lists the tools:
+The first tool answers one question: what kinds of pet does the clinic treat? Write the query in GraphiQL first:
+
+```graphql
+query {
+  petTypes {
+    name
+  }
+}
+```
+
+The answer lists bird, cat, dog, hamster, lizard and snake.
+
+A tool is an operation in a `.graphql` file. GATool reads these files from `src/main/resources/gatool/mcp/`, its default folder. **Create a folder named `gatool`** in `src/main/resources`, **a folder named `mcp`** in it, and in that **a file named `listPetTypes.graphql`**:
+
+`src/main/resources/gatool/mcp/listPetTypes.graphql`
+
+```graphql
+# Lists the kinds of pet the clinic treats, such as cat or dog.
+query ListPetTypes {
+  petTypes {
+    name
+  }
+}
+```
+
+The file holds the query from GraphiQL with two additions. The name, `ListPetTypes`, becomes the tool's name, and the `#` line becomes its description, which a model reads to decide when to call the tool.
+
+Restart. GATool checks the file against the schema, then lists the tool:
 
 ```text
 GATool runs each document inside this application.
 GATool validates every operation file against the schema this application serves.
-GATool serves 10 MCP tools:
-  addOwner from file:.../target/classes/operations/mutations/addOwner.graphql (about 189 tokens)
-  addPet from file:.../target/classes/operations/mutations/addPet.graphql (about 278 tokens)
-  addVisit from file:.../target/classes/operations/mutations/addVisit.graphql (about 323 tokens)
-  updateOwner from file:.../target/classes/operations/mutations/updateOwner.graphql (about 185 tokens)
-  updatePet from file:.../target/classes/operations/mutations/updatePet.graphql (about 195 tokens)
-  findOwners from file:.../target/classes/operations/queries/findOwners.graphql (about 344 tokens)
-  getOwnerDetails from file:.../target/classes/operations/queries/getOwnerDetails.graphql (about 127 tokens)
-  getVetDetails from file:.../target/classes/operations/queries/getVetDetails.graphql (about 126 tokens)
-  listPetTypes from file:.../target/classes/operations/queries/listPetTypes.graphql (about 92 tokens)
-  listVets from file:.../target/classes/operations/queries/listVets.graphql (about 107 tokens)
-  about 1966 tokens in all, which every agent that lists these tools reads before it calls one
+GATool serves 1 MCP tool:
+  listPetTypes from file:.../target/classes/gatool/mcp/listPetTypes.graphql (about 76 tokens)
+  about 76 tokens in all, which every agent that lists these tools reads before it calls one
 ```
 
 | Line | Meaning |
 |---|---|
 | `runs each document inside this application` | A tool call goes straight to the GraphQL engine, in the same application, without an HTTP request to `/graphql`. |
-| `about 189 tokens` | The size of the tool's name, description and JSON Schema. An AI application sends every tool to its model with every question, so these tokens are paid on every request. |
+| `about 76 tokens` | The size of the tool's name, description and JSON Schema. An AI application sends every tool to its model with every question, so these tokens are paid on every request. |
 
-The log also warns that the MCP endpoint answers anyone who can reach your laptop, as the property above allows.
+The log also warns that the MCP endpoint answers anyone who can reach your laptop, as the property in step 2 allows.
 
 A file that asks for a field the schema lacks stops the application at startup, and the message names the file and the line:
 
 ```text
 GATool read the operation files and found 1 problem:
-    file:.../target/classes/operations/queries/listPetTypes.graphql fails validation against the schema:
-  - Validation error (FieldUndefined@[petTypes/nickname]) : Field 'nickname' in type 'PetType' is undefined (line 6, column 5)
+    file:.../target/classes/gatool/mcp/listPetTypes.graphql fails validation against the schema:
+  - Validation error (FieldUndefined@[petTypes/nickname]) : Field 'nickname' in type 'PetType' is undefined (line 5, column 5)
 ```
 
-## 5. Call the tools from the MCP Inspector
+## 4. Call the tool from the MCP Inspector
 
 In a new terminal, start the MCP Inspector with our server's address:
 
@@ -134,21 +109,114 @@ npx -y @modelcontextprotocol/inspector@2.9.0 --web --transport http --server-url
 The Inspector opens in your browser, with one server card, `localhost:8080`.
 
 1. Flip the switch on the card. It says **Connected**, and the **Messages** panel on the right lists the requests the Inspector sent, `INITIALIZE` and `TOOLS/LIST` among them.
-2. Open the **Tools** tab at the top. It lists the 10 tools.
-3. Select `findOwners`. `sortBy` and `order` are lists filled with the values of their enums, and `lastName` carries the schema's description of `OwnerFilter.lastName`, *Keeps the owners whose last name starts with this text*.
-4. Type `Madison` in **city** and click **Execute Tool**. The answer holds the 4 owners who live in Madison, with the fields the file selects.
+2. Open the **Tools** tab at the top. It lists `listPetTypes`, with the `#` line as its description.
+3. Select `listPetTypes` and click **Execute Tool**. The answer holds the six kinds of pet that GraphiQL showed.
 
 Each part of a tool comes from the file:
 
 | Part of the tool | Comes from |
 |---|---|
-| Name | The operation's name in camel case: `FindOwners` becomes `findOwners` |
+| Name | The operation's name in camel case: `ListPetTypes` becomes `listPetTypes` |
 | Description | The `#` lines right above the operation |
-| Arguments | The variables, with their types and defaults. Each one's description is the schema's description of the argument or input field the variable fills. |
+| Arguments | The variables, with their types and defaults. Each one's description is the schema's description of the argument or input field the variable fills. Step 5 shows them on `findOwners`. |
 | Answer | The selection |
 | **READ-ONLY**, **IDEMPOTENT**, **DESTRUCTIVE** | The operation type: GATool marks every query **READ-ONLY** and **IDEMPOTENT**, and every mutation **DESTRUCTIVE** |
 
-Run `listVets`: every vet with their specialties, in 574 characters, because the file selects only the names and the specialties.
+## 5. The frontend's operations
+
+The frontend already keeps every operation it sends in a file of its own, in two folders:
+
+| Folder | Holds |
+|---|---|
+| `src/main/resources/operations` | The queries and mutations of the pages: 5 in `queries/` and 5 in `mutations/` |
+| `src/main/resources/operations-ui` | What the frontend alone needs: the schema check, the two summaries of chapter 1, and the owner's pets and the vet's visits of chapter 2 |
+
+The ten files in `operations` are the tools an assistant needs to look up owners and book visits:
+
+| File | What it does |
+|---|---|
+| `queries/findOwners.graphql` | Finds owners by last name or city, one page at a time |
+| `queries/getOwnerDetails.graphql` | Returns one owner with their pets, and each pet's visits with the vet |
+| `queries/listVets.graphql` | Lists every vet with their specialties |
+| `queries/getVetDetails.graphql` | Returns one vet with their visits, each with its pet and the pet's owner |
+| `queries/listPetTypes.graphql` | Lists the kinds of pet, with the id that `addPet` and `updatePet` take |
+| `mutations/addOwner.graphql` | Registers an owner |
+| `mutations/updateOwner.graphql` | Changes an owner's details |
+| `mutations/addPet.graphql` | Registers a pet for an owner |
+| `mutations/updatePet.graphql` | Changes a pet's details |
+| `mutations/addVisit.graphql` | Books a visit for a pet |
+
+`queries/listPetTypes.graphql` is the tool you wrote in step 3, with `id` in the selection, because `addPet` and `updatePet` take a type's id.
+
+Point GATool at the frontend's folder. Add two lines below `# MCP`:
+
+`src/main/resources/application.properties`
+
+```properties
+# GATool serves the frontend's operations as MCP tools at /mcp, one tool for each file
+gatool.mcp.operations.locations=classpath*:operations/
+```
+
+GATool reads every `.graphql` file in the folders this property names, and in their subfolders. Naming a folder replaces the default `gatool/mcp/`, and `operations-ui` stays out, since its files serve the frontend alone. **Delete your `gatool` folder**: the frontend's `listPetTypes.graphql` gives the same tool. With both folders named, startup would stop, because two files would give the tool name `listPetTypes`.
+
+Before you restart, give `findOwners` each owner's pets. To book a visit, an assistant needs the ids of the owner, the pet and the vet, and with the pets in `findOwners` it gets the first two from one call. Add `pets` to the selection, and change the first and the last `#` line:
+
+`src/main/resources/operations/queries/findOwners.graphql`
+
+```graphql
+# Finds owners by the start of their last name, by their city, or both, and returns one page of them with their id, address and pets.
+# The last name and the city match in upper or lower case, and leaving both out lists every owner.
+# Pages count from 0. To answer a question about all owners, read every page.
+# The getOwnerDetails tool gives the telephone and the visits of one owner.
+query FindOwners($lastName: String, $city: String, $page: Int = 0, $size: Int = 10, $sortBy: OwnerSortField = LAST_NAME, $order: SortOrder = ASC) {
+  owners(filter: {lastName: $lastName, city: $city}, page: $page, size: $size, sort: {field: $sortBy, order: $order}) {
+    totalElements
+    totalPages
+    currentPage
+    hasNext
+    hasPrevious
+    content {
+      id
+      firstName
+      lastName
+      address
+      city
+      pets {
+        id
+        name
+        type {
+          name
+        }
+      }
+    }
+  }
+}
+```
+
+The `#` lines also say which operation to call next. The selection leaves `telephone` out, because the list of owners does not show it, so an agent gets the same small answer the frontend gets. The frontend's **Find owners** page shows the same owners as before, since it ignores the pets.
+
+Restart. GATool now serves the ten files:
+
+```text
+GATool serves 10 MCP tools:
+  addOwner from file:.../target/classes/operations/mutations/addOwner.graphql (about 189 tokens)
+  addPet from file:.../target/classes/operations/mutations/addPet.graphql (about 278 tokens)
+  addVisit from file:.../target/classes/operations/mutations/addVisit.graphql (about 323 tokens)
+  updateOwner from file:.../target/classes/operations/mutations/updateOwner.graphql (about 185 tokens)
+  updatePet from file:.../target/classes/operations/mutations/updatePet.graphql (about 195 tokens)
+  findOwners from file:.../target/classes/operations/queries/findOwners.graphql (about 343 tokens)
+  getOwnerDetails from file:.../target/classes/operations/queries/getOwnerDetails.graphql (about 127 tokens)
+  getVetDetails from file:.../target/classes/operations/queries/getVetDetails.graphql (about 126 tokens)
+  listPetTypes from file:.../target/classes/operations/queries/listPetTypes.graphql (about 92 tokens)
+  listVets from file:.../target/classes/operations/queries/listVets.graphql (about 107 tokens)
+  about 1965 tokens in all, which every agent that lists these tools reads before it calls one
+```
+
+Reload the Inspector, flip the switch again, and open the **Tools** tab:
+
+1. Select `findOwners`. Its arguments are the file's variables: `sortBy` and `order` are lists filled with the values of their enums, and `lastName` carries the schema's description of `OwnerFilter.lastName`, *Keeps the owners whose last name starts with this text*.
+2. Type `Madison` in **city** and click **Execute Tool**. The answer holds the 4 owners who live in Madison, with their pets.
+3. Run `listVets`: every vet with their specialties, in 574 characters, because the file selects only the names and the specialties.
 
 Dates have a type too. Click the arrow ↕ on the `TOOLS/LIST` entry in the **Messages** panel and find `addPet`: its `birthDate` is a string in the `date` format, taken from the `@specifiedBy` URL of chapter 3, so a client can check a date before it calls:
 
@@ -162,7 +230,7 @@ Dates have a type too. Click the arrow ↕ on the `TOOLS/LIST` entry in the **Me
 
 ## 6. Errors a model can act on
 
-Run `getVetDetails` with `99` as the **id**. The Inspector shows a **Tool Error** classified as `INTERNAL_ERROR`, the answer of chapter 1's second exercise: GraphQL sends an exception it does not know as `INTERNAL_ERROR`, and the reason stays in the log. A person can read the log, but a model reads only the answer, and `INTERNAL_ERROR` leaves it to guess whether to call again, try another id, or stop.
+Run `getVetDetails` with `99` as the **id**. The Inspector shows a **Tool Error** classified as `INTERNAL_ERROR`, the answer that `vet(id: 99)` gave in chapter 1's exercise: GraphQL sends an exception it does not know as `INTERNAL_ERROR`, and the reason stays in the log. A person can read the log, but a model reads only the answer, and `INTERNAL_ERROR` leaves it to guess whether to call again, try another id, or stop.
 
 The services throw two exceptions of their own:
 
@@ -285,69 +353,10 @@ Run `addOwner` with an empty **lastName** and `123` as the **telephone**. Each b
 }
 ```
 
-## Exercise: one call less
-
-Booking an x-ray for Rosa, Porto Tech's cat, takes four calls: `findOwners` for the owner's id, `getOwnerDetails` for the pet's id, `listVets` for the vet's id, and `addVisit`. The solution adds each owner's pets to `findOwners.graphql`, which makes it three calls, and chapter 5 relies on it, so paste it and book the x-ray in the Inspector.
-
-<details>
-<summary>Show solution</summary>
-
-`findOwners` returns owners, so it can return each owner's pets too. Add `pets` to the selection. In the description, the first line now names the pets, and the last line leaves the telephone and the visits to `getOwnerDetails`:
-
-`src/main/resources/operations/queries/findOwners.graphql`
-
-```graphql
-# Finds owners by the start of their last name, by their city, or both, and returns one page of them with their id, address and pets.
-# The last name and the city match in upper or lower case, and leaving both out lists every owner.
-# Pages count from 0. To answer a question about all owners, read every page.
-# The getOwnerDetails tool gives the telephone and the visits of one owner.
-query FindOwners($lastName: String, $city: String, $page: Int = 0, $size: Int = 10, $sortBy: OwnerSortField = LAST_NAME, $order: SortOrder = ASC) {
-  owners(filter: {lastName: $lastName, city: $city}, page: $page, size: $size, sort: {field: $sortBy, order: $order}) {
-    totalElements
-    totalPages
-    currentPage
-    hasNext
-    hasPrevious
-    content {
-      id
-      firstName
-      lastName
-      address
-      city
-      pets {
-        id
-        name
-        type {
-          name
-        }
-      }
-    }
-  }
-}
-```
-
-Restart, so that the tool follows the new file. The frontend reads the new file when you reload it, and its **Find owners** page shows the same owners as before, since it ignores the pets.
-
-1. `findOwners` with `Tech` as the **lastName** returns Porto Tech with Ronaldo (id `14`) and Rosa (id `15`).
-2. `listVets` shows that Helen Leary (id `2`) and Henry Stevens (id `5`) do radiology.
-3. `addVisit` books it for tomorrow, since the date is left out:
-
-```json
-{
-  "petId": 15,
-  "vetId": 2,
-  "description": "x-ray"
-}
-```
-
-The arguments are the file's variables, so they arrive one by one, and the file's operation builds the mutation's `input` object from them.
-
-</details>
-
 ## Recap
 
 - MCP lets an AI application call the tools a server publishes, and GATool publishes GraphQL operations as tools.
-- `gatool.mcp.operations.locations` publishes every operation file in a folder as a tool, and GATool checks each file against the schema at startup.
+- GATool reads operation files from `gatool/mcp/` by default, and `gatool.mcp.operations.locations` names other folders in its place. It checks every file against the schema at startup.
 - The file decides the tool: its name, its description from the `#` lines, its arguments from the variables, and its answer from the selection.
 - `@GraphQlExceptionHandler` turns our exceptions into `NOT_FOUND` and `BAD_REQUEST` errors, which a model can act on, and the descriptions say what each one means.
 - The agent's tools and the frontend use the same files, so a change to a file changes both, after a restart.
