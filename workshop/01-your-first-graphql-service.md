@@ -389,13 +389,15 @@ Open [http://localhost:5173](http://localhost:5173). The home page lists what th
 > [!TIP]
 > Each time you extend the schema from now on: restart the backend, then refresh the browser. The frontend reads the schema again and turns on whatever is new.
 
-## Exercises
+## Exercise: the vets
 
-The **Veterinarians** page needs two queries, and the later chapters use both. `VetService` and the `Vet` and `Specialty` entities are ready. Write the first query yourself, schema and then controller, and paste the solution of the second.
+The **Veterinarians** page needs two queries, and the later chapters use both. `VetService` and the `Vet` and `Specialty` entities are ready.
 
-### Exercise 1: list the vets
+Write the first query yourself, schema and then controller: a `vets` query that returns every vet. A vet has an `id`, a `firstName`, a `lastName` and a list of `specialties`, and a specialty has an `id` and a `name`. Use `VetService.findAll()`, in a new `VetGraphQLController` in the `org.springframework.samples.petclinic.vet` package (`VetController` already serves the web pages).
 
-Add a `vets` query that returns every vet. A vet has an `id`, a `firstName`, a `lastName` and a list of `specialties`, and a specialty has an `id` and a `name`. Use `VetService.findAll()`, in a new `VetGraphQLController` in the `org.springframework.samples.petclinic.vet` package (`VetController` already serves the web pages). When it works, the frontend shows a **Veterinarians** link.
+The second query, `vet(id: ID!)`, works like `owner(id: ID!)` from step 6, so copy it from the solution into your schema and controller. Restart once: the frontend shows a **Veterinarians** link, and clicking a vet opens their page.
+
+`VetService.findById` throws an `EntityNotFoundException` for an unknown id. Query `vet(id: 99)` and look at what GraphQL makes of the exception, in the response and in the application's log. Chapter 4 turns it into a clear error.
 
 <details>
 <summary>Show solution</summary>
@@ -408,6 +410,9 @@ type Query {
 
     "Every vet of the clinic, with their specialties."
     vets: [Vet!]!
+
+    "One vet. The vets query gives the ids of vets."
+    vet(id: ID!): Vet
 }
 
 "A veterinarian who works at the clinic."
@@ -432,6 +437,7 @@ package org.springframework.samples.petclinic.vet;
 
 import java.util.List;
 
+import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
 
@@ -449,41 +455,15 @@ class VetGraphQLController {
 		return vetService.findAll();
 	}
 
+	@QueryMapping
+	Vet vet(@Argument Integer id) {
+		return vetService.findById(id);
+	}
+
 }
 ```
 
 `specialties` works without Java code: GraphQL calls `Vet.getSpecialties()`, the getter with the field's name. Chapter 2 explains how that works.
-
-</details>
-
-### Exercise 2: fetch a single vet
-
-Paste the solution: it adds a `vet(id: ID!)` query, and clicking a vet in the frontend then opens their page. `VetService.findById` throws an `EntityNotFoundException` for an unknown id, so query `vet(id: 99)` and look at what GraphQL makes of the exception, in the response and in the application's log. Chapter 4 turns it into a clear error.
-
-<details>
-<summary>Show solution</summary>
-
-`src/main/resources/graphql/schema.graphqls`
-
-```graphql
-type Query {
-    # ...existing queries...
-
-    "One vet. The vets query gives the ids of vets."
-    vet(id: ID!): Vet
-}
-```
-
-`src/main/java/org/springframework/samples/petclinic/vet/VetGraphQLController.java`
-
-```java
-import org.springframework.graphql.data.method.annotation.Argument;
-
-@QueryMapping
-Vet vet(@Argument Integer id) {
-	return vetService.findById(id);
-}
-```
 
 For `vet(id: 99)` the response hides the exception and gives an id to look up in the log:
 
