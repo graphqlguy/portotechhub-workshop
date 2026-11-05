@@ -2,19 +2,13 @@
 
 > **User story** · As a vet, I want to see each patient with its owner and its visit history, and the visits on my own list, so that I know a pet before it walks in.
 
-The clinic's data is a graph: owners have pets, pets have visits, and each visit has a vet. In this chapter we put those relationships in the schema and learn how GraphQL resolves nested fields, first by itself and then with our own code. Then we find, and fix, the performance trap that comes with them.
-
-By the end of this chapter, you will:
-
-- Expose relationships as nested fields
-- Understand default field resolution: how GraphQL finds a value without any resolver code
-- Write a `@SchemaMapping` resolver for a field without a matching Java property
-- Reproduce the N+1 problem and see exactly where it comes from
-- Remove it with `@BatchMapping`, with the schema unchanged
+The clinic's data is a graph: owners have pets, pets have visits, and each visit has a vet.
 
 ## 1. Add pets to Owner
 
-The `Owner` entity already has its pets: a lazy `@OneToMany` list with a `getPets()` getter. The schema does not mention them yet. Add a `pets` field to `Owner`, and two new types below it:
+> **In REST** · The pets of an owner would be a second request, `GET /owners/{id}/pets`, or part of every owner the server returns. In GraphQL, they are a field of `Owner`, and the client asks for them in the same query when it needs them.
+
+The `Owner` entity already has its pets: a lazy `@OneToMany` list with a `getPets()` getter. Add a `pets` field to `Owner`, and two new types below it:
 
 `src/main/resources/graphql/schema.graphqls`
 
@@ -74,7 +68,7 @@ query {
 }
 ```
 
-It works without a line of Java. Refresh the frontend and open an owner: the owner page now lists the pets, and their visits follow in the exercise.
+It works without any Java. Refresh the frontend and open an owner: the owner page now lists the pets.
 
 ### Why does this work?
 
@@ -86,7 +80,9 @@ A field needs code of your own only when the parent object cannot answer for it.
 
 ## 2. The other direction: the visits of a vet
 
-A vet sees many visits. In Java, the relationship belongs to `Visit`, which has a `getVet()`, and `Vet` lacks a `getVisits()`. Add the field and the `Visit` type to the schema anyway:
+> **In REST** · The visits of a vet would get their own endpoint, `GET /vets/{id}/visits`, with a controller method behind it. In GraphQL, they are a field of `Vet`, and a controller method resolves that field.
+
+In Java, the relationship belongs to `Visit`, which has a `getVet()`, and `Vet` lacks a `getVisits()`. Add the field and the `Visit` type to the schema anyway:
 
 `src/main/resources/graphql/schema.graphqls`
 
@@ -105,7 +101,7 @@ type Visit {
 }
 ```
 
-Restart. The startup report has found the gap already:
+Restart. The startup report already shows the gap:
 
 ```text
 GraphQL schema inspection:
@@ -128,7 +124,7 @@ query {
 
 The answer is the error from chapter 1, `The field at path '/vet/visits' was declared as a non null type, but the code involved in retrieving data has wrongly returned a null value`, with `"data": {"vet": null}`. The default resolver did not find a `getVisits()`, so it returned `null`. `visits` promises a list, so GraphQL sets its parent to `null` instead: the nearest field that may be `null` is `vet`.
 
-This is the moment for our first **schema mapping**: a controller method that resolves one field of one type. `VisitService.findByVet` is ready. Replace the whole `VetGraphQLController` with this version, which adds the `VisitService` and the new method:
+A **schema mapping** fixes it: a controller method that resolves one field of one type. `VisitService.findByVet` is ready. Replace the whole `VetGraphQLController` with this version, which adds the `VisitService` and the new method:
 
 `src/main/java/org/springframework/samples/petclinic/vet/VetGraphQLController.java`
 
@@ -181,13 +177,15 @@ class VetGraphQLController {
 
 Restart and run the query again: Linda Douglas has 2 visits. `@QueryMapping`, from chapter 1, is a shorthand for `@SchemaMapping` on the `Query` type.
 
-Refresh the frontend and open a vet from the **Veterinarians** page: the vet page now lists the visits, and step 5 adds each visit's pet and owner.
+Refresh the frontend and open a vet from the **Veterinarians** page: the vet page now lists the visits.
 
 ## 3. The hidden cost: N+1
 
-Think about *when* our resolver runs: once per vet. Ask for one vet and its visits, and it runs once. Ask for all six vets and their visits, and it runs six times, each time with its own database query. One query for the list, plus N queries for the nested field: this is the **N+1 problem**, the classic performance trap of GraphQL APIs.
+Our resolver runs once per vet. Ask for all six vets and their visits, and it runs six times, each time with its own database query. One query for the list, plus N queries for the nested field: this is the **N+1 problem**, the classic performance trap of GraphQL APIs.
 
-On a laptop with an in-memory database, seven queries finish in milliseconds, so the cost is invisible until we measure it. The starting point has two switches for that. In `application.properties`, change these two values:
+> **In REST** · A client has the same problem one level up: `GET /vets`, then `GET /vets/{id}/visits` for each vet, is 1 + N HTTP requests. GraphQL turns them into one request, and the 1 + N moves into the server, where we can fix it.
+
+On a laptop with an in-memory database, seven queries finish in milliseconds, so the presenter measures the cost on the projector. The starting point has two switches for that in `application.properties`, which the presenter turns on. Leave yours as they are:
 
 `src/main/resources/application.properties`
 
@@ -201,7 +199,7 @@ petclinic.demo.latency=1s
 
 The first prints every SQL statement. The second makes every service method pause for one second before it touches the database, as a round trip to a remote database would.
 
-Restart, and run:
+With both on, the presenter restarts and runs:
 
 ```graphql
 query {
@@ -214,8 +212,6 @@ query {
 }
 ```
 
-The cost is plain now:
-
 - The response takes about **seven seconds**: one paused service call for the vets, then six more, one per vet, for `visits`.
 - The console shows six statements that differ only in the vet's id:
 
@@ -223,17 +219,15 @@ The cost is plain now:
 Hibernate: select v1_0.id,v1_0.visit_date,v1_0.description,v1_0.pet_id,v1_0.vet_id from visits v1_0 where v1_0.vet_id=? order by v1_0.visit_date desc,v1_0.id desc
 ```
 
-The first time, you also see the statements that read the vets and their specialties. After that, Petclinic serves the vets from a cache.
+The first run also shows the statements that read the vets and their specialties. After that, Petclinic serves the vets from a cache.
 
-Every resolver did its job correctly. The trouble is that each one sees a single vet: our `visits` resolver cannot tell that its six calls could have been a single `where vet_id in (...)` query.
-
-Scale the numbers up, and the cost becomes serious: 100 vets against a real database at 5 milliseconds per round trip is half a second of waiting for one page, and every further level of nesting multiplies it. Keep this query: the next step fixes it with the schema unchanged.
+Each call of the `visits` resolver sees a single vet, so it cannot tell that its six calls could have been a single `where vet_id in (...)` query. With 100 vets and a real database at 5 milliseconds per round trip, that is half a second of waiting for one page, and every further level of nesting multiplies it.
 
 ## 4. The fix: batch loading with @BatchMapping
 
-The fix is to collect **all** the vets of the current request first, then load their visits in one call. GraphQL calls this pattern a **DataLoader**, and Spring for GraphQL offers it as `@BatchMapping`.
+The fix is to collect **all** the vets of the current request first, then load their visits in one call. GraphQL calls this pattern a **DataLoader**, and Spring for GraphQL offers it as `@BatchMapping`. The schema stays the same.
 
-The data access is in the starting point, because it is repository code. `VisitRepository.findByVetIds` loads the visits of many vets with `where visit.vet.id in :vetIds`, and `VisitService.findVisitsByVetIds` groups them into a `Map<Integer, List<Visit>>` keyed by vet id. Read it before you go on: it pauses once, however many vets it gets.
+The starting point has the repository code: `VisitRepository.findByVetIds` loads the visits of many vets with `where visit.vet.id in :vetIds`, and `VisitService.findVisitsByVetIds` groups them into a `Map<Integer, List<Visit>>` keyed by vet id.
 
 Replace the `@SchemaMapping` method from step 2 with this one, and replace the `SchemaMapping` import with the three new ones:
 
@@ -262,9 +256,9 @@ Compare the two signatures:
 | Called once per vet | Called once per request |
 | Returns one vet's visits | Returns every vet's visits, keyed by vet |
 
-Behind the scenes, Spring registers a DataLoader for the field. GraphQL collects every `Vet` that needs `visits`, hands the whole batch to our method in one call, and gives each vet its list from the map. A vet missing from the map gets the `getOrDefault` value, an empty list.
+Spring registers a DataLoader for the field: GraphQL collects every `Vet` that needs `visits`, hands the whole batch to our method in one call, and gives each vet its list from the map. A vet missing from the map gets the `getOrDefault` value, an empty list.
 
-Restart and run the exact query from step 3 again:
+Restart and run the `vets` query from step 3: the answer is the same as with `@SchemaMapping`. On the projector, with the two switches on, the presenter shows the difference:
 
 - The response time drops from about **seven seconds to two**: one paused call for the vets, and one for all their visits.
 - The console shows one statement for the visits, with all six ids: `... from visits v1_0 where v1_0.vet_id in (?,?,?,?,?,?) order by ...`
@@ -272,7 +266,7 @@ Restart and run the exact query from step 3 again:
 
 ### The same trap behind a getter
 
-Lazy relationships that GraphQL reads through getters, such as `Owner.pets`, have the same problem: one query per owner. Petclinic's `application.properties` already sets `spring.jpa.properties.hibernate.default_batch_fetch_size=16`, so Hibernate loads the pets of up to 16 owners in one statement. Try it while the SQL log is on:
+Lazy relationships that GraphQL reads through getters, such as `Owner.pets`, have the same problem: one query per owner. Petclinic's `application.properties` already sets `spring.jpa.properties.hibernate.default_batch_fetch_size=16`, so Hibernate loads the pets of up to 16 owners in one statement. The presenter shows it with the SQL log on:
 
 ```graphql
 query {
@@ -290,25 +284,13 @@ query {
 The console shows three statements: the page of owners, its count, and one `... from pets p1_0 ... where p1_0.owner_id in (?,?,...)` for the pets of all ten. `@BatchMapping` batches the resolvers we write, and Hibernate batches the lazy relationships behind the getters.
 
 > [!NOTE]
-> Hibernate's batch fetching works here because `spring.jpa.open-in-view=true` keeps the persistence context open while GraphQL calls the getters. With it set to `false`, as many applications run, the same query fails with a `LazyInitializationException`. Batch fetching also takes one statement for every 16 owners, so a page of 100 owners needs 7 statements for their pets. To fix the trap properly, resolve each lazy relationship with a `@BatchMapping`: it works with open-in-view off, and loads the field for every parent of the request in one call. The workshop keeps the getters to save time.
+> Hibernate's batch fetching works here because `spring.jpa.open-in-view=true` keeps the persistence context open while GraphQL calls the getters. With it set to `false`, as many applications run, the same query fails with a `LazyInitializationException`. Batch fetching also takes one statement for every 16 owners, so a page of 100 owners needs 7 statements for their pets. A `@BatchMapping` for each lazy relationship fixes both: it works with open-in-view off, and loads the field for every parent of the request in one call. The workshop keeps the getters to save time.
 
-### Turn the instrumentation off
-
-Set the two properties back, so that the rest of the workshop runs at full speed:
-
-`src/main/resources/application.properties`
-
-```properties
-spring.jpa.show-sql=false
-```
-
-```properties
-petclinic.demo.latency=0s
-```
+The presenter then sets both switches back to `false` and `0s`.
 
 ## 5. Follow the graph both ways
 
-So far each relationship points one way: an owner lists their pets, and a vet lists their visits. The vet page also needs the pet of each visit and the pet's owner, to show who came in. In GraphQL a relationship is a field, so a field in the other direction lets a client follow the links it needs in one query, where a REST client would send one more request per visit.
+So far an owner lists their pets, and a vet lists their visits. The vet page also needs the pet of each visit and the pet's owner. A field in the other direction lets a client follow those links in one query, where a REST client would send one more request per visit.
 
 The starting point gave `Pet` a `getOwner()` and `Visit` a `getPet()`, so both directions resolve through getters. Add the two fields:
 
@@ -353,7 +335,7 @@ A client can follow these fields as deep as it likes, `owner { pets { owner { pe
 
 ## Exercise: a pet's visits and their vets
 
-The owner page in the frontend shows each pet's visits, with the vet who saw it, once the schema has them. `Pet` has `getVisits()`, oldest first, and `Visit` has `getVet()`. Add a `visits` field to `Pet` and a `vet` field to `Visit`, and decide which one may be `null`: the Petclinic web pages book visits without a vet. Then open an owner in the frontend.
+This code adds `Pet.visits` and `Visit.vet`, which the owner page uses to show each pet's visits with the vet who saw it. Later chapters need both fields, so paste the solution, restart, and open an owner in the frontend.
 
 <details>
 <summary>Show solution</summary>
@@ -385,5 +367,3 @@ type Visit {
 - One call per parent is the N+1 problem: invisible on a laptop, and slow in production.
 - `@BatchMapping` makes one call per request, and the schema stays the same.
 - Hibernate's batch fetching does the same for lazy relationships behind getters, as long as open-in-view keeps the persistence context open.
-
-Chapter 3 changes data: mutations, input types, and a `Date` type for the dates.

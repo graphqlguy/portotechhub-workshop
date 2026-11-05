@@ -2,13 +2,7 @@
 
 > **User story** · As a receptionist, I want to ask the clinic's assistant in my own words, so that I can find owners and book visits without clicking through the pages.
 
-In chapter 4, an AI application outside ours called our tools over MCP. In this chapter, the AI application is ours: a chat in the frontend, answered by a model in Ollama through [Spring AI](https://docs.spring.io/spring-ai/reference/), with chapter 4's operation files as its tools. The tools run inside the application.
-
-By the end of this chapter, you will:
-
-- Give a Spring AI `ChatClient` the operation files as in-process tools
-- Run the chat on a model in Ollama, or on a hosted model
-- Check what the assistant did, and give it errors it can act on
+In this chapter the AI application is ours: a chat in the frontend, answered by a model in Ollama through [Spring AI](https://docs.spring.io/spring-ai/reference/), with chapter 4's operation files as tools that run inside the application.
 
 ## 1. How a question becomes an answer
 
@@ -20,7 +14,7 @@ By the end of this chapter, you will:
 | 4 | Spring AI runs the tool: GATool runs the tool's operation file in our GraphQL engine. |
 | 5 | The model reads the tool's result, then asks for another tool or answers. |
 
-The frontend has had the chat panel since the starting point. It shows the panel once `GET /api/chat` answers `405 Method Not Allowed`, which tells it that the endpoint exists.
+The frontend's chat panel appears once `GET /api/chat` answers `405 Method Not Allowed`, which tells the frontend that the endpoint exists.
 
 ## 2. Add Spring AI
 
@@ -49,7 +43,7 @@ Add two starters next to GATool's:
 > [!NOTE]
 > With Gradle, add `implementation 'io.gatool:gatool-in-process-spring-boot-starter:0.1.0'` and `implementation 'org.springframework.ai:spring-ai-starter-model-ollama:2.0.1'` to `build.gradle`.
 
-If Ollama cannot run on your laptop, do step 8 now, and from then on start the backend the way it says.
+If Ollama cannot run on your laptop, or runs too slowly, do step 8 now, and from then on start the backend the way it says.
 
 ## 3. Configure the model
 
@@ -165,7 +159,7 @@ GATool serves 10 in-process tools:
   about 1718 tokens in all, which every agent that lists these tools reads before it calls one
 ```
 
-Refresh the frontend. The home page lists *Chapter 5 Clinic assistant*, and every page has an **Ask the assistant** button at the bottom right. Open it and ask:
+Refresh the frontend. Every page now has an **Ask the assistant** button at the bottom right. Open it and ask:
 
 ```text
 Which vets work at the clinic, and what are their specialties?
@@ -196,9 +190,9 @@ Then open George Franklin on the **Find owners** page, and look for the date and
 | "next Monday" | 2026-11-09 every time | Sunday 2026-11-08 every time |
 | Time for one booking | 21 to 54 seconds | about 1 second |
 
-To see the second column yourself, set `spring.ai.ollama.chat.think=false`, restart, and ask again. With `think` on, the model works out the date before it calls a tool, which takes time. With `think` off, it answers at once, and turning a weekday into a date is arithmetic that it gets wrong. A booking without a vet came each time the model skipped `listVets`: `vetId` is optional, so `addVisit` booked the visit without one. With `think` on, the answer said so; with `think` off, it reported a plain success. The owner's page shows every booking, so an assistant's changes are there to check, whichever model makes them.
+To see the second column, set `spring.ai.ollama.chat.think=false`, restart, and ask again. With `think` on, the model works out the date before it calls a tool, which takes time. With `think` off, it answers at once and gets the weekday arithmetic wrong. A booking without a vet came each time the model skipped `listVets`: `vetId` is optional, so `addVisit` accepted it. With `think` on, the answer said so; with `think` off, it reported a plain success. The owner's page shows every booking, so you can check what any model changed.
 
-Names trip a small model up as well. We asked 19 times for *a check-up for Rosa, the cat of Porto Tech, with Helen Leary tomorrow*. In 7 runs the model searched for an owner whose last name is `Porto Tech`, got an empty page, and stopped. In one more, it registered a second Porto Tech with a second Rosa, and booked the visit for her. Only 4 runs booked Rosa with Helen Leary. With an owner whose name reads as a first and a last name, such as George Franklin, the search found the owner every time.
+A small model also stumbles on names. We asked 19 times for *a check-up for Rosa, the cat of Porto Tech, with Helen Leary tomorrow*. In 7 runs the model searched for the last name `Porto Tech`, got an empty page, and stopped. In one more, it registered a second Porto Tech with a second Rosa, and booked her. Four runs booked Rosa with Helen Leary. For George Franklin, whose name reads as a first and a last name, the search found the owner every time.
 
 ## 7. Errors the model can act on
 
@@ -217,11 +211,13 @@ With `think` off, the model guesses ids before it looks them up. In our runs it 
 }
 ```
 
-The model then tried `getOwnerDetails` with another guessed id, which returned `null`, and called `findOwners` with the last name `Tech` and the city `Porto`. It found Rosa's id, 15, and booked her visit, without the vet. A guessed id that belongs to another pet passes every check: in two runs, the model guessed Leo's id, booked Leo, and answered that Rosa was booked. Only a person who looks at the owner's page finds that mistake.
+The model then tried `getOwnerDetails` with another guessed id, got `null`, and called `findOwners` with the last name `Tech` and the city `Porto`. It found Rosa's id, 15, and booked her visit, without the vet. A guessed id that belongs to another pet passes every check: in two runs, the model booked Leo and answered that Rosa was booked. Only a person who looks at the owner's page finds that mistake.
 
 ## 8. Use a hosted model instead of Ollama
 
-Spring AI has a starter for each provider. A Maven profile adds one, and runs the application with the Spring profile of the same name. Add three profiles at the top of the `<profiles>` section:
+Do this step only if Ollama cannot run on your laptop, or runs too slowly. Everyone else goes on to the exercise.
+
+A Maven profile adds the provider's Spring AI starter, and runs the application with the Spring profile of the same name. Add three profiles at the top of the `<profiles>` section:
 
 `pom.xml`
 
@@ -318,7 +314,9 @@ On Windows, set the key with `set MISTRAL_API_KEY=your-key` in Command Prompt or
 
 ## Exercise: a conversation
 
-Ask one question after the other:
+Each call sends the model one question, so the assistant forgets the one before. Paste the solution below to give it the conversation so far: Spring AI's `ChatMemory` bean keeps the last 20 messages of each conversation, a `MessageChatMemoryAdvisor` adds them to each prompt and stores the new ones, and the HTTP session, whose cookie the frontend sends with each question, names the conversation.
+
+Ask these two questions one after the other, before and after you paste it:
 
 ```text
 Which pets does Carlos Estaban have?
@@ -328,11 +326,7 @@ Which pets does Carlos Estaban have?
 Book an x-ray for his cat tomorrow, with the vet Helen Leary.
 ```
 
-The second answer shows that the model has lost the first: *The owner with last name "Leary" does not exist.* Each call sends the model one question. Give the assistant the conversation so far.
-
-- Spring AI configures a `ChatMemory` bean, which keeps the last 20 messages of each conversation in memory.
-- A `MessageChatMemoryAdvisor` adds a conversation's messages to each prompt, and stores the new ones.
-- The frontend sends the session cookie with each question, so the HTTP session can name the conversation.
+Before the change, the second answer reads *The owner with last name "Leary" does not exist.*
 
 <details>
 <summary>Show solution</summary>
@@ -410,5 +404,3 @@ The memory lives in the backend, one conversation for each session, and a restar
 - An error message that says how to correct the call lets the model try again.
 - A Maven profile switches the chat to Mistral, OpenAI or Anthropic.
 - `ChatMemory` and `MessageChatMemoryAdvisor` give the model the conversation so far.
-
-Chapter 6 gives the assistant three tools with which it writes its own queries.
