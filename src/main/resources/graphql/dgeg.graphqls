@@ -1,0 +1,59 @@
+# The fields of DGEG's fuel prices, from its portal Preços dos Combustíveis Online. See DgegGraphQLController.
+
+extend type Query {
+    """
+    The cheapest prices of a fuel at the filling stations of a district of Portugal, or within a radius of a place, the
+    cheapest first. Every filling station reports its prices to DGEG before they apply. Each price comes with its
+    station's name and address, the time the station last changed it, and DGEG as its source.
+    """
+    dgegCheapestFuel(
+        "The fuel, such as PETROL_95 for the usual petrol or DIESEL for the usual diesel."
+        fuel: DgegFuel!
+        "The district, such as Porto, Lisboa or Faro. Leave it out for the district of Porto."
+        district: String
+        "A place in Porto to search near, such as Alfândega do Porto. Accents and case do not matter."
+        place: String
+        "The latitude to search near, for a place given by its coordinates."
+        latitude: Float
+        "The longitude to search near, for a place given by its coordinates."
+        longitude: Float
+        "The radius around the place, in kilometres, such as 3. Leave it out for 5 km."
+        radiusKilometres: Float
+        "The number of prices to return."
+        first: Int = 3
+    ): [DgegFuelPrice!]
+}
+
+"A fuel sold at the filling stations of Portugal."
+enum DgegFuel {
+    "The usual petrol, Gasolina simples 95."
+    PETROL_95
+    "The premium petrol, Gasolina especial 95."
+    PETROL_95_PREMIUM
+    "The usual diesel, Gasóleo simples."
+    DIESEL
+    "The premium diesel, Gasóleo especial."
+    DIESEL_PREMIUM
+}
+
+"The price of a fuel at one filling station, as the station reported it to DGEG."
+type DgegFuelPrice {
+    "The name of the station, as it reported it to DGEG."
+    station: String
+    "The brand of the station, such as Galp or Repsol."
+    brand: String
+    "The municipality of the station."
+    municipality: String
+    "The street and number of the station."
+    address: String
+    "The fuel, in DGEG's words, such as Gasolina simples 95."
+    fuel: String
+    "The price, in euros per litre."
+    priceEurosPerLitre: Float
+    "When the station last changed the price, in Lisbon time, written as year, month, day, hours and minutes."
+    updatedAt: String
+    "The distance from the place, in kilometres, or null when the query asks for a whole district."
+    distanceKilometres: Float
+    "Who publishes the price: DGEG, whose terms ask every answer to name it."
+    source: String
+}

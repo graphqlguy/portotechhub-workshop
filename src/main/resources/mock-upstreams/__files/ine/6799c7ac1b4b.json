@@ -1,0 +1,21 @@
+[ {
+  "IndicadorCod" : "0012748",
+  "IndicadorDsg" : "Gross reported income per taxable person (€) by Geographic localization (NUTS - 2024); Annual - Statistics Portugal, Income Statistics at local level produced by Ministry of Finance - Tax and Customs Authority",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0012748&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:39.504Z",
+  "DataUltimoAtualizacao" : "2026-07-24",
+  "UltimoPref" : "2024",
+  "Dados" : {
+    "2024" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "ind_string" : "17 063",
+      "valor" : "17063"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

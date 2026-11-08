@@ -1,0 +1,5861 @@
+{
+ "mappings": [
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "3"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/97a175b66e21.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2026-09"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/b301d14a8486.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/ilc_di03",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "age": {
+      "hasExactly": [
+       {
+        "equalTo": "TOTAL"
+       }
+      ]
+     },
+     "sex": {
+      "hasExactly": [
+       {
+        "equalTo": "T"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/7f891e2e589a.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/sbs_r_nuts2021",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT11"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/c3ec0dd20ecf.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/sbs_ovw_act",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/a1c77fa7fc3b.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/nrg_pc_202",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "KWH"
+       }
+      ]
+     },
+     "currency": {
+      "hasExactly": [
+       {
+        "equalTo": "EUR"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/7001e60774e7.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/nrg_pc_204",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "currency": {
+      "hasExactly": [
+       {
+        "equalTo": "EUR"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/c340c2a73567.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/tour_occ_arm",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "NR"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/31f5875b89c3.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/tour_occ_nim",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "NR"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/714abc140461.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hpi_q",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/d0c7d17cb02d.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/earn_mw_cur",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/5cf532f62fc5.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/earn_nt_net",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/3d8aaa70172d.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/nama_10_pc",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "na_item": {
+      "hasExactly": [
+       {
+        "equalTo": "B1GQ"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/4f77cb6f3e22.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/nama_10_gdp",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "na_item": {
+      "hasExactly": [
+       {
+        "equalTo": "B1GQ"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/d92bbae3de34.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/une_rt_a",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "PC_ACT"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/c6e36df25051.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/une_rt_m",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "PC_ACT"
+       }
+      ]
+     },
+     "s_adj": {
+      "hasExactly": [
+       {
+        "equalTo": "SA"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/3528b53b9696.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/demo_pjan",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/4bafcc6f333a.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_ppp_ind",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "na_item": {
+      "hasExactly": [
+       {
+        "equalTo": "PLI_EU27_2020"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/33860ebf1ca8.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_iw",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/9dfa02e80043.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_ainr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A_AVG"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/5c52bfabf786.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "I25"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/3a6496bb0850.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_M"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/d588d772723e.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/2afaa3318ad8.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_ppp_ind",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "ppp_cat": {
+      "hasExactly": [
+       {
+        "equalTo": "actual individual consumption"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2026"
+       }
+      ]
+     },
+     "na_item": {
+      "hasExactly": [
+       {
+        "equalTo": "PLI_EU27_2020"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "2"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 400,
+    "bodyFileName": "eurostat/186165553bc6.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "Portugal"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2026-09"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "3"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 400,
+    "bodyFileName": "eurostat/bb2294444b29.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "latest"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "12"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 400,
+    "bodyFileName": "eurostat/e8cc73387438.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2025-10"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "2"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 400,
+    "bodyFileName": "eurostat/f1ab4224060a.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_ainr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "Portugal"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2025"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A_AVG"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 400,
+    "bodyFileName": "eurostat/e0a9338e492a.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_ainr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2025"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A_AVG"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 400,
+    "bodyFileName": "eurostat/a468b0701cc5.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_ainr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2025"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A_AVG"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 400,
+    "bodyFileName": "eurostat/9563f0500e96.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "Portugal"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "2"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/7bf0174ecbb9.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2026-09"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "3"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 400,
+    "bodyFileName": "eurostat/e620c9c03045.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2026-11"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "12"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 400,
+    "bodyFileName": "eurostat/72a0982853e3.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2026-10"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 400,
+    "bodyFileName": "eurostat/e9a43d879507.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2025-11"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "2"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 400,
+    "bodyFileName": "eurostat/901903425c23.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2025-11"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 400,
+    "bodyFileName": "eurostat/75d089abb055.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_ainr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "Portugal"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2026"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A_AVG"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "3"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 400,
+    "bodyFileName": "eurostat/b0ae7aa9339c.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_ppp_ind",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "ppp_cat": {
+      "hasExactly": [
+       {
+        "equalTo": "healthcare services"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2026"
+       }
+      ]
+     },
+     "na_item": {
+      "hasExactly": [
+       {
+        "equalTo": "PLI_EU27_2020"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "2"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 400,
+    "bodyFileName": "eurostat/73afee5d42c1.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2026-11"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "3"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 400,
+    "bodyFileName": "eurostat/85b24bb6793c.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "2"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/8ae4d64bcd6c.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "Sep"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "2"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 400,
+    "bodyFileName": "eurostat/4beed677a2ef.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2026-11"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 400,
+    "bodyFileName": "eurostat/b72080df8e0f.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2026-10"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "12"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 400,
+    "bodyFileName": "eurostat/8529aab54896.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2026-09"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 400,
+    "bodyFileName": "eurostat/ceab5d35fdbb.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2025-11"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "12"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 400,
+    "bodyFileName": "eurostat/b792d805ae1f.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2025-10"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 400,
+    "bodyFileName": "eurostat/e8f162472018.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_ainr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2026"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A_AVG"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 400,
+    "bodyFileName": "eurostat/b66a9d467c2a.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "TOTAL"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "6"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/2ef4b4655238.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "TOTAL"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "3"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/a6bf277db6ae.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "TOTAL"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "2"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/aa1b9d3e8edb.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "TOTAL"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "13"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/f0ccdd83906a.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "TOTAL"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "12"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/a720613e8bbd.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "TOTAL"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/9b466be93b2a.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "TOTAL"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2026-11"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/f4a67b6e4cb2.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "TOTAL"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2026-10"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/8608180227b7.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "TOTAL"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2026-09"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/d88c20b6882a.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "TOTAL"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2026-08"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/d871e8f593d3.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "TOTAL"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2025-11"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/09e5e944f7b8.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "TOTAL"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2025-10"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/d38bbbe54b8f.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "TOTAL"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2025-09"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/493317fb74da.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "6"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/f5660937f150.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "2"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/307aa532e2ac.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "13"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/312a40103b94.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "12"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/4f6e4167a076.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/2286e2ac7133.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2026-11"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/c0a0a0ecaabe.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2026-10"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/6546b01a7471.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2026-08"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/df7dab8b3693.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2025-11"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/2f763343ba3f.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2025-10"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/f70ef92b09f5.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       },
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2025-09"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/ce7c9851e748.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "TOTAL"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "6"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/a156b4e27480.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "TOTAL"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "3"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/50881174376b.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "TOTAL"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "2"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/23f69969949e.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "TOTAL"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "13"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/ea825be09065.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "TOTAL"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "12"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/3521c936ba10.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "TOTAL"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/c2b0509a6d26.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "TOTAL"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2026-11"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/5a8eaba53d94.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "TOTAL"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2026-10"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/76a752192d1a.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "TOTAL"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2026-09"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/9d8ef1d2f56b.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "TOTAL"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2026-08"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/08ae5bfc2e86.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "TOTAL"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2025-11"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/a026293375f5.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "TOTAL"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2025-10"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/3e6332fcde8e.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "TOTAL"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2025-09"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/d2d41cb71cf8.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "6"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/6461a8fc7dca.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "3"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/8df0fc80737a.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "13"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/8b27c4089fed.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "12"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/f125715b10d3.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/be4d1a980db4.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2026-11"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/3dacd68b9704.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2026-10"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/ecd2755a1169.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2026-09"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/69d6e0ded8a9.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2026-08"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/ec201e30490f.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2025-11"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/39972eb5ac90.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2025-10"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/af845b24c1a1.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "PT"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2025-09"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/dc6d06001f88.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "6"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/b6c9083b67f6.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "3"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/93c5a897b40a.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "2"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/c3516100294c.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "13"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/67aeb1a3f6fb.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "12"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/f4539669c17b.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lastTimePeriod": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/d40cec9569a6.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2026-11"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/71ef806ced22.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2026-10"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/568b9dcec1c1.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2026-09"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/3414cccecb82.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2026-08"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/734ce8431959.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2025-11"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/bdcee1f881fd.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2025-10"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/abee2a94fb5e.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/eurostat/prc_hicp_minr",
+    "method": "GET",
+    "queryParameters": {
+     "geo": {
+      "hasExactly": [
+       {
+        "equalTo": "EU27_2020"
+       }
+      ]
+     },
+     "coicop18": {
+      "hasExactly": [
+       {
+        "equalTo": "CP0945"
+       }
+      ]
+     },
+     "time": {
+      "hasExactly": [
+       {
+        "equalTo": "2025-09"
+       }
+      ]
+     },
+     "unit": {
+      "hasExactly": [
+       {
+        "equalTo": "RCH_A"
+       }
+      ]
+     },
+     "lang": {
+      "hasExactly": [
+       {
+        "equalTo": "en"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/3a0fb6100615.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/eurostat/prc_hicp_minr"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/97a175b66e21.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/eurostat/ilc_di03"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/7f891e2e589a.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/eurostat/sbs_r_nuts2021"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/c3ec0dd20ecf.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/eurostat/sbs_ovw_act"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/a1c77fa7fc3b.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/eurostat/nrg_pc_202"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/7001e60774e7.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/eurostat/nrg_pc_204"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/c340c2a73567.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/eurostat/tour_occ_arm"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/31f5875b89c3.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/eurostat/tour_occ_nim"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/714abc140461.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/eurostat/prc_hpi_q"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/d0c7d17cb02d.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/eurostat/earn_mw_cur"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/5cf532f62fc5.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/eurostat/earn_nt_net"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/3d8aaa70172d.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/eurostat/nama_10_pc"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/4f77cb6f3e22.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/eurostat/nama_10_gdp"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/d92bbae3de34.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/eurostat/une_rt_a"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/c6e36df25051.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/eurostat/une_rt_m"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/3528b53b9696.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/eurostat/demo_pjan"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/4bafcc6f333a.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/eurostat/prc_ppp_ind"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/33860ebf1ca8.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/eurostat/prc_hicp_iw"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/9dfa02e80043.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/eurostat/prc_hicp_ainr"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "eurostat/5c52bfabf786.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+[ {
+  "IndicadorCod" : "0012653",
+  "IndicadorDsg" : "Average monthly earnings (€) by Geographic localization (NUTS - 2024) and Level of education; Annual - MTSSS/GEP, Personnel tables",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0012653&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:38.805Z",
+  "DataUltimoAtualizacao" : "2026-03-27",
+  "UltimoPref" : "2024",
+  "Dados" : {
+    "2024" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "1 576,03",
+      "valor" : "1576.03"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

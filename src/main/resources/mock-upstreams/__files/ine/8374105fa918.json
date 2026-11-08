@@ -1,0 +1,35 @@
+[ {
+  "IndicadorCod" : "0014064",
+  "IndicadorDsg" : "Enterprises (No.) by Geographic localization (NUTS - 2024), Economic activity (Subclass - CAE Rev. 3) and Legal form; Annual - Statistics Portugal, Integrated business accounts system",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014064&lingua=EN",
+  "DataExtracao" : "2026-11-06T02:53:55.388Z",
+  "DataUltimoAtualizacao" : "2025-12-11",
+  "UltimoPref" : "2024",
+  "Dados" : {
+    "2023" : [ {
+      "geocod" : "11A1312",
+      "geodsg" : "Porto",
+      "dim_3" : "75000",
+      "dim_3_t" : "Veterinary activities",
+      "dim_4" : "T",
+      "dim_4_t" : "Total",
+      "ind_string" : "104",
+      "valor" : "104"
+    } ],
+    "2024" : [ {
+      "geocod" : "11A1312",
+      "geodsg" : "Porto",
+      "dim_3" : "75000",
+      "dim_3_t" : "Veterinary activities",
+      "dim_4" : "T",
+      "dim_4_t" : "Total",
+      "ind_string" : "97",
+      "valor" : "97"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

@@ -1,0 +1,23 @@
+[ {
+  "IndicadorCod" : "0013255",
+  "IndicadorDsg" : "Completed buildings (No.) by Geographic location (NUTS - 2024) and Type of project; Annual - Statistics Portugal, Statistics on construction works completed",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013255&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:34.656Z",
+  "DataUltimoAtualizacao" : "2026-07-17",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2025" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "17 146",
+      "valor" : "17146"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

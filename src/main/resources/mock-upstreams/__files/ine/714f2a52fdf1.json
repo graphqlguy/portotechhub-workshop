@@ -1,0 +1,21 @@
+[ {
+  "IndicadorCod" : "0013179",
+  "IndicadorDsg" : "Net migration (No.) by Place of residence (NUTS - 2024); Annual - Statistics Portugal, Demographic indicators",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013179&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:22.518Z",
+  "DataUltimoAtualizacao" : "2026-06-22",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2025" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "ind_string" : "70 862",
+      "valor" : "70862"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

@@ -1,0 +1,374 @@
+# The open data of IPMA (Instituto Português do Mar e da Atmosfera), Portugal's weather and sea institute: 
+# weather forecasts for cities, sea forecasts, fire risk, the UV index, weather warnings, earthquakes, the 
+# weather stations with their observations, and the lists of places and classes that the other files refer to. 
+# IPMA serves each one as a JSON file that it renews several times a day. A generator outside the repository 
+# writes this file and ipma/operations.json; the names and descriptions are written for the model.
+
+extend type Query {
+    """
+    The weather forecast of the next five days for a city of Portugal, one entry for each day. Porto is
+    1131200 and Lisboa 1110600, and ipmaPlaces gives the ids of the other cities. Each day has the minimum and
+    maximum temperature in °C, the probability of rain in percent, the wind direction and wind class, and a
+    weather type id that ipmaWeatherTypes names, such as 9 for Rain/showers.
+    """
+    ipmaCityForecast(
+        """
+        IPMA's id of the city (its globalIdLocal), such as 1131200 for Porto or 1110600 for Lisboa. ipmaPlaces
+        gives the ids of the other cities.
+        """
+        location: Int!
+    ): IpmaCityForecast
+
+    """
+    The weather forecast of one day for the district capitals of Portugal and the main towns of Madeira and
+    the Azores, with the same values as ipmaCityForecast, for comparing cities on the same day.
+    """
+    ipmaForecastAllCities(
+        "The day: 0 for today, 1 for tomorrow, 2 for the day after tomorrow."
+        day: Int!
+    ): IpmaForecastAllCities
+
+    """
+    The sea forecast of one day for the coast of Portugal, Madeira and the Azores: the height, period and
+    direction of the waves and the temperature of the sea. ipmaSeaLocations names the places, such as 1130826
+    for the coast of Porto.
+    """
+    ipmaSeaForecast(
+        "The day: 0 for today, 1 for tomorrow, 2 for the day after tomorrow."
+        day: Int!
+    ): IpmaSeaForecast
+
+    """
+    The risk of rural fire of one day for every municipality of mainland Portugal, from 1 for reduced to 5 for
+    maximum.
+    """
+    ipmaFireRisk(
+        "The day: 0 for today, 1 for tomorrow, 2 for the day after tomorrow."
+        day: Int!
+    ): IpmaFireRisk
+
+    """
+    The forecast of the maximum ultraviolet (UV) index for the next days in the cities of Portugal, one entry
+    for each city and day.
+    """
+    ipmaUvIndex: [IpmaUvForecast!]
+
+    """
+    The weather warnings of IPMA for the next three days, one entry for each area, kind of weather and period,
+    with its level from green to red. Most entries are green, which means that IPMA does not warn of anything.
+    """
+    ipmaWarnings: [IpmaWarning!]
+
+    """
+    The earthquakes that IPMA recorded in the last 30 days in one area, with their time, place, depth and
+    magnitude, and whether people felt them.
+    """
+    ipmaEarthquakes(
+        "The area: MAINLAND_AND_MADEIRA for mainland Portugal and Madeira, AZORES for the Azores."
+        area: IpmaEarthquakeArea!
+    ): IpmaEarthquakes
+
+    """
+    The weather stations of IPMA, with the id that ipmaObservations uses for each, such as 1240903 for Porto,
+    Massarelos.
+    """
+    ipmaStations: [IpmaStation!]
+
+    """
+    What the weather stations of IPMA measured in each of the last 24 hours, one entry for each hour: the
+    temperature, humidity, pressure, wind, rain and solar radiation. IPMA writes the hours out of order, so
+    sort them by time. The answer is large, a row for each station and hour, so select only the values you
+    need. ipmaStations gives the name of each station id.
+    """
+    ipmaObservations: [IpmaObservationHour!]
+
+    """
+    The cities and towns of IPMA's forecasts, such as the district capitals and the main towns of Madeira and
+    the Azores, with their globalIdLocal, such as 1131200 for Porto, and their warning area.
+    """
+    ipmaPlaces: IpmaPlaceList
+
+    """
+    The places of the coast that ipmaSeaForecast covers, such as Porto, costa (the coast of Porto) with id
+    1130826.
+    """
+    ipmaSeaLocations: [IpmaPlace!]
+
+    """
+    The names of the weather type ids of the forecasts, in English and Portuguese, such as 1 for Clear sky and
+    9 for Rain/showers.
+    """
+    ipmaWeatherTypes: IpmaClassList
+
+    """
+    The names of the wind classes of the forecasts, in English and Portuguese, from 1 for Weak to 4 for Very
+    strong.
+    """
+    ipmaWindClasses: IpmaClassList
+
+    """
+    The names of the rain intensity classes of the forecasts, in English and Portuguese, from 0 for No
+    precipitation to 3 for Strong.
+    """
+    ipmaRainClasses: IpmaClassList
+}
+
+"The forecast of the next five days for one city."
+type IpmaCityForecast {
+    "The forecast of each day, today first."
+    days: [IpmaDayForecast!]
+    "The globalIdLocal of the city, such as 1131200 for Porto."
+    location: Int
+    "When IPMA updated the forecast, such as 2026-11-05T20:31:02."
+    updatedAt: String
+}
+
+"The forecast of one day for every city."
+type IpmaForecastAllCities {
+    "The day of the forecast, such as 2026-11-05."
+    date: String
+    "The forecast of each city, which its location attribute names."
+    cities: [IpmaDayForecast!]
+    "When IPMA updated the forecast."
+    updatedAt: String
+}
+
+"The forecast of one day for one city."
+type IpmaDayForecast {
+    """
+    The day, such as 2026-11-06, in the forecast of one city. ipmaForecastAllCities gives the day once for
+    every city.
+    """
+    date: String
+    """
+    The globalIdLocal of the city, such as 1131200 for Porto, in the forecast of every city. ipmaPlaces gives
+    the names.
+    """
+    location: Int
+    "The minimum temperature, in °C."
+    minTemperature: Float
+    "The maximum temperature, in °C."
+    maxTemperature: Float
+    "The probability of rain, in percent, from 0 to 100."
+    rainProbability: Float
+    """
+    The intensity of the rain on a day with rain: 1 for weak, 2 for moderate, 3 for strong, as ipmaRainClasses
+    names them. Null on a dry day.
+    """
+    rainClass: Int
+    "Where the wind comes from, such as N, NE, E, SE, S, SW, W or NW."
+    windDirection: String
+    "The strength of the wind, from 1 for weak to 4 for very strong, as ipmaWindClasses names them."
+    windClass: Int
+    """
+    The id of the weather type of the day, such as 1 for Clear sky, 2 for Partly cloudy or 9 for Rain/showers.
+    ipmaWeatherTypes gives the names of every id.
+    """
+    weatherType: Int
+}
+
+"The sea forecast of one day for every place of the coast."
+type IpmaSeaForecast {
+    "The day of the forecast, such as 2026-11-05."
+    date: String
+    "The forecast of each place of the coast."
+    places: [IpmaSeaPlaceForecast!]
+}
+
+"The sea forecast of one day for one place of the coast."
+type IpmaSeaPlaceForecast {
+    "The id of the place, such as 1130826 for the coast of Porto. ipmaSeaLocations gives the names."
+    location: Int
+    "The lowest height of the waves of the day, in metres."
+    waveHeightMin: Float
+    "The highest height of the waves of the day, in metres."
+    waveHeightMax: Float
+    "The shortest time between two waves, in seconds."
+    wavePeriodMin: Float
+    "The longest time between two waves, in seconds."
+    wavePeriodMax: Float
+    "Where the waves come from, such as NW."
+    waveDirection: String
+    "The highest height of the total sea, the waves of the wind and the swell together, in metres."
+    seaHeightMax: Float
+    "The lowest temperature of the sea surface, in °C."
+    seaTemperatureMin: Float
+    "The highest temperature of the sea surface, in °C."
+    seaTemperatureMax: Float
+}
+
+"The risk of rural fire of one day in every municipality."
+type IpmaFireRisk {
+    "The day the risk is for, such as 2026-11-05."
+    date: String
+    "The risk in each municipality."
+    municipalities: [IpmaMunicipalityFireRisk!]
+}
+
+"The risk of rural fire in one municipality."
+type IpmaMunicipalityFireRisk {
+    """
+    The code of the municipality (DICO), its district and its number in the district, such as 1312 for Porto
+    or 1106 for Lisboa.
+    """
+    municipality: String
+    "The risk: 1 for reduced, 2 for moderate, 3 for high, 4 for very high, 5 for maximum."
+    risk: Int
+}
+
+"The UV index forecast for one city and day."
+type IpmaUvForecast {
+    "The globalIdLocal of the city, such as 1131200 for Porto. ipmaPlaces gives the names."
+    location: Int
+    "The day, such as 2026-11-06."
+    date: String
+    """
+    The maximum UV index of the day: up to 2 is low, 3 to 5 moderate, 6 to 7 high, 8 to 10 very high, and 11
+    or more extreme.
+    """
+    uvIndex: Float
+}
+
+"A weather warning for one area, one kind of weather and one period."
+type IpmaWarning {
+    """
+    The kind of weather, in Portuguese: Precipitação (rain), Vento (wind), Trovoada (thunderstorms), Neve
+    (snow), Nevoeiro (fog), Tempo Quente (hot weather), Tempo Frio (cold weather) or Agitação Marítima (rough
+    sea).
+    """
+    kind: String
+    "The level: green, yellow, orange or red."
+    level: String
+    "The warning area, such as PTO for Porto or LSB for Lisboa. ipmaPlaces gives the area of each city."
+    area: String
+    "When the warning starts, such as 2026-11-06T15:00:00."
+    start: String
+    "When the warning ends."
+    end: String
+    """
+    What IPMA expects, in Portuguese, such as Precipitação, por vezes forte (rain, heavy at times). Empty for
+    a green level.
+    """
+    text: String
+}
+
+"The earthquakes of the last 30 days in one area."
+type IpmaEarthquakes {
+    "The earthquakes, oldest first."
+    earthquakes: [IpmaEarthquake!]
+    "When the latest earthquake of the area happened, in UTC."
+    lastEarthquakeAt: String
+}
+
+"One earthquake."
+type IpmaEarthquake {
+    "When it happened, in UTC, such as 2026-10-15T20:34:46."
+    time: String
+    "The magnitude as text, or -99.0 when IPMA has not computed it."
+    magnitude: String
+    "Where the epicentre was, such as NE Bragança for north-east of Bragança."
+    region: String
+    "The depth, in kilometres."
+    depth: Int
+    "The latitude of the epicentre."
+    latitude: Float
+    "The longitude of the epicentre."
+    longitude: Float
+    "True when people felt it, and null otherwise."
+    sensed: Boolean
+    "Where people felt it, such as Faro (Faro), when they did."
+    feltAt: String
+    "The greatest intensity that people felt, in Roman numerals of the Mercalli scale, such as III."
+    intensity: String
+}
+
+"A weather station of IPMA."
+type IpmaStation {
+    "The id of the station, such as 1240903, which ipmaObservations uses."
+    stationId: Int
+    "The name of the station, such as Porto, Serra do Pilar or Lisboa (Geofísico)."
+    name: String
+}
+
+"The observations of every station in one hour."
+type IpmaObservationHour {
+    "The hour, in UTC, such as 2026-11-05T14:00."
+    time: String
+    "What each station measured in that hour."
+    stations: [IpmaStationObservation!]
+}
+
+"""
+What one station measured in one hour. A value of -99 is missing, and every value is null when the station did
+not report.
+"""
+type IpmaStationObservation {
+    "The id of the station, such as 1240903 for Porto, Massarelos. ipmaStations gives the names."
+    station: String
+    "The air temperature, in °C."
+    temperature: Float
+    "The relative humidity, in percent."
+    humidity: Float
+    "The atmospheric pressure, in hectopascals."
+    pressure: Float
+    "The mean speed of the wind, in kilometres per hour."
+    windSpeed: Float
+    """
+    Where the wind comes from: 1 for N, 2 for NE, 3 for E, 4 for SE, 5 for S, 6 for SW, 7 for W, 8 for NW, 9
+    for N, and 0 for calm.
+    """
+    windDirection: Int
+    "The rain of the hour, in millimetres."
+    rain: Float
+    "The solar radiation of the hour, in kilojoules per square metre."
+    radiation: Float
+}
+
+"The cities of IPMA's forecasts."
+type IpmaPlaceList {
+    "The cities."
+    places: [IpmaPlace!]
+}
+
+"A city of IPMA's forecasts, or a place of the coast for the sea forecast."
+type IpmaPlace {
+    "The name, such as Porto or Porto, costa (the coast of Porto)."
+    name: String
+    """
+    The globalIdLocal, which the forecasts take, such as 1131200 for Porto. Porto Santo, an island of Madeira,
+    is 2320100.
+    """
+    location: Int
+    "The warning area that ipmaWarnings uses, such as PTO for Porto."
+    warningArea: String
+    "The region: 1 for the mainland, 2 for Madeira, 3 for the Azores."
+    region: Int
+    "The latitude."
+    latitude: Float
+    "The longitude."
+    longitude: Float
+}
+
+"A list of IPMA's classes."
+type IpmaClassList {
+    "The classes, with -99 for a missing value."
+    classes: [IpmaClass!]
+}
+
+"A class of one of IPMA's lists: a weather type, a wind class or a rain intensity class."
+type IpmaClass {
+    "The id that the forecasts use, such as 9."
+    id: Int
+    "The name in English, such as Rain/showers."
+    label: String
+    "The name in Portuguese, such as Chuva/aguaceiros."
+    portugueseLabel: String
+}
+
+"An area for which IPMA publishes the earthquakes of the last 30 days."
+enum IpmaEarthquakeArea {
+    "Mainland Portugal, Madeira and the sea around them."
+    MAINLAND_AND_MADEIRA
+    "The Azores and the sea around them."
+    AZORES
+}

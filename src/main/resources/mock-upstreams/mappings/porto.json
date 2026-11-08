@@ -1,0 +1,1715 @@
+{
+ "mappings": [
+  {
+   "request": {
+    "urlPath": "/porto/v2/entities",
+    "method": "GET",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "Vehicle"
+       }
+      ]
+     },
+     "options": {
+      "hasExactly": [
+       {
+        "equalTo": "keyValues"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "3"
+       }
+      ]
+     },
+     "q": {
+      "hasExactly": [
+       {
+        "equalTo": "observationDateTime>2026-11-05T22:15:59Z;vehicleType==bus"
+       }
+      ]
+     },
+     "orderBy": {
+      "hasExactly": [
+       {
+        "equalTo": "!speed"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/8ebf30110f47.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/porto/v2/entities",
+    "method": "GET",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "AirQualityObserved"
+       }
+      ]
+     },
+     "options": {
+      "hasExactly": [
+       {
+        "equalTo": "keyValues"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "attrs": {
+      "hasExactly": [
+       {
+        "equalTo": "co,dateObserved,name,no2,o3,pm1,pm10,pm25"
+       }
+      ]
+     },
+     "q": {
+      "hasExactly": [
+       {
+        "equalTo": "dateObserved>2026-11-05T21:20:59Z"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/bdc76dc6d8d5.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/porto/v2/entities",
+    "method": "GET",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "AccessPoint"
+       }
+      ]
+     },
+     "options": {
+      "hasExactly": [
+       {
+        "equalTo": "keyValues"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "attrs": {
+      "hasExactly": [
+       {
+        "equalTo": "apState,dateLastReboot,description,modelName,name,source"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/5f92abfdf2a1.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/porto/v2/entities",
+    "method": "GET",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "WasteContainerModel"
+       }
+      ]
+     },
+     "options": {
+      "hasExactly": [
+       {
+        "equalTo": "keyValues"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "attrs": {
+      "hasExactly": [
+       {
+        "equalTo": "depth,height,name"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/991f60695d95.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/porto/v2/entities",
+    "method": "GET",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "WasteContainer"
+       }
+      ]
+     },
+     "options": {
+      "hasExactly": [
+       {
+        "equalTo": "keyValues"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "attrs": {
+      "hasExactly": [
+       {
+        "equalTo": "category,refWasteContainerModel"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/a1eb79f598f5.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/porto/v2/entities",
+    "method": "GET",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "TrafficFlowObserved"
+       }
+      ]
+     },
+     "options": {
+      "hasExactly": [
+       {
+        "equalTo": "keyValues"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "attrs": {
+      "hasExactly": [
+       {
+        "equalTo": "address,dateObservedFrom,dateObservedTo,intensity,laneId,occupancy"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/12cf22b02a46.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/porto/v2/entities",
+    "method": "GET",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "ThreePhaseMultiCircuitAcMeasurement"
+       }
+      ]
+     },
+     "options": {
+      "hasExactly": [
+       {
+        "equalTo": "keyValues"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "attrs": {
+      "hasExactly": [
+       {
+        "equalTo": "dateObservedFrom,refDevice,voltagePhase"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/12f29c5142ae.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/porto/v2/entities",
+    "method": "GET",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "PointOfInterest"
+       }
+      ]
+     },
+     "options": {
+      "hasExactly": [
+       {
+        "equalTo": "keyValues"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "attrs": {
+      "hasExactly": [
+       {
+        "equalTo": "address,category,contactPoint,description,name"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/3a2fb45a70eb.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/porto/v2/entities",
+    "method": "GET",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "OnStreetParking"
+       }
+      ]
+     },
+     "options": {
+      "hasExactly": [
+       {
+        "equalTo": "keyValues"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "attrs": {
+      "hasExactly": [
+       {
+        "equalTo": "address,allowedVehicleType,availableSpotNumber,category,dateModified,name,occupiedSpotNumber,totalSpotNumber"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/c3bdfde834e1.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/porto/v2/entities",
+    "method": "GET",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "OffStreetParking"
+       }
+      ]
+     },
+     "options": {
+      "hasExactly": [
+       {
+        "equalTo": "keyValues"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "attrs": {
+      "hasExactly": [
+       {
+        "equalTo": "address,category,name,openingHours,status,totalSpotNumber"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/c74f2c561fe7.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/porto/v2/entities",
+    "method": "GET",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "GtfsStop"
+       }
+      ]
+     },
+     "options": {
+      "hasExactly": [
+       {
+        "equalTo": "keyValues"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "attrs": {
+      "hasExactly": [
+       {
+        "equalTo": "code,name,page,wheelchairAccessible,zoneCode"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/4c36085891c7.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/porto/v2/entities",
+    "method": "GET",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "Event"
+       }
+      ]
+     },
+     "options": {
+      "hasExactly": [
+       {
+        "equalTo": "keyValues"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "attrs": {
+      "hasExactly": [
+       {
+        "equalTo": "address,category,endDate,name,source,startDate"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/6a2192dae3f7.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/porto/v2/entities",
+    "method": "GET",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "Device"
+       }
+      ]
+     },
+     "options": {
+      "hasExactly": [
+       {
+        "equalTo": "keyValues"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "attrs": {
+      "hasExactly": [
+       {
+        "equalTo": "controlledProperty,dateInstalled,dateLastCalibration,deviceState,provider"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/d77655ac0471.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/porto/v2/entities",
+    "method": "GET",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "Camera"
+       }
+      ]
+     },
+     "options": {
+      "hasExactly": [
+       {
+        "equalTo": "keyValues"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "attrs": {
+      "hasExactly": [
+       {
+        "equalTo": "cameraName,cameraNum,on,startDateTime"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/41804155bd9d.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/porto/v2/entities",
+    "method": "GET",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "Alert"
+       }
+      ]
+     },
+     "options": {
+      "hasExactly": [
+       {
+        "equalTo": "keyValues"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "attrs": {
+      "hasExactly": [
+       {
+        "equalTo": "alertSource,category,dateIssued,description,severity,subCategory,validFrom,validTo"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/ff257f885d23.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/porto/v2/entities",
+    "method": "GET",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "Vehicle"
+       }
+      ]
+     },
+     "options": {
+      "hasExactly": [
+       {
+        "equalTo": "keyValues"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "attrs": {
+      "hasExactly": [
+       {
+        "equalTo": "annotations,bearing,fleetVehicleId,name,observationDateTime,speed,vehicleType"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/31791fca485f.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/porto/v2/entities",
+    "method": "GET",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "WeatherForecast"
+       }
+      ]
+     },
+     "options": {
+      "hasExactly": [
+       {
+        "equalTo": "keyValues"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "attrs": {
+      "hasExactly": [
+       {
+        "equalTo": "dateRetrieved,dayMaximum,dayMinimum,feelsLikeTemperature,precipitationProbability,relativeHumidity,temperature,uVIndexMax,validFrom,validTo,weatherType,windSpeed"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/31aaa3f04e82.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/porto/v2/entities",
+    "method": "GET",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "WeatherObserved"
+       }
+      ]
+     },
+     "options": {
+      "hasExactly": [
+       {
+        "equalTo": "keyValues"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "attrs": {
+      "hasExactly": [
+       {
+        "equalTo": "atmosphericPressure,dateObserved,name,precipitation,relativeHumidity,solarRadiation,temperature,uVIndexMax,windDirection,windSpeed"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/00b63f2b0076.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/porto/v2/entities",
+    "method": "GET",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "NoiseLevelObserved"
+       }
+      ]
+     },
+     "options": {
+      "hasExactly": [
+       {
+        "equalTo": "keyValues"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "attrs": {
+      "hasExactly": [
+       {
+        "equalTo": "LAeq,dateObserved,dateObservedFrom,name"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/e987bc73ccf0.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/porto/v2/entities",
+    "method": "GET",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "AirQualityObserved"
+       }
+      ]
+     },
+     "options": {
+      "hasExactly": [
+       {
+        "equalTo": "keyValues"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "attrs": {
+      "hasExactly": [
+       {
+        "equalTo": "co,dateObserved,name,no2,o3,pm1,pm10,pm25"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/906ef6f3cbb4.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/porto/v2/entities",
+    "method": "GET",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "Vehicle"
+       }
+      ]
+     },
+     "options": {
+      "hasExactly": [
+       {
+        "equalTo": "keyValues"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "10"
+       }
+      ]
+     },
+     "q": {
+      "hasExactly": [
+       {
+        "equalTo": "observationDateTime>2026-11-05T22:15:59Z;vehicleType==bus"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/8661b2855d93.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/porto/v2/entities",
+    "method": "GET",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "PointOfInterest"
+       }
+      ]
+     },
+     "options": {
+      "hasExactly": [
+       {
+        "equalTo": "keyValues"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "1000"
+       }
+      ]
+     },
+     "attrs": {
+      "hasExactly": [
+       {
+        "equalTo": "name,name_pt,location,address"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/6ef55d8d3677.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/porto/v2/entities",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "Vehicle"
+       }
+      ]
+     },
+     "orderBy": {
+      "hasExactly": [
+       {
+        "equalTo": "!speed"
+       }
+      ]
+     },
+     "q": {
+      "hasExactly": [
+       {
+        "equalTo": "observationDateTime>2026-11-05T22:15:59Z;vehicleType==bus"
+       }
+      ]
+     },
+     "georel": {
+      "absent": true
+     },
+     "coords": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/8ebf30110f47.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/porto/v2/entities",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "AirQualityObserved"
+       }
+      ]
+     },
+     "q": {
+      "hasExactly": [
+       {
+        "equalTo": "dateObserved>2026-11-05T21:20:59Z"
+       }
+      ]
+     },
+     "orderBy": {
+      "absent": true
+     },
+     "georel": {
+      "absent": true
+     },
+     "coords": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/bdc76dc6d8d5.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/porto/v2/entities",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "AccessPoint"
+       }
+      ]
+     },
+     "orderBy": {
+      "absent": true
+     },
+     "q": {
+      "absent": true
+     },
+     "georel": {
+      "absent": true
+     },
+     "coords": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/5f92abfdf2a1.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/porto/v2/entities",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "WasteContainerModel"
+       }
+      ]
+     },
+     "orderBy": {
+      "absent": true
+     },
+     "q": {
+      "absent": true
+     },
+     "georel": {
+      "absent": true
+     },
+     "coords": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/991f60695d95.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/porto/v2/entities",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "WasteContainer"
+       }
+      ]
+     },
+     "orderBy": {
+      "absent": true
+     },
+     "q": {
+      "absent": true
+     },
+     "georel": {
+      "absent": true
+     },
+     "coords": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/a1eb79f598f5.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/porto/v2/entities",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "TrafficFlowObserved"
+       }
+      ]
+     },
+     "orderBy": {
+      "absent": true
+     },
+     "q": {
+      "absent": true
+     },
+     "georel": {
+      "absent": true
+     },
+     "coords": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/12cf22b02a46.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/porto/v2/entities",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "ThreePhaseMultiCircuitAcMeasurement"
+       }
+      ]
+     },
+     "orderBy": {
+      "absent": true
+     },
+     "q": {
+      "absent": true
+     },
+     "georel": {
+      "absent": true
+     },
+     "coords": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/12f29c5142ae.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/porto/v2/entities",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "PointOfInterest"
+       }
+      ]
+     },
+     "orderBy": {
+      "absent": true
+     },
+     "q": {
+      "absent": true
+     },
+     "georel": {
+      "absent": true
+     },
+     "coords": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/3a2fb45a70eb.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/porto/v2/entities",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "OnStreetParking"
+       }
+      ]
+     },
+     "orderBy": {
+      "absent": true
+     },
+     "q": {
+      "absent": true
+     },
+     "georel": {
+      "absent": true
+     },
+     "coords": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/c3bdfde834e1.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/porto/v2/entities",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "OffStreetParking"
+       }
+      ]
+     },
+     "orderBy": {
+      "absent": true
+     },
+     "q": {
+      "absent": true
+     },
+     "georel": {
+      "absent": true
+     },
+     "coords": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/c74f2c561fe7.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/porto/v2/entities",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "GtfsStop"
+       }
+      ]
+     },
+     "orderBy": {
+      "absent": true
+     },
+     "q": {
+      "absent": true
+     },
+     "georel": {
+      "absent": true
+     },
+     "coords": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/4c36085891c7.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/porto/v2/entities",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "Event"
+       }
+      ]
+     },
+     "orderBy": {
+      "absent": true
+     },
+     "q": {
+      "absent": true
+     },
+     "georel": {
+      "absent": true
+     },
+     "coords": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/6a2192dae3f7.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/porto/v2/entities",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "Device"
+       }
+      ]
+     },
+     "orderBy": {
+      "absent": true
+     },
+     "q": {
+      "absent": true
+     },
+     "georel": {
+      "absent": true
+     },
+     "coords": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/d77655ac0471.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/porto/v2/entities",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "Camera"
+       }
+      ]
+     },
+     "orderBy": {
+      "absent": true
+     },
+     "q": {
+      "absent": true
+     },
+     "georel": {
+      "absent": true
+     },
+     "coords": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/41804155bd9d.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/porto/v2/entities",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "Alert"
+       }
+      ]
+     },
+     "orderBy": {
+      "absent": true
+     },
+     "q": {
+      "absent": true
+     },
+     "georel": {
+      "absent": true
+     },
+     "coords": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/ff257f885d23.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/porto/v2/entities",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "Vehicle"
+       }
+      ]
+     },
+     "orderBy": {
+      "absent": true
+     },
+     "q": {
+      "absent": true
+     },
+     "georel": {
+      "absent": true
+     },
+     "coords": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/31791fca485f.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/porto/v2/entities",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "WeatherForecast"
+       }
+      ]
+     },
+     "orderBy": {
+      "absent": true
+     },
+     "q": {
+      "absent": true
+     },
+     "georel": {
+      "absent": true
+     },
+     "coords": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/31aaa3f04e82.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/porto/v2/entities",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "WeatherObserved"
+       }
+      ]
+     },
+     "orderBy": {
+      "absent": true
+     },
+     "q": {
+      "absent": true
+     },
+     "georel": {
+      "absent": true
+     },
+     "coords": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/00b63f2b0076.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/porto/v2/entities",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "NoiseLevelObserved"
+       }
+      ]
+     },
+     "orderBy": {
+      "absent": true
+     },
+     "q": {
+      "absent": true
+     },
+     "georel": {
+      "absent": true
+     },
+     "coords": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/e987bc73ccf0.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/porto/v2/entities",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "AirQualityObserved"
+       }
+      ]
+     },
+     "orderBy": {
+      "absent": true
+     },
+     "q": {
+      "absent": true
+     },
+     "georel": {
+      "absent": true
+     },
+     "coords": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/906ef6f3cbb4.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/porto/v2/entities",
+    "queryParameters": {
+     "type": {
+      "hasExactly": [
+       {
+        "equalTo": "Vehicle"
+       }
+      ]
+     },
+     "q": {
+      "hasExactly": [
+       {
+        "equalTo": "observationDateTime>2026-11-05T22:15:59Z;vehicleType==bus"
+       }
+      ]
+     },
+     "orderBy": {
+      "absent": true
+     },
+     "georel": {
+      "absent": true
+     },
+     "coords": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "porto/8661b2855d93.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  }
+ ]
+}

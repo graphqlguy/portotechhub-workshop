@@ -1,0 +1,25 @@
+[ {
+  "IndicadorCod" : "0000211",
+  "IndicadorDsg" : "Human consumption of meat per capita (kg/ inhab.) by Meat type; Annual - Statistics Portugal, Animal products supply balance sheet",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0000211&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:24:06.342Z",
+  "DataUltimoAtualizacao" : "2026-07-24",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2025" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "41",
+      "dim_3_t" : "Total meat and offal",
+      "sinal_conv" : "&",
+      "sinal_conv_desc" : "Provisional value",
+      "ind_string" : "117,1 &",
+      "valor" : "117.1"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

@@ -1,0 +1,21 @@
+[ {
+  "IndicadorCod" : "0014566",
+  "IndicadorDsg" : "Domestic consumption of natural gas per 1000 inhabitants (Nm³) by Geographic localization (NUTS - 2024); Annual - DGEG, Directorate-General for Energy and Geology",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014566&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:24:03.843Z",
+  "DataUltimoAtualizacao" : "2026-08-28",
+  "UltimoPref" : "2024",
+  "Dados" : {
+    "2024" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "ind_string" : "24,7",
+      "valor" : "24.7"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

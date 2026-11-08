@@ -1,0 +1,7388 @@
+{
+ "mappings": [
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/atendimentos-em-urgencia-triagem-manchester/records",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo >= date'2026-07' and tempo <= date'2026-08' and regiao = \"Região de Saúde Norte\""
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "100"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/b560636b3c6d.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/mapeamento-entre-codigos-de-centros-de-custo-usados-no-rhv-e-codigos-da-hierarqu/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "cod_mes_atual desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/9c62645db901.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/utentes-isentos/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/5e16e84b5664.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/ensaios-clinicos/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/8456b4b748a6.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/notificacao-de-incidentes-de-seguranca-em-unidades-prestadoras-de-cuidados-de-sa/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/6d8e2d20c819.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/no-de-entidades-inspecionadas-auditadas/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/cf2551de2ec1.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/acreditacao-de-unidades-de-saude/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/156e0867e987.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/cartao-da-pessoa-com-doenca-rara/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/3a11e0ee1415.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/inscritos-na-area-pessoal-do-sns24/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/e2e4e6a3b39f.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/teleconsultas-atraves-da-plataforma-live/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/1ef78db3833d.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/utilizacao-de-registo-saude-eletronico-por-profissionais-de-saude-em-hospitais-q/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/7c16d3381d72.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/utilizacao-de-registo-saude-eletronico-por-profissionais-de-saude-em-csp/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/c6f58c1424df.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-de-mcdt-realizados-no-convencionado/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/20c15d5408eb.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/exames-convencionados-e-area-mcdt/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "data desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/ca6002065d38.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-anual-do-numero-de-transportes/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "cod_mes desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/da9ca2510b37.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/portal-base/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "data_de_celebracao_do_contrato desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/7770ff1288c4.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/acordos-quadro-sistemas-aquisicao-dinamicos-ativos/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "data_de_entrada_em_vigor desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/67a0f061a8fb.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/acordos-quadro-na-area-da-saude/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "data_de_entrada_em_vigor desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/64707f4f88ef.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/poupancas-obtidas-nos-processos-compras-bens-servicos-transversais/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/804829a3cb79.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/poupancas-obtidas-nos-processos-compras-bens-servicos-saude/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/cae16b7186b0.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/conta-do-servico-nacional-de-saude/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/57b25b7aa202.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/distribuicao-da-reserva-estrategica-equipamentos-de-proteccao-individual-epi-e-d/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/88e67f2a9319.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/stock-reserva-estrategica-equipamentos-de-proteccao-individual-epi-e-dispositvos/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/3709e9305b1a.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/stock-da-reserva-estrategica-de-medicamentos-existentes-a-nivel-central/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/4a43f80965cf.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/distribuicao-da-reserva-estrategica-de-medicamentos/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/aa61c7d25e01.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-mensal-distribuicao-novo-coronavirus-2019-n-cov-para-extracao-de-rna-e-/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/2b55cc1fc17d.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-mensal-stock-novo-coronavirus-2019-n-cov-para-extracao-de-rna-e-rt-pcr-/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "ex_tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/cfa85b073433.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/programa-nacional-de-diagnostico-precoce/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/292d54981820.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/monitorizacao-ambiental-de-legionella/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/18eec00d522a.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/registo-nacional-de-anomalias-congenitas/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/8127fc2835db.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/taxa-de-cobertura-da-vacina-antigripal-sazonal-na-populacao-em-portugal-continen/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "epoca_sazonal desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/29ab0955b2fe.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/frequencia-de-casos-de-sindrome-gripal-devido-a-infecao-por-outros-virus-respira/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/24c24453df76.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/frequencia-de-casos-confirmados-de-gripe/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/1e1240146da1.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/escolhas-formacao-medica/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/04b4d99fb4cd.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/formacao-medica-pna/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/434e811ab5ce.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/formacao-medica-medicos-recem-especialistas/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/7d25b43604da.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/vagas-formacao-especializada-internato/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/d9a2287acfcc.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/vagas-formacao-geral-internato/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/a7c7c6c5f4bc.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/dadores-vivos-e-falecidos/records",
+    "method": "GET",
+    "queryParameters": {
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/6e0fbd928134.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/orgaos-colhidos/records",
+    "method": "GET",
+    "queryParameters": {
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/f027ad931694.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/orgaos-colhidos-e-transplantados/records",
+    "method": "GET",
+    "queryParameters": {
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/e2f588560096.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/gestao-integrada-da-doenca-insuficiencia-renal-cronica/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/120793c6e5b4.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/morbilidade_mortalidade_hospit/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/0a1f6e654333.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/morbilidade-e-mortalidade-hospitalar-por-sexo/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "ano desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/10466009ed5a.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/morbilidade-e-mortalidade-hospitalar-por-faixa-etaria/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "ano desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/a8ef336d8509.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/morbilidade-e-mortalidade-hospitalar/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "ano desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/35f8b7eb4098.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/morbilidade-e-mortalidade-hospitalar-hipertensao-insuf-cardiaca/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "ano desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/059e37cb9a7d.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/morbilidade-e-mortalidade-hospitalar-diabetes/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "ano desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/a69e5c3e38b7.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/morbilidade-e-mortalidade-hospitalar-asma-dpoc-pneumo/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "ano desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/d747c48a1903.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/indice-friesa/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "data desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/4f8166be3477.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-diaria-do-indice-icaro/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/ccd0473abc4f.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/atividade-sindrome-gripal-csh/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/5a50ee115ac6.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/monitorizacao-sazonal-csh/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/e00698d2a8b1.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/caracterizacao-das-valencias-de-urgencia/records",
+    "method": "GET",
+    "queryParameters": {
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/6198d2687982.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-programas-dae-licenciados-em-espacos-publicos/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/0941e382f75a.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-programas-dae-em-meios-de-emergencia-medica/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/5f637543a7b4.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-enfarte-agudo-miocardio-supra-desnivelamento/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/1e45608614ac.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-situacoes-doentes-sinais-sintomas-de-avc/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/5fc168a13494.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-mensal-linha-sns-gravida/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "mes desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/127cd5b3144e.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/atividade-operacional-do-sns-24/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/587c37326fac.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/satisfacao-do-utente-em-atendimento-telefonico/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "data desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/45b6189ff4f6.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-mensal-das-ocorrencias-pre-hospitalares-por-tipologia/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/8686799f291c.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/numero-de-ocorrencia-com-prioridade/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/525ed4d45972.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/acionamentos-de-meios-de-emergencia-medica/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/310b876553d0.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/atividade-gripe-inem/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/4ec0c4a5dd21.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/codu-mar/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "data desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/9c374268a6ac.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/chamadas-capic/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "data desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/4e795beb0ec6.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/sns24/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "data desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/42b421cd6618.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-mensal-do-no-de-chamadas-atendidas-no-centro-de-informacao-antivenenos/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/3c1930f6b9b0.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-diaria-de-certificados-de-obito/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "data_de_certificacao desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/bd9acfcd9e51.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/certificados-de-obito-por-instituicao-de-saude/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "data_certificacao desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/a022b3c9c38a.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/autodeclaracoes-de-doenca-dos-utentes/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "des_dia desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/a762ef177a5a.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/certificado-de-incapacidade-temporaria-dos-utentes/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "des_dia desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/9dd05d145a32.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/atendimentos-urgencia-setor-social/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/eeddfca9b804.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/intervencoes-cirurgicas-privado-sigic-sector-social/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/b918592c3d39.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/consultas-medicas-setor-social/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/a3e3ce87c7f5.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/dissuasao-da-toxicodependencia/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "ano desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/18e1debe0b40.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/substancias/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "ano desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/4f0c3507ba9c.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/utentes-novos-em-ambulatorio/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "ano desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/b619b626649c.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/movimento-clinico-de-utentes-com-problemas-de-comportamentos-aditivos-e-dependen/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "ano desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/ef4b4e300abc.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/prevalencia-de-quedas-e-incidencias-de-ulceras-de-pressao/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/853e0073d4a1.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/utentes-admitidos-e-referenciados/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/201e6d6b6361.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/distribuicao-do-destino-das-altas/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "data desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/2d2eabf52e8c.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/utentes-referenciados-pelos-hospitais-e-cs-para-a-rede/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "ultimo_dia desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/286574b6f4f0.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/rncci-episodios/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "data desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/5a36be071761.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/dados-financeiros/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "data desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/9a99f5aeadc9.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/top-50-de-prescricao-rsp-em-locais-nao-sns/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/220674dbd66f.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/desmaterializacao-eletronica-da-receita/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/fd9d3e1df2f6.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/preco-medio-por-embalagem/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/9e0beab64532.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/genericos/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/71a9dff72476.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/dispensa-de-medicamentos-por-grupo-farmacoterapeutico/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/dc55a56ccf54.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/despesa-com-medicamentos-nos-hospitais-do-sns/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/471cf0581ba8.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/despesa-com-medicamentos-no-ambulatorio-sns/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/c767777b06b3.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-da-dispensa-de-medicamentos/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/eed83e7335a4.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-da-prescricao-electronica-de-medicamentos/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/6093edf278b8.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/atendimentos-nos-csp-gripe/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "dia desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/988fd24b922a.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/monitorizacao-sazonal-csp/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "dia desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/1a86f2f394b3.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/tratamentos-efetuados-no-ambito-soep/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/e6e517be325b.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/utentes-atendidos-nos-centros-de-saude-no-ambito-da-soep/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/7b4735bb5214.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/referenciacoes-soep-emitidas-nos-centros-de-saude/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/44e45ae2af82.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/saude-oral/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/9b2c82ccaa7f.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/registo-de-testamentos-vitais/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/089792a93c30.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/utentesregistonacionaldeutentes/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/cafd0ce69e8b.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/inscritoscuidadosdesaudeprimarios/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/25a6b491e1e4.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/utentes-inscritos-em-cuidados-de-saude-primarios/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/d95804a616df.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/saude-da-mulher-e-crianca/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/1486f2388ab1.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/hipertensao/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/7780cbc35b65.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/diabetes/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/0e7e475e86d7.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/rastreios-oncologicos/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/023e49709b89.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/acesso-de-consultas-medicas-pela-populacao-inscrita/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/b0ac0ae93a7a.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-das-consultas-medicas-nos-csp/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/d711f89ed9c2.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-dos-contactos-de-enfermagem-nos-csp/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/584ea1aa8b83.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-do-numero-de-unidades-funcionais/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/904b3ca43f81.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/custo-de-tratamento-mensal-por-doente/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/a32ae737a9ed.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/medicamentos-biossimilares/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/656fa42f4b85.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/antibioticos-fluoroquinolonas/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/e52e3df7676b.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/antibioticos-cefalosporinas/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/25cbfc7cc626.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/antibioticos-carbapenemes/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/81329d7bb5b3.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/antibioticos/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/de80fda0fb99.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/noticias-de-nascimento-digital-e-registo-de-nascer-de-utentes/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/44987c1b194f.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/reservas/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/c361c45432a0.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/colheita-de-sangue-total/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/ea186fea2f2a.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/dadores-de-sangue/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/1de7a33cfb46.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/contagem-das-horas-de-trabalho-nocturno-normal-e-extraordinario/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/f93877d1cb25.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/ausencias-para-formacao-e-aperfeicoamento-profissional/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/bc7cdce816db.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/contagem-dos-dias-de-ausencia-ao-trabalho-segundo-o-motivo-de-ausencia/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/4b875b25a86b.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/trabalhadores-por-grupo-profissional/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/3ee77fd09045.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/trabalhadores-por-modalidade-de-vinculacao/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/6afabac2cd6e.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/tempo-medio-de-pagamento-das-instituicoes-do-sns-a-fornecedores/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/d38ef2a64bae.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "periodo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/fe889df9c3c0.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/agregados-economico-financeiros/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/f85aed04ee41.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/percentagem-de-gastos-com-te-e-suplementos-no-total-gastos-com-pessoal/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/9f58b23a062f.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/inscritos-lic-dentro-tmrg/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/454f4f7c0606.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/inscritos-em-lic-dentro-do-tmrg-180-dias/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/06ad5677cab7.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/taxa-de-mortalidade-por-avc-isquemico-e-hemorragico/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/1b7dc0219a7b.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/lotacao-praticada-por-tipo-de-cama/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/2b25ceefa40d.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/ocupacao-do-internamento/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/266344c2f110.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/atividade-de-internamento-hospitalar/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/fea1ad9859bf.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/partos-e-cesarianas/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/2b6f1c26138a.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/fraturas-da-anca-cirurgias-nas-primeiras-48h/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/598f24ddba7d.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/demora-media-antes-da-cirurgia/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/0f77c281e19b.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/cirurgias-em-ambulatorio/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/abe852a7c770.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/intervencoes-cirurgicas/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/8e9369682d62.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/consultas-em-tempo-real/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/640c61818238.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-mensal-das-consultas-de-psicologia/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/1d2ed4cd9a15.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-mensal-das-consultas-de-nutricao/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/2356364e3adf.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/consultas-em-telemedicina/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/4921758e481e.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/01_sica_evolucao-mensal-das-consultas-medicas-hospitalares/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/781e81ee949c.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/atendimentos-por-tipo-de-urgencia-hospitalar-link/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/fc2428ee1c45.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/atendimentos-em-urgencia-triagem-manchester/records",
+    "method": "GET",
+    "queryParameters": {
+     "order_by": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo desc"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/507e56684adb.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/atendimentos-em-urgencia-triagem-manchester/records",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo >= date'2026-07' and tempo <= date'2026-08'"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "100"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/38466e261e02.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/atendimentos-em-urgencia-triagem-manchester/records",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo >= date'2026-07' and tempo <= date'2026-08' and regiao = \"Norte\""
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "100"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/b0756a3a2e94.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/atendimentos-em-urgencia-triagem-manchester/records",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo >= date'2026-07' and tempo <= date'2026-08' and search(regiao, \"Região de Saúde Norte\")"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "100"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/eec0e9863069.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/atendimentos-em-urgencia-triagem-manchester/records",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo >= date'2026-07' and tempo <= date'2026-08' and search(regiao, \"Norte\")"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "100"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/53cccd1a5cfe.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/atendimentos-em-urgencia-triagem-manchester/records",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo >= date'2026-07' and tempo <= date'2026-08' and regiao = \"Região de Saúde Norte\""
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/b560636b3c6d.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/mapeamento-entre-codigos-de-centros-de-custo-usados-no-rhv-e-codigos-da-hierarqu/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/9c62645db901.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/utentes-isentos/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/5e16e84b5664.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/ensaios-clinicos/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/8456b4b748a6.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/notificacao-de-incidentes-de-seguranca-em-unidades-prestadoras-de-cuidados-de-sa/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/6d8e2d20c819.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/no-de-entidades-inspecionadas-auditadas/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/cf2551de2ec1.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/acreditacao-de-unidades-de-saude/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/156e0867e987.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/cartao-da-pessoa-com-doenca-rara/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/3a11e0ee1415.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/inscritos-na-area-pessoal-do-sns24/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/e2e4e6a3b39f.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/teleconsultas-atraves-da-plataforma-live/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/1ef78db3833d.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/utilizacao-de-registo-saude-eletronico-por-profissionais-de-saude-em-hospitais-q/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/7c16d3381d72.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/utilizacao-de-registo-saude-eletronico-por-profissionais-de-saude-em-csp/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/c6f58c1424df.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-de-mcdt-realizados-no-convencionado/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/20c15d5408eb.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/exames-convencionados-e-area-mcdt/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/ca6002065d38.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-anual-do-numero-de-transportes/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/da9ca2510b37.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/portal-base/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/7770ff1288c4.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/acordos-quadro-sistemas-aquisicao-dinamicos-ativos/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/67a0f061a8fb.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/acordos-quadro-na-area-da-saude/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/64707f4f88ef.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/poupancas-obtidas-nos-processos-compras-bens-servicos-transversais/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/804829a3cb79.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/poupancas-obtidas-nos-processos-compras-bens-servicos-saude/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/cae16b7186b0.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/conta-do-servico-nacional-de-saude/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/57b25b7aa202.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/distribuicao-da-reserva-estrategica-equipamentos-de-proteccao-individual-epi-e-d/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/88e67f2a9319.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/stock-reserva-estrategica-equipamentos-de-proteccao-individual-epi-e-dispositvos/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/3709e9305b1a.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/stock-da-reserva-estrategica-de-medicamentos-existentes-a-nivel-central/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/4a43f80965cf.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/distribuicao-da-reserva-estrategica-de-medicamentos/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/aa61c7d25e01.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-mensal-distribuicao-novo-coronavirus-2019-n-cov-para-extracao-de-rna-e-/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/2b55cc1fc17d.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-mensal-stock-novo-coronavirus-2019-n-cov-para-extracao-de-rna-e-rt-pcr-/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/cfa85b073433.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/programa-nacional-de-diagnostico-precoce/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/292d54981820.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/monitorizacao-ambiental-de-legionella/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/18eec00d522a.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/registo-nacional-de-anomalias-congenitas/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/8127fc2835db.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/taxa-de-cobertura-da-vacina-antigripal-sazonal-na-populacao-em-portugal-continen/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/29ab0955b2fe.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/frequencia-de-casos-de-sindrome-gripal-devido-a-infecao-por-outros-virus-respira/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/24c24453df76.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/frequencia-de-casos-confirmados-de-gripe/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/1e1240146da1.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/escolhas-formacao-medica/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/04b4d99fb4cd.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/formacao-medica-pna/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/434e811ab5ce.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/formacao-medica-medicos-recem-especialistas/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/7d25b43604da.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/vagas-formacao-especializada-internato/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/d9a2287acfcc.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/vagas-formacao-geral-internato/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/a7c7c6c5f4bc.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/dadores-vivos-e-falecidos/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/6e0fbd928134.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/orgaos-colhidos/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/f027ad931694.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/orgaos-colhidos-e-transplantados/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/e2f588560096.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/gestao-integrada-da-doenca-insuficiencia-renal-cronica/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/120793c6e5b4.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/morbilidade_mortalidade_hospit/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/0a1f6e654333.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/morbilidade-e-mortalidade-hospitalar-por-sexo/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/10466009ed5a.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/morbilidade-e-mortalidade-hospitalar-por-faixa-etaria/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/a8ef336d8509.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/morbilidade-e-mortalidade-hospitalar/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/35f8b7eb4098.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/morbilidade-e-mortalidade-hospitalar-hipertensao-insuf-cardiaca/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/059e37cb9a7d.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/morbilidade-e-mortalidade-hospitalar-diabetes/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/a69e5c3e38b7.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/morbilidade-e-mortalidade-hospitalar-asma-dpoc-pneumo/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/d747c48a1903.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/indice-friesa/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/4f8166be3477.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-diaria-do-indice-icaro/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/ccd0473abc4f.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/atividade-sindrome-gripal-csh/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/5a50ee115ac6.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/monitorizacao-sazonal-csh/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/e00698d2a8b1.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/caracterizacao-das-valencias-de-urgencia/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/6198d2687982.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-programas-dae-licenciados-em-espacos-publicos/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/0941e382f75a.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-programas-dae-em-meios-de-emergencia-medica/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/5f637543a7b4.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-enfarte-agudo-miocardio-supra-desnivelamento/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/1e45608614ac.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-situacoes-doentes-sinais-sintomas-de-avc/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/5fc168a13494.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-mensal-linha-sns-gravida/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/127cd5b3144e.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/atividade-operacional-do-sns-24/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/587c37326fac.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/satisfacao-do-utente-em-atendimento-telefonico/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/45b6189ff4f6.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-mensal-das-ocorrencias-pre-hospitalares-por-tipologia/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/8686799f291c.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/numero-de-ocorrencia-com-prioridade/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/525ed4d45972.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/acionamentos-de-meios-de-emergencia-medica/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/310b876553d0.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/atividade-gripe-inem/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/4ec0c4a5dd21.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/codu-mar/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/9c374268a6ac.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/chamadas-capic/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/4e795beb0ec6.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/sns24/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/42b421cd6618.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-mensal-do-no-de-chamadas-atendidas-no-centro-de-informacao-antivenenos/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/3c1930f6b9b0.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-diaria-de-certificados-de-obito/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/bd9acfcd9e51.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/certificados-de-obito-por-instituicao-de-saude/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/a022b3c9c38a.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/autodeclaracoes-de-doenca-dos-utentes/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/a762ef177a5a.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/certificado-de-incapacidade-temporaria-dos-utentes/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/9dd05d145a32.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/atendimentos-urgencia-setor-social/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/eeddfca9b804.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/intervencoes-cirurgicas-privado-sigic-sector-social/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/b918592c3d39.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/consultas-medicas-setor-social/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/a3e3ce87c7f5.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/dissuasao-da-toxicodependencia/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/18e1debe0b40.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/substancias/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/4f0c3507ba9c.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/utentes-novos-em-ambulatorio/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/b619b626649c.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/movimento-clinico-de-utentes-com-problemas-de-comportamentos-aditivos-e-dependen/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/ef4b4e300abc.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/prevalencia-de-quedas-e-incidencias-de-ulceras-de-pressao/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/853e0073d4a1.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/utentes-admitidos-e-referenciados/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/201e6d6b6361.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/distribuicao-do-destino-das-altas/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/2d2eabf52e8c.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/utentes-referenciados-pelos-hospitais-e-cs-para-a-rede/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/286574b6f4f0.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/rncci-episodios/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/5a36be071761.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/dados-financeiros/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/9a99f5aeadc9.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/top-50-de-prescricao-rsp-em-locais-nao-sns/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/220674dbd66f.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/desmaterializacao-eletronica-da-receita/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/fd9d3e1df2f6.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/preco-medio-por-embalagem/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/9e0beab64532.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/genericos/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/71a9dff72476.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/dispensa-de-medicamentos-por-grupo-farmacoterapeutico/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/dc55a56ccf54.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/despesa-com-medicamentos-nos-hospitais-do-sns/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/471cf0581ba8.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/despesa-com-medicamentos-no-ambulatorio-sns/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/c767777b06b3.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-da-dispensa-de-medicamentos/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/eed83e7335a4.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-da-prescricao-electronica-de-medicamentos/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/6093edf278b8.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/atendimentos-nos-csp-gripe/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/988fd24b922a.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/monitorizacao-sazonal-csp/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/1a86f2f394b3.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/tratamentos-efetuados-no-ambito-soep/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/e6e517be325b.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/utentes-atendidos-nos-centros-de-saude-no-ambito-da-soep/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/7b4735bb5214.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/referenciacoes-soep-emitidas-nos-centros-de-saude/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/44e45ae2af82.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/saude-oral/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/9b2c82ccaa7f.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/registo-de-testamentos-vitais/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/089792a93c30.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/utentesregistonacionaldeutentes/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/cafd0ce69e8b.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/inscritoscuidadosdesaudeprimarios/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/25a6b491e1e4.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/utentes-inscritos-em-cuidados-de-saude-primarios/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/d95804a616df.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/saude-da-mulher-e-crianca/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/1486f2388ab1.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/hipertensao/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/7780cbc35b65.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/diabetes/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/0e7e475e86d7.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/rastreios-oncologicos/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/023e49709b89.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/acesso-de-consultas-medicas-pela-populacao-inscrita/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/b0ac0ae93a7a.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-das-consultas-medicas-nos-csp/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/d711f89ed9c2.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-dos-contactos-de-enfermagem-nos-csp/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/584ea1aa8b83.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-do-numero-de-unidades-funcionais/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/904b3ca43f81.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/custo-de-tratamento-mensal-por-doente/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/a32ae737a9ed.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/medicamentos-biossimilares/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/656fa42f4b85.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/antibioticos-fluoroquinolonas/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/e52e3df7676b.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/antibioticos-cefalosporinas/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/25cbfc7cc626.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/antibioticos-carbapenemes/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/81329d7bb5b3.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/antibioticos/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/de80fda0fb99.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/noticias-de-nascimento-digital-e-registo-de-nascer-de-utentes/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/44987c1b194f.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/reservas/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/c361c45432a0.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/colheita-de-sangue-total/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/ea186fea2f2a.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/dadores-de-sangue/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/1de7a33cfb46.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/contagem-das-horas-de-trabalho-nocturno-normal-e-extraordinario/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/f93877d1cb25.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/ausencias-para-formacao-e-aperfeicoamento-profissional/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/bc7cdce816db.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/contagem-dos-dias-de-ausencia-ao-trabalho-segundo-o-motivo-de-ausencia/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/4b875b25a86b.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/trabalhadores-por-grupo-profissional/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/3ee77fd09045.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/trabalhadores-por-modalidade-de-vinculacao/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/6afabac2cd6e.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/tempo-medio-de-pagamento-das-instituicoes-do-sns-a-fornecedores/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/d38ef2a64bae.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/divida-total-vencida-e-pagamentos/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/fe889df9c3c0.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/agregados-economico-financeiros/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/f85aed04ee41.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/percentagem-de-gastos-com-te-e-suplementos-no-total-gastos-com-pessoal/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/9f58b23a062f.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/inscritos-lic-dentro-tmrg/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/454f4f7c0606.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/inscritos-em-lic-dentro-do-tmrg-180-dias/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/06ad5677cab7.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/taxa-de-mortalidade-por-avc-isquemico-e-hemorragico/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/1b7dc0219a7b.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/lotacao-praticada-por-tipo-de-cama/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/2b25ceefa40d.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/ocupacao-do-internamento/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/266344c2f110.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/atividade-de-internamento-hospitalar/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/fea1ad9859bf.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/partos-e-cesarianas/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/2b6f1c26138a.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/fraturas-da-anca-cirurgias-nas-primeiras-48h/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/598f24ddba7d.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/demora-media-antes-da-cirurgia/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/0f77c281e19b.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/cirurgias-em-ambulatorio/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/abe852a7c770.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/intervencoes-cirurgicas/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/8e9369682d62.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/consultas-em-tempo-real/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/640c61818238.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-mensal-das-consultas-de-psicologia/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/1d2ed4cd9a15.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/evolucao-mensal-das-consultas-de-nutricao/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/2356364e3adf.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/consultas-em-telemedicina/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/4921758e481e.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/01_sica_evolucao-mensal-das-consultas-medicas-hospitalares/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/781e81ee949c.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/atendimentos-por-tipo-de-urgencia-hospitalar-link/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/fc2428ee1c45.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/atendimentos-em-urgencia-triagem-manchester/records",
+    "queryParameters": {
+     "where": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/507e56684adb.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/atendimentos-em-urgencia-triagem-manchester/records",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo >= date'2026-07' and tempo <= date'2026-08'"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/38466e261e02.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/atendimentos-em-urgencia-triagem-manchester/records",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo >= date'2026-07' and tempo <= date'2026-08' and regiao = \"Norte\""
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/b0756a3a2e94.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/atendimentos-em-urgencia-triagem-manchester/records",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo >= date'2026-07' and tempo <= date'2026-08' and search(regiao, \"Região de Saúde Norte\")"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/eec0e9863069.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/sns/api/explore/v2.1/catalog/datasets/atendimentos-em-urgencia-triagem-manchester/records",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "tempo >= date'2026-07' and tempo <= date'2026-08' and search(regiao, \"Norte\")"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "sns/53cccd1a5cfe.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  }
+ ]
+}

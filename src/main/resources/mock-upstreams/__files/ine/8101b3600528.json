@@ -1,0 +1,27 @@
+[ {
+  "IndicadorCod" : "0006055",
+  "IndicadorDsg" : "Permanent immigrants (No.) by Sex, Age and Nationality; Annual - Statistics Portugal, Imigration annual estimates",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0006055&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:23.106Z",
+  "DataUltimoAtualizacao" : "2026-09-30",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2025" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "MF",
+      "dim_4" : "T",
+      "dim_4_t" : "Total",
+      "dim_5" : "T",
+      "dim_5_t" : "Total",
+      "ind_string" : "254 253",
+      "valor" : "254253"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

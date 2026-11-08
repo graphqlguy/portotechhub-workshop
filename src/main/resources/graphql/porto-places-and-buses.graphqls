@@ -1,0 +1,64 @@
+# The hand-written fields of Porto Digital's urban platform: a place by its name, and the buses reporting now.
+# See PortoGraphQLController. The generated fields of the platform are in porto.graphqls.
+
+extend type Query {
+    """
+    A place in Porto found by its name, such as Alfândega do Porto, with its latitude, longitude and address. Accents and
+    case do not matter, and the start of a name is enough. The fields that search near a place take its name directly, so
+    this field is for a question about where a place is.
+    """
+    portoPlace(
+        "The name of the place, such as Alfândega do Porto, Estação de São Bento or Estádio do Dragão."
+        name: String!
+    ): PortoPlace
+
+    """
+    The STCP buses of Porto that reported their position in the last five minutes, with their line, their speed and where
+    they are. Buses that stopped reporting are left out. fastestFirst sorts the buses by speed. The speed comes in
+    metres per second and in kilometres per hour.
+    """
+    portoBusesNow(
+        "Only the buses of this line, such as 500 for the line along the river to Matosinhos."
+        line: String
+        "True to sort the buses by their speed, the fastest first."
+        fastestFirst: Boolean = false
+        "Only the buses near this place in Porto, the nearest first, such as Alfândega do Porto. Leave it out, or write Porto, for the whole city."
+        near: String
+        "The radius around the place, in metres."
+        radiusMetres: Int = 1000
+        "The number of buses to return."
+        first: Int = 10
+    ): [PortoBus!]
+}
+
+"A place in Porto, from the points of interest of Porto Digital's urban platform."
+type PortoPlace {
+    "The name in Portuguese, such as Alfândega do Porto."
+    name: String!
+    "The name in English, when the platform has one."
+    englishName: String
+    "The latitude of the place, in decimal degrees."
+    latitude: Float!
+    "The longitude of the place, in decimal degrees."
+    longitude: Float!
+    "The street, postal code and town of the place."
+    address: String
+}
+
+"An STCP bus as it last reported its position and speed."
+type PortoBus {
+    "The line the bus runs, such as 500."
+    line: String
+    "The number of the bus in STCP's fleet."
+    vehicle: String
+    "The speed the bus reported, in metres per second."
+    speedMetresPerSecond: Float
+    "The same speed in kilometres per hour, which is the figure to give a person."
+    speedKilometresPerHour: Float
+    "The latitude where the bus was."
+    latitude: Float
+    "The longitude where the bus was."
+    longitude: Float
+    "When the bus reported, in UTC, such as 2026-01-15T09:30:00.00Z."
+    observedAt: String
+}

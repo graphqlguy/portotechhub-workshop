@@ -1,0 +1,23 @@
+[ {
+  "IndicadorCod" : "0006050",
+  "IndicadorDsg" : "Permanent emigrants (No.) by Sex; Annual - Statistics Portugal, Emigration annual estimates",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0006050&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:23.686Z",
+  "DataUltimoAtualizacao" : "2026-09-30",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2025" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "MF",
+      "ind_string" : "179 948",
+      "valor" : "179948"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

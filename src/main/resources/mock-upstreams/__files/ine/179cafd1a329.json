@@ -1,0 +1,23 @@
+[ {
+  "IndicadorCod" : "0013140",
+  "IndicadorDsg" : "Fixed broadband Internet accesses (No.) by Geographic localization (NUTS - 2024) and Access segment; Annual - Statistics Portugal, Telecommunications survey",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013140&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:24:10.535Z",
+  "DataUltimoAtualizacao" : "2026-06-09",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2025" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "4 811 599",
+      "valor" : "4811599"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

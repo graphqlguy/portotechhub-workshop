@@ -1,0 +1,21 @@
+[ {
+  "IndicadorCod" : "0012600",
+  "IndicadorDsg" : "Median house rental value of new lease agreements of household dwellings (2021 Methodology - €/ m²) by Geographic localization (NUTS - 2024); Annual - Statistics Portugal, House rental statistics at local level",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0012600&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:31.358Z",
+  "DataUltimoAtualizacao" : "2025-06-27",
+  "UltimoPref" : "2024",
+  "Dados" : {
+    "2024" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "ind_string" : "7,97",
+      "valor" : "7.97"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

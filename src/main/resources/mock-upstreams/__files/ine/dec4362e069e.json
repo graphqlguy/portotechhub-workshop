@@ -1,0 +1,23 @@
+[ {
+  "IndicadorCod" : "0014646",
+  "IndicadorDsg" : "Consumer price index (Month-on-month growth rate - Base 2025 - %) by Geographic localization and Special aggregates; Monthly - Statistics Portugal, Consumer price index",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014646&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:37.020Z",
+  "DataUltimoAtualizacao" : "2026-10-13",
+  "UltimoPref" : "September 2026",
+  "Dados" : {
+    "September 2026" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "1,24",
+      "valor" : "1.24"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

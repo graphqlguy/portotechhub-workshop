@@ -1,0 +1,23 @@
+[ {
+  "IndicadorCod" : "0014584",
+  "IndicadorDsg" : "Resident population (No.) by Place of residence at the Census moment [2021] (NUTS - 2024 - geography 2025) and Sex; Decennial - Statistics Portugal, Population and housing census - 2021",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014584&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:25.101Z",
+  "DataUltimoAtualizacao" : "2025-10-28",
+  "UltimoPref" : "2021",
+  "Dados" : {
+    "2021" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "MF",
+      "ind_string" : "10 343 066",
+      "valor" : "10343066"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

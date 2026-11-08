@@ -104,6 +104,18 @@
       <version>10.3.2</version>
     </dependency>
 
+    <!-- REST clients for the Portuguese public services behind the schema -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-restclient</artifactId>
+    </dependency>
+    <!-- Serves recorded answers of the public services when the "mock" profile is active -->
+    <dependency>
+      <groupId>org.wiremock</groupId>
+      <artifactId>wiremock-standalone</artifactId>
+      <version>3.13.2</version>
+    </dependency>
+
     <dependency>
       <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>
@@ -156,12 +168,12 @@
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-restclient</artifactId>
+      <artifactId>spring-boot-starter-restclient-test</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-restclient-test</artifactId>
+      <artifactId>spring-boot-starter-graphql-test</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>

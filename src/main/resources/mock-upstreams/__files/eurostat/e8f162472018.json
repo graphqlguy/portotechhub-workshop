@@ -1,0 +1,1 @@
+{ "error": [{"status": 400,"id": 400,"label": "'TIME' parameter, 'TIME_PERIOD' parameter, 'lastTimePeriod' parameter and 'sinceTimePeriod' parameter cannot be set at the same time. Please choose one or the other."}]}

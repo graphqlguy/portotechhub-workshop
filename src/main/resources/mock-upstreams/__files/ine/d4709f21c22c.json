@@ -1,0 +1,23 @@
+[ {
+  "IndicadorCod" : "0012244",
+  "IndicadorDsg" : "Formation of legal persons and equivalent entities (No.) by Geographic location (NUTS - 2024) and Economic activity (CAE Rev. 3); Monthly - DGPJ - Directorate-General for Justice Policy, Formation and dissolution of legal persons and equivalent entities",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0012244&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:48.319Z",
+  "DataUltimoAtualizacao" : "2026-10-29",
+  "UltimoPref" : "September 2026",
+  "Dados" : {
+    "September 2026" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "TOT",
+      "dim_3_t" : "Total",
+      "ind_string" : "4 005",
+      "valor" : "4005"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

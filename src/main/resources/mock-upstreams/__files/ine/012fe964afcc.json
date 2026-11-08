@@ -1,0 +1,25 @@
+[ {
+  "IndicadorCod" : "0013512",
+  "IndicadorDsg" : "Rural fires (No.) by Geographic localization (NUTS - 2024) and Cause of fire; Annual - ICNF, Forestry statistics",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013512&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:24:05.038Z",
+  "DataUltimoAtualizacao" : "2026-05-30",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2025" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "sinal_conv" : "&",
+      "sinal_conv_desc" : "Provisional value",
+      "ind_string" : "8 270 &",
+      "valor" : "8270"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

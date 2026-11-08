@@ -1,0 +1,23 @@
+[ {
+  "IndicadorCod" : "0012835",
+  "IndicadorDsg" : "Wine production declared in wine (hl) by producers by Vinification location (NUTS - 2024) and Quality and color of wine (New regulation); Annual - Statistics Portugal, Vegetable production statistics",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0012835&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:24:06.933Z",
+  "DataUltimoAtualizacao" : "2026-04-14",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2025" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "5 956 164",
+      "valor" : "5956164"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

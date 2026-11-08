@@ -1,0 +1,395 @@
+{
+ "mappings": [
+  {
+   "request": {
+    "url": "/ipma/open-data/observation/seismic/7.json",
+    "method": "GET"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "ipma/1fc8781dde6d.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "url": "/ipma/open-data/weather-type-classe.json",
+    "method": "GET"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "ipma/c0ddd6eacb74.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "url": "/ipma/open-data/forecast/meteorology/cities/daily/1131200.json",
+    "method": "GET"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "ipma/50f39e2ad49a.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "url": "/ipma/open-data/precipitation-classe.json",
+    "method": "GET"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "ipma/22fd0670ac00.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "url": "/ipma/open-data/wind-speed-daily-classe.json",
+    "method": "GET"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "ipma/e23a79965e24.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "url": "/ipma/open-data/sea-locations.json",
+    "method": "GET"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "ipma/618880dbfa9b.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "url": "/ipma/open-data/distrits-islands.json",
+    "method": "GET"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "ipma/1db29eb11ac2.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "url": "/ipma/open-data/observation/meteorology/stations/observations.json",
+    "method": "GET"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "ipma/e7ab656f757d.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "url": "/ipma/open-data/observation/meteorology/stations/stations.json",
+    "method": "GET"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "ipma/a78bb6386391.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "url": "/ipma/open-data/forecast/warnings/warnings_www.json",
+    "method": "GET"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "ipma/4f1bf3302186.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "url": "/ipma/open-data/forecast/meteorology/uv/uv.json",
+    "method": "GET"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "ipma/5b6a3eb9b989.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "url": "/ipma/open-data/forecast/meteorology/rcm/rcm-d0.json",
+    "method": "GET"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "ipma/a2074323886b.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "url": "/ipma/open-data/forecast/oceanography/daily/hp-daily-sea-forecast-day0.json",
+    "method": "GET"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "ipma/a3570f4156cb.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "url": "/ipma/open-data/forecast/meteorology/cities/daily/hp-daily-forecast-day0.json",
+    "method": "GET"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "ipma/77c78ccd7f08.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "request": {
+    "url": "/ipma/open-data/observation/seismic/1.json",
+    "method": "GET"
+   },
+   "response": {
+    "status": 404,
+    "bodyFileName": "ipma/88d94b78518d.json",
+    "headers": {
+     "Content-Type": "text/html; charset=iso-8859-1"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ipma/open\\-data/observation/seismic/\\d+\\.json"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "ipma/1fc8781dde6d.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ipma/open\\-data/weather\\-type\\-classe\\.json"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "ipma/c0ddd6eacb74.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ipma/open\\-data/forecast/meteorology/cities/daily/\\d+\\.json"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "ipma/50f39e2ad49a.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ipma/open\\-data/precipitation\\-classe\\.json"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "ipma/22fd0670ac00.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ipma/open\\-data/wind\\-speed\\-daily\\-classe\\.json"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "ipma/e23a79965e24.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ipma/open\\-data/sea\\-locations\\.json"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "ipma/618880dbfa9b.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ipma/open\\-data/distrits\\-islands\\.json"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "ipma/1db29eb11ac2.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ipma/open\\-data/observation/meteorology/stations/observations\\.json"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "ipma/e7ab656f757d.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ipma/open\\-data/observation/meteorology/stations/stations\\.json"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "ipma/a78bb6386391.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ipma/open\\-data/forecast/warnings/warnings_www\\.json"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "ipma/4f1bf3302186.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ipma/open\\-data/forecast/meteorology/uv/uv\\.json"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "ipma/5b6a3eb9b989.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ipma/open\\-data/forecast/meteorology/rcm/rcm\\-d\\d+\\.json"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "ipma/a2074323886b.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ipma/open\\-data/forecast/oceanography/daily/hp\\-daily\\-sea\\-forecast\\-day\\d+\\.json"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "ipma/a3570f4156cb.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/ipma/open\\-data/forecast/meteorology/cities/daily/hp\\-daily\\-forecast\\-day\\d+\\.json"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "ipma/77c78ccd7f08.json",
+    "headers": {
+     "Content-Type": "application/json"
+    }
+   }
+  }
+ ]
+}

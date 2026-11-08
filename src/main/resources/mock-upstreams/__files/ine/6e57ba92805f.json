@@ -1,0 +1,23 @@
+[ {
+  "IndicadorCod" : "0014428",
+  "IndicadorDsg" : "Housing cost overburden rate (%) by Age group; Annual - Statistics Portugal, Statistics on income and living conditions",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014428&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:35.207Z",
+  "DataUltimoAtualizacao" : "2026-03-20",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2025" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "6,3",
+      "valor" : "6.3"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

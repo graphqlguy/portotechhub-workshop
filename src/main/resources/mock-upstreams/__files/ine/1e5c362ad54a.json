@@ -1,0 +1,23 @@
+[ {
+  "IndicadorCod" : "0012591",
+  "IndicadorDsg" : "Students enrolled in tertiary education (No.) by Geographic localization (NUTS - 2024) and Nature of institution; Annual - Directorate-General for Education and Science Statistics",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0012591&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:24:00.688Z",
+  "DataUltimoAtualizacao" : "2026-09-28",
+  "UltimoPref" : "2025 / 2026",
+  "Dados" : {
+    "2025 / 2026" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "463 260",
+      "valor" : "463260"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

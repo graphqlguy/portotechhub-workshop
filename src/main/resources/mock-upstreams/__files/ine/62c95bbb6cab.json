@@ -1,0 +1,55 @@
+[ {
+  "IndicadorCod" : "0012261",
+  "IndicadorDsg" : "Registered crimes (No.) for police forces by Geographic localization (NUTS - 2024) and Category of crime; Annual - Directorate General for Justice Policy",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0012261&lingua=EN",
+  "DataExtracao" : "2026-11-06T09:48:52.790Z",
+  "DataUltimoAtualizacao" : "2026-03-31",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2021" : [ {
+      "geocod" : "11A1312",
+      "geodsg" : "Porto",
+      "dim_3" : "10",
+      "dim_3_t" : "Crimes against pet animals",
+      "ind_string" : "29",
+      "valor" : "29"
+    } ],
+    "2022" : [ {
+      "geocod" : "11A1312",
+      "geodsg" : "Porto",
+      "dim_3" : "10",
+      "dim_3_t" : "Crimes against pet animals",
+      "ind_string" : "32",
+      "valor" : "32"
+    } ],
+    "2023" : [ {
+      "geocod" : "11A1312",
+      "geodsg" : "Porto",
+      "dim_3" : "10",
+      "dim_3_t" : "Crimes against pet animals",
+      "ind_string" : "30",
+      "valor" : "30"
+    } ],
+    "2024" : [ {
+      "geocod" : "11A1312",
+      "geodsg" : "Porto",
+      "dim_3" : "10",
+      "dim_3_t" : "Crimes against pet animals",
+      "ind_string" : "28",
+      "valor" : "28"
+    } ],
+    "2025" : [ {
+      "geocod" : "11A1312",
+      "geodsg" : "Porto",
+      "dim_3" : "10",
+      "dim_3_t" : "Crimes against pet animals",
+      "ind_string" : "36",
+      "valor" : "36"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

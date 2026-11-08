@@ -1,0 +1,5155 @@
+{
+ "layers": [
+  {
+   "field": "apaBathingWaters",
+   "path": "/Dashboard/Praias_dashboard/MapServer/0",
+   "type": "ApaBathingWater",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "concelho",
+     "kind": "equals",
+     "upperCase": true
+    },
+    {
+     "name": "name",
+     "attribute": "nome_praia",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "nome_praia"
+    },
+    "municipality": {
+     "key": "concelho"
+    },
+    "waterBody": {
+     "key": "nome_agua_balnear"
+    },
+    "waterCode": {
+     "key": "codigo_agua_balnear"
+    },
+    "region": {
+     "key": "arh"
+    },
+    "blueFlag": {
+     "key": "bandeira_azul",
+     "conversion": "yes-no"
+    },
+    "waterQuality": {
+     "key": "qualidade_agua_balnear_dsc"
+    },
+    "waterClassification": {
+     "key": "classificacao_agua_balnear"
+    },
+    "category": {
+     "key": "categoria_agua_balnear"
+    },
+    "seasonStart": {
+     "key": "data_inicio_epoca_balnear",
+     "conversion": "epoch-millis-date"
+    },
+    "seasonEnd": {
+     "key": "data_fim_epoca_balnear",
+     "conversion": "epoch-millis-date"
+    },
+    "lifeguards": {
+     "key": "vigilancia",
+     "conversion": "yes-no"
+    },
+    "firstAid": {
+     "key": "posto_socorros",
+     "conversion": "yes-no"
+    },
+    "toilets": {
+     "key": "sanitarios",
+     "conversion": "yes-no"
+    },
+    "showers": {
+     "key": "duche",
+     "conversion": "yes-no"
+    },
+    "parking": {
+     "key": "estacionamento",
+     "conversion": "yes-no"
+    },
+    "accessible": {
+     "key": "acessivel",
+     "conversion": "yes-no"
+    },
+    "amphibiousChair": {
+     "key": "cadeira_anfibia",
+     "conversion": "yes-no"
+    },
+    "cliffRisk": {
+     "key": "risco_derrocada",
+     "conversion": "yes-no"
+    },
+    "alert": {
+     "key": "motivo_desacons_interdicao_dsc"
+    },
+    "infoUrl": {
+     "key": "url_infopraia"
+    }
+   },
+   "orderBy": "nome_praia"
+  },
+  {
+   "field": "apaBathingWaterClassifications",
+   "path": "/Visualizador/snirh_balneares_classificacoes_app/MapServer/0",
+   "type": "ApaBathingWaterClassification",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "concelho",
+     "kind": "equals",
+     "upperCase": true
+    },
+    {
+     "name": "name",
+     "attribute": "nome_agua_balnear",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "nome_agua_balnear"
+    },
+    "waterCode": {
+     "key": "codigo_agua_balnear"
+    },
+    "municipality": {
+     "key": "concelho"
+    },
+    "lastSeasonClass": {
+     "key": "classificacao_ano_anterior_dsc"
+    },
+    "latestResult": {
+     "key": "ultima_classificacao_desc"
+    },
+    "latestResultDate": {
+     "key": "data_ultima_classificacao",
+     "conversion": "epoch-millis-date"
+    },
+    "latestAnalysisDate": {
+     "key": "data_ultima_analise",
+     "conversion": "epoch-millis-date"
+    },
+    "reason": {
+     "key": "motivo_desc"
+    }
+   },
+   "orderBy": "nome_agua_balnear"
+  },
+  {
+   "field": "apaBathingWaterAnalyses",
+   "path": "/Visualizador/snirh_balneares_classificacoes_app/MapServer/2",
+   "type": "ApaBathingWaterAnalysis",
+   "filters": [
+    {
+     "name": "waterCode",
+     "attribute": "codigo_agua_balnear",
+     "kind": "equals",
+     "upperCase": true
+    }
+   ],
+   "attributes": {
+    "waterCode": {
+     "key": "codigo_agua_balnear"
+    },
+    "date": {
+     "key": "data",
+     "conversion": "epoch-millis-date"
+    },
+    "escherichiaColi": {
+     "key": "valor_escherichia"
+    },
+    "escherichiaColiFlag": {
+     "key": "flag_escherichia"
+    },
+    "enterococci": {
+     "key": "valor_enterococos"
+    },
+    "enterococciFlag": {
+     "key": "flag_enterococos"
+    }
+   },
+   "orderBy": "data desc"
+  },
+  {
+   "field": "apaBeachOccupancy",
+   "path": "/Visualizador/PRAIAS_OCUPACAO/MapServer/0",
+   "type": "ApaBeachOccupancy",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "concelho",
+     "kind": "equals",
+     "upperCase": true
+    },
+    {
+     "name": "name",
+     "attribute": "nome_praia",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "nome_praia"
+    },
+    "municipality": {
+     "key": "concelho"
+    },
+    "capacity": {
+     "key": "cap_ocup"
+    },
+    "occupancy": {
+     "key": "srocup"
+    },
+    "reportedAt": {
+     "key": "hora",
+     "conversion": "epoch-millis-date"
+    },
+    "waterQuality": {
+     "key": "qualidade_agua_balnear_dsc"
+    },
+    "infoUrl": {
+     "key": "url_infopraia"
+    }
+   },
+   "orderBy": "nome_praia"
+  },
+  {
+   "field": "apaSurfWaves",
+   "path": "/SNIAmb/POC/MapServer/4",
+   "type": "ApaSurfWave",
+   "filters": [
+    {
+     "name": "programme",
+     "attribute": "poc",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "beachType": {
+     "key": "legenda_1"
+    },
+    "level": {
+     "key": "legenda_3"
+    },
+    "programme": {
+     "key": "poc"
+    }
+   }
+  },
+  {
+   "field": "apaCoastalBeachTypes",
+   "path": "/SNIAmb/POC/MapServer/7",
+   "type": "ApaCoastalBeachType",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "legenda_2",
+     "kind": "contains"
+    },
+    {
+     "name": "programme",
+     "attribute": "poc",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "legenda_2"
+    },
+    "type": {
+     "key": "tipo"
+    },
+    "label": {
+     "key": "texto"
+    },
+    "planCode": {
+     "key": "legenda_4"
+    },
+    "beachKind": {
+     "key": "legenda_1"
+    },
+    "programme": {
+     "key": "poc"
+    }
+   },
+   "orderBy": "legenda_2"
+  },
+  {
+   "field": "apaFishingCommunities",
+   "path": "/SNIAmb/POC/MapServer/2",
+   "type": "ApaFishingCommunity",
+   "filters": [
+    {
+     "name": "programme",
+     "attribute": "poc",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "texto"
+    },
+    "level": {
+     "key": "legenda_2"
+    },
+    "programme": {
+     "key": "poc"
+    }
+   },
+   "orderBy": "texto"
+  },
+  {
+   "field": "apaCoastalPorts",
+   "path": "/SNIAmb/POC/MapServer/3",
+   "type": "ApaCoastalPort",
+   "filters": [
+    {
+     "name": "programme",
+     "attribute": "poc",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "texto"
+    },
+    "programme": {
+     "key": "poc"
+    }
+   },
+   "orderBy": "texto"
+  },
+  {
+   "field": "apaCoastalTowns",
+   "path": "/SNIAmb/POC/MapServer/1",
+   "type": "ApaCoastalTown",
+   "filters": [
+    {
+     "name": "programme",
+     "attribute": "poc",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "texto"
+    },
+    "programme": {
+     "key": "poc"
+    }
+   },
+   "orderBy": "texto"
+  },
+  {
+   "field": "apaCoastalFloodStrips",
+   "path": "/SNIAmb/POC/MapServer/10",
+   "type": "ApaCoastalFloodStrip",
+   "filters": [
+    {
+     "name": "programme",
+     "attribute": "poc",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "strip": {
+     "key": "legenda_3"
+    },
+    "level": {
+     "key": "legenda_4"
+    },
+    "coastType": {
+     "key": "legenda_2"
+    },
+    "programme": {
+     "key": "poc"
+    }
+   }
+  },
+  {
+   "field": "apaCoastalErosionStrips",
+   "path": "/SNIAmb/POC/MapServer/11",
+   "type": "ApaCoastalErosionStrip",
+   "filters": [
+    {
+     "name": "programme",
+     "attribute": "poc",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "strip": {
+     "key": "legenda_3"
+    },
+    "level": {
+     "key": "legenda_4"
+    },
+    "coastType": {
+     "key": "legenda_2"
+    },
+    "programme": {
+     "key": "poc"
+    }
+   }
+  },
+  {
+   "field": "apaCliffSafeguardStrips",
+   "path": "/SNIAmb/POC/MapServer/12",
+   "type": "ApaCliffSafeguardStrip",
+   "filters": [
+    {
+     "name": "programme",
+     "attribute": "poc",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "strip": {
+     "key": "tipologia"
+    },
+    "level": {
+     "key": "legenda_4"
+    },
+    "programme": {
+     "key": "poc"
+    }
+   }
+  },
+  {
+   "field": "apaCoastalCriticalAreas",
+   "path": "/SNIAmb/POC/MapServer/15",
+   "type": "ApaCoastalCriticalArea",
+   "filters": [
+    {
+     "name": "place",
+     "attribute": "local",
+     "kind": "contains"
+    },
+    {
+     "name": "programme",
+     "attribute": "poc",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "place": {
+     "key": "local"
+    },
+    "action": {
+     "key": "legenda2"
+    },
+    "programme": {
+     "key": "poc"
+    }
+   },
+   "orderBy": "local"
+  },
+  {
+   "field": "apaCoastalZoningPlans",
+   "path": "/SNIAmb/POOC/MapServer/0",
+   "type": "ApaCoastalZoningPlan",
+   "filters": [
+    {
+     "name": "plan",
+     "attribute": "nome",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "plan": {
+     "key": "nome"
+    },
+    "area": {
+     "key": "local"
+    },
+    "zone": {
+     "key": "zonamento"
+    },
+    "zoneType": {
+     "key": "tipo"
+    }
+   }
+  },
+  {
+   "field": "apaCoastalStructures",
+   "path": "/SNIRLit/SNIRLit/MapServer/2",
+   "type": "ApaCoastalStructure",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "estrutura",
+     "kind": "contains"
+    },
+    {
+     "name": "type",
+     "attribute": "tipo",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "estrutura"
+    },
+    "type": {
+     "key": "tipo"
+    },
+    "condition": {
+     "key": "estado"
+    },
+    "place": {
+     "key": "local"
+    },
+    "coastalUnit": {
+     "key": "ulitoral"
+    }
+   },
+   "orderBy": "estrutura"
+  },
+  {
+   "field": "apaCoastalStations",
+   "path": "/SNIRLit/SNIRLit/MapServer/0",
+   "type": "ApaCoastalStation",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "estacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "code": {
+     "key": "codigo"
+    },
+    "name": {
+     "key": "estacao"
+    },
+    "type": {
+     "key": "tipo"
+    }
+   },
+   "orderBy": "estacao"
+  },
+  {
+   "field": "apaCoastalPlaces",
+   "path": "/SNIRLit/SNIRLit/MapServer/3",
+   "type": "ApaCoastalPlace",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "nome",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "nome"
+    },
+    "parish": {
+     "key": "freguesia"
+    },
+    "coastalUnit": {
+     "key": "ulitoral"
+    }
+   },
+   "orderBy": "nome"
+  },
+  {
+   "field": "apaCoastlineScenarios",
+   "path": "/SIARL/Cenarioslinhacosta2/MapServer/1",
+   "type": "ApaCoastlineScenario",
+   "filters": [
+    {
+     "name": "stretch",
+     "attribute": "cenario",
+     "kind": "contains"
+    },
+    {
+     "name": "year",
+     "attribute": "layer",
+     "kind": "equals"
+    }
+   ],
+   "attributes": {
+    "year": {
+     "key": "layer"
+    },
+    "stretch": {
+     "key": "cenario"
+    },
+    "place": {
+     "key": "local"
+    },
+    "intervention": {
+     "key": "tipo_intervencao"
+    }
+   }
+  },
+  {
+   "field": "apaCoastalInterventionPlans",
+   "path": "/SIARL/Cenarioslinhacosta2/MapServer/2",
+   "type": "ApaCoastalInterventionPlan",
+   "filters": [
+    {
+     "name": "stretch",
+     "attribute": "cenario",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "stretch": {
+     "key": "cenario"
+    },
+    "place": {
+     "key": "local"
+    },
+    "intervention": {
+     "key": "tipo_intervencao"
+    },
+    "sandVolume": {
+     "key": "volume"
+    },
+    "length": {
+     "key": "extensao"
+    }
+   }
+  },
+  {
+   "field": "apaCoastalBuildingValue",
+   "path": "/SIARL/MarRISK/MapServer/1",
+   "type": "ApaCoastalBuildingValue",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "concelho",
+     "kind": "equals",
+     "upperCase": true
+    }
+   ],
+   "attributes": {
+    "municipality": {
+     "key": "concelho"
+    },
+    "activity": {
+     "key": "atividade"
+    },
+    "value": {
+     "key": "valor_tota"
+    }
+   }
+  },
+  {
+   "field": "apaCoastalOccurrences",
+   "path": "/SIARL/SIARL_OcIndicadores/MapServer/0",
+   "type": "ApaCoastalOccurrence",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "concelho",
+     "kind": "contains"
+    },
+    {
+     "name": "beach",
+     "attribute": "praia",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "date": {
+     "key": "data_ocorrencia",
+     "conversion": "epoch-millis-date"
+    },
+    "place": {
+     "key": "localizacao"
+    },
+    "type": {
+     "key": "tipologia"
+    },
+    "peopleAtRisk": {
+     "key": "pessoas_em_risco"
+    },
+    "buildingDamage": {
+     "key": "danos_em_edificacoes"
+    },
+    "beach": {
+     "key": "praia"
+    },
+    "municipality": {
+     "key": "concelho"
+    }
+   },
+   "orderBy": "data_registo desc"
+  },
+  {
+   "field": "apaCoastalInterventions",
+   "path": "/Dashboard/SIARL_Indicadores_dashboard/MapServer/1",
+   "type": "ApaCoastalIntervention",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "designacao",
+     "kind": "contains"
+    },
+    {
+     "name": "municipality",
+     "attribute": "concelhos",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "designacao"
+    },
+    "state": {
+     "key": "estado"
+    },
+    "priority": {
+     "key": "prioridade"
+    },
+    "start": {
+     "key": "inicio",
+     "conversion": "epoch-millis-date"
+    },
+    "end": {
+     "key": "fim",
+     "conversion": "epoch-millis-date"
+    },
+    "investment": {
+     "key": "inv_global"
+    },
+    "spent": {
+     "key": "val_executado"
+    },
+    "municipalities": {
+     "key": "concelhos"
+    }
+   },
+   "orderBy": "data_registo desc"
+  },
+  {
+   "field": "apaCoastalWorks",
+   "path": "/Dashboard/SIARL_Indicadores_dashboard/MapServer/2",
+   "type": "ApaCoastalWork",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "designacao",
+     "kind": "contains"
+    },
+    {
+     "name": "municipality",
+     "attribute": "concelho",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "designacao"
+    },
+    "workType": {
+     "key": "tipo_nivel4"
+    },
+    "state": {
+     "key": "estado"
+    },
+    "contractValue": {
+     "key": "val_contrat"
+    },
+    "executionRate": {
+     "key": "taxa_execucao"
+    },
+    "workStart": {
+     "key": "data_ini_e",
+     "conversion": "epoch-millis-date"
+    },
+    "workEnd": {
+     "key": "data_con_e",
+     "conversion": "epoch-millis-date"
+    },
+    "municipality": {
+     "key": "concelho"
+    }
+   },
+   "orderBy": "data_registo desc"
+  },
+  {
+   "field": "apaBeachNourishments",
+   "path": "/Dashboard/SIARL_Indicadores_dashboard/MapServer/3",
+   "type": "ApaBeachNourishment",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "concelho",
+     "kind": "contains"
+    },
+    {
+     "name": "place",
+     "attribute": "ref_localizacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "description": {
+     "key": "descricao"
+    },
+    "volume": {
+     "key": "volume"
+    },
+    "kind": {
+     "key": "tipo_mobilizacao"
+    },
+    "start": {
+     "key": "data_inicio",
+     "conversion": "epoch-millis-date"
+    },
+    "end": {
+     "key": "data_fim",
+     "conversion": "epoch-millis-date"
+    },
+    "municipality": {
+     "key": "concelho"
+    }
+   },
+   "orderBy": "data_inicio"
+  },
+  {
+   "field": "apaDams",
+   "path": "/Atlas/Atlas_Agua/MapServer/9",
+   "type": "ApaDam",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "albufeira",
+     "kind": "contains"
+    },
+    {
+     "name": "municipality",
+     "attribute": "concelho",
+     "kind": "equals",
+     "upperCase": true
+    }
+   ],
+   "attributes": {
+    "reservoir": {
+     "key": "albufeira"
+    },
+    "river": {
+     "key": "lagua"
+    },
+    "basin": {
+     "key": "bacia"
+    },
+    "municipality": {
+     "key": "concelho"
+    },
+    "yearOpened": {
+     "key": "ano_ifunc"
+    },
+    "damType": {
+     "key": "tipo_barra"
+    },
+    "height": {
+     "key": "alt_barrag"
+    },
+    "fullLevel": {
+     "key": "npa"
+    },
+    "floodedArea": {
+     "key": "supinundnp"
+    },
+    "fishLadder": {
+     "key": "escadaspei",
+     "conversion": "yes-no"
+    }
+   },
+   "orderBy": "albufeira"
+  },
+  {
+   "field": "apaPublicReservoirs",
+   "path": "/SNIAmb/Albufeiras_AguasPublicas/MapServer/0",
+   "type": "ApaPublicReservoir",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "nome",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "nome"
+    },
+    "protection": {
+     "key": "classifica"
+    },
+    "area": {
+     "key": "area_ha"
+    },
+    "usefulVolume": {
+     "key": "v_util_hm3"
+    },
+    "totalVolume": {
+     "key": "vtotal_hm3"
+    },
+    "energy": {
+     "key": "energia",
+     "conversion": "yes-no"
+    },
+    "publicSupply": {
+     "key": "abast_pub",
+     "conversion": "yes-no"
+    },
+    "irrigation": {
+     "key": "rega",
+     "conversion": "yes-no"
+    },
+    "boating": {
+     "key": "navega_m_t",
+     "conversion": "yes-no"
+    }
+   },
+   "orderBy": "nome"
+  },
+  {
+   "field": "apaPublicLakes",
+   "path": "/SNIAmb/Lagoas_Lagos_AguasPublicas/MapServer/0",
+   "type": "ApaPublicLake",
+   "filters": [],
+   "attributes": {
+    "name": {
+     "key": "nome"
+    },
+    "law": {
+     "key": "diplegal"
+    }
+   },
+   "orderBy": "nome"
+  },
+  {
+   "field": "apaReservoirStorage",
+   "path": "/Visualizador/MonitoringToApp/MapServer/2",
+   "type": "ApaReservoirStorage",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "nome",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "reservoir": {
+     "key": "nome"
+    },
+    "storage": {
+     "key": "valordisplay"
+    },
+    "measuredAt": {
+     "key": "datahoradisplay"
+    },
+    "level": {
+     "key": "state"
+    }
+   },
+   "orderBy": "nome"
+  },
+  {
+   "field": "apaHydrometricStations",
+   "path": "/Atlas/Atlas_Agua/MapServer/1",
+   "type": "ApaHydrometricStation",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "nome",
+     "kind": "contains"
+    },
+    {
+     "name": "municipality",
+     "attribute": "concelho",
+     "kind": "equals",
+     "upperCase": true
+    }
+   ],
+   "attributes": {
+    "code": {
+     "key": "codigo"
+    },
+    "name": {
+     "key": "nome"
+    },
+    "river": {
+     "key": "rio"
+    },
+    "basin": {
+     "key": "baciahid"
+    },
+    "state": {
+     "key": "estado"
+    },
+    "catchmentArea": {
+     "key": "areadren"
+    },
+    "municipality": {
+     "key": "concelho"
+    },
+    "dataUrl": {
+     "key": "url"
+    }
+   },
+   "orderBy": "nome"
+  },
+  {
+   "field": "apaWeatherStations",
+   "path": "/Atlas/Atlas_Agua/MapServer/43",
+   "type": "ApaWeatherStation",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "nome",
+     "kind": "contains"
+    },
+    {
+     "name": "municipality",
+     "attribute": "concelho",
+     "kind": "equals",
+     "upperCase": true
+    }
+   ],
+   "attributes": {
+    "code": {
+     "key": "codigo"
+    },
+    "name": {
+     "key": "nome"
+    },
+    "type": {
+     "key": "tipo"
+    },
+    "state": {
+     "key": "estado"
+    },
+    "altitude": {
+     "key": "altitude"
+    },
+    "municipality": {
+     "key": "concelho"
+    },
+    "dataUrl": {
+     "key": "url"
+    }
+   },
+   "orderBy": "nome"
+  },
+  {
+   "field": "apaMainRivers",
+   "path": "/Atlas/Atlas_Agua/MapServer/5",
+   "type": "ApaMainRiver",
+   "filters": [
+    {
+     "name": "river",
+     "attribute": "rio",
+     "kind": "contains"
+    },
+    {
+     "name": "basin",
+     "attribute": "bacia",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "river": {
+     "key": "rio"
+    },
+    "basin": {
+     "key": "bacia"
+    },
+    "lengthKm": {
+     "key": "lngth_km"
+    },
+    "slope": {
+     "key": "slope"
+    },
+    "streamOrder": {
+     "key": "strahler_o"
+    }
+   }
+  },
+  {
+   "field": "apaRiverBasinDistricts",
+   "path": "/SNIAmb/RegHidrograficas_PtCont/MapServer/0",
+   "type": "ApaRiverBasinDistrict",
+   "filters": [],
+   "attributes": {
+    "code": {
+     "key": "codigo"
+    },
+    "name": {
+     "key": "nome"
+    }
+   }
+  },
+  {
+   "field": "apaRegionalWaterOffices",
+   "path": "/SNIAmb/ARH_UnGestao/MapServer/0",
+   "type": "ApaRegionalWaterOffice",
+   "filters": [],
+   "attributes": {
+    "name": {
+     "key": "arh"
+    },
+    "address": {
+     "key": "endereco"
+    }
+   }
+  },
+  {
+   "field": "apaReservoirPlans",
+   "path": "/Dashboard/PAAP_externo/MapServer/10",
+   "type": "ApaReservoirPlan",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "nome",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "reservoir": {
+     "key": "nome"
+    },
+    "fullName": {
+     "key": "nome_comp"
+    },
+    "status": {
+     "key": "situacao"
+    },
+    "law": {
+     "key": "dinamica"
+    },
+    "lawDate": {
+     "key": "dinamica_data",
+     "conversion": "epoch-millis-date"
+    },
+    "inForce": {
+     "key": "vigor",
+     "conversion": "yes-no"
+    },
+    "office": {
+     "key": "arh"
+    },
+    "documentUrl": {
+     "key": "link"
+    }
+   },
+   "orderBy": "nome"
+  },
+  {
+   "field": "apaReservoirZoning",
+   "path": "/SNIAmb/POAAP/MapServer/0",
+   "type": "ApaReservoirZone",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "nome",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "reservoir": {
+     "key": "nome"
+    },
+    "area": {
+     "key": "local"
+    },
+    "zone": {
+     "key": "zonamento"
+    },
+    "zoneType": {
+     "key": "tipo"
+    }
+   }
+  },
+  {
+   "field": "apaRiverRehabilitation",
+   "path": "/Dashboard/PRORIOS_DASHBOARD/MapServer/1",
+   "type": "ApaRiverRehabilitation",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "municipiotroco",
+     "kind": "contains"
+    },
+    {
+     "name": "river",
+     "attribute": "nomela",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "project": {
+     "key": "designacao"
+    },
+    "river": {
+     "key": "nomela"
+    },
+    "municipality": {
+     "key": "municipiotroco"
+    },
+    "state": {
+     "key": "pontosituacao"
+    },
+    "startYear": {
+     "key": "anoinicio"
+    },
+    "endYear": {
+     "key": "anoconclusao"
+    },
+    "cost": {
+     "key": "valorintervencao"
+    },
+    "lengthMetres": {
+     "key": "extensaotroco"
+    }
+   }
+  },
+  {
+   "field": "apaLargeDams",
+   "path": "/PGRH/2_PGRH_3_Pressures/MapServer/144",
+   "type": "ApaLargeDam",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "designacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "designacao"
+    },
+    "waterBody": {
+     "key": "designacao_ma"
+    },
+    "region": {
+     "key": "eurbdcode"
+    },
+    "material": {
+     "key": "barr_material"
+    },
+    "fishPass": {
+     "key": "barr_ppp"
+    },
+    "ecologicalFlow": {
+     "key": "barr_rce"
+    }
+   }
+  },
+  {
+   "field": "apaDamsAndWeirs",
+   "path": "/PGRH/2_PGRH_3_Pressures/MapServer/146",
+   "type": "ApaDamOrWeir",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "designacao",
+     "kind": "contains"
+    },
+    {
+     "name": "river",
+     "attribute": "designacao_ma",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "designacao"
+    },
+    "waterBody": {
+     "key": "designacao_ma"
+    },
+    "heightClass": {
+     "key": "barr_classersb_rpb"
+    },
+    "material": {
+     "key": "barr_material"
+    },
+    "fishPass": {
+     "key": "barr_ppp"
+    },
+    "region": {
+     "key": "eurbdcode"
+    }
+   }
+  },
+  {
+   "field": "apaHydraulicWorks",
+   "path": "/PGRH/Pressões_Hidromorfológicas/MapServer/0",
+   "type": "ApaHydraulicWork",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "nome",
+     "kind": "contains"
+    },
+    {
+     "name": "waterBody",
+     "attribute": "nome_ma",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "nome"
+    },
+    "waterBody": {
+     "key": "nome_ma"
+    },
+    "type": {
+     "key": "tipo"
+    },
+    "purpose": {
+     "key": "finalidade"
+    },
+    "height": {
+     "key": "altura_m"
+    },
+    "usefulVolume": {
+     "key": "volumeutil_hm3"
+    }
+   }
+  },
+  {
+   "field": "apaBasinRainfall",
+   "path": "/Dashboard/drh_precestbac/MapServer/0",
+   "type": "ApaBasinRainfall",
+   "filters": [
+    {
+     "name": "basin",
+     "attribute": "codigo",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "basin": {
+     "key": "codigo"
+    },
+    "month": {
+     "key": "data",
+     "conversion": "epoch-millis-date"
+    },
+    "rainfall": {
+     "key": "precipitação"
+    },
+    "historicalMean": {
+     "key": "média_histórica"
+    },
+    "deviation": {
+     "key": "desvio"
+    }
+   },
+   "orderBy": "data"
+  },
+  {
+   "field": "apaFloodMarks",
+   "path": "/SNIAmb/Marcas_cheias/MapServer/0",
+   "type": "ApaFloodMark",
+   "filters": [
+    {
+     "name": "place",
+     "attribute": "descricao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "place": {
+     "key": "descricao"
+    },
+    "date": {
+     "key": "data",
+     "conversion": "epoch-millis-date"
+    },
+    "waterLevel": {
+     "key": "cota_inundacao"
+    },
+    "source": {
+     "key": "fonte"
+    }
+   },
+   "orderBy": "data"
+  },
+  {
+   "field": "apaTagusStations",
+   "path": "/Visualizador/Tejo/MapServer/0",
+   "type": "ApaTagusStation",
+   "filters": [],
+   "attributes": {
+    "name": {
+     "key": "estacao"
+    },
+    "code": {
+     "key": "codestacao"
+    },
+    "network": {
+     "key": "rede"
+    },
+    "latestData": {
+     "key": "data"
+    }
+   }
+  },
+  {
+   "field": "apaTagusMeasurements",
+   "path": "/Visualizador/Tejo/MapServer/1",
+   "type": "ApaTagusMeasurement",
+   "filters": [
+    {
+     "name": "station",
+     "attribute": "estacao",
+     "kind": "contains"
+    },
+    {
+     "name": "parameter",
+     "attribute": "nomepar",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "station": {
+     "key": "estacao"
+    },
+    "parameter": {
+     "key": "nomepar"
+    },
+    "date": {
+     "key": "data",
+     "conversion": "epoch-millis-date"
+    },
+    "value": {
+     "key": "valor"
+    }
+   },
+   "orderBy": "data desc"
+  },
+  {
+   "field": "apaRiverStatus",
+   "path": "/SNIAmb/MA_PtCont_MA_PGRH_3/MapServer/1",
+   "type": "ApaRiverStatus",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "nome",
+     "kind": "contains"
+    },
+    {
+     "name": "region",
+     "attribute": "regiao_name",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "code": {
+     "key": "codigo"
+    },
+    "name": {
+     "key": "nome"
+    },
+    "typology": {
+     "key": "tipologia"
+    },
+    "nature": {
+     "key": "natur_fm_art"
+    },
+    "region": {
+     "key": "regiao_name"
+    },
+    "ecologicalStatus": {
+     "key": "est_pot_ecol"
+    },
+    "chemicalStatus": {
+     "key": "estado_quim"
+    },
+    "overallStatus": {
+     "key": "estado_global"
+    }
+   },
+   "orderBy": "nome"
+  },
+  {
+   "field": "apaLakeCoastalStatus",
+   "path": "/SNIAmb/MA_PtCont_MA_PGRH_3/MapServer/2",
+   "type": "ApaLakeCoastalStatus",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "nome",
+     "kind": "contains"
+    },
+    {
+     "name": "region",
+     "attribute": "regiao_name",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "code": {
+     "key": "codigo"
+    },
+    "name": {
+     "key": "nome"
+    },
+    "category": {
+     "key": "categoria"
+    },
+    "region": {
+     "key": "regiao_name"
+    },
+    "ecologicalStatus": {
+     "key": "est_pot_ecol"
+    },
+    "chemicalStatus": {
+     "key": "estado_quim"
+    },
+    "overallStatus": {
+     "key": "estado_global"
+    }
+   },
+   "orderBy": "nome"
+  },
+  {
+   "field": "apaTerritorialWaterStatus",
+   "path": "/SNIAmb/MA_PtCont_MA_PGRH_3/MapServer/5",
+   "type": "ApaTerritorialWaterStatus",
+   "filters": [],
+   "attributes": {
+    "name": {
+     "key": "nome"
+    },
+    "region": {
+     "key": "regiao_name"
+    },
+    "chemicalStatus": {
+     "key": "estado_quim"
+    },
+    "overallStatus": {
+     "key": "estado_global"
+    }
+   }
+  },
+  {
+   "field": "apaGroundwaterStatus",
+   "path": "/SNIAmb/MA_PtCont_MA_PGRH_3/MapServer/6",
+   "type": "ApaGroundwaterStatus",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "nome",
+     "kind": "contains"
+    },
+    {
+     "name": "region",
+     "attribute": "regiao_name",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "nome"
+    },
+    "region": {
+     "key": "regiao_name"
+    },
+    "quantitativeStatus": {
+     "key": "estado_quant"
+    },
+    "chemicalStatus": {
+     "key": "estado_quim"
+    },
+    "quantitativeRisk": {
+     "key": "risco_quant"
+    },
+    "chemicalRisk": {
+     "key": "risco_quim"
+    },
+    "overallStatus": {
+     "key": "estado_global"
+    }
+   },
+   "orderBy": "nome"
+  },
+  {
+   "field": "apaWaterBodyBasins",
+   "path": "/SNIAmb/MA_PtCont_MA_PGRH_3/MapServer/8",
+   "type": "ApaWaterBodyBasin",
+   "filters": [
+    {
+     "name": "subBasin",
+     "attribute": "subachid",
+     "kind": "contains"
+    },
+    {
+     "name": "region",
+     "attribute": "regiao_name",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "nome"
+    },
+    "subBasin": {
+     "key": "subachid"
+    },
+    "category": {
+     "key": "categoria"
+    },
+    "region": {
+     "key": "regiao_name"
+    },
+    "ecologicalStatus": {
+     "key": "est_pot_ecol"
+    },
+    "chemicalStatus": {
+     "key": "estado_quim"
+    },
+    "overallStatus": {
+     "key": "estado_global"
+    }
+   }
+  },
+  {
+   "field": "apaPrioritySubstances",
+   "path": "/PGRH/3_PGRH_3_Status_Objectives/MapServer/16",
+   "type": "ApaPrioritySubstance",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "geoapapgbh.geoapapgbhdata.WISE_SurfaceWaterBody_Basin_PTCONT.nametext",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "code": {
+     "key": "geoapapgbh.geoapapgbhdata.WISE_SurfaceWaterBody_Basin_PTCONT.localid"
+    },
+    "name": {
+     "key": "geoapapgbh.geoapapgbhdata.WISE_SurfaceWaterBody_Basin_PTCONT.nametext"
+    },
+    "region": {
+     "key": "geoapapgbh.geoapapgbhdata.WISE_SurfaceWaterBody_Basin_PTCONT.rzoneid"
+    },
+    "substances": {
+     "key": "geoapapgbh.geoapapgbhdata.WISE_swPrioritySubstance.swprioritysubstancecode"
+    }
+   }
+  },
+  {
+   "field": "apaGroundwaterPollutants",
+   "path": "/PGRH/3_PGRH_3_Status_Objectives/MapServer/17",
+   "type": "ApaGroundwaterPollutant",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "geoapapgbh.geoapapgbhdata.WISE_GroundWaterBody_PT.nametext",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "code": {
+     "key": "geoapapgbh.geoapapgbhdata.WISE_GroundWaterBody_PT.localid"
+    },
+    "name": {
+     "key": "geoapapgbh.geoapapgbhdata.WISE_GroundWaterBody_PT.nametext"
+    },
+    "pollutant": {
+     "key": "geoapapgbh.geoapapgbhdata.WISE_gwPollutant.gwpollutantcode"
+    },
+    "otherPollutant": {
+     "key": "geoapapgbh.geoapapgbhdata.WISE_gwPollutant.gwpollutantother"
+    }
+   }
+  },
+  {
+   "field": "apaWaterScarcityBasins",
+   "path": "/PGRH/4_PGRH_3_WEI_/MapServer/1",
+   "type": "ApaWaterScarcityBasin",
+   "filters": [
+    {
+     "name": "subBasin",
+     "attribute": "geoapapgbh.geoapapgbhdata.WISE_SurfaceWaterBody_Basin_PTCONT.subachid",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "geoapapgbh.geoapapgbhdata.WISE_SurfaceWaterBody_Basin_PTCONT.nametext"
+    },
+    "basin": {
+     "key": "geoapapgbh.geoapapgbhdata.WISE_SurfaceWaterBody_Basin_PTCONT.bachid"
+    },
+    "subBasin": {
+     "key": "geoapapgbh.geoapapgbhdata.WISE_SurfaceWaterBody_Basin_PTCONT.subachid"
+    },
+    "waterExploitationIndex": {
+     "key": "geoapapgbh.geoapapgbhdata.PGRH3_DISPONIBILIDADES_WEI_PLUS.wei_plus_1989a2015"
+    }
+   }
+  },
+  {
+   "field": "apaWaterScarcityAquifers",
+   "path": "/PGRH/4_PGRH_3_WEI_/MapServer/2",
+   "type": "ApaWaterScarcityAquifer",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "geoapapgbh.geoapapgbhdata.WISE_GroundWaterBody_PT.nametext",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "geoapapgbh.geoapapgbhdata.WISE_GroundWaterBody_PT.nametext"
+    },
+    "region": {
+     "key": "geoapapgbh.geoapapgbhdata.WISE_GroundWaterBody_PT.rzoneid"
+    },
+    "waterExploitationIndex": {
+     "key": "geoapapgbh.geoapapgbhdata.PGRH3_DISPONIBILIDADES_WEI_PLUS.wei_plus_1930a2015"
+    }
+   }
+  },
+  {
+   "field": "apaSurfaceWaterStations",
+   "path": "/SNIAmb/Estacoes_monitorizacao_qualidade_aguas_superficias/MapServer/0",
+   "type": "ApaSurfaceWaterStation",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "nome",
+     "kind": "contains"
+    },
+    {
+     "name": "municipality",
+     "attribute": "concelho",
+     "kind": "equals",
+     "upperCase": true
+    }
+   ],
+   "attributes": {
+    "code": {
+     "key": "codigo"
+    },
+    "name": {
+     "key": "nome"
+    },
+    "water": {
+     "key": "meio_aquatico"
+    },
+    "municipality": {
+     "key": "concelho"
+    },
+    "state": {
+     "key": "estado"
+    },
+    "dataUrl": {
+     "key": "url"
+    }
+   },
+   "orderBy": "nome"
+  },
+  {
+   "field": "apaSurfaceMonitoringNetwork",
+   "path": "/SNIAmb/PGRH_EstMonit_2ciclo_2016_2021/MapServer/0",
+   "type": "ApaSurfaceMonitoringSite",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "nome",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "code": {
+     "key": "codigo"
+    },
+    "name": {
+     "key": "nome"
+    },
+    "waterBody": {
+     "key": "wb_location"
+    },
+    "category": {
+     "key": "wb_category"
+    },
+    "surveillance": {
+     "key": "surveil",
+     "conversion": "yes-no"
+    },
+    "operational": {
+     "key": "operat",
+     "conversion": "yes-no"
+    },
+    "dataUrl": {
+     "key": "link_dados"
+    }
+   },
+   "orderBy": "nome"
+  },
+  {
+   "field": "apaGroundwaterLevelNetwork",
+   "path": "/SNIAmb/PGRH_EstMonit_2ciclo_2016_2021/MapServer/1",
+   "type": "ApaGroundwaterLevelSite",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "gwst_name",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "code": {
+     "key": "codigo"
+    },
+    "name": {
+     "key": "gwst_name"
+    },
+    "type": {
+     "key": "tipo"
+    },
+    "aquifer": {
+     "key": "sist_aquif"
+    },
+    "dataUrl": {
+     "key": "link_dados"
+    }
+   },
+   "orderBy": "gwst_name"
+  },
+  {
+   "field": "apaGroundwaterQualityNetwork",
+   "path": "/SNIAmb/PGRH_EstMonit_2ciclo_2016_2021/MapServer/2",
+   "type": "ApaGroundwaterQualitySite",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "gwst_name",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "code": {
+     "key": "codigo"
+    },
+    "name": {
+     "key": "gwst_name"
+    },
+    "aquifer": {
+     "key": "sist_aquif"
+    },
+    "dataUrl": {
+     "key": "link_dados"
+    }
+   },
+   "orderBy": "gwst_name"
+  },
+  {
+   "field": "apaSedimentStations",
+   "path": "/SNIAmb/Sedimentos_SNIRH/MapServer/0",
+   "type": "ApaSedimentStation",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "nome_estacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "code": {
+     "key": "cod_estacao"
+    },
+    "name": {
+     "key": "nome_estacao"
+    },
+    "waterBody": {
+     "key": "nome_ma"
+    },
+    "category": {
+     "key": "categoria"
+    },
+    "state": {
+     "key": "estado"
+    }
+   }
+  },
+  {
+   "field": "apaWaterBodies",
+   "path": "/Visualizador/CaraterizacaoDaEnvolvente/MapServer/13",
+   "type": "ApaWaterBody",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "name",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "name"
+    },
+    "code": {
+     "key": "id_localid"
+    },
+    "heavilyModified": {
+     "key": "heavilymodified",
+     "conversion": "yes-no"
+    },
+    "artificial": {
+     "key": "artificial",
+     "conversion": "yes-no"
+    }
+   },
+   "orderBy": "name"
+  },
+  {
+   "field": "apaHydrogeologicalUnits",
+   "path": "/SNIAmb/Unid_Hidrogeologicas/MapServer/0",
+   "type": "ApaHydrogeologicalUnit",
+   "filters": [],
+   "attributes": {
+    "code": {
+     "key": "codhidro"
+    },
+    "name": {
+     "key": "nome"
+    }
+   }
+  },
+  {
+   "field": "apaWellProtectionZones",
+   "path": "/SNIAmb/ProtCaptacoes_AgConsHumano/MapServer/3",
+   "type": "ApaWellProtectionZone",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "nome",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "nome"
+    },
+    "code": {
+     "key": "codhidro"
+    },
+    "law": {
+     "key": "diplegal"
+    }
+   },
+   "orderBy": "nome"
+  },
+  {
+   "field": "apaApprovedProtectionPerimeters",
+   "path": "/Visualizador/arhto_pext/MapServer/33",
+   "type": "ApaProtectionPerimeter",
+   "filters": [
+    {
+     "name": "operator",
+     "attribute": "entidades_",
+     "kind": "contains"
+    },
+    {
+     "name": "site",
+     "attribute": "polos_extr",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "site": {
+     "key": "polos_extr"
+    },
+    "zone": {
+     "key": "zprot"
+    },
+    "operator": {
+     "key": "entidades_"
+    },
+    "approval": {
+     "key": "aprovacao"
+    }
+   }
+  },
+  {
+   "field": "apaNitrateVulnerableZones",
+   "path": "/SNIAmb/Nitratos_ZnVulneraveis/MapServer/0",
+   "type": "ApaNitrateVulnerableZone",
+   "filters": [],
+   "attributes": {
+    "code": {
+     "key": "codhidro"
+    },
+    "name": {
+     "key": "nome"
+    },
+    "region": {
+     "key": "codrh"
+    },
+    "law": {
+     "key": "diplegal"
+    }
+   }
+  },
+  {
+   "field": "apaMineralSprings",
+   "path": "/SNIAmb/Ambiente_e_Saude/MapServer/0",
+   "type": "ApaMineralSpring",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "designacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "designacao"
+    },
+    "temperature": {
+     "key": "temperatur"
+    },
+    "mineralisation": {
+     "key": "min_tot"
+    },
+    "waterType": {
+     "key": "tipo_hidro"
+    },
+    "uses": {
+     "key": "usos"
+    },
+    "therapies": {
+     "key": "terapia"
+    }
+   },
+   "orderBy": "designacao"
+  },
+  {
+   "field": "apaFloodRiskAreas",
+   "path": "/Dashboard/pgri_med2c/MapServer/2",
+   "type": "ApaFloodRiskArea",
+   "filters": [
+    {
+     "name": "place",
+     "attribute": "local",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "place": {
+     "key": "local"
+    },
+    "code": {
+     "key": "designa"
+    },
+    "region": {
+     "key": "rhidro"
+    }
+   },
+   "orderBy": "local"
+  },
+  {
+   "field": "apaProposedFloodRiskAreas",
+   "path": "/Visualizador/APRI_3ciclo_DAGRI_consultapublica/MapServer/4",
+   "type": "ApaProposedFloodRiskArea",
+   "filters": [
+    {
+     "name": "place",
+     "attribute": "nametext",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "place": {
+     "key": "nametext"
+    },
+    "code": {
+     "key": "inspireidlocalid"
+    },
+    "region": {
+     "key": "relatedzoneidentifier"
+    },
+    "change": {
+     "key": "wiseevolutiontype"
+    },
+    "size": {
+     "key": "sizevalue"
+    }
+   }
+  },
+  {
+   "field": "apaPastFloods",
+   "path": "/Visualizador/APRI_3ciclo_DAGRI_consultapublica/MapServer/1",
+   "type": "ApaPastFlood",
+   "filters": [
+    {
+     "name": "place",
+     "attribute": "inspireidnamespace",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "place": {
+     "key": "inspireidnamespace"
+    },
+    "code": {
+     "key": "inspireidlocalid"
+    },
+    "region": {
+     "key": "relatedzoneidentifier"
+    },
+    "returnPeriod": {
+     "key": "returnperiod"
+    }
+   }
+  },
+  {
+   "field": "apaFloodMeasures",
+   "path": "/Dashboard/pgri_med2c/MapServer/0",
+   "type": "ApaFloodMeasure",
+   "filters": [
+    {
+     "name": "area",
+     "attribute": "designa",
+     "kind": "contains"
+    },
+    {
+     "name": "name",
+     "attribute": "nomemedida",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "nomemedida"
+    },
+    "area": {
+     "key": "designa"
+    },
+    "priority": {
+     "key": "prioridade"
+    },
+    "progress": {
+     "key": "análispro"
+    },
+    "floodType": {
+     "key": "tipoinuda"
+    },
+    "measureType": {
+     "key": "tipomed"
+    },
+    "cost": {
+     "key": "custo"
+    }
+   }
+  },
+  {
+   "field": "apaFloodPlanCompatibility",
+   "path": "/Dashboard/pgri_med2c/MapServer/4",
+   "type": "ApaFloodPlanCompatibility",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "municipio",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "municipality": {
+     "key": "municipio"
+    },
+    "plan": {
+     "key": "nome"
+    },
+    "compatible": {
+     "key": "igtcompati",
+     "conversion": "yes-no"
+    },
+    "change": {
+     "key": "atualiz"
+    },
+    "publication": {
+     "key": "publegal"
+    }
+   },
+   "orderBy": "municipio"
+  },
+  {
+   "field": "apaFloodAreasFrequent",
+   "path": "/Visualizador/Diretiva60CE2007_2ciclo_v2/MapServer/230",
+   "type": "ApaFloodAreaFrequent",
+   "filters": [
+    {
+     "name": "place",
+     "attribute": "local",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "place": {
+     "key": "local"
+    },
+    "code": {
+     "key": "designa"
+    },
+    "region": {
+     "key": "rhidro"
+    }
+   },
+   "orderBy": "local"
+  },
+  {
+   "field": "apaFloodAreas100Years",
+   "path": "/Visualizador/Diretiva60CE2007_2ciclo_v2/MapServer/179",
+   "type": "ApaFloodArea100Years",
+   "filters": [
+    {
+     "name": "place",
+     "attribute": "local",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "place": {
+     "key": "local"
+    },
+    "code": {
+     "key": "designa"
+    },
+    "region": {
+     "key": "rhidro"
+    }
+   },
+   "orderBy": "local"
+  },
+  {
+   "field": "apaFloodAreasExtreme",
+   "path": "/Visualizador/Diretiva60CE2007_2ciclo_v2/MapServer/147",
+   "type": "ApaFloodAreaExtreme",
+   "filters": [
+    {
+     "name": "place",
+     "attribute": "local",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "place": {
+     "key": "local"
+    },
+    "code": {
+     "key": "designa"
+    },
+    "region": {
+     "key": "rhidro"
+    }
+   },
+   "orderBy": "local"
+  },
+  {
+   "field": "apaFloodRiskFrequent",
+   "path": "/Visualizador/Diretiva60CE2007_2ciclo_v2/MapServer/231",
+   "type": "ApaFloodRiskFrequent",
+   "filters": [
+    {
+     "name": "place",
+     "attribute": "local",
+     "kind": "contains"
+    },
+    {
+     "name": "risk",
+     "attribute": "risco",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "place": {
+     "key": "local"
+    },
+    "code": {
+     "key": "designa"
+    },
+    "risk": {
+     "key": "risco"
+    }
+   }
+  },
+  {
+   "field": "apaFloodRisk100Years",
+   "path": "/Visualizador/Diretiva60CE2007_2ciclo_v2/MapServer/180",
+   "type": "ApaFloodRisk100Years",
+   "filters": [
+    {
+     "name": "place",
+     "attribute": "local",
+     "kind": "contains"
+    },
+    {
+     "name": "risk",
+     "attribute": "risco",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "place": {
+     "key": "local"
+    },
+    "code": {
+     "key": "designa"
+    },
+    "risk": {
+     "key": "risco"
+    }
+   }
+  },
+  {
+   "field": "apaFloodHazard",
+   "path": "/SNIAmb/Diretiva200760CE_2c/MapServer/7",
+   "type": "ApaFloodHazard",
+   "filters": [
+    {
+     "name": "place",
+     "attribute": "local",
+     "kind": "contains"
+    },
+    {
+     "name": "returnPeriod",
+     "attribute": "pretorno",
+     "kind": "equals",
+     "upperCase": true
+    }
+   ],
+   "attributes": {
+    "place": {
+     "key": "local"
+    },
+    "code": {
+     "key": "designa"
+    },
+    "hazard": {
+     "key": "perigo"
+    },
+    "returnPeriod": {
+     "key": "pretorno"
+    }
+   }
+  },
+  {
+   "field": "apaFloodPopulationFrequent",
+   "path": "/Visualizador/Diretiva60CE2007_2ciclo_v2/MapServer/253",
+   "type": "ApaFloodPopulationFrequent",
+   "filters": [
+    {
+     "name": "place",
+     "attribute": "local",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "place": {
+     "key": "local"
+    },
+    "code": {
+     "key": "designa"
+    },
+    "subsection": {
+     "key": "subseccao"
+    },
+    "residents": {
+     "key": "n_h"
+    }
+   },
+   "orderBy": "n_h desc"
+  },
+  {
+   "field": "apaFloodPopulation100Years",
+   "path": "/Visualizador/Diretiva60CE2007_2ciclo_v2/MapServer/202",
+   "type": "ApaFloodPopulation100Years",
+   "filters": [
+    {
+     "name": "place",
+     "attribute": "local",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "place": {
+     "key": "local"
+    },
+    "code": {
+     "key": "designa"
+    },
+    "subsection": {
+     "key": "subseccao"
+    },
+    "residents": {
+     "key": "n_h"
+    }
+   },
+   "orderBy": "n_h desc"
+  },
+  {
+   "field": "apaFloodPopulationExtreme",
+   "path": "/Visualizador/Diretiva60CE2007_2ciclo_v2/MapServer/170",
+   "type": "ApaFloodPopulationExtreme",
+   "filters": [
+    {
+     "name": "place",
+     "attribute": "local",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "place": {
+     "key": "local"
+    },
+    "code": {
+     "key": "designa"
+    },
+    "subsection": {
+     "key": "subseccao"
+    },
+    "residents": {
+     "key": "n_h"
+    }
+   },
+   "orderBy": "n_h desc"
+  },
+  {
+   "field": "apaFloodSensitiveBuildings",
+   "path": "/Visualizador/Diretiva60CE2007_2ciclo_v2/MapServer/252",
+   "type": "ApaFloodSensitiveBuilding",
+   "filters": [
+    {
+     "name": "place",
+     "attribute": "local",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "nome"
+    },
+    "use": {
+     "key": "tipo_func"
+    },
+    "place": {
+     "key": "local"
+    },
+    "code": {
+     "key": "designa"
+    }
+   }
+  },
+  {
+   "field": "apaFloodHeritage",
+   "path": "/Visualizador/Diretiva60CE2007_2ciclo_v2/MapServer/344",
+   "type": "ApaFloodHeritage",
+   "filters": [
+    {
+     "name": "place",
+     "attribute": "local",
+     "kind": "contains"
+    },
+    {
+     "name": "name",
+     "attribute": "designacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "designacao"
+    },
+    "category": {
+     "key": "categoria"
+    },
+    "place": {
+     "key": "local"
+    },
+    "infoUrl": {
+     "key": "descricao"
+    }
+   }
+  },
+  {
+   "field": "apaFloodLevels",
+   "path": "/Visualizador/PGRI_2C_Perigo_IGT/MapServer/1",
+   "type": "ApaFloodLevel",
+   "filters": [
+    {
+     "name": "place",
+     "attribute": "local",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "place": {
+     "key": "local"
+    },
+    "code": {
+     "key": "designa"
+    },
+    "maxLevel": {
+     "key": "nivel_max"
+    },
+    "returnPeriod": {
+     "key": "pretorno"
+    }
+   }
+  },
+  {
+   "field": "apaFloodAdjacentZones",
+   "path": "/SNIAmb/ZonasAdjacentes_PubDR/MapServer/0",
+   "type": "ApaFloodAdjacentZone",
+   "filters": [],
+   "attributes": {
+    "name": {
+     "key": "nome"
+    },
+    "building": {
+     "key": "ocupa"
+    },
+    "law": {
+     "key": "diplegal"
+    }
+   }
+  },
+  {
+   "field": "apaProtectedAreas",
+   "path": "/Visualizador/CaraterizacaoDaEnvolvente/MapServer/2",
+   "type": "ApaProtectedArea",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "nome_ap",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "nome_ap"
+    },
+    "classification": {
+     "key": "classifica"
+    },
+    "acronym": {
+     "key": "sigla"
+    },
+    "areaHectares": {
+     "key": "area_ha"
+    },
+    "law": {
+     "key": "publica1"
+    },
+    "authority": {
+     "key": "jurisdicao"
+    }
+   },
+   "orderBy": "nome_ap"
+  },
+  {
+   "field": "apaNatura2000Habitats",
+   "path": "/Visualizador/CaraterizacaoDaEnvolvente/MapServer/5",
+   "type": "ApaNatura2000Habitat",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "site_name",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "code": {
+     "key": "site_code"
+    },
+    "name": {
+     "key": "site_name"
+    },
+    "areaHectares": {
+     "key": "area__ha_"
+    },
+    "type": {
+     "key": "tipo"
+    }
+   },
+   "orderBy": "site_name"
+  },
+  {
+   "field": "apaNatura2000Birds",
+   "path": "/Visualizador/CaraterizacaoDaEnvolvente/MapServer/4",
+   "type": "ApaNatura2000Bird",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "site_name",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "code": {
+     "key": "site_code"
+    },
+    "name": {
+     "key": "site_name"
+    },
+    "areaHectares": {
+     "key": "area__ha_"
+    }
+   },
+   "orderBy": "site_name"
+  },
+  {
+   "field": "apaRamsarWetlands",
+   "path": "/Visualizador/CaraterizacaoDaEnvolvente/MapServer/6",
+   "type": "ApaRamsarWetland",
+   "filters": [],
+   "attributes": {
+    "name": {
+     "key": "nome"
+    },
+    "designated": {
+     "key": "data_desig"
+    },
+    "areaHectares": {
+     "key": "area_ha"
+    },
+    "code": {
+     "key": "codigo_pt"
+    }
+   },
+   "orderBy": "nome"
+  },
+  {
+   "field": "apaGeoparks",
+   "path": "/Visualizador/CaraterizacaoDaEnvolvente/MapServer/7",
+   "type": "ApaGeopark",
+   "filters": [],
+   "attributes": {
+    "name": {
+     "key": "nome"
+    },
+    "areaHectares": {
+     "key": "area_ha"
+    }
+   }
+  },
+  {
+   "field": "apaBiosphereReserves",
+   "path": "/Visualizador/CaraterizacaoDaEnvolvente/MapServer/8",
+   "type": "ApaBiosphereReserve",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "nome",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "nome"
+    },
+    "zone": {
+     "key": "zone"
+    },
+    "areaHectares": {
+     "key": "area_ha"
+    }
+   },
+   "orderBy": "nome"
+  },
+  {
+   "field": "apaCorineBiotopes",
+   "path": "/Atlas/Atlas_Ambiente/MapServer/45",
+   "type": "ApaCorineBiotope",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "designacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "designacao"
+    },
+    "code": {
+     "key": "cod_corine"
+    }
+   },
+   "orderBy": "designacao"
+  },
+  {
+   "field": "apaNotableTrees",
+   "path": "/Atlas/Atlas_Ambiente/MapServer/50",
+   "type": "ApaNotableTree",
+   "filters": [
+    {
+     "name": "species",
+     "attribute": "especie",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "species": {
+     "key": "especie"
+    },
+    "kind": {
+     "key": "tipo_int"
+    },
+    "monument": {
+     "key": "monument",
+     "conversion": "yes-no"
+    },
+    "grove": {
+     "key": "agrupam",
+     "conversion": "yes-no"
+    },
+    "extinct": {
+     "key": "extinto",
+     "conversion": "yes-no"
+    }
+   }
+  },
+  {
+   "field": "apaInvasiveSpecies",
+   "path": "/PGRH/2_PGRH_3_Pressures/MapServer/166",
+   "type": "ApaInvasiveSpecies",
+   "filters": [
+    {
+     "name": "species",
+     "attribute": "nomecientifico",
+     "kind": "contains"
+    },
+    {
+     "name": "basin",
+     "attribute": "baciahidrografica",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "species": {
+     "key": "nomecientifico"
+    },
+    "group": {
+     "key": "grupotaxonomico"
+    },
+    "origin": {
+     "key": "grupoorigem"
+    },
+    "basin": {
+     "key": "baciahidrografica"
+    },
+    "waterBody": {
+     "key": "euwaterbodycode"
+    },
+    "introduction": {
+     "key": "via_de_introdução"
+    }
+   }
+  },
+  {
+   "field": "apaClimateTemperature",
+   "path": "/Atlas/Atlas_Ambiente/MapServer/2",
+   "type": "ApaClimateTemperature",
+   "filters": [],
+   "attributes": {
+    "class": {
+     "key": "temperatur"
+    }
+   }
+  },
+  {
+   "field": "apaClimateRainfall",
+   "path": "/Atlas/Atlas_Ambiente/MapServer/4",
+   "type": "ApaClimateRainfall",
+   "filters": [],
+   "attributes": {
+    "class": {
+     "key": "precipitac"
+    }
+   }
+  },
+  {
+   "field": "apaClimateSunshine",
+   "path": "/Atlas/Atlas_Ambiente/MapServer/1",
+   "type": "ApaClimateSunshine",
+   "filters": [],
+   "attributes": {
+    "class": {
+     "key": "insolacao"
+    }
+   }
+  },
+  {
+   "field": "apaSeismicIntensity",
+   "path": "/Atlas/Atlas_Ambiente/MapServer/11",
+   "type": "ApaSeismicIntensity",
+   "filters": [],
+   "attributes": {
+    "intensity": {
+     "key": "int_sism"
+    }
+   }
+  },
+  {
+   "field": "apaLandscapeTypes",
+   "path": "/Atlas/Atlas_Ambiente/MapServer/34",
+   "type": "ApaLandscapeType",
+   "filters": [],
+   "attributes": {
+    "landscape": {
+     "key": "paisagem"
+    }
+   }
+  },
+  {
+   "field": "apaAirQualityByPollutant",
+   "path": "/Visualizador/QAR_EN/MapServer/0",
+   "type": "ApaAirQualityReading",
+   "filters": [
+    {
+     "name": "station",
+     "attribute": "estacao_nome",
+     "kind": "contains"
+    },
+    {
+     "name": "municipality",
+     "attribute": "concelho_nome",
+     "kind": "contains"
+    },
+    {
+     "name": "pollutant",
+     "attribute": "poluente_abv",
+     "kind": "equals",
+     "upperCase": true
+    }
+   ],
+   "attributes": {
+    "station": {
+     "key": "estacao_nome"
+    },
+    "municipality": {
+     "key": "concelho_nome"
+    },
+    "date": {
+     "key": "data",
+     "conversion": "epoch-millis-date"
+    },
+    "hour": {
+     "key": "hora_display"
+    },
+    "pollutant": {
+     "key": "poluente_abv"
+    },
+    "average": {
+     "key": "avg_display"
+    },
+    "index": {
+     "key": "indice_nome"
+    },
+    "environment": {
+     "key": "ambiente_nome"
+    }
+   },
+   "orderBy": "data desc"
+  },
+  {
+   "field": "apaAirQualityIndex",
+   "path": "/Visualizador/QAR_EN/MapServer/1",
+   "type": "ApaAirQualityIndex",
+   "filters": [
+    {
+     "name": "station",
+     "attribute": "estacao_nome",
+     "kind": "contains"
+    },
+    {
+     "name": "municipality",
+     "attribute": "concelho_nome",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "station": {
+     "key": "estacao_nome"
+    },
+    "municipality": {
+     "key": "concelho_nome"
+    },
+    "region": {
+     "key": "regiao_nome"
+    },
+    "date": {
+     "key": "data",
+     "conversion": "epoch-millis-date"
+    },
+    "index": {
+     "key": "indice_nome"
+    },
+    "worstPollutant": {
+     "key": "poluente_responsavel_abv"
+    }
+   },
+   "orderBy": "data desc"
+  },
+  {
+   "field": "apaAirQualityForecast",
+   "path": "/Visualizador/QAR_EN/MapServer/5",
+   "type": "ApaAirQualityForecast",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "concelho",
+     "kind": "equals",
+     "upperCase": true
+    }
+   ],
+   "attributes": {
+    "municipality": {
+     "key": "concelho"
+    },
+    "district": {
+     "key": "distrito"
+    },
+    "airClass": {
+     "key": "classe"
+    },
+    "index": {
+     "key": "iqar"
+    },
+    "pollutants": {
+     "key": "poluenteresp"
+    },
+    "pm10": {
+     "key": "pm10"
+    },
+    "no2": {
+     "key": "no2"
+    },
+    "o3": {
+     "key": "o3"
+    },
+    "date": {
+     "key": "data",
+     "conversion": "epoch-millis-date"
+    }
+   },
+   "orderBy": "data desc"
+  },
+  {
+   "field": "apaAirQualityStations",
+   "path": "/Visualizador/QAR_EN/MapServer/8",
+   "type": "ApaAirQualityStation",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "nome",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "nome"
+    },
+    "address": {
+     "key": "local_impl"
+    },
+    "pollutants": {
+     "key": "poluentes"
+    },
+    "network": {
+     "key": "rede"
+    }
+   },
+   "orderBy": "nome"
+  },
+  {
+   "field": "apaAirQualityAlerts",
+   "path": "/Visualizador/QAR_EN/MapServer/9",
+   "type": "ApaAirQualityAlert",
+   "filters": [
+    {
+     "name": "station",
+     "attribute": "estacao_nome",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "station": {
+     "key": "estacao_nome"
+    },
+    "pollutant": {
+     "key": "poluente_abv"
+    },
+    "average": {
+     "key": "avg_display"
+    },
+    "index": {
+     "key": "indice_nome"
+    },
+    "date": {
+     "key": "data",
+     "conversion": "epoch-millis-date"
+    },
+    "hour": {
+     "key": "hora_display"
+    }
+   },
+   "orderBy": "data desc"
+  },
+  {
+   "field": "apaNo2Now",
+   "path": "/Visualizador/MonitoringToApp/MapServer/1",
+   "type": "ApaNo2Reading",
+   "filters": [
+    {
+     "name": "station",
+     "attribute": "nome",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "station": {
+     "key": "nome"
+    },
+    "value": {
+     "key": "valordisplay"
+    },
+    "time": {
+     "key": "datahoradisplay"
+    },
+    "state": {
+     "key": "state"
+    }
+   },
+   "orderBy": "nome"
+  },
+  {
+   "field": "apaAirQualityZones",
+   "path": "/SNIAmb/Qualidade_do_Ar/MapServer/1",
+   "type": "ApaAirQualityZone",
+   "filters": [],
+   "attributes": {
+    "name": {
+     "key": "nzona_2001"
+    },
+    "code": {
+     "key": "czona_2001"
+    },
+    "type": {
+     "key": "tzona_2001"
+    },
+    "pollutants": {
+     "key": "poluentes"
+    },
+    "from": {
+     "key": "inicio"
+    },
+    "to": {
+     "key": "fim"
+    }
+   }
+  },
+  {
+   "field": "apaMunicipalEmissions",
+   "path": "/Visualizador/DB_DCLIMA_CONCELHOS_TUDO_2015_2017/MapServer/6",
+   "type": "ApaMunicipalEmission",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "municipio",
+     "kind": "equals",
+     "upperCase": true
+    },
+    {
+     "name": "sector",
+     "attribute": "first_sector_code",
+     "kind": "equals",
+     "upperCase": true
+    }
+   ],
+   "attributes": {
+    "municipality": {
+     "key": "municipio"
+    },
+    "year": {
+     "key": "ano"
+    },
+    "sector": {
+     "key": "first_sector_code"
+    },
+    "greenhouseGases": {
+     "key": "sum_gee_s"
+    },
+    "co2": {
+     "key": "sum_co2"
+    },
+    "methane": {
+     "key": "sum_ch4"
+    },
+    "nox": {
+     "key": "sum_nox____as_no2_"
+    },
+    "pm25": {
+     "key": "sum_pm2_5"
+    }
+   },
+   "orderBy": "municipio"
+  },
+  {
+   "field": "apaGammaRadiation",
+   "path": "/Visualizador/sirad/MapServer/1",
+   "type": "ApaGammaRadiation",
+   "filters": [
+    {
+     "name": "station",
+     "attribute": "nome_estacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "station": {
+     "key": "nome_estacao"
+    },
+    "doseRate": {
+     "key": "valor"
+    },
+    "date": {
+     "key": "data_hora",
+     "conversion": "epoch-millis-date"
+    },
+    "state": {
+     "key": "estado_estacao"
+    }
+   },
+   "orderBy": "nome_estacao"
+  },
+  {
+   "field": "apaRadonSusceptibility",
+   "path": "/Visualizador/sirad/MapServer/9",
+   "type": "ApaRadonSusceptibility",
+   "filters": [
+    {
+     "name": "parish",
+     "attribute": "freguesia",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "parish": {
+     "key": "freguesia"
+    },
+    "parishCode": {
+     "key": "dicofre"
+    },
+    "level": {
+     "key": "nivel"
+    }
+   },
+   "orderBy": "freguesia"
+  },
+  {
+   "field": "apaNoiseAirports",
+   "path": "/Visualizador/END_visualizador/MapServer/0",
+   "type": "ApaNoiseAirport",
+   "filters": [],
+   "attributes": {
+    "name": {
+     "key": "airportname_localname"
+    },
+    "icao": {
+     "key": "icaocode"
+    },
+    "annualFlights": {
+     "key": "annualtrafficflow"
+    },
+    "cycle": {
+     "key": "ciclo"
+    }
+   }
+  },
+  {
+   "field": "apaNoiseRailways",
+   "path": "/Visualizador/END_visualizador/MapServer/1",
+   "type": "ApaNoiseRailway",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "railname_localname",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "railname_localname"
+    },
+    "line": {
+     "key": "railname_order"
+    },
+    "annualTrains": {
+     "key": "annualtrafficflow"
+    },
+    "length": {
+     "key": "length"
+    }
+   },
+   "orderBy": "railname_localname"
+  },
+  {
+   "field": "apaNoiseRoads",
+   "path": "/Visualizador/END_visualizador/MapServer/2",
+   "type": "ApaNoiseRoad",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "roadname_localname",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "roadname_localname"
+    },
+    "code": {
+     "key": "roadnationalcode"
+    },
+    "annualVehicles": {
+     "key": "annualtrafficflow"
+    },
+    "length": {
+     "key": "length"
+    }
+   }
+  },
+  {
+   "field": "apaNoiseAgglomerations",
+   "path": "/Visualizador/END_visualizador/MapServer/4",
+   "type": "ApaNoiseAgglomeration",
+   "filters": [],
+   "attributes": {
+    "name": {
+     "key": "agglomerationname_localname"
+    },
+    "inhabitants": {
+     "key": "numberofinhabitants"
+    },
+    "areaKm2": {
+     "key": "size"
+    },
+    "sources": {
+     "key": "applicablesource"
+    }
+   }
+  },
+  {
+   "field": "apaMunicipalNoiseMaps",
+   "path": "/Visualizador/MapasMunicipaisRuido/MapServer/0",
+   "type": "ApaMunicipalNoiseMap",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "concelho",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "municipality": {
+     "key": "concelho"
+    },
+    "band": {
+     "key": "category"
+    },
+    "sources": {
+     "key": "source"
+    }
+   }
+  },
+  {
+   "field": "apaAirportNoiseBands",
+   "path": "/Visualizador/END_visualizador_mer/MapServer/30",
+   "type": "ApaAirportNoiseBand",
+   "filters": [],
+   "attributes": {
+    "airport": {
+     "key": "fonte"
+    },
+    "band": {
+     "key": "category"
+    }
+   }
+  },
+  {
+   "field": "apaWasteFacilities",
+   "path": "/SNIAmb/Residuos_306/MapServer/0",
+   "type": "ApaWasteFacility",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "nome_estab",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "nome_estab"
+    },
+    "activity": {
+     "key": "cae_princi"
+    }
+   },
+   "orderBy": "nome_estab"
+  },
+  {
+   "field": "apaPackagingDropOffs",
+   "path": "/SNIAmb/Residuos_306/MapServer/2",
+   "type": "ApaPackagingDropOff",
+   "filters": [
+    {
+     "name": "locality",
+     "attribute": "localidade",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "address": {
+     "key": "morada"
+    },
+    "postcode": {
+     "key": "codigo_postal"
+    },
+    "locality": {
+     "key": "localidade"
+    },
+    "since": {
+     "key": "data_inicio",
+     "conversion": "epoch-millis-date"
+    }
+   },
+   "orderBy": "localidade"
+  },
+  {
+   "field": "apaElectronicsDropOffs",
+   "path": "/SNIAmb/Residuos_306/MapServer/3",
+   "type": "ApaElectronicsDropOff",
+   "filters": [
+    {
+     "name": "locality",
+     "attribute": "localidade",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "address": {
+     "key": "morada"
+    },
+    "postcode": {
+     "key": "codigo_postal"
+    },
+    "locality": {
+     "key": "localidade"
+    },
+    "since": {
+     "key": "data_inicio",
+     "conversion": "epoch-millis-date"
+    }
+   },
+   "orderBy": "localidade"
+  },
+  {
+   "field": "apaOilDropOffs",
+   "path": "/SNIAmb/Residuos_306/MapServer/5",
+   "type": "ApaOilDropOff",
+   "filters": [
+    {
+     "name": "locality",
+     "attribute": "localidade",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "address": {
+     "key": "morada"
+    },
+    "postcode": {
+     "key": "codigo_postal"
+    },
+    "locality": {
+     "key": "localidade"
+    },
+    "since": {
+     "key": "data_inicio",
+     "conversion": "epoch-millis-date"
+    }
+   },
+   "orderBy": "localidade"
+  },
+  {
+   "field": "apaTyreDropOffs",
+   "path": "/SNIAmb/Residuos_306/MapServer/6",
+   "type": "ApaTyreDropOff",
+   "filters": [
+    {
+     "name": "locality",
+     "attribute": "localidade",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "nome"
+    },
+    "address": {
+     "key": "morada"
+    },
+    "locality": {
+     "key": "localidade"
+    }
+   }
+  },
+  {
+   "field": "apaMunicipalWasteSystems",
+   "path": "/SNIAmb/Residuos_311/MapServer/0",
+   "type": "ApaMunicipalWasteSystem",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "sistema",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "system": {
+     "key": "sistema"
+    },
+    "landfills": {
+     "key": "aterros"
+    },
+    "sortingPlants": {
+     "key": "est_triag"
+    },
+    "transferStations": {
+     "key": "est_transf"
+    },
+    "recyclingBins": {
+     "key": "ecopontos"
+    },
+    "recyclingCentres": {
+     "key": "ecocentros"
+    },
+    "energyPlants": {
+     "key": "cve"
+    }
+   }
+  },
+  {
+   "field": "apaMunicipalWastePerPerson",
+   "path": "/SNIAmb/Residuos_311/MapServer/2",
+   "type": "ApaMunicipalWastePerPerson",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "municipio",
+     "kind": "equals",
+     "upperCase": true
+    }
+   ],
+   "attributes": {
+    "municipality": {
+     "key": "municipio"
+    },
+    "system": {
+     "key": "sgru"
+    },
+    "kgPerPersonPerDay": {
+     "key": "cap_ru_kg_"
+    }
+   },
+   "orderBy": "municipio"
+  },
+  {
+   "field": "apaPcbEquipment",
+   "path": "/SNIAmb/Residuos_PCB/MapServer/0",
+   "type": "ApaPcbEquipment",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "municipio",
+     "kind": "equals",
+     "upperCase": true
+    }
+   ],
+   "attributes": {
+    "municipality": {
+     "key": "municipio"
+    },
+    "existing": {
+     "key": "equip_ex"
+    },
+    "eliminated": {
+     "key": "equip_el"
+    },
+    "decontaminated": {
+     "key": "equip_de"
+    }
+   },
+   "orderBy": "municipio"
+  },
+  {
+   "field": "apaLandfills",
+   "path": "/Visualizador/Aterros/MapServer/0",
+   "type": "ApaLandfill",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "nome_estab",
+     "kind": "contains"
+    },
+    {
+     "name": "locality",
+     "attribute": "estab_loca",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "nome_estab"
+    },
+    "operator": {
+     "key": "nome_org"
+    },
+    "locality": {
+     "key": "estab_loca"
+    },
+    "type": {
+     "key": "tipoaterro"
+    },
+    "regimes": {
+     "key": "estab_enqu"
+    },
+    "infoUrl": {
+     "key": "estab_url"
+    }
+   }
+  },
+  {
+   "field": "apaSoilContaminationRisk",
+   "path": "/Visualizador/AQS_Enquadramento_PUBLICO/MapServer/0",
+   "type": "ApaSoilContaminationRisk",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "concelho",
+     "kind": "equals",
+     "upperCase": true
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "nome_estab"
+    },
+    "riskIndex": {
+     "key": "indice_risco"
+    },
+    "origin": {
+     "key": "origem"
+    },
+    "municipality": {
+     "key": "concelho"
+    },
+    "parish": {
+     "key": "freguesia"
+    }
+   },
+   "orderBy": "indice_risco desc"
+  },
+  {
+   "field": "apaPollutantReleaseRegister",
+   "path": "/SNIAmb/Licenciamento/MapServer/0",
+   "type": "ApaPollutantRelease",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "nome_estab",
+     "kind": "contains"
+    },
+    {
+     "name": "locality",
+     "attribute": "localidade",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "nome_estab"
+    },
+    "locality": {
+     "key": "localidade"
+    },
+    "activity": {
+     "key": "cae_princi"
+    },
+    "subsector": {
+     "key": "subsetor"
+    },
+    "workers": {
+     "key": "num_trabal"
+    }
+   },
+   "orderBy": "nome_estab"
+  },
+  {
+   "field": "apaEmissionsTradingInstallations",
+   "path": "/SNIAmb/CELE/MapServer/0",
+   "type": "ApaEmissionsTradingInstallation",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "nome_estab",
+     "kind": "contains"
+    },
+    {
+     "name": "locality",
+     "attribute": "localidade",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "nome_estab"
+    },
+    "locality": {
+     "key": "localidade"
+    },
+    "activity": {
+     "key": "cae_princi"
+    }
+   },
+   "orderBy": "nome_estab"
+  },
+  {
+   "field": "apaSevesoEstablishments",
+   "path": "/SNIAmb/Prevencao_Acidentes_Graves/MapServer/0",
+   "type": "ApaSevesoEstablishment",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "nome_estabelecimento",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "nome_estabelecimento"
+    },
+    "activity": {
+     "key": "cae_principal"
+    },
+    "hazardLevel": {
+     "key": "nivel_perigosidade"
+    },
+    "state": {
+     "key": "estado_seveso"
+    }
+   },
+   "orderBy": "nome_estabelecimento"
+  },
+  {
+   "field": "apaCombustionPlants",
+   "path": "/Visualizador/InstCombM/MapServer/0",
+   "type": "ApaCombustionPlant",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "est",
+     "kind": "contains"
+    },
+    {
+     "name": "region",
+     "attribute": "nutiii",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "establishment": {
+     "key": "est"
+    },
+    "equipment": {
+     "key": "equi"
+    },
+    "fuel": {
+     "key": "combustive"
+    },
+    "powerMw": {
+     "key": "ptn"
+    },
+    "region": {
+     "key": "nutiii"
+    }
+   }
+  },
+  {
+   "field": "apaImpactAssessments",
+   "path": "/AIA/AIA_externo/MapServer/41",
+   "type": "ApaImpactAssessment",
+   "filters": [
+    {
+     "name": "project",
+     "attribute": "projeto",
+     "kind": "contains"
+    },
+    {
+     "name": "typology",
+     "attribute": "tipologia",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "project": {
+     "key": "projeto"
+    },
+    "typology": {
+     "key": "tipologia"
+    },
+    "decision": {
+     "key": "sentido_decisao"
+    },
+    "started": {
+     "key": "inicio",
+     "conversion": "epoch-millis-date"
+    },
+    "decided": {
+     "key": "decisao",
+     "conversion": "epoch-millis-date"
+    },
+    "infoUrl": {
+     "key": "siaia"
+    }
+   },
+   "orderBy": "inicio desc"
+  },
+  {
+   "field": "apaWastewaterPlants",
+   "path": "/SNIAmb/ZnSensiveis_MenosSens_ArInfl/MapServer/1",
+   "type": "ApaWastewaterPlant",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "uwwname",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "uwwname"
+    },
+    "capacity": {
+     "key": "uwwcapacity"
+    },
+    "load": {
+     "key": "uwwloadenteringuwwtp"
+    },
+    "treatment": {
+     "key": "uwwtreatmenttype"
+    },
+    "bodPerformance": {
+     "key": "uwwbod5perf"
+    },
+    "nuts": {
+     "key": "uwwnuts"
+    }
+   },
+   "orderBy": "uwwname"
+  },
+  {
+   "field": "apaWastewaterAgglomerations",
+   "path": "/SNIAmb/ZnSensiveis_MenosSens_ArInfl/MapServer/0",
+   "type": "ApaWastewaterAgglomeration",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "aggname",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "aggname"
+    },
+    "generatedLoad": {
+     "key": "agggenerated"
+    },
+    "collectedPercent": {
+     "key": "aggc1"
+    },
+    "untreatedPercent": {
+     "key": "aggpercwithouttreatment"
+    },
+    "nuts": {
+     "key": "aggnuts"
+    }
+   },
+   "orderBy": "aggname"
+  },
+  {
+   "field": "apaWastewaterOutfalls",
+   "path": "/SNIAmb/ZnSensiveis_MenosSens_ArInfl/MapServer/2",
+   "type": "ApaWastewaterOutfall",
+   "filters": [
+    {
+     "name": "water",
+     "attribute": "dcpwaterbodyname",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "dcpname"
+    },
+    "water": {
+     "key": "dcpwaterbodyname"
+    },
+    "plant": {
+     "key": "uwwcode"
+    },
+    "areaType": {
+     "key": "dcptypeofreceivingarea"
+    },
+    "region": {
+     "key": "dcpwfdrbd"
+    }
+   }
+  },
+  {
+   "field": "apaSensitiveZones",
+   "path": "/PGRH/Zonas_sensiveis/MapServer/0",
+   "type": "ApaSensitiveZone",
+   "filters": [],
+   "attributes": {
+    "name": {
+     "key": "nome"
+    },
+    "code": {
+     "key": "codue"
+    },
+    "region": {
+     "key": "codrh"
+    },
+    "law": {
+     "key": "diplegal"
+    }
+   }
+  },
+  {
+   "field": "apaGroundwaterAbstractionLicences",
+   "path": "/Visualizador/arhto_pext/MapServer/13",
+   "type": "ApaGroundwaterAbstractionLicence",
+   "filters": [
+    {
+     "name": "purpose",
+     "attribute": "finalidade",
+     "kind": "contains"
+    },
+    {
+     "name": "state",
+     "attribute": "estado",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "type": {
+     "key": "tipo"
+    },
+    "purpose": {
+     "key": "finalidade"
+    },
+    "depth": {
+     "key": "profundidadeperfurada"
+    },
+    "monthlyVolume": {
+     "key": "volumemaximoautorizadomensal"
+    },
+    "state": {
+     "key": "estado"
+    },
+    "validFrom": {
+     "key": "dataentradaemvigor",
+     "conversion": "epoch-millis-date"
+    },
+    "expires": {
+     "key": "dataexpiracao",
+     "conversion": "epoch-millis-date"
+    }
+   }
+  },
+  {
+   "field": "apaSurfaceAbstractionLicences",
+   "path": "/Visualizador/arhto_pext/MapServer/14",
+   "type": "ApaSurfaceAbstractionLicence",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "nome",
+     "kind": "contains"
+    },
+    {
+     "name": "purpose",
+     "attribute": "finalidade",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "nome"
+    },
+    "purpose": {
+     "key": "finalidade"
+    },
+    "annualVolume": {
+     "key": "volumemaximoautorizadoanual"
+    },
+    "irrigatedArea": {
+     "key": "areaaregar"
+    },
+    "state": {
+     "key": "estado"
+    },
+    "validFrom": {
+     "key": "dataentradaemvigor",
+     "conversion": "epoch-millis-date"
+    },
+    "expires": {
+     "key": "dataexpiracao",
+     "conversion": "epoch-millis-date"
+    }
+   }
+  },
+  {
+   "field": "apaDischargeLicences",
+   "path": "/Visualizador/arhto_pext/MapServer/15",
+   "type": "ApaDischargeLicence",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "nome",
+     "kind": "contains"
+    },
+    {
+     "name": "state",
+     "attribute": "estado",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "nome"
+    },
+    "origin": {
+     "key": "origemaguasresiduais"
+    },
+    "monthlyVolume": {
+     "key": "volumemaximoautorizadomensal"
+    },
+    "bodLimit": {
+     "key": "cbo5mensal"
+    },
+    "state": {
+     "key": "estado"
+    },
+    "validFrom": {
+     "key": "dataentradaemvigor",
+     "conversion": "epoch-millis-date"
+    },
+    "expires": {
+     "key": "dataexpiracao",
+     "conversion": "epoch-millis-date"
+    }
+   }
+  },
+  {
+   "field": "apaLicensedTreatmentPlants",
+   "path": "/Visualizador/arhto_pext/MapServer/16",
+   "type": "ApaLicensedTreatmentPlant",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "nome",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "nome"
+    },
+    "type": {
+     "key": "tipo"
+    },
+    "populationServed": {
+     "key": "populacaoservida"
+    },
+    "validFrom": {
+     "key": "dataentradaemvigor",
+     "conversion": "epoch-millis-date"
+    },
+    "expires": {
+     "key": "dataexpiracao",
+     "conversion": "epoch-millis-date"
+    }
+   }
+  },
+  {
+   "field": "apaSandExtractionLicences",
+   "path": "/Visualizador/arhto_pext/MapServer/19",
+   "type": "ApaSandExtractionLicence",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "nome",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "nome"
+    },
+    "material": {
+     "key": "materialaextrair"
+    },
+    "volume": {
+     "key": "volumeextraido"
+    },
+    "length": {
+     "key": "comprimentotrocoadesassorear"
+    },
+    "destination": {
+     "key": "destinofinalinertes"
+    },
+    "state": {
+     "key": "estado"
+    }
+   }
+  },
+  {
+   "field": "apaSludgeSpreadingPlans",
+   "path": "/Visualizador/arhto_pext/MapServer/23",
+   "type": "ApaSludgeSpreadingPlan",
+   "filters": [
+    {
+     "name": "plan",
+     "attribute": "processo",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "process": {
+     "key": "processo"
+    },
+    "date": {
+     "key": "data"
+    },
+    "status": {
+     "key": "situacao"
+    },
+    "finalOpinion": {
+     "key": "parecer_final"
+    },
+    "region": {
+     "key": "drap"
+    }
+   }
+  },
+  {
+   "field": "apaManureSpreadingPlans",
+   "path": "/Visualizador/arhto_pext/MapServer/24",
+   "type": "ApaManureSpreadingPlan",
+   "filters": [
+    {
+     "name": "farm",
+     "attribute": "exploracao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "farm": {
+     "key": "exploracao"
+    },
+    "finalOpinion": {
+     "key": "parecer_final"
+    },
+    "groundwaterOpinion": {
+     "key": "parecer_subt"
+    },
+    "region": {
+     "key": "drap"
+    }
+   }
+  },
+  {
+   "field": "apaWaterInspections",
+   "path": "/Visualizador/Fisc_ARH_Report_PNFIA/MapServer/0",
+   "type": "ApaWaterInspection",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "cc",
+     "kind": "contains"
+    },
+    {
+     "name": "district",
+     "attribute": "dd",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "plannedDate": {
+     "key": "data_prevista",
+     "conversion": "epoch-millis-date"
+    },
+    "date": {
+     "key": "data_efetiva",
+     "conversion": "epoch-millis-date"
+    },
+    "municipality": {
+     "key": "cc"
+    },
+    "office": {
+     "key": "arh"
+    },
+    "checked": {
+     "key": "verificacao"
+    },
+    "subject": {
+     "key": "vertente_reclamacao"
+    },
+    "outcome": {
+     "key": "resumo_intervencao"
+    }
+   },
+   "orderBy": "data_prevista desc"
+  },
+  {
+   "field": "apaWaterInspectionActions",
+   "path": "/Dashboard/PRAAF_pub/MapServer/0",
+   "type": "ApaWaterInspectionAction",
+   "filters": [
+    {
+     "name": "office",
+     "attribute": "arh",
+     "kind": "equals",
+     "upperCase": true
+    }
+   ],
+   "attributes": {
+    "kind": {
+     "key": "fisc"
+    },
+    "date": {
+     "key": "p_defet",
+     "conversion": "epoch-millis-date"
+    },
+    "office": {
+     "key": "arh"
+    },
+    "offenceReport": {
+     "key": "p_anot"
+    },
+    "offences": {
+     "key": "p_aninf"
+    },
+    "samples": {
+     "key": "p_acolht"
+    },
+    "sector": {
+     "key": "i_sativ"
+    }
+   },
+   "orderBy": "p_defet desc"
+  },
+  {
+   "field": "apaAquacultures",
+   "path": "/Visualizador/Aquiculturas/MapServer/1",
+   "type": "ApaAquaculture",
+   "filters": [
+    {
+     "name": "waterBody",
+     "attribute": "nome_ma",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "waterBody": {
+     "key": "nome_ma"
+    },
+    "type": {
+     "key": "tipo"
+    },
+    "state": {
+     "key": "estado"
+    },
+    "region": {
+     "key": "rh"
+    }
+   }
+  },
+  {
+   "field": "apaShellfishBeds",
+   "path": "/Visualizador/Aquiculturas/MapServer/2",
+   "type": "ApaShellfishBed",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "concelho",
+     "kind": "contains"
+    },
+    {
+     "name": "place",
+     "attribute": "local_",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "place": {
+     "key": "local_"
+    },
+    "municipality": {
+     "key": "concelho"
+    },
+    "parish": {
+     "key": "freguesia"
+    },
+    "area": {
+     "key": "arealic"
+    },
+    "state": {
+     "key": "sit_ultact"
+    }
+   }
+  },
+  {
+   "field": "apaUrbanDischarges",
+   "path": "/PGRH/2_PGRH_3_Pressures/MapServer/64",
+   "type": "ApaUrbanDischarge",
+   "filters": [
+    {
+     "name": "waterBody",
+     "attribute": "euwaterbodyname",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "treatmentScheme": {
+     "key": "esquema_tratamento"
+    },
+    "waterBody": {
+     "key": "euwaterbodyname"
+    },
+    "treatment": {
+     "key": "grau_tratamento"
+    },
+    "bod": {
+     "key": "cbo5_kg_ano"
+    },
+    "nitrogen": {
+     "key": "n_kg_ano"
+    },
+    "phosphorus": {
+     "key": "p_kg_ano"
+    },
+    "region": {
+     "key": "eurbdcode"
+    }
+   }
+  },
+  {
+   "field": "apaIndustrialDischarges",
+   "path": "/PGRH/2_PGRH_3_Pressures/MapServer/32",
+   "type": "ApaIndustrialDischarge",
+   "filters": [
+    {
+     "name": "waterBody",
+     "attribute": "euwaterbodyname",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "activity": {
+     "key": "cae3_n5_principal"
+    },
+    "waterBody": {
+     "key": "euwaterbodyname"
+    },
+    "treatment": {
+     "key": "grau_tratamento"
+    },
+    "bod": {
+     "key": "cbo5_kg_ano"
+    },
+    "nitrogen": {
+     "key": "n_kg_ano"
+    },
+    "phosphorus": {
+     "key": "p_kg_ano"
+    },
+    "region": {
+     "key": "eurbdcode"
+    }
+   }
+  },
+  {
+   "field": "apaFoodIndustryDischarges",
+   "path": "/PGRH/2_PGRH_3_Pressures/MapServer/2",
+   "type": "ApaFoodIndustryDischarge",
+   "filters": [
+    {
+     "name": "waterBody",
+     "attribute": "euwaterbodyname",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "activity": {
+     "key": "cae3_n5_principal"
+    },
+    "waterBody": {
+     "key": "euwaterbodyname"
+    },
+    "treatment": {
+     "key": "grau_tratamento"
+    },
+    "bod": {
+     "key": "cbo5_kg_ano"
+    },
+    "nitrogen": {
+     "key": "n_kg_ano"
+    },
+    "phosphorus": {
+     "key": "p_kg_ano"
+    },
+    "region": {
+     "key": "eurbdcode"
+    }
+   }
+  },
+  {
+   "field": "apaGolfCourses",
+   "path": "/PGRH/2_PGRH_3_Pressures/MapServer/112",
+   "type": "ApaGolfCourse",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "concelho",
+     "kind": "contains"
+    },
+    {
+     "name": "name",
+     "attribute": "denominaca",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "denominaca"
+    },
+    "holes": {
+     "key": "nrburacos"
+    },
+    "par": {
+     "key": "parcampo"
+    },
+    "opened": {
+     "key": "anoinaugur"
+    },
+    "municipality": {
+     "key": "concelho"
+    },
+    "website": {
+     "key": "website"
+    }
+   },
+   "orderBy": "denominaca"
+  },
+  {
+   "field": "apaEnvironmentalEducationCentres",
+   "path": "/SNIAmb/Promocao_e_Cidadania_Ambiental/MapServer/0",
+   "type": "ApaEnvironmentalEducationCentre",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "eqnome",
+     "kind": "contains"
+    },
+    {
+     "name": "address",
+     "attribute": "eqmorada",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "eqnome"
+    },
+    "address": {
+     "key": "eqmorada"
+    },
+    "type": {
+     "key": "eqenquad"
+    },
+    "hours": {
+     "key": "eqhfunc"
+    },
+    "accessible": {
+     "key": "eqacess"
+    },
+    "website": {
+     "key": "equrl"
+    }
+   },
+   "orderBy": "eqnome"
+  },
+  {
+   "field": "apaEnvironmentalNgos",
+   "path": "/SNIAmb/Promocao_e_Cidadania_Ambiental/MapServer/1",
+   "type": "ApaEnvironmentalNgo",
+   "filters": [
+    {
+     "name": "acronym",
+     "attribute": "acronimo",
+     "kind": "contains"
+    },
+    {
+     "name": "name",
+     "attribute": "nome",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "acronym": {
+     "key": "acronimo"
+    },
+    "name": {
+     "key": "nome"
+    },
+    "scope": {
+     "key": "ambito"
+    },
+    "active": {
+     "key": "ativa",
+     "conversion": "yes-no"
+    },
+    "website": {
+     "key": "web_page"
+    }
+   },
+   "orderBy": "nome"
+  },
+  {
+   "field": "apaMobilityWeekParticipation",
+   "path": "/SNIAmb/Mobilidade_Sustentavel/MapServer/2",
+   "type": "ApaMobilityWeekParticipation",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "municipio",
+     "kind": "equals",
+     "upperCase": true
+    }
+   ],
+   "attributes": {
+    "municipality": {
+     "key": "municipio"
+    },
+    "participations": {
+     "key": "total_p"
+    },
+    "years": {
+     "key": "anos_part"
+    },
+    "permanentMeasures": {
+     "key": "total_mp"
+    },
+    "in2025": {
+     "key": "ano2025"
+    }
+   },
+   "orderBy": "municipio"
+  },
+  {
+   "field": "apaSustainableMobilityProjects",
+   "path": "/SNIAmb/Mobilidade_Sustentavel/MapServer/0",
+   "type": "ApaSustainableMobilityProject",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "concelho",
+     "kind": "equals",
+     "upperCase": true
+    }
+   ],
+   "attributes": {
+    "municipality": {
+     "key": "concelho"
+    },
+    "diagnosisUrl": {
+     "key": "r_diagnóst"
+    },
+    "proposalUrl": {
+     "key": "r_proposta"
+    }
+   }
+  },
+  {
+   "field": "apaMunicipalSdgActivities",
+   "path": "/Visualizador/ods/MapServer/0",
+   "type": "ApaMunicipalSdgActivity",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "municipio",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "municipality": {
+     "key": "municipio"
+    },
+    "activities": {
+     "key": "n_atv"
+    },
+    "goals": {
+     "key": "n_ods"
+    },
+    "climateAction": {
+     "key": "ods13"
+    },
+    "lifeBelowWater": {
+     "key": "ods14"
+    },
+    "lifeOnLand": {
+     "key": "ods15"
+    },
+    "region": {
+     "key": "nut3"
+    }
+   },
+   "orderBy": "municipio"
+  },
+  {
+   "field": "apaMunicipalities",
+   "path": "/Visualizador/CartBase/MapServer/2",
+   "type": "ApaMunicipality",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "municipio",
+     "kind": "contains"
+    },
+    {
+     "name": "district",
+     "attribute": "distrito",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "municipio"
+    },
+    "district": {
+     "key": "distrito"
+    },
+    "code": {
+     "key": "dico"
+    },
+    "nuts3": {
+     "key": "nuts3"
+    },
+    "areaHectares": {
+     "key": "area_ha"
+    },
+    "parishes": {
+     "key": "n_freguesias"
+    }
+   },
+   "orderBy": "municipio"
+  },
+  {
+   "field": "apaParishes",
+   "path": "/Visualizador/CartBase/MapServer/1",
+   "type": "ApaParish",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "municipio",
+     "kind": "contains"
+    },
+    {
+     "name": "parish",
+     "attribute": "freguesia",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "freguesia"
+    },
+    "municipality": {
+     "key": "municipio"
+    },
+    "code": {
+     "key": "dicofre"
+    },
+    "areaHectares": {
+     "key": "area_ha"
+    }
+   },
+   "orderBy": "freguesia"
+  },
+  {
+   "field": "apaDistricts",
+   "path": "/Visualizador/CartBase/MapServer/3",
+   "type": "ApaDistrict",
+   "filters": [],
+   "attributes": {
+    "name": {
+     "key": "distrito"
+    },
+    "areaHectares": {
+     "key": "area_ha"
+    },
+    "municipalities": {
+     "key": "n_municipios"
+    },
+    "parishes": {
+     "key": "n_freguesias"
+    }
+   },
+   "orderBy": "distrito"
+  },
+  {
+   "field": "apaClimateSolarRadiation",
+   "path": "/Atlas/Atlas_Ambiente/MapServer/3",
+   "type": "ApaClimateSolarRadiation",
+   "filters": [],
+   "attributes": {
+    "class": {
+     "key": "radiacao"
+    }
+   }
+  },
+  {
+   "field": "apaClimateFrost",
+   "path": "/Atlas/Atlas_Ambiente/MapServer/6",
+   "type": "ApaClimateFrost",
+   "filters": [],
+   "attributes": {
+    "class": {
+     "key": "period_gea"
+    }
+   }
+  },
+  {
+   "field": "apaClimateHumidity",
+   "path": "/Atlas/Atlas_Ambiente/MapServer/8",
+   "type": "ApaClimateHumidity",
+   "filters": [],
+   "attributes": {
+    "class": {
+     "key": "humidade"
+    }
+   }
+  },
+  {
+   "field": "apaSoils",
+   "path": "/Atlas/Atlas_Ambiente/MapServer/29",
+   "type": "ApaSoil",
+   "filters": [
+    {
+     "name": "soil",
+     "attribute": "nome",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "soil": {
+     "key": "nome"
+    },
+    "subtype": {
+     "key": "subnome"
+    },
+    "parentRock": {
+     "key": "especifi"
+    }
+   }
+  },
+  {
+   "field": "apaNaturalRegions",
+   "path": "/Atlas/Atlas_Ambiente/MapServer/33",
+   "type": "ApaNaturalRegion",
+   "filters": [
+    {
+     "name": "region",
+     "attribute": "regiao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "region": {
+     "key": "regiao"
+    },
+    "subregion": {
+     "key": "subregiao"
+    }
+   }
+  },
+  {
+   "field": "apaLithology",
+   "path": "/Atlas/Atlas_Ambiente/MapServer/14",
+   "type": "ApaLithology",
+   "filters": [
+    {
+     "name": "rock",
+     "attribute": "designa",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "complex": {
+     "key": "comp_lit"
+    },
+    "rock": {
+     "key": "designa"
+    }
+   }
+  },
+  {
+   "field": "apaReservoirUses",
+   "path": "/Atlas/Atlas_Ambiente/MapServer/24",
+   "type": "ApaReservoirUse",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "designacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "designacao"
+    },
+    "mainUse": {
+     "key": "fim"
+    },
+    "floodedArea": {
+     "key": "area_inun"
+    }
+   }
+  },
+  {
+   "field": "apaRadioactivitySamplingSites",
+   "path": "/Visualizador/sirad/MapServer/7",
+   "type": "ApaRadioactivitySamplingSite",
+   "filters": [],
+   "attributes": {
+    "name": {
+     "key": "nome_local"
+    },
+    "type": {
+     "key": "tipo_local"
+    },
+    "state": {
+     "key": "estado"
+    }
+   }
+  },
+  {
+   "field": "apaRadiationAlertStations",
+   "path": "/Visualizador/sirad/MapServer/0",
+   "type": "ApaRadiationAlertStation",
+   "filters": [],
+   "attributes": {
+    "name": {
+     "key": "nome_estacao"
+    },
+    "type": {
+     "key": "tipo_estacao"
+    },
+    "state": {
+     "key": "estado_estacao"
+    }
+   }
+  },
+  {
+   "field": "apaMunicipalNightNoise",
+   "path": "/Visualizador/MapasMunicipaisRuido/MapServer/1",
+   "type": "ApaMunicipalNightNoise",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "concelho",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "municipality": {
+     "key": "concelho"
+    },
+    "band": {
+     "key": "category"
+    }
+   }
+  },
+  {
+   "field": "apaDistrictAirForecast",
+   "path": "/Visualizador/QAR_EN/MapServer/4",
+   "type": "ApaDistrictAirForecast",
+   "filters": [
+    {
+     "name": "district",
+     "attribute": "distrito",
+     "kind": "equals",
+     "upperCase": true
+    }
+   ],
+   "attributes": {
+    "city": {
+     "key": "concelho"
+    },
+    "airClass": {
+     "key": "classe"
+    },
+    "index": {
+     "key": "iqar"
+    },
+    "pollutants": {
+     "key": "poluenteresp"
+    },
+    "date": {
+     "key": "data",
+     "conversion": "epoch-millis-date"
+    }
+   },
+   "orderBy": "data desc"
+  },
+  {
+   "field": "apaPorts",
+   "path": "/PGRH/2_PGRH_3_Pressures/MapServer/157",
+   "type": "ApaPort",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "designacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "designacao"
+    },
+    "waterBody": {
+     "key": "euwaterbodyname"
+    },
+    "region": {
+     "key": "eurbdcode"
+    }
+   }
+  },
+  {
+   "field": "apaBridges",
+   "path": "/PGRH/2_PGRH_3_Pressures/MapServer/163",
+   "type": "ApaBridge",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "designacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "designacao"
+    },
+    "waterBody": {
+     "key": "euwaterbodyname"
+    },
+    "region": {
+     "key": "eurbdcode"
+    }
+   }
+  },
+  {
+   "field": "apaDikesAndFloodgates",
+   "path": "/PGRH/2_PGRH_3_Pressures/MapServer/141",
+   "type": "ApaDikeOrFloodgate",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "designacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "designacao"
+    },
+    "waterBody": {
+     "key": "euwaterbodyname"
+    },
+    "region": {
+     "key": "eurbdcode"
+    }
+   }
+  },
+  {
+   "field": "apaRiverbedAlterations",
+   "path": "/PGRH/2_PGRH_3_Pressures/MapServer/135",
+   "type": "ApaRiverbedAlteration",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "designacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "designacao"
+    },
+    "waterBody": {
+     "key": "euwaterbodyname"
+    },
+    "region": {
+     "key": "eurbdcode"
+    }
+   }
+  },
+  {
+   "field": "apaSandDredging",
+   "path": "/PGRH/2_PGRH_3_Pressures/MapServer/1534",
+   "type": "ApaSandDredging",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "designacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "designacao"
+    },
+    "waterBody": {
+     "key": "euwaterbodyname"
+    },
+    "region": {
+     "key": "eurbdcode"
+    }
+   }
+  },
+  {
+   "field": "apaCulverts",
+   "path": "/PGRH/2_PGRH_3_Pressures/MapServer/151",
+   "type": "ApaCulvert",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "designacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "designacao"
+    },
+    "waterBody": {
+     "key": "euwaterbodyname"
+    },
+    "region": {
+     "key": "eurbdcode"
+    }
+   }
+  },
+  {
+   "field": "apaCoastalProtectionWorks",
+   "path": "/PGRH/2_PGRH_3_Pressures/MapServer/160",
+   "type": "ApaCoastalProtectionWork",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "designacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "designacao"
+    },
+    "waterBody": {
+     "key": "euwaterbodyname"
+    },
+    "region": {
+     "key": "eurbdcode"
+    }
+   }
+  },
+  {
+   "field": "apaFloodDrinkingWaterSources",
+   "path": "/Visualizador/Diretiva60CE2007_2ciclo_v2/MapServer/401",
+   "type": "ApaFloodDrinkingWaterSource",
+   "filters": [
+    {
+     "name": "place",
+     "attribute": "local",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "nome"
+    },
+    "category": {
+     "key": "categoria"
+    },
+    "place": {
+     "key": "local"
+    }
+   }
+  },
+  {
+   "field": "apaFloodRailways",
+   "path": "/Visualizador/Diretiva60CE2007_2ciclo_v2/MapServer/316",
+   "type": "ApaFloodRailway",
+   "filters": [
+    {
+     "name": "place",
+     "attribute": "local",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "line": {
+     "key": "designacao"
+    },
+    "section": {
+     "key": "segmento"
+    },
+    "place": {
+     "key": "local"
+    }
+   }
+  },
+  {
+   "field": "apaSpecificPollutants",
+   "path": "/PGRH/3_PGRH_3_Status_Objectives/MapServer/8",
+   "type": "ApaSpecificPollutant",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "geoapapgbh.geoapapgbhdata.WISE_SurfaceWaterBody_Basin_PTCONT.nametext",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "geoapapgbh.geoapapgbhdata.WISE_SurfaceWaterBody_Basin_PTCONT.nametext"
+    },
+    "region": {
+     "key": "geoapapgbh.geoapapgbhdata.WISE_SurfaceWaterBody_Basin_PTCONT.rzoneid"
+    },
+    "pollutants": {
+     "key": "geoapapgbh.geoapapgbhdata.WISE_swQualityElement.swfailingrbsp"
+    }
+   }
+  },
+  {
+   "field": "apaSurfaceIntakeProtectionZones",
+   "path": "/SNIAmb/ProtCaptacoes_AgConsHumano/MapServer/7",
+   "type": "ApaSurfaceIntakeProtectionZone",
+   "filters": [],
+   "attributes": {
+    "name": {
+     "key": "nome"
+    },
+    "law": {
+     "key": "diplegal"
+    }
+   }
+  },
+  {
+   "field": "apaCoastalWaterBodies",
+   "path": "/Visualizador/CaraterizacaoDaEnvolvente/MapServer/15",
+   "type": "ApaCoastalWaterBody",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "name",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "name"
+    },
+    "code": {
+     "key": "id_localid"
+    },
+    "kind": {
+     "key": "spatial_object_type"
+    }
+   }
+  },
+  {
+   "field": "apaGroundwaterObservationPoints",
+   "path": "/SNIAmb/Estacoes_monitorizacao_aguas_subterraneas/MapServer/1",
+   "type": "ApaGroundwaterObservationPoint",
+   "filters": [
+    {
+     "name": "aquifer",
+     "attribute": "sist_aquif",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "code": {
+     "key": "referencia"
+    },
+    "type": {
+     "key": "tipo"
+    },
+    "state": {
+     "key": "estado"
+    },
+    "aquifer": {
+     "key": "sist_aquif"
+    },
+    "dataUrl": {
+     "key": "link_dados"
+    }
+   }
+  },
+  {
+   "field": "apaCoastalUnits",
+   "path": "/SNIRLit/SNIRLit/MapServer/19",
+   "type": "ApaCoastalUnit",
+   "filters": [],
+   "attributes": {
+    "name": {
+     "key": "ulitoral"
+    },
+    "documents": {
+     "key": "ndocs"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+[ {
+  "IndicadorCod" : "0013164",
+  "IndicadorDsg" : "Mortality rate due to malignant neoplasms (‰) by Place of residence (NUTS - 2024); Annual - Statistics Portugal, Mortality by causes of death",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013164&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:30.690Z",
+  "DataUltimoAtualizacao" : "2026-07-07",
+  "UltimoPref" : "2024",
+  "Dados" : {
+    "2024" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "ind_string" : "2,6",
+      "valor" : "2.6"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

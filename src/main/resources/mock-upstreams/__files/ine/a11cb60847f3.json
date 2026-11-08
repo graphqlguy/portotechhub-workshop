@@ -1,0 +1,25 @@
+[ {
+  "IndicadorCod" : "0012195",
+  "IndicadorDsg" : "Higher education rate (Série 2021 - %) of resident population aged between 25 and 64 years old by Place of residence (NUTS - 2024), Sex and Age group; Annual - Statistics Portugal, Labour force survey (Series 2021)",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0012195&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:24:01.327Z",
+  "DataUltimoAtualizacao" : "2026-02-04",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2025" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "MF",
+      "dim_4" : "T",
+      "dim_4_t" : "Total",
+      "ind_string" : "32,7",
+      "valor" : "32.7"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

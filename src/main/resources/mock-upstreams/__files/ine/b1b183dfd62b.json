@@ -1,0 +1,23 @@
+[ {
+  "IndicadorCod" : "0012248",
+  "IndicadorDsg" : "Median value of bank evaluation (€/ m²) by Geographic localization (Municipality - 2024) and Type of construction; Monthly - Statistics Portugal, Survey on bank evaluation on housing",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0012248&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:32.685Z",
+  "DataUltimoAtualizacao" : "2026-10-27",
+  "UltimoPref" : "September 2026",
+  "Dados" : {
+    "September 2026" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "2 278",
+      "valor" : "2278"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

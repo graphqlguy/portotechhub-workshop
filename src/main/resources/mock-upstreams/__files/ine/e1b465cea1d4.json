@@ -1,0 +1,25 @@
+[ {
+  "IndicadorCod" : "0014064",
+  "IndicadorDsg" : "Enterprises (No.) by Geographic localization (NUTS - 2024), Economic activity (Subclass - CAE Rev. 3) and Legal form; Annual - Statistics Portugal, Integrated business accounts system",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014064&lingua=EN",
+  "DataExtracao" : "2026-11-06T02:53:59.006Z",
+  "DataUltimoAtualizacao" : "2025-12-11",
+  "UltimoPref" : "2024",
+  "Dados" : {
+    "2024" : [ {
+      "geocod" : "11A1312",
+      "geodsg" : "Porto",
+      "dim_3" : "47762",
+      "dim_3_t" : "Retail sale of pet animals and pet food in specialised stores",
+      "dim_4" : "T",
+      "dim_4_t" : "Total",
+      "ind_string" : "24",
+      "valor" : "24"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

@@ -1,0 +1,23 @@
+[ {
+  "IndicadorCod" : "0014520",
+  "IndicadorDsg" : "Electricity production from renewable energy (GWh) by Type of renewable energy; Annual - DGEG, Directorate-General for Energy and Geology",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014520&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:24:04.454Z",
+  "DataUltimoAtualizacao" : "2025-12-19",
+  "UltimoPref" : "2024",
+  "Dados" : {
+    "2024" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "44 055",
+      "valor" : "44055"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

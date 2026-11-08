@@ -1,0 +1,23 @@
+[ {
+  "IndicadorCod" : "0001541",
+  "IndicadorDsg" : "Adolescent live births (No.) by Age of mother; Annual - Statistics Portugal, Live-birth statistics",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0001541&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:28.637Z",
+  "DataUltimoAtualizacao" : "2026-04-30",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2025" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "1 561",
+      "valor" : "1561"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

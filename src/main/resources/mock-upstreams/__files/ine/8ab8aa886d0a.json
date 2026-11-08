@@ -1,0 +1,25 @@
+[ {
+  "IndicadorCod" : "0008273",
+  "IndicadorDsg" : "Resident population (No.) by Place of residence (NUTS - 2013), Sex and Age group; Annual - Statistics Portugal, Annual estimates of resident population",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0008273&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:25:37.487Z",
+  "DataUltimoAtualizacao" : "2026-07-17",
+  "UltimoPref" : "2023",
+  "Dados" : {
+    "2023" : [ {
+      "geocod" : "11A1312",
+      "geodsg" : "Porto",
+      "dim_3" : "T",
+      "dim_3_t" : "MF",
+      "dim_4" : "T",
+      "dim_4_t" : "Total",
+      "ind_string" : "267 236",
+      "valor" : "267236"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

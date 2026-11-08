@@ -1,0 +1,23 @@
+[ {
+  "IndicadorCod" : "0012468",
+  "IndicadorDsg" : "Private households (No.) in living quarters of usual residence by Place of residence at Census date [2021] (NUTS - 2024) and Type (living quarter); Decennial - Statistics Portugal, Population and housing census - 2021",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0012468&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:25.847Z",
+  "DataUltimoAtualizacao" : "2024-03-19",
+  "UltimoPref" : "2021",
+  "Dados" : {
+    "2021" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "4 148 789,00",
+      "valor" : "4148789"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

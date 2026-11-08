@@ -1,0 +1,2228 @@
+[ {
+  "IndicadorCod" : "0005719",
+  "IndicadorDsg" : "Imports (€) of goods by Place of source and Type of goods (Combined nomenclature - CN8); Annual - Statistics Portugal, Statistics on external trade of goods",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0005719&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:25:46.294Z",
+  "DataUltimoAtualizacao" : "2026-08-07",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2025" : [ {
+      "geocod" : "NO",
+      "geodsg" : "Norway",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "18",
+      "valor" : "18"
+    }, {
+      "geocod" : "PE",
+      "geodsg" : "Peru",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "38",
+      "valor" : "38"
+    }, {
+      "geocod" : "QW",
+      "geodsg" : "Countries and territories not specified within the framework of extra-Union trade",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "40",
+      "valor" : "40"
+    }, {
+      "geocod" : "BD",
+      "geodsg" : "Bangladesh",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "49",
+      "valor" : "49"
+    }, {
+      "geocod" : "ZA",
+      "geodsg" : "South Africa",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "74",
+      "valor" : "74"
+    }, {
+      "geocod" : "MX",
+      "geodsg" : "Mexico",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "86",
+      "valor" : "86"
+    }, {
+      "geocod" : "MY",
+      "geodsg" : "Malaysia",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "94",
+      "valor" : "94"
+    }, {
+      "geocod" : "EG",
+      "geodsg" : "Egypt",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "116",
+      "valor" : "116"
+    }, {
+      "geocod" : "JP",
+      "geodsg" : "Japan",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "125",
+      "valor" : "125"
+    }, {
+      "geocod" : "CO",
+      "geodsg" : "Colombia",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "137",
+      "valor" : "137"
+    }, {
+      "geocod" : "NZ",
+      "geodsg" : "New Zealand",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "155",
+      "valor" : "155"
+    }, {
+      "geocod" : "TW",
+      "geodsg" : "Taiwan",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "155",
+      "valor" : "155"
+    }, {
+      "geocod" : "OPEP",
+      "geodsg" : "OPEC",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "173",
+      "valor" : "173"
+    }, {
+      "geocod" : "SA",
+      "geodsg" : "Saudi Arabia",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "173",
+      "valor" : "173"
+    }, {
+      "geocod" : "CH",
+      "geodsg" : "Switzerland",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "194",
+      "valor" : "194"
+    }, {
+      "geocod" : "EFTA",
+      "geodsg" : "EFTA",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "212",
+      "valor" : "212"
+    }, {
+      "geocod" : "LU",
+      "geodsg" : "Luxembourg",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "482",
+      "valor" : "482"
+    }, {
+      "geocod" : "AU",
+      "geodsg" : "Australia",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "539",
+      "valor" : "539"
+    }, {
+      "geocod" : "GR",
+      "geodsg" : "Greece",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "540",
+      "valor" : "540"
+    }, {
+      "geocod" : "FI",
+      "geodsg" : "Finland",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "647",
+      "valor" : "647"
+    }, {
+      "geocod" : "CA",
+      "geodsg" : "Canada",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "1 801",
+      "valor" : "1801"
+    }, {
+      "geocod" : "LV",
+      "geodsg" : "Latvia",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "4 589",
+      "valor" : "4589"
+    }, {
+      "geocod" : "RO",
+      "geodsg" : "Romania",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "10 658",
+      "valor" : "10658"
+    }, {
+      "geocod" : "TR",
+      "geodsg" : "Türkiye",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "22 744",
+      "valor" : "22744"
+    }, {
+      "geocod" : "SI",
+      "geodsg" : "Slovenia",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "32 388",
+      "valor" : "32388"
+    }, {
+      "geocod" : "IN",
+      "geodsg" : "India",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "47 806",
+      "valor" : "47806"
+    }, {
+      "geocod" : "TH",
+      "geodsg" : "Thailand",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "120 460",
+      "valor" : "120460"
+    }, {
+      "geocod" : "BR",
+      "geodsg" : "Brazil",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "182 803",
+      "valor" : "182803"
+    }, {
+      "geocod" : "XI",
+      "geodsg" : "United Kingdom (Northern Ireland)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "265 681",
+      "valor" : "265681"
+    }, {
+      "geocod" : "CN",
+      "geodsg" : "China",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "274 605",
+      "valor" : "274605"
+    }, {
+      "geocod" : "LT",
+      "geodsg" : "Lithuania",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "281 167",
+      "valor" : "281167"
+    }, {
+      "geocod" : "AT",
+      "geodsg" : "Austria",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "853 366",
+      "valor" : "853366"
+    }, {
+      "geocod" : "XS",
+      "geodsg" : "Serbia",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "890 287",
+      "valor" : "890287"
+    }, {
+      "geocod" : "BE",
+      "geodsg" : "Belgium",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "1 030 994",
+      "valor" : "1030994"
+    }, {
+      "geocod" : "XU",
+      "geodsg" : "United Kingdom (excluding Northern Ireland)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "1 849 038",
+      "valor" : "1849038"
+    }, {
+      "geocod" : "CZ",
+      "geodsg" : "Czechia",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "2 240 838",
+      "valor" : "2240838"
+    }, {
+      "geocod" : "IE",
+      "geodsg" : "Ireland",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "2 483 020",
+      "valor" : "2483020"
+    }, {
+      "geocod" : "US",
+      "geodsg" : "United States of America (the)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "3 722 643",
+      "valor" : "3722643"
+    }, {
+      "geocod" : "EXTRA_UE27",
+      "geodsg" : "Extra EU - 27 members states (2007 to 2013)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "5 265 142",
+      "valor" : "5265142"
+    }, {
+      "geocod" : "EXTRA_UE28",
+      "geodsg" : "Extra EU - 28 members states",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "5 265 142",
+      "valor" : "5265142"
+    }, {
+      "geocod" : "EXTRA_UE25",
+      "geodsg" : "Extra EU - 25 members states",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "5 275 800",
+      "valor" : "5275800"
+    }, {
+      "geocod" : "NL",
+      "geodsg" : "Netherlands (Kingdom of the)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "6 552 932",
+      "valor" : "6552932"
+    }, {
+      "geocod" : "EXTRA",
+      "geodsg" : "Extra European Union",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "7 379 861",
+      "valor" : "7379861"
+    }, {
+      "geocod" : "EXTRA_UE27_2020",
+      "geodsg" : "Extra EU - 27 members states (since 2020)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "7 379 861",
+      "valor" : "7379861"
+    }, {
+      "geocod" : "HU",
+      "geodsg" : "Hungary",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "8 789 399",
+      "valor" : "8789399"
+    }, {
+      "geocod" : "DK",
+      "geodsg" : "Denmark",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "10 239 547",
+      "valor" : "10239547"
+    }, {
+      "geocod" : "PL",
+      "geodsg" : "Poland",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "11 970 638",
+      "valor" : "11970638"
+    }, {
+      "geocod" : "IT",
+      "geodsg" : "Italy",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "16 318 381",
+      "valor" : "16318381"
+    }, {
+      "geocod" : "DE",
+      "geodsg" : "Germany",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "22 448 484",
+      "valor" : "22448484"
+    }, {
+      "geocod" : "EXTRA_UE15",
+      "geodsg" : "Extra EU - 15 members states",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "28 594 819",
+      "valor" : "28594819"
+    }, {
+      "geocod" : "EXTRA_UE12",
+      "geodsg" : "Extra EU - 12 members states",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "29 448 832",
+      "valor" : "29448832"
+    }, {
+      "geocod" : "FR",
+      "geodsg" : "France",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "51 196 146",
+      "valor" : "51196146"
+    }, {
+      "geocod" : "ES",
+      "geodsg" : "Spain",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "163 093 227",
+      "valor" : "163093227"
+    }, {
+      "geocod" : "INTRA_UE12",
+      "geodsg" : "Intra EU - 12 members states",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "275 478 472",
+      "valor" : "275478472"
+    }, {
+      "geocod" : "INTRA_UE15",
+      "geodsg" : "Intra EU - 15 members states",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "276 332 485",
+      "valor" : "276332485"
+    }, {
+      "geocod" : "INTRA",
+      "geodsg" : "Intra European Union",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "297 547 443",
+      "valor" : "297547443"
+    }, {
+      "geocod" : "INTRA_UE27_2020",
+      "geodsg" : "Intra EU - 27 members states (since 2020)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "297 547 443",
+      "valor" : "297547443"
+    }, {
+      "geocod" : "INTRA_UE25",
+      "geodsg" : "Intra EU - 25 members states",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "299 651 504",
+      "valor" : "299651504"
+    }, {
+      "geocod" : "INTRA_UE27",
+      "geodsg" : "Intra EU - 27 members states (2007 to 2013)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "299 662 162",
+      "valor" : "299662162"
+    }, {
+      "geocod" : "INTRA_UE28",
+      "geodsg" : "Intra EU - 28 members states",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "299 662 162",
+      "valor" : "299662162"
+    }, {
+      "geocod" : "MUNDO",
+      "geodsg" : "World",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "304 927 304",
+      "valor" : "304927304"
+    }, {
+      "geocod" : "SS",
+      "geodsg" : "South Sudan",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "VD",
+      "geodsg" : "North Vietnam",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "TM",
+      "geodsg" : "Turkmenistan",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "MA",
+      "geodsg" : "Morocco",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "027",
+      "geodsg" : "Svalbard (archipelago of)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "WF",
+      "geodsg" : "Wallis and Futuna",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "809",
+      "geodsg" : "Fish",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "BN",
+      "geodsg" : "Brunei Darussalam",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "CM",
+      "geodsg" : "Cameroon",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "LY",
+      "geodsg" : "Libya",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "SZ",
+      "geodsg" : "Eswatini",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "TL",
+      "geodsg" : "Timor-Leste",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "PY",
+      "geodsg" : "Paraguay",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "GQ",
+      "geodsg" : "Equatorial Guinea",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "UG",
+      "geodsg" : "Uganda",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "XM",
+      "geodsg" : "Montenegro",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "TD",
+      "geodsg" : "Chad",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "GD",
+      "geodsg" : "Grenada",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "BI",
+      "geodsg" : "Burundi",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "CY",
+      "geodsg" : "Cyprus",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "KM",
+      "geodsg" : "Comoros (the)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "LR",
+      "geodsg" : "Liberia",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "DD",
+      "geodsg" : "German Democratic Republic",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "QZ",
+      "geodsg" : "Countries and territories not specified for commercial or military reasons in the framework of extra-Union trade",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "KP",
+      "geodsg" : "Korea (the Democratic People's Republic of)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "242",
+      "geodsg" : "Indian Ocean territories",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "QA",
+      "geodsg" : "Qatar",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "AE",
+      "geodsg" : "United Arab Emirates (the)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "GT",
+      "geodsg" : "Guatemala",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "MW",
+      "geodsg" : "Malawi",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "976",
+      "geodsg" : "Other countries and territories",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "IR",
+      "geodsg" : "Iran (Islamic Republic of)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "BA",
+      "geodsg" : "Bosnia and Herzegovina",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "TT",
+      "geodsg" : "Trinidad and Tobago",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "SB",
+      "geodsg" : "Solomon Islands",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "MK",
+      "geodsg" : "North Macedonia",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "029",
+      "geodsg" : "Common market zone",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "QR",
+      "geodsg" : "Stores and provisions within the framework of Intra-Union trade",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "LS",
+      "geodsg" : "Lesotho",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "458",
+      "geodsg" : "Guadeloupe",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "HK",
+      "geodsg" : "Hong Kong",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "MH",
+      "geodsg" : "Marshall Islands (the)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "QQ",
+      "geodsg" : "Stores and provisions",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "975",
+      "geodsg" : "Members States of the Community",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "CI",
+      "geodsg" : "Côte d'Ivoire",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "ER",
+      "geodsg" : "Eritrea",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "SL",
+      "geodsg" : "Sierra Leone",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "AO",
+      "geodsg" : "Angola",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "JO",
+      "geodsg" : "Jordan",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "VU",
+      "geodsg" : "Vanuatu",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "YD",
+      "geodsg" : "South Yemen",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "QT",
+      "geodsg" : "West Indies",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "GS",
+      "geodsg" : "South Georgia and the South Sandwich Islands",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "LK",
+      "geodsg" : "Sri Lanka",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "462",
+      "geodsg" : "Martinique",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "SX",
+      "geodsg" : "Sint Maarten (dutch part)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "712",
+      "geodsg" : "Countries and territories associated to the United Kingdom in Oceania",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "FJ",
+      "geodsg" : "Fiji",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "DJ",
+      "geodsg" : "Djibouti",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "TK",
+      "geodsg" : "Tokelau",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "ZW",
+      "geodsg" : "Zimbabwe",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "KN",
+      "geodsg" : "Saint Kitts and Nevis",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "LC",
+      "geodsg" : "Saint Lucia",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "021",
+      "geodsg" : "Canary Islands",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "GL",
+      "geodsg" : "Greenland",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "VC",
+      "geodsg" : "Saint Vincent and the Grenadines",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "XL",
+      "geodsg" : "Melilla",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "BS",
+      "geodsg" : "Bahamas (the)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "TP",
+      "geodsg" : "Timor",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "196",
+      "geodsg" : "Countries and territories associated to Spain in Africa",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "VA",
+      "geodsg" : "Holy See (the)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "AD",
+      "geodsg" : "Andorra",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "BQ",
+      "geodsg" : "Bonaire, Sint Eustatius and Saba",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "GM",
+      "geodsg" : "Gambia (the)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "RU",
+      "geodsg" : "Russian Federation (the)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "SG",
+      "geodsg" : "Singapore",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "QX",
+      "geodsg" : "Countries and territories not specified for commercial or military reasons",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "MT",
+      "geodsg" : "Malta",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "IL",
+      "geodsg" : "Israel",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "BV",
+      "geodsg" : "Bouvet Island",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "QU",
+      "geodsg" : "Countries and territories not specified",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "BT",
+      "geodsg" : "Bhutan",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "CC",
+      "geodsg" : "Cocos (Keeling) Islands (the)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "XR",
+      "geodsg" : "Polar Regions",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "IO",
+      "geodsg" : "British Indian Ocean Territory (the)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "HM",
+      "geodsg" : "Heard Island and McDonald Islands",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "SY",
+      "geodsg" : "Syrian Arab Republic (the)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "QV",
+      "geodsg" : "Countries and territories not specified within the framework of intra-Union trade",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "NI",
+      "geodsg" : "Nicaragua",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "BO",
+      "geodsg" : "Bolivia (Plurinational State of)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "SE",
+      "geodsg" : "Sweden",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "MP",
+      "geodsg" : "Northern Mariana Islands (the)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "MD",
+      "geodsg" : "Moldova (the Republic of)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "TJ",
+      "geodsg" : "Tajikistan",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "DM",
+      "geodsg" : "Dominica",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "YT",
+      "geodsg" : "Mayotte",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "NC",
+      "geodsg" : "New Caledonia",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "NE",
+      "geodsg" : "Niger (the)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "AW",
+      "geodsg" : "Aruba",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "BZ",
+      "geodsg" : "Belize",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "QY",
+      "geodsg" : "Countries and territories not specified for commercial or military reasons in the framework of intra-Union trade",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "815",
+      "geodsg" : "Various",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "CR",
+      "geodsg" : "Costa Rica",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "SM",
+      "geodsg" : "San Marino",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "OM",
+      "geodsg" : "Oman",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "IS",
+      "geodsg" : "Iceland",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "YE",
+      "geodsg" : "Yemen",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "HN",
+      "geodsg" : "Honduras",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "CF",
+      "geodsg" : "Central African Republic (the)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "VE",
+      "geodsg" : "Venezuela (Bolivarian Republic of)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "MN",
+      "geodsg" : "Mongolia",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "625",
+      "geodsg" : "Gaza and Jericho",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "693",
+      "geodsg" : "Maritime navigation supply",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "GA",
+      "geodsg" : "Gabon",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "EH",
+      "geodsg" : "Western Sahara",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "PN",
+      "geodsg" : "Pitcairn",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "SO",
+      "geodsg" : "Somalia",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "SV",
+      "geodsg" : "El Salvador",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "SN",
+      "geodsg" : "Senegal",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "GY",
+      "geodsg" : "Guyana",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "CU",
+      "geodsg" : "Cuba",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "433",
+      "geodsg" : "British territories in America",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "NA",
+      "geodsg" : "Namibia",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "CS",
+      "geodsg" : "Serbia and Montenegro",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "AN",
+      "geodsg" : "Netherlands Antilles",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "BW",
+      "geodsg" : "Botswana",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "TC",
+      "geodsg" : "Turks and Caicos Islands (the)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "496",
+      "geodsg" : "French Guiana",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "PW",
+      "geodsg" : "Palau",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "DO",
+      "geodsg" : "Dominican Republic (the)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "UZ",
+      "geodsg" : "Uzbekistan",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "VG",
+      "geodsg" : "Virgin Islands (British)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "LI",
+      "geodsg" : "Liechtenstein",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "AL",
+      "geodsg" : "Albania",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "ID",
+      "geodsg" : "Indonesia",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "FM",
+      "geodsg" : "Micronesia (Federated States of)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "ST",
+      "geodsg" : "Sao Tome and Principe",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "KY",
+      "geodsg" : "Cayman Islands (the)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "401",
+      "geodsg" : "French Antilles",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "PA",
+      "geodsg" : "Panama",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "TN",
+      "geodsg" : "Tunisia",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "KH",
+      "geodsg" : "Cambodia",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "XZ",
+      "geodsg" : "Oceanis New Zealand",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "521",
+      "geodsg" : "China (Taiwan)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "MZ",
+      "geodsg" : "Mozambique",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "GU",
+      "geodsg" : "Guam",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "MM",
+      "geodsg" : "Myanmar",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "DZ",
+      "geodsg" : "Algeria",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "BL",
+      "geodsg" : "Saint Barthélemy",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "SH",
+      "geodsg" : "Saint Helena, Ascension and Tristan da Cunha",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "ZM",
+      "geodsg" : "Zambia",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "FK",
+      "geodsg" : "Falkland Islands (the) [Malvinas]",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "HT",
+      "geodsg" : "Haiti",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "IQ",
+      "geodsg" : "Iraq",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "ML",
+      "geodsg" : "Mali",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "TF",
+      "geodsg" : "French Southern Territories (the)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "461",
+      "geodsg" : "British Virgin Islands and Montserrat",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "PK",
+      "geodsg" : "Pakistan",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "QS",
+      "geodsg" : "Stores and provisions within the framework of extra-Union trade",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "AS",
+      "geodsg" : "American Samoa",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "MO",
+      "geodsg" : "Macao",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "NR",
+      "geodsg" : "Nauru",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "PS",
+      "geodsg" : "Palestine, State of",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "AI",
+      "geodsg" : "Anguilla",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "036",
+      "geodsg" : "Switzerland",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "AG",
+      "geodsg" : "Antigua and Barbuda",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "ET",
+      "geodsg" : "Ethiopia",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "SC",
+      "geodsg" : "Seychelles",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "CW",
+      "geodsg" : "Curaçao",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "TO",
+      "geodsg" : "Tonga",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "BM",
+      "geodsg" : "Bermuda",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "002",
+      "geodsg" : "Belgium and Luxembourg",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "XP",
+      "geodsg" : "West Bank and Gaza Strip",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "372",
+      "geodsg" : "Reunion",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "PALOP",
+      "geodsg" : "PALOP",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "QP",
+      "geodsg" : "High seas",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "CG",
+      "geodsg" : "Congo (the)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "YU",
+      "geodsg" : "Federal Republic of Yugoslavia",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "KI",
+      "geodsg" : "Kiribati",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "PZ",
+      "geodsg" : "Panama Canal",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "KG",
+      "geodsg" : "Kyrgyzstan",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "NP",
+      "geodsg" : "Nepal",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "NU",
+      "geodsg" : "Niue",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "TV",
+      "geodsg" : "Tuvalu",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "MR",
+      "geodsg" : "Mauritania",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "507",
+      "geodsg" : "Others Antilles",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "UY",
+      "geodsg" : "Uruguay",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "KR",
+      "geodsg" : "Korea (the Republic of)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "JM",
+      "geodsg" : "Jamaica",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "KE",
+      "geodsg" : "Kenya",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "BY",
+      "geodsg" : "Belarus",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "PM",
+      "geodsg" : "Saint Pierre and Miquelon",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "924",
+      "geodsg" : "Air travel supply",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "BH",
+      "geodsg" : "Bahrain",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "HR",
+      "geodsg" : "Croatia",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "EC",
+      "geodsg" : "Ecuador",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "UA",
+      "geodsg" : "Ukraine",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "AF",
+      "geodsg" : "Afghanistan",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "SR",
+      "geodsg" : "Suriname",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "MS",
+      "geodsg" : "Montserrat",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "709",
+      "geodsg" : "Countries and territories associated to France in Oceania",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "PF",
+      "geodsg" : "French Polynesia",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "GN",
+      "geodsg" : "Guinea",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "GW",
+      "geodsg" : "Guinea-Bissau",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "NF",
+      "geodsg" : "Norfolk Island",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "AQ",
+      "geodsg" : "Antarctica",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "UM",
+      "geodsg" : "United States Minor Outlying Islands (the)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "GI",
+      "geodsg" : "Gibraltar",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "TZ",
+      "geodsg" : "Tanzania the United Republic of",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "XC",
+      "geodsg" : "Ceuta",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "FO",
+      "geodsg" : "Faroe Islands (the)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "AM",
+      "geodsg" : "Armenia",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "TG",
+      "geodsg" : "Togo",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "LA",
+      "geodsg" : "Lao People's Democratic Republic (the)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "062",
+      "geodsg" : "Czechoslovakia",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "422",
+      "geodsg" : "United States Dependencies",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "EE",
+      "geodsg" : "Estonia",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "CD",
+      "geodsg" : "Congo (the Democratic Republic of the)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "CV",
+      "geodsg" : "Cabo Verde",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "MG",
+      "geodsg" : "Madagascar",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "GE",
+      "geodsg" : "Georgia",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "CL",
+      "geodsg" : "Chile",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "LB",
+      "geodsg" : "Lebanon",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "MU",
+      "geodsg" : "Mauritius",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "022",
+      "geodsg" : "Ceuta and Melilla",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "PH",
+      "geodsg" : "Philippines (the)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "BJ",
+      "geodsg" : "Benin",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "ME",
+      "geodsg" : "Montenegro",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "AR",
+      "geodsg" : "Argentina",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "CX",
+      "geodsg" : "Christmas Island",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "CK",
+      "geodsg" : "Cook Islands (the)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "SU",
+      "geodsg" : "Soviet Union",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "KZ",
+      "geodsg" : "Kazakhstan",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "NG",
+      "geodsg" : "Nigeria",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "BF",
+      "geodsg" : "Burkina Faso",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "SK",
+      "geodsg" : "Slovakia",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "WS",
+      "geodsg" : "Samoa",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "MV",
+      "geodsg" : "Maldives",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "GB",
+      "geodsg" : "United Kingdom of Great Britain and Northern Ireland (the)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "BG",
+      "geodsg" : "Bulgaria",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "VI",
+      "geodsg" : "Virgin Islands (U.S.)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "XA",
+      "geodsg" : "American Oceania",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "241",
+      "geodsg" : "British territories in Africa",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "322",
+      "geodsg" : "Zaire",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "PG",
+      "geodsg" : "Papua New Guinea",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "GH",
+      "geodsg" : "Ghana",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "RW",
+      "geodsg" : "Rwanda",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "BB",
+      "geodsg" : "Barbados",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "KW",
+      "geodsg" : "Kuwait",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "XK",
+      "geodsg" : "Kosovo",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "AZ",
+      "geodsg" : "Azerbaijan",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "XO",
+      "geodsg" : "Australian Oceania",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "SD",
+      "geodsg" : "Sudan (the)",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "VN",
+      "geodsg" : "Viet Nam",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

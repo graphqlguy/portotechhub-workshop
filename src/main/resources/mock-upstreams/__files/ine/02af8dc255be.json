@@ -1,0 +1,23 @@
+[ {
+  "IndicadorCod" : "0012260",
+  "IndicadorDsg" : "Crime rate (‰) by Geographic localization (NUTS - 2024) and Category of crime; Annual - Directorate General for Justice Policy",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0012260&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:55.338Z",
+  "DataUltimoAtualizacao" : "2026-06-26",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2025" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "Overall total",
+      "ind_string" : "32,0",
+      "valor" : "32"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

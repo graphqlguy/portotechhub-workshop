@@ -1,0 +1,25 @@
+[ {
+  "IndicadorCod" : "0007970",
+  "IndicadorDsg" : "Employed population aged between 16 and 74 years old (No.) by Age group; Monthly - Statistics Portugal, Monthly employment and unemployment estimates based on the Labour Force Survey",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0007970&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:43.125Z",
+  "DataUltimoAtualizacao" : "2026-10-29",
+  "UltimoPref" : "September 2026",
+  "Dados" : {
+    "September 2026" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "sinal_conv" : "&",
+      "sinal_conv_desc" : "Provisional value",
+      "ind_string" : "5 341,3 &",
+      "valor" : "5341.3"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

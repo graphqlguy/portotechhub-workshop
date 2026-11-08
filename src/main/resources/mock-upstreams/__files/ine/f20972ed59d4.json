@@ -1,0 +1,25 @@
+[ {
+  "IndicadorCod" : "0012424",
+  "IndicadorDsg" : "Students enrolled in non-tertiary education (No.) by Geographic localization (NUTS - 2024), Education level and Nature of institution; Annual - Directorate-General for Education and Science Statistics",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0012424&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:24:00.054Z",
+  "DataUltimoAtualizacao" : "2026-06-29",
+  "UltimoPref" : "2024 / 2025",
+  "Dados" : {
+    "2024 / 2025" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "dim_4" : "T",
+      "dim_4_t" : "Total",
+      "ind_string" : "1 622 084",
+      "valor" : "1622084"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

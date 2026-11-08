@@ -1,0 +1,23 @@
+[ {
+  "IndicadorCod" : "0013528",
+  "IndicadorDsg" : "Milk production (l) by Geographic localization (NUTS - 2024) and Type of milk; Annual - Statistics Portugal, Animal production statistics",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013528&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:24:05.754Z",
+  "DataUltimoAtualizacao" : "2026-09-29",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2025" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "Total of milk",
+      "ind_string" : "1 986 856",
+      "valor" : "1986856"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

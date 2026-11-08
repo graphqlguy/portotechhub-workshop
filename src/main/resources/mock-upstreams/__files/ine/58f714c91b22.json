@@ -1,0 +1,23 @@
+[ {
+  "IndicadorCod" : "0012771",
+  "IndicadorDsg" : "Urban waste collected (t) by Geographic localization (NUTS - 2024) and Kind of recyclable material; Annual - Statistics Portugal, Urban waste statistics",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0012771&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:24:01.992Z",
+  "DataUltimoAtualizacao" : "2025-11-10",
+  "UltimoPref" : "2024",
+  "Dados" : {
+    "2024" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "1 161 965",
+      "valor" : "1161965"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

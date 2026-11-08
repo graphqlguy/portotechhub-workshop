@@ -1,0 +1,2228 @@
+[ {
+  "IndicadorCod" : "0005719",
+  "IndicadorDsg" : "Imports (€) of goods by Place of source and Type of goods (Combined nomenclature - CN8); Annual - Statistics Portugal, Statistics on external trade of goods",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0005719&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:16.448Z",
+  "DataUltimoAtualizacao" : "2026-08-07",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2025" : [ {
+      "geocod" : "SD",
+      "geodsg" : "Sudan (the)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "11",
+      "valor" : "11"
+    }, {
+      "geocod" : "SO",
+      "geodsg" : "Somalia",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "14",
+      "valor" : "14"
+    }, {
+      "geocod" : "TK",
+      "geodsg" : "Tokelau",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "16",
+      "valor" : "16"
+    }, {
+      "geocod" : "SX",
+      "geodsg" : "Sint Maarten (dutch part)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "17",
+      "valor" : "17"
+    }, {
+      "geocod" : "WS",
+      "geodsg" : "Samoa",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "23",
+      "valor" : "23"
+    }, {
+      "geocod" : "DM",
+      "geodsg" : "Dominica",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "34",
+      "valor" : "34"
+    }, {
+      "geocod" : "GU",
+      "geodsg" : "Guam",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "64",
+      "valor" : "64"
+    }, {
+      "geocod" : "KI",
+      "geodsg" : "Kiribati",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "99",
+      "valor" : "99"
+    }, {
+      "geocod" : "AI",
+      "geodsg" : "Anguilla",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "107",
+      "valor" : "107"
+    }, {
+      "geocod" : "SY",
+      "geodsg" : "Syrian Arab Republic (the)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "117",
+      "valor" : "117"
+    }, {
+      "geocod" : "TC",
+      "geodsg" : "Turks and Caicos Islands (the)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "213",
+      "valor" : "213"
+    }, {
+      "geocod" : "TO",
+      "geodsg" : "Tonga",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "315",
+      "valor" : "315"
+    }, {
+      "geocod" : "ER",
+      "geodsg" : "Eritrea",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "336",
+      "valor" : "336"
+    }, {
+      "geocod" : "GD",
+      "geodsg" : "Grenada",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "400",
+      "valor" : "400"
+    }, {
+      "geocod" : "SS",
+      "geodsg" : "South Sudan",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "430",
+      "valor" : "430"
+    }, {
+      "geocod" : "KN",
+      "geodsg" : "Saint Kitts and Nevis",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "759",
+      "valor" : "759"
+    }, {
+      "geocod" : "SR",
+      "geodsg" : "Suriname",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "906",
+      "valor" : "906"
+    }, {
+      "geocod" : "AW",
+      "geodsg" : "Aruba",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "1 050",
+      "valor" : "1050"
+    }, {
+      "geocod" : "PF",
+      "geodsg" : "French Polynesia",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "1 726",
+      "valor" : "1726"
+    }, {
+      "geocod" : "BT",
+      "geodsg" : "Bhutan",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "1 861",
+      "valor" : "1861"
+    }, {
+      "geocod" : "VA",
+      "geodsg" : "Holy See (the)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "1 870",
+      "valor" : "1870"
+    }, {
+      "geocod" : "VI",
+      "geodsg" : "Virgin Islands (U.S.)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "1 904",
+      "valor" : "1904"
+    }, {
+      "geocod" : "GQ",
+      "geodsg" : "Equatorial Guinea",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "2 407",
+      "valor" : "2407"
+    }, {
+      "geocod" : "CW",
+      "geodsg" : "Curaçao",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "2 461",
+      "valor" : "2461"
+    }, {
+      "geocod" : "FM",
+      "geodsg" : "Micronesia (Federated States of)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "2 912",
+      "valor" : "2912"
+    }, {
+      "geocod" : "TD",
+      "geodsg" : "Chad",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "3 541",
+      "valor" : "3541"
+    }, {
+      "geocod" : "RW",
+      "geodsg" : "Rwanda",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "4 069",
+      "valor" : "4069"
+    }, {
+      "geocod" : "KM",
+      "geodsg" : "Comoros (the)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "4 853",
+      "valor" : "4853"
+    }, {
+      "geocod" : "KY",
+      "geodsg" : "Cayman Islands (the)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "5 495",
+      "valor" : "5495"
+    }, {
+      "geocod" : "PW",
+      "geodsg" : "Palau",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "9 241",
+      "valor" : "9241"
+    }, {
+      "geocod" : "IO",
+      "geodsg" : "British Indian Ocean Territory (the)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "9 977",
+      "valor" : "9977"
+    }, {
+      "geocod" : "DJ",
+      "geodsg" : "Djibouti",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "11 905",
+      "valor" : "11905"
+    }, {
+      "geocod" : "NE",
+      "geodsg" : "Niger (the)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "12 498",
+      "valor" : "12498"
+    }, {
+      "geocod" : "AS",
+      "geodsg" : "American Samoa",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "12 649",
+      "valor" : "12649"
+    }, {
+      "geocod" : "BF",
+      "geodsg" : "Burkina Faso",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "16 487",
+      "valor" : "16487"
+    }, {
+      "geocod" : "AF",
+      "geodsg" : "Afghanistan",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "20 992",
+      "valor" : "20992"
+    }, {
+      "geocod" : "ZM",
+      "geodsg" : "Zambia",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "21 085",
+      "valor" : "21085"
+    }, {
+      "geocod" : "GW",
+      "geodsg" : "Guinea-Bissau",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "24 490",
+      "valor" : "24490"
+    }, {
+      "geocod" : "AG",
+      "geodsg" : "Antigua and Barbuda",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "31 915",
+      "valor" : "31915"
+    }, {
+      "geocod" : "BY",
+      "geodsg" : "Belarus",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "32 927",
+      "valor" : "32927"
+    }, {
+      "geocod" : "FO",
+      "geodsg" : "Faroe Islands (the)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "41 742",
+      "valor" : "41742"
+    }, {
+      "geocod" : "HT",
+      "geodsg" : "Haiti",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "42 143",
+      "valor" : "42143"
+    }, {
+      "geocod" : "BN",
+      "geodsg" : "Brunei Darussalam",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "42 324",
+      "valor" : "42324"
+    }, {
+      "geocod" : "ME",
+      "geodsg" : "Montenegro",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "45 999",
+      "valor" : "45999"
+    }, {
+      "geocod" : "MH",
+      "geodsg" : "Marshall Islands (the)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "57 798",
+      "valor" : "57798"
+    }, {
+      "geocod" : "QV",
+      "geodsg" : "Countries and territories not specified within the framework of intra-Union trade",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "61 356",
+      "valor" : "61356"
+    }, {
+      "geocod" : "TL",
+      "geodsg" : "Timor-Leste",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "63 318",
+      "valor" : "63318"
+    }, {
+      "geocod" : "MN",
+      "geodsg" : "Mongolia",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "64 569",
+      "valor" : "64569"
+    }, {
+      "geocod" : "KG",
+      "geodsg" : "Kyrgyzstan",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "70 974",
+      "valor" : "70974"
+    }, {
+      "geocod" : "VG",
+      "geodsg" : "Virgin Islands (British)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "106 580",
+      "valor" : "106580"
+    }, {
+      "geocod" : "LI",
+      "geodsg" : "Liechtenstein",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "124 241",
+      "valor" : "124241"
+    }, {
+      "geocod" : "NC",
+      "geodsg" : "New Caledonia",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "127 832",
+      "valor" : "127832"
+    }, {
+      "geocod" : "JM",
+      "geodsg" : "Jamaica",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "136 778",
+      "valor" : "136778"
+    }, {
+      "geocod" : "MV",
+      "geodsg" : "Maldives",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "139 962",
+      "valor" : "139962"
+    }, {
+      "geocod" : "BL",
+      "geodsg" : "Saint Barthélemy",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "156 752",
+      "valor" : "156752"
+    }, {
+      "geocod" : "BS",
+      "geodsg" : "Bahamas (the)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "181 894",
+      "valor" : "181894"
+    }, {
+      "geocod" : "LS",
+      "geodsg" : "Lesotho",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "202 052",
+      "valor" : "202052"
+    }, {
+      "geocod" : "BM",
+      "geodsg" : "Bermuda",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "211 751",
+      "valor" : "211751"
+    }, {
+      "geocod" : "TM",
+      "geodsg" : "Turkmenistan",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "222 274",
+      "valor" : "222274"
+    }, {
+      "geocod" : "AD",
+      "geodsg" : "Andorra",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "228 658",
+      "valor" : "228658"
+    }, {
+      "geocod" : "BH",
+      "geodsg" : "Bahrain",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "236 761",
+      "valor" : "236761"
+    }, {
+      "geocod" : "LR",
+      "geodsg" : "Liberia",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "239 014",
+      "valor" : "239014"
+    }, {
+      "geocod" : "AM",
+      "geodsg" : "Armenia",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "258 039",
+      "valor" : "258039"
+    }, {
+      "geocod" : "NP",
+      "geodsg" : "Nepal",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "287 262",
+      "valor" : "287262"
+    }, {
+      "geocod" : "BB",
+      "geodsg" : "Barbados",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "322 921",
+      "valor" : "322921"
+    }, {
+      "geocod" : "SL",
+      "geodsg" : "Sierra Leone",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "595 213",
+      "valor" : "595213"
+    }, {
+      "geocod" : "XK",
+      "geodsg" : "Kosovo",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "598 792",
+      "valor" : "598792"
+    }, {
+      "geocod" : "MO",
+      "geodsg" : "Macao",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "625 344",
+      "valor" : "625344"
+    }, {
+      "geocod" : "ML",
+      "geodsg" : "Mali",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "687 635",
+      "valor" : "687635"
+    }, {
+      "geocod" : "BW",
+      "geodsg" : "Botswana",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "716 616",
+      "valor" : "716616"
+    }, {
+      "geocod" : "GN",
+      "geodsg" : "Guinea",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "742 475",
+      "valor" : "742475"
+    }, {
+      "geocod" : "BI",
+      "geodsg" : "Burundi",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "809 146",
+      "valor" : "809146"
+    }, {
+      "geocod" : "AL",
+      "geodsg" : "Albania",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "967 788",
+      "valor" : "967788"
+    }, {
+      "geocod" : "SZ",
+      "geodsg" : "Eswatini",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "968 352",
+      "valor" : "968352"
+    }, {
+      "geocod" : "ST",
+      "geodsg" : "Sao Tome and Principe",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "1 049 762",
+      "valor" : "1049762"
+    }, {
+      "geocod" : "TJ",
+      "geodsg" : "Tajikistan",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "1 117 297",
+      "valor" : "1117297"
+    }, {
+      "geocod" : "SM",
+      "geodsg" : "San Marino",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "1 147 674",
+      "valor" : "1147674"
+    }, {
+      "geocod" : "BO",
+      "geodsg" : "Bolivia (Plurinational State of)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "1 384 472",
+      "valor" : "1384472"
+    }, {
+      "geocod" : "FK",
+      "geodsg" : "Falkland Islands (the) [Malvinas]",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "1 477 663",
+      "valor" : "1477663"
+    }, {
+      "geocod" : "YE",
+      "geodsg" : "Yemen",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "1 522 366",
+      "valor" : "1522366"
+    }, {
+      "geocod" : "BZ",
+      "geodsg" : "Belize",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "1 572 371",
+      "valor" : "1572371"
+    }, {
+      "geocod" : "PS",
+      "geodsg" : "Palestine, State of",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "1 697 233",
+      "valor" : "1697233"
+    }, {
+      "geocod" : "IR",
+      "geodsg" : "Iran (Islamic Republic of)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "1 942 055",
+      "valor" : "1942055"
+    }, {
+      "geocod" : "GT",
+      "geodsg" : "Guatemala",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "2 178 843",
+      "valor" : "2178843"
+    }, {
+      "geocod" : "CG",
+      "geodsg" : "Congo (the)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "2 441 013",
+      "valor" : "2441013"
+    }, {
+      "geocod" : "ZW",
+      "geodsg" : "Zimbabwe",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "2 622 586",
+      "valor" : "2622586"
+    }, {
+      "geocod" : "JO",
+      "geodsg" : "Jordan",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "3 058 166",
+      "valor" : "3058166"
+    }, {
+      "geocod" : "NI",
+      "geodsg" : "Nicaragua",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "3 126 265",
+      "valor" : "3126265"
+    }, {
+      "geocod" : "DO",
+      "geodsg" : "Dominican Republic (the)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "4 229 493",
+      "valor" : "4229493"
+    }, {
+      "geocod" : "PA",
+      "geodsg" : "Panama",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "4 337 889",
+      "valor" : "4337889"
+    }, {
+      "geocod" : "MU",
+      "geodsg" : "Mauritius",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "4 717 125",
+      "valor" : "4717125"
+    }, {
+      "geocod" : "BA",
+      "geodsg" : "Bosnia and Herzegovina",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "5 399 153",
+      "valor" : "5399153"
+    }, {
+      "geocod" : "SC",
+      "geodsg" : "Seychelles",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "5 697 512",
+      "valor" : "5697512"
+    }, {
+      "geocod" : "OM",
+      "geodsg" : "Oman",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "6 052 760",
+      "valor" : "6052760"
+    }, {
+      "geocod" : "FJ",
+      "geodsg" : "Fiji",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "6 241 112",
+      "valor" : "6241112"
+    }, {
+      "geocod" : "MD",
+      "geodsg" : "Moldova (the Republic of)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "7 283 905",
+      "valor" : "7283905"
+    }, {
+      "geocod" : "BJ",
+      "geodsg" : "Benin",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "7 594 977",
+      "valor" : "7594977"
+    }, {
+      "geocod" : "MG",
+      "geodsg" : "Madagascar",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "7 712 415",
+      "valor" : "7712415"
+    }, {
+      "geocod" : "MK",
+      "geodsg" : "North Macedonia",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "7 724 715",
+      "valor" : "7724715"
+    }, {
+      "geocod" : "GL",
+      "geodsg" : "Greenland",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "8 147 012",
+      "valor" : "8147012"
+    }, {
+      "geocod" : "GM",
+      "geodsg" : "Gambia (the)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "8 517 442",
+      "valor" : "8517442"
+    }, {
+      "geocod" : "KZ",
+      "geodsg" : "Kazakhstan",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "8 616 312",
+      "valor" : "8616312"
+    }, {
+      "geocod" : "IQ",
+      "geodsg" : "Iraq",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "8 701 120",
+      "valor" : "8701120"
+    }, {
+      "geocod" : "GE",
+      "geodsg" : "Georgia",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "8 877 957",
+      "valor" : "8877957"
+    }, {
+      "geocod" : "PG",
+      "geodsg" : "Papua New Guinea",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "9 241 206",
+      "valor" : "9241206"
+    }, {
+      "geocod" : "CV",
+      "geodsg" : "Cabo Verde",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "9 745 128",
+      "valor" : "9745128"
+    }, {
+      "geocod" : "SV",
+      "geodsg" : "El Salvador",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "9 958 909",
+      "valor" : "9958909"
+    }, {
+      "geocod" : "ET",
+      "geodsg" : "Ethiopia",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "10 009 005",
+      "valor" : "10009005"
+    }, {
+      "geocod" : "CF",
+      "geodsg" : "Central African Republic (the)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "10 129 043",
+      "valor" : "10129043"
+    }, {
+      "geocod" : "VE",
+      "geodsg" : "Venezuela (Bolivarian Republic of)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "12 049 957",
+      "valor" : "12049957"
+    }, {
+      "geocod" : "LA",
+      "geodsg" : "Lao People's Democratic Republic (the)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "12 826 518",
+      "valor" : "12826518"
+    }, {
+      "geocod" : "CY",
+      "geodsg" : "Cyprus",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "13 217 465",
+      "valor" : "13217465"
+    }, {
+      "geocod" : "HN",
+      "geodsg" : "Honduras",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "13 906 837",
+      "valor" : "13906837"
+    }, {
+      "geocod" : "PY",
+      "geodsg" : "Paraguay",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "13 982 758",
+      "valor" : "13982758"
+    }, {
+      "geocod" : "UZ",
+      "geodsg" : "Uzbekistan",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "14 562 439",
+      "valor" : "14562439"
+    }, {
+      "geocod" : "TG",
+      "geodsg" : "Togo",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "14 749 613",
+      "valor" : "14749613"
+    }, {
+      "geocod" : "LB",
+      "geodsg" : "Lebanon",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "15 358 225",
+      "valor" : "15358225"
+    }, {
+      "geocod" : "LK",
+      "geodsg" : "Sri Lanka",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "15 526 721",
+      "valor" : "15526721"
+    }, {
+      "geocod" : "CM",
+      "geodsg" : "Cameroon",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "15 586 147",
+      "valor" : "15586147"
+    }, {
+      "geocod" : "SN",
+      "geodsg" : "Senegal",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "17 084 509",
+      "valor" : "17084509"
+    }, {
+      "geocod" : "CU",
+      "geodsg" : "Cuba",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "17 434 893",
+      "valor" : "17434893"
+    }, {
+      "geocod" : "IS",
+      "geodsg" : "Iceland",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "18 276 196",
+      "valor" : "18276196"
+    }, {
+      "geocod" : "NA",
+      "geodsg" : "Namibia",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "18 750 853",
+      "valor" : "18750853"
+    }, {
+      "geocod" : "KH",
+      "geodsg" : "Cambodia",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "18 853 723",
+      "valor" : "18853723"
+    }, {
+      "geocod" : "MW",
+      "geodsg" : "Malawi",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "20 220 364",
+      "valor" : "20220364"
+    }, {
+      "geocod" : "QA",
+      "geodsg" : "Qatar",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "21 559 121",
+      "valor" : "21559121"
+    }, {
+      "geocod" : "MZ",
+      "geodsg" : "Mozambique",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "26 061 832",
+      "valor" : "26061832"
+    }, {
+      "geocod" : "PH",
+      "geodsg" : "Philippines (the)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "27 705 250",
+      "valor" : "27705250"
+    }, {
+      "geocod" : "KE",
+      "geodsg" : "Kenya",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "28 243 976",
+      "valor" : "28243976"
+    }, {
+      "geocod" : "MR",
+      "geodsg" : "Mauritania",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "30 739 506",
+      "valor" : "30739506"
+    }, {
+      "geocod" : "GY",
+      "geodsg" : "Guyana",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "32 665 585",
+      "valor" : "32665585"
+    }, {
+      "geocod" : "TT",
+      "geodsg" : "Trinidad and Tobago",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "33 873 475",
+      "valor" : "33873475"
+    }, {
+      "geocod" : "NZ",
+      "geodsg" : "New Zealand",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "34 721 245",
+      "valor" : "34721245"
+    }, {
+      "geocod" : "TZ",
+      "geodsg" : "Tanzania the United Republic of",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "35 732 784",
+      "valor" : "35732784"
+    }, {
+      "geocod" : "AU",
+      "geodsg" : "Australia",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "37 152 106",
+      "valor" : "37152106"
+    }, {
+      "geocod" : "LY",
+      "geodsg" : "Libya",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "37 161 922",
+      "valor" : "37161922"
+    }, {
+      "geocod" : "PE",
+      "geodsg" : "Peru",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "38 326 560",
+      "valor" : "38326560"
+    }, {
+      "geocod" : "QW",
+      "geodsg" : "Countries and territories not specified within the framework of extra-Union trade",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "39 227 466",
+      "valor" : "39227466"
+    }, {
+      "geocod" : "LV",
+      "geodsg" : "Latvia",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "39 464 161",
+      "valor" : "39464161"
+    }, {
+      "geocod" : "GI",
+      "geodsg" : "Gibraltar",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "42 349 170",
+      "valor" : "42349170"
+    }, {
+      "geocod" : "MM",
+      "geodsg" : "Myanmar",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "47 205 867",
+      "valor" : "47205867"
+    }, {
+      "geocod" : "GA",
+      "geodsg" : "Gabon",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "52 045 353",
+      "valor" : "52045353"
+    }, {
+      "geocod" : "UG",
+      "geodsg" : "Uganda",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "55 406 917",
+      "valor" : "55406917"
+    }, {
+      "geocod" : "CI",
+      "geodsg" : "Côte d'Ivoire",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "57 206 151",
+      "valor" : "57206151"
+    }, {
+      "geocod" : "TN",
+      "geodsg" : "Tunisia",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "58 591 486",
+      "valor" : "58591486"
+    }, {
+      "geocod" : "EE",
+      "geodsg" : "Estonia",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "62 719 202",
+      "valor" : "62719202"
+    }, {
+      "geocod" : "MT",
+      "geodsg" : "Malta",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "66 514 827",
+      "valor" : "66514827"
+    }, {
+      "geocod" : "CD",
+      "geodsg" : "Congo (the Democratic Republic of the)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "68 363 462",
+      "valor" : "68363462"
+    }, {
+      "geocod" : "HR",
+      "geodsg" : "Croatia",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "68 812 175",
+      "valor" : "68812175"
+    }, {
+      "geocod" : "CL",
+      "geodsg" : "Chile",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "70 022 427",
+      "valor" : "70022427"
+    }, {
+      "geocod" : "CO",
+      "geodsg" : "Colombia",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "72 211 552",
+      "valor" : "72211552"
+    }, {
+      "geocod" : "CR",
+      "geodsg" : "Costa Rica",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "79 535 803",
+      "valor" : "79535803"
+    }, {
+      "geocod" : "IL",
+      "geodsg" : "Israel",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "80 845 352",
+      "valor" : "80845352"
+    }, {
+      "geocod" : "HK",
+      "geodsg" : "Hong Kong",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "82 012 766",
+      "valor" : "82012766"
+    }, {
+      "geocod" : "AE",
+      "geodsg" : "United Arab Emirates (the)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "84 040 330",
+      "valor" : "84040330"
+    }, {
+      "geocod" : "XS",
+      "geodsg" : "Serbia",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "89 605 854",
+      "valor" : "89605854"
+    }, {
+      "geocod" : "MX",
+      "geodsg" : "Mexico",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "91 786 332",
+      "valor" : "91786332"
+    }, {
+      "geocod" : "MY",
+      "geodsg" : "Malaysia",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "97 154 490",
+      "valor" : "97154490"
+    }, {
+      "geocod" : "XI",
+      "geodsg" : "United Kingdom (Northern Ireland)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "101 141 616",
+      "valor" : "101141616"
+    }, {
+      "geocod" : "LU",
+      "geodsg" : "Luxembourg",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "105 743 812",
+      "valor" : "105743812"
+    }, {
+      "geocod" : "LT",
+      "geodsg" : "Lithuania",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "107 110 775",
+      "valor" : "107110775"
+    }, {
+      "geocod" : "UA",
+      "geodsg" : "Ukraine",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "112 082 555",
+      "valor" : "112082555"
+    }, {
+      "geocod" : "NO",
+      "geodsg" : "Norway",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "117 190 817",
+      "valor" : "117190817"
+    }, {
+      "geocod" : "BD",
+      "geodsg" : "Bangladesh",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "118 262 665",
+      "valor" : "118262665"
+    }, {
+      "geocod" : "UY",
+      "geodsg" : "Uruguay",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "122 554 464",
+      "valor" : "122554464"
+    }, {
+      "geocod" : "EC",
+      "geodsg" : "Ecuador",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "125 396 906",
+      "valor" : "125396906"
+    }, {
+      "geocod" : "GH",
+      "geodsg" : "Ghana",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "136 133 924",
+      "valor" : "136133924"
+    }, {
+      "geocod" : "EG",
+      "geodsg" : "Egypt",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "136 956 014",
+      "valor" : "136956014"
+    }, {
+      "geocod" : "BG",
+      "geodsg" : "Bulgaria",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "153 096 887",
+      "valor" : "153096887"
+    }, {
+      "geocod" : "RU",
+      "geodsg" : "Russian Federation (the)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "161 140 850",
+      "valor" : "161140850"
+    }, {
+      "geocod" : "TH",
+      "geodsg" : "Thailand",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "192 373 487",
+      "valor" : "192373487"
+    }, {
+      "geocod" : "PK",
+      "geodsg" : "Pakistan",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "198 460 640",
+      "valor" : "198460640"
+    }, {
+      "geocod" : "SI",
+      "geodsg" : "Slovenia",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "209 093 740",
+      "valor" : "209093740"
+    }, {
+      "geocod" : "AR",
+      "geodsg" : "Argentina",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "221 452 651",
+      "valor" : "221452651"
+    }, {
+      "geocod" : "GR",
+      "geodsg" : "Greece",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "227 917 703",
+      "valor" : "227917703"
+    }, {
+      "geocod" : "AO",
+      "geodsg" : "Angola",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "233 616 165",
+      "valor" : "233616165"
+    }, {
+      "geocod" : "KW",
+      "geodsg" : "Kuwait",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "259 097 349",
+      "valor" : "259097349"
+    }, {
+      "geocod" : "ID",
+      "geodsg" : "Indonesia",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "265 184 254",
+      "valor" : "265184254"
+    }, {
+      "geocod" : "SA",
+      "geodsg" : "Saudi Arabia",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "268 575 203",
+      "valor" : "268575203"
+    }, {
+      "geocod" : "PALOP",
+      "geodsg" : "PALOP",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "270 497 377",
+      "valor" : "270497377"
+    }, {
+      "geocod" : "ZA",
+      "geodsg" : "South Africa",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "289 195 042",
+      "valor" : "289195042"
+    }, {
+      "geocod" : "FI",
+      "geodsg" : "Finland",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "337 707 517",
+      "valor" : "337707517"
+    }, {
+      "geocod" : "SG",
+      "geodsg" : "Singapore",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "352 951 023",
+      "valor" : "352951023"
+    }, {
+      "geocod" : "CA",
+      "geodsg" : "Canada",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "353 609 963",
+      "valor" : "353609963"
+    }, {
+      "geocod" : "JP",
+      "geodsg" : "Japan",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "386 005 163",
+      "valor" : "386005163"
+    }, {
+      "geocod" : "AZ",
+      "geodsg" : "Azerbaijan",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "386 477 361",
+      "valor" : "386477361"
+    }, {
+      "geocod" : "SK",
+      "geodsg" : "Slovakia",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "426 699 487",
+      "valor" : "426699487"
+    }, {
+      "geocod" : "RO",
+      "geodsg" : "Romania",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "454 754 728",
+      "valor" : "454754728"
+    }, {
+      "geocod" : "MA",
+      "geodsg" : "Morocco",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "533 727 259",
+      "valor" : "533727259"
+    }, {
+      "geocod" : "CH",
+      "geodsg" : "Switzerland",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "557 170 261",
+      "valor" : "557170261"
+    }, {
+      "geocod" : "VN",
+      "geodsg" : "Viet Nam",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "571 004 646",
+      "valor" : "571004646"
+    }, {
+      "geocod" : "TW",
+      "geodsg" : "Taiwan",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "580 643 586",
+      "valor" : "580643586"
+    }, {
+      "geocod" : "AT",
+      "geodsg" : "Austria",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "629 967 502",
+      "valor" : "629967502"
+    }, {
+      "geocod" : "DK",
+      "geodsg" : "Denmark",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "645 769 700",
+      "valor" : "645769700"
+    }, {
+      "geocod" : "EFTA",
+      "geodsg" : "EFTA",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "692 761 515",
+      "valor" : "692761515"
+    }, {
+      "geocod" : "KR",
+      "geodsg" : "Korea (the Republic of)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "842 631 739",
+      "valor" : "842631739"
+    }, {
+      "geocod" : "HU",
+      "geodsg" : "Hungary",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "851 122 332",
+      "valor" : "851122332"
+    }, {
+      "geocod" : "CZ",
+      "geodsg" : "Czechia",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "911 766 309",
+      "valor" : "911766309"
+    }, {
+      "geocod" : "DZ",
+      "geodsg" : "Algeria",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "926 109 667",
+      "valor" : "926109667"
+    }, {
+      "geocod" : "NG",
+      "geodsg" : "Nigeria",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "965 835 748",
+      "valor" : "965835748"
+    }, {
+      "geocod" : "SE",
+      "geodsg" : "Sweden",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "1 027 295 865",
+      "valor" : "1027295865"
+    }, {
+      "geocod" : "XU",
+      "geodsg" : "United Kingdom (excluding Northern Ireland)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "1 058 322 045",
+      "valor" : "1058322045"
+    }, {
+      "geocod" : "IN",
+      "geodsg" : "India",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "1 072 596 124",
+      "valor" : "1072596124"
+    }, {
+      "geocod" : "TR",
+      "geodsg" : "Türkiye",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "1 643 837 497",
+      "valor" : "1643837497"
+    }, {
+      "geocod" : "PL",
+      "geodsg" : "Poland",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "1 989 815 679",
+      "valor" : "1989815679"
+    }, {
+      "geocod" : "US",
+      "geodsg" : "United States of America (the)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "2 398 141 130",
+      "valor" : "2398141130"
+    }, {
+      "geocod" : "OPEP",
+      "geodsg" : "OPEC",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "2 618 002 124",
+      "valor" : "2618002124"
+    }, {
+      "geocod" : "BR",
+      "geodsg" : "Brazil",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "2 690 359 449",
+      "valor" : "2690359449"
+    }, {
+      "geocod" : "IE",
+      "geodsg" : "Ireland",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "3 215 832 289",
+      "valor" : "3215832289"
+    }, {
+      "geocod" : "BE",
+      "geodsg" : "Belgium",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "3 857 778 733",
+      "valor" : "3857778733"
+    }, {
+      "geocod" : "IT",
+      "geodsg" : "Italy",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "5 696 618 937",
+      "valor" : "5696618937"
+    }, {
+      "geocod" : "CN",
+      "geodsg" : "China",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "5 851 712 795",
+      "valor" : "5851712795"
+    }, {
+      "geocod" : "NL",
+      "geodsg" : "Netherlands (Kingdom of the)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "6 732 040 123",
+      "valor" : "6732040123"
+    }, {
+      "geocod" : "FR",
+      "geodsg" : "France",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "7 990 066 535",
+      "valor" : "7990066535"
+    }, {
+      "geocod" : "DE",
+      "geodsg" : "Germany",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "13 242 461 883",
+      "valor" : "13242461883"
+    }, {
+      "geocod" : "EXTRA_UE28",
+      "geodsg" : "Extra EU - 28 members states",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "25 057 047 421",
+      "valor" : "25057047421"
+    }, {
+      "geocod" : "EXTRA_UE27",
+      "geodsg" : "Extra EU - 27 members states (2007 to 2013)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "25 125 859 596",
+      "valor" : "25125859596"
+    }, {
+      "geocod" : "EXTRA_UE25",
+      "geodsg" : "Extra EU - 25 members states",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "25 733 711 211",
+      "valor" : "25733711211"
+    }, {
+      "geocod" : "EXTRA",
+      "geodsg" : "Extra European Union",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "26 216 511 082",
+      "valor" : "26216511082"
+    }, {
+      "geocod" : "EXTRA_UE27_2020",
+      "geodsg" : "Extra EU - 27 members states (since 2020)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "26 216 511 082",
+      "valor" : "26216511082"
+    }, {
+      "geocod" : "EXTRA_UE15",
+      "geodsg" : "Extra EU - 15 members states",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "30 411 235 188",
+      "valor" : "30411235188"
+    }, {
+      "geocod" : "EXTRA_UE12",
+      "geodsg" : "Extra EU - 12 members states",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "32 406 206 072",
+      "valor" : "32406206072"
+    }, {
+      "geocod" : "ES",
+      "geodsg" : "Spain",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "36 793 117 977",
+      "valor" : "36793117977"
+    }, {
+      "geocod" : "INTRA_UE12",
+      "geodsg" : "Intra EU - 12 members states",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "79 666 872 709",
+      "valor" : "79666872709"
+    }, {
+      "geocod" : "INTRA_UE15",
+      "geodsg" : "Intra EU - 15 members states",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "81 661 843 593",
+      "valor" : "81661843593"
+    }, {
+      "geocod" : "INTRA",
+      "geodsg" : "Intra European Union",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "85 856 567 699",
+      "valor" : "85856567699"
+    }, {
+      "geocod" : "INTRA_UE27_2020",
+      "geodsg" : "Intra EU - 27 members states (since 2020)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "85 856 567 699",
+      "valor" : "85856567699"
+    }, {
+      "geocod" : "INTRA_UE25",
+      "geodsg" : "Intra EU - 25 members states",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "86 339 367 570",
+      "valor" : "86339367570"
+    }, {
+      "geocod" : "INTRA_UE27",
+      "geodsg" : "Intra EU - 27 members states (2007 to 2013)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "86 947 219 185",
+      "valor" : "86947219185"
+    }, {
+      "geocod" : "INTRA_UE28",
+      "geodsg" : "Intra EU - 28 members states",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "87 016 031 360",
+      "valor" : "87016031360"
+    }, {
+      "geocod" : "MUNDO",
+      "geodsg" : "World",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "112 073 078 781",
+      "valor" : "112073078781"
+    }, {
+      "geocod" : "401",
+      "geodsg" : "French Antilles",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "EH",
+      "geodsg" : "Western Sahara",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "SU",
+      "geodsg" : "Soviet Union",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "712",
+      "geodsg" : "Countries and territories associated to the United Kingdom in Oceania",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "YD",
+      "geodsg" : "South Yemen",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "VC",
+      "geodsg" : "Saint Vincent and the Grenadines",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "QX",
+      "geodsg" : "Countries and territories not specified for commercial or military reasons",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "GB",
+      "geodsg" : "United Kingdom of Great Britain and Northern Ireland (the)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "372",
+      "geodsg" : "Reunion",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "975",
+      "geodsg" : "Members States of the Community",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "NU",
+      "geodsg" : "Niue",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "QP",
+      "geodsg" : "High seas",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "XA",
+      "geodsg" : "American Oceania",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "QU",
+      "geodsg" : "Countries and territories not specified",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "022",
+      "geodsg" : "Ceuta and Melilla",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "WF",
+      "geodsg" : "Wallis and Futuna",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "625",
+      "geodsg" : "Gaza and Jericho",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "709",
+      "geodsg" : "Countries and territories associated to France in Oceania",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "NR",
+      "geodsg" : "Nauru",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "924",
+      "geodsg" : "Air travel supply",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "XP",
+      "geodsg" : "West Bank and Gaza Strip",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "521",
+      "geodsg" : "China (Taiwan)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "YU",
+      "geodsg" : "Federal Republic of Yugoslavia",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "CX",
+      "geodsg" : "Christmas Island",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "UM",
+      "geodsg" : "United States Minor Outlying Islands (the)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "QR",
+      "geodsg" : "Stores and provisions within the framework of Intra-Union trade",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "029",
+      "geodsg" : "Common market zone",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "QZ",
+      "geodsg" : "Countries and territories not specified for commercial or military reasons in the framework of extra-Union trade",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "QY",
+      "geodsg" : "Countries and territories not specified for commercial or military reasons in the framework of intra-Union trade",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "NF",
+      "geodsg" : "Norfolk Island",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "507",
+      "geodsg" : "Others Antilles",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "976",
+      "geodsg" : "Other countries and territories",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "TF",
+      "geodsg" : "French Southern Territories (the)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "VU",
+      "geodsg" : "Vanuatu",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "PZ",
+      "geodsg" : "Panama Canal",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "PN",
+      "geodsg" : "Pitcairn",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "433",
+      "geodsg" : "British territories in America",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "002",
+      "geodsg" : "Belgium and Luxembourg",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "KP",
+      "geodsg" : "Korea (the Democratic People's Republic of)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "021",
+      "geodsg" : "Canary Islands",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "QQ",
+      "geodsg" : "Stores and provisions",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "XC",
+      "geodsg" : "Ceuta",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "693",
+      "geodsg" : "Maritime navigation supply",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "HM",
+      "geodsg" : "Heard Island and McDonald Islands",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "422",
+      "geodsg" : "United States Dependencies",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "XL",
+      "geodsg" : "Melilla",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "XR",
+      "geodsg" : "Polar Regions",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "809",
+      "geodsg" : "Fish",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "TV",
+      "geodsg" : "Tuvalu",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "QS",
+      "geodsg" : "Stores and provisions within the framework of extra-Union trade",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "QT",
+      "geodsg" : "West Indies",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "CK",
+      "geodsg" : "Cook Islands (the)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "AQ",
+      "geodsg" : "Antarctica",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "036",
+      "geodsg" : "Switzerland",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "461",
+      "geodsg" : "British Virgin Islands and Montserrat",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "XZ",
+      "geodsg" : "Oceanis New Zealand",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "CC",
+      "geodsg" : "Cocos (Keeling) Islands (the)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "496",
+      "geodsg" : "French Guiana",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "BV",
+      "geodsg" : "Bouvet Island",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "PM",
+      "geodsg" : "Saint Pierre and Miquelon",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "GS",
+      "geodsg" : "South Georgia and the South Sandwich Islands",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "SB",
+      "geodsg" : "Solomon Islands",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "027",
+      "geodsg" : "Svalbard (archipelago of)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "AN",
+      "geodsg" : "Netherlands Antilles",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "TP",
+      "geodsg" : "Timor",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "196",
+      "geodsg" : "Countries and territories associated to Spain in Africa",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "458",
+      "geodsg" : "Guadeloupe",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "062",
+      "geodsg" : "Czechoslovakia",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "SH",
+      "geodsg" : "Saint Helena, Ascension and Tristan da Cunha",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "242",
+      "geodsg" : "Indian Ocean territories",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "CS",
+      "geodsg" : "Serbia and Montenegro",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "XM",
+      "geodsg" : "Montenegro",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "MP",
+      "geodsg" : "Northern Mariana Islands (the)",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "462",
+      "geodsg" : "Martinique",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "LC",
+      "geodsg" : "Saint Lucia",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "XO",
+      "geodsg" : "Australian Oceania",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "MS",
+      "geodsg" : "Montserrat",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "815",
+      "geodsg" : "Various",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "DD",
+      "geodsg" : "German Democratic Republic",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "BQ",
+      "geodsg" : "Bonaire, Sint Eustatius and Saba",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "322",
+      "geodsg" : "Zaire",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "241",
+      "geodsg" : "British territories in Africa",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "VD",
+      "geodsg" : "North Vietnam",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    }, {
+      "geocod" : "YT",
+      "geodsg" : "Mayotte",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "0",
+      "valor" : "0"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

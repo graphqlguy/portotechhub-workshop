@@ -1,0 +1,21 @@
+[ {
+  "IndicadorCod" : "0010714",
+  "IndicadorDsg" : "Crimes (No.) of voluntary manslaughter (No.); Annual - Directorate General for Justice Policy",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0010714&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:55.855Z",
+  "DataUltimoAtualizacao" : "2026-10-30",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2025" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "ind_string" : "81",
+      "valor" : "81"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

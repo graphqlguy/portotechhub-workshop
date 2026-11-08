@@ -1,0 +1,21 @@
+[ {
+  "IndicadorCod" : "0008329",
+  "IndicadorDsg" : "Conventional dwellings (Housing stock - No.) by Geographic localization (NUTS - 2013); Annual - Statistics Portugal, Statistics on construction works completed",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0008329&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:33.298Z",
+  "DataUltimoAtualizacao" : "2025-09-11",
+  "UltimoPref" : "2022",
+  "Dados" : {
+    "2022" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "ind_string" : "6 003 809",
+      "valor" : "6003809"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

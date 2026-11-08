@@ -1,0 +1,21 @@
+[ {
+  "IndicadorCod" : "0014580",
+  "IndicadorDsg" : "Per capita purchasing power by Geographic localization (NUTS - 2024); Biennial - Statistics Portugal, Study on the local purchasing power",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014580&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:40.839Z",
+  "DataUltimoAtualizacao" : "2025-11-06",
+  "UltimoPref" : "2023",
+  "Dados" : {
+    "2023" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "ind_string" : "100,00",
+      "valor" : "100"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

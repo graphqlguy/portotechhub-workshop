@@ -1,0 +1,32 @@
+# The fields of ROPI, the official register of points of interest of Porto Digital. See RopiGraphQLController.
+
+extend type Query {
+    """
+    The parks and gardens of Porto nearest a place, the nearest first, with the distance to each in metres. Give the place
+    by its name, such as Alfândega do Porto, or by its latitude and longitude.
+    """
+    ropiNearestParks(
+        "A place in Porto, such as Alfândega do Porto. Accents and case do not matter."
+        place: String
+        "The latitude of a place given by its coordinates."
+        latitude: Float
+        "The longitude of a place given by its coordinates."
+        longitude: Float
+        "The number of parks to return."
+        first: Int = 3
+    ): [RopiPark!]
+}
+
+"A park or garden of Porto, from ROPI, with its distance from a place."
+type RopiPark {
+    "The name of the park, such as Parque da Cidade."
+    name: String
+    "The street, number, postal code and town of the park."
+    address: String
+    "The distance from the place, in metres, in a straight line."
+    distanceInMetres: Int!
+    "The latitude of the park."
+    latitude: Float!
+    "The longitude of the park."
+    longitude: Float!
+}

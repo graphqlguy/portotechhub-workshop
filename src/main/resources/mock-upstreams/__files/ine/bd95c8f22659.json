@@ -1,0 +1,21 @@
+[ {
+  "IndicadorCod" : "0014076",
+  "IndicadorDsg" : "Proportion of resident population at-risk-of poverty or social exclusion (Europe 2030) (%) by Place of residence (NUTS - 2024); Annual - Statistics Portugal, Statistics on income and living conditions",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014076&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:24:08.139Z",
+  "DataUltimoAtualizacao" : "2026-01-16",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2025" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "ind_string" : "18,6",
+      "valor" : "18.6"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

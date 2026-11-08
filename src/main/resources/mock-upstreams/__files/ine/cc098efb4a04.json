@@ -1,0 +1,145 @@
+[ {
+  "IndicadorCod" : "0008273",
+  "IndicadorDsg" : "Resident population (No.) by Place of residence (NUTS - 2013), Sex and Age group; Annual - Statistics Portugal, Annual estimates of resident population",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0008273&lingua=EN",
+  "DataExtracao" : "2026-11-06T09:48:50.707Z",
+  "DataUltimoAtualizacao" : "2026-07-17",
+  "UltimoPref" : "2023",
+  "Dados" : {
+    "2011" : [ {
+      "geocod" : "11A1312",
+      "geodsg" : "Porto",
+      "dim_3" : "T",
+      "dim_3_t" : "MF",
+      "dim_4" : "T",
+      "dim_4_t" : "Total",
+      "ind_string" : "235 882",
+      "valor" : "235882"
+    } ],
+    "2012" : [ {
+      "geocod" : "11A1312",
+      "geodsg" : "Porto",
+      "dim_3" : "T",
+      "dim_3_t" : "MF",
+      "dim_4" : "T",
+      "dim_4_t" : "Total",
+      "ind_string" : "235 142",
+      "valor" : "235142"
+    } ],
+    "2013" : [ {
+      "geocod" : "11A1312",
+      "geodsg" : "Porto",
+      "dim_3" : "T",
+      "dim_3_t" : "MF",
+      "dim_4" : "T",
+      "dim_4_t" : "Total",
+      "ind_string" : "234 453",
+      "valor" : "234453"
+    } ],
+    "2014" : [ {
+      "geocod" : "11A1312",
+      "geodsg" : "Porto",
+      "dim_3" : "T",
+      "dim_3_t" : "MF",
+      "dim_4" : "T",
+      "dim_4_t" : "Total",
+      "ind_string" : "233 611",
+      "valor" : "233611"
+    } ],
+    "2015" : [ {
+      "geocod" : "11A1312",
+      "geodsg" : "Porto",
+      "dim_3" : "T",
+      "dim_3_t" : "MF",
+      "dim_4" : "T",
+      "dim_4_t" : "Total",
+      "ind_string" : "233 613",
+      "valor" : "233613"
+    } ],
+    "2016" : [ {
+      "geocod" : "11A1312",
+      "geodsg" : "Porto",
+      "dim_3" : "T",
+      "dim_3_t" : "MF",
+      "dim_4" : "T",
+      "dim_4_t" : "Total",
+      "ind_string" : "233 818",
+      "valor" : "233818"
+    } ],
+    "2017" : [ {
+      "geocod" : "11A1312",
+      "geodsg" : "Porto",
+      "dim_3" : "T",
+      "dim_3_t" : "MF",
+      "dim_4" : "T",
+      "dim_4_t" : "Total",
+      "ind_string" : "234 432",
+      "valor" : "234432"
+    } ],
+    "2018" : [ {
+      "geocod" : "11A1312",
+      "geodsg" : "Porto",
+      "dim_3" : "T",
+      "dim_3_t" : "MF",
+      "dim_4" : "T",
+      "dim_4_t" : "Total",
+      "ind_string" : "235 337",
+      "valor" : "235337"
+    } ],
+    "2019" : [ {
+      "geocod" : "11A1312",
+      "geodsg" : "Porto",
+      "dim_3" : "T",
+      "dim_3_t" : "MF",
+      "dim_4" : "T",
+      "dim_4_t" : "Total",
+      "ind_string" : "237 003",
+      "valor" : "237003"
+    } ],
+    "2020" : [ {
+      "geocod" : "11A1312",
+      "geodsg" : "Porto",
+      "dim_3" : "T",
+      "dim_3_t" : "MF",
+      "dim_4" : "T",
+      "dim_4_t" : "Total",
+      "ind_string" : "232 873",
+      "valor" : "232873"
+    } ],
+    "2021" : [ {
+      "geocod" : "11A1312",
+      "geodsg" : "Porto",
+      "dim_3" : "T",
+      "dim_3_t" : "MF",
+      "dim_4" : "T",
+      "dim_4_t" : "Total",
+      "ind_string" : "244 174",
+      "valor" : "244174"
+    } ],
+    "2022" : [ {
+      "geocod" : "11A1312",
+      "geodsg" : "Porto",
+      "dim_3" : "T",
+      "dim_3_t" : "MF",
+      "dim_4" : "T",
+      "dim_4_t" : "Total",
+      "ind_string" : "256 269",
+      "valor" : "256269"
+    } ],
+    "2023" : [ {
+      "geocod" : "11A1312",
+      "geodsg" : "Porto",
+      "dim_3" : "T",
+      "dim_3_t" : "MF",
+      "dim_4" : "T",
+      "dim_4_t" : "Total",
+      "ind_string" : "267 236",
+      "valor" : "267236"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

@@ -1,0 +1,23 @@
+[ {
+  "IndicadorCod" : "0008234",
+  "IndicadorDsg" : "Live births (No.) by Place of residence of mother (NUTS - 2013) and Sex; Annual - Statistics Portugal, Live-birth statistics",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0008234&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:28.024Z",
+  "DataUltimoAtualizacao" : "2024-04-30",
+  "UltimoPref" : "2023",
+  "Dados" : {
+    "2023" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "MF",
+      "ind_string" : "85 699",
+      "valor" : "85699"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

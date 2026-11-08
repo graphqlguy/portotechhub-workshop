@@ -1,0 +1,27 @@
+[ {
+  "IndicadorCod" : "0014972",
+  "IndicadorDsg" : "Enterprises (No.) by Economic activity (Subclass - CAE Rev. 4) and Employment size class; Annual - Statistics Portugal, Integrated business accounts system",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014972&lingua=EN",
+  "DataExtracao" : "2026-11-06T02:54:03.152Z",
+  "DataUltimoAtualizacao" : "2026-10-30",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2024" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "96992",
+      "dim_3_t" : "Pet care services activities",
+      "dim_4" : "T",
+      "dim_4_t" : "Total",
+      "sinal_conv" : "//",
+      "sinal_conv_desc" : "Preliminary value",
+      "ind_string" : "1 117 //",
+      "valor" : "1117"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

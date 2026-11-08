@@ -1,0 +1,42 @@
+# The emergency visits of one month, which SnsEmergencyVisits computes from the SNS's cumulative dataset.
+# See SnsGraphQLController. The generated fields of the SNS's transparency portal are in sns.graphqls.
+
+extend type Query {
+    """
+    The visits to the emergency department of each public hospital in one month, by the colour of the Manchester triage,
+    the busiest hospital first. The counts are for that month alone: the server subtracts the month before from the
+    portal's counts, which add up from January.
+    """
+    snsEmergencyVisitsInMonth(
+        "The month, written as year and month, such as 2026-03. The latest month is August 2026."
+        month: String!
+        "The health region, such as Região de Saúde Norte for the north of Portugal. Leave it out for every region."
+        region: String
+    ): [SnsHospitalEmergencyVisits!]
+}
+
+"The visits to the emergency department of one public hospital in one month, by the colour of the Manchester triage."
+type SnsHospitalEmergencyVisits {
+    "The hospital, or the local health unit it belongs to, such as Unidade Local de Saúde de Santo António, EPE."
+    hospital: String
+    "The health region, such as Região de Saúde Norte."
+    region: String
+    "The month, such as 2026-08."
+    month: String
+    "Every visit of the month, whatever its triage."
+    total: Int!
+    "The visits triaged red: immediate care."
+    red: Int!
+    "The visits triaged orange: very urgent."
+    orange: Int!
+    "The visits triaged yellow: urgent."
+    yellow: Int!
+    "The visits triaged green: standard."
+    green: Int!
+    "The visits triaged blue: not urgent."
+    blue: Int!
+    "The visits triaged white: not an emergency, such as a planned treatment."
+    white: Int!
+    "The visits without a triage."
+    notTriaged: Int!
+}

@@ -1,0 +1,1933 @@
+# The open data of Turismo de Portugal, the national tourism authority, from its ArcGIS server: the registers of 
+# local lodging, tourist establishments, travel agencies and tourist activity operators, hotel projects, casinos 
+# and bingo halls, golf courses, marinas, Blue Flag sites, surf spots, village networks, heritage sites, spas, 
+# and walking, cycling and pilgrim routes. A generator outside the repository writes this file and 
+# turismo/arcgis.json; the names and descriptions are written for the model.
+
+extend type Query {
+    """
+    The local lodging units of Portugal (alojamento local), the holiday rentals of the national register RNAL:
+    apartments, houses, rooms and hostels let to tourists, with their kind, guests and address. totalCount
+    with a municipality answers how many units are registered there.
+    """
+    turismoLocalLodging(
+        "The municipality, written with capitals and accents, such as Porto, Lisboa or Vila Nova de Gaia."
+        municipality: String
+        """
+        The kind of unit: Apartamento (an apartment), Moradia (a house), Quartos (rooms in the owner's home),
+        EstabelecimentoHospedagem (a guest house) or EstabelecimentoHospedagemHostel (a hostel).
+        """
+        kind: String
+        "A part of the name, such as Ribeira. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoLocalLodgingPage
+
+    """
+    The tourist establishments open in Portugal (empreendimentos turísticos) in the national register RNET:
+    hotels, apartment hotels, pousadas, holiday villages, tourist apartments, rural tourism and camping parks,
+    with their stars, rooms and beds. totalCount with a municipality and a kind counts them, such as the
+    five-star hotels of Porto.
+    """
+    turismoTouristEstablishments(
+        "The municipality, written with capitals and accents, such as Porto, Lisboa or Vila Nova de Gaia."
+        municipality: String
+        "The district, such as Porto, Lisboa or Faro."
+        district: String
+        """
+        The kind of establishment: Hotel, HotelApartamento (apartment hotel), HotelRural (rural hotel),
+        Pousada, AldeamentoTuristico (holiday village), ApartamentosTuristicos (tourist apartments),
+        TurismoDeHabitacao (lodging in a manor house), CasaDeCampo (country house), Agroturismo (farm stay) or
+        ParqueCampismo/Caravanismo (camping and caravan park).
+        """
+        kind: String
+        "The number of stars, from 1 to 5, or 0 for an establishment without stars."
+        stars: String
+        "A part of the name, such as Pestana. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoTouristEstablishmentPage
+
+    """
+    The building projects of hotels and other tourist establishments that Turismo de Portugal approved
+    (parecer favorável), new ones and changes to existing ones, with the rooms and beds they add.
+    """
+    turismoTouristEstablishmentProjects(
+        "The municipality, written with capitals and accents, such as Porto, Lisboa or Vila Nova de Gaia."
+        municipality: String
+        "The district, such as Porto, Lisboa or Faro."
+        district: String
+        """
+        The kind of establishment, such as Hotel, HotelApartamento, HotelRural, Pousada, AldeamentoTuristico,
+        ApartamentosTuristicos, TurismoDeHabitacao or EdAutCarUnifCT (detached houses in a tourist complex).
+        """
+        kind: String
+        "A part of the name, such as Vau. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoTouristEstablishmentProjectPage
+
+    """
+    The prior information requests (pedidos de informação prévia) for hotels and other tourist establishments
+    that Turismo de Portugal answered favourably: plans checked before a building project, with their rooms
+    and beds.
+    """
+    turismoTouristEstablishmentPriorRequests(
+        "The municipality, written with capitals and accents, such as Porto, Lisboa or Vila Nova de Gaia."
+        municipality: String
+        "The district, such as Porto, Lisboa or Faro."
+        district: String
+        """
+        The kind of establishment: Hotel, HotelApartamento (apartment hotel), HotelRural (rural hotel),
+        AldeamentoTuristico (holiday village) or ApartamentosTuristicos (tourist apartments).
+        """
+        kind: String
+        "A part of the name, such as Marriott. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoTouristEstablishmentPriorRequestPage
+
+    """
+    The tourist complexes of Portugal (conjuntos turísticos) in the RNET register: resorts that group several
+    tourist establishments with shared facilities such as a golf course or a spa, with their beds.
+    """
+    turismoTouristComplexes(
+        "The municipality, written with capitals and accents, such as Porto, Lisboa or Vila Nova de Gaia."
+        municipality: String
+        "The district, such as Porto, Lisboa or Faro."
+        district: String
+        "A part of the name, such as Quinta. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoTouristComplexPage
+
+    """
+    The projects of tourist complexes (conjuntos turísticos, resorts that group several establishments) that
+    Turismo de Portugal approved, with their planned beds and facilities.
+    """
+    turismoTouristComplexProjects(
+        "The municipality, written with capitals and accents, such as Porto, Lisboa or Vila Nova de Gaia."
+        municipality: String
+        "The district, such as Porto, Lisboa or Faro."
+        district: String
+        "A part of the name, such as Resort. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoTouristComplexProjectPage
+
+    """
+    The prior information requests for tourist complexes (resorts that group several establishments) that
+    Turismo de Portugal answered favourably, with their planned beds and facilities.
+    """
+    turismoTouristComplexPriorRequests(
+        "The municipality, written with capitals and accents, such as Porto, Lisboa or Vila Nova de Gaia."
+        municipality: String
+        "The district, such as Porto, Lisboa or Faro."
+        district: String
+        "A part of the name, such as Falésia. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoTouristComplexPriorRequestPage
+
+    """
+    The tourism Projects of National Interest (PIN) that Turismo de Portugal is following now: large resorts
+    with their area, beds, investment and jobs.
+    """
+    turismoNationalInterestProjects(
+        "The municipality, written with capitals and accents, such as Porto, Lisboa or Vila Nova de Gaia."
+        municipality: String
+        "The district, such as Porto, Lisboa or Faro."
+        district: String
+        "A part of the name, such as Sesimbra. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoNationalInterestProjectPage
+
+    """
+    The tourism Projects of National Interest (PIN) whose follow-up by Turismo de Portugal has ended: large
+    resorts with their area and beds.
+    """
+    turismoCompletedNationalInterestProjects(
+        "The municipality, written with capitals and accents, such as Porto, Lisboa or Vila Nova de Gaia."
+        municipality: String
+        "The district, such as Porto, Lisboa or Faro."
+        district: String
+        "A part of the name, such as Tróia. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoCompletedNationalInterestProjectPage
+
+    """
+    The travel agencies of Portugal, one record per branch, from the national register RNAVT. totalCount with
+    a municipality counts the branches there.
+    """
+    turismoTravelAgencies(
+        "The municipality, written with capitals and accents, such as Porto, Lisboa or Vila Nova de Gaia."
+        municipality: String
+        "The district, such as Porto, Lisboa or Faro."
+        district: String
+        "A part of the name, such as Abreu. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoTravelAgencyPage
+
+    """
+    The tourist activity operators of Portugal (agentes de animação turística) from the national register
+    RNAAT: companies that run outdoor, nature, adventure, boat and cultural tours, one record per
+    establishment.
+    """
+    turismoActivityOperators(
+        "The municipality, written with capitals and accents, such as Porto, Lisboa or Vila Nova de Gaia."
+        municipality: String
+        "The district, such as Porto, Lisboa or Faro."
+        district: String
+        """
+        The kind of operator: EmpresaAnimacaoTuristica (a tourist activity company) or
+        OperadorMaritimoTuristico (a boat tour operator).
+        """
+        kind: String
+        "A part of the name, such as Aventura. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoActivityOperatorPage
+
+    "The casinos of Portugal, with their operator, capacity, table games, slot machines and show rooms."
+    turismoCasinos(
+        "The municipality, written with capitals and accents, such as Porto, Lisboa or Vila Nova de Gaia."
+        municipality: String
+        """
+        A part of the locality of the postal code, such as Estoril. Some casinos leave the municipality empty,
+        and this filter finds them. Case does not matter.
+        """
+        locality: String
+        "A part of the name, such as Estoril. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoCasinoPage
+
+    "The bingo halls open in Portugal, with their operator and capacity."
+    turismoBingoHalls(
+        "The municipality, written with capitals and accents, such as Porto, Lisboa or Vila Nova de Gaia."
+        municipality: String
+        """
+        A part of the locality of the postal code, such as Reboleira. Many halls leave the municipality empty,
+        and this filter finds them. Case does not matter.
+        """
+        locality: String
+        "A part of the name, such as Amadora. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoBingoHallPage
+
+    """
+    The golf courses in play in Portugal, registered with the Portuguese Golf Federation, with their holes,
+    par, opening year and facilities.
+    """
+    turismoGolfCourses(
+        "The municipality, written with capitals and accents, such as Porto, Lisboa or Vila Nova de Gaia."
+        municipality: String
+        "The district, such as Porto, Lisboa or Faro."
+        district: String
+        "A part of the name, such as Bom Sucesso. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoGolfCoursePage
+
+    """
+    The villages of the Aldeias Históricas (Historic Villages) network of Portugal: fortified medieval
+    villages of the interior, such as Sortelha, with their municipality and the body that manages the network.
+    """
+    turismoHistoricVillages(
+        "The municipality, written with capitals and accents, such as Porto, Lisboa or Vila Nova de Gaia."
+        municipality: String
+        "The district, such as Porto, Lisboa or Faro."
+        district: String
+        "A part of the name, such as Sortelha. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoHistoricVillagePage
+
+    """
+    The villages of the Aldeias de Montanha (Mountain Villages) network of Portugal: villages of the Serra da
+    Estrela mountains, with their municipality and the body that manages the network.
+    """
+    turismoMountainVillages(
+        "The municipality, written with capitals and accents, such as Porto, Lisboa or Vila Nova de Gaia."
+        municipality: String
+        "The district, such as Porto, Lisboa or Faro."
+        district: String
+        "A part of the name, such as Loriga. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoMountainVillagePage
+
+    """
+    The villages of the Aldeias Vinhateiras (Wine Villages) network of Portugal: wine villages of the Douro
+    valley, such as Trevões, with their municipality and the body that manages the network.
+    """
+    turismoWineVillages(
+        "The municipality, written with capitals and accents, such as Porto, Lisboa or Vila Nova de Gaia."
+        municipality: String
+        "The district, such as Porto, Lisboa or Faro."
+        district: String
+        "A part of the name, such as Trevões. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoWineVillagePage
+
+    """
+    The villages of the Aldeias do Xisto (Schist Villages) network of Portugal: villages built of schist in
+    the centre of Portugal, such as Talasnal, with their municipality and the body that manages the network.
+    """
+    turismoSchistVillages(
+        "The municipality, written with capitals and accents, such as Porto, Lisboa or Vila Nova de Gaia."
+        municipality: String
+        "The district, such as Porto, Lisboa or Faro."
+        district: String
+        "A part of the name, such as Talasnal. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoSchistVillagePage
+
+    """
+    The Marian shrines of Portugal (altares marianos): churches, cathedrals and sanctuaries devoted to the
+    Virgin Mary on the Caminhos da Fé (paths of faith).
+    """
+    turismoMarianShrines(
+        "The municipality, written with capitals and accents, such as Porto, Lisboa or Vila Nova de Gaia."
+        municipality: String
+        "The district, such as Porto, Lisboa or Faro."
+        district: String
+        "A part of the name, such as Sé Nova. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoMarianShrinePage
+
+    """
+    The places of Sephardic Jewish heritage in Portugal (herança judaica): synagogues, Jewish quarters,
+    museums and memorials, such as those of Belmonte and Bragança.
+    """
+    turismoJewishHeritageSites(
+        "The municipality, written with capitals and accents, such as Porto, Lisboa or Vila Nova de Gaia."
+        municipality: String
+        "The district, such as Porto, Lisboa or Faro."
+        district: String
+        "A part of the name, such as Sefardita. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoJewishHeritageSitePage
+
+    """
+    The places of Islamic heritage in Portugal (legado islâmico): castles, baths, mosques and museums from the
+    Moorish period, mostly in the Algarve and the Alentejo.
+    """
+    turismoIslamicHeritageSites(
+        "The municipality, written with capitals and accents, such as Porto, Lisboa or Vila Nova de Gaia."
+        municipality: String
+        "The district, such as Porto, Lisboa or Faro."
+        district: String
+        "A part of the name, such as Banhos. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoIslamicHeritageSitePage
+
+    """
+    The high performance centres for surfing, bodyboard and longboard in Portugal (centros de alto
+    rendimento): training bases for athletes, with their sports, beds and opening year.
+    """
+    turismoSurfHighPerformanceCentres(
+        "The municipality, written with capitals and accents, such as Porto, Lisboa or Vila Nova de Gaia."
+        municipality: String
+        "The district, such as Porto, Lisboa or Faro."
+        district: String
+        "A part of the name, such as Peniche. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoSurfHighPerformanceCentrePage
+
+    """
+    The high performance centres for rowing, canoeing and other water sports in Portugal (centros de alto
+    rendimento): training bases for athletes, with their sports, beds and opening year.
+    """
+    turismoNauticalHighPerformanceCentres(
+        "The municipality, written with capitals and accents, such as Porto, Lisboa or Vila Nova de Gaia."
+        municipality: String
+        "The district, such as Porto, Lisboa or Faro."
+        district: String
+        "A part of the name, such as Montemor-o-Velho. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoNauticalHighPerformanceCentrePage
+
+    """
+    The waves of the World Surfing Reserve of Ericeira, classified by Save The Waves, one record per wave and
+    beach.
+    """
+    turismoSurfReserves(
+        "The municipality, written with capitals and accents, such as Porto, Lisboa or Vila Nova de Gaia."
+        municipality: String
+        "A part of the name, such as Pedra Branca. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoSurfReservePage
+
+    """
+    The main surf spots of Portugal from the Portugal Surf Guide, with their locality and whether they hold
+    championships.
+    """
+    turismoSurfSpots(
+        "The municipality, written with capitals and accents, such as Porto, Lisboa or Vila Nova de Gaia."
+        municipality: String
+        "The district, such as Porto, Lisboa or Faro."
+        district: String
+        "A part of the name, such as Moledo. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoSurfSpotPage
+
+    """
+    The beaches of mainland Portugal with the Blue Flag (Bandeira Azul) of ABAAE this year, on the coast, on
+    estuaries and inland. The layer names each municipality by its DICO code.
+    """
+    turismoBlueFlagBeaches(
+        """
+        The municipality's DICO code: two digits for the district and two for the municipality, such as 1312
+        for Porto, 1317 for Vila Nova de Gaia or 1106 for Lisboa.
+        """
+        municipalityCode: Float
+        """
+        The kind of beach: Praia costeira (a coastal beach), Praia de transição (a beach on an estuary or a
+        lagoon) or Praia interior (an inland beach on a river or a reservoir).
+        """
+        kind: String
+        "A part of the name, such as Aldeia do Mato. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoBlueFlagBeachPage
+
+    "The ecotourism boats of Portugal with the Blue Flag (Bandeira Azul) of ABAAE this year."
+    turismoBlueFlagBoats(
+        "A part of the name, such as Sun Boat. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoBlueFlagBoatPage
+
+    """
+    The marinas and recreational ports of Portugal with the Blue Flag (Bandeira Azul) of ABAAE this year.
+    """
+    turismoBlueFlagMarinas(
+        "A part of the name, such as Lagos. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoBlueFlagMarinaPage
+
+    """
+    The marinas, recreational ports and docks of Portugal, on the sea and on rivers, with their berths, the
+    largest boat they take and whether they have the Blue Flag.
+    """
+    turismoMarinas(
+        "The municipality, written with capitals and accents, such as Porto, Lisboa or Vila Nova de Gaia."
+        municipality: String
+        "The district, such as Porto, Lisboa or Faro."
+        district: String
+        "The kind: Marina, PortoRecreio (a recreational port) or Doca (a recreational dock)."
+        kind: String
+        "A part of the name, such as Marina. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoMarinaPage
+
+    """
+    The cruise ship terminals of Portugal, such as Leixões, Lisboa and Portimão, with their quay length and
+    depth.
+    """
+    turismoCruiseTerminals(
+        "The municipality, written with capitals and accents, such as Porto, Lisboa or Vila Nova de Gaia."
+        municipality: String
+        "A part of the name, such as Leixões. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoCruiseTerminalPage
+
+    """
+    The nautical stations of Portugal certified by Fórum Oceano: networks of water sports, boat trips and
+    services around a stretch of coast, river or lake, with the head office of each.
+    """
+    turismoNauticalStations(
+        "A municipality the station covers, such as Aveiro or Cascais. Case does not matter."
+        municipality: String
+        "A district the station covers, such as Faro. Case does not matter."
+        district: String
+        "A part of the name, such as Aveiro. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoNauticalStationPage
+
+    """
+    The areas the nautical stations of Portugal cover, certified by Fórum Oceano. Some areas are named Não
+    Abrangido (not covered).
+    """
+    turismoNauticalStationAreas(
+        "A municipality the station covers, such as Aveiro or Cascais. Case does not matter."
+        municipality: String
+        "A district the station covers, such as Faro. Case does not matter."
+        district: String
+        "A part of the name, such as Aveiro. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoNauticalStationAreaPage
+
+    """
+    The hotel and tourism schools of Turismo de Portugal (escolas de hotelaria e turismo), with their courses,
+    student capacity, training hotel and auditorium.
+    """
+    turismoHotelSchools(
+        "The municipality, written with capitals and accents, such as Porto, Lisboa or Vila Nova de Gaia."
+        municipality: String
+        "The district, such as Porto, Lisboa or Faro."
+        district: String
+        "A part of the name, such as Porto. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoHotelSchoolPage
+
+    """
+    The thermal spas of Portugal (termas), with the illnesses their waters treat and their wellness
+    programmes.
+    """
+    turismoThermalSpas(
+        "The municipality, written with capitals and accents, such as Porto, Lisboa or Vila Nova de Gaia."
+        municipality: String
+        "The district, such as Porto, Lisboa or Faro."
+        district: String
+        "A part of the name, such as Caldas. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoThermalSpaPage
+
+    """
+    The mountain bike centres of Portugal (centros BTT) approved by the Portuguese Cycling Federation: bases
+    with marked trails for mountain biking.
+    """
+    turismoMountainBikeCentres(
+        "The municipality, written with capitals and accents, such as Porto, Lisboa or Vila Nova de Gaia."
+        municipality: String
+        "The district, such as Porto, Lisboa or Faro."
+        district: String
+        "A part of the name, such as Odemira. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoMountainBikeCentrePage
+
+    """
+    The pilgrim ways to Fátima (Caminhos de Fátima), walked as an act of faith, with their length and stages.
+    """
+    turismoFatimaWays(
+        "A part of the name, such as Rota Carmelita. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoFatimaWayPage
+
+    "The Portuguese ways to Santiago de Compostela (Caminhos de Santiago), with their length and stages."
+    turismoSantiagoWays(
+        "A part of the name, such as Caminho da Costa. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoSantiagoWayPage
+
+    """
+    The greenways of Portugal for cycling (ecopistas): paths on old railway lines from the national greenway
+    plan, with their length.
+    """
+    turismoCyclingGreenways(
+        "A part of the name, such as Ecopista de Guimarães. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoCyclingGreenwayPage
+
+    """
+    The greenways of Portugal for walking (ecopistas): paths on old railway lines from the national greenway
+    plan, with their length.
+    """
+    turismoWalkingGreenways(
+        "A part of the name, such as Ecopista do Dão. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoWalkingGreenwayPage
+
+    """
+    The stretches in Portugal of the EuroVelo European cycle routes, such as EuroVelo 1 along the Atlantic
+    coast, with their length.
+    """
+    turismoEuroveloRoutes(
+        "A part of the name, such as Costa Atlântica. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoEuroveloRoutePage
+
+    """
+    The long-distance cycling routes of Portugal (Grandes Rotas, GR), such as GR22 through the historic
+    villages, with their length.
+    """
+    turismoLongCyclingRoutes(
+        "A part of the name, such as GR22. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoLongCyclingRoutePage
+
+    """
+    The long-distance hiking trails of Portugal (Grandes Rotas, GR), such as GR45 in the Côa valley, with
+    their length.
+    """
+    turismoLongWalkingRoutes(
+        "A part of the name, such as GR45. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoLongWalkingRoutePage
+
+    """
+    Other cycling routes of Portugal outside the long-distance network, such as the Ecovia do Rio Lima, with
+    their length.
+    """
+    turismoOtherCyclingRoutes(
+        "A part of the name, such as Ecovia. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoOtherCyclingRoutePage
+
+    """
+    Other walking routes of Portugal outside the long-distance network, such as the Rota Vicentina, with their
+    length.
+    """
+    turismoOtherWalkingRoutes(
+        "A part of the name, such as Rota Vicentina. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoOtherWalkingRoutePage
+
+    """
+    The UNESCO World Heritage sites of Portugal (Património Mundial), such as the historic centre of Porto and
+    the garrison town of Elvas.
+    """
+    turismoUnescoWorldHeritageSites(
+        "A part of the name, such as Porto. Case does not matter."
+        name: String
+        "The number of records to return, at most 200."
+        first: Int = 20
+    ): TurismoUnescoWorldHeritageSitePage
+}
+
+"A page of TurismoLocalLodging records: how many match the arguments, and the first of them."
+type TurismoLocalLodgingPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoLocalLodging!]
+}
+
+"A local lodging unit in the RNAL register: an apartment, a house, rooms or a hostel let to tourists."
+type TurismoLocalLodging {
+    "The unit's number in the RNAL register."
+    registrationNumber: Int
+    "The name of the unit."
+    name: String
+    "The kind of unit, such as Apartamento, Moradia or Quartos."
+    kind: String
+    "The number of guests the unit can take."
+    guests: Int
+    "The street address."
+    address: String
+    "The postal code, such as 4000-322."
+    postalCode: String
+    "The parish (freguesia) within the municipality."
+    parish: String
+    "The municipality, such as Porto."
+    municipality: String
+    "The district, such as Porto or Faro."
+    district: String
+    "The day the unit entered the register."
+    registeredOn: Date
+    "The day the unit opened to the public."
+    openedOn: Date
+    "Sim (yes) when it holds the Clean & Safe seal for hygiene and cleaning, and Não (no) otherwise."
+    cleanSafe: String
+}
+
+"A page of TurismoTouristEstablishment records: how many match the arguments, and the first of them."
+type TurismoTouristEstablishmentPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoTouristEstablishment!]
+}
+
+"A tourist establishment in the RNET register, such as a hotel or a camping park."
+type TurismoTouristEstablishment {
+    "The establishment's number in the RNET register, such as 9703."
+    registrationNumber: String
+    "The name of the establishment."
+    name: String
+    "The kind of establishment, such as Hotel or TurismoDeHabitacao."
+    kind: String
+    "The number of stars, from 1 to 5, and 0 for an establishment without stars."
+    stars: String
+    "The number of lodging units: rooms, suites, apartments or houses."
+    units: Int
+    "The number of fixed beds, or of guests for a camping park."
+    beds: Int
+    """
+    The date of the permit that let the establishment open, which the register gives as its opening date.
+    """
+    openedOn: Date
+    "The street address."
+    address: String
+    "The postal code, such as 4000-322."
+    postalCode: String
+    "The municipality, such as Porto."
+    municipality: String
+    "The district, such as Porto or Faro."
+    district: String
+    "Sim (yes) when it holds the Clean & Safe seal for hygiene and cleaning, and Não (no) otherwise."
+    cleanSafe: String
+}
+
+"A page of TurismoTouristEstablishmentProject records: how many match the arguments, and the first of them."
+type TurismoTouristEstablishmentProjectPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoTouristEstablishmentProject!]
+}
+
+"A project of a tourist establishment that Turismo de Portugal approved."
+type TurismoTouristEstablishmentProject {
+    "The name of the project."
+    name: String
+    "The kind of establishment, such as Hotel or AldeamentoTuristico."
+    kind: String
+    "The number of stars planned, from 1 to 5."
+    stars: String
+    "The number of lodging units in the project."
+    units: Int
+    "The number of fixed beds in the project."
+    beds: Int
+    "The number of new lodging units the project adds."
+    newUnits: Int
+    "The number of new beds the project adds."
+    newBeds: Int
+    "The day Turismo de Portugal decided on the request."
+    decidedOn: Date
+    "The locality, such as Valadares."
+    locality: String
+    "The parish (freguesia) within the municipality."
+    parish: String
+    "The municipality, such as Porto."
+    municipality: String
+    "The district, such as Porto or Faro."
+    district: String
+}
+
+"A page of TurismoTouristEstablishmentPriorRequest records: how many match the arguments, and the first of them."
+type TurismoTouristEstablishmentPriorRequestPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoTouristEstablishmentPriorRequest!]
+}
+
+"""
+A prior information request for a tourist establishment that Turismo de Portugal answered favourably.
+"""
+type TurismoTouristEstablishmentPriorRequest {
+    "The name of the project."
+    name: String
+    "The kind of establishment, such as Hotel or AldeamentoTuristico."
+    kind: String
+    "The number of stars planned, from 1 to 5."
+    stars: String
+    "The number of lodging units in the project."
+    units: Int
+    "The number of fixed beds in the project."
+    beds: Int
+    "The number of new lodging units the project adds."
+    newUnits: Int
+    "The number of new beds the project adds."
+    newBeds: Int
+    "The day Turismo de Portugal decided on the request."
+    decidedOn: Date
+    "The locality, such as Valadares."
+    locality: String
+    "The parish (freguesia) within the municipality."
+    parish: String
+    "The municipality, such as Porto."
+    municipality: String
+    "The district, such as Porto or Faro."
+    district: String
+}
+
+"A page of TurismoTouristComplex records: how many match the arguments, and the first of them."
+type TurismoTouristComplexPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoTouristComplex!]
+}
+
+"A tourist complex: a resort that groups several tourist establishments and their facilities."
+type TurismoTouristComplex {
+    "The complex's number in the RNET register."
+    registrationNumber: String
+    "The name of the complex."
+    name: String
+    "The tourist establishments in the complex, separated by semicolons."
+    establishments: String
+    "Sim (yes) when the complex has a golf course, and Não (no) otherwise."
+    golfCourse: String
+    "Sim (yes) when the complex has a spa, and Não (no) otherwise."
+    spa: String
+    "Its other facilities, such as tennis courts and swimming pools."
+    otherFacilities: String
+    """
+    Sim (yes) when Turismo de Portugal has classified the complex, Nao (no), NA when it does not apply, or Por
+    reconverter (to be converted).
+    """
+    classified: String
+    "The number of beds of its open establishments."
+    beds: Int
+    "The number of lodging units of its open establishments."
+    units: Int
+    "The street address."
+    address: String
+    "The municipality, such as Porto."
+    municipality: String
+    "The district, such as Porto or Faro."
+    district: String
+}
+
+"A page of TurismoTouristComplexProject records: how many match the arguments, and the first of them."
+type TurismoTouristComplexProjectPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoTouristComplexProject!]
+}
+
+"A project of a tourist complex that Turismo de Portugal approved."
+type TurismoTouristComplexProject {
+    "The name of the complex."
+    name: String
+    "The approved establishment projects in the complex, separated by semicolons, such as Hotel 5*."
+    plannedEstablishments: String
+    "Sim (yes) when the complex has a golf course, and Não (no) otherwise."
+    golfCourse: String
+    "Sim (yes) when the complex has a spa, and Não (no) otherwise."
+    spa: String
+    "Its other facilities, such as tennis courts and swimming pools."
+    otherFacilities: String
+    "The number of beds in its approved projects."
+    plannedBeds: Int
+    "The number of lodging units in its approved projects."
+    plannedUnits: Int
+    "The number of beds of its establishments already open."
+    existingBeds: Int
+    "The locality, such as Tróia."
+    locality: String
+    "The municipality, such as Porto."
+    municipality: String
+    "The district, such as Porto or Faro."
+    district: String
+}
+
+"A page of TurismoTouristComplexPriorRequest records: how many match the arguments, and the first of them."
+type TurismoTouristComplexPriorRequestPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoTouristComplexPriorRequest!]
+}
+
+"A prior information request for a tourist complex that Turismo de Portugal answered favourably."
+type TurismoTouristComplexPriorRequest {
+    "The name of the complex."
+    name: String
+    "The approved establishment projects in the complex, separated by semicolons, such as Hotel 5*."
+    plannedEstablishments: String
+    "Sim (yes) when the complex has a golf course, and Não (no) otherwise."
+    golfCourse: String
+    "Sim (yes) when the complex has a spa, and Não (no) otherwise."
+    spa: String
+    "Its other facilities, such as tennis courts and swimming pools."
+    otherFacilities: String
+    "The number of beds in its approved projects."
+    plannedBeds: Int
+    "The number of lodging units in its approved projects."
+    plannedUnits: Int
+    "The number of beds of its establishments already open."
+    existingBeds: Int
+    "The locality, such as Tróia."
+    locality: String
+    "The municipality, such as Porto."
+    municipality: String
+    "The district, such as Porto or Faro."
+    district: String
+}
+
+"A page of TurismoNationalInterestProject records: how many match the arguments, and the first of them."
+type TurismoNationalInterestProjectPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoNationalInterestProject!]
+}
+
+"A tourism Project of National Interest (PIN) that Turismo de Portugal is following."
+type TurismoNationalInterestProject {
+    "The name of the project, such as PIN 041 - Mata de Sesimbra."
+    name: String
+    "The project's PIN number, such as 041."
+    pinNumber: String
+    "The area of the project in hectares."
+    areaHectares: Float
+    "The tourist establishments it plans, such as hotels and holiday villages."
+    establishments: String
+    "The total number of lodging units."
+    units: Int
+    "The total number of tourist beds."
+    beds: Int
+    "Its leisure and entertainment facilities, such as golf courses."
+    facilities: String
+    "The planned investment in millions of euros, as text with a decimal comma."
+    investment: String
+    "The number of direct jobs it creates."
+    directJobs: Int
+    "The day the project was recognised as a PIN."
+    recognisedOn: Date
+    "The municipality, such as Porto."
+    municipality: String
+    "The district, such as Porto or Faro."
+    district: String
+}
+
+"A page of TurismoCompletedNationalInterestProject records: how many match the arguments, and the first of them."
+type TurismoCompletedNationalInterestProjectPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoCompletedNationalInterestProject!]
+}
+
+"A tourism Project of National Interest (PIN) whose follow-up has ended."
+type TurismoCompletedNationalInterestProject {
+    "The name of the project, such as PIN 009 - Tróia Resort."
+    name: String
+    "The project's PIN number, such as 009."
+    pinNumber: String
+    "The area of the project in hectares."
+    areaHectares: Float
+    "The tourist establishments it plans, such as hotels and holiday villages."
+    establishments: String
+    "The total number of lodging units."
+    units: Int
+    "The total number of tourist beds."
+    beds: Int
+    "Its leisure and entertainment facilities, such as a marina."
+    facilities: String
+    "The day the project was recognised as a PIN."
+    recognisedOn: Date
+    "The locality, such as Tróia."
+    locality: String
+    "The municipality, such as Porto."
+    municipality: String
+    "The district, such as Porto or Faro."
+    district: String
+}
+
+"A page of TurismoTravelAgency records: how many match the arguments, and the first of them."
+type TurismoTravelAgencyPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoTravelAgency!]
+}
+
+"A branch of a travel agency in the RNAVT register."
+type TurismoTravelAgency {
+    "The agency's number in the RNAVT register."
+    registrationNumber: Int
+    "The registered name of the agency, usually a company."
+    name: String
+    "The brand the agency trades under."
+    brand: String
+    "The website."
+    website: String
+    "The street address."
+    address: String
+    "The postal code, such as 4000-322."
+    postalCode: String
+    "The locality of the postal code, such as Matosinhos."
+    locality: String
+    "The parish (freguesia) within the municipality."
+    parish: String
+    "The municipality, such as Porto."
+    municipality: String
+    "The district, such as Porto or Faro."
+    district: String
+    "Sim (yes) when it holds the Clean & Safe seal for hygiene and cleaning, and Não (no) otherwise."
+    cleanSafe: String
+}
+
+"A page of TurismoActivityOperator records: how many match the arguments, and the first of them."
+type TurismoActivityOperatorPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoActivityOperator!]
+}
+
+"An establishment of a tourist activity operator in the RNAAT register."
+type TurismoActivityOperator {
+    "The operator's number in the RNAAT register."
+    registrationNumber: String
+    "The registered name of the operator."
+    name: String
+    "The brands it trades under."
+    brands: String
+    "The kind of operator, EmpresaAnimacaoTuristica or OperadorMaritimoTuristico."
+    kind: String
+    "The outdoor, nature and adventure activities it offers."
+    outdoorActivities: String
+    "The boat and sea activities it offers."
+    boatActivities: String
+    "The cultural and sightseeing tours it offers."
+    culturalActivities: String
+    "The street address."
+    address: String
+    "The postal code, such as 4000-322."
+    postalCode: String
+    "The municipality, such as Porto."
+    municipality: String
+    "The district, such as Porto or Faro."
+    district: String
+    "Sim (yes) when it holds the Clean & Safe seal for hygiene and cleaning, and Não (no) otherwise."
+    cleanSafe: String
+}
+
+"A page of TurismoCasino records: how many match the arguments, and the first of them."
+type TurismoCasinoPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoCasino!]
+}
+
+"A casino."
+type TurismoCasino {
+    "The name of the casino, such as Casino de Chaves."
+    name: String
+    "The company that runs the casino."
+    operator: String
+    "The number of people the casino holds, and 0 when the register leaves it out."
+    capacity: Int
+    "The table games it offers, such as roulette, blackjack and poker."
+    tableGames: String
+    "Sim (yes) when it has slot machines, and Não (no) otherwise."
+    slotMachines: String
+    "Sim (yes) when it has a show room, and Não (no) otherwise."
+    showRoom: String
+    "The street address."
+    address: String
+    "The postal code, such as 4000-322."
+    postalCode: String
+    "The locality of the postal code, such as Matosinhos."
+    locality: String
+    "The municipality, such as Porto."
+    municipality: String
+    "The district, such as Porto or Faro."
+    district: String
+    "The website."
+    website: String
+}
+
+"A page of TurismoBingoHall records: how many match the arguments, and the first of them."
+type TurismoBingoHallPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoBingoHall!]
+}
+
+"A bingo hall."
+type TurismoBingoHall {
+    "The name of the hall, such as Sala de jogo do Bingo da Amadora."
+    name: String
+    "The company that runs the hall."
+    operator: String
+    "The number of people the hall holds."
+    capacity: Int
+    "Sim (yes) when it has a bar, and Não (no) otherwise."
+    bar: String
+    "Sim (yes) when it has a restaurant, and Não (no) otherwise."
+    restaurant: String
+    "The street address."
+    address: String
+    "The postal code, such as 4000-322."
+    postalCode: String
+    "The locality of the postal code, such as Matosinhos."
+    locality: String
+    "The municipality, such as Porto."
+    municipality: String
+    "The district, such as Porto or Faro."
+    district: String
+    "The website."
+    website: String
+}
+
+"A page of TurismoGolfCourse records: how many match the arguments, and the first of them."
+type TurismoGolfCoursePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoGolfCourse!]
+}
+
+"A golf course."
+type TurismoGolfCourse {
+    "The name of the course, such as Campo Real (Silver Coast)."
+    name: String
+    "The number of holes as text, which can count loops of nine, such as 9+9+9."
+    holes: String
+    "The par of the course."
+    par: String
+    "The year the course opened."
+    openedYear: Int
+    "Sim (yes) when it has a club house, and Não (no) otherwise."
+    clubHouse: String
+    "Its other facilities, such as a driving range or a putting green."
+    otherFacilities: String
+    "The area of the course in hectares."
+    areaHectares: Float
+    "The street address."
+    address: String
+    "The postal code, such as 4000-322."
+    postalCode: String
+    "The municipality, such as Porto."
+    municipality: String
+    "The district, such as Porto or Faro."
+    district: String
+    "The website."
+    website: String
+}
+
+"A page of TurismoHistoricVillage records: how many match the arguments, and the first of them."
+type TurismoHistoricVillagePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoHistoricVillage!]
+}
+
+"A village of the Aldeias Históricas (Historic Villages) network."
+type TurismoHistoricVillage {
+    "The name of the village, such as Sortelha."
+    name: String
+    "The body that manages the network."
+    manager: String
+    "A link to its web page, written as an HTML anchor."
+    website: String
+    "The parish (freguesia) within the municipality."
+    parish: String
+    "The municipality, such as Porto."
+    municipality: String
+    "The district, such as Porto or Faro."
+    district: String
+}
+
+"A page of TurismoMountainVillage records: how many match the arguments, and the first of them."
+type TurismoMountainVillagePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoMountainVillage!]
+}
+
+"A village of the Aldeias de Montanha (Mountain Villages) network."
+type TurismoMountainVillage {
+    "The name of the village, such as Loriga."
+    name: String
+    "The body that manages the network."
+    manager: String
+    "A link to its web page, written as an HTML anchor."
+    website: String
+    "The parish (freguesia) within the municipality."
+    parish: String
+    "The municipality, such as Porto."
+    municipality: String
+    "The district, such as Porto or Faro."
+    district: String
+}
+
+"A page of TurismoWineVillage records: how many match the arguments, and the first of them."
+type TurismoWineVillagePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoWineVillage!]
+}
+
+"A village of the Aldeias Vinhateiras (Wine Villages) network."
+type TurismoWineVillage {
+    "The name of the village, such as Trevões."
+    name: String
+    "The body that manages the network."
+    manager: String
+    "A link to its web page, written as an HTML anchor."
+    website: String
+    "The parish (freguesia) within the municipality."
+    parish: String
+    "The municipality, such as Porto."
+    municipality: String
+    "The district, such as Porto or Faro."
+    district: String
+}
+
+"A page of TurismoSchistVillage records: how many match the arguments, and the first of them."
+type TurismoSchistVillagePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoSchistVillage!]
+}
+
+"A village of the Aldeias do Xisto (Schist Villages) network."
+type TurismoSchistVillage {
+    "The name of the village, such as Talasnal."
+    name: String
+    "The body that manages the network."
+    manager: String
+    "A link to its web page, written as an HTML anchor."
+    website: String
+    "The parish (freguesia) within the municipality."
+    parish: String
+    "The municipality, such as Porto."
+    municipality: String
+    "The district, such as Porto or Faro."
+    district: String
+}
+
+"A page of TurismoMarianShrine records: how many match the arguments, and the first of them."
+type TurismoMarianShrinePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoMarianShrine!]
+}
+
+"A church or sanctuary devoted to the Virgin Mary."
+type TurismoMarianShrine {
+    "The name of the place, such as Sé Nova."
+    name: String
+    "The street address."
+    address: String
+    "The postal code, such as 4000-322."
+    postalCode: String
+    "The locality of the postal code, such as Matosinhos."
+    locality: String
+    "The parish (freguesia) within the municipality."
+    parish: String
+    "The municipality, such as Porto."
+    municipality: String
+    "The district, such as Porto or Faro."
+    district: String
+    "A link to its web page, written as an HTML anchor."
+    website: String
+}
+
+"A page of TurismoJewishHeritageSite records: how many match the arguments, and the first of them."
+type TurismoJewishHeritageSitePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoJewishHeritageSite!]
+}
+
+"A place of Sephardic Jewish heritage."
+type TurismoJewishHeritageSite {
+    "The name of the place, such as Sefardita."
+    name: String
+    "The street address."
+    address: String
+    "The postal code, such as 4000-322."
+    postalCode: String
+    "The locality of the postal code, such as Matosinhos."
+    locality: String
+    "The parish (freguesia) within the municipality."
+    parish: String
+    "The municipality, such as Porto."
+    municipality: String
+    "The district, such as Porto or Faro."
+    district: String
+    "A link to its web page, written as an HTML anchor."
+    website: String
+}
+
+"A page of TurismoIslamicHeritageSite records: how many match the arguments, and the first of them."
+type TurismoIslamicHeritageSitePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoIslamicHeritageSite!]
+}
+
+"A place of Islamic heritage."
+type TurismoIslamicHeritageSite {
+    "The name of the place, such as Banhos."
+    name: String
+    "The street address."
+    address: String
+    "The postal code, such as 4000-322."
+    postalCode: String
+    "The locality of the postal code, such as Matosinhos."
+    locality: String
+    "The parish (freguesia) within the municipality."
+    parish: String
+    "The municipality, such as Porto."
+    municipality: String
+    "The district, such as Porto or Faro."
+    district: String
+    "A link to its web page, written as an HTML anchor."
+    website: String
+}
+
+"A page of TurismoSurfHighPerformanceCentre records: how many match the arguments, and the first of them."
+type TurismoSurfHighPerformanceCentrePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoSurfHighPerformanceCentre!]
+}
+
+"A high performance centre for surfing, bodyboard and longboard."
+type TurismoSurfHighPerformanceCentre {
+    "The name of the centre, such as Centro de Alto Rendimento de Peniche."
+    name: String
+    "The body that manages the centre."
+    manager: String
+    "The sports it serves, separated by commas."
+    sports: String
+    "The number of beds for athletes."
+    beds: Int
+    "The year the centre opened."
+    openedYear: Int
+    "The street address."
+    address: String
+    "The locality of the postal code, such as Matosinhos."
+    locality: String
+    "The municipality, such as Porto."
+    municipality: String
+    "The district, such as Porto or Faro."
+    district: String
+    "The website."
+    website: String
+}
+
+"A page of TurismoNauticalHighPerformanceCentre records: how many match the arguments, and the first of them."
+type TurismoNauticalHighPerformanceCentrePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoNauticalHighPerformanceCentre!]
+}
+
+"A high performance centre for rowing, canoeing and other water sports."
+type TurismoNauticalHighPerformanceCentre {
+    "The name of the centre, such as Centro de Alto Rendimento de Montemor-o-Velho."
+    name: String
+    "The body that manages the centre."
+    manager: String
+    "The sports it serves, separated by commas."
+    sports: String
+    "The number of beds for athletes."
+    beds: Int
+    "The year the centre opened."
+    openedYear: Int
+    "The street address."
+    address: String
+    "The locality of the postal code, such as Matosinhos."
+    locality: String
+    "The municipality, such as Porto."
+    municipality: String
+    "The district, such as Porto or Faro."
+    district: String
+    "The website."
+    website: String
+}
+
+"A page of TurismoSurfReserve records: how many match the arguments, and the first of them."
+type TurismoSurfReservePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoSurfReserve!]
+}
+
+"A wave of the World Surfing Reserve of Ericeira."
+type TurismoSurfReserve {
+    "The name, such as Reserva Mundial de Surf da Ericeira - Pedra Branca."
+    name: String
+    "The beach, such as Praia da Empa."
+    beach: String
+    "The name of the wave, such as Pedra Branca."
+    wave: String
+    "The year the reserve was classified."
+    classifiedYear: Int
+    "The parish (freguesia) within the municipality."
+    parish: String
+    "The municipality, such as Porto."
+    municipality: String
+    "The website."
+    website: String
+}
+
+"A page of TurismoSurfSpot records: how many match the arguments, and the first of them."
+type TurismoSurfSpotPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoSurfSpot!]
+}
+
+"A surf spot."
+type TurismoSurfSpot {
+    "The name of the spot, such as Moledo do Minho."
+    name: String
+    "Sim (yes) when the spot holds surfing championships, and Não (no) otherwise."
+    championships: String
+    "The locality, such as Moledo."
+    locality: String
+    "The parish (freguesia) within the municipality."
+    parish: String
+    "The municipality, such as Porto."
+    municipality: String
+    "The district, such as Porto or Faro."
+    district: String
+    "The website."
+    website: String
+}
+
+"A page of TurismoBlueFlagBeach records: how many match the arguments, and the first of them."
+type TurismoBlueFlagBeachPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoBlueFlagBeach!]
+}
+
+"A beach with the Blue Flag."
+type TurismoBlueFlagBeach {
+    "The name of the beach."
+    name: String
+    "The kind of beach: Praia costeira, Praia de transição or Praia interior."
+    kind: String
+    "The municipality's DICO code, such as 1312 for Porto."
+    municipalityCode: Int
+    "The latitude in degrees."
+    latitude: Float
+    "The longitude in degrees."
+    longitude: Float
+}
+
+"A page of TurismoBlueFlagBoat records: how many match the arguments, and the first of them."
+type TurismoBlueFlagBoatPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoBlueFlagBoat!]
+}
+
+"An ecotourism boat with the Blue Flag."
+type TurismoBlueFlagBoat {
+    "The name of the boat, such as Sun Boat I."
+    name: String
+    "The latitude of its home port in degrees."
+    latitude: Float
+    "The longitude of its home port in degrees."
+    longitude: Float
+}
+
+"A page of TurismoBlueFlagMarina records: how many match the arguments, and the first of them."
+type TurismoBlueFlagMarinaPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoBlueFlagMarina!]
+}
+
+"A marina or recreational port with the Blue Flag."
+type TurismoBlueFlagMarina {
+    "The name of the marina, such as Marina de Albufeira."
+    name: String
+    "The latitude in degrees."
+    latitude: Float
+    "The longitude in degrees."
+    longitude: Float
+}
+
+"A page of TurismoMarina records: how many match the arguments, and the first of them."
+type TurismoMarinaPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoMarina!]
+}
+
+"A marina, recreational port or dock."
+type TurismoMarina {
+    "The name, such as Amieira Marina."
+    name: String
+    "The kind: Marina, PortoRecreio or Doca."
+    kind: String
+    "Fluvial for a marina on a river, Oceanica for one on the sea."
+    waters: String
+    "The number of berths."
+    berths: Int
+    "The largest draught a boat at its berths can have, in metres."
+    maxDraughtMetres: Float
+    "The longest boat its berths take, in metres."
+    maxLengthMetres: Float
+    "Sim (yes) when it has the Blue Flag, and Não (no) otherwise."
+    blueFlag: String
+    "The body that manages it."
+    manager: String
+    "The locality of the postal code, such as Matosinhos."
+    locality: String
+    "The municipality, such as Porto."
+    municipality: String
+    "The district, such as Porto or Faro."
+    district: String
+    "The website."
+    website: String
+}
+
+"A page of TurismoCruiseTerminal records: how many match the arguments, and the first of them."
+type TurismoCruiseTerminalPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoCruiseTerminal!]
+}
+
+"A cruise ship terminal."
+type TurismoCruiseTerminal {
+    "The name of the terminal, such as Terminal de Cruzeiros de Leixões."
+    name: String
+    "The port authority that manages it."
+    manager: String
+    "The port, such as Leixões."
+    port: String
+    "The length of the quay in metres."
+    quayMetres: Float
+    "The depth alongside, in metres below chart datum, such as -10m ZH."
+    depth: String
+    "The locality, such as Leixões."
+    locality: String
+    "The municipality, such as Porto."
+    municipality: String
+    "The district, such as Porto or Faro."
+    district: String
+    "The website."
+    website: String
+}
+
+"A page of TurismoNauticalStation records: how many match the arguments, and the first of them."
+type TurismoNauticalStationPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoNauticalStation!]
+}
+
+"A nautical station and its head office."
+type TurismoNauticalStation {
+    "The name of the station, such as ENA - Estação Náutica de Aveiro."
+    name: String
+    "The body that coordinates the station, such as a town council."
+    coordinator: String
+    "The address of its head office."
+    headquarters: String
+    "The municipalities the station covers."
+    municipalities: String
+    "The districts it covers, separated by semicolons."
+    district: String
+    "The NUTS III region, such as Região de Aveiro."
+    region: String
+}
+
+"A page of TurismoNauticalStationArea records: how many match the arguments, and the first of them."
+type TurismoNauticalStationAreaPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoNauticalStationArea!]
+}
+
+"The area of a nautical station."
+type TurismoNauticalStationArea {
+    "The name of the station, such as ENA - Estação Náutica de Aveiro."
+    name: String
+    "The body that coordinates the station, such as a town council."
+    coordinator: String
+    "The address of its head office."
+    headquarters: String
+    "The municipalities the station covers."
+    municipalities: String
+    "The districts it covers, separated by semicolons."
+    district: String
+    "The NUTS III region, such as Região de Aveiro."
+    region: String
+}
+
+"A page of TurismoHotelSchool records: how many match the arguments, and the first of them."
+type TurismoHotelSchoolPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoHotelSchool!]
+}
+
+"A hotel and tourism school of Turismo de Portugal."
+type TurismoHotelSchool {
+    "The name of the school, such as Escola de Hotelaria e Turismo do Porto."
+    name: String
+    "The number of students the school takes."
+    students: Int
+    "Its specialised technology courses (CET), such as Gestão Hoteleira."
+    technologyCourses: String
+    "Its dual courses, with training on the job."
+    dualCourses: String
+    "Sim (yes) when the school runs a training hotel, and Não (no) otherwise."
+    trainingHotel: String
+    "The number of beds of its training hotel."
+    hotelBeds: Int
+    "Sim (yes) when the school runs a training restaurant, and Não (no) otherwise."
+    trainingRestaurant: String
+    "The number of seats in its auditorium."
+    auditoriumSeats: Int
+    "The street address."
+    address: String
+    "The postal code, such as 4000-322."
+    postalCode: String
+    "The municipality, such as Porto."
+    municipality: String
+    "The district, such as Porto or Faro."
+    district: String
+}
+
+"A page of TurismoThermalSpa records: how many match the arguments, and the first of them."
+type TurismoThermalSpaPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoThermalSpa!]
+}
+
+"A thermal spa."
+type TurismoThermalSpa {
+    "The name of the spa, such as Banhos de Alcafache."
+    name: String
+    "The company that runs the spa."
+    operator: String
+    "The illnesses its waters treat, such as respiratory, rheumatic and musculoskeletal ones."
+    treats: String
+    "Sim (yes) when it offers wellness programmes, and Não (no) otherwise."
+    wellness: String
+    "The street address."
+    address: String
+    "The postal code, such as 4000-322."
+    postalCode: String
+    "The locality of the postal code, such as Matosinhos."
+    locality: String
+    "The municipality, such as Porto."
+    municipality: String
+    "The district, such as Porto or Faro."
+    district: String
+    "A link to its web page, written as an HTML anchor."
+    website: String
+}
+
+"A page of TurismoMountainBikeCentre records: how many match the arguments, and the first of them."
+type TurismoMountainBikeCentrePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoMountainBikeCentre!]
+}
+
+"A mountain bike centre."
+type TurismoMountainBikeCentre {
+    "The name of the centre, such as Odemira - Porta Santa Clara-a-Velha."
+    name: String
+    "The parish (freguesia) within the municipality."
+    parish: String
+    "The municipality, such as Porto."
+    municipality: String
+    "The district, such as Porto or Faro."
+    district: String
+    "The latitude in degrees."
+    latitude: Float
+    "The longitude in degrees."
+    longitude: Float
+}
+
+"A page of TurismoFatimaWay records: how many match the arguments, and the first of them."
+type TurismoFatimaWayPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoFatimaWay!]
+}
+
+"A pilgrim way to Fátima."
+type TurismoFatimaWay {
+    "The name of the way, such as Rota Carmelita."
+    name: String
+    "The total length in kilometres."
+    lengthKm: Int
+    "The number of daily stages."
+    stages: Int
+    "A link to its web page, written as an HTML anchor."
+    website: String
+}
+
+"A page of TurismoSantiagoWay records: how many match the arguments, and the first of them."
+type TurismoSantiagoWayPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoSantiagoWay!]
+}
+
+"A Portuguese way to Santiago de Compostela."
+type TurismoSantiagoWay {
+    "The name of the way, such as Caminho da Costa."
+    name: String
+    "The total length in kilometres."
+    lengthKm: Int
+    "The number of daily stages."
+    stages: Int
+    "A link to its web page, written as an HTML anchor."
+    website: String
+}
+
+"A page of TurismoCyclingGreenway records: how many match the arguments, and the first of them."
+type TurismoCyclingGreenwayPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoCyclingGreenway!]
+}
+
+"A greenway for cycling."
+type TurismoCyclingGreenway {
+    "The name of the route, such as Ecopista de Guimarães."
+    name: String
+    "The total length in kilometres."
+    lengthKm: Int
+    "Sim (yes) when the route is for walking, and Não (no) otherwise."
+    walking: String
+    "Sim (yes) when the route is for cycling, and Não (no) otherwise."
+    cycling: String
+    "The website."
+    website: String
+}
+
+"A page of TurismoWalkingGreenway records: how many match the arguments, and the first of them."
+type TurismoWalkingGreenwayPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoWalkingGreenway!]
+}
+
+"A greenway for walking."
+type TurismoWalkingGreenway {
+    "The name of the route, such as Ecopista do Dão."
+    name: String
+    "The total length in kilometres."
+    lengthKm: Int
+    "Sim (yes) when the route is for walking, and Não (no) otherwise."
+    walking: String
+    "Sim (yes) when the route is for cycling, and Não (no) otherwise."
+    cycling: String
+    "The website."
+    website: String
+}
+
+"A page of TurismoEuroveloRoute records: how many match the arguments, and the first of them."
+type TurismoEuroveloRoutePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoEuroveloRoute!]
+}
+
+"A stretch of a EuroVelo cycle route."
+type TurismoEuroveloRoute {
+    "The name of the route, such as Costa Atlântica."
+    name: String
+    "The total length in kilometres."
+    lengthKm: Int
+    "Sim (yes) when the route is for walking, and Não (no) otherwise."
+    walking: String
+    "Sim (yes) when the route is for cycling, and Não (no) otherwise."
+    cycling: String
+    "The website."
+    website: String
+}
+
+"A page of TurismoLongCyclingRoute records: how many match the arguments, and the first of them."
+type TurismoLongCyclingRoutePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoLongCyclingRoute!]
+}
+
+"A long-distance cycling route."
+type TurismoLongCyclingRoute {
+    "The name of the route, such as GR22."
+    name: String
+    "The total length in kilometres."
+    lengthKm: Int
+    "Sim (yes) when the route is for walking, and Não (no) otherwise."
+    walking: String
+    "Sim (yes) when the route is for cycling, and Não (no) otherwise."
+    cycling: String
+    "The website."
+    website: String
+}
+
+"A page of TurismoLongWalkingRoute records: how many match the arguments, and the first of them."
+type TurismoLongWalkingRoutePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoLongWalkingRoute!]
+}
+
+"A long-distance hiking trail."
+type TurismoLongWalkingRoute {
+    "The name of the route, such as GR45."
+    name: String
+    "The total length in kilometres."
+    lengthKm: Int
+    "Sim (yes) when the route is for walking, and Não (no) otherwise."
+    walking: String
+    "Sim (yes) when the route is for cycling, and Não (no) otherwise."
+    cycling: String
+    "The website."
+    website: String
+}
+
+"A page of TurismoOtherCyclingRoute records: how many match the arguments, and the first of them."
+type TurismoOtherCyclingRoutePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoOtherCyclingRoute!]
+}
+
+"A cycling route."
+type TurismoOtherCyclingRoute {
+    "The name of the route, such as Ecovia."
+    name: String
+    "The total length in kilometres."
+    lengthKm: Int
+    "Sim (yes) when the route is for walking, and Não (no) otherwise."
+    walking: String
+    "Sim (yes) when the route is for cycling, and Não (no) otherwise."
+    cycling: String
+    "The website."
+    website: String
+}
+
+"A page of TurismoOtherWalkingRoute records: how many match the arguments, and the first of them."
+type TurismoOtherWalkingRoutePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoOtherWalkingRoute!]
+}
+
+"A walking route."
+type TurismoOtherWalkingRoute {
+    "The name of the route, such as Rota Vicentina."
+    name: String
+    "The total length in kilometres."
+    lengthKm: Int
+    "Sim (yes) when the route is for walking, and Não (no) otherwise."
+    walking: String
+    "Sim (yes) when the route is for cycling, and Não (no) otherwise."
+    cycling: String
+    "The website."
+    website: String
+}
+
+"A page of TurismoUnescoWorldHeritageSite records: how many match the arguments, and the first of them."
+type TurismoUnescoWorldHeritageSitePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 200."
+    items: [TurismoUnescoWorldHeritageSite!]
+}
+
+"A UNESCO World Heritage site."
+type TurismoUnescoWorldHeritageSite {
+    "The Portuguese name of the site, such as Santuário do Bom Jesus."
+    name: String
+    "A link to its web page, written as an HTML anchor."
+    website: String
+}

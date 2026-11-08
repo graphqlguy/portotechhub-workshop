@@ -1,0 +1,5513 @@
+# The transparency portal of the Portuguese National Health Service (SNS), transparencia.sns.gov.pt: monthly and 
+# yearly figures on hospitals, primary care, emergencies, medicines, staff, money and public health, mostly for 
+# mainland Portugal, with one root field for each of its 149 datasets. A generator outside the repository writes 
+# this file and sns/opendatasoft.json; the names and descriptions are written for the model.
+
+extend type Query {
+    """
+    Hospital emergency visits by type (general, paediatric, obstetric, psychiatric), by hospital and month,
+    2013 to August 2026. The counts add up from 1 January.
+    """
+    snsEmergencyVisitsByType(
+        """
+        Words of the health region's name, such as Norte for Região de Saúde Norte, or Lisboa e Vale do Tejo.
+        """
+        region: String
+        "Words of the hospital's name, such as Santo António."
+        hospital: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-08."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsEmergencyVisitsByTypePage
+
+    """
+    Medical outpatient consultations in public hospitals, by hospital and month, 2013 to August 2026. The
+    counts add up from 1 January.
+    """
+    snsHospitalConsultations(
+        """
+        Words of the health region's name, such as Norte for Região de Saúde Norte, or Lisboa e Vale do Tejo.
+        """
+        region: String
+        "Words of the hospital's name, such as Santo António."
+        hospital: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-08."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsHospitalConsultationsPage
+
+    """
+    Telemedicine (live video) consultations in public hospitals, by hospital and month, 2013 to August 2026.
+    The counts add up from 1 January.
+    """
+    snsTelemedicineConsultations(
+        """
+        Words of the health region's name, such as Norte for Região de Saúde Norte, or Lisboa e Vale do Tejo.
+        """
+        region: String
+        "Words of the hospital's name, such as Santo António."
+        hospital: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-08."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsTelemedicineConsultationsPage
+
+    """
+    Nutrition consultations in public hospitals, by hospital and month, 2018 to August 2026. The counts add up
+    from 1 January.
+    """
+    snsNutritionConsultations(
+        """
+        Words of the health region's name, such as Norte for Região de Saúde Norte, or Lisboa e Vale do Tejo.
+        """
+        region: String
+        "Words of the hospital's name, such as Santo António."
+        hospital: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-08."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsNutritionConsultationsPage
+
+    """
+    Psychology consultations in public hospitals, by hospital and month, 2018 to August 2026. The counts add
+    up from 1 January.
+    """
+    snsPsychologyConsultations(
+        """
+        Words of the health region's name, such as Norte for Região de Saúde Norte, or Lisboa e Vale do Tejo.
+        """
+        region: String
+        "Words of the hospital's name, such as Santo António."
+        hospital: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-08."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsPsychologyConsultationsPage
+
+    """
+    First hospital consultations held within the guaranteed time (TMRG), by hospital and month, 2013 to August
+    2026. The figures count from 1 January.
+    """
+    snsFirstConsultationsOnTime(
+        """
+        Words of the health region's name, such as Norte for Região de Saúde Norte, or Lisboa e Vale do Tejo.
+        """
+        region: String
+        "Words of the hospital's name, such as Santo António."
+        hospital: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-08."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsFirstConsultationsOnTimePage
+
+    """
+    Surgical operations in public hospitals, planned and urgent, by hospital and month, 2013 to August 2026.
+    The counts add up from 1 January.
+    """
+    snsSurgeries(
+        """
+        Words of the health region's name, such as Norte for Região de Saúde Norte, or Lisboa e Vale do Tejo.
+        """
+        region: String
+        "Words of the hospital's name, such as Santo António."
+        hospital: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-08."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsSurgeriesPage
+
+    """
+    The share of eligible planned operations done as day surgery, by hospital and month, 2013 to August 2026.
+    The figures count from 1 January.
+    """
+    snsDaySurgeryShare(
+        """
+        Words of the health region's name, such as Norte for Região de Saúde Norte, or Lisboa e Vale do Tejo.
+        """
+        region: String
+        "Words of the hospital's name, such as Santo António."
+        hospital: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-08."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsDaySurgerySharePage
+
+    """
+    Average days inpatients wait before a planned operation, by hospital and month, 2013 to August 2026. The
+    figures cover the year since 1 January.
+    """
+    snsDaysBeforeSurgery(
+        """
+        Words of the health region's name, such as Norte for Região de Saúde Norte, or Lisboa e Vale do Tejo.
+        """
+        region: String
+        "Words of the hospital's name, such as Santo António."
+        hospital: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-08."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsDaysBeforeSurgeryPage
+
+    """
+    Hip fractures of patients aged 65 or more operated within 48 hours, by hospital and month, 2013 to August
+    2026. The figures count from 1 January.
+    """
+    snsHipFractureSurgeryWithin48h(
+        """
+        Words of the health region's name, such as Norte for Região de Saúde Norte, or Lisboa e Vale do Tejo.
+        """
+        region: String
+        "Words of the hospital's name, such as Santo António."
+        hospital: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-08."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsHipFractureSurgeryWithin48hPage
+
+    """
+    Births and caesarean sections in public hospitals, by hospital and month, 2013 to August 2026. The counts
+    add up from 1 January.
+    """
+    snsBirths(
+        """
+        Words of the health region's name, such as Norte for Região de Saúde Norte, or Lisboa e Vale do Tejo.
+        """
+        region: String
+        "Words of the hospital's name, such as Santo António."
+        hospital: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-08."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsBirthsPage
+
+    """
+    Inpatients discharged and inpatient days, by hospital, kind of specialty and month, 2015 to August 2026.
+    The counts add up from 1 January.
+    """
+    snsInpatientActivity(
+        """
+        Words of the health region's name, such as Norte for Região de Saúde Norte, or Lisboa e Vale do Tejo.
+        """
+        region: String
+        "Words of the hospital's name, such as Santo António."
+        hospital: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-08."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsInpatientActivityPage
+
+    """
+    Inpatient bed occupancy, by hospital and month, 2013 to August 2026. The days and the rate cover the year
+    since 1 January.
+    """
+    snsBedOccupancy(
+        """
+        Words of the health region's name, such as Norte for Região de Saúde Norte, or Lisboa e Vale do Tejo.
+        """
+        region: String
+        "Words of the hospital's name, such as Santo António."
+        hospital: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-08."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsBedOccupancyPage
+
+    "Beds for acute patients, by hospital, type of bed and month, 2015 to August 2026."
+    snsHospitalBeds(
+        """
+        Words of the health region's name, such as Norte for Região de Saúde Norte, or Lisboa e Vale do Tejo.
+        """
+        region: String
+        "Words of the hospital's name, such as Santo António."
+        hospital: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-08."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsHospitalBedsPage
+
+    "Percent of stroke patients dead within 30 days, by hospital and month, 2013 to August 2026."
+    snsStrokeMortality(
+        """
+        Words of the health region's name, such as Norte for Região de Saúde Norte, or Lisboa e Vale do Tejo.
+        """
+        region: String
+        "Words of the hospital's name, such as Santo António."
+        hospital: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-08."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsStrokeMortalityPage
+
+    """
+    Patients waiting for surgery and the share within the guaranteed time of 180 days (TMRG), by hospital at
+    the end of each month, 2018 to August 2026.
+    """
+    snsSurgeryWaitList180Days(
+        """
+        Words of the health region's name, such as Norte for Região de Saúde Norte, or Lisboa e Vale do Tejo.
+        """
+        region: String
+        "Words of the hospital's name, such as Santo António."
+        hospital: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-08."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsSurgeryWaitList180DaysPage
+
+    """
+    The older series of patients waiting for surgery within 270 days, by hospital and month, up to January
+    2018.
+    """
+    snsSurgeryWaitList270Days(
+        "Words of the hospital's name, such as Santo António."
+        hospital: String
+        "The first month, such as 2017-01."
+        from: String
+        "The last month, such as 2017-12."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsSurgeryWaitList270DaysPage
+
+    """
+    Overtime and supplements as a share of staff costs, by hospital and month, 2018 to August 2026. The costs
+    are in thousands of euros and add up from 1 January.
+    """
+    snsOvertimeCostShare(
+        """
+        Words of the health region's name, such as Norte for Região de Saúde Norte, or Lisboa e Vale do Tejo.
+        """
+        region: String
+        "Words of the hospital's name, such as Santo António."
+        hospital: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-08."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsOvertimeCostSharePage
+
+    """
+    Operating income, costs, EBITDA and net result in euros, by SNS hospital or body and month, 2014 to August
+    2026. The figures add up from 1 January.
+    """
+    snsInstitutionFinances(
+        """
+        Words of the health region's name, such as Norte for Região de Saúde Norte, or Lisboa e Vale do Tejo.
+        """
+        region: String
+        "Words of the entity's name, such as Santo António."
+        entity: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-08."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsInstitutionFinancesPage
+
+    """
+    Debt in euros to outside suppliers, total, overdue and in arrears, by SNS hospital or body at the end of
+    each month, 2014 to August 2026.
+    """
+    snsSupplierDebt(
+        """
+        Words of the health region's name, such as Norte for Região de Saúde Norte, or Lisboa e Vale do Tejo.
+        """
+        region: String
+        "Words of the entity's name, such as Santo António."
+        entity: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-08."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsSupplierDebtPage
+
+    "Average days to pay suppliers (PMP), by SNS hospital or body and quarter, 2014 to March 2026."
+    snsSupplierPaymentDays(
+        """
+        Words of the health region's name, such as Norte for Região de Saúde Norte, or Lisboa e Vale do Tejo.
+        """
+        region: String
+        "Words of the entity's name, such as Santo António."
+        entity: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-03."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsSupplierPaymentDaysPage
+
+    "Workers by type of employment contract, by SNS body and month, 2014 to October 2026."
+    snsWorkersByContract(
+        """
+        Words of the health region's name, such as Norte for Região de Saúde Norte, or Lisboa e Vale do Tejo.
+        """
+        region: String
+        "Words of the entity's name, such as Santo António."
+        entity: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-10."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsWorkersByContractPage
+
+    """
+    Workers by professional group, such as doctors and nurses, by SNS body and month, December 2014 to
+    September 2026.
+    """
+    snsWorkersByProfession(
+        """
+        Words of the health region's name, such as Norte for Região de Saúde Norte, or Lisboa e Vale do Tejo.
+        """
+        region: String
+        "Words of the entity's name, such as Santo António."
+        entity: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-09."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsWorkersByProfessionPage
+
+    """
+    Days of absence from work by reason, such as illness or strike, by SNS body and month, 2014 to October
+    2026. The figures add up from 1 January.
+    """
+    snsWorkAbsenceDays(
+        """
+        Words of the health region's name, such as Norte for Região de Saúde Norte, or Lisboa e Vale do Tejo.
+        """
+        region: String
+        "Words of the entity's name, such as Santo António."
+        entity: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-10."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsWorkAbsenceDaysPage
+
+    """
+    Days away on outside training by professional group, by SNS body and month, 2014 to October 2026. Seven
+    hours make a day. The figures add up from 1 January.
+    """
+    snsTrainingAbsenceDays(
+        """
+        Words of the health region's name, such as Norte for Região de Saúde Norte, or Lisboa e Vale do Tejo.
+        """
+        region: String
+        "Words of the entity's name, such as Santo António."
+        entity: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-10."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsTrainingAbsenceDaysPage
+
+    """
+    Hours of overtime, night work and work on rest days and holidays, by SNS body and month, 2014 to October
+    2026. The figures add up from 1 January.
+    """
+    snsOvertimeAndNightHours(
+        """
+        Words of the health region's name, such as Norte for Região de Saúde Norte, or Lisboa e Vale do Tejo.
+        """
+        region: String
+        "Words of the entity's name, such as Santo António."
+        entity: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-10."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsOvertimeAndNightHoursPage
+
+    "Blood donors, by hospital or IPST and month, December 2010 to December 2023."
+    snsBloodDonors(
+        "Words of the entity's name, such as Santo António."
+        entity: String
+        "The first month, such as 2023-01."
+        from: String
+        "The last month, such as 2023-12."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsBloodDonorsPage
+
+    """
+    Units of whole blood collected, by hospital or IPST, blood group and month, December 2010 to December
+    2023.
+    """
+    snsBloodCollections(
+        "Words of the entity's name, such as Santo António."
+        entity: String
+        "The first month, such as 2023-01."
+        from: String
+        "The last month, such as 2023-12."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsBloodCollectionsPage
+
+    """
+    Average units of red cell concentrate in reserve, by hospital blood bank and blood group, yearly to 2014,
+    then monthly to July 2019.
+    """
+    snsBloodReserves(
+        "Words of the entity's name, such as Santo António."
+        entity: String
+        "The first month, such as 2019-01."
+        from: String
+        "The last month, such as 2019-07."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsBloodReservesPage
+
+    """
+    Digital birth notices and newborns registered as SNS users at birth, by hospital and month, 2016 to
+    October 2026.
+    """
+    snsDigitalBirthNotices(
+        "Words of the hospital's name, such as Santo António."
+        hospital: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-10."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsDigitalBirthNoticesPage
+
+    """
+    The share of antibiotics in all medicines used, in CHNM units, by public hospital and month, 2015 to July
+    2026.
+    """
+    snsAntibioticUse(
+        "Words of the hospital's name, such as Santo António."
+        hospital: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-07."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsAntibioticUsePage
+
+    """
+    The share of carbapenems in antibiotic use, in defined daily doses (DDD), by public hospital and month,
+    2015 to July 2026.
+    """
+    snsCarbapenemUse(
+        "Words of the hospital's name, such as Santo António."
+        hospital: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-07."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsCarbapenemUsePage
+
+    """
+    The share of cephalosporins in antibiotic use, in defined daily doses (DDD), by public hospital and month,
+    2015 to July 2026.
+    """
+    snsCephalosporinUse(
+        "Words of the hospital's name, such as Santo António."
+        hospital: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-07."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsCephalosporinUsePage
+
+    """
+    The share of fluoroquinolones in antibiotic use, in defined daily doses (DDD), by public hospital and
+    month, 2015 to July 2026.
+    """
+    snsFluoroquinoloneUse(
+        "Words of the hospital's name, such as Santo António."
+        hospital: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-07."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsFluoroquinoloneUsePage
+
+    """
+    Use of biosimilar medicines against their reference medicines, by public hospital, active substance and
+    month, 2015 to July 2026.
+    """
+    snsBiosimilarUse(
+        "Words of the hospital's name, such as Santo António."
+        hospital: String
+        "The active substance, such as Adalimumab."
+        substance: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-07."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsBiosimilarUsePage
+
+    """
+    Monthly cost per patient of HIV medicines, by hospital, mostly one December record a year, 2016 to January
+    2026.
+    """
+    snsHivTreatmentCost(
+        "Words of the hospital's name, such as Santo António."
+        hospital: String
+        "The first month, such as 2025-01."
+        from: String
+        "The last month, such as 2026-01."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsHivTreatmentCostPage
+
+    """
+    The value labelled Total UF (functional units of primary care), by primary care area and month, 2015 to
+    September 2026. Its values, such as 3168, look too large for a count of units.
+    """
+    snsPrimaryCareUnits(
+        "Words of the primary care area's name, such as Coimbra."
+        area: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-09."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsPrimaryCareUnitsPage
+
+    """
+    Primary care nursing contacts, in person and remote, by primary care area and month, 2015 to September
+    2026.
+    """
+    snsPrimaryCareNursingContacts(
+        "Words of the primary care area's name, such as Coimbra."
+        area: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-09."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsPrimaryCareNursingContactsPage
+
+    """
+    Medical consultations in health centres, in person, remote and at home, by primary care area and month,
+    2015 to September 2026.
+    """
+    snsPrimaryCareConsultations(
+        "Words of the primary care area's name, such as Coimbra."
+        area: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-09."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsPrimaryCareConsultationsPage
+
+    """
+    The percent of registered patients seen by a doctor in health centres in one and in three years, by
+    primary care area and month, 2015 to September 2026. The one-year rate counts from 1 January.
+    """
+    snsPrimaryCareAccess(
+        "Words of the primary care area's name, such as Coimbra."
+        area: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-09."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsPrimaryCareAccessPage
+
+    """
+    Breast, cervical and colorectal cancer screening of registered patients, by primary care area and month,
+    2015 to September 2026. The figures grow through the year and fall back in January.
+    """
+    snsCancerScreening(
+        "Words of the primary care area's name, such as Coimbra."
+        area: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-09."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsCancerScreeningPage
+
+    """
+    Follow-up of registered patients with diabetes, by primary care area and month, 2015 to September 2026.
+    The figures grow through the year and fall back in January.
+    """
+    snsDiabetesCare(
+        "Words of the primary care area's name, such as Coimbra."
+        area: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-09."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsDiabetesCarePage
+
+    """
+    Registered patients under 65 with hypertension controlled below 150/90 mmHg, by primary care area and
+    month, 2015 to September 2026. The figures grow through the year and fall back in January.
+    """
+    snsHypertensionCare(
+        "Words of the primary care area's name, such as Coimbra."
+        area: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-09."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsHypertensionCarePage
+
+    """
+    Newborns with a doctor's check-up within 28 days and a nurse's home visit within 15 days, by primary care
+    area and month, 2015 to September 2026.
+    """
+    snsNewbornCare(
+        "Words of the primary care area's name, such as Coimbra."
+        area: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-09."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsNewbornCarePage
+
+    """
+    Patients registered in primary care and with a family doctor (MdF), by group of health centres (ACES) and
+    month, 2016 to June 2026. snsPrimaryCareRegistrations continues it.
+    """
+    snsRegisteredPatientsByAces(
+        "Words of the ACES name, such as Alto Minho."
+        aces: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-06."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsRegisteredPatientsByAcesPage
+
+    """
+    Patients registered in primary care and with a family doctor (MdF), by ULS and nationality. The portal
+    keeps only the last three months, July to September 2026.
+    """
+    snsPrimaryCareRegistrations(
+        "Words of the ULS name, such as Alto Ave."
+        uls: String
+        "The first month, such as 2026-07."
+        from: String
+        "The last month, such as 2026-09."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsPrimaryCareRegistrationsPage
+
+    """
+    People in the National Register of SNS Users (RNU) by record status, region, nationality, age group and
+    payer. The portal keeps only the last three months, July to September 2026.
+    """
+    snsNationalPatientRegister(
+        "The first month, such as 2026-07."
+        from: String
+        "The last month, such as 2026-09."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsNationalPatientRegisterPage
+
+    """
+    Living wills (advance directives) registered with the SNS, by group of health centres and month, 2014 to
+    October 2026.
+    """
+    snsLivingWills(
+        "Words of the name, such as Alto Minho."
+        entity: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-10."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsLivingWillsPage
+
+    """
+    Dental cheques issued and used, and treatments, in the oral health programme, by target group and month,
+    2008 to October 2026. The counts add up from 1 January.
+    """
+    snsDentalCheques(
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-10."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsDentalChequesPage
+
+    """
+    Oral health referrals issued in health centres (SOCSP), by area, sex, age group and month, September 2016
+    to October 2026. The counts add up from 1 January.
+    """
+    snsOralHealthReferrals(
+        "Words of the primary care area's name, such as Coimbra."
+        area: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-10."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsOralHealthReferralsPage
+
+    """
+    Patients seen for oral health in health centres (SOCSP), by area, sex, age group and month, September 2016
+    to October 2026. The counts add up from 1 January.
+    """
+    snsOralHealthPatients(
+        "Words of the primary care area's name, such as Coimbra."
+        area: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-10."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsOralHealthPatientsPage
+
+    """
+    Oral health treatments in health centres (SOCSP), by area, sex, age group and month, September 2016 to
+    October 2026. The counts add up from 1 January.
+    """
+    snsOralHealthTreatments(
+        "Words of the primary care area's name, such as Coimbra."
+        area: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-10."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsOralHealthTreatmentsPage
+
+    "Primary care consultations by region and day, November 2016 to November 2026."
+    snsPrimaryCareDailyConsultations(
+        """
+        Words of the health region's name, such as Norte for Região de Saúde Norte, or Lisboa e Vale do Tejo.
+        """
+        region: String
+        "The first day, such as 2026-10-01."
+        from: String
+        "The last day, such as 2026-10-31."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsPrimaryCareDailyConsultationsPage
+
+    "Primary care consultations, with those for flu, by region and day, November 2016 to November 2026."
+    snsPrimaryCareFluConsultations(
+        """
+        Words of the health region's name, such as Norte for Região de Saúde Norte, or Lisboa e Vale do Tejo.
+        """
+        region: String
+        "The first day, such as 2026-10-01."
+        from: String
+        "The last day, such as 2026-10-31."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsPrimaryCareFluConsultationsPage
+
+    """
+    Electronic prescriptions and the medicine packs prescribed by active substance, by region and month, 2016
+    to September 2026.
+    """
+    snsElectronicPrescriptions(
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-09."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsElectronicPrescriptionsPage
+
+    """
+    Prescriptions dispensed at pharmacies and the SNS reimbursement, by region and month, 2015 to August 2026,
+    about three months behind.
+    """
+    snsDispensedPrescriptions(
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-08."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsDispensedPrescriptionsPage
+
+    """
+    Spending in euros on medicines from community pharmacies for SNS patients, by region and month, 2011 to
+    July 2026.
+    """
+    snsPharmacyMedicineSpending(
+        """
+        Words of the health region's name, such as Norte for Região de Saúde Norte, or Lisboa e Vale do Tejo.
+        """
+        region: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-07."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsPharmacyMedicineSpendingPage
+
+    """
+    Spending in euros on medicines in SNS hospitals, by region and month, 2011 to July 2026. December can hold
+    a negative correction.
+    """
+    snsHospitalMedicineSpending(
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-07."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsHospitalMedicineSpendingPage
+
+    """
+    SNS spending in euros on pharmacy medicines by therapeutic group, by region and month, 2011 to July 2026.
+    """
+    snsPharmacySpendingByGroup(
+        "Words of the group, such as cardiovascular."
+        group: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-07."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsPharmacySpendingByGroupPage
+
+    "Market share of generic medicines from community pharmacies, by region and month, 2011 to July 2026."
+    snsGenericMedicineShare(
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-07."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsGenericMedicineSharePage
+
+    """
+    Average retail price in euros of a medicine pack for SNS patients, all and generics, by region and month,
+    2011 to July 2026.
+    """
+    snsMedicinePackPrice(
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-07."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsMedicinePackPricePage
+
+    """
+    Medicine packs prescribed on paper and paperless prescriptions, nationwide by day, September 2015 to
+    November 2026.
+    """
+    snsPaperlessPrescriptions(
+        "The first day, such as 2026-10-01."
+        from: String
+        "The last day, such as 2026-10-31."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsPaperlessPrescriptionsPage
+
+    """
+    Private prescribers outside the SNS with the most paperless prescriptions, by day. The portal keeps only
+    the last week.
+    """
+    snsPrivatePaperlessPrescribers(
+        "Words of the prescriber's name."
+        prescriber: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsPrivatePaperlessPrescribersPage
+
+    """
+    Beds, admissions, discharges and occupancy of the continuing care network (RNCCI), by region, care type
+    and month, 2022 to September 2026.
+    """
+    snsContinuingCareActivity(
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-09."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsContinuingCareActivityPage
+
+    """
+    Patients waiting for a place in the continuing care network (RNCCI), by region, care type and day,
+    December 2016 to November 2026.
+    """
+    snsContinuingCareWaitingList(
+        """
+        Words of the health region's name, such as Norte for Região de Saúde Norte, or Lisboa e Vale do Tejo.
+        """
+        region: String
+        "The first day, such as 2026-10-01."
+        from: String
+        "The last day, such as 2026-10-31."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsContinuingCareWaitingListPage
+
+    """
+    Patients referred to the continuing care network (RNCCI) by hospitals and health centres, by referrer,
+    care type and month, 2016 to September 2026.
+    """
+    snsContinuingCareReferrals(
+        "Words of the referrer's name, such as Braga."
+        referrer: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-09."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsContinuingCareReferralsPage
+
+    """
+    Where patients went on leaving the continuing care network (RNCCI), by region, care type and month, 2016
+    to September 2026.
+    """
+    snsContinuingCareDischarges(
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-09."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsContinuingCareDischargesPage
+
+    """
+    Patients referred to and admitted into the continuing care network (RNCCI), by region and month, up to
+    December 2021. snsContinuingCareActivity continues it.
+    """
+    snsContinuingCareAdmissions(
+        "The first month, such as 2021-01."
+        from: String
+        "The last month, such as 2021-12."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsContinuingCareAdmissionsPage
+
+    """
+    Percent of falls and of new pressure ulcers in the continuing care network (RNCCI), by region and
+    half-year, 2015 to the first half of 2026.
+    """
+    snsContinuingCareFallsAndUlcers(
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsContinuingCareFallsAndUlcersPage
+
+    """
+    Outpatients treated for addictions, by type (drugs, alcohol, gambling) and month, 2016 to September 2026.
+    The counts add up from 1 January.
+    """
+    snsAddictionTreatment(
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-09."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsAddictionTreatmentPage
+
+    """
+    New outpatients treated for illicit drugs and whether they inject, nationwide by month, 2016 to September
+    2026. The counts add up from 1 January.
+    """
+    snsAddictionNewPatients(
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-09."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsAddictionNewPatientsPage
+
+    """
+    The main substance of new addiction outpatients, nationwide by month, 2016 to September 2026. The counts
+    add up from 1 January.
+    """
+    snsAddictionSubstances(
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-09."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsAddictionSubstancesPage
+
+    """
+    Administrative cases for drug use under the decriminalisation law, nationwide by month, 2012 to September
+    2026. The counts add up from 1 January.
+    """
+    snsDrugDeterrenceCases(
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-09."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsDrugDeterrenceCasesPage
+
+    """
+    Medical consultations done for the SNS by social sector providers, such as Misericórdias, by provider and
+    month, 2024 to September 2026.
+    """
+    snsSocialSectorConsultations(
+        "Words of the provider's name."
+        provider: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-09."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsSocialSectorConsultationsPage
+
+    """
+    Operations done for the SNS by private (SIGIC) and social sector providers, by provider and month, up to
+    September 2026.
+    """
+    snsSocialSectorSurgeries(
+        "Words of the provider's name."
+        provider: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-09."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsSocialSectorSurgeriesPage
+
+    """
+    Emergency visits handled for the SNS by social sector providers, by provider and month, 2024 to September
+    2026.
+    """
+    snsSocialSectorEmergencyVisits(
+        "Words of the provider's name."
+        provider: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-09."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsSocialSectorEmergencyVisitsPage
+
+    """
+    Sick-leave certificates (CIT) created and active, by scheme, sex, age group and day, 2023 to September
+    2026.
+    """
+    snsSickLeaveCertificates(
+        "The first day, such as 2026-09-01."
+        from: String
+        "The last day, such as 2026-09-30."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsSickLeaveCertificatesPage
+
+    """
+    Self-declarations of illness (ADD), which excuse up to three days of work, by channel, sex, age group and
+    day, May 2023 to September 2026.
+    """
+    snsSickSelfDeclarations(
+        "The first day, such as 2026-09-01."
+        from: String
+        "The last day, such as 2026-09-30."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsSickSelfDeclarationsPage
+
+    """
+    Death certificates by health institution and month of certification, 2014 to October 2026. Certification
+    can come after the day of death.
+    """
+    snsDeathCertificatesByInstitution(
+        "Words of the entity's name, such as Santo António."
+        institution: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-10."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsDeathCertificatesByInstitutionPage
+
+    "Death certificates nationwide by day of certification, 2014 to October 2026."
+    snsDailyDeathCertificates(
+        "The first day, such as 2026-10-01."
+        from: String
+        "The last day, such as 2026-10-31."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsDailyDeathCertificatesPage
+
+    "Calls answered by INEM's Poison Information Centre (CIAV), by month, 2012 to September 2026."
+    snsPoisonCentreCalls(
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-09."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsPoisonCentreCallsPage
+
+    """
+    Emergency calls that INEM's dispatch centre (CODU) passed to the SNS 24 line, by month, 2012 to September
+    2026.
+    """
+    snsEmergencyCallsToSns24(
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-09."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsEmergencyCallsToSns24Page
+
+    """
+    Calls answered by INEM's psychological crisis centre (CAPIC) and the time to answer, by month, 2012 to
+    September 2026.
+    """
+    snsCrisisLineCalls(
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-09."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsCrisisLineCallsPage
+
+    "Medical advice by INEM for emergencies on board ships (CODU Mar), by month, 2013 to September 2026."
+    snsMaritimeEmergencyCalls(
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-09."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsMaritimeEmergencyCallsPage
+
+    """
+    Emergency calls answered by INEM's dispatch centres (CODU), nationwide by day, 2012 to November 2026.
+    """
+    snsEmergencyCallsAnswered(
+        "The first day, such as 2026-10-01."
+        from: String
+        "The last day, such as 2026-10-31."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsEmergencyCallsAnsweredPage
+
+    "Dispatches of INEM emergency vehicles by type, nationwide by day, November 2016 to November 2026."
+    snsEmergencyVehicleDispatches(
+        "The first day, such as 2026-10-01."
+        from: String
+        "The last day, such as 2026-10-31."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsEmergencyVehicleDispatchesPage
+
+    """
+    Emergency incidents handled by INEM by priority, from 1 (life at risk) to 5 (passed to SNS 24), nationwide
+    by day, November 2016 to November 2026.
+    """
+    snsPreHospitalIncidentsByPriority(
+        "The first day, such as 2026-10-01."
+        from: String
+        "The last day, such as 2026-10-31."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsPreHospitalIncidentsByPriorityPage
+
+    """
+    Emergency incidents handled by INEM by type, such as road accident or chest pain, by month, 2013 to
+    September 2026.
+    """
+    snsPreHospitalIncidentsByType(
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-09."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsPreHospitalIncidentsByTypePage
+
+    """
+    Satisfaction with INEM's emergency line and teams, in percent of respondents, by survey question and
+    half-year, 2013 to December 2025.
+    """
+    snsEmergencyCallSatisfaction(
+        "The first month, such as 2025-01."
+        from: String
+        "The last month, such as 2025-12."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsEmergencyCallSatisfactionPage
+
+    """
+    SNS 24 helpline activity by indicator, such as calls answered, answer rate and average wait, by month,
+    April 2020 to June 2026.
+    """
+    snsSns24Activity(
+        "Words of the indicator, such as Atendidas."
+        indicator: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-06."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsSns24ActivityPage
+
+    """
+    Triages by the SNS Grávida line for pregnant women and where it sent them, by ULS and month, December 2024
+    to September 2026.
+    """
+    snsPregnancyLineTriage(
+        "Words of the ULS name, such as Lezíria."
+        uls: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-09."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsPregnancyLineTriagePage
+
+    """
+    Patients with stroke signs on INEM's stroke pathway (Via Verde AVC), by municipality, age, sex, hospital
+    and month, up to February 2024.
+    """
+    snsStrokeAlerts(
+        "The district, such as Porto."
+        district: String
+        "The first month, such as 2023-01."
+        from: String
+        "The last month, such as 2024-02."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsStrokeAlertsPage
+
+    """
+    Patients with an ST-elevation heart attack on INEM's coronary pathway (Via Verde Coronária), by
+    municipality, age, sex, hospital and month, up to February 2024.
+    """
+    snsHeartAttackAlerts(
+        "The district, such as Porto."
+        district: String
+        "The first month, such as 2023-01."
+        from: String
+        "The last month, such as 2024-02."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsHeartAttackAlertsPage
+
+    """
+    Emergency vehicles, such as fire brigade ambulances, with a defibrillator programme (DAE) licensed by
+    INEM, by half-year, June 2023 to June 2026.
+    """
+    snsDefibrillatorVehicles(
+        "The district, such as Faro."
+        district: String
+        "The first month, such as 2026-06."
+        from: String
+        "The last month, such as 2026-06."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsDefibrillatorVehiclesPage
+
+    """
+    Public places, such as shops, schools and sports grounds, with a defibrillator programme (DAE) licensed by
+    INEM, by half-year, June 2023 to June 2026.
+    """
+    snsDefibrillatorPlaces(
+        "The town, such as Porto."
+        town: String
+        "The first month, such as 2026-06."
+        from: String
+        "The last month, such as 2026-06."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsDefibrillatorPlacesPage
+
+    """
+    The emergency departments of Portugal and the services (valências) each offers, with address and access.
+    The list is current and undated.
+    """
+    snsEmergencyDepartmentServices(
+        "The town, such as Porto."
+        town: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsEmergencyDepartmentServicesPage
+
+    """
+    Daily hospital emergency indicators by region, November 2016 to October 2026: estimated visits, the rates
+    admitted and triaged green or blue, and the minutes from triage to a doctor.
+    """
+    snsHospitalEmergencyDaily(
+        "The region, such as ARS Norte, or Portugal Continental."
+        region: String
+        "Words of the indicator, such as espera (waiting)."
+        indicator: String
+        "The first day, such as 2026-10-01."
+        from: String
+        "The last day, such as 2026-10-31."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsHospitalEmergencyDailyPage
+
+    """
+    Daily hospital emergency indicators of the flu season by region, November 2016 to October 2026, with the
+    percent of visits for a respiratory infection.
+    """
+    snsHospitalEmergencyFluDaily(
+        "The region, such as ARS Norte, or Portugal Continental."
+        region: String
+        "Words of the indicator, such as espera (waiting)."
+        indicator: String
+        "The first day, such as 2026-10-01."
+        from: String
+        "The last day, such as 2026-10-31."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsHospitalEmergencyFluDailyPage
+
+    """
+    The daily ÍCARO index of the health risk of heat in mainland Portugal, May 2012 to September 2026. The
+    last three days are provisional.
+    """
+    snsHeatHealthIndex(
+        "The first day, such as 2026-08-01."
+        from: String
+        "The last day, such as 2026-08-31."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsHeatHealthIndexPage
+
+    """
+    The daily FRIESA index of the health risk of extreme cold in Lisboa and Porto, in winter, November 2019 to
+    March 2026.
+    """
+    snsColdHealthIndex(
+        "The first day, such as 2026-01-01."
+        from: String
+        "The last day, such as 2026-03-31."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsColdHealthIndexPage
+
+    """
+    Hospital admission and in-hospital death rates in percent for asthma, COPD and pneumonia, by hospital and
+    quarter, 2019 to 2026.
+    """
+    snsRespiratoryAdmissionRates(
+        "The year, such as 2025."
+        year: String
+        "The quarter: Primeiro, Segundo, Terceiro or Quarto."
+        quarter: String
+        "Words of the hospital's name, such as Santo António."
+        hospital: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsRespiratoryAdmissionRatesPage
+
+    """
+    Hospital admission and in-hospital death rates in percent for diabetes, by hospital and quarter, 2019 to
+    2026.
+    """
+    snsDiabetesAdmissionRates(
+        "The year, such as 2025."
+        year: String
+        "The quarter: Primeiro, Segundo, Terceiro or Quarto."
+        quarter: String
+        "Words of the hospital's name, such as Santo António."
+        hospital: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsDiabetesAdmissionRatesPage
+
+    """
+    Hospital admission and in-hospital death rates in percent for hypertension and heart failure, by hospital
+    and quarter, 2019 to 2026.
+    """
+    snsHeartAdmissionRates(
+        "The year, such as 2025."
+        year: String
+        "The quarter: Primeiro, Segundo, Terceiro or Quarto."
+        quarter: String
+        "Words of the hospital's name, such as Santo António."
+        hospital: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsHeartAdmissionRatesPage
+
+    """
+    Hospital admission and in-hospital death rates in percent, with inpatient days, by hospital, diagnosis
+    chapter and quarter, 2019 to 2026.
+    """
+    snsAdmissionRatesByHospital(
+        "The year, such as 2025."
+        year: String
+        "The quarter: Primeiro, Segundo, Terceiro or Quarto."
+        quarter: String
+        "Words of the hospital's name, such as Santo António."
+        hospital: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsAdmissionRatesByHospitalPage
+
+    """
+    Hospital admission and in-hospital death rates in percent, by region, age group, diagnosis chapter and
+    quarter, 2019 to 2026.
+    """
+    snsAdmissionRatesByAge(
+        "The year, such as 2025."
+        year: String
+        "The quarter: Primeiro, Segundo, Terceiro or Quarto."
+        quarter: String
+        """
+        Words of the health region's name, such as Norte for Região de Saúde Norte, or Lisboa e Vale do Tejo.
+        """
+        region: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsAdmissionRatesByAgePage
+
+    """
+    Hospital admission and in-hospital death rates in percent, by region, sex, diagnosis chapter and quarter,
+    2019 to 2026.
+    """
+    snsAdmissionRatesBySex(
+        "The year, such as 2025."
+        year: String
+        "The quarter: Primeiro, Segundo, Terceiro or Quarto."
+        quarter: String
+        """
+        Words of the health region's name, such as Norte for Região de Saúde Norte, or Lisboa e Vale do Tejo.
+        """
+        region: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsAdmissionRatesBySexPage
+
+    """
+    Hospital admissions, day cases, inpatient days and deaths by hospital, diagnosis chapter, age group, sex
+    and month, 2021 to September 2026.
+    """
+    snsHospitalDischargesByDiagnosis(
+        "Words of the hospital's name, such as Santo António."
+        hospital: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-09."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsHospitalDischargesByDiagnosisPage
+
+    """
+    Patients on haemodialysis and treatments, by dialysis clinic, age group and month, 2014 to September 2026.
+    """
+    snsHaemodialysis(
+        "Words of the clinic's name."
+        clinic: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-09."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsHaemodialysisPage
+
+    "Organs transplanted in Portugal, by organ and quarter, from 2011."
+    snsOrganTransplants(
+        "The year or quarter, such as 2024."
+        quarter: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsOrganTransplantsPage
+
+    "Organs retrieved for transplant from deceased and living donors, by organ and quarter, from 2011."
+    snsOrgansRetrieved(
+        "The year or quarter, such as 2024."
+        quarter: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsOrgansRetrievedPage
+
+    "Organ donors, deceased and living, and per million inhabitants, by quarter from 2011."
+    snsOrganDonors(
+        "The year or quarter, such as 2024."
+        quarter: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsOrganDonorsPage
+
+    """
+    Places for the general training year of new doctors and how many were filled, by institution and year,
+    2020 to 2026.
+    """
+    snsGeneralTrainingPlaces(
+        "The year, such as 2026."
+        year: String
+        "Words of the entity's name, such as Santo António."
+        institution: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsGeneralTrainingPlacesPage
+
+    """
+    Places for doctors' specialty training and how many were filled, by specialty, institution and year, 2020
+    to 2026.
+    """
+    snsSpecialtyTrainingPlaces(
+        "The year, such as 2026."
+        year: String
+        "The specialty, such as Pediatria."
+        specialty: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsSpecialtyTrainingPlacesPage
+
+    "Doctors who completed specialty training, by specialty, institution and year, 2020 to 2025."
+    snsNewSpecialists(
+        "The year, such as 2025."
+        year: String
+        "The specialty, such as Pediatria."
+        specialty: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsNewSpecialistsPage
+
+    """
+    Candidates for the National Access Exam (PNA) to medical residency, exams sat and absences, by year, 2020
+    to 2025.
+    """
+    snsNationalAccessExam(
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsNationalAccessExamPage
+
+    """
+    Candidates admitted to choose a place in general and specialty medical training, by year, 2020 to 2025.
+    """
+    snsResidencyCandidates(
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsResidencyCandidatesPage
+
+    """
+    Confirmed flu cases by virus type in each winter, 1999 to 2024, in percent of cases tested. 2024 is the
+    winter 2023 to 2024.
+    """
+    snsFluVirusTypes(
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsFluVirusTypesPage
+
+    """
+    Respiratory viruses other than flu in flu-like cases each winter, 2012 to 2024, in percent of cases
+    tested.
+    """
+    snsOtherRespiratoryViruses(
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsOtherRespiratoryVirusesPage
+
+    """
+    Flu vaccine coverage in mainland Portugal by age group, from the ECOS survey, each winter, 2002 to 2022,
+    in percent.
+    """
+    snsFluVaccineCoverage(
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsFluVaccineCoveragePage
+
+    """
+    Prevalence of congenital anomalies by body system, by year, 2000 to 2023. The portal says percent, but the
+    values read as cases per 10,000 births.
+    """
+    snsCongenitalAnomalies(
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsCongenitalAnomaliesPage
+
+    "Water samples tested for Legionella by INSA, by source and year, 2013 to 2025."
+    snsLegionellaTesting(
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsLegionellaTestingPage
+
+    "The national newborn screening programme (heel-prick test) at INSA, by year, 2011 to 2025."
+    snsNewbornScreening(
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsNewbornScreeningPage
+
+    "The stock of COVID-19 test kits held by INSA at the end of each month, March 2020 to January 2023."
+    snsCovidTestStock(
+        "The first month, such as 2022-01."
+        from: String
+        "The last month, such as 2023-01."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsCovidTestStockPage
+
+    """
+    COVID-19 test kits distributed from the strategic reserve, by region and month, 2020 to January 2023.
+    """
+    snsCovidTestDistribution(
+        "The first month, such as 2022-01."
+        from: String
+        "The last month, such as 2023-01."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsCovidTestDistributionPage
+
+    """
+    Medicines sent out from the COVID-19 strategic reserve, by region, therapeutic group and month, April 2020
+    to July 2023.
+    """
+    snsReserveMedicineDistribution(
+        "The first month, such as 2023-01."
+        from: String
+        "The last month, such as 2023-07."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsReserveMedicineDistributionPage
+
+    """
+    The central stock of medicines in the COVID-19 strategic reserve, by therapeutic group at the end of each
+    month, March 2020 to December 2023.
+    """
+    snsReserveMedicineStock(
+        "The first month, such as 2023-01."
+        from: String
+        "The last month, such as 2023-12."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsReserveMedicineStockPage
+
+    """
+    The central stock of medical devices and protective equipment in the COVID-19 strategic reserve, by item
+    and month, up to December 2023.
+    """
+    snsReserveEquipmentStock(
+        "The first month, such as 2023-01."
+        from: String
+        "The last month, such as 2023-12."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsReserveEquipmentStockPage
+
+    """
+    Medical devices and protective equipment sent out from the COVID-19 strategic reserve, by item, receiver
+    and month, March 2020 to May 2023.
+    """
+    snsReserveEquipmentDistribution(
+        "The first month, such as 2023-01."
+        from: String
+        "The last month, such as 2023-05."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsReserveEquipmentDistributionPage
+
+    """
+    The SNS consolidated account in millions of euros: the year's budget and the execution, which adds up from
+    1 January, by month, 2014 to August 2026.
+    """
+    snsAccounts(
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-08."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsAccountsPage
+
+    """
+    Savings in euros from central purchases of medicines, by category. Past years hold one December record;
+    the current year's monthly records add up from 1 January.
+    """
+    snsHealthProcurementSavings(
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-10."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsHealthProcurementSavingsPage
+
+    """
+    Savings in euros from central purchases of general goods and services, such as energy, by category. Past
+    years hold one December record; the current year's monthly records add up from 1 January.
+    """
+    snsGeneralProcurementSavings(
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-10."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsGeneralProcurementSavingsPage
+
+    "Framework agreements and dynamic purchasing systems in force for medicines and health goods."
+    snsHealthFrameworkAgreements(
+        "Words of the subject, such as Medicamentos."
+        subject: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsHealthFrameworkAgreementsPage
+
+    """
+    Framework agreements and dynamic purchasing systems in force for general goods and services, such as
+    cybersecurity.
+    """
+    snsGeneralFrameworkAgreements(
+        "Words of the subject, such as Cibersegurança."
+        subject: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsGeneralFrameworkAgreementsPage
+
+    """
+    Public contracts signed by SNS bodies, from the Portal BASE, with buyer, supplier, subject and price, 2008
+    to September 2026.
+    """
+    snsPublicContracts(
+        "Words of the buyer's name, such as Santo António."
+        buyer: String
+        "Words of the supplier's name."
+        supplier: String
+        "Words of the subject, such as ventiladores."
+        subject: String
+        "The first day, such as 2026-01-01."
+        from: String
+        "The last day, such as 2026-09-30."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsPublicContractsPage
+
+    """
+    Non-urgent patient transport paid by each ULS or region: trips, patients and euros billed, by month, 2014
+    to September 2026.
+    """
+    snsNonUrgentTransport(
+        "Words of the payer's name."
+        payer: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-09."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsNonUrgentTransportPage
+
+    """
+    Diagnostic tests and therapies (MCDT) done for the SNS by contracted private providers, by provider, area
+    and month, 2015 to August 2026, about three months behind.
+    """
+    snsContractedExamsByProvider(
+        "Words of the provider's name."
+        provider: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-08."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsContractedExamsByProviderPage
+
+    """
+    Requests for diagnostic tests and therapies (MCDT) done by contracted providers and their cost in euros,
+    by region, area and month, 2015 to August 2026.
+    """
+    snsContractedExamsByArea(
+        "The area, such as Radiologia."
+        area: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-08."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsContractedExamsByAreaPage
+
+    """
+    Accesses to the Electronic Health Record (RSE) in primary care units, by unit and month, 2016 to February
+    2023.
+    """
+    snsHealthRecordUsePrimaryCare(
+        "Words of the unit's name."
+        unit: String
+        "The first month, such as 2022-01."
+        from: String
+        "The last month, such as 2023-02."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsHealthRecordUsePrimaryCarePage
+
+    """
+    Accesses to the Electronic Health Record (RSE) in hospitals, by hospital and month, 2016 to November 2020.
+    """
+    snsHealthRecordUseHospitals(
+        "Words of the hospital's name, such as Santo António."
+        hospital: String
+        "The first month, such as 2020-01."
+        from: String
+        "The last month, such as 2020-11."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsHealthRecordUseHospitalsPage
+
+    "Video teleconsultations on the RSE Live platform, nationwide by month, October 2016 to October 2026."
+    snsRseLiveTeleconsultations(
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-10."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsRseLiveTeleconsultationsPage
+
+    """
+    New sign-ups to the SNS 24 personal area, by group of health centres and day. The portal keeps only the
+    last two weeks.
+    """
+    snsSns24Signups(
+        "The first day, such as 2026-10-21."
+        from: String
+        "The last day, such as 2026-11-04."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsSns24SignupsPage
+
+    """
+    Cards for people with a rare disease (CPDR), which give emergency teams their clinical details, by
+    hospital and month, 2020 to October 2026.
+    """
+    snsRareDiseaseCards(
+        "Words of the hospital's name, such as Santo António."
+        hospital: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-10."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsRareDiseaseCardsPage
+
+    """
+    Health units certified for quality, or in the process, by institution and month, December 2015 to
+    September 2026.
+    """
+    snsCertifiedHealthUnits(
+        "Words of the entity's name, such as Santo António."
+        institution: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-09."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsCertifiedHealthUnitsPage
+
+    """
+    Bodies inspected and audited, and disciplinary cases opened, by the health inspectorate (IGAS), by
+    quarter, 2016 to December 2025.
+    """
+    snsInspections(
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsInspectionsPage
+
+    "Patient safety incidents reported by professionals and citizens, by quarter, 2013 to 2019."
+    snsSafetyIncidentReports(
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsSafetyIncidentReportsPage
+
+    """
+    Clinical trials of medicines submitted to Infarmed, by phase and sponsor, by period, 2011 to October 2023.
+    """
+    snsClinicalTrials(
+        "The first month, such as 2023-01."
+        from: String
+        "The last month, such as 2023-10."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsClinicalTrialsPage
+
+    """
+    Patients exempt from SNS user charges (taxas moderadoras), by reason and month, 2011 to September 2026. A
+    patient can meet several reasons, so the total is a reason of its own.
+    """
+    snsUserChargeExemptions(
+        "Words of the reason, such as Desempregados."
+        reason: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-09."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsUserChargeExemptionsPage
+
+    """
+    Cost centres of SNS institutions and the services they map to in the ACSS place hierarchy, by month,
+    December 2017 to September 2026.
+    """
+    snsCostCentres(
+        "Words of the institution, such as PORTO."
+        institution: String
+        "The first month, such as 2026-01."
+        from: String
+        "The last month, such as 2026-09."
+        to: String
+        "The number of records to return, at most 100."
+        first: Int = 20
+    ): SnsCostCentresPage
+}
+
+"A page of SnsEmergencyVisitsByType records: how many match the arguments, and the first of them."
+type SnsEmergencyVisitsByTypePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsEmergencyVisitsByType!]
+}
+
+"One hospital in one month."
+type SnsEmergencyVisitsByType {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "The hospital or ULS."
+    hospital: String
+    "General visits."
+    general: Int
+    "Paediatric visits."
+    paediatric: Int
+    "Obstetric visits."
+    obstetric: Int
+    "Psychiatric visits."
+    psychiatric: Int
+    "All visits."
+    total: Int
+    "The latitude."
+    latitude: Float
+    "The longitude."
+    longitude: Float
+}
+
+"A page of SnsHospitalConsultations records: how many match the arguments, and the first of them."
+type SnsHospitalConsultationsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsHospitalConsultations!]
+}
+
+"One hospital in one month."
+type SnsHospitalConsultations {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "The hospital or ULS."
+    hospital: String
+    "All consultations."
+    total: Int
+    "First consultations in a specialty."
+    first: Int
+    "Follow-up consultations."
+    followUp: Int
+    "The latitude."
+    latitude: Float
+    "The longitude."
+    longitude: Float
+}
+
+"A page of SnsTelemedicineConsultations records: how many match the arguments, and the first of them."
+type SnsTelemedicineConsultationsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsTelemedicineConsultations!]
+}
+
+"One hospital in one month."
+type SnsTelemedicineConsultations {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "The hospital or ULS."
+    hospital: String
+    "First consultations."
+    first: Int
+    "Follow-up consultations."
+    followUp: Int
+    "All consultations."
+    total: Int
+    "The latitude."
+    latitude: Float
+    "The longitude."
+    longitude: Float
+}
+
+"A page of SnsNutritionConsultations records: how many match the arguments, and the first of them."
+type SnsNutritionConsultationsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsNutritionConsultations!]
+}
+
+"One hospital in one month."
+type SnsNutritionConsultations {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "The hospital or ULS."
+    hospital: String
+    "First consultations."
+    first: Int
+    "Follow-up consultations."
+    followUp: Int
+    "All consultations."
+    total: Int
+    "The latitude."
+    latitude: Float
+    "The longitude."
+    longitude: Float
+}
+
+"A page of SnsPsychologyConsultations records: how many match the arguments, and the first of them."
+type SnsPsychologyConsultationsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsPsychologyConsultations!]
+}
+
+"One hospital in one month."
+type SnsPsychologyConsultations {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "The hospital or ULS."
+    hospital: String
+    "First consultations."
+    first: Int
+    "Follow-up consultations."
+    followUp: Int
+    "All consultations."
+    total: Int
+    "The latitude."
+    latitude: Float
+    "The longitude."
+    longitude: Float
+}
+
+"A page of SnsFirstConsultationsOnTime records: how many match the arguments, and the first of them."
+type SnsFirstConsultationsOnTimePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsFirstConsultationsOnTime!]
+}
+
+"One hospital in one month."
+type SnsFirstConsultationsOnTime {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "The hospital or ULS."
+    hospital: String
+    "First consultations on time."
+    onTime: Int
+    "First consultations from a referral."
+    referred: Int
+    "The percent on time."
+    onTimePercent: Float
+}
+
+"A page of SnsSurgeries records: how many match the arguments, and the first of them."
+type SnsSurgeriesPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsSurgeries!]
+}
+
+"One hospital in one month."
+type SnsSurgeries {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "The hospital or ULS."
+    hospital: String
+    "Planned operations."
+    planned: Int
+    "Planned operations with a stay."
+    conventional: Int
+    "Planned day surgery."
+    daySurgery: Int
+    "Urgent operations."
+    urgent: Int
+    "The latitude."
+    latitude: Float
+    "The longitude."
+    longitude: Float
+}
+
+"A page of SnsDaySurgeryShare records: how many match the arguments, and the first of them."
+type SnsDaySurgerySharePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsDaySurgeryShare!]
+}
+
+"One hospital in one month."
+type SnsDaySurgeryShare {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "The hospital or ULS."
+    hospital: String
+    "Operations done as day surgery."
+    daySurgery: Int
+    "Operations that allowed day surgery."
+    eligible: Int
+    "The percent done as day surgery."
+    percent: Float
+}
+
+"A page of SnsDaysBeforeSurgery records: how many match the arguments, and the first of them."
+type SnsDaysBeforeSurgeryPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsDaysBeforeSurgery!]
+}
+
+"One hospital in one month."
+type SnsDaysBeforeSurgery {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "The hospital or ULS."
+    hospital: String
+    "Days before the operations."
+    daysBeforeSurgery: Int
+    "Planned surgical stays."
+    stays: Int
+    "Average days before the operation."
+    averageDays: Float
+}
+
+"A page of SnsHipFractureSurgeryWithin48h records: how many match the arguments, and the first of them."
+type SnsHipFractureSurgeryWithin48hPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsHipFractureSurgeryWithin48h!]
+}
+
+"One hospital in one month."
+type SnsHipFractureSurgeryWithin48h {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "The hospital or ULS."
+    hospital: String
+    "Operated within 48 hours."
+    within48h: Int
+    "All operated."
+    operated: Int
+    "The percent operated within 48 hours."
+    percent: Float
+}
+
+"A page of SnsBirths records: how many match the arguments, and the first of them."
+type SnsBirthsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsBirths!]
+}
+
+"One hospital in one month."
+type SnsBirths {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "The hospital or ULS."
+    hospital: String
+    "Births."
+    births: Int
+    "Caesarean sections."
+    caesareans: Int
+    "The latitude."
+    latitude: Float
+    "The longitude."
+    longitude: Float
+}
+
+"A page of SnsInpatientActivity records: how many match the arguments, and the first of them."
+type SnsInpatientActivityPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsInpatientActivity!]
+}
+
+"One hospital and kind of specialty in one month."
+type SnsInpatientActivity {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "The hospital or ULS."
+    hospital: String
+    "The kind: Especialidade Médica (medical), Especialidade Cirurgica (surgical) or Outras Camas."
+    specialty: String
+    "Patients discharged."
+    discharges: Int
+    "Inpatient days."
+    inpatientDays: Int
+    "The latitude."
+    latitude: Float
+    "The longitude."
+    longitude: Float
+}
+
+"A page of SnsBedOccupancy records: how many match the arguments, and the first of them."
+type SnsBedOccupancyPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsBedOccupancy!]
+}
+
+"One hospital in one month."
+type SnsBedOccupancy {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "The hospital or ULS."
+    hospital: String
+    "Inpatient days."
+    inpatientDays: Int
+    "Beds in use."
+    beds: Int
+    "The percent of bed days occupied."
+    occupancyPercent: Float
+    "The latitude."
+    latitude: Float
+    "The longitude."
+    longitude: Float
+}
+
+"A page of SnsHospitalBeds records: how many match the arguments, and the first of them."
+type SnsHospitalBedsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsHospitalBeds!]
+}
+
+"One hospital and type of bed in one month."
+type SnsHospitalBeds {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "The hospital or ULS."
+    hospital: String
+    "The bed type: Camas Médicas, Camas Cirúrgicas, Camas Neutras or Outras Camas."
+    bedType: String
+    "Beds."
+    beds: Int
+    "The latitude."
+    latitude: Float
+    "The longitude."
+    longitude: Float
+}
+
+"A page of SnsStrokeMortality records: how many match the arguments, and the first of them."
+type SnsStrokeMortalityPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsStrokeMortality!]
+}
+
+"One hospital in one month."
+type SnsStrokeMortality {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "The hospital or ULS."
+    hospital: String
+    "The percent dead after a haemorrhagic stroke."
+    haemorrhagicPercent: Float
+    "The percent dead after an ischaemic stroke."
+    ischaemicPercent: Float
+}
+
+"A page of SnsSurgeryWaitList180Days records: how many match the arguments, and the first of them."
+type SnsSurgeryWaitList180DaysPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsSurgeryWaitList180Days!]
+}
+
+"One hospital at the end of one month."
+type SnsSurgeryWaitList180Days {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "The hospital or ULS."
+    hospital: String
+    "Patients within the guaranteed time."
+    withinLimit: Int
+    "All patients waiting."
+    waiting: Int
+    "The percent within the guaranteed time."
+    withinLimitPercent: Float
+}
+
+"A page of SnsSurgeryWaitList270Days records: how many match the arguments, and the first of them."
+type SnsSurgeryWaitList270DaysPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsSurgeryWaitList270Days!]
+}
+
+"One hospital at the end of one month."
+type SnsSurgeryWaitList270Days {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "The hospital or ULS."
+    hospital: String
+    "Patients within the guaranteed time."
+    withinLimit: Int
+    "All patients waiting."
+    waiting: Int
+    "The percent within the guaranteed time."
+    withinLimitPercent: Float
+}
+
+"A page of SnsOvertimeCostShare records: how many match the arguments, and the first of them."
+type SnsOvertimeCostSharePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsOvertimeCostShare!]
+}
+
+"One hospital in one month."
+type SnsOvertimeCostShare {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "The hospital or ULS."
+    hospital: String
+    "Overtime and supplements, thousand euros."
+    overtimeCost: Int
+    "All staff costs, thousand euros."
+    staffCost: Int
+    "Overtime as a percent of staff costs."
+    overtimePercent: Float
+}
+
+"A page of SnsInstitutionFinances records: how many match the arguments, and the first of them."
+type SnsInstitutionFinancesPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsInstitutionFinances!]
+}
+
+"One SNS body in one month."
+type SnsInstitutionFinances {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "The hospital, ULS or other SNS body."
+    entity: String
+    "Operating income in euros."
+    operatingIncome: Float
+    "Operating costs in euros."
+    operatingCosts: Float
+    "EBITDA in euros."
+    ebitda: Float
+    "Net result in euros, negative for a loss."
+    netResult: Float
+}
+
+"A page of SnsSupplierDebt records: how many match the arguments, and the first of them."
+type SnsSupplierDebtPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsSupplierDebt!]
+}
+
+"One SNS body at the end of one month."
+type SnsSupplierDebt {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "The hospital, ULS or other SNS body."
+    entity: String
+    "Total debt in euros."
+    totalDebt: Float
+    "Overdue debt in euros."
+    overdueDebt: Float
+    "Payments in arrears in euros."
+    arrears: Float
+}
+
+"A page of SnsSupplierPaymentDays records: how many match the arguments, and the first of them."
+type SnsSupplierPaymentDaysPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsSupplierPaymentDays!]
+}
+
+"One SNS body in one quarter, dated by its last month."
+type SnsSupplierPaymentDays {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "The hospital or ULS."
+    hospital: String
+    "Days to pay."
+    paymentDays: Int
+}
+
+"A page of SnsWorkersByContract records: how many match the arguments, and the first of them."
+type SnsWorkersByContractPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsWorkersByContract!]
+}
+
+"One SNS body and type of contract in one month."
+type SnsWorkersByContract {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "The hospital, ULS or other SNS body."
+    entity: String
+    "The contract, such as CT em Funções Públicas p/ Tempo Indeterminado (permanent)."
+    contract: String
+    "Workers."
+    workers: Int
+}
+
+"A page of SnsWorkersByProfession records: how many match the arguments, and the first of them."
+type SnsWorkersByProfessionPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsWorkersByProfession!]
+}
+
+"One SNS body in one month; null when it lacks the group."
+type SnsWorkersByProfession {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "The hospital or ULS."
+    hospital: String
+    "Doctors, without those in training."
+    doctors: Int
+    "Doctors in training."
+    doctorsInTraining: Int
+    "Nurses."
+    nurses: Int
+    "Diagnostic and therapy technicians."
+    diagnosticTechnicians: Int
+    "Technical assistants."
+    technicalAssistants: Int
+    "Operational assistants and health auxiliaries."
+    operationalAssistants: Int
+    "All workers."
+    total: Int
+}
+
+"A page of SnsWorkAbsenceDays records: how many match the arguments, and the first of them."
+type SnsWorkAbsenceDaysPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsWorkAbsenceDays!]
+}
+
+"One SNS body and reason in one month."
+type SnsWorkAbsenceDays {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "The hospital, ULS or other SNS body."
+    entity: String
+    "The reason, such as Doença (illness) or Greve (strike)."
+    reason: String
+    "Days of absence."
+    days: Int
+}
+
+"A page of SnsTrainingAbsenceDays records: how many match the arguments, and the first of them."
+type SnsTrainingAbsenceDaysPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsTrainingAbsenceDays!]
+}
+
+"One SNS body in one month."
+type SnsTrainingAbsenceDays {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "The hospital, ULS or other SNS body."
+    entity: String
+    "Days of doctors."
+    doctors: Float
+    "Days of nurses."
+    nurses: Float
+    "Days of diagnostic technicians."
+    diagnosticTechnicians: Float
+    "Days of technical assistants."
+    technicalAssistants: Float
+    "Days of operational assistants."
+    operationalAssistants: Float
+}
+
+"A page of SnsOvertimeAndNightHours records: how many match the arguments, and the first of them."
+type SnsOvertimeAndNightHoursPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsOvertimeAndNightHours!]
+}
+
+"One SNS body in one month."
+type SnsOvertimeAndNightHours {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "The hospital, ULS or other SNS body."
+    entity: String
+    "Daytime overtime hours."
+    overtimeDay: Float
+    "Night overtime hours."
+    overtimeNight: Float
+    "Hours on weekly rest days."
+    restDayHours: Float
+    "Hours on public holidays."
+    holidayHours: Float
+    "Normal night hours."
+    nightHours: Float
+}
+
+"A page of SnsBloodDonors records: how many match the arguments, and the first of them."
+type SnsBloodDonorsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsBloodDonors!]
+}
+
+"One blood service in one month."
+type SnsBloodDonors {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "The hospital, ULS or other SNS body."
+    entity: String
+    "Donors registered."
+    donors: Int
+    "First-time donors."
+    firstTimeDonors: Int
+    "Regular donors."
+    regularDonors: Int
+}
+
+"A page of SnsBloodCollections records: how many match the arguments, and the first of them."
+type SnsBloodCollectionsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsBloodCollections!]
+}
+
+"One blood service and blood group in one month."
+type SnsBloodCollections {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "The hospital, ULS or other SNS body."
+    entity: String
+    "The blood group, such as O+."
+    bloodGroup: String
+    "Units collected."
+    units: Int
+    "Units from donors under 25."
+    unitsUnder25: Int
+}
+
+"A page of SnsBloodReserves records: how many match the arguments, and the first of them."
+type SnsBloodReservesPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsBloodReserves!]
+}
+
+"One blood bank and blood group in one period."
+type SnsBloodReserves {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "The hospital, ULS or other SNS body."
+    entity: String
+    "The blood group, such as O+, or Total."
+    bloodGroup: String
+    "Average units in reserve."
+    units: Float
+}
+
+"A page of SnsDigitalBirthNotices records: how many match the arguments, and the first of them."
+type SnsDigitalBirthNoticesPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsDigitalBirthNotices!]
+}
+
+"One hospital in one month."
+type SnsDigitalBirthNotices {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "The hospital, ULS or other SNS body."
+    entity: String
+    "Digital birth notices."
+    birthNotices: Int
+    "Newborns registered as SNS users."
+    newbornsRegistered: Float
+}
+
+"A page of SnsAntibioticUse records: how many match the arguments, and the first of them."
+type SnsAntibioticUsePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsAntibioticUse!]
+}
+
+"One hospital in one month."
+type SnsAntibioticUse {
+    "The month."
+    month: String
+    "The region, such as Norte, empty in recent months."
+    region: String
+    "The hospital."
+    hospital: String
+    "Units of antibiotics."
+    antibioticUnits: Int
+    "Units of all medicines."
+    totalUnits: Int
+    "The share as a fraction, where 0.5 is 50 percent."
+    share: Float
+}
+
+"A page of SnsCarbapenemUse records: how many match the arguments, and the first of them."
+type SnsCarbapenemUsePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsCarbapenemUse!]
+}
+
+"One hospital in one month."
+type SnsCarbapenemUse {
+    "The month."
+    month: String
+    "The region, such as Norte, empty in recent months."
+    region: String
+    "The hospital."
+    hospital: String
+    "Daily doses of carbapenems."
+    doses: Int
+    "Daily doses of other antibiotics."
+    otherAntibioticDoses: Int
+    "The share as a fraction, where 0.5 is 50 percent."
+    share: Float
+}
+
+"A page of SnsCephalosporinUse records: how many match the arguments, and the first of them."
+type SnsCephalosporinUsePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsCephalosporinUse!]
+}
+
+"One hospital in one month."
+type SnsCephalosporinUse {
+    "The month."
+    month: String
+    "The region, such as Norte, empty in recent months."
+    region: String
+    "The hospital."
+    hospital: String
+    "Daily doses of cephalosporins."
+    doses: Int
+    "Daily doses of other antibiotics."
+    otherAntibioticDoses: Int
+    "The share as a fraction, where 0.5 is 50 percent."
+    share: Float
+}
+
+"A page of SnsFluoroquinoloneUse records: how many match the arguments, and the first of them."
+type SnsFluoroquinoloneUsePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsFluoroquinoloneUse!]
+}
+
+"One hospital in one month."
+type SnsFluoroquinoloneUse {
+    "The month."
+    month: String
+    "The region, such as Norte, empty in recent months."
+    region: String
+    "The hospital."
+    hospital: String
+    "Daily doses of fluoroquinolones."
+    doses: Int
+    "Daily doses of other antibiotics."
+    otherAntibioticDoses: Int
+    "The share as a fraction, where 0.5 is 50 percent."
+    share: Float
+}
+
+"A page of SnsBiosimilarUse records: how many match the arguments, and the first of them."
+type SnsBiosimilarUsePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsBiosimilarUse!]
+}
+
+"One hospital and active substance in one month."
+type SnsBiosimilarUse {
+    "The month."
+    month: String
+    "The region, such as Norte, empty in recent months."
+    region: String
+    "The hospital."
+    hospital: String
+    "The active substance, such as Adalimumab."
+    substance: String
+    "Quantity of biosimilar used."
+    biosimilar: Float
+    "Quantity of the reference medicine used."
+    reference: Float
+    "The biosimilar share as a fraction, 1.0 for all."
+    biosimilarShare: Float
+}
+
+"A page of SnsHivTreatmentCost records: how many match the arguments, and the first of them."
+type SnsHivTreatmentCostPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsHivTreatmentCost!]
+}
+
+"One hospital in one period."
+type SnsHivTreatmentCost {
+    "The month."
+    month: String
+    "The region, such as LVT."
+    region: String
+    "The hospital."
+    hospital: String
+    "Spending on HIV medicines in euros."
+    spending: Float
+    "Patients treated."
+    patients: Float
+    "Monthly cost per patient in euros."
+    monthlyCostPerPatient: Float
+}
+
+"A page of SnsPrimaryCareUnits records: how many match the arguments, and the first of them."
+type SnsPrimaryCareUnitsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsPrimaryCareUnits!]
+}
+
+"One primary care area in one month."
+type SnsPrimaryCareUnits {
+    "The month."
+    month: String
+    "The region, such as Norte."
+    region: String
+    "The primary care area, such as Área dos CSP da ULS Coimbra."
+    area: String
+    "The value labelled Total UF."
+    units: Int
+}
+
+"A page of SnsPrimaryCareNursingContacts records: how many match the arguments, and the first of them."
+type SnsPrimaryCareNursingContactsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsPrimaryCareNursingContacts!]
+}
+
+"One primary care area in one month."
+type SnsPrimaryCareNursingContacts {
+    "The month."
+    month: String
+    "The region, such as Norte."
+    region: String
+    "The primary care area, such as Área dos CSP da ULS Coimbra."
+    area: String
+    "Contacts in person."
+    inPerson: Int
+    "Contacts at a distance."
+    remote: Int
+}
+
+"A page of SnsPrimaryCareConsultations records: how many match the arguments, and the first of them."
+type SnsPrimaryCareConsultationsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsPrimaryCareConsultations!]
+}
+
+"One primary care area in one month."
+type SnsPrimaryCareConsultations {
+    "The month."
+    month: String
+    "The region, such as Norte."
+    region: String
+    "The primary care area, such as Área dos CSP da ULS Coimbra."
+    area: String
+    "Consultations in person."
+    inPerson: Int
+    "Consultations at a distance."
+    remote: Int
+    "Consultations at home."
+    atHome: Int
+}
+
+"A page of SnsPrimaryCareAccess records: how many match the arguments, and the first of them."
+type SnsPrimaryCareAccessPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsPrimaryCareAccess!]
+}
+
+"One primary care area in one month."
+type SnsPrimaryCareAccess {
+    "The month."
+    month: String
+    "The region, such as Norte."
+    region: String
+    "The primary care area, such as Área dos CSP da ULS Coimbra."
+    area: String
+    "The percent seen this year."
+    oneYearPercent: Float
+    "The percent seen in three years."
+    threeYearPercent: Float
+}
+
+"A page of SnsCancerScreening records: how many match the arguments, and the first of them."
+type SnsCancerScreeningPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsCancerScreening!]
+}
+
+"One primary care area in one month."
+type SnsCancerScreening {
+    "The month."
+    month: String
+    "The region, such as Norte."
+    region: String
+    "The primary care area, such as Área dos CSP da ULS Coimbra."
+    area: String
+    "The percent of women 50 to 69 with a mammography."
+    mammographyPercent: Float
+    "The percent of women 25 to 59 with a smear test."
+    cervicalPercent: Float
+    "The percent of patients 50 to 74 screened for colorectal cancer."
+    colorectalPercent: Float
+}
+
+"A page of SnsDiabetesCare records: how many match the arguments, and the first of them."
+type SnsDiabetesCarePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsDiabetesCare!]
+}
+
+"One primary care area in one month."
+type SnsDiabetesCare {
+    "The month."
+    month: String
+    "The region, such as Norte."
+    region: String
+    "The primary care area, such as Área dos CSP da ULS Coimbra."
+    area: String
+    "The percent with a foot exam."
+    footExamPercent: Float
+    "The percent whose last HbA1c is 8 percent or less."
+    controlledPercent: Float
+}
+
+"A page of SnsHypertensionCare records: how many match the arguments, and the first of them."
+type SnsHypertensionCarePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsHypertensionCare!]
+}
+
+"One primary care area in one month."
+type SnsHypertensionCare {
+    "The month."
+    month: String
+    "The region, such as Norte."
+    region: String
+    "The primary care area, such as Área dos CSP da ULS Coimbra."
+    area: String
+    "Patients below 150/90 mmHg."
+    controlled: Int
+    "The percent below 150/90 mmHg."
+    controlledPercent: Float
+}
+
+"A page of SnsNewbornCare records: how many match the arguments, and the first of them."
+type SnsNewbornCarePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsNewbornCare!]
+}
+
+"One primary care area in one month."
+type SnsNewbornCare {
+    "The month."
+    month: String
+    "The region, such as Norte."
+    region: String
+    "The primary care area, such as Área dos CSP da ULS Coimbra."
+    area: String
+    "The percent with the check-up."
+    checkUpPercent: Float
+    "The percent with the home visit."
+    homeVisitPercent: Float
+}
+
+"A page of SnsRegisteredPatientsByAces records: how many match the arguments, and the first of them."
+type SnsRegisteredPatientsByAcesPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsRegisteredPatientsByAces!]
+}
+
+"One group of health centres in one month."
+type SnsRegisteredPatientsByAces {
+    "The month."
+    month: String
+    "The region, such as Norte."
+    region: String
+    "The group of health centres, such as ACES Alto Minho."
+    aces: String
+    "Patients registered."
+    registered: Int
+    "Patients with a family doctor."
+    withFamilyDoctor: Int
+    "The percent with a family doctor."
+    withFamilyDoctorPercent: Float
+    "Patients without a family doctor."
+    withoutFamilyDoctor: Int
+}
+
+"A page of SnsPrimaryCareRegistrations records: how many match the arguments, and the first of them."
+type SnsPrimaryCareRegistrationsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsPrimaryCareRegistrations!]
+}
+
+"One ULS and nationality in one month."
+type SnsPrimaryCareRegistrations {
+    "The month."
+    month: String
+    "The region, such as Norte or LVT."
+    region: String
+    "The local health unit, such as Alto Ave."
+    uls: String
+    "The nationality: Portuguesa or Estrangeira (foreign)."
+    nationality: String
+    "Patients registered."
+    registered: Int
+    "Eligible patients with a family doctor."
+    withFamilyDoctor: Int
+    "Eligible patients without a family doctor."
+    withoutFamilyDoctor: Int
+    "The percent with a family doctor."
+    withFamilyDoctorPercent: Float
+}
+
+"A page of SnsNationalPatientRegister records: how many match the arguments, and the first of them."
+type SnsNationalPatientRegisterPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsNationalPatientRegister!]
+}
+
+"One group of people in one month."
+type SnsNationalPatientRegister {
+    "The month."
+    month: String
+    "The region, such as Norte, or N/A."
+    region: String
+    "The nationality: Portuguesa or Estrangeira (foreign)."
+    nationality: String
+    "The age group, such as [18-64]."
+    ageGroup: String
+    "The payer: SNS or Terceiro Pagador (another payer)."
+    payer: String
+    "People with an up-to-date record."
+    upToDate: Int
+    "People with an incomplete record."
+    incomplete: Int
+}
+
+"A page of SnsLivingWills records: how many match the arguments, and the first of them."
+type SnsLivingWillsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsLivingWills!]
+}
+
+"One group of health centres in one month."
+type SnsLivingWills {
+    "The month."
+    month: String
+    "The region, such as Norte."
+    region: String
+    "The group of health centres."
+    entity: String
+    "Active living wills counted in the month."
+    active: Float
+    "Views by health professionals."
+    viewsByProfessionals: Float
+    "Deaths of people with a living will."
+    deaths: Float
+    "Running total of active living wills."
+    totalActiveToDate: Int
+}
+
+"A page of SnsDentalCheques records: how many match the arguments, and the first of them."
+type SnsDentalChequesPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsDentalCheques!]
+}
+
+"One provider, target group and scope in one month."
+type SnsDentalCheques {
+    "The month."
+    month: String
+    "The provider, such as Consultórios Privados (private dentists)."
+    provider: String
+    "The target group, such as Grávidas seguidas no SNS (pregnant women)."
+    targetGroup: String
+    "The scope, such as Prevenção em saúde oral (prevention)."
+    scope: String
+    "Cheques issued."
+    issued: Int
+    "Cheques used."
+    used: Int
+    "Treatments."
+    treatments: Int
+}
+
+"A page of SnsOralHealthReferrals records: how many match the arguments, and the first of them."
+type SnsOralHealthReferralsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsOralHealthReferrals!]
+}
+
+"One area, sex and age group in one month."
+type SnsOralHealthReferrals {
+    "The month."
+    month: String
+    "The primary care area."
+    area: String
+    "The sex: Feminino or Masculino."
+    sex: String
+    "The age group: <20, 20-34, 35-49, 50-64 or 65 e +."
+    ageGroup: String
+    "Referrals issued."
+    referrals: Int
+}
+
+"A page of SnsOralHealthPatients records: how many match the arguments, and the first of them."
+type SnsOralHealthPatientsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsOralHealthPatients!]
+}
+
+"One area, sex and age group in one month."
+type SnsOralHealthPatients {
+    "The month."
+    month: String
+    "The primary care area."
+    area: String
+    "The sex: Feminino or Masculino."
+    sex: String
+    "The age group: <20, 20-34, 35-49, 50-64 or 65 e +."
+    ageGroup: String
+    "Patients seen."
+    patients: Int
+}
+
+"A page of SnsOralHealthTreatments records: how many match the arguments, and the first of them."
+type SnsOralHealthTreatmentsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsOralHealthTreatments!]
+}
+
+"One area, sex and age group in one month."
+type SnsOralHealthTreatments {
+    "The month."
+    month: String
+    "The primary care area."
+    area: String
+    "The sex: Feminino or Masculino."
+    sex: String
+    "The age group: <20, 20-34, 35-49, 50-64 or 65 e +."
+    ageGroup: String
+    "Treatments."
+    treatments: Int
+}
+
+"A page of SnsPrimaryCareDailyConsultations records: how many match the arguments, and the first of them."
+type SnsPrimaryCareDailyConsultationsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsPrimaryCareDailyConsultations!]
+}
+
+"One region on one day."
+type SnsPrimaryCareDailyConsultations {
+    "The day."
+    day: String
+    "The region, such as Norte."
+    region: String
+    "All consultations."
+    consultations: Float
+    "Unscheduled consultations."
+    unscheduled: Float
+    "Scheduled consultations."
+    scheduled: Float
+    "Unscheduled consultations of patients 65 or more."
+    unscheduled65Plus: Float
+}
+
+"A page of SnsPrimaryCareFluConsultations records: how many match the arguments, and the first of them."
+type SnsPrimaryCareFluConsultationsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsPrimaryCareFluConsultations!]
+}
+
+"One region on one day."
+type SnsPrimaryCareFluConsultations {
+    "The day."
+    day: String
+    "The region, such as Norte."
+    region: String
+    "All consultations."
+    consultations: Float
+    "Unscheduled consultations."
+    unscheduled: Float
+    "Scheduled consultations."
+    scheduled: Float
+    "Consultations for flu."
+    flu: Float
+}
+
+"A page of SnsElectronicPrescriptions records: how many match the arguments, and the first of them."
+type SnsElectronicPrescriptionsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsElectronicPrescriptions!]
+}
+
+"One region in one month."
+type SnsElectronicPrescriptions {
+    "The month."
+    month: String
+    "The region, such as Norte."
+    region: String
+    "Electronic prescriptions."
+    prescriptions: Int
+    "Packs prescribed by active substance."
+    packsBySubstance: Int
+}
+
+"A page of SnsDispensedPrescriptions records: how many match the arguments, and the first of them."
+type SnsDispensedPrescriptionsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsDispensedPrescriptions!]
+}
+
+"One region in one month."
+type SnsDispensedPrescriptions {
+    "The month."
+    month: String
+    "The region, such as Norte."
+    region: String
+    "Electronic prescriptions."
+    electronic: Int
+    "Paper prescriptions."
+    paper: Int
+    "Paid by the SNS in euros."
+    reimbursed: Float
+}
+
+"A page of SnsPharmacyMedicineSpending records: how many match the arguments, and the first of them."
+type SnsPharmacyMedicineSpendingPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsPharmacyMedicineSpending!]
+}
+
+"One region in one month."
+type SnsPharmacyMedicineSpending {
+    "The month."
+    month: String
+    "The region, such as Norte."
+    region: String
+    "Cost to the SNS."
+    snsCost: Float
+    "Cost to patients."
+    patientCost: Float
+    "Value at retail price."
+    retailValue: Float
+    "Cost to the SNS of generics."
+    snsCostGenerics: Float
+}
+
+"A page of SnsHospitalMedicineSpending records: how many match the arguments, and the first of them."
+type SnsHospitalMedicineSpendingPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsHospitalMedicineSpending!]
+}
+
+"One region in one month."
+type SnsHospitalMedicineSpending {
+    "The month."
+    month: String
+    "The region, such as Norte."
+    region: String
+    "Cost to the SNS in euros."
+    snsCost: Float
+}
+
+"A page of SnsPharmacySpendingByGroup records: how many match the arguments, and the first of them."
+type SnsPharmacySpendingByGroupPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsPharmacySpendingByGroup!]
+}
+
+"One region and therapeutic group in one month."
+type SnsPharmacySpendingByGroup {
+    "The month."
+    month: String
+    "The region, such as Norte."
+    region: String
+    "The group, such as Aparelho cardiovascular."
+    therapeuticGroup: String
+    "Cost to the SNS in euros."
+    snsCost: Float
+}
+
+"A page of SnsGenericMedicineShare records: how many match the arguments, and the first of them."
+type SnsGenericMedicineSharePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsGenericMedicineShare!]
+}
+
+"One region in one month."
+type SnsGenericMedicineShare {
+    "The month."
+    month: String
+    "The region, such as Norte."
+    region: String
+    "Value of all medicines in euros."
+    retailValue: Float
+    "Value of generics in euros."
+    genericsValue: Float
+    "Generics' share of value as a fraction, where 0.5 is 50 percent."
+    valueShare: Float
+    "Generics' share of packs as a fraction, where 0.5 is 50 percent."
+    packShare: Float
+}
+
+"A page of SnsMedicinePackPrice records: how many match the arguments, and the first of them."
+type SnsMedicinePackPricePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsMedicinePackPrice!]
+}
+
+"One region in one month."
+type SnsMedicinePackPrice {
+    "The month."
+    month: String
+    "The region, such as Norte."
+    region: String
+    "Packs of all medicines."
+    packs: Int
+    "Average price per pack, in euros."
+    averagePrice: Float
+    "Packs of generics."
+    genericPacks: Int
+    "Average price of a generic."
+    averageGenericPrice: Float
+}
+
+"A page of SnsPaperlessPrescriptions records: how many match the arguments, and the first of them."
+type SnsPaperlessPrescriptionsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsPaperlessPrescriptions!]
+}
+
+"One day nationwide."
+type SnsPaperlessPrescriptions {
+    "The day."
+    day: String
+    "Packs on paper prescriptions."
+    paperPacks: Float
+    "Packs on paperless prescriptions."
+    paperlessPacks: Float
+}
+
+"A page of SnsPrivatePaperlessPrescribers records: how many match the arguments, and the first of them."
+type SnsPrivatePaperlessPrescribersPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsPrivatePaperlessPrescribers!]
+}
+
+"One prescriber on one day."
+type SnsPrivatePaperlessPrescribers {
+    "The day."
+    day: String
+    "The region, such as ARS NORTE."
+    region: String
+    "The prescribing clinic."
+    prescriber: String
+    "Packs prescribed."
+    packs: Int
+    "The percent prescribed paperless."
+    paperlessPercent: Float
+}
+
+"A page of SnsContinuingCareActivity records: how many match the arguments, and the first of them."
+type SnsContinuingCareActivityPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsContinuingCareActivity!]
+}
+
+"One region and care type in one month."
+type SnsContinuingCareActivity {
+    "The month."
+    month: String
+    "The region, such as Norte or LVT."
+    region: String
+    "The care type, such as UC (convalescence) or ECCI (home care team)."
+    typology: String
+    "Contracted beds or places."
+    beds: Float
+    "Patients admitted."
+    admitted: Float
+    "Patients discharged."
+    discharged: Float
+    "Occupancy as a fraction, where 0.5 is 50 percent."
+    occupancy: Float
+}
+
+"A page of SnsContinuingCareWaitingList records: how many match the arguments, and the first of them."
+type SnsContinuingCareWaitingListPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsContinuingCareWaitingList!]
+}
+
+"One region and care type on one day."
+type SnsContinuingCareWaitingList {
+    "The day."
+    day: String
+    "The region in capitals, such as NORTE."
+    region: String
+    "The care type, such as UC (convalescence) or ECCI (home care team)."
+    typology: String
+    "Patients waiting."
+    waiting: Int
+}
+
+"A page of SnsContinuingCareReferrals records: how many match the arguments, and the first of them."
+type SnsContinuingCareReferralsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsContinuingCareReferrals!]
+}
+
+"One referrer and care type in one month."
+type SnsContinuingCareReferrals {
+    "The month."
+    month: String
+    "The region in capitals, such as NORTE."
+    region: String
+    "The referrer, such as HOSPITAL DE BRAGA."
+    referrer: String
+    "The type: H for a hospital, CS for a health centre."
+    referrerType: String
+    "The care type, such as UC (convalescence) or ECCI (home care team)."
+    typology: String
+    "Patients referred."
+    patients: Int
+}
+
+"A page of SnsContinuingCareDischarges records: how many match the arguments, and the first of them."
+type SnsContinuingCareDischargesPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsContinuingCareDischarges!]
+}
+
+"One region and care type in one month."
+type SnsContinuingCareDischarges {
+    "The month."
+    month: String
+    "The region in capitals, such as NORTE."
+    region: String
+    "The care type, such as UC (convalescence) or ECCI (home care team)."
+    typology: String
+    "Patients sent home with support."
+    homeWithSupport: Float
+    "Patients sent home without support."
+    homeWithoutSupport: Float
+    "Patients sent to a care home."
+    careHome: Float
+    "Patients sent to another network unit."
+    otherNetworkUnit: Float
+    "Patients sent elsewhere."
+    other: Float
+}
+
+"A page of SnsContinuingCareAdmissions records: how many match the arguments, and the first of them."
+type SnsContinuingCareAdmissionsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsContinuingCareAdmissions!]
+}
+
+"One region in one month."
+type SnsContinuingCareAdmissions {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "Patients referred."
+    referred: Int
+    "Patients admitted."
+    admitted: Int
+}
+
+"A page of SnsContinuingCareFallsAndUlcers records: how many match the arguments, and the first of them."
+type SnsContinuingCareFallsAndUlcersPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsContinuingCareFallsAndUlcers!]
+}
+
+"One region in one half-year."
+type SnsContinuingCareFallsAndUlcers {
+    "The month."
+    month: String
+    "The half-year, such as 1º semestre 2026."
+    halfYear: String
+    "The health region, or Total Nacional."
+    region: String
+    "Falls in percent."
+    fallsPercent: Float
+    "New pressure ulcers in percent."
+    pressureUlcerPercent: Float
+}
+
+"A page of SnsAddictionTreatment records: how many match the arguments, and the first of them."
+type SnsAddictionTreatmentPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsAddictionTreatment!]
+}
+
+"One type of patient in one month."
+type SnsAddictionTreatment {
+    "The month."
+    month: String
+    "The type, such as Problemas ligados às drogas (drugs) or Jogo (gambling)."
+    patientType: String
+    "New patients."
+    newPatients: Int
+    "Readmitted patients."
+    readmitted: Int
+    "Consultations."
+    consultations: Int
+    "Patients in treatment."
+    inTreatment: Float
+}
+
+"A page of SnsAddictionNewPatients records: how many match the arguments, and the first of them."
+type SnsAddictionNewPatientsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsAddictionNewPatients!]
+}
+
+"One month nationwide."
+type SnsAddictionNewPatients {
+    "The month."
+    month: String
+    "New patients."
+    newPatients: Int
+    "New patients who inject."
+    injecting: Int
+    "New patients who do not inject."
+    notInjecting: Int
+}
+
+"A page of SnsAddictionSubstances records: how many match the arguments, and the first of them."
+type SnsAddictionSubstancesPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsAddictionSubstances!]
+}
+
+"One month nationwide."
+type SnsAddictionSubstances {
+    "The month."
+    month: String
+    "New patients for cannabis."
+    cannabis: Int
+    "New patients for cocaine."
+    cocaine: Int
+    "New patients for heroin and opiates."
+    heroin: Int
+    "New patients for alcohol."
+    alcohol: Int
+    "New patients for other substances."
+    otherSubstances: Int
+}
+
+"A page of SnsDrugDeterrenceCases records: how many match the arguments, and the first of them."
+type SnsDrugDeterrenceCasesPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsDrugDeterrenceCases!]
+}
+
+"One month nationwide."
+type SnsDrugDeterrenceCases {
+    "The month."
+    month: String
+    "Cases opened."
+    cases: Int
+    "People charged who are dependent."
+    dependent: Int
+    "People charged who are not dependent."
+    notDependent: Int
+}
+
+"A page of SnsSocialSectorConsultations records: how many match the arguments, and the first of them."
+type SnsSocialSectorConsultationsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsSocialSectorConsultations!]
+}
+
+"One provider in one month."
+type SnsSocialSectorConsultations {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "The provider, such as SCM do Porto - Hospital da Prelada."
+    provider: String
+    "First consultations."
+    first: Int
+    "Follow-up consultations."
+    followUp: Int
+}
+
+"A page of SnsSocialSectorSurgeries records: how many match the arguments, and the first of them."
+type SnsSocialSectorSurgeriesPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsSocialSectorSurgeries!]
+}
+
+"One provider in one month."
+type SnsSocialSectorSurgeries {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "The provider, such as SCM do Porto - Hospital da Prelada."
+    provider: String
+    "Operations with a stay."
+    conventional: Int
+    "Day surgery."
+    daySurgery: Int
+}
+
+"A page of SnsSocialSectorEmergencyVisits records: how many match the arguments, and the first of them."
+type SnsSocialSectorEmergencyVisitsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsSocialSectorEmergencyVisits!]
+}
+
+"One provider in one month."
+type SnsSocialSectorEmergencyVisits {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "The provider, such as SCM do Porto - Hospital da Prelada."
+    provider: String
+    "Emergency visits."
+    visits: Int
+}
+
+"A page of SnsSickLeaveCertificates records: how many match the arguments, and the first of them."
+type SnsSickLeaveCertificatesPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsSickLeaveCertificates!]
+}
+
+"One scheme, sex and age group on one day."
+type SnsSickLeaveCertificates {
+    "The day."
+    day: String
+    "The sex: Mulher (woman) or Homem (man)."
+    sex: String
+    "The age group, such as Dos 45 aos 64 anos."
+    ageGroup: String
+    "The scheme: Geral (Seg.Social), or Convergente (F.Pública) for civil servants."
+    scheme: String
+    "Certificates created that day."
+    created: Int
+    "Certificates active that day."
+    active: Int
+}
+
+"A page of SnsSickSelfDeclarations records: how many match the arguments, and the first of them."
+type SnsSickSelfDeclarationsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsSickSelfDeclarations!]
+}
+
+"One channel, sex and age group on one day."
+type SnsSickSelfDeclarations {
+    "The day."
+    day: String
+    "The sex: Mulher (woman) or Homem (man)."
+    sex: String
+    "The age group, such as Dos 45 aos 64 anos."
+    ageGroup: String
+    "The channel: APP SNS 24, Portal SNS 24 or Linha SNS 24."
+    channel: String
+    "Declarations issued."
+    declarations: Int
+}
+
+"A page of SnsDeathCertificatesByInstitution records: how many match the arguments, and the first of them."
+type SnsDeathCertificatesByInstitutionPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsDeathCertificatesByInstitution!]
+}
+
+"One institution in one month."
+type SnsDeathCertificatesByInstitution {
+    "The month."
+    month: String
+    "The hospital or institution."
+    institution: String
+    "Death certificates."
+    deaths: Int
+}
+
+"A page of SnsDailyDeathCertificates records: how many match the arguments, and the first of them."
+type SnsDailyDeathCertificatesPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsDailyDeathCertificates!]
+}
+
+"One day nationwide."
+type SnsDailyDeathCertificates {
+    "The day."
+    day: String
+    "Death certificates."
+    deaths: Int
+}
+
+"A page of SnsPoisonCentreCalls records: how many match the arguments, and the first of them."
+type SnsPoisonCentreCallsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsPoisonCentreCalls!]
+}
+
+"One month nationwide."
+type SnsPoisonCentreCalls {
+    "The month."
+    month: String
+    "Calls answered."
+    calls: Int
+}
+
+"A page of SnsEmergencyCallsToSns24 records: how many match the arguments, and the first of them."
+type SnsEmergencyCallsToSns24Page {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsEmergencyCallsToSns24!]
+}
+
+"One month nationwide."
+type SnsEmergencyCallsToSns24 {
+    "The month."
+    month: String
+    "Calls passed on."
+    calls: Int
+}
+
+"A page of SnsCrisisLineCalls records: how many match the arguments, and the first of them."
+type SnsCrisisLineCallsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsCrisisLineCalls!]
+}
+
+"One month nationwide."
+type SnsCrisisLineCalls {
+    "The month."
+    month: String
+    "Calls answered."
+    calls: Int
+    "Average seconds to answer."
+    answerSeconds: Int
+}
+
+"A page of SnsMaritimeEmergencyCalls records: how many match the arguments, and the first of them."
+type SnsMaritimeEmergencyCallsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsMaritimeEmergencyCalls!]
+}
+
+"One month nationwide."
+type SnsMaritimeEmergencyCalls {
+    "The month."
+    month: String
+    "Incidents handled."
+    incidents: Int
+}
+
+"A page of SnsEmergencyCallsAnswered records: how many match the arguments, and the first of them."
+type SnsEmergencyCallsAnsweredPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsEmergencyCallsAnswered!]
+}
+
+"One day nationwide."
+type SnsEmergencyCallsAnswered {
+    "The day."
+    day: String
+    "Calls answered."
+    calls: Float
+}
+
+"A page of SnsEmergencyVehicleDispatches records: how many match the arguments, and the first of them."
+type SnsEmergencyVehicleDispatchesPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsEmergencyVehicleDispatches!]
+}
+
+"One day nationwide."
+type SnsEmergencyVehicleDispatches {
+    "The day."
+    day: String
+    "Dispatches of helicopters (SHEM)."
+    helicopters: Int
+    "Dispatches of medical emergency cars (VMER)."
+    vmer: Int
+    "Dispatches of life support ambulances (SIV)."
+    siv: Int
+    "Dispatches of INEM ambulances (AEM)."
+    aem: Int
+    "Dispatches of motorcycles (MEM)."
+    motorcycles: Int
+}
+
+"A page of SnsPreHospitalIncidentsByPriority records: how many match the arguments, and the first of them."
+type SnsPreHospitalIncidentsByPriorityPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsPreHospitalIncidentsByPriority!]
+}
+
+"One day nationwide."
+type SnsPreHospitalIncidentsByPriority {
+    "The day."
+    day: String
+    "Priority 1, life at risk."
+    priority1: Float
+    "Priority 2, within 18 minutes."
+    priority2: Float
+    "Priority 3, within 60 minutes."
+    priority3: Float
+    "Priority 4, within 120 minutes."
+    priority4: Float
+    "Priority 5, passed to SNS 24."
+    priority5: Float
+}
+
+"A page of SnsPreHospitalIncidentsByType records: how many match the arguments, and the first of them."
+type SnsPreHospitalIncidentsByTypePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsPreHospitalIncidentsByType!]
+}
+
+"One month nationwide."
+type SnsPreHospitalIncidentsByType {
+    "The month."
+    month: String
+    "Road accidents."
+    roadAccident: Int
+    "Chest pain."
+    chestPain: Int
+    "Shortness of breath."
+    breathing: Int
+    "Cardiac arrests."
+    cardiacArrest: Int
+    "Motor or sensory deficit, as in a stroke."
+    strokeSigns: Int
+    "Trauma."
+    trauma: Int
+    "Psychiatric problems and suicide."
+    psychiatric: Int
+}
+
+"A page of SnsEmergencyCallSatisfaction records: how many match the arguments, and the first of them."
+type SnsEmergencyCallSatisfactionPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsEmergencyCallSatisfaction!]
+}
+
+"One question in one half-year."
+type SnsEmergencyCallSatisfaction {
+    "The month."
+    month: String
+    "The question, such as Satisfação global dos utentes com o serviço prestado pelo INEM."
+    question: String
+    "The percent rating it excellent."
+    excellent: Float
+    "The percent very satisfied."
+    verySatisfied: Float
+    "The percent satisfied."
+    satisfied: Float
+    "The percent dissatisfied."
+    dissatisfied: Float
+}
+
+"A page of SnsSns24Activity records: how many match the arguments, and the first of them."
+type SnsSns24ActivityPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsSns24Activity!]
+}
+
+"One indicator in one month."
+type SnsSns24Activity {
+    "The month."
+    month: String
+    "The indicator, such as Chamadas Atendidas (calls answered) or Tempo Médio de Espera (seg)."
+    indicator: String
+    "The value, in the indicator's unit."
+    value: Float
+}
+
+"A page of SnsPregnancyLineTriage records: how many match the arguments, and the first of them."
+type SnsPregnancyLineTriagePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsPregnancyLineTriage!]
+}
+
+"One ULS in one month."
+type SnsPregnancyLineTriage {
+    "The month."
+    month: String
+    "The ULS, such as ULS Lezíria."
+    uls: String
+    "All triages."
+    triages: Int
+    "Triages sent to self-care."
+    selfCare: Int
+    "Triages sent to primary care."
+    primaryCare: Int
+    "Triages sent to an emergency department."
+    emergency: Int
+    "Triages sent to INEM."
+    inem: Int
+}
+
+"A page of SnsStrokeAlerts records: how many match the arguments, and the first of them."
+type SnsStrokeAlertsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsStrokeAlerts!]
+}
+
+"One group of patients in one month."
+type SnsStrokeAlerts {
+    "The month."
+    month: String
+    "The district, such as Porto."
+    district: String
+    "The municipality."
+    municipality: String
+    "The sex: Masculino or Feminino."
+    sex: String
+    "The hospital the patient went to."
+    destinationHospital: String
+    "The age group, such as 70 - 79."
+    ageGroup: String
+    "Patients."
+    patients: Float
+}
+
+"A page of SnsHeartAttackAlerts records: how many match the arguments, and the first of them."
+type SnsHeartAttackAlertsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsHeartAttackAlerts!]
+}
+
+"One group of patients in one month."
+type SnsHeartAttackAlerts {
+    "The month."
+    month: String
+    "The district, such as Porto."
+    district: String
+    "The municipality."
+    municipality: String
+    "The sex: Masculino or Feminino."
+    sex: String
+    "The hospital the patient went to."
+    destinationHospital: String
+    "The age group, such as 61 - 70."
+    ageGroup: String
+    "Patients."
+    patients: Float
+}
+
+"A page of SnsDefibrillatorVehicles records: how many match the arguments, and the first of them."
+type SnsDefibrillatorVehiclesPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsDefibrillatorVehicles!]
+}
+
+"One vehicle in one half-year."
+type SnsDefibrillatorVehicles {
+    "The month."
+    month: String
+    "The operator, such as a fire brigade."
+    operator: String
+    "The vehicle, often its number plate."
+    vehicle: String
+    "The district, such as Faro."
+    district: String
+    "The municipality."
+    municipality: String
+}
+
+"A page of SnsDefibrillatorPlaces records: how many match the arguments, and the first of them."
+type SnsDefibrillatorPlacesPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsDefibrillatorPlaces!]
+}
+
+"One place in one half-year."
+type SnsDefibrillatorPlaces {
+    "The month."
+    month: String
+    "The organisation, such as Município De Sintra."
+    owner: String
+    "The place or event."
+    place: String
+    "The type, such as Estabelecimentos de Ensino (schools)."
+    placeType: String
+    "The town, such as Porto."
+    town: String
+}
+
+"A page of SnsEmergencyDepartmentServices records: how many match the arguments, and the first of them."
+type SnsEmergencyDepartmentServicesPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsEmergencyDepartmentServices!]
+}
+
+"One service of one emergency department."
+type SnsEmergencyDepartmentServices {
+    "The region, such as ARS Norte."
+    region: String
+    "The hospital, such as H. Santo António - Porto."
+    hospital: String
+    "The street address."
+    address: String
+    "The town, such as Porto."
+    town: String
+    "The level, such as Serviço de Urgência Básica (basic) or Serviço de Urgência Polivalente (highest)."
+    level: String
+    "The service, such as Urgência Crianças e Adolescentes (paediatric)."
+    service: String
+    "True when patients can walk in."
+    walkIn: Boolean
+    "True when SNS 24 can send patients."
+    viaSns24: Boolean
+    "The latitude."
+    latitude: Float
+    "The longitude."
+    longitude: Float
+}
+
+"A page of SnsHospitalEmergencyDaily records: how many match the arguments, and the first of them."
+type SnsHospitalEmergencyDailyPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsHospitalEmergencyDaily!]
+}
+
+"One indicator, region and day."
+type SnsHospitalEmergencyDaily {
+    "The day."
+    day: String
+    "The region, such as ARS Norte or Portugal Continental."
+    region: String
+    "The indicator, such as Número estimado de episódios de urgência (estimated visits)."
+    indicator: String
+    "The value."
+    value: Float
+    "The unit, such as minuto or %."
+    unit: String
+}
+
+"A page of SnsHospitalEmergencyFluDaily records: how many match the arguments, and the first of them."
+type SnsHospitalEmergencyFluDailyPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsHospitalEmergencyFluDaily!]
+}
+
+"One indicator, region and day."
+type SnsHospitalEmergencyFluDaily {
+    "The day."
+    day: String
+    "The region, such as ARS Norte or Portugal Continental."
+    region: String
+    "The indicator, such as Número estimado de episódios de urgência (estimated visits)."
+    indicator: String
+    "The value."
+    value: Float
+    "The unit, such as minuto or %."
+    unit: String
+}
+
+"A page of SnsHeatHealthIndex records: how many match the arguments, and the first of them."
+type SnsHeatHealthIndexPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsHeatHealthIndex!]
+}
+
+"One day."
+type SnsHeatHealthIndex {
+    "The day."
+    day: String
+    "The excess risk of death from heat, 0 or more."
+    index: Float
+}
+
+"A page of SnsColdHealthIndex records: how many match the arguments, and the first of them."
+type SnsColdHealthIndexPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsColdHealthIndex!]
+}
+
+"One day."
+type SnsColdHealthIndex {
+    "The day."
+    day: String
+    "The index for Lisboa, 0 or more."
+    lisboa: Float
+    "The index for Lisboa, people 65 or more."
+    lisboa65Plus: Float
+    "The index for Porto."
+    porto: Float
+    "The index for Porto, people 65 or more."
+    porto65Plus: Float
+}
+
+"A page of SnsRespiratoryAdmissionRates records: how many match the arguments, and the first of them."
+type SnsRespiratoryAdmissionRatesPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsRespiratoryAdmissionRates!]
+}
+
+"One hospital in one quarter."
+type SnsRespiratoryAdmissionRates {
+    "The year."
+    year: String
+    "The quarter, such as Primeiro."
+    quarter: String
+    "The health region."
+    region: String
+    "The hospital or ULS."
+    hospital: String
+    "Admissions for asthma, young adults."
+    asthmaAdmissions: Float
+    "Admissions for asthma or COPD, adults."
+    asthmaCopdAdmissions: Float
+    "Admissions for pneumonia."
+    pneumoniaAdmissions: Float
+    "Deaths in asthma or COPD admissions."
+    asthmaCopdDeaths: Float
+    "Deaths in pneumonia admissions."
+    pneumoniaDeaths: Float
+}
+
+"A page of SnsDiabetesAdmissionRates records: how many match the arguments, and the first of them."
+type SnsDiabetesAdmissionRatesPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsDiabetesAdmissionRates!]
+}
+
+"One hospital in one quarter."
+type SnsDiabetesAdmissionRates {
+    "The year."
+    year: String
+    "The quarter, such as Primeiro."
+    quarter: String
+    "The health region."
+    region: String
+    "The hospital or ULS."
+    hospital: String
+    "Admissions for uncontrolled diabetes."
+    uncontrolledAdmissions: Float
+    "Admissions for acute complications."
+    acuteAdmissions: Float
+    "Admissions for chronic complications."
+    chronicAdmissions: Float
+    "Lower-limb amputations."
+    amputations: Float
+    "Deaths in acute complication admissions."
+    acuteDeaths: Float
+    "Deaths in chronic complication admissions."
+    chronicDeaths: Float
+}
+
+"A page of SnsHeartAdmissionRates records: how many match the arguments, and the first of them."
+type SnsHeartAdmissionRatesPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsHeartAdmissionRates!]
+}
+
+"One hospital in one quarter."
+type SnsHeartAdmissionRates {
+    "The year."
+    year: String
+    "The quarter, such as Primeiro."
+    quarter: String
+    "The health region."
+    region: String
+    "The hospital or ULS."
+    hospital: String
+    "Admissions for hypertension."
+    hypertensionAdmissions: Float
+    "Admissions for heart failure."
+    heartFailureAdmissions: Float
+    "Deaths in hypertension admissions."
+    hypertensionDeaths: Float
+    "Deaths in heart failure admissions."
+    heartFailureDeaths: Float
+}
+
+"A page of SnsAdmissionRatesByHospital records: how many match the arguments, and the first of them."
+type SnsAdmissionRatesByHospitalPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsAdmissionRatesByHospital!]
+}
+
+"One hospital and diagnosis chapter in one quarter."
+type SnsAdmissionRatesByHospital {
+    "The year."
+    year: String
+    "The quarter, such as Primeiro."
+    quarter: String
+    "The health region."
+    region: String
+    "The hospital or ULS."
+    hospital: String
+    "The ICD chapter of the main diagnosis, such as Neoplasias."
+    chapter: String
+    "The admission rate."
+    admissionRate: Float
+    "Inpatient days."
+    inpatientDays: Int
+    "The death rate."
+    deathRate: Float
+}
+
+"A page of SnsAdmissionRatesByAge records: how many match the arguments, and the first of them."
+type SnsAdmissionRatesByAgePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsAdmissionRatesByAge!]
+}
+
+"One region, age group and diagnosis chapter in one quarter."
+type SnsAdmissionRatesByAge {
+    "The year."
+    year: String
+    "The quarter, such as Primeiro."
+    quarter: String
+    "The health region."
+    region: String
+    "The age group, such as [65-120[."
+    ageGroup: String
+    "The ICD chapter of the main diagnosis, such as Neoplasias."
+    chapter: String
+    "The admission rate."
+    admissionRate: Float
+    "The death rate."
+    deathRate: Float
+}
+
+"A page of SnsAdmissionRatesBySex records: how many match the arguments, and the first of them."
+type SnsAdmissionRatesBySexPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsAdmissionRatesBySex!]
+}
+
+"One region, sex and diagnosis chapter in one quarter."
+type SnsAdmissionRatesBySex {
+    "The year."
+    year: String
+    "The quarter, such as Primeiro."
+    quarter: String
+    "The health region."
+    region: String
+    "The sex: F, M or I (unknown)."
+    sex: String
+    "The ICD chapter of the main diagnosis, such as Neoplasias."
+    chapter: String
+    "The admission rate."
+    admissionRate: Float
+    "The death rate."
+    deathRate: Float
+}
+
+"A page of SnsHospitalDischargesByDiagnosis records: how many match the arguments, and the first of them."
+type SnsHospitalDischargesByDiagnosisPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsHospitalDischargesByDiagnosis!]
+}
+
+"One hospital, chapter, age group and sex in one month."
+type SnsHospitalDischargesByDiagnosis {
+    "The month."
+    month: String
+    "The health region."
+    region: String
+    "The hospital or ULS."
+    hospital: String
+    "The ICD chapter of the main diagnosis, such as Neoplasias."
+    chapter: String
+    "The age group, such as [65-120[."
+    ageGroup: String
+    "The sex: F, M or I (unknown)."
+    sex: String
+    "Admissions."
+    admissions: Int
+    "Inpatient days."
+    inpatientDays: Int
+    "Day cases."
+    dayCases: Int
+    "Deaths."
+    deaths: Int
+}
+
+"A page of SnsHaemodialysis records: how many match the arguments, and the first of them."
+type SnsHaemodialysisPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsHaemodialysis!]
+}
+
+"One clinic and age group in one month."
+type SnsHaemodialysis {
+    "The month."
+    month: String
+    "The clinic, such as Nephrocare - Lumiar."
+    clinic: String
+    "The age group, such as 65-74."
+    ageGroup: String
+    "New patients."
+    newPatients: Int
+    "Patients."
+    patients: Int
+    "Treatments."
+    treatments: Int
+}
+
+"A page of SnsOrganTransplants records: how many match the arguments, and the first of them."
+type SnsOrganTransplantsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsOrganTransplants!]
+}
+
+"One organ in one quarter."
+type SnsOrganTransplants {
+    "The quarter, such as 1º Trimestre/2024."
+    quarter: String
+    "The organ: Rim (kidney), Fígado (liver), Coração (heart), Pulmão (lung) or Pâncreas."
+    organ: String
+    "Organs transplanted."
+    transplanted: Int
+}
+
+"A page of SnsOrgansRetrieved records: how many match the arguments, and the first of them."
+type SnsOrgansRetrievedPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsOrgansRetrieved!]
+}
+
+"One organ in one quarter."
+type SnsOrgansRetrieved {
+    "The quarter, such as 1º Trimestre/2024."
+    quarter: String
+    "The organ: Rim (kidney), Fígado (liver), Coração (heart), Pulmão (lung) or Pâncreas."
+    organ: String
+    "Organs retrieved."
+    retrieved: Float
+}
+
+"A page of SnsOrganDonors records: how many match the arguments, and the first of them."
+type SnsOrganDonorsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsOrganDonors!]
+}
+
+"One quarter."
+type SnsOrganDonors {
+    "The quarter, such as 1º Trimestre/2024."
+    quarter: String
+    "All donors."
+    donors: Int
+    "Deceased donors."
+    deceasedDonors: Int
+    "Living donors."
+    livingDonors: Int
+    "Donors per million."
+    donorsPerMillion: Float
+}
+
+"A page of SnsGeneralTrainingPlaces records: how many match the arguments, and the first of them."
+type SnsGeneralTrainingPlacesPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsGeneralTrainingPlaces!]
+}
+
+"One institution in one year."
+type SnsGeneralTrainingPlaces {
+    "The year."
+    year: String
+    "The region, such as Norte, RAA (Azores) or RAM (Madeira)."
+    region: String
+    "The training institution."
+    institution: String
+    "Places offered."
+    places: Int
+    "Places filled."
+    filled: Int
+    "Places left empty."
+    unfilled: Int
+}
+
+"A page of SnsSpecialtyTrainingPlaces records: how many match the arguments, and the first of them."
+type SnsSpecialtyTrainingPlacesPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsSpecialtyTrainingPlaces!]
+}
+
+"One specialty at one institution in one year."
+type SnsSpecialtyTrainingPlaces {
+    "The year."
+    year: String
+    "The region, such as Norte."
+    region: String
+    "The specialty, such as Pediatria."
+    specialty: String
+    "The training institution."
+    institution: String
+    "Places offered."
+    places: Int
+    "Places filled."
+    filled: Int
+    "Places left empty."
+    unfilled: Int
+}
+
+"A page of SnsNewSpecialists records: how many match the arguments, and the first of them."
+type SnsNewSpecialistsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsNewSpecialists!]
+}
+
+"One specialty at one institution in one year."
+type SnsNewSpecialists {
+    "The year."
+    year: String
+    "The specialty, such as Pediatria."
+    specialty: String
+    "The training institution."
+    institution: String
+    "New specialists."
+    newSpecialists: Int
+}
+
+"A page of SnsNationalAccessExam records: how many match the arguments, and the first of them."
+type SnsNationalAccessExamPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsNationalAccessExam!]
+}
+
+"One year."
+type SnsNationalAccessExam {
+    "The year."
+    year: String
+    "Candidates."
+    candidates: Int
+    "Exams sat."
+    examsSat: Int
+    "Candidates absent."
+    absent: Int
+}
+
+"A page of SnsResidencyCandidates records: how many match the arguments, and the first of them."
+type SnsResidencyCandidatesPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsResidencyCandidates!]
+}
+
+"One year."
+type SnsResidencyCandidates {
+    "The year."
+    year: String
+    "Candidates for general training."
+    generalTraining: Int
+    "Candidates for specialty training."
+    specialtyTraining: Int
+}
+
+"A page of SnsFluVirusTypes records: how many match the arguments, and the first of them."
+type SnsFluVirusTypesPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsFluVirusTypes!]
+}
+
+"One winter, named by the year it ends."
+type SnsFluVirusTypes {
+    "The year."
+    year: String
+    "Cases tested."
+    tested: Int
+    "The dominant virus, such as A(H3)."
+    dominant: String
+    "The percent with flu."
+    flu: Float
+    "The percent with A(H1)pdm09."
+    fluAH1pdm09: Float
+    "The percent with A(H3)."
+    fluAH3: Float
+    "The percent with flu B."
+    fluB: Float
+}
+
+"A page of SnsOtherRespiratoryViruses records: how many match the arguments, and the first of them."
+type SnsOtherRespiratoryVirusesPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsOtherRespiratoryViruses!]
+}
+
+"One winter, named by the year it ends."
+type SnsOtherRespiratoryViruses {
+    "The year."
+    year: String
+    "Cases tested."
+    tested: Int
+    "The percent with rhinovirus."
+    rhinovirus: Float
+    "The percent with respiratory syncytial virus (RSV)."
+    rsv: Float
+    "The percent with human coronavirus."
+    coronavirus: Float
+    "The percent with adenovirus."
+    adenovirus: Float
+    "The percent with metapneumovirus."
+    metapneumovirus: Float
+}
+
+"A page of SnsFluVaccineCoverage records: how many match the arguments, and the first of them."
+type SnsFluVaccineCoveragePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsFluVaccineCoverage!]
+}
+
+"One winter, named by the year it ends."
+type SnsFluVaccineCoverage {
+    "The year."
+    year: String
+    "The percent vaccinated, all ages."
+    all: Float
+    "The percent vaccinated under 15."
+    under15: Float
+    "The percent vaccinated aged 15 to 44."
+    age15to44: Float
+    "The percent vaccinated aged 45 to 64."
+    age45to64: Float
+    "The percent vaccinated aged 65 or more."
+    age65Plus: Float
+}
+
+"A page of SnsCongenitalAnomalies records: how many match the arguments, and the first of them."
+type SnsCongenitalAnomaliesPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsCongenitalAnomalies!]
+}
+
+"One year."
+type SnsCongenitalAnomalies {
+    "The year."
+    year: String
+    "Anomalies of the nervous system."
+    nervousSystem: Float
+    "Anomalies of the heart and circulation."
+    heart: Float
+    "Cleft lip and palate."
+    cleftLipPalate: Float
+    "Anomalies of the urinary system."
+    urinary: Float
+    "Anomalies of muscles and skeleton."
+    musculoskeletal: Float
+    "Chromosomal anomalies."
+    chromosomal: Float
+}
+
+"A page of SnsLegionellaTesting records: how many match the arguments, and the first of them."
+type SnsLegionellaTestingPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsLegionellaTesting!]
+}
+
+"One year."
+type SnsLegionellaTesting {
+    "The year."
+    year: String
+    "Samples tested."
+    samples: Int
+    "Samples from building pipes."
+    buildingPipes: Int
+    "Samples from cooling towers."
+    coolingTowers: Int
+    "Positive samples."
+    positive: Int
+    "Positive above the legal limit."
+    aboveLimit: Int
+}
+
+"A page of SnsNewbornScreening records: how many match the arguments, and the first of them."
+type SnsNewbornScreeningPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsNewbornScreening!]
+}
+
+"One year."
+type SnsNewbornScreening {
+    "The year."
+    year: String
+    "Newborns tested."
+    newbornsTested: Int
+    "Cases found."
+    casesFound: Int
+    "Average days to treatment."
+    daysToTreatment: Float
+}
+
+"A page of SnsCovidTestStock records: how many match the arguments, and the first of them."
+type SnsCovidTestStockPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsCovidTestStock!]
+}
+
+"One month."
+type SnsCovidTestStock {
+    "The month."
+    month: String
+    "RNA extraction kits."
+    rnaExtractionKits: Int
+    "RT-PCR amplification kits."
+    rtPcrKits: Int
+    "Rapid antigen tests."
+    antigenTests: Float
+}
+
+"A page of SnsCovidTestDistribution records: how many match the arguments, and the first of them."
+type SnsCovidTestDistributionPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsCovidTestDistribution!]
+}
+
+"One region in one month."
+type SnsCovidTestDistribution {
+    "The month."
+    month: String
+    "The region, such as Região de Saúde do Norte, or Outras Entidades."
+    region: String
+    "RNA extraction kits."
+    rnaExtractionKits: Int
+    "RT-PCR amplification kits."
+    rtPcrKits: Int
+    "Rapid antigen tests."
+    antigenTests: Float
+}
+
+"A page of SnsReserveMedicineDistribution records: how many match the arguments, and the first of them."
+type SnsReserveMedicineDistributionPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsReserveMedicineDistribution!]
+}
+
+"One region and group in one month."
+type SnsReserveMedicineDistribution {
+    "The month."
+    month: String
+    "The region, such as Região do Norte."
+    region: String
+    "The therapeutic group, such as Antibacterianos."
+    item: String
+    "Units sent out."
+    quantity: Int
+}
+
+"A page of SnsReserveMedicineStock records: how many match the arguments, and the first of them."
+type SnsReserveMedicineStockPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsReserveMedicineStock!]
+}
+
+"One group at the end of one month."
+type SnsReserveMedicineStock {
+    "The month."
+    month: String
+    "The therapeutic group, such as Antiarrítmicos."
+    item: String
+    "Units in stock."
+    stock: Int
+}
+
+"A page of SnsReserveEquipmentStock records: how many match the arguments, and the first of them."
+type SnsReserveEquipmentStockPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsReserveEquipmentStock!]
+}
+
+"One item at the end of one month."
+type SnsReserveEquipmentStock {
+    "The month."
+    month: String
+    "The item, such as Máscara P3 (FFP3 mask)."
+    item: String
+    "Units in stock."
+    stock: Int
+}
+
+"A page of SnsReserveEquipmentDistribution records: how many match the arguments, and the first of them."
+type SnsReserveEquipmentDistributionPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsReserveEquipmentDistribution!]
+}
+
+"One item and receiver in one month."
+type SnsReserveEquipmentDistribution {
+    "The month."
+    month: String
+    "The item, such as Máscara Cirúrgica."
+    item: String
+    "The receiver, such as Região do Centro."
+    receiver: String
+    "Units sent out."
+    quantity: Int
+}
+
+"A page of SnsAccounts records: how many match the arguments, and the first of them."
+type SnsAccountsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsAccounts!]
+}
+
+"One month."
+type SnsAccounts {
+    "The month."
+    month: String
+    "Budgeted revenue in millions of euros."
+    budgetRevenue: Float
+    "Budgeted spending in millions of euros."
+    budgetSpending: Float
+    "Revenue since 1 January in millions of euros."
+    revenue: Float
+    "Spending since 1 January in millions of euros."
+    spending: Float
+    "Staff costs since 1 January in millions of euros."
+    staff: Float
+    "Pharmacy medicines since 1 January in millions of euros."
+    pharmacies: Float
+}
+
+"A page of SnsHealthProcurementSavings records: how many match the arguments, and the first of them."
+type SnsHealthProcurementSavingsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsHealthProcurementSavings!]
+}
+
+"One category in one month."
+type SnsHealthProcurementSavings {
+    "The month."
+    month: String
+    "The category, such as Foro Oncológico (cancer)."
+    category: String
+    "Amount awarded in euros."
+    awarded: Float
+    "Savings in euros."
+    savings: Float
+}
+
+"A page of SnsGeneralProcurementSavings records: how many match the arguments, and the first of them."
+type SnsGeneralProcurementSavingsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsGeneralProcurementSavings!]
+}
+
+"One category in one month."
+type SnsGeneralProcurementSavings {
+    "The month."
+    month: String
+    "The category: Energia, Software e Informática, Serviços Transversais, Outras or Total."
+    category: String
+    "Amount awarded in euros."
+    awarded: Float
+    "Savings in euros."
+    savings: Float
+}
+
+"A page of SnsHealthFrameworkAgreements records: how many match the arguments, and the first of them."
+type SnsHealthFrameworkAgreementsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsHealthFrameworkAgreements!]
+}
+
+"One agreement."
+type SnsHealthFrameworkAgreements {
+    "The instrument: AQ - Acordo Quadro (framework agreement) or SAD - Sistema de Aquisição Dinâmico."
+    instrument: String
+    "The day it came into force, such as 2026-10-22."
+    startDate: String
+    "Its reference and subject."
+    subject: String
+    "Suppliers taking part."
+    suppliers: Float
+    "The last day it can run."
+    endDate: String
+}
+
+"A page of SnsGeneralFrameworkAgreements records: how many match the arguments, and the first of them."
+type SnsGeneralFrameworkAgreementsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsGeneralFrameworkAgreements!]
+}
+
+"One agreement."
+type SnsGeneralFrameworkAgreements {
+    "The instrument: AQ - Acordo Quadro (framework agreement) or SAD - Sistema de Aquisição Dinâmico."
+    instrument: String
+    "The day it came into force, such as 2026-10-22."
+    startDate: String
+    "Its reference and subject."
+    subject: String
+    "Suppliers taking part."
+    suppliers: Float
+    "The last day it can run."
+    endDate: String
+}
+
+"A page of SnsPublicContracts records: how many match the arguments, and the first of them."
+type SnsPublicContractsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsPublicContracts!]
+}
+
+"One contract."
+type SnsPublicContracts {
+    "The day it was signed, such as 2026-09-30."
+    signed: String
+    "What it buys."
+    subject: String
+    "The procedure, such as Ajuste Direto Regime Geral (direct award)."
+    procedure: String
+    "The SNS body that buys."
+    buyer: String
+    "The supplier."
+    supplier: String
+    "The contract price in euros."
+    price: Float
+    "The price paid in euros."
+    finalPrice: Float
+}
+
+"A page of SnsNonUrgentTransport records: how many match the arguments, and the first of them."
+type SnsNonUrgentTransportPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsNonUrgentTransport!]
+}
+
+"One payer in one month."
+type SnsNonUrgentTransport {
+    "The month."
+    month: String
+    "The ULS or region that pays."
+    payer: String
+    "Trips."
+    trips: Float
+    "Patients."
+    patients: Float
+    "Euros billed."
+    amount: Float
+}
+
+"A page of SnsContractedExamsByProvider records: how many match the arguments, and the first of them."
+type SnsContractedExamsByProviderPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsContractedExamsByProvider!]
+}
+
+"One provider and area in one month."
+type SnsContractedExamsByProvider {
+    "The month."
+    month: String
+    "The billing region, such as Norte."
+    region: String
+    "The provider, such as CLISA - CLINICA DE SANTO ANTONIO, S.A."
+    provider: String
+    "The area in capitals, such as RADIOLOGIA."
+    area: String
+    "Acts accepted."
+    acts: Int
+    "Requests accepted."
+    requests: Int
+}
+
+"A page of SnsContractedExamsByArea records: how many match the arguments, and the first of them."
+type SnsContractedExamsByAreaPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsContractedExamsByArea!]
+}
+
+"One region and area in one month."
+type SnsContractedExamsByArea {
+    "The month."
+    month: String
+    "The region, such as Norte."
+    region: String
+    "The area, such as Análises Clínicas (lab tests)."
+    area: String
+    "Requests done."
+    requests: Int
+    "Cost to the SNS in euros."
+    cost: Float
+}
+
+"A page of SnsHealthRecordUsePrimaryCare records: how many match the arguments, and the first of them."
+type SnsHealthRecordUsePrimaryCarePage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsHealthRecordUsePrimaryCare!]
+}
+
+"One unit in one month."
+type SnsHealthRecordUsePrimaryCare {
+    "The month."
+    month: String
+    "The unit, such as USF Briosa."
+    unit: String
+    "Accesses."
+    accesses: Int
+    "Visits."
+    visits: Int
+}
+
+"A page of SnsHealthRecordUseHospitals records: how many match the arguments, and the first of them."
+type SnsHealthRecordUseHospitalsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsHealthRecordUseHospitals!]
+}
+
+"One hospital in one month."
+type SnsHealthRecordUseHospitals {
+    "The month."
+    month: String
+    "The hospital."
+    hospital: String
+    "Accesses."
+    accesses: Int
+    "Visits."
+    visits: Int
+}
+
+"A page of SnsRseLiveTeleconsultations records: how many match the arguments, and the first of them."
+type SnsRseLiveTeleconsultationsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsRseLiveTeleconsultations!]
+}
+
+"One month nationwide."
+type SnsRseLiveTeleconsultations {
+    "The month."
+    month: String
+    "Conferences."
+    conferences: Float
+    "Participants."
+    participants: Float
+    "Minutes."
+    minutes: Float
+}
+
+"A page of SnsSns24Signups records: how many match the arguments, and the first of them."
+type SnsSns24SignupsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsSns24Signups!]
+}
+
+"One group of health centres on one day."
+type SnsSns24Signups {
+    "The day."
+    day: String
+    "The region, such as ARS Norte."
+    region: String
+    "The group of health centres."
+    entity: String
+    "New sign-ups."
+    signups: Int
+}
+
+"A page of SnsRareDiseaseCards records: how many match the arguments, and the first of them."
+type SnsRareDiseaseCardsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsRareDiseaseCards!]
+}
+
+"One hospital in one month."
+type SnsRareDiseaseCards {
+    "The month."
+    month: String
+    "The ULS."
+    uls: String
+    "The hospital."
+    hospital: String
+    "Cards counted as active."
+    activeCards: Int
+}
+
+"A page of SnsCertifiedHealthUnits records: how many match the arguments, and the first of them."
+type SnsCertifiedHealthUnitsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsCertifiedHealthUnits!]
+}
+
+"One unit in one month."
+type SnsCertifiedHealthUnits {
+    "The month."
+    month: String
+    "The institution."
+    institution: String
+    "The unit, such as Serviço de Pediatria."
+    unit: String
+    "The phase: Certificada (certified) or Em Curso (in progress)."
+    phase: String
+}
+
+"A page of SnsInspections records: how many match the arguments, and the first of them."
+type SnsInspectionsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsInspections!]
+}
+
+"One quarter, dated by its last month."
+type SnsInspections {
+    "The month."
+    month: String
+    "Bodies inspected."
+    inspected: Int
+    "Bodies audited."
+    audited: Int
+    "Disciplinary cases."
+    disciplinaryCases: Int
+}
+
+"A page of SnsSafetyIncidentReports records: how many match the arguments, and the first of them."
+type SnsSafetyIncidentReportsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsSafetyIncidentReports!]
+}
+
+"One quarter."
+type SnsSafetyIncidentReports {
+    "The month."
+    month: String
+    "Reports by professionals."
+    byProfessionals: Int
+    "Reports by citizens."
+    byCitizens: Int
+}
+
+"A page of SnsClinicalTrials records: how many match the arguments, and the first of them."
+type SnsClinicalTrialsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsClinicalTrials!]
+}
+
+"One period."
+type SnsClinicalTrials {
+    "The month."
+    month: String
+    "Trials submitted."
+    submitted: Int
+    "Trials in phase I."
+    phase1: Int
+    "Trials in phase II."
+    phase2: Int
+    "Trials in phase III."
+    phase3: Int
+    "Trials with a commercial sponsor."
+    commercial: Int
+    "Trials with an academic sponsor."
+    academic: Int
+}
+
+"A page of SnsUserChargeExemptions records: how many match the arguments, and the first of them."
+type SnsUserChargeExemptionsPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsUserChargeExemptions!]
+}
+
+"One reason in one month."
+type SnsUserChargeExemptions {
+    "The month."
+    month: String
+    "The reason, such as Grávidas e parturientes."
+    reason: String
+    "Patients exempt."
+    patients: Int
+}
+
+"A page of SnsCostCentres records: how many match the arguments, and the first of them."
+type SnsCostCentresPage {
+    "The number of records that match the arguments, across every page."
+    totalCount: Int
+    "The first records that match the arguments, at most 100."
+    items: [SnsCostCentres!]
+}
+
+"One cost centre in one month."
+type SnsCostCentres {
+    "The month."
+    month: String
+    "The institution, such as I.P.O. PORTO-FR.GENTIL, E.P.E."
+    institution: String
+    "The cost centre, such as Auditoria Interna."
+    costCentre: String
+    "The service it maps to."
+    service: String
+    "The ULS group."
+    uls: String
+}

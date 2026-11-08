@@ -1,0 +1,376 @@
+{
+ "operations": [
+  {
+   "field": "ipmaCityForecast",
+   "path": "/open-data/forecast/meteorology/cities/daily/{globalIdLocal}.json",
+   "arguments": [
+    {
+     "name": "location",
+     "parameter": "globalIdLocal",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ipmaForecastAllCities",
+   "path": "/open-data/forecast/meteorology/cities/daily/hp-daily-forecast-day{idDay}.json",
+   "arguments": [
+    {
+     "name": "day",
+     "parameter": "idDay",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ipmaSeaForecast",
+   "path": "/open-data/forecast/oceanography/daily/hp-daily-sea-forecast-day{idDay}.json",
+   "arguments": [
+    {
+     "name": "day",
+     "parameter": "idDay",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ipmaFireRisk",
+   "path": "/open-data/forecast/meteorology/rcm/rcm-d{idDay}.json",
+   "arguments": [
+    {
+     "name": "day",
+     "parameter": "idDay",
+     "in": "path",
+     "list": false
+    }
+   ]
+  },
+  {
+   "field": "ipmaUvIndex",
+   "path": "/open-data/forecast/meteorology/uv/uv.json",
+   "arguments": []
+  },
+  {
+   "field": "ipmaWarnings",
+   "path": "/open-data/forecast/warnings/warnings_www.json",
+   "arguments": []
+  },
+  {
+   "field": "ipmaEarthquakes",
+   "path": "/open-data/observation/seismic/{area}.json",
+   "arguments": [
+    {
+     "name": "area",
+     "parameter": "area",
+     "in": "path",
+     "list": false,
+     "values": {
+      "MAINLAND_AND_MADEIRA": "7",
+      "AZORES": "3"
+     }
+    }
+   ]
+  },
+  {
+   "field": "ipmaStations",
+   "path": "/open-data/observation/meteorology/stations/stations.json",
+   "arguments": []
+  },
+  {
+   "field": "ipmaObservations",
+   "path": "/open-data/observation/meteorology/stations/observations.json",
+   "arguments": [],
+   "result": "entries"
+  },
+  {
+   "field": "ipmaPlaces",
+   "path": "/open-data/distrits-islands.json",
+   "arguments": []
+  },
+  {
+   "field": "ipmaSeaLocations",
+   "path": "/open-data/sea-locations.json",
+   "arguments": []
+  },
+  {
+   "field": "ipmaWeatherTypes",
+   "path": "/open-data/weather-type-classe.json",
+   "arguments": []
+  },
+  {
+   "field": "ipmaWindClasses",
+   "path": "/open-data/wind-speed-daily-classe.json",
+   "arguments": []
+  },
+  {
+   "field": "ipmaRainClasses",
+   "path": "/open-data/precipitation-classe.json",
+   "arguments": []
+  }
+ ],
+ "fields": {
+  "IpmaCityForecast": {
+   "days": {
+    "key": "data"
+   },
+   "location": {
+    "key": "globalIdLocal"
+   },
+   "updatedAt": {
+    "key": "dataUpdate"
+   }
+  },
+  "IpmaForecastAllCities": {
+   "date": {
+    "key": "forecastDate"
+   },
+   "cities": {
+    "key": "data"
+   },
+   "updatedAt": {
+    "key": "dataUpdate"
+   }
+  },
+  "IpmaDayForecast": {
+   "date": {
+    "key": "forecastDate"
+   },
+   "location": {
+    "key": "globalIdLocal"
+   },
+   "minTemperature": {
+    "key": "tMin",
+    "conversion": "number"
+   },
+   "maxTemperature": {
+    "key": "tMax",
+    "conversion": "number"
+   },
+   "rainProbability": {
+    "key": "precipitaProb",
+    "conversion": "number"
+   },
+   "rainClass": {
+    "key": "classPrecInt"
+   },
+   "windDirection": {
+    "key": "predWindDir"
+   },
+   "windClass": {
+    "key": "classWindSpeed"
+   },
+   "weatherType": {
+    "key": "idWeatherType"
+   }
+  },
+  "IpmaSeaForecast": {
+   "date": {
+    "key": "forecastDate"
+   },
+   "places": {
+    "key": "data"
+   }
+  },
+  "IpmaSeaPlaceForecast": {
+   "location": {
+    "key": "globalIdLocal"
+   },
+   "waveHeightMin": {
+    "key": "waveHighMin",
+    "conversion": "number"
+   },
+   "waveHeightMax": {
+    "key": "waveHighMax",
+    "conversion": "number"
+   },
+   "wavePeriodMin": {
+    "key": "wavePeriodMin",
+    "conversion": "number"
+   },
+   "wavePeriodMax": {
+    "key": "wavePeriodMax",
+    "conversion": "number"
+   },
+   "waveDirection": {
+    "key": "predWaveDir"
+   },
+   "seaHeightMax": {
+    "key": "totalSeaMax"
+   },
+   "seaTemperatureMin": {
+    "key": "sstMin",
+    "conversion": "number"
+   },
+   "seaTemperatureMax": {
+    "key": "sstMax",
+    "conversion": "number"
+   }
+  },
+  "IpmaFireRisk": {
+   "date": {
+    "key": "dataPrev"
+   },
+   "municipalities": {
+    "key": "local",
+    "conversion": "entries"
+   }
+  },
+  "IpmaMunicipalityFireRisk": {
+   "municipality": {
+    "key": "key"
+   },
+   "risk": {
+    "key": "value/data/rcm"
+   }
+  },
+  "IpmaUvForecast": {
+   "location": {
+    "key": "globalIdLocal"
+   },
+   "date": {
+    "key": "data"
+   },
+   "uvIndex": {
+    "key": "iUv",
+    "conversion": "number"
+   }
+  },
+  "IpmaWarning": {
+   "kind": {
+    "key": "awarenessTypeName"
+   },
+   "level": {
+    "key": "awarenessLevelID"
+   },
+   "area": {
+    "key": "idAreaAviso"
+   },
+   "start": {
+    "key": "startTime"
+   },
+   "end": {
+    "key": "endTime"
+   }
+  },
+  "IpmaEarthquakes": {
+   "earthquakes": {
+    "key": "data"
+   },
+   "lastEarthquakeAt": {
+    "key": "lastSismicActivityDate"
+   }
+  },
+  "IpmaEarthquake": {
+   "magnitude": {
+    "key": "magnitud"
+   },
+   "region": {
+    "key": "obsRegion"
+   },
+   "latitude": {
+    "key": "lat",
+    "conversion": "number"
+   },
+   "longitude": {
+    "key": "lon",
+    "conversion": "number"
+   },
+   "feltAt": {
+    "key": "local"
+   },
+   "intensity": {
+    "key": "degree"
+   }
+  },
+  "IpmaStation": {
+   "stationId": {
+    "key": "properties/idEstacao"
+   },
+   "name": {
+    "key": "properties/localEstacao"
+   }
+  },
+  "IpmaObservationHour": {
+   "time": {
+    "key": "key"
+   },
+   "stations": {
+    "key": "value",
+    "conversion": "entries"
+   }
+  },
+  "IpmaStationObservation": {
+   "station": {
+    "key": "key"
+   },
+   "temperature": {
+    "key": "value/temperatura"
+   },
+   "humidity": {
+    "key": "value/humidade"
+   },
+   "pressure": {
+    "key": "value/pressao"
+   },
+   "windSpeed": {
+    "key": "value/intensidadeVentoKM"
+   },
+   "windDirection": {
+    "key": "value/idDireccVento"
+   },
+   "rain": {
+    "key": "value/precAcumulada"
+   },
+   "radiation": {
+    "key": "value/radiacao"
+   }
+  },
+  "IpmaPlaceList": {
+   "places": {
+    "key": "data"
+   }
+  },
+  "IpmaPlace": {
+   "name": {
+    "key": "local"
+   },
+   "location": {
+    "key": "globalIdLocal"
+   },
+   "warningArea": {
+    "key": "idAreaAviso"
+   },
+   "region": {
+    "key": "idRegiao"
+   },
+   "latitude": {
+    "key": "latitude",
+    "conversion": "number"
+   },
+   "longitude": {
+    "key": "longitude",
+    "conversion": "number"
+   }
+  },
+  "IpmaClassList": {
+   "classes": {
+    "key": "data"
+   }
+  },
+  "IpmaClass": {
+   "id": {
+    "key": "idWeatherType|classWindSpeed|classPrecInt",
+    "conversion": "integer"
+   },
+   "label": {
+    "key": "descWeatherTypeEN|descClassWindSpeedDailyEN|descClassPrecIntEN"
+   },
+   "portugueseLabel": {
+    "key": "descWeatherTypePT|descClassWindSpeedDailyPT|descClassPrecIntPT"
+   }
+  }
+ }
+}

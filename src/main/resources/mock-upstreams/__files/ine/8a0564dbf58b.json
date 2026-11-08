@@ -1,0 +1,23 @@
+[ {
+  "IndicadorCod" : "0012261",
+  "IndicadorDsg" : "Registered crimes (No.) for police forces by Geographic localization (NUTS - 2024) and Category of crime; Annual - Directorate General for Justice Policy",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0012261&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:14.060Z",
+  "DataUltimoAtualizacao" : "2026-03-31",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2025" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "365 802",
+      "valor" : "365802"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

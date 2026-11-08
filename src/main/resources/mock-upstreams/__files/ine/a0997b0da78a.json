@@ -1,0 +1,25 @@
+[ {
+  "IndicadorCod" : "0012773",
+  "IndicadorDsg" : "Property registration of new vehicles (No.) by Place of residence (NUTS - 2024) and Type of vehicle; Annual - Institute of Registries and Notary",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0012773&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:24:08.725Z",
+  "DataUltimoAtualizacao" : "2026-10-30",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2025" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "sinal_conv" : "*",
+      "sinal_conv_desc" : "Rectified value",
+      "ind_string" : "235 123 *",
+      "valor" : "235123"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

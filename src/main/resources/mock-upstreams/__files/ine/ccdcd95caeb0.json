@@ -1,0 +1,23 @@
+[ {
+  "IndicadorCod" : "0012097",
+  "IndicadorDsg" : "Licensed dwellings (No.) in new constructions for family housing by Geographic location (NUTS - 2024) and Dwelling typology; Monthly - Statistics Portugal, Projects of building constructions and demolitions survey",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0012097&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:33.977Z",
+  "DataUltimoAtualizacao" : "2026-10-09",
+  "UltimoPref" : "August 2026",
+  "Dados" : {
+    "August 2026" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "3 059",
+      "valor" : "3059"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

@@ -1,0 +1,47 @@
+{
+ "mappings": [
+  {
+   "request": {
+    "urlPath": "/ropi/CitySDK/pois",
+    "method": "GET",
+    "queryParameters": {
+     "category": {
+      "hasExactly": [
+       {
+        "equalTo": "Parques e Jardins"
+       }
+      ]
+     },
+     "limit": {
+      "hasExactly": [
+       {
+        "equalTo": "100"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "ropi/d46df1e57213.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/ropi/CitySDK/pois"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "ropi/d46df1e57213.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  }
+ ]
+}

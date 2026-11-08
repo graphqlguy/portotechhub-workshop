@@ -1,0 +1,23 @@
+[ {
+  "IndicadorCod" : "0005719",
+  "IndicadorDsg" : "Imports (€) of goods by Place of source and Type of goods (Combined nomenclature - CN8); Annual - Statistics Portugal, Statistics on external trade of goods",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0005719&lingua=EN",
+  "DataExtracao" : "2026-11-06T13:26:36.435Z",
+  "DataUltimoAtualizacao" : "2026-08-07",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2025" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "230910",
+      "dim_3_t" : "Dog or cat food, put up for retail sale",
+      "ind_string" : "0",
+      "valor" : "0"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

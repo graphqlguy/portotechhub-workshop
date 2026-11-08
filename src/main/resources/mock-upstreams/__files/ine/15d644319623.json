@@ -1,0 +1,21 @@
+[ {
+  "IndicadorCod" : "0012765",
+  "IndicadorDsg" : "Urban waste collected per inhabitant (kg/ inhab.) by Geographic localization (NUTS - 2024); Annual - Statistics Portugal, Urban waste statistics",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0012765&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:24:02.622Z",
+  "DataUltimoAtualizacao" : "2026-08-13",
+  "UltimoPref" : "2024",
+  "Dados" : {
+    "2024" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "ind_string" : "489",
+      "valor" : "489"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

@@ -1,0 +1,25 @@
+[ {
+  "IndicadorCod" : "0012192",
+  "IndicadorDsg" : "Employment rate (Series 2021 - %) by Place of residence (NUTS - 2024), Sex and Age group; Annual - Statistics Portugal, Labour force survey (Series 2021)",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0012192&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:42.523Z",
+  "DataUltimoAtualizacao" : "2026-02-04",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2025" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "MF",
+      "dim_4" : "T",
+      "dim_4_t" : "Total",
+      "ind_string" : "57,3",
+      "valor" : "57.3"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

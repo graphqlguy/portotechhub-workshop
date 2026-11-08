@@ -1,6 +1,5 @@
 package org.springframework.samples.petclinic.chat;
 
-import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
@@ -12,6 +11,7 @@ import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
 import org.springframework.ai.chat.memory.ChatMemory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.samples.petclinic.upstream.UpstreamClock;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,7 +24,10 @@ class ChatController {
 
 	private final ChatClient chatClient;
 
-	ChatController(ChatClient.Builder builder, GAToolCallbacks tools, ChatMemory memory) {
+	private final UpstreamClock clock;
+
+	ChatController(ChatClient.Builder builder, GAToolCallbacks tools, ChatMemory memory, UpstreamClock clock) {
+		this.clock = clock;
 		this.chatClient = builder.defaultTools(tools.toolCallbackProvider())
 			.defaultAdvisors(MessageChatMemoryAdvisor.builder(memory).build())
 			.build();
@@ -33,11 +36,17 @@ class ChatController {
 	@PostMapping("/api/chat")
 	String chat(@RequestBody String question, HttpSession session) {
 		String system = """
-				You are the assistant of a veterinary clinic. Use the tools to read the clinic's data:
+				You are the assistant of a veterinary clinic in Porto, Portugal. Use the tools to answer:
 				find the fields with searchSchema, use introspectType if you need more details about a type,
 				and run the query with executeGraphql.
-				Today is %s. Answer briefly."""
-			.formatted(LocalDate.now().format(DAY));
+				Besides the clinic's owners, pets, visits and vets, the API reads public services of Portugal,
+				Porto and the European Union: the weather, the sea and earthquakes (IPMA), beaches, water and the
+				environment (APA), hospitals and health (SNS), statistics such as population, businesses, prices,
+				crimes and trade (INE and Eurostat), tourism and local lodging (Turismo de Portugal), Porto's buses,
+				air quality, parks and places (Porto Digital), and fuel prices (DGEG).
+				For a question on any of these topics, search the schema before you decide the API cannot answer it.
+				When an answer comes from a public service, name the service.
+				Today is %s. Answer briefly.""".formatted(this.clock.today().format(DAY));
 		return chatClient.prompt()
 			.system(system)
 			.user(question)

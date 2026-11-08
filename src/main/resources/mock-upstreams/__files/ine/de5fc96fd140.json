@@ -1,0 +1,21 @@
+[ {
+  "IndicadorCod" : "0001173",
+  "IndicadorDsg" : "Consumers confidence indicator (Balance); Monthly - Statistics Portugal, Short-term statistics on business - consumers survey",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0001173&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:24:14.023Z",
+  "DataUltimoAtualizacao" : "2026-10-29",
+  "UltimoPref" : "October 2026",
+  "Dados" : {
+    "October 2026" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "ind_string" : "-26,9",
+      "valor" : "-26.9"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

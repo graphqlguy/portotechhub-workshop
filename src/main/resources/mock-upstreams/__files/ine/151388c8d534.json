@@ -1,0 +1,21 @@
+[ {
+  "IndicadorCod" : "0012723",
+  "IndicadorDsg" : "Automated Teller Machine per 10 000 inhabitants (No.) by Geographic localization (NUTS - 2024); Annual - SIBS, Statistics of Multibanco Network operations",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0012723&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:24:13.375Z",
+  "DataUltimoAtualizacao" : "2026-07-20",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2025" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "ind_string" : "10,8",
+      "valor" : "10.8"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

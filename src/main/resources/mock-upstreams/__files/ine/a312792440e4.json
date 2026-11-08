@@ -1,0 +1,23 @@
+[ {
+  "IndicadorCod" : "0014162",
+  "IndicadorDsg" : "Consumption of electric energy by inhabitant (kWh/ inhab.) by Place of residence (NUTS - 2024); Annual - DGEG, Statistics on coal, oil, electric power and natural gas",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014162&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:24:03.251Z",
+  "DataUltimoAtualizacao" : "2026-07-11",
+  "UltimoPref" : "2024",
+  "Dados" : {
+    "2024" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "sinal_conv" : "*",
+      "sinal_conv_desc" : "Rectified value",
+      "ind_string" : "4 549,0 *",
+      "valor" : "4549"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

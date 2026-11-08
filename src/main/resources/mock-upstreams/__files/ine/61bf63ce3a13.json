@@ -1,0 +1,29 @@
+[ {
+  "IndicadorCod" : "0012101",
+  "IndicadorDsg" : "Deaths (No.) by Place of residence (NUTS - 2024), Sex, Age group and Day of death; Annual - Statistics Portugal, Deaths",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0012101&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:29.277Z",
+  "DataUltimoAtualizacao" : "2026-10-16",
+  "UltimoPref" : "2026",
+  "Dados" : {
+    "2026" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "MF",
+      "dim_4" : "T",
+      "dim_4_t" : "Total",
+      "dim_5" : "T",
+      "dim_5_t" : "Total",
+      "sinal_conv" : "//",
+      "sinal_conv_desc" : "Preliminary value",
+      "ind_string" : "90 278 //",
+      "valor" : "90278"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

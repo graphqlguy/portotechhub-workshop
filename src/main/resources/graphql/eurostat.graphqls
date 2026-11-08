@@ -1,0 +1,537 @@
+# The statistics of Eurostat, the statistical office of the European Union, for comparing Portugal with other 
+# European countries: consumer prices, population, unemployment, GDP, earnings and income, house prices, 
+# tourism, energy prices, and businesses by activity and by region. Each field reads one Eurostat dataset and 
+# answers with one observation for each country, time and category. A generator outside the repository writes 
+# this file and eurostat/datasets.json; the names and descriptions are written for the model.
+
+extend type Query {
+    """
+    The change of consumer prices from the same month a year earlier, in percent, by country and COICOP 2018
+    category, from the harmonised index of consumer prices (HICP). CP0945 is veterinary and other services for
+    pets (the price of a pet clinic visit), CP0932 is pets and pet products, and TOTAL is all items. EU27_2020
+    is the European Union. Eurostat publishes a month's categories in the middle of the next month and the
+    all-items flash estimate a few days after the month ends, so in early November the newest month with every
+    category is September. When the newest month comes back empty, ask for latestPeriods 3.
+    """
+    eurostatConsumerPriceChange(
+        """
+        Eurostat's country codes, such as PT for Portugal, ES for Spain and EU27_2020 for the European Union.
+        Leave it out for every country. A country's name, such as Portugal, works as well as its code.
+        """
+        countries: [String!]
+        """
+        The COICOP 2018 category, such as CP0945 for veterinary and other services for pets, CP0932 for pets
+        and pet products, CP01 for food, or TOTAL for all items (the older code CP00 is not used here).
+        """
+        category: String
+        "The month, such as 2026-09. Leave it out and set latestPeriods for the newest months."
+        month: String
+        "The number of latest periods to return, when the time is left out, such as 1 for the latest alone."
+        latestPeriods: Int
+    ): [EurostatObservation!]
+
+    """
+    The change of consumer prices from the previous month, in percent, by country and COICOP 2018 category,
+    from the HICP. The categories are those of eurostatConsumerPriceChange, such as CP0945 for veterinary and
+    other services for pets and TOTAL for all items.
+    """
+    eurostatConsumerPriceMonthlyChange(
+        """
+        Eurostat's country codes, such as PT for Portugal, ES for Spain and EU27_2020 for the European Union.
+        Leave it out for every country. A country's name, such as Portugal, works as well as its code.
+        """
+        countries: [String!]
+        """
+        The COICOP 2018 category, such as CP0945 for veterinary and other services for pets or TOTAL for all
+        items.
+        """
+        category: String
+        "The month, such as 2026-09. Leave it out and set latestPeriods for the newest months."
+        month: String
+        "The number of latest periods to return, when the time is left out, such as 1 for the latest alone."
+        latestPeriods: Int
+    ): [EurostatObservation!]
+
+    """
+    The harmonised index of consumer prices of a month, by country and COICOP 2018 category, with the average
+    of 2025 as 100, so that 105.13 means prices 5.13 percent above that average. The categories are those of
+    eurostatConsumerPriceChange.
+    """
+    eurostatConsumerPriceIndex(
+        """
+        Eurostat's country codes, such as PT for Portugal, ES for Spain and EU27_2020 for the European Union.
+        Leave it out for every country. A country's name, such as Portugal, works as well as its code.
+        """
+        countries: [String!]
+        """
+        The COICOP 2018 category, such as CP0945 for veterinary and other services for pets or TOTAL for all
+        items.
+        """
+        category: String
+        "The month, such as 2026-09. Leave it out and set latestPeriods for the newest months."
+        month: String
+        "The number of latest periods to return, when the time is left out, such as 1 for the latest alone."
+        latestPeriods: Int
+    ): [EurostatObservation!]
+
+    """
+    The change of the average consumer prices of a whole calendar year from those of the calendar year before,
+    in percent, by country and COICOP 2018 category, such as CP0945 for veterinary and other services for
+    pets. It answers how prices changed from one calendar year to the next; for how they changed over the last
+    twelve months, use eurostatConsumerPriceChange, which compares the latest month with the same month a year
+    earlier.
+    """
+    eurostatConsumerPriceCalendarYearChange(
+        """
+        Eurostat's country codes, such as PT for Portugal, ES for Spain and EU27_2020 for the European Union.
+        Leave it out for every country. A country's name, such as Portugal, works as well as its code.
+        """
+        countries: [String!]
+        """
+        The COICOP 2018 category, such as CP0945 for veterinary and other services for pets or TOTAL for all
+        items.
+        """
+        category: String
+        "The year, such as 2025. Leave it out and set latestPeriods for the newest years."
+        year: String
+        "The number of latest periods to return, when the time is left out, such as 1 for the latest alone."
+        latestPeriods: Int
+    ): [EurostatObservation!]
+
+    """
+    The share of household spending that each COICOP 2018 category takes in the harmonised index of consumer
+    prices, in parts per thousand, by country and year. A weight of 10 is 1 percent of all spending, and TOTAL
+    is always 1000.
+    """
+    eurostatConsumerSpendingWeights(
+        """
+        Eurostat's country codes, such as PT for Portugal, ES for Spain and EU27_2020 for the European Union.
+        Leave it out for every country. A country's name, such as Portugal, works as well as its code.
+        """
+        countries: [String!]
+        """
+        The COICOP 2018 category, such as CP0945 for veterinary and other services for pets or CP0932 for pets
+        and pet products.
+        """
+        category: String
+        "The year, such as 2026. Leave it out and set latestPeriods for the newest years."
+        year: String
+        "The number of latest periods to return, when the time is left out, such as 1 for the latest alone."
+        latestPeriods: Int
+    ): [EurostatObservation!]
+
+    """
+    How expensive a country is compared with the European Union, as a price level index where the EU average
+    is 100, by kind of spending and year. A value of 110 means prices 10 percent above the EU average, and 90
+    means 10 percent below it. The years run to 2024.
+    """
+    eurostatPriceLevels(
+        """
+        Eurostat's country codes, such as PT for Portugal, ES for Spain and EU27_2020 for the European Union.
+        Leave it out for every country. A country's name, such as Portugal, works as well as its code.
+        """
+        countries: [String!]
+        """
+        The kind of spending, such as A01 for actual individual consumption (what households consume), A0101
+        for food and non-alcoholic beverages, A0111 for restaurants and hotels, or GDP for the whole economy.
+        """
+        spending: String
+        "The year, such as 2024. Leave it out and set latestPeriods for the newest years."
+        year: String
+        "The number of latest periods to return, when the time is left out, such as 1 for the latest alone."
+        latestPeriods: Int
+    ): [EurostatObservation!]
+
+    "The number of people living in a country on 1 January of a year, by age and sex."
+    eurostatPopulation(
+        """
+        Eurostat's country codes, such as PT for Portugal, ES for Spain and EU27_2020 for the European Union.
+        Leave it out for every country. A country's name, such as Portugal, works as well as its code.
+        """
+        countries: [String!]
+        """
+        The age: TOTAL for every age, Y_LT1 for under one year, Y1 to Y99 for each year of age, and Y_OPEN for
+        100 and over.
+        """
+        age: String
+        "The sex: T for both, M for men, F for women."
+        sex: String
+        "The year, such as 2025. Leave it out and set latestPeriods for the newest years."
+        year: String
+        "The number of latest periods to return, when the time is left out, such as 1 for the latest alone."
+        latestPeriods: Int
+    ): [EurostatObservation!]
+
+    """
+    The unemployment rate of a month, in percent of the labour force and seasonally adjusted, by country, age
+    and sex.
+    """
+    eurostatUnemploymentMonthly(
+        """
+        Eurostat's country codes, such as PT for Portugal, ES for Spain and EU27_2020 for the European Union.
+        Leave it out for every country. A country's name, such as Portugal, works as well as its code.
+        """
+        countries: [String!]
+        "The age: TOTAL for everyone, Y_LT25 for people under 25, or Y25-74 for people from 25 to 74."
+        age: String
+        "The sex: T for both, M for men, F for women."
+        sex: String
+        "The month, such as 2026-09. Leave it out and set latestPeriods for the newest months."
+        month: String
+        "The number of latest periods to return, when the time is left out, such as 1 for the latest alone."
+        latestPeriods: Int
+    ): [EurostatObservation!]
+
+    "The unemployment rate of a year, in percent of the labour force, by country, age and sex."
+    eurostatUnemploymentYearly(
+        """
+        Eurostat's country codes, such as PT for Portugal, ES for Spain and EU27_2020 for the European Union.
+        Leave it out for every country. A country's name, such as Portugal, works as well as its code.
+        """
+        countries: [String!]
+        """
+        The age group, such as Y15-74 for everyone from 15 to 74, Y15-24 for young people, or Y55-74 for older
+        workers.
+        """
+        age: String
+        "The sex: T for both, M for men, F for women."
+        sex: String
+        "The year, such as 2025. Leave it out and set latestPeriods for the newest years."
+        year: String
+        "The number of latest periods to return, when the time is left out, such as 1 for the latest alone."
+        latestPeriods: Int
+    ): [EurostatObservation!]
+
+    """
+    The gross domestic product (GDP) of a country in a year, in the unit you choose, such as million euro or
+    the growth in volume from the year before.
+    """
+    eurostatGdp(
+        """
+        Eurostat's country codes, such as PT for Portugal, ES for Spain and EU27_2020 for the European Union.
+        Leave it out for every country. A country's name, such as Portugal, works as well as its code.
+        """
+        countries: [String!]
+        """
+        The unit: CP_MEUR for million euro at current prices, CLV_PCH_PRE for the growth in volume from the
+        year before in percent, or CP_MPPS_EU27_2020 for million purchasing power standards.
+        """
+        unit: String
+        "The year, such as 2025. Leave it out and set latestPeriods for the newest years."
+        year: String
+        "The number of latest periods to return, when the time is left out, such as 1 for the latest alone."
+        latestPeriods: Int
+    ): [EurostatObservation!]
+
+    """
+    The gross domestic product (GDP) of a country per inhabitant in a year, in euro, or as a percentage of the
+    EU average once price levels are taken into account.
+    """
+    eurostatGdpPerPerson(
+        """
+        Eurostat's country codes, such as PT for Portugal, ES for Spain and EU27_2020 for the European Union.
+        Leave it out for every country. A country's name, such as Portugal, works as well as its code.
+        """
+        countries: [String!]
+        """
+        The unit: CP_EUR_HAB for euro per person, CP_PPS_EU27_2020_HAB for purchasing power standards per
+        person, or PC_EU27_2020_HAB_MPPS_CP for percent of the EU average in purchasing power standards.
+        """
+        unit: String
+        "The year, such as 2025. Leave it out and set latestPeriods for the newest years."
+        year: String
+        "The number of latest periods to return, when the time is left out, such as 1 for the latest alone."
+        latestPeriods: Int
+    ): [EurostatObservation!]
+
+    """
+    The yearly earnings of a worker after income tax and social security, for model households, by country and
+    year.
+    """
+    eurostatNetEarnings(
+        """
+        Eurostat's country codes, such as PT for Portugal, ES for Spain and EU27_2020 for the European Union.
+        Leave it out for every country. A country's name, such as Portugal, works as well as its code.
+        """
+        countries: [String!]
+        """
+        The model household: P1_NCH_AW100 for a single person without children on the average wage,
+        P1_NCH_AW67 for the same on two thirds of it, or CPL_CH2_AW100 for a one-earner couple with two
+        children.
+        """
+        household: String
+        """
+        The part of the earnings: NET for net earnings, GRS for gross earnings, TAX for income tax, SOC for
+        social security contributions.
+        """
+        part: String
+        """
+        The currency: EUR for euro, or PPS for purchasing power standards, which take the price level of each
+        country into account.
+        """
+        currency: String
+        "The year, such as 2025. Leave it out and set latestPeriods for the newest years."
+        year: String
+        "The number of latest periods to return, when the time is left out, such as 1 for the latest alone."
+        latestPeriods: Int
+    ): [EurostatObservation!]
+
+    """
+    The monthly minimum wage of a country in each half of the year. Eurostat spreads a yearly sum paid in 14
+    salaries over 12 months, so in a country that pays 14 salaries a year, such as Portugal, the monthly
+    figure is 14/12 of one salary.
+    """
+    eurostatMinimumWage(
+        """
+        Eurostat's country codes, such as PT for Portugal, ES for Spain and FR for France. Leave it out for
+        every country. A country's name, such as Portugal, works as well as its code.
+        """
+        countries: [String!]
+        """
+        The currency: EUR for euro, or PPS for purchasing power standards, which take the price level of each
+        country into account.
+        """
+        currency: String
+        "The half of the year, such as 2026-S1 for January to June or 2026-S2 for July to December."
+        halfYear: String
+        "The number of latest periods to return, when the time is left out, such as 1 for the latest alone."
+        latestPeriods: Int
+    ): [EurostatObservation!]
+
+    """
+    The prices of the dwellings that households buy, by country and quarter, as an index or as a rate of
+    change.
+    """
+    eurostatHousePrices(
+        """
+        Eurostat's country codes, such as PT for Portugal, ES for Spain and EU27_2020 for the European Union.
+        Leave it out for every country. A country's name, such as Portugal, works as well as its code.
+        """
+        countries: [String!]
+        "The dwellings: TOTAL for all, DW_NEW for new ones, DW_EXST for existing ones."
+        purchase: String
+        """
+        The unit: RCH_A for the change from the same quarter a year earlier in percent, RCH_Q for the change
+        from the previous quarter, or I15_Q for the index with 2015 as 100.
+        """
+        unit: String
+        "The quarter, such as 2026-Q2. Leave it out and set latestPeriods for the newest quarters."
+        quarter: String
+        "The number of latest periods to return, when the time is left out, such as 1 for the latest alone."
+        latestPeriods: Int
+    ): [EurostatObservation!]
+
+    """
+    The number of nights that guests spent in the hotels, holiday flats and campsites of a country in a month,
+    by where the guests live.
+    """
+    eurostatTourismNights(
+        """
+        Eurostat's country codes, such as PT for Portugal, ES for Spain and EU27_2020 for the European Union.
+        Leave it out for every country. A country's name, such as Portugal, works as well as its code.
+        """
+        countries: [String!]
+        """
+        Where the guests live: TOTAL for everyone, DOM for residents of the country, FOR for guests from
+        abroad.
+        """
+        residence: String
+        """
+        The accommodation: I551-I553 for all, I551 for hotels, I552 for holiday and other short-stay
+        accommodation, I553 for campsites.
+        """
+        accommodation: String
+        "The month, such as 2026-09. Leave it out and set latestPeriods for the newest months."
+        month: String
+        "The number of latest periods to return, when the time is left out, such as 1 for the latest alone."
+        latestPeriods: Int
+    ): [EurostatObservation!]
+
+    """
+    The number of guests who arrived at the hotels, holiday flats and campsites of a country in a month, by
+    where the guests live.
+    """
+    eurostatTourismArrivals(
+        """
+        Eurostat's country codes, such as PT for Portugal, ES for Spain and EU27_2020 for the European Union.
+        Leave it out for every country. A country's name, such as Portugal, works as well as its code.
+        """
+        countries: [String!]
+        """
+        Where the guests live: TOTAL for everyone, DOM for residents of the country, FOR for guests from
+        abroad.
+        """
+        residence: String
+        """
+        The accommodation: I551-I553 for all, I551 for hotels, I552 for holiday and other short-stay
+        accommodation, I553 for campsites.
+        """
+        accommodation: String
+        "The month, such as 2026-09. Leave it out and set latestPeriods for the newest months."
+        month: String
+        "The number of latest periods to return, when the time is left out, such as 1 for the latest alone."
+        latestPeriods: Int
+    ): [EurostatObservation!]
+
+    """
+    The price of electricity for households, in euro per kilowatt-hour, by country, half-year, yearly
+    consumption band and taxes.
+    """
+    eurostatElectricityPrices(
+        """
+        Eurostat's country codes, such as PT for Portugal, ES for Spain and EU27_2020 for the European Union.
+        Leave it out for every country. A country's name, such as Portugal, works as well as its code.
+        """
+        countries: [String!]
+        """
+        The yearly consumption of the household: KWH2500-4999 for a typical household, KWH_LT1000 for less
+        than 1,000 kWh, KWH_GE15000 for 15,000 kWh or more, or TOT_KWH for all.
+        """
+        consumption: String
+        """
+        The taxes: I_TAX for the price with every tax, X_VAT for the price without VAT, X_TAX for the price
+        without taxes and levies.
+        """
+        taxes: String
+        """
+        The half of the year, such as 2026-S1 for January to June. Leave it out and set latestPeriods for the
+        newest.
+        """
+        halfYear: String
+        "The number of latest periods to return, when the time is left out, such as 1 for the latest alone."
+        latestPeriods: Int
+    ): [EurostatObservation!]
+
+    """
+    The price of natural gas for households, in euro per kilowatt-hour, by country, half-year, yearly
+    consumption band and taxes.
+    """
+    eurostatGasPrices(
+        """
+        Eurostat's country codes, such as PT for Portugal, ES for Spain and EU27_2020 for the European Union.
+        Leave it out for every country. A country's name, such as Portugal, works as well as its code.
+        """
+        countries: [String!]
+        """
+        The yearly consumption of the household: GJ20-199 for a typical household, GJ_LT20 for less than 20
+        GJ, GJ_GE200 for 200 GJ or more, or TOT_GJ for all.
+        """
+        consumption: String
+        """
+        The taxes: I_TAX for the price with every tax, X_VAT for the price without VAT, X_TAX for the price
+        without taxes and levies.
+        """
+        taxes: String
+        """
+        The half of the year, such as 2026-S1 for January to June. Leave it out and set latestPeriods for the
+        newest.
+        """
+        halfYear: String
+        "The number of latest periods to return, when the time is left out, such as 1 for the latest alone."
+        latestPeriods: Int
+    ): [EurostatObservation!]
+
+    """
+    The businesses of a country by economic activity (NACE Rev. 2) in a year: how many enterprises there are,
+    how many people they employ, their turnover, wages and value added. M75 is veterinary activities, which
+    covers pet clinics.
+    """
+    eurostatBusinessByActivity(
+        """
+        Eurostat's country codes, such as PT for Portugal, ES for Spain and EU27_2020 for the European Union.
+        Leave it out for every country. A country's name, such as Portugal, works as well as its code.
+        """
+        countries: [String!]
+        """
+        The NACE Rev. 2 activity, such as M75 for veterinary activities, G47 for retail trade, I56 for
+        restaurants and bars, or S96 for other personal services.
+        """
+        activity: String
+        """
+        The indicator: ENT_NR for the number of enterprises, EMP_NR for persons employed, SAL_NR for
+        employees, NETTUR_MEUR for net turnover in million euro, WAGE_MEUR for wages and salaries in million
+        euro, AV_MEUR for value added in million euro, or NETTUR_EMP_TEUR for turnover per person employed in
+        thousand euro.
+        """
+        indicator: String
+        "The year, such as 2024. Leave it out and set latestPeriods for the newest years."
+        year: String
+        "The number of latest periods to return, when the time is left out, such as 1 for the latest alone."
+        latestPeriods: Int
+    ): [EurostatObservation!]
+
+    """
+    The businesses of the NUTS 2 regions of Europe by economic activity in a year, counted by local units, the
+    shops, clinics and offices where people work. Porto is in the Norte region of Portugal, PT11.
+    """
+    eurostatRegionalBusiness(
+        """
+        Eurostat's region codes, such as PT11 for Norte, PT1A for Grande Lisboa or ES51 for Cataluña. A
+        country code such as PT gives the whole country. A country's name, such as Portugal, works as well as
+        its code.
+        """
+        regions: [String!]
+        """
+        The NACE Rev. 2 section or division, such as M75 for veterinary activities, G47 for retail trade or
+        I56 for restaurants and bars.
+        """
+        activity: String
+        """
+        The indicator: LOC_NR for the number of local units, EMP_LOC_NR for persons employed in them,
+        WAGE_LOC_MEUR for wages and salaries in million euro, or LC_EMP_LOC_TEUR for labour costs per person
+        employed in thousand euro.
+        """
+        indicator: String
+        "The year, such as 2024. Leave it out and set latestPeriods for the newest years."
+        year: String
+        "The number of latest periods to return, when the time is left out, such as 1 for the latest alone."
+        latestPeriods: Int
+    ): [EurostatObservation!]
+
+    """
+    The yearly net income of the people of a country, equivalised to compare households of different sizes,
+    from the EU survey on income and living conditions.
+    """
+    eurostatIncome(
+        """
+        Eurostat's country codes, such as PT for Portugal, ES for Spain and EU27_2020 for the European Union.
+        Leave it out for every country. A country's name, such as Portugal, works as well as its code.
+        """
+        countries: [String!]
+        "MED_EI for the median income, or MEAN_EI for the mean income."
+        statistic: String
+        """
+        The unit: EUR for euro, or PPS for purchasing power standards, which take the price level of each
+        country into account.
+        """
+        unit: String
+        "The year of the survey, such as 2025. Leave it out and set latestPeriods for the newest years."
+        year: String
+        "The number of latest periods to return, when the time is left out, such as 1 for the latest alone."
+        latestPeriods: Int
+    ): [EurostatObservation!]
+}
+
+"One value of a Eurostat dataset, for one country, one time and one category of each other dimension."
+type EurostatObservation {
+    "Eurostat's code of the country, such as PT for Portugal or EU27_2020 for the European Union."
+    country: String
+    "The name of the country, such as Portugal."
+    countryName: String
+    "The time of the value, such as 2026-09 for a month or 2025 for a year."
+    time: String
+    "The value, in the unit that the categories name."
+    value: Float
+    "The other categories of the value, such as its unit and its kind of goods."
+    categories: [EurostatCategory!]!
+}
+
+"A category of a Eurostat value, such as a unit of measure or a kind of goods."
+type EurostatCategory {
+    "The name of the dimension, such as Unit of measure."
+    dimension: String
+    "Eurostat's code of the category, such as RCH_A."
+    code: String
+    "The name of the category, such as Annual rate of change."
+    label: String
+}

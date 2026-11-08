@@ -1,0 +1,508 @@
+{
+ "entities": [
+  {
+   "field": "portoAirQuality",
+   "entityType": "AirQualityObserved",
+   "type": "PortoAirQuality",
+   "attributes": {
+    "station": {
+     "key": "name"
+    },
+    "observedAt": {
+     "key": "dateObserved"
+    },
+    "pm10": {
+     "key": "pm10",
+     "conversion": "number"
+    },
+    "pm25": {
+     "key": "pm25",
+     "conversion": "number"
+    },
+    "pm1": {
+     "key": "pm1",
+     "conversion": "number"
+    },
+    "no2": {
+     "key": "no2",
+     "conversion": "number"
+    },
+    "o3": {
+     "key": "o3",
+     "conversion": "number"
+    },
+    "co": {
+     "key": "co",
+     "conversion": "number"
+    }
+   },
+   "timeAttribute": "dateObserved"
+  },
+  {
+   "field": "portoNoiseLevels",
+   "entityType": "NoiseLevelObserved",
+   "type": "PortoNoiseLevel",
+   "attributes": {
+    "station": {
+     "key": "name"
+    },
+    "noiseLevel": {
+     "key": "LAeq",
+     "conversion": "number"
+    },
+    "periodStart": {
+     "key": "dateObservedFrom"
+    },
+    "observedAt": {
+     "key": "dateObserved"
+    }
+   },
+   "timeAttribute": "dateObserved"
+  },
+  {
+   "field": "portoWeatherObserved",
+   "entityType": "WeatherObserved",
+   "type": "PortoWeatherObservation",
+   "attributes": {
+    "station": {
+     "key": "name"
+    },
+    "temperature": {
+     "key": "temperature",
+     "conversion": "number"
+    },
+    "humidity": {
+     "key": "relativeHumidity",
+     "conversion": "number"
+    },
+    "pressure": {
+     "key": "atmosphericPressure",
+     "conversion": "number"
+    },
+    "rain": {
+     "key": "precipitation",
+     "conversion": "number"
+    },
+    "windSpeed": {
+     "key": "windSpeed",
+     "conversion": "number"
+    },
+    "windDirection": {
+     "key": "windDirection",
+     "conversion": "number"
+    },
+    "solarRadiation": {
+     "key": "solarRadiation",
+     "conversion": "number"
+    },
+    "uvIndex": {
+     "key": "uVIndexMax",
+     "conversion": "number"
+    },
+    "observedAt": {
+     "key": "dateObserved"
+    }
+   },
+   "timeAttribute": "dateObserved"
+  },
+  {
+   "field": "portoWeatherForecast",
+   "entityType": "WeatherForecast",
+   "type": "PortoWeatherForecast",
+   "attributes": {
+    "validFrom": {
+     "key": "validFrom"
+    },
+    "validTo": {
+     "key": "validTo"
+    },
+    "temperature": {
+     "key": "temperature",
+     "conversion": "number"
+    },
+    "feelsLike": {
+     "key": "feelsLikeTemperature",
+     "conversion": "number"
+    },
+    "dayMaximum": {
+     "key": "dayMaximum/temperature",
+     "conversion": "number"
+    },
+    "dayMinimum": {
+     "key": "dayMinimum/temperature",
+     "conversion": "number"
+    },
+    "rainProbability": {
+     "key": "precipitationProbability",
+     "conversion": "number"
+    },
+    "humidity": {
+     "key": "relativeHumidity",
+     "conversion": "number"
+    },
+    "weatherType": {
+     "key": "weatherType"
+    },
+    "windSpeed": {
+     "key": "windSpeed",
+     "conversion": "number"
+    },
+    "uvIndex": {
+     "key": "uVIndexMax",
+     "conversion": "number"
+    }
+   },
+   "timeAttribute": "dateRetrieved"
+  },
+  {
+   "field": "portoVehicles",
+   "entityType": "Vehicle",
+   "type": "PortoVehicle",
+   "attributes": {
+    "name": {
+     "key": "name"
+    },
+    "vehicleType": {
+     "key": "vehicleType"
+    },
+    "fleetNumber": {
+     "key": "fleetVehicleId"
+    },
+    "speed": {
+     "key": "speed",
+     "conversion": "number"
+    },
+    "bearing": {
+     "key": "bearing",
+     "conversion": "number"
+    },
+    "annotations": {
+     "key": "annotations"
+    },
+    "observedAt": {
+     "key": "observationDateTime"
+    }
+   },
+   "timeAttribute": "observationDateTime"
+  },
+  {
+   "field": "portoAlerts",
+   "entityType": "Alert",
+   "type": "PortoAlert",
+   "attributes": {
+    "category": {
+     "key": "category"
+    },
+    "subCategory": {
+     "key": "subCategory"
+    },
+    "severity": {
+     "key": "severity"
+    },
+    "source": {
+     "key": "alertSource"
+    },
+    "text": {
+     "key": "description"
+    },
+    "issuedAt": {
+     "key": "dateIssued"
+    },
+    "validFrom": {
+     "key": "validFrom"
+    },
+    "validTo": {
+     "key": "validTo"
+    }
+   },
+   "timeAttribute": "dateIssued"
+  },
+  {
+   "field": "portoTrafficCameras",
+   "entityType": "Camera",
+   "type": "PortoTrafficCamera",
+   "attributes": {
+    "crossing": {
+     "key": "cameraName"
+    },
+    "number": {
+     "key": "cameraNum",
+     "conversion": "integer"
+    },
+    "on": {
+     "key": "on",
+     "conversion": "yes-no"
+    },
+    "since": {
+     "key": "startDateTime"
+    }
+   }
+  },
+  {
+   "field": "portoSensorDevices",
+   "entityType": "Device",
+   "type": "PortoSensorDevice",
+   "attributes": {
+    "measures": {
+     "key": "controlledProperty"
+    },
+    "state": {
+     "key": "deviceState"
+    },
+    "provider": {
+     "key": "provider"
+    },
+    "installedAt": {
+     "key": "dateInstalled"
+    },
+    "calibratedAt": {
+     "key": "dateLastCalibration"
+    }
+   }
+  },
+  {
+   "field": "portoEvents",
+   "entityType": "Event",
+   "type": "PortoEvent",
+   "attributes": {
+    "name": {
+     "key": "name"
+    },
+    "category": {
+     "key": "category"
+    },
+    "venue": {
+     "key": "address"
+    },
+    "startDate": {
+     "key": "startDate"
+    },
+    "endDate": {
+     "key": "endDate"
+    },
+    "source": {
+     "key": "source"
+    }
+   }
+  },
+  {
+   "field": "portoBusStops",
+   "entityType": "GtfsStop",
+   "type": "PortoBusStop",
+   "attributes": {
+    "code": {
+     "key": "code/value"
+    },
+    "name": {
+     "key": "name/value"
+    },
+    "zone": {
+     "key": "zoneCode/value"
+    },
+    "page": {
+     "key": "page/value"
+    },
+    "wheelchairAccessible": {
+     "key": "wheelchairAccessible",
+     "conversion": "integer"
+    }
+   }
+  },
+  {
+   "field": "portoCarParks",
+   "entityType": "OffStreetParking",
+   "type": "PortoCarPark",
+   "attributes": {
+    "name": {
+     "key": "name"
+    },
+    "street": {
+     "key": "address/streetAddress"
+    },
+    "totalSpaces": {
+     "key": "totalSpotNumber",
+     "conversion": "integer"
+    },
+    "status": {
+     "key": "status"
+    },
+    "categories": {
+     "key": "category"
+    },
+    "openingHours": {
+     "key": "openingHours"
+    }
+   }
+  },
+  {
+   "field": "portoStreetParking",
+   "entityType": "OnStreetParking",
+   "type": "PortoStreetParking",
+   "attributes": {
+    "name": {
+     "key": "name"
+    },
+    "address": {
+     "key": "address"
+    },
+    "categories": {
+     "key": "category",
+     "conversion": "text-list"
+    },
+    "vehicles": {
+     "key": "allowedVehicleType",
+     "conversion": "text-list"
+    },
+    "totalSpaces": {
+     "key": "totalSpotNumber",
+     "conversion": "integer"
+    },
+    "occupiedSpaces": {
+     "key": "occupiedSpotNumber",
+     "conversion": "integer"
+    },
+    "freeSpaces": {
+     "key": "availableSpotNumber",
+     "conversion": "integer"
+    }
+   },
+   "timeAttribute": "dateModified"
+  },
+  {
+   "field": "portoPointsOfInterest",
+   "entityType": "PointOfInterest",
+   "type": "PortoPointOfInterest",
+   "attributes": {
+    "name": {
+     "key": "name"
+    },
+    "category": {
+     "key": "category",
+     "conversion": "text-list"
+    },
+    "description": {
+     "key": "description"
+    },
+    "street": {
+     "key": "address/streetAddress"
+    },
+    "postalCode": {
+     "key": "address/postalCode"
+    },
+    "website": {
+     "key": "contactPoint/url"
+    }
+   }
+  },
+  {
+   "field": "portoPowerMeters",
+   "entityType": "ThreePhaseMultiCircuitAcMeasurement",
+   "type": "PortoPowerMeter",
+   "attributes": {
+    "device": {
+     "key": "refDevice"
+    },
+    "voltageL1": {
+     "key": "voltagePhase/L1",
+     "conversion": "number"
+    },
+    "voltageL2": {
+     "key": "voltagePhase/L2",
+     "conversion": "number"
+    },
+    "voltageL3": {
+     "key": "voltagePhase/L3",
+     "conversion": "number"
+    },
+    "measuredFrom": {
+     "key": "dateObservedFrom"
+    }
+   }
+  },
+  {
+   "field": "portoTrafficFlow",
+   "entityType": "TrafficFlowObserved",
+   "type": "PortoTrafficFlow",
+   "attributes": {
+    "vehicles": {
+     "key": "intensity",
+     "conversion": "integer"
+    },
+    "occupancy": {
+     "key": "occupancy",
+     "conversion": "number"
+    },
+    "lane": {
+     "key": "laneId",
+     "conversion": "integer"
+    },
+    "street": {
+     "key": "address/streetAddress/value"
+    },
+    "periodStart": {
+     "key": "dateObservedFrom"
+    },
+    "periodEnd": {
+     "key": "dateObservedTo"
+    }
+   }
+  },
+  {
+   "field": "portoWasteContainers",
+   "entityType": "WasteContainer",
+   "type": "PortoWasteContainer",
+   "attributes": {
+    "kind": {
+     "key": "category",
+     "conversion": "text-list"
+    },
+    "model": {
+     "key": "refWasteContainerModel"
+    }
+   }
+  },
+  {
+   "field": "portoWasteContainerModels",
+   "entityType": "WasteContainerModel",
+   "type": "PortoWasteContainerModel",
+   "attributes": {
+    "name": {
+     "key": "name"
+    },
+    "height": {
+     "key": "height",
+     "conversion": "number"
+    },
+    "depth": {
+     "key": "depth",
+     "conversion": "number"
+    }
+   }
+  },
+  {
+   "field": "portoWifiAccessPoints",
+   "entityType": "AccessPoint",
+   "type": "PortoWifiAccessPoint",
+   "attributes": {
+    "name": {
+     "key": "name"
+    },
+    "place": {
+     "key": "description"
+    },
+    "state": {
+     "key": "apState"
+    },
+    "maker": {
+     "key": "source"
+    },
+    "model": {
+     "key": "modelName"
+    },
+    "lastReboot": {
+     "key": "dateLastReboot"
+    }
+   }
+  }
+ ]
+}

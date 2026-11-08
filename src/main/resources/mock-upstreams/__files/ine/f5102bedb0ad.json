@@ -1,0 +1,21 @@
+[ {
+  "IndicadorCod" : "0012349",
+  "IndicadorDsg" : "Exports (€) of goods by Geographic localization (NUTS - 2024); Annual - Statistics Portugal, Statistics on external trade of goods",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0012349&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:54.781Z",
+  "DataUltimoAtualizacao" : "2026-08-07",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2025" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "ind_string" : "78 967 555 231",
+      "valor" : "78967555231"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

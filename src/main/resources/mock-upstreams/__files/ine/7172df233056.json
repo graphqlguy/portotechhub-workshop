@@ -1,0 +1,21 @@
+[ {
+  "IndicadorCod" : "0008265",
+  "IndicadorDsg" : "Crude death rate (‰) by Place of residence (NUTS - 2013); Annual - Statistics Portugal, Demographic indicators",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0008265&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:30.071Z",
+  "DataUltimoAtualizacao" : "2026-07-17",
+  "UltimoPref" : "2023",
+  "Dados" : {
+    "2023" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "ind_string" : "10,7",
+      "valor" : "10.7"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

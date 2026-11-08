@@ -1,0 +1,21 @@
+[ {
+  "IndicadorCod" : "0013202",
+  "IndicadorDsg" : "Pharmacies and mobile medicine depots per 1000 inhabitans (No.) by Geographic localization (NUTS - 2024); Annual - Statistics Portugal, Pharmacies statistics",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013202&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:59.497Z",
+  "DataUltimoAtualizacao" : "2026-07-03",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2025" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "ind_string" : "0,3",
+      "valor" : "0.3"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

@@ -1,0 +1,705 @@
+# The urban platform of Porto Digital, a FIWARE context broker that gathers the sensors and registers of the 
+# city of Porto: air quality, noise and weather stations, the weather forecast, STCP buses and shared scooters, 
+# traffic counters and cameras, parking, alerts, events, points of interest, Wi-Fi access points and a few older 
+# registers. Each field reads one entity type and can keep the entities near a place in Porto. A generator 
+# outside the repository writes this file and porto/ngsi.json; the names and descriptions are written for the 
+# model.
+
+extend type Query {
+    """
+    The air quality stations of Porto with their latest readings, in micrograms per cubic metre, carbon
+    monoxide (CO) as well. The readings are raw concentrations without an air quality index. Some stations
+    stopped reporting, so sinceMinutes: 60 keeps the ones reporting now. Each reading has the time it was
+    observed.
+    """
+    portoAirQuality(
+        """
+        Only the entities near this place in Porto, nearest first, such as Alfândega do Porto. Leave it out,
+        or write Porto, for the whole city.
+        """
+        near: String
+        "The latitude to search near, for a place given by its coordinates."
+        latitude: Float
+        "The longitude to search near, for a place given by its coordinates."
+        longitude: Float
+        "The radius around the place, in metres."
+        radiusMetres: Int = 1000
+        """
+        Only the entities that reported within this many minutes, which leaves out the ones that stopped
+        reporting.
+        """
+        sinceMinutes: Int
+        "The number of entities to return, at most 1000."
+        first: Int = 20
+    ): [PortoAirQuality!]
+
+    """
+    The noise stations of Porto with the noise level of their latest five minutes, in decibels, dB(A).
+    sinceMinutes: 60 keeps the stations reporting now.
+    """
+    portoNoiseLevels(
+        """
+        Only the entities near this place in Porto, nearest first, such as Alfândega do Porto. Leave it out,
+        or write Porto, for the whole city.
+        """
+        near: String
+        "The latitude to search near, for a place given by its coordinates."
+        latitude: Float
+        "The longitude to search near, for a place given by its coordinates."
+        longitude: Float
+        "The radius around the place, in metres."
+        radiusMetres: Int = 1000
+        """
+        Only the entities that reported within this many minutes, which leaves out the ones that stopped
+        reporting.
+        """
+        sinceMinutes: Int
+        "The number of entities to return, at most 1000."
+        first: Int = 20
+    ): [PortoNoiseLevel!]
+
+    """
+    The weather stations of the city of Porto with their latest readings: temperature, humidity, pressure,
+    rain, wind, solar radiation and UV index.
+    """
+    portoWeatherObserved(
+        """
+        Only the entities near this place in Porto, nearest first, such as Alfândega do Porto. Leave it out,
+        or write Porto, for the whole city.
+        """
+        near: String
+        "The latitude to search near, for a place given by its coordinates."
+        latitude: Float
+        "The longitude to search near, for a place given by its coordinates."
+        longitude: Float
+        "The radius around the place, in metres."
+        radiusMetres: Int = 1000
+        """
+        Only the entities that reported within this many minutes, which leaves out the ones that stopped
+        reporting.
+        """
+        sinceMinutes: Int
+        "The number of entities to return, at most 1000."
+        first: Int = 20
+    ): [PortoWeatherObservation!]
+
+    """
+    IPMA's weather forecast for Porto, one entity for each hour of the next days, with temperature, rain
+    probability, humidity, wind and weather type. A few hours of past years remain, so sinceMinutes: 1440
+    keeps the current forecast.
+    """
+    portoWeatherForecast(
+        """
+        Only the entities near this place in Porto, nearest first, such as Alfândega do Porto. Leave it out,
+        or write Porto, for the whole city.
+        """
+        near: String
+        "The latitude to search near, for a place given by its coordinates."
+        latitude: Float
+        "The longitude to search near, for a place given by its coordinates."
+        longitude: Float
+        "The radius around the place, in metres."
+        radiusMetres: Int = 1000
+        """
+        Only the entities that reported within this many minutes, which leaves out the ones that stopped
+        reporting.
+        """
+        sinceMinutes: Int
+        "The number of entities to return, at most 1000."
+        first: Int = 20
+    ): [PortoWeatherForecast!]
+
+    """
+    The vehicles that report their position to the platform: the STCP buses, and shared scooters and bicycles.
+    Another field, portoBusesNow, lists the STCP buses reporting now with their speed in kilometres per hour,
+    fastest first if asked. The speed here is in metres per second. The scooters and bicycles do not have a
+    report time, so sinceMinutes: 5 keeps the buses reporting now.
+    """
+    portoVehicles(
+        """
+        Only the entities near this place in Porto, nearest first, such as Alfândega do Porto. Leave it out,
+        or write Porto, for the whole city.
+        """
+        near: String
+        "The latitude to search near, for a place given by its coordinates."
+        latitude: Float
+        "The longitude to search near, for a place given by its coordinates."
+        longitude: Float
+        "The radius around the place, in metres."
+        radiusMetres: Int = 1000
+        """
+        Only the entities that reported within this many minutes, which leaves out the ones that stopped
+        reporting.
+        """
+        sinceMinutes: Int
+        "The number of entities to return, at most 1000."
+        first: Int = 20
+    ): [PortoVehicle!]
+
+    """
+    The alerts of Porto: road works, closed roads, potholes and accidents from the city council (Câmara
+    Municipal do Porto), and weather warnings from IPMA. The broker keeps the old alerts too, so set
+    sinceMinutes, such as 1440 for the alerts issued in the last day.
+    """
+    portoAlerts(
+        """
+        Only the entities near this place in Porto, nearest first, such as Alfândega do Porto. Leave it out,
+        or write Porto, for the whole city.
+        """
+        near: String
+        "The latitude to search near, for a place given by its coordinates."
+        latitude: Float
+        "The longitude to search near, for a place given by its coordinates."
+        longitude: Float
+        "The radius around the place, in metres."
+        radiusMetres: Int = 1000
+        """
+        Only the entities that reported within this many minutes, which leaves out the ones that stopped
+        reporting.
+        """
+        sinceMinutes: Int
+        "The number of entities to return, at most 1000."
+        first: Int = 20
+    ): [PortoAlert!]
+
+    "The traffic cameras of the city of Porto, with the crossing that each one films."
+    portoTrafficCameras(
+        """
+        Only the entities near this place in Porto, nearest first, such as Alfândega do Porto. Leave it out,
+        or write Porto, for the whole city.
+        """
+        near: String
+        "The latitude to search near, for a place given by its coordinates."
+        latitude: Float
+        "The longitude to search near, for a place given by its coordinates."
+        longitude: Float
+        "The radius around the place, in metres."
+        radiusMetres: Int = 1000
+        "The number of entities to return, at most 1000."
+        first: Int = 20
+    ): [PortoTrafficCamera!]
+
+    """
+    The sensor devices registered on the platform, such as the SmartAirSense sensors of APD, with their state
+    and the dates they were installed and calibrated. The devices do not have a location, so leave out near.
+    """
+    portoSensorDevices(
+        """
+        Only the entities near this place in Porto, nearest first, such as Alfândega do Porto. Leave it out,
+        or write Porto, for the whole city.
+        """
+        near: String
+        "The latitude to search near, for a place given by its coordinates."
+        latitude: Float
+        "The longitude to search near, for a place given by its coordinates."
+        longitude: Float
+        "The radius around the place, in metres."
+        radiusMetres: Int = 1000
+        "The number of entities to return, at most 1000."
+        first: Int = 20
+    ): [PortoSensorDevice!]
+
+    """
+    The cultural events of Porto from the agendas Viral Agenda and Agenda Porto, with their venue, category
+    and dates. The feed stopped in August 2025, so it holds past events. The texts are URL-encoded, such as
+    Feira%20do%20Livro for Feira do Livro, and the events do not have a location, so leave out near.
+    """
+    portoEvents(
+        """
+        Only the entities near this place in Porto, nearest first, such as Alfândega do Porto. Leave it out,
+        or write Porto, for the whole city.
+        """
+        near: String
+        "The latitude to search near, for a place given by its coordinates."
+        latitude: Float
+        "The longitude to search near, for a place given by its coordinates."
+        longitude: Float
+        "The radius around the place, in metres."
+        radiusMetres: Int = 1000
+        "The number of entities to return, at most 1000."
+        first: Int = 20
+    ): [PortoEvent!]
+
+    """
+    Some of the bus stops of STCP, the bus company of Porto, with their code, name and fare zone. These stops
+    do not have a location that near can search, so leave out near.
+    """
+    portoBusStops(
+        """
+        Only the entities near this place in Porto, nearest first, such as Alfândega do Porto. Leave it out,
+        or write Porto, for the whole city.
+        """
+        near: String
+        "The latitude to search near, for a place given by its coordinates."
+        latitude: Float
+        "The longitude to search near, for a place given by its coordinates."
+        longitude: Float
+        "The radius around the place, in metres."
+        radiusMetres: Int = 1000
+        "The number of entities to return, at most 1000."
+        first: Int = 20
+    ): [PortoBusStop!]
+
+    """
+    The car parks of Porto that the city council lists, with their number of spaces and opening hours. They do
+    not report their free spaces. The texts are URL-encoded, such as Pra%C3%A7a%20do%20Infante for Praça do
+    Infante.
+    """
+    portoCarParks(
+        """
+        Only the entities near this place in Porto, nearest first, such as Alfândega do Porto. Leave it out,
+        or write Porto, for the whole city.
+        """
+        near: String
+        "The latitude to search near, for a place given by its coordinates."
+        latitude: Float
+        "The longitude to search near, for a place given by its coordinates."
+        longitude: Float
+        "The radius around the place, in metres."
+        radiusMetres: Int = 1000
+        "The number of entities to return, at most 1000."
+        first: Int = 20
+    ): [PortoCarPark!]
+
+    """
+    The parking places in the streets of Porto: loading bays, paid parking zones, motorcycle parking and taxi
+    ranks. The taxi ranks report how many taxis wait at them, and sinceMinutes: 60 keeps the places updated in
+    the last hour.
+    """
+    portoStreetParking(
+        """
+        Only the entities near this place in Porto, nearest first, such as Alfândega do Porto. Leave it out,
+        or write Porto, for the whole city.
+        """
+        near: String
+        "The latitude to search near, for a place given by its coordinates."
+        latitude: Float
+        "The longitude to search near, for a place given by its coordinates."
+        longitude: Float
+        "The radius around the place, in metres."
+        radiusMetres: Int = 1000
+        """
+        Only the entities that reported within this many minutes, which leaves out the ones that stopped
+        reporting.
+        """
+        sinceMinutes: Int
+        "The number of entities to return, at most 1000."
+        first: Int = 20
+    ): [PortoStreetParking!]
+
+    """
+    The points of interest of Porto, such as police and fire stations, with their address, contacts and a
+    description in Portuguese.
+    """
+    portoPointsOfInterest(
+        """
+        Only the entities near this place in Porto, nearest first, such as Alfândega do Porto. Leave it out,
+        or write Porto, for the whole city.
+        """
+        near: String
+        "The latitude to search near, for a place given by its coordinates."
+        latitude: Float
+        "The longitude to search near, for a place given by its coordinates."
+        longitude: Float
+        "The radius around the place, in metres."
+        radiusMetres: Int = 1000
+        "The number of entities to return, at most 1000."
+        first: Int = 20
+    ): [PortoPointOfInterest!]
+
+    "Four three-phase electricity meters with the voltage of each phase, last updated in 2021."
+    portoPowerMeters(
+        """
+        Only the entities near this place in Porto, nearest first, such as Alfândega do Porto. Leave it out,
+        or write Porto, for the whole city.
+        """
+        near: String
+        "The latitude to search near, for a place given by its coordinates."
+        latitude: Float
+        "The longitude to search near, for a place given by its coordinates."
+        longitude: Float
+        "The radius around the place, in metres."
+        radiusMetres: Int = 1000
+        "The number of entities to return, at most 1000."
+        first: Int = 20
+    ): [PortoPowerMeter!]
+
+    """
+    The traffic counters of Porto with the number of vehicles that passed in their last period. The newest
+    counts are from May 2024.
+    """
+    portoTrafficFlow(
+        """
+        Only the entities near this place in Porto, nearest first, such as Alfândega do Porto. Leave it out,
+        or write Porto, for the whole city.
+        """
+        near: String
+        "The latitude to search near, for a place given by its coordinates."
+        latitude: Float
+        "The longitude to search near, for a place given by its coordinates."
+        longitude: Float
+        "The radius around the place, in metres."
+        radiusMetres: Int = 1000
+        "The number of entities to return, at most 1000."
+        first: Int = 20
+    ): [PortoTrafficFlow!]
+
+    "Three waste containers of Porto, with their kind and the id of their model."
+    portoWasteContainers(
+        """
+        Only the entities near this place in Porto, nearest first, such as Alfândega do Porto. Leave it out,
+        or write Porto, for the whole city.
+        """
+        near: String
+        "The latitude to search near, for a place given by its coordinates."
+        latitude: Float
+        "The longitude to search near, for a place given by its coordinates."
+        longitude: Float
+        "The radius around the place, in metres."
+        radiusMetres: Int = 1000
+        "The number of entities to return, at most 1000."
+        first: Int = 20
+    ): [PortoWasteContainer!]
+
+    """
+    The models of the three waste containers of portoWasteContainers, with their size. The models do not have
+    a location, so leave out near.
+    """
+    portoWasteContainerModels(
+        """
+        Only the entities near this place in Porto, nearest first, such as Alfândega do Porto. Leave it out,
+        or write Porto, for the whole city.
+        """
+        near: String
+        "The latitude to search near, for a place given by its coordinates."
+        latitude: Float
+        "The longitude to search near, for a place given by its coordinates."
+        longitude: Float
+        "The radius around the place, in metres."
+        radiusMetres: Int = 1000
+        "The number of entities to return, at most 1000."
+        first: Int = 20
+    ): [PortoWasteContainerModel!]
+
+    """
+    The Wi-Fi access points of Porto Digital's network, with their name, maker, model and state, up or down.
+    """
+    portoWifiAccessPoints(
+        """
+        Only the entities near this place in Porto, nearest first, such as Alfândega do Porto. Leave it out,
+        or write Porto, for the whole city.
+        """
+        near: String
+        "The latitude to search near, for a place given by its coordinates."
+        latitude: Float
+        "The longitude to search near, for a place given by its coordinates."
+        longitude: Float
+        "The radius around the place, in metres."
+        radiusMetres: Int = 1000
+        "The number of entities to return, at most 1000."
+        first: Int = 20
+    ): [PortoWifiAccessPoint!]
+}
+
+"An air quality station of Porto and its latest readings, in micrograms per cubic metre."
+type PortoAirQuality {
+    "The name of the station."
+    station: String
+    "When the readings were observed, in UTC, such as 2026-11-05T20:45:00.00Z."
+    observedAt: String
+    "Particles up to 10 micrometres (PM10)."
+    pm10: Float
+    "Particles up to 2.5 micrometres (PM2.5)."
+    pm25: Float
+    "Particles up to 1 micrometre (PM1), at the stations that measure them."
+    pm1: Float
+    "Nitrogen dioxide (NO2)."
+    no2: Float
+    "Ozone (O3)."
+    o3: Float
+    "Carbon monoxide (CO)."
+    co: Float
+}
+
+"A noise station of Porto and its latest reading."
+type PortoNoiseLevel {
+    "The name of the station, such as Bolhão or Aliados."
+    station: String
+    "The equivalent continuous sound level of the period, in dB(A)."
+    noiseLevel: Float
+    "When the period of the reading started, in UTC."
+    periodStart: String
+    "When the period of the reading ended, in UTC."
+    observedAt: String
+}
+
+"A weather station of Porto and its latest readings."
+type PortoWeatherObservation {
+    """
+    The name of the station, such as Aliados or Hospital S.António. A few names are URL-encoded, such as
+    SMPC%20Porto.
+    """
+    station: String
+    "The air temperature, in °C."
+    temperature: Float
+    "The relative humidity as a fraction, where 0.5 is 50 percent."
+    humidity: Float
+    "The atmospheric pressure, in hectopascals."
+    pressure: Float
+    "The rain, in millimetres."
+    rain: Float
+    "The wind speed, in metres per second."
+    windSpeed: Float
+    "The direction of the wind, in degrees from north."
+    windDirection: Float
+    "The solar radiation, in watts per square metre."
+    solarRadiation: Float
+    "The UV index."
+    uvIndex: Float
+    "When the readings were observed, in UTC."
+    observedAt: String
+}
+
+"IPMA's forecast for Porto for one hour."
+type PortoWeatherForecast {
+    "The start of the hour the forecast is for, in UTC, such as 2026-11-07T11:00:00.00Z."
+    validFrom: String
+    "The end of that hour, in UTC."
+    validTo: String
+    "The temperature, in °C."
+    temperature: Float
+    "The temperature it feels like, in °C."
+    feelsLike: Float
+    "The maximum temperature of the day, in °C."
+    dayMaximum: Float
+    "The minimum temperature of the day, in °C."
+    dayMinimum: Float
+    "The probability of rain as a fraction, where 0.5 is 50 percent."
+    rainProbability: Float
+    "The relative humidity as a fraction."
+    humidity: Float
+    "The weather in English, such as clear, partlyCloudy, veryCloudy, lightRain or heavyRain."
+    weatherType: String
+    "The wind speed, in metres per second."
+    windSpeed: Float
+    "The maximum UV index, for the hours of daylight."
+    uvIndex: Float
+}
+
+"A vehicle as it last reported, such as an STCP bus."
+type PortoVehicle {
+    "The name, such as STCP 207 1367 for bus 1367 of STCP on line 207."
+    name: String
+    "The kind: bus, bicycle, or twoWheeledVehicle for a shared scooter."
+    vehicleType: String
+    "The number of the bus in STCP's fleet, such as 1367."
+    fleetNumber: String
+    "The speed, in metres per second. Multiply by 3.6 for kilometres per hour."
+    speed: Float
+    "The direction it moves in, in degrees clockwise from north."
+    bearing: Float
+    "STCP's notes on the trip, such as stcp:route:207 for line 207 and stcp:sentido:0 for its direction."
+    annotations: [String]
+    "When it reported its position, in UTC."
+    observedAt: String
+}
+
+"An alert about the traffic, the weather or safety in Porto."
+type PortoAlert {
+    "The category: traffic, weather or security."
+    category: String
+    """
+    What happened, such as roadWorks, roadClosed, pothole, carAccident, rainfall, heatWave or buildingFire.
+    """
+    subCategory: String
+    "The severity: informational, low, medium, high or critical."
+    severity: String
+    "Who issued it: C.M.Porto or Câmara Municipal do Porto for the city council, or IPMA."
+    source: String
+    "The details, in Portuguese, often empty."
+    text: String
+    "When it was issued, in UTC."
+    issuedAt: String
+    "When it starts to apply, in UTC."
+    validFrom: String
+    "When it stops applying, in UTC."
+    validTo: String
+}
+
+"A traffic camera of Porto."
+type PortoTrafficCamera {
+    "The streets it films, such as Rua da Restauracao / Rua Jorge de Viterbo Ferreira."
+    crossing: String
+    "The number of the camera, such as 7927."
+    number: Int
+    "True when the camera is on."
+    on: Boolean
+    "When the camera started, in UTC."
+    since: String
+}
+
+"A sensor device registered on the platform."
+type PortoSensorDevice {
+    "What it measures, such as SmartAirSense."
+    measures: [String]
+    "Its state, such as in operation."
+    state: String
+    "Who runs it, such as APD."
+    provider: String
+    "When it was installed, in UTC."
+    installedAt: String
+    "When it was last calibrated, in UTC."
+    calibratedAt: String
+}
+
+"A cultural event in Porto."
+type PortoEvent {
+    "The name of the event, URL-encoded."
+    name: String
+    """
+    The kind of event, in Portuguese, such as Concerto (concert), Oficina (workshop), Exposição (exhibition),
+    Teatro (theatre), Festa (party) or Cultural.
+    """
+    category: String
+    "The venue, URL-encoded, such as Alma%20at%20Porto."
+    venue: String
+    "The first day, such as 2025-08-22."
+    startDate: String
+    "When it ends, such as 2025-08-24T19:30:00+01:00."
+    endDate: String
+    "The agenda it comes from."
+    source: String
+}
+
+"A bus stop of STCP."
+type PortoBusStop {
+    "The code of the stop, such as AL3."
+    code: String
+    "The name of the stop, in capitals, such as AV. ALIADOS."
+    name: String
+    "The Andante fare zone, such as PRT1."
+    zone: String
+    "The page of the stop on the website of STCP."
+    page: String
+    "1 when a wheelchair can board, 2 when it cannot, 0 when it is unknown."
+    wheelchairAccessible: Int
+}
+
+"A car park of Porto."
+type PortoCarPark {
+    "The name, URL-encoded."
+    name: String
+    "The street, URL-encoded."
+    street: String
+    "The number of spaces."
+    totalSpaces: Int
+    "Whether it is open, such as open."
+    status: [String]
+    "Its kinds, such as parkingGarage, feeCharged, forDisabled or forElectricalCharging."
+    categories: [String]
+    "The days it opens, such as Mo-Su for every day."
+    openingHours: String
+}
+
+"A parking place in a street of Porto, or a taxi rank."
+type PortoStreetParking {
+    "The name, such as Rua da Estação."
+    name: String
+    "The street."
+    address: String
+    "Its kinds: taxiStop for a taxi rank, feeCharged for paid parking, forLoadUnload for a loading bay."
+    categories: [String]
+    "The vehicles it takes, such as car, anyVehicle, or twoWheeledVehicle for motorcycles."
+    vehicles: [String]
+    "The number of spaces."
+    totalSpaces: Int
+    "The occupied spaces, such as the taxis waiting at a taxi rank."
+    occupiedSpaces: Int
+    """
+    The free spaces: the total minus the occupied ones, below zero when more taxis wait than the rank holds.
+    """
+    freeSpaces: Int
+}
+
+"A point of interest of Porto."
+type PortoPointOfInterest {
+    "The name, such as Polícia Municipal."
+    name: String
+    "The category, a number such as 123 or a name such as Polícia e Bombeiros (police and fire brigade)."
+    category: [String]
+    "A description in Portuguese, which can be long."
+    description: String
+    "The street and number, such as Rua do Carmo, 11."
+    street: String
+    "The postal code, such as 4050-164."
+    postalCode: String
+    "The website."
+    website: String
+}
+
+"A three-phase electricity meter and its last measurement."
+type PortoPowerMeter {
+    "The id of the meter's device."
+    device: String
+    "The voltage of phase L1, in volts."
+    voltageL1: Float
+    "The voltage of phase L2, in volts."
+    voltageL2: Float
+    "The voltage of phase L3, in volts."
+    voltageL3: Float
+    "When the measurement started, in UTC."
+    measuredFrom: String
+}
+
+"A traffic counter of Porto and its last count."
+type PortoTrafficFlow {
+    "The number of vehicles that passed in the period."
+    vehicles: Int
+    "The share of the period that a vehicle stood over the detector, as a fraction from 0 to 1."
+    occupancy: Float
+    "The lane, such as 1."
+    lane: Int
+    "The street, on the counters that name it, such as Largo Antonio Calem."
+    street: String
+    "When the period started."
+    periodStart: String
+    "When the period ended."
+    periodEnd: String
+}
+
+"A waste container of Porto."
+type PortoWasteContainer {
+    "Its kind, such as Superficie (a container above ground)."
+    kind: [String]
+    "The id of its model, such as wastecontainermodel:5d9b137796c0fc75791beab4."
+    model: String
+}
+
+"The model of a waste container."
+type PortoWasteContainerModel {
+    "The name, which holds the street, such as wastecontainermodel:Praça_do_Coronel_Pacheco_."
+    name: String
+    "The height, in metres."
+    height: Float
+    "The depth, in metres."
+    depth: Float
+}
+
+"A Wi-Fi access point of Porto Digital."
+type PortoWifiAccessPoint {
+    "The name, such as AP_Abrigo_PAL4."
+    name: String
+    """
+    Where it is in the building, in Portuguese, such as R/C - Sala grande (ground floor, large room). Often
+    empty.
+    """
+    place: String
+    "The state: up or down."
+    state: String
+    "The maker, such as Cisco, Huawei or Teltonika."
+    maker: String
+    "The model, such as C9105AXI-E."
+    model: String
+    "When it last restarted, in UTC."
+    lastReboot: String
+}

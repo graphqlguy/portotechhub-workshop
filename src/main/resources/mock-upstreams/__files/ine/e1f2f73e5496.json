@@ -1,0 +1,23 @@
+[ {
+  "IndicadorCod" : "0009183",
+  "IndicadorDsg" : "Nights (No.) in tourist accommodation establishments by Geographic localization and Place of residence (Country - short list); Annual - Statistics Portugal, Guests stays and other data on hotel activity survey",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0009183&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:45.613Z",
+  "DataUltimoAtualizacao" : "2026-07-09",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2025" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "82 011 658",
+      "valor" : "82011658"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

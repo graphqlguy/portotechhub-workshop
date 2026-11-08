@@ -1,0 +1,23 @@
+[ {
+  "IndicadorCod" : "0013028",
+  "IndicadorDsg" : "Nominal catch (t) by Landed port (NUTS - 2024) and Specie; Annual - DGRM, DRP RAA, DRP RAM, Fish landed in national ports",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013028&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:24:07.474Z",
+  "DataUltimoAtualizacao" : "2026-05-28",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2025" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "119 570",
+      "valor" : "119570"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

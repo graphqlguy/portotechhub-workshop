@@ -1,0 +1,23 @@
+[ {
+  "IndicadorCod" : "0012841",
+  "IndicadorDsg" : "Nurses (No.) by Work location (NUTS - 2024) and Sex; Annual - Statistics Portugal, Health personnel statistics",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0012841&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:57.028Z",
+  "DataUltimoAtualizacao" : "2026-07-25",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2025" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "MF",
+      "ind_string" : "87 843",
+      "valor" : "87843"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

@@ -1,0 +1,1406 @@
+{
+ "indicators": [
+  {
+   "field": "inePopulation",
+   "varcd": "0008273",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "sex",
+     "dim": "Dim3",
+     "default": "T"
+    },
+    {
+     "name": "ageGroup",
+     "dim": "Dim4",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineEstablishments",
+   "varcd": "0012934",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "activity",
+     "dim": "Dim3",
+     "default": "TOT"
+    },
+    {
+     "name": "legalForm",
+     "dim": "Dim4",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineEnterprises",
+   "varcd": "0014064",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "businessActivity",
+     "dim": "Dim3",
+     "default": "TOT"
+    },
+    {
+     "name": "businessLegalForm",
+     "dim": "Dim4",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineCrimes",
+   "varcd": "0012261",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "crimeCategory",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineConsumerPriceChange",
+   "varcd": "0014647",
+   "period": "month",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "priceCategory",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineEnterprisesCaeRev4",
+   "varcd": "0014972",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "activityRev4",
+     "dim": "Dim3",
+     "default": "TOT"
+    },
+    {
+     "name": "sizeClass",
+     "dim": "Dim4",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineImports",
+   "varcd": "0005719",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2"
+    },
+    {
+     "name": "importedProduct",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "inePopulationByRegion",
+   "varcd": "0012903",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "regionalSex",
+     "dim": "Dim3",
+     "default": "T"
+    },
+    {
+     "name": "age",
+     "dim": "Dim4",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "inePopulationDensity",
+   "varcd": "0013189",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    }
+   ]
+  },
+  {
+   "field": "ineAgeingRatio",
+   "varcd": "0012909",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    }
+   ]
+  },
+  {
+   "field": "ineOldAgeDependencyRatio",
+   "varcd": "0012910",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    }
+   ]
+  },
+  {
+   "field": "ineNetMigration",
+   "varcd": "0013179",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    }
+   ]
+  },
+  {
+   "field": "ineImmigrants",
+   "varcd": "0006055",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "immigrantSex",
+     "dim": "Dim3",
+     "default": "T"
+    },
+    {
+     "name": "immigrantAge",
+     "dim": "Dim4",
+     "default": "T"
+    },
+    {
+     "name": "nationality",
+     "dim": "Dim5",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineEmigrants",
+   "varcd": "0006050",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "emigrantSex",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineForeignResidents",
+   "varcd": "0001274",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "foreignResidentSex",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineCensusPopulation",
+   "varcd": "0014584",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "censusSex",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineCensusHouseholds",
+   "varcd": "0012468",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "livingQuarters",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineBirthRate",
+   "varcd": "0013044",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    }
+   ]
+  },
+  {
+   "field": "ineMonthlyBirths",
+   "varcd": "0012094",
+   "period": "month",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "babySex",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineBirths",
+   "varcd": "0008234",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "newbornSex",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineTeenageBirths",
+   "varcd": "0001541",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "motherAge",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineDeaths",
+   "varcd": "0012101",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "deceasedSex",
+     "dim": "Dim3",
+     "default": "T"
+    },
+    {
+     "name": "deathAgeGroup",
+     "dim": "Dim4",
+     "default": "T"
+    },
+    {
+     "name": "dayOfDeath",
+     "dim": "Dim5",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineDeathRate",
+   "varcd": "0008265",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    }
+   ]
+  },
+  {
+   "field": "ineCancerDeathRate",
+   "varcd": "0013164",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    }
+   ]
+  },
+  {
+   "field": "ineMedianRent",
+   "varcd": "0012600",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    }
+   ]
+  },
+  {
+   "field": "ineNewLeases",
+   "varcd": "0012601",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    }
+   ]
+  },
+  {
+   "field": "ineBankValuation",
+   "varcd": "0012248",
+   "period": "month",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "homeType",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineHousingStock",
+   "varcd": "0008329",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    }
+   ]
+  },
+  {
+   "field": "ineLicensedDwellings",
+   "varcd": "0012097",
+   "period": "month",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "bedrooms",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineCompletedBuildings",
+   "varcd": "0013255",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "workType",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineHousingCostOverburden",
+   "varcd": "0014428",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "overburdenAge",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineOvercrowding",
+   "varcd": "0014429",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "overcrowdingAge",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineHousingCredit",
+   "varcd": "0013048",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    }
+   ]
+  },
+  {
+   "field": "ineMonthlyPriceChange",
+   "varcd": "0014646",
+   "period": "month",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "changeAggregate",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineConstructionCostIndex",
+   "varcd": "0011748",
+   "period": "month",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "productionFactor",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineBrentPrice",
+   "varcd": "0014443",
+   "period": "month",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    }
+   ]
+  },
+  {
+   "field": "ineAverageEarnings",
+   "varcd": "0012653",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "education",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineIncomePerTaxpayer",
+   "varcd": "0012748",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    }
+   ]
+  },
+  {
+   "field": "ineMedianNetIncome",
+   "varcd": "0012757",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    }
+   ]
+  },
+  {
+   "field": "inePurchasingPower",
+   "varcd": "0014580",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    }
+   ]
+  },
+  {
+   "field": "ineUnemploymentRate",
+   "varcd": "0012173",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "unemployedSex",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineMonthlyUnemploymentRate",
+   "varcd": "0007976",
+   "period": "month",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "unemployedAge",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineEmploymentRate",
+   "varcd": "0012192",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "employedSex",
+     "dim": "Dim3",
+     "default": "T"
+    },
+    {
+     "name": "workingAge",
+     "dim": "Dim4",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineEmployedPeople",
+   "varcd": "0007970",
+   "period": "month",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "employedAge",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineEnterpriseEmployment",
+   "varcd": "0013861",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "employerActivity",
+     "dim": "Dim3",
+     "default": "TOT"
+    }
+   ]
+  },
+  {
+   "field": "ineMonthlyGuests",
+   "varcd": "0012089",
+   "period": "month",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "guestSegment",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineMonthlyNights",
+   "varcd": "0012088",
+   "period": "month",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "nightSegment",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineNightsByGuestCountry",
+   "varcd": "0009183",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "guestCountry",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineTouristAccommodation",
+   "varcd": "0013284",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "accommodationType",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineBedOccupancy",
+   "varcd": "0013288",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "occupancyAccommodationType",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineTurnover",
+   "varcd": "0013856",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "turnoverActivity",
+     "dim": "Dim3",
+     "default": "TOT"
+    }
+   ]
+  },
+  {
+   "field": "ineNewCompanies",
+   "varcd": "0012244",
+   "period": "month",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "formationActivity",
+     "dim": "Dim3",
+     "default": "TOT"
+    }
+   ]
+  },
+  {
+   "field": "ineDissolvedCompanies",
+   "varcd": "0012245",
+   "period": "month",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "dissolutionActivity",
+     "dim": "Dim3",
+     "default": "TOT"
+    }
+   ]
+  },
+  {
+   "field": "ineExports",
+   "varcd": "0005720",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2"
+    },
+    {
+     "name": "exportedProduct",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineRegionalImports",
+   "varcd": "0012348",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    }
+   ]
+  },
+  {
+   "field": "ineRegionalExports",
+   "varcd": "0012349",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    }
+   ]
+  },
+  {
+   "field": "ineCrimeRate",
+   "varcd": "0012260",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "rateCrimeCategory",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineHomicides",
+   "varcd": "0010714",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    }
+   ]
+  },
+  {
+   "field": "ineDoctorsPerThousand",
+   "varcd": "0012837",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    }
+   ]
+  },
+  {
+   "field": "ineNurses",
+   "varcd": "0012841",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "nurseSex",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineHospitals",
+   "varcd": "0012885",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "hospitalType",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineHospitalBeds",
+   "varcd": "0012859",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "bedHospitalType",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineHospitalAdmissions",
+   "varcd": "0012862",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    }
+   ]
+  },
+  {
+   "field": "inePharmaciesPerThousand",
+   "varcd": "0013202",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    }
+   ]
+  },
+  {
+   "field": "ineSchoolStudents",
+   "varcd": "0012424",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "schoolLevel",
+     "dim": "Dim3",
+     "default": "T"
+    },
+    {
+     "name": "schoolSector",
+     "dim": "Dim4",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineHigherEducationStudents",
+   "varcd": "0012591",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "universitySector",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineHigherEducationRate",
+   "varcd": "0012195",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "graduateSex",
+     "dim": "Dim3",
+     "default": "T"
+    },
+    {
+     "name": "graduateAge",
+     "dim": "Dim4",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineUrbanWaste",
+   "varcd": "0012771",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "wasteMaterial",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineUrbanWastePerPerson",
+   "varcd": "0012765",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    }
+   ]
+  },
+  {
+   "field": "ineElectricityPerPerson",
+   "varcd": "0014162",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    }
+   ]
+  },
+  {
+   "field": "ineHouseholdGas",
+   "varcd": "0014566",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    }
+   ]
+  },
+  {
+   "field": "ineRenewableElectricity",
+   "varcd": "0014520",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "renewableSource",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineRuralFires",
+   "varcd": "0013512",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "fireCause",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineMilkProduction",
+   "varcd": "0013528",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "milkType",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineMeatConsumption",
+   "varcd": "0000211",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "meatType",
+     "dim": "Dim3",
+     "default": "41"
+    }
+   ]
+  },
+  {
+   "field": "ineWineProduction",
+   "varcd": "0012835",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "wineQuality",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineFishCatch",
+   "varcd": "0013028",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "species",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "inePovertyRate",
+   "varcd": "0014076",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    }
+   ]
+  },
+  {
+   "field": "ineNewVehicles",
+   "varcd": "0012773",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "vehicleType",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineAirportPassengers",
+   "varcd": "0000861",
+   "period": "month",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "T"
+    },
+    {
+     "name": "flightType",
+     "dim": "Dim3",
+     "default": "T"
+    },
+    {
+     "name": "flightDestination",
+     "dim": "Dim4",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineRailPassengers",
+   "varcd": "0000901",
+   "period": "month",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "railService",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineBroadbandAccesses",
+   "varcd": "0013140",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "broadbandSegment",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineMuseumVisitors",
+   "varcd": "0007519",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    },
+    {
+     "name": "museumType",
+     "dim": "Dim3",
+     "default": "T"
+    }
+   ]
+  },
+  {
+   "field": "ineArea",
+   "varcd": "0011866",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    }
+   ]
+  },
+  {
+   "field": "ineFirefighters",
+   "varcd": "0013371",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    }
+   ]
+  },
+  {
+   "field": "ineCashMachines",
+   "varcd": "0012723",
+   "period": "year",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    }
+   ]
+  },
+  {
+   "field": "ineConsumerConfidence",
+   "varcd": "0001173",
+   "period": "month",
+   "dimensions": [
+    {
+     "name": "place",
+     "dim": "Dim2",
+     "default": "PT"
+    }
+   ]
+  }
+ ],
+ "places": {
+  "field": "inePlaces",
+  "varcd": "0012261",
+  "dim": "2"
+ }
+}

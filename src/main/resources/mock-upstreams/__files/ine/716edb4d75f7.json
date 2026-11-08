@@ -1,0 +1,25 @@
+[ {
+  "IndicadorCod" : "0012094",
+  "IndicadorDsg" : "Live births (No.) by Place of residence of mother (NUTS - 2024) and Sex; Monthly - Statistics Portugal, Live-birth statistics",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0012094&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:27.341Z",
+  "DataUltimoAtualizacao" : "2026-10-16",
+  "UltimoPref" : "August 2026",
+  "Dados" : {
+    "August 2026" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "MF",
+      "sinal_conv" : "//",
+      "sinal_conv_desc" : "Preliminary value",
+      "ind_string" : "7 228 //",
+      "valor" : "7228"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

@@ -1,0 +1,23 @@
+[ {
+  "IndicadorCod" : "0013048",
+  "IndicadorDsg" : "Housing credit per inhabitant (Series CAE Rev. 3 - €) by Geographic localization (NUTS - 2024); Annual - Statistics Portugal, Credit institutions and financial corporations survey",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013048&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:36.482Z",
+  "DataUltimoAtualizacao" : "2026-07-20",
+  "UltimoPref" : "2024",
+  "Dados" : {
+    "2024" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "sinal_conv" : "*",
+      "sinal_conv_desc" : "Rectified value",
+      "ind_string" : "8 685 *",
+      "valor" : "8685"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

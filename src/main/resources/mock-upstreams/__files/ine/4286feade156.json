@@ -1,0 +1,23 @@
+[ {
+  "IndicadorCod" : "0001274",
+  "IndicadorDsg" : "Foreign population with legal status of residence (No.) by Sex; Annual - Statistics Portugal, Foreign population with legal residence status",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0001274&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:24.248Z",
+  "DataUltimoAtualizacao" : "2024-09-20",
+  "UltimoPref" : "2023",
+  "Dados" : {
+    "2023" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "MF",
+      "ind_string" : "1 044 238",
+      "valor" : "1044238"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

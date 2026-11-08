@@ -1,0 +1,23 @@
+[ {
+  "IndicadorCod" : "0013284",
+  "IndicadorDsg" : "Tourist accommodation establishments (No.) by Geographic localization (NUTS - 2024) and Type (tourist accommodation establishment); Annual - Statistics Portugal, Guests stays and other data on hotel activity survey",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013284&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:46.202Z",
+  "DataUltimoAtualizacao" : "2026-07-09",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2025" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "8 446",
+      "valor" : "8446"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

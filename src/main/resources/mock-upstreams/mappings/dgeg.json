@@ -1,0 +1,173 @@
+{
+ "mappings": [
+  {
+   "request": {
+    "urlPath": "/dgeg/api/PrecoComb/PesquisarPostos",
+    "method": "GET",
+    "queryParameters": {
+     "idsTiposComb": {
+      "hasExactly": [
+       {
+        "equalTo": "2101"
+       }
+      ]
+     },
+     "idMarca": {
+      "hasExactly": [
+       {
+        "equalTo": ""
+       }
+      ]
+     },
+     "idTipoPosto": {
+      "hasExactly": [
+       {
+        "equalTo": ""
+       }
+      ]
+     },
+     "idDistrito": {
+      "hasExactly": [
+       {
+        "equalTo": "13"
+       }
+      ]
+     },
+     "idsMunicipios": {
+      "hasExactly": [
+       {
+        "equalTo": ""
+       }
+      ]
+     },
+     "qtdPorPagina": {
+      "hasExactly": [
+       {
+        "equalTo": "1000"
+       }
+      ]
+     },
+     "pagina": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "dgeg/ce1a9637bab2.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/dgeg/api/PrecoComb/PesquisarPostos",
+    "method": "GET",
+    "queryParameters": {
+     "idsTiposComb": {
+      "hasExactly": [
+       {
+        "equalTo": "3201"
+       }
+      ]
+     },
+     "idMarca": {
+      "hasExactly": [
+       {
+        "equalTo": ""
+       }
+      ]
+     },
+     "idTipoPosto": {
+      "hasExactly": [
+       {
+        "equalTo": ""
+       }
+      ]
+     },
+     "idDistrito": {
+      "hasExactly": [
+       {
+        "equalTo": "13"
+       }
+      ]
+     },
+     "idsMunicipios": {
+      "hasExactly": [
+       {
+        "equalTo": ""
+       }
+      ]
+     },
+     "qtdPorPagina": {
+      "hasExactly": [
+       {
+        "equalTo": "1000"
+       }
+      ]
+     },
+     "pagina": {
+      "hasExactly": [
+       {
+        "equalTo": "1"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "dgeg/cd2ccae7d0ee.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "url": "/dgeg/api/PrecoComb/GetDistritos",
+    "method": "GET"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "dgeg/9843beea722a.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/dgeg/api/PrecoComb/PesquisarPostos"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "dgeg/ce1a9637bab2.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/dgeg/api/PrecoComb/GetDistritos"
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "dgeg/9843beea722a.json",
+    "headers": {
+     "Content-Type": "application/json; charset=utf-8"
+    }
+   }
+  }
+ ]
+}

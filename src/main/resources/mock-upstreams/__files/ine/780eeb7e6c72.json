@@ -1,0 +1,23 @@
+[ {
+  "IndicadorCod" : "0013856",
+  "IndicadorDsg" : "Turnover (€) of enterprises by Geographic localization (NUTS - 2024) and Economic activity (Subclass - CAE Rev. 3); Annual - Statistics Portugal, Integrated business accounts system",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013856&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:47.573Z",
+  "DataUltimoAtualizacao" : "2025-12-11",
+  "UltimoPref" : "2024",
+  "Dados" : {
+    "2024" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "TOT",
+      "dim_3_t" : "Total",
+      "ind_string" : "571 297 930 239",
+      "valor" : "571297930239"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

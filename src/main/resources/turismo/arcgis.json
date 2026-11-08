@@ -1,0 +1,2123 @@
+{
+ "layers": [
+  {
+   "field": "turismoLocalLodging",
+   "path": "/TDP/OpenData_AL/MapServer/6",
+   "type": "TurismoLocalLodging",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "Concelho",
+     "kind": "equals"
+    },
+    {
+     "name": "kind",
+     "attribute": "Modalidade",
+     "kind": "equals"
+    },
+    {
+     "name": "name",
+     "attribute": "Denominacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "registrationNumber": {
+     "key": "NrRNAL"
+    },
+    "name": {
+     "key": "Denominacao"
+    },
+    "kind": {
+     "key": "Modalidade"
+    },
+    "guests": {
+     "key": "NrUtentes"
+    },
+    "address": {
+     "key": "Endereco"
+    },
+    "postalCode": {
+     "key": "CodigoPostal"
+    },
+    "parish": {
+     "key": "Freguesia"
+    },
+    "municipality": {
+     "key": "Concelho"
+    },
+    "district": {
+     "key": "Distrito"
+    },
+    "registeredOn": {
+     "key": "DataRegisto",
+     "conversion": "epoch-millis-date"
+    },
+    "openedOn": {
+     "key": "DataAberturaPublico",
+     "conversion": "epoch-millis-date"
+    },
+    "cleanSafe": {
+     "key": "SeloCleanSafe"
+    }
+   },
+   "orderBy": "NrRNAL"
+  },
+  {
+   "field": "turismoTouristEstablishments",
+   "path": "/TDP/OpenData_ETExistentes/MapServer/0",
+   "type": "TurismoTouristEstablishment",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "Concelho",
+     "kind": "equals"
+    },
+    {
+     "name": "district",
+     "attribute": "Distrito",
+     "kind": "equals"
+    },
+    {
+     "name": "kind",
+     "attribute": "TipologiaET",
+     "kind": "equals"
+    },
+    {
+     "name": "stars",
+     "attribute": "Categoria",
+     "kind": "equals"
+    },
+    {
+     "name": "name",
+     "attribute": "Denominacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "registrationNumber": {
+     "key": "NrRNET"
+    },
+    "name": {
+     "key": "Denominacao"
+    },
+    "kind": {
+     "key": "TipologiaET"
+    },
+    "stars": {
+     "key": "Categoria"
+    },
+    "units": {
+     "key": "NrUnidAloj"
+    },
+    "beds": {
+     "key": "NrCamasFixas"
+    },
+    "openedOn": {
+     "key": "DataTituloValAbert",
+     "conversion": "epoch-millis-date"
+    },
+    "address": {
+     "key": "Endereco"
+    },
+    "postalCode": {
+     "key": "CodigoPostal"
+    },
+    "municipality": {
+     "key": "Concelho"
+    },
+    "district": {
+     "key": "Distrito"
+    },
+    "cleanSafe": {
+     "key": "SeloCleanSafe"
+    }
+   },
+   "orderBy": "Denominacao"
+  },
+  {
+   "field": "turismoTouristEstablishmentProjects",
+   "path": "/TDP/OpenData_ET_PF/MapServer/1",
+   "type": "TurismoTouristEstablishmentProject",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "Concelho",
+     "kind": "equals"
+    },
+    {
+     "name": "district",
+     "attribute": "Distrito",
+     "kind": "equals"
+    },
+    {
+     "name": "kind",
+     "attribute": "TipologiaET",
+     "kind": "equals"
+    },
+    {
+     "name": "name",
+     "attribute": "Denominacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominacao"
+    },
+    "kind": {
+     "key": "TipologiaET"
+    },
+    "stars": {
+     "key": "Categoria"
+    },
+    "units": {
+     "key": "NrUnidAloj"
+    },
+    "beds": {
+     "key": "NrCamasFixas"
+    },
+    "newUnits": {
+     "key": "NovasUnidAloj"
+    },
+    "newBeds": {
+     "key": "NovasCamas"
+    },
+    "decidedOn": {
+     "key": "DataDespachoSuperior",
+     "conversion": "epoch-millis-date"
+    },
+    "locality": {
+     "key": "Localidade"
+    },
+    "parish": {
+     "key": "Freguesia"
+    },
+    "municipality": {
+     "key": "Concelho"
+    },
+    "district": {
+     "key": "Distrito"
+    }
+   },
+   "orderBy": "Denominacao"
+  },
+  {
+   "field": "turismoTouristEstablishmentPriorRequests",
+   "path": "/TDP/OpenData_ET_PIP_PF/MapServer/2",
+   "type": "TurismoTouristEstablishmentPriorRequest",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "Concelho",
+     "kind": "equals"
+    },
+    {
+     "name": "district",
+     "attribute": "Distrito",
+     "kind": "equals"
+    },
+    {
+     "name": "kind",
+     "attribute": "TipologiaET",
+     "kind": "equals"
+    },
+    {
+     "name": "name",
+     "attribute": "Denominacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominacao"
+    },
+    "kind": {
+     "key": "TipologiaET"
+    },
+    "stars": {
+     "key": "Categoria"
+    },
+    "units": {
+     "key": "NrUnidAloj"
+    },
+    "beds": {
+     "key": "NrCamasFixas"
+    },
+    "newUnits": {
+     "key": "NovasUnidAloj"
+    },
+    "newBeds": {
+     "key": "NovasCamas"
+    },
+    "decidedOn": {
+     "key": "DataDespachoSuperior",
+     "conversion": "epoch-millis-date"
+    },
+    "locality": {
+     "key": "Localidade"
+    },
+    "parish": {
+     "key": "Freguesia"
+    },
+    "municipality": {
+     "key": "Concelho"
+    },
+    "district": {
+     "key": "Distrito"
+    }
+   },
+   "orderBy": "Denominacao"
+  },
+  {
+   "field": "turismoTouristComplexes",
+   "path": "/TDP/OpenData_CTExistentes/MapServer/3",
+   "type": "TurismoTouristComplex",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "Concelho",
+     "kind": "equals"
+    },
+    {
+     "name": "district",
+     "attribute": "Distrito",
+     "kind": "equals"
+    },
+    {
+     "name": "name",
+     "attribute": "Denominacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "registrationNumber": {
+     "key": "NrRNET"
+    },
+    "name": {
+     "key": "Denominacao"
+    },
+    "establishments": {
+     "key": "ETIntegradosCT"
+    },
+    "golfCourse": {
+     "key": "CampoGolfe"
+    },
+    "spa": {
+     "key": "SPA"
+    },
+    "otherFacilities": {
+     "key": "OutrosEquip"
+    },
+    "classified": {
+     "key": "ClassificacaoTdP"
+    },
+    "beds": {
+     "key": "CuboEtExistenteCamas"
+    },
+    "units": {
+     "key": "CuboEtExistenteAloj"
+    },
+    "address": {
+     "key": "Endereco"
+    },
+    "municipality": {
+     "key": "Concelho"
+    },
+    "district": {
+     "key": "Distrito"
+    }
+   },
+   "orderBy": "Denominacao"
+  },
+  {
+   "field": "turismoTouristComplexProjects",
+   "path": "/TDP/OpenData_CT_PF/MapServer/4",
+   "type": "TurismoTouristComplexProject",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "Concelho",
+     "kind": "equals"
+    },
+    {
+     "name": "district",
+     "attribute": "Distrito",
+     "kind": "equals"
+    },
+    {
+     "name": "name",
+     "attribute": "Denominacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominacao"
+    },
+    "plannedEstablishments": {
+     "key": "PPFIntCT"
+    },
+    "golfCourse": {
+     "key": "CampoGolfe"
+    },
+    "spa": {
+     "key": "SPA"
+    },
+    "otherFacilities": {
+     "key": "OutrosEquip"
+    },
+    "plannedBeds": {
+     "key": "CuboPPFCamas"
+    },
+    "plannedUnits": {
+     "key": "CuboPPFAloj"
+    },
+    "existingBeds": {
+     "key": "CuboEtExistenteCamas"
+    },
+    "locality": {
+     "key": "Localidade"
+    },
+    "municipality": {
+     "key": "Concelho"
+    },
+    "district": {
+     "key": "Distrito"
+    }
+   },
+   "orderBy": "Denominacao"
+  },
+  {
+   "field": "turismoTouristComplexPriorRequests",
+   "path": "/TDP/OpenData_CT_PIP_PF/MapServer/5",
+   "type": "TurismoTouristComplexPriorRequest",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "Concelho",
+     "kind": "equals"
+    },
+    {
+     "name": "district",
+     "attribute": "Distrito",
+     "kind": "equals"
+    },
+    {
+     "name": "name",
+     "attribute": "Denominacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominacao"
+    },
+    "plannedEstablishments": {
+     "key": "PPFIntCT"
+    },
+    "golfCourse": {
+     "key": "CampoGolfe"
+    },
+    "spa": {
+     "key": "SPA"
+    },
+    "otherFacilities": {
+     "key": "OutrosEquip"
+    },
+    "plannedBeds": {
+     "key": "CuboPPFCamas"
+    },
+    "plannedUnits": {
+     "key": "CuboPPFAloj"
+    },
+    "existingBeds": {
+     "key": "CuboEtExistenteCamas"
+    },
+    "locality": {
+     "key": "Localidade"
+    },
+    "municipality": {
+     "key": "Concelho"
+    },
+    "district": {
+     "key": "Distrito"
+    }
+   },
+   "orderBy": "Denominacao"
+  },
+  {
+   "field": "turismoNationalInterestProjects",
+   "path": "/TDP/OpenData_PINAcompanhamento/MapServer/0",
+   "type": "TurismoNationalInterestProject",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "Concelho",
+     "kind": "equals"
+    },
+    {
+     "name": "district",
+     "attribute": "Distrito",
+     "kind": "equals"
+    },
+    {
+     "name": "name",
+     "attribute": "Denominacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominacao"
+    },
+    "pinNumber": {
+     "key": "NrPIN"
+    },
+    "areaHectares": {
+     "key": "AreaIntervencao"
+    },
+    "establishments": {
+     "key": "ET"
+    },
+    "units": {
+     "key": "NrTotalUnidAloj"
+    },
+    "beds": {
+     "key": "NrTotalCamasTuristicas"
+    },
+    "facilities": {
+     "key": "EquipamentosRLAT"
+    },
+    "investment": {
+     "key": "Investimento"
+    },
+    "directJobs": {
+     "key": "PostosTrabalhoDiretos"
+    },
+    "recognisedOn": {
+     "key": "DataReconhecimentoPIN",
+     "conversion": "epoch-millis-date"
+    },
+    "municipality": {
+     "key": "Concelho"
+    },
+    "district": {
+     "key": "Distrito"
+    }
+   },
+   "orderBy": "Denominacao"
+  },
+  {
+   "field": "turismoCompletedNationalInterestProjects",
+   "path": "/TDP/OpenData_PIN/MapServer/1",
+   "type": "TurismoCompletedNationalInterestProject",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "Concelho",
+     "kind": "equals"
+    },
+    {
+     "name": "district",
+     "attribute": "Distrito",
+     "kind": "equals"
+    },
+    {
+     "name": "name",
+     "attribute": "Denominacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominacao"
+    },
+    "pinNumber": {
+     "key": "NrPIN"
+    },
+    "areaHectares": {
+     "key": "AreaIntervencao"
+    },
+    "establishments": {
+     "key": "ET"
+    },
+    "units": {
+     "key": "NrTotalUnidAloj"
+    },
+    "beds": {
+     "key": "NrTotalCamasTuristicas"
+    },
+    "facilities": {
+     "key": "EquipamentosRLAT"
+    },
+    "recognisedOn": {
+     "key": "DataReconhecimentoPIN",
+     "conversion": "epoch-millis-date"
+    },
+    "locality": {
+     "key": "Localidade"
+    },
+    "municipality": {
+     "key": "Concelho"
+    },
+    "district": {
+     "key": "Distrito"
+    }
+   },
+   "orderBy": "Denominacao"
+  },
+  {
+   "field": "turismoTravelAgencies",
+   "path": "/TDP/OpenData_AVT/MapServer/9",
+   "type": "TurismoTravelAgency",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "Concelho",
+     "kind": "equals"
+    },
+    {
+     "name": "district",
+     "attribute": "Distrito",
+     "kind": "equals"
+    },
+    {
+     "name": "name",
+     "attribute": "Denominacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "registrationNumber": {
+     "key": "NrRNAVT",
+     "conversion": "integer"
+    },
+    "name": {
+     "key": "Denominacao"
+    },
+    "brand": {
+     "key": "Marca"
+    },
+    "website": {
+     "key": "Website"
+    },
+    "address": {
+     "key": "Endereco"
+    },
+    "postalCode": {
+     "key": "CodigoPostal"
+    },
+    "locality": {
+     "key": "LocalidadeCP"
+    },
+    "parish": {
+     "key": "Freguesia"
+    },
+    "municipality": {
+     "key": "Concelho"
+    },
+    "district": {
+     "key": "Distrito"
+    },
+    "cleanSafe": {
+     "key": "SeloCleanSafe"
+    }
+   },
+   "orderBy": "Denominacao"
+  },
+  {
+   "field": "turismoActivityOperators",
+   "path": "/TDP/OpenData_AAT/MapServer/8",
+   "type": "TurismoActivityOperator",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "Concelho",
+     "kind": "equals"
+    },
+    {
+     "name": "district",
+     "attribute": "Distrito",
+     "kind": "equals"
+    },
+    {
+     "name": "kind",
+     "attribute": "Tipologia",
+     "kind": "equals"
+    },
+    {
+     "name": "name",
+     "attribute": "Denominacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "registrationNumber": {
+     "key": "NrRNAAT"
+    },
+    "name": {
+     "key": "Denominacao"
+    },
+    "brands": {
+     "key": "Marcas"
+    },
+    "kind": {
+     "key": "Tipologia"
+    },
+    "outdoorActivities": {
+     "key": "IdentActArLivreNaturAv"
+    },
+    "boatActivities": {
+     "key": "IdentActMarTuristicas"
+    },
+    "culturalActivities": {
+     "key": "IdentActCulturais"
+    },
+    "address": {
+     "key": "Endereco"
+    },
+    "postalCode": {
+     "key": "CodigoPostal"
+    },
+    "municipality": {
+     "key": "Concelho"
+    },
+    "district": {
+     "key": "Distrito"
+    },
+    "cleanSafe": {
+     "key": "SeloCleanSafe"
+    }
+   },
+   "orderBy": "Denominacao"
+  },
+  {
+   "field": "turismoCasinos",
+   "path": "/TDP/OpenData_Casinos/MapServer/10",
+   "type": "TurismoCasino",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "Concelho",
+     "kind": "equals"
+    },
+    {
+     "name": "locality",
+     "attribute": "LocalidadeCP",
+     "kind": "contains"
+    },
+    {
+     "name": "name",
+     "attribute": "Denominacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominacao"
+    },
+    "operator": {
+     "key": "EntidadeExploradora"
+    },
+    "capacity": {
+     "key": "Lotacao"
+    },
+    "tableGames": {
+     "key": "JogosBancados"
+    },
+    "slotMachines": {
+     "key": "Maquinas"
+    },
+    "showRoom": {
+     "key": "SalaEspetaculos"
+    },
+    "address": {
+     "key": "Endereco"
+    },
+    "postalCode": {
+     "key": "CodigoPostal"
+    },
+    "locality": {
+     "key": "LocalidadeCP"
+    },
+    "municipality": {
+     "key": "Concelho"
+    },
+    "district": {
+     "key": "Distrito"
+    },
+    "website": {
+     "key": "Website"
+    }
+   },
+   "orderBy": "Denominacao"
+  },
+  {
+   "field": "turismoBingoHalls",
+   "path": "/TDP/OpenData_Bingos/MapServer/11",
+   "type": "TurismoBingoHall",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "Concelho",
+     "kind": "equals"
+    },
+    {
+     "name": "locality",
+     "attribute": "LocalidadeCP",
+     "kind": "contains"
+    },
+    {
+     "name": "name",
+     "attribute": "Denominacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominacao"
+    },
+    "operator": {
+     "key": "EntidadeExploradora"
+    },
+    "capacity": {
+     "key": "Lotacao"
+    },
+    "bar": {
+     "key": "Bares"
+    },
+    "restaurant": {
+     "key": "Restaurantes"
+    },
+    "address": {
+     "key": "Endereco"
+    },
+    "postalCode": {
+     "key": "CodigoPostal"
+    },
+    "locality": {
+     "key": "LocalidadeCP"
+    },
+    "municipality": {
+     "key": "Concelho"
+    },
+    "district": {
+     "key": "Distrito"
+    },
+    "website": {
+     "key": "Website"
+    }
+   },
+   "orderBy": "Denominacao"
+  },
+  {
+   "field": "turismoGolfCourses",
+   "path": "/TDP/OpenData_Golfe/MapServer/13",
+   "type": "TurismoGolfCourse",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "Concelho",
+     "kind": "equals"
+    },
+    {
+     "name": "district",
+     "attribute": "Distrito",
+     "kind": "equals"
+    },
+    {
+     "name": "name",
+     "attribute": "Denominacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominacao"
+    },
+    "holes": {
+     "key": "NrBuracos"
+    },
+    "par": {
+     "key": "ParCampo"
+    },
+    "openedYear": {
+     "key": "AnoInauguracao"
+    },
+    "clubHouse": {
+     "key": "ClubHouse"
+    },
+    "otherFacilities": {
+     "key": "OutrasCompon"
+    },
+    "areaHectares": {
+     "key": "AreaCampoGolfe"
+    },
+    "address": {
+     "key": "Endereco"
+    },
+    "postalCode": {
+     "key": "CodigoPostal"
+    },
+    "municipality": {
+     "key": "Concelho"
+    },
+    "district": {
+     "key": "Distrito"
+    },
+    "website": {
+     "key": "Website"
+    }
+   },
+   "orderBy": "Denominacao"
+  },
+  {
+   "field": "turismoHistoricVillages",
+   "path": "/TDP/OpenData_AldeiasHistoricas/MapServer/1",
+   "type": "TurismoHistoricVillage",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "Concelho",
+     "kind": "equals"
+    },
+    {
+     "name": "district",
+     "attribute": "Distrito",
+     "kind": "equals"
+    },
+    {
+     "name": "name",
+     "attribute": "Denominacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominacao"
+    },
+    "manager": {
+     "key": "EntidadeGestora"
+    },
+    "website": {
+     "key": "Link"
+    },
+    "parish": {
+     "key": "Freguesia"
+    },
+    "municipality": {
+     "key": "Concelho"
+    },
+    "district": {
+     "key": "Distrito"
+    }
+   },
+   "orderBy": "Denominacao"
+  },
+  {
+   "field": "turismoMountainVillages",
+   "path": "/TDP/OpenData_AldeiasMontanha/MapServer/7",
+   "type": "TurismoMountainVillage",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "Concelho",
+     "kind": "equals"
+    },
+    {
+     "name": "district",
+     "attribute": "Distrito",
+     "kind": "equals"
+    },
+    {
+     "name": "name",
+     "attribute": "Denominacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominacao"
+    },
+    "manager": {
+     "key": "EntidadeGestora"
+    },
+    "website": {
+     "key": "Link"
+    },
+    "parish": {
+     "key": "Freguesia"
+    },
+    "municipality": {
+     "key": "Concelho"
+    },
+    "district": {
+     "key": "Distrito"
+    }
+   },
+   "orderBy": "Denominacao"
+  },
+  {
+   "field": "turismoWineVillages",
+   "path": "/TDP/OpenData_AldeiasVinhateiras/MapServer/10",
+   "type": "TurismoWineVillage",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "Concelho",
+     "kind": "equals"
+    },
+    {
+     "name": "district",
+     "attribute": "Distrito",
+     "kind": "equals"
+    },
+    {
+     "name": "name",
+     "attribute": "Denominacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominacao"
+    },
+    "manager": {
+     "key": "EntidadeGestora"
+    },
+    "website": {
+     "key": "Link"
+    },
+    "parish": {
+     "key": "Freguesia"
+    },
+    "municipality": {
+     "key": "Concelho"
+    },
+    "district": {
+     "key": "Distrito"
+    }
+   },
+   "orderBy": "Denominacao"
+  },
+  {
+   "field": "turismoSchistVillages",
+   "path": "/TDP/OpenData_AldeiasXisto/MapServer/4",
+   "type": "TurismoSchistVillage",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "Concelho",
+     "kind": "equals"
+    },
+    {
+     "name": "district",
+     "attribute": "Distrito",
+     "kind": "equals"
+    },
+    {
+     "name": "name",
+     "attribute": "Denominacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominacao"
+    },
+    "manager": {
+     "key": "EntidadeGestora"
+    },
+    "website": {
+     "key": "Link"
+    },
+    "parish": {
+     "key": "Freguesia"
+    },
+    "municipality": {
+     "key": "Concelho"
+    },
+    "district": {
+     "key": "Distrito"
+    }
+   },
+   "orderBy": "Denominacao"
+  },
+  {
+   "field": "turismoMarianShrines",
+   "path": "/TDP/OpenData_AltaresMarianos/MapServer/39",
+   "type": "TurismoMarianShrine",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "Concelho",
+     "kind": "equals"
+    },
+    {
+     "name": "district",
+     "attribute": "Distrito",
+     "kind": "equals"
+    },
+    {
+     "name": "name",
+     "attribute": "Denominacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominacao"
+    },
+    "address": {
+     "key": "Endereco"
+    },
+    "postalCode": {
+     "key": "CodigoPostal"
+    },
+    "locality": {
+     "key": "LocalidadeCP"
+    },
+    "parish": {
+     "key": "Freguesia"
+    },
+    "municipality": {
+     "key": "Concelho"
+    },
+    "district": {
+     "key": "Distrito"
+    },
+    "website": {
+     "key": "Website"
+    }
+   },
+   "orderBy": "Denominacao"
+  },
+  {
+   "field": "turismoJewishHeritageSites",
+   "path": "/TDP/OpenData_HerancaJudaica/MapServer/40",
+   "type": "TurismoJewishHeritageSite",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "Concelho",
+     "kind": "equals"
+    },
+    {
+     "name": "district",
+     "attribute": "Distrito",
+     "kind": "equals"
+    },
+    {
+     "name": "name",
+     "attribute": "Denominacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominacao"
+    },
+    "address": {
+     "key": "Endereco"
+    },
+    "postalCode": {
+     "key": "CodigoPostal"
+    },
+    "locality": {
+     "key": "LocalidadeCP"
+    },
+    "parish": {
+     "key": "Freguesia"
+    },
+    "municipality": {
+     "key": "Concelho"
+    },
+    "district": {
+     "key": "Distrito"
+    },
+    "website": {
+     "key": "Website"
+    }
+   },
+   "orderBy": "Denominacao"
+  },
+  {
+   "field": "turismoIslamicHeritageSites",
+   "path": "/TDP/OpenData_LegadoIslamico/MapServer/42",
+   "type": "TurismoIslamicHeritageSite",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "Concelho",
+     "kind": "equals"
+    },
+    {
+     "name": "district",
+     "attribute": "Distrito",
+     "kind": "equals"
+    },
+    {
+     "name": "name",
+     "attribute": "Denominacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominacao"
+    },
+    "address": {
+     "key": "Endereco"
+    },
+    "postalCode": {
+     "key": "CodigoPostal"
+    },
+    "locality": {
+     "key": "LocalidadeCP"
+    },
+    "parish": {
+     "key": "Freguesia"
+    },
+    "municipality": {
+     "key": "Concelho"
+    },
+    "district": {
+     "key": "Distrito"
+    },
+    "website": {
+     "key": "Website"
+    }
+   },
+   "orderBy": "Denominacao"
+  },
+  {
+   "field": "turismoSurfHighPerformanceCentres",
+   "path": "/TDP/OpenData_CARSurf/MapServer/4",
+   "type": "TurismoSurfHighPerformanceCentre",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "Concelho",
+     "kind": "equals"
+    },
+    {
+     "name": "district",
+     "attribute": "Distrito",
+     "kind": "equals"
+    },
+    {
+     "name": "name",
+     "attribute": "Denominacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominacao"
+    },
+    "manager": {
+     "key": "EntGestora"
+    },
+    "sports": {
+     "key": "Modalidades"
+    },
+    "beds": {
+     "key": "Capacidade"
+    },
+    "openedYear": {
+     "key": "AnoInauguracao"
+    },
+    "address": {
+     "key": "Endereco"
+    },
+    "locality": {
+     "key": "LocalidadeCP"
+    },
+    "municipality": {
+     "key": "Concelho"
+    },
+    "district": {
+     "key": "Distrito"
+    },
+    "website": {
+     "key": "Website"
+    }
+   },
+   "orderBy": "Denominacao"
+  },
+  {
+   "field": "turismoNauticalHighPerformanceCentres",
+   "path": "/TDP/OpenData_CARNautica/MapServer/2",
+   "type": "TurismoNauticalHighPerformanceCentre",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "Concelho",
+     "kind": "equals"
+    },
+    {
+     "name": "district",
+     "attribute": "Distrito",
+     "kind": "equals"
+    },
+    {
+     "name": "name",
+     "attribute": "Denominacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominacao"
+    },
+    "manager": {
+     "key": "EntGestora"
+    },
+    "sports": {
+     "key": "Modalidades"
+    },
+    "beds": {
+     "key": "Capacidade"
+    },
+    "openedYear": {
+     "key": "AnoInauguracao"
+    },
+    "address": {
+     "key": "Endereco"
+    },
+    "locality": {
+     "key": "LocalidadeCP"
+    },
+    "municipality": {
+     "key": "Concelho"
+    },
+    "district": {
+     "key": "Distrito"
+    },
+    "website": {
+     "key": "Website"
+    }
+   },
+   "orderBy": "Denominacao"
+  },
+  {
+   "field": "turismoSurfReserves",
+   "path": "/TDP/OpenData_ReservaSurf/MapServer/5",
+   "type": "TurismoSurfReserve",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "Concelho",
+     "kind": "equals"
+    },
+    {
+     "name": "name",
+     "attribute": "Denominacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominacao"
+    },
+    "beach": {
+     "key": "Praias"
+    },
+    "wave": {
+     "key": "Ondas"
+    },
+    "classifiedYear": {
+     "key": "AnoClassificacao"
+    },
+    "parish": {
+     "key": "Freguesia"
+    },
+    "municipality": {
+     "key": "Concelho"
+    },
+    "website": {
+     "key": "Website"
+    }
+   },
+   "orderBy": "Denominacao"
+  },
+  {
+   "field": "turismoSurfSpots",
+   "path": "/TDP/OpenData_SpotsSurf/MapServer/3",
+   "type": "TurismoSurfSpot",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "Concelho",
+     "kind": "equals"
+    },
+    {
+     "name": "district",
+     "attribute": "Distrito",
+     "kind": "equals"
+    },
+    {
+     "name": "name",
+     "attribute": "Denominacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominacao"
+    },
+    "championships": {
+     "key": "Campeonatos"
+    },
+    "locality": {
+     "key": "Localidade"
+    },
+    "parish": {
+     "key": "Freguesia"
+    },
+    "municipality": {
+     "key": "Concelho"
+    },
+    "district": {
+     "key": "Distrito"
+    },
+    "website": {
+     "key": "Website"
+    }
+   },
+   "orderBy": "Denominacao"
+  },
+  {
+   "field": "turismoBlueFlagBeaches",
+   "path": "/TDP/OpenData_PraiasBA/MapServer/30",
+   "type": "TurismoBlueFlagBeach",
+   "filters": [
+    {
+     "name": "municipalityCode",
+     "attribute": "DICO",
+     "kind": "number"
+    },
+    {
+     "name": "kind",
+     "attribute": "Tipo",
+     "kind": "equals"
+    },
+    {
+     "name": "name",
+     "attribute": "Denominação",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominação"
+    },
+    "kind": {
+     "key": "Tipo"
+    },
+    "municipalityCode": {
+     "key": "DICO"
+    },
+    "latitude": {
+     "key": "Latitude"
+    },
+    "longitude": {
+     "key": "Longitude"
+    }
+   },
+   "orderBy": "Denominação"
+  },
+  {
+   "field": "turismoBlueFlagBoats",
+   "path": "/TDP/OpenData_EmbarcacoesBA/MapServer/0",
+   "type": "TurismoBlueFlagBoat",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "Denominação",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominação"
+    },
+    "latitude": {
+     "key": "Latitude"
+    },
+    "longitude": {
+     "key": "Longitude"
+    }
+   },
+   "orderBy": "Denominação"
+  },
+  {
+   "field": "turismoBlueFlagMarinas",
+   "path": "/TDP/OpenData_PortosMarinasBA/MapServer/31",
+   "type": "TurismoBlueFlagMarina",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "Denominação",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominação"
+    },
+    "latitude": {
+     "key": "Latitude"
+    },
+    "longitude": {
+     "key": "Longitude"
+    }
+   },
+   "orderBy": "Denominação"
+  },
+  {
+   "field": "turismoMarinas",
+   "path": "/TDP/OpenData_MarinasPortosDocas/MapServer/1",
+   "type": "TurismoMarina",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "Concelho",
+     "kind": "equals"
+    },
+    {
+     "name": "district",
+     "attribute": "Distrito",
+     "kind": "equals"
+    },
+    {
+     "name": "kind",
+     "attribute": "Tipologia",
+     "kind": "equals"
+    },
+    {
+     "name": "name",
+     "attribute": "Denominacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominacao"
+    },
+    "kind": {
+     "key": "Tipologia"
+    },
+    "waters": {
+     "key": "Tipo"
+    },
+    "berths": {
+     "key": "NrAmarracoes"
+    },
+    "maxDraughtMetres": {
+     "key": "CaladoMaxAmarr"
+    },
+    "maxLengthMetres": {
+     "key": "CompMaxAmarr"
+    },
+    "blueFlag": {
+     "key": "BandeiraAzul"
+    },
+    "manager": {
+     "key": "EntGestora"
+    },
+    "locality": {
+     "key": "LocalidadeCP"
+    },
+    "municipality": {
+     "key": "Concelho"
+    },
+    "district": {
+     "key": "Distrito"
+    },
+    "website": {
+     "key": "Website"
+    }
+   },
+   "orderBy": "Denominacao"
+  },
+  {
+   "field": "turismoCruiseTerminals",
+   "path": "/TDP/OpenData_TerminaisCruzeiros/MapServer/6",
+   "type": "TurismoCruiseTerminal",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "Concelho",
+     "kind": "equals"
+    },
+    {
+     "name": "name",
+     "attribute": "Denominacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominacao"
+    },
+    "manager": {
+     "key": "EntidadeGestora"
+    },
+    "port": {
+     "key": "Porto"
+    },
+    "quayMetres": {
+     "key": "Cais"
+    },
+    "depth": {
+     "key": "Fundos"
+    },
+    "locality": {
+     "key": "Localidade"
+    },
+    "municipality": {
+     "key": "Concelho"
+    },
+    "district": {
+     "key": "Distrito"
+    },
+    "website": {
+     "key": "Website"
+    }
+   },
+   "orderBy": "Denominacao"
+  },
+  {
+   "field": "turismoNauticalStations",
+   "path": "/TDP/OpenData_EstacoesNauticas/MapServer/24",
+   "type": "TurismoNauticalStation",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "ConcelhosAbrangidos",
+     "kind": "contains"
+    },
+    {
+     "name": "district",
+     "attribute": "Distrito",
+     "kind": "contains"
+    },
+    {
+     "name": "name",
+     "attribute": "Denominacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominacao"
+    },
+    "coordinator": {
+     "key": "EntidadeCoordenadora"
+    },
+    "headquarters": {
+     "key": "SedeSocial"
+    },
+    "municipalities": {
+     "key": "ConcelhosAbrangidos"
+    },
+    "district": {
+     "key": "Distrito"
+    },
+    "region": {
+     "key": "NUTSIII"
+    }
+   },
+   "orderBy": "Denominacao"
+  },
+  {
+   "field": "turismoNauticalStationAreas",
+   "path": "/TDP/OpenData_EstacoesNauticas_POL/MapServer/27",
+   "type": "TurismoNauticalStationArea",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "ConcelhosAbrangidos",
+     "kind": "contains"
+    },
+    {
+     "name": "district",
+     "attribute": "Distrito",
+     "kind": "contains"
+    },
+    {
+     "name": "name",
+     "attribute": "Denominacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominacao"
+    },
+    "coordinator": {
+     "key": "EntidadeCoordenadora"
+    },
+    "headquarters": {
+     "key": "SedeSocial"
+    },
+    "municipalities": {
+     "key": "ConcelhosAbrangidos"
+    },
+    "district": {
+     "key": "Distrito"
+    },
+    "region": {
+     "key": "NUTSIII"
+    }
+   },
+   "orderBy": "Denominacao"
+  },
+  {
+   "field": "turismoHotelSchools",
+   "path": "/TDP/OpenData_EscolasTdP/MapServer/12",
+   "type": "TurismoHotelSchool",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "Concelho",
+     "kind": "equals"
+    },
+    {
+     "name": "district",
+     "attribute": "Distrito",
+     "kind": "equals"
+    },
+    {
+     "name": "name",
+     "attribute": "Denominacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominacao"
+    },
+    "students": {
+     "key": "CapacidadeEscola"
+    },
+    "technologyCourses": {
+     "key": "IdentCET"
+    },
+    "dualCourses": {
+     "key": "IdentCursosFormDualOTJ"
+    },
+    "trainingHotel": {
+     "key": "HotelAplicacao"
+    },
+    "hotelBeds": {
+     "key": "CapacAlojamentoHotel"
+    },
+    "trainingRestaurant": {
+     "key": "RestauranteAplicacao"
+    },
+    "auditoriumSeats": {
+     "key": "CapacAuditorio"
+    },
+    "address": {
+     "key": "Endereco"
+    },
+    "postalCode": {
+     "key": "CodigoPostal"
+    },
+    "municipality": {
+     "key": "Concelho"
+    },
+    "district": {
+     "key": "Distrito"
+    }
+   },
+   "orderBy": "Denominacao"
+  },
+  {
+   "field": "turismoThermalSpas",
+   "path": "/TDP/OpenData_Termas/MapServer/27",
+   "type": "TurismoThermalSpa",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "Concelho",
+     "kind": "equals"
+    },
+    {
+     "name": "district",
+     "attribute": "Distrito",
+     "kind": "equals"
+    },
+    {
+     "name": "name",
+     "attribute": "Denominacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominacao"
+    },
+    "operator": {
+     "key": "EntExplora"
+    },
+    "treats": {
+     "key": "IndicTerapeu"
+    },
+    "wellness": {
+     "key": "ProgrBemEstar"
+    },
+    "address": {
+     "key": "Endereco"
+    },
+    "postalCode": {
+     "key": "CodigoPostal"
+    },
+    "locality": {
+     "key": "LocalidadeCP"
+    },
+    "municipality": {
+     "key": "Concelho"
+    },
+    "district": {
+     "key": "Distrito"
+    },
+    "website": {
+     "key": "Website"
+    }
+   },
+   "orderBy": "Denominacao"
+  },
+  {
+   "field": "turismoMountainBikeCentres",
+   "path": "/TDP/OpenData_CentrosBTT/MapServer/9",
+   "type": "TurismoMountainBikeCentre",
+   "filters": [
+    {
+     "name": "municipality",
+     "attribute": "CONCELHO",
+     "kind": "equals"
+    },
+    {
+     "name": "district",
+     "attribute": "Distrito",
+     "kind": "equals"
+    },
+    {
+     "name": "name",
+     "attribute": "DESIGNACAO",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "DESIGNACAO"
+    },
+    "parish": {
+     "key": "Freguesia"
+    },
+    "municipality": {
+     "key": "CONCELHO"
+    },
+    "district": {
+     "key": "Distrito"
+    },
+    "latitude": {
+     "key": "LATITUDE"
+    },
+    "longitude": {
+     "key": "LONGITUDE"
+    }
+   },
+   "orderBy": "DESIGNACAO"
+  },
+  {
+   "field": "turismoFatimaWays",
+   "path": "/TDP/OpenData_CaminhosFatima/MapServer/43",
+   "type": "TurismoFatimaWay",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "Denominaca",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominaca"
+    },
+    "lengthKm": {
+     "key": "ExtTotalRo"
+    },
+    "stages": {
+     "key": "Etapas"
+    },
+    "website": {
+     "key": "Website"
+    }
+   },
+   "orderBy": "Denominaca"
+  },
+  {
+   "field": "turismoSantiagoWays",
+   "path": "/TDP/OpenData_CaminhosSantiago/MapServer/44",
+   "type": "TurismoSantiagoWay",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "Denominaca",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominaca"
+    },
+    "lengthKm": {
+     "key": "ExtTotalRo"
+    },
+    "stages": {
+     "key": "Etapas"
+    },
+    "website": {
+     "key": "Website"
+    }
+   },
+   "orderBy": "Denominaca"
+  },
+  {
+   "field": "turismoCyclingGreenways",
+   "path": "/TDP/OpenData_EcopistasCycling/MapServer/7",
+   "type": "TurismoCyclingGreenway",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "Denominaca",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominaca"
+    },
+    "lengthKm": {
+     "key": "ExtTotalRo"
+    },
+    "walking": {
+     "key": "Walking"
+    },
+    "cycling": {
+     "key": "Cycling"
+    },
+    "website": {
+     "key": "Website"
+    }
+   },
+   "orderBy": "Denominaca"
+  },
+  {
+   "field": "turismoWalkingGreenways",
+   "path": "/TDP/OpenData_EcopistasWalking/MapServer/2",
+   "type": "TurismoWalkingGreenway",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "Denominaca",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominaca"
+    },
+    "lengthKm": {
+     "key": "ExtTotalRo"
+    },
+    "walking": {
+     "key": "Walking"
+    },
+    "cycling": {
+     "key": "Cycling"
+    },
+    "website": {
+     "key": "Website"
+    }
+   },
+   "orderBy": "Denominaca"
+  },
+  {
+   "field": "turismoEuroveloRoutes",
+   "path": "/TDP/OpenData_Eurovelo/MapServer/6",
+   "type": "TurismoEuroveloRoute",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "Denominaca",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominaca"
+    },
+    "lengthKm": {
+     "key": "ExtTotalRo"
+    },
+    "walking": {
+     "key": "Walking"
+    },
+    "cycling": {
+     "key": "Cycling"
+    },
+    "website": {
+     "key": "Website"
+    }
+   },
+   "orderBy": "Denominaca"
+  },
+  {
+   "field": "turismoLongCyclingRoutes",
+   "path": "/TDP/OpenData_GrandesRotasCycling/MapServer/5",
+   "type": "TurismoLongCyclingRoute",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "Denominaca",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominaca"
+    },
+    "lengthKm": {
+     "key": "ExtTotalRo"
+    },
+    "walking": {
+     "key": "Walking"
+    },
+    "cycling": {
+     "key": "Cycling"
+    },
+    "website": {
+     "key": "Website"
+    }
+   },
+   "orderBy": "Denominaca"
+  },
+  {
+   "field": "turismoLongWalkingRoutes",
+   "path": "/TDP/OpenData_GrandesRotasWalking/MapServer/1",
+   "type": "TurismoLongWalkingRoute",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "Denominaca",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominaca"
+    },
+    "lengthKm": {
+     "key": "ExtTotalRo"
+    },
+    "walking": {
+     "key": "Walking"
+    },
+    "cycling": {
+     "key": "Cycling"
+    },
+    "website": {
+     "key": "Website"
+    }
+   },
+   "orderBy": "Denominaca"
+  },
+  {
+   "field": "turismoOtherCyclingRoutes",
+   "path": "/TDP/OpenData_OutrasRotasCycling/MapServer/8",
+   "type": "TurismoOtherCyclingRoute",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "Denominaca",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominaca"
+    },
+    "lengthKm": {
+     "key": "ExtTotalRo"
+    },
+    "walking": {
+     "key": "Walking"
+    },
+    "cycling": {
+     "key": "Cycling"
+    },
+    "website": {
+     "key": "Website"
+    }
+   },
+   "orderBy": "Denominaca"
+  },
+  {
+   "field": "turismoOtherWalkingRoutes",
+   "path": "/TDP/OpenData_OutrasRotasWalking/MapServer/3",
+   "type": "TurismoOtherWalkingRoute",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "Denominaca",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominaca"
+    },
+    "lengthKm": {
+     "key": "ExtTotalRo"
+    },
+    "walking": {
+     "key": "Walking"
+    },
+    "cycling": {
+     "key": "Cycling"
+    },
+    "website": {
+     "key": "Website"
+    }
+   },
+   "orderBy": "Denominaca"
+  },
+  {
+   "field": "turismoUnescoWorldHeritageSites",
+   "path": "/TDP/OpenData_PatrimonioMundialUNESCO/MapServer/38",
+   "type": "TurismoUnescoWorldHeritageSite",
+   "filters": [
+    {
+     "name": "name",
+     "attribute": "Denominacao",
+     "kind": "contains"
+    }
+   ],
+   "attributes": {
+    "name": {
+     "key": "Denominacao"
+    },
+    "website": {
+     "key": "Website"
+    }
+   },
+   "orderBy": "Denominacao"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+[ {
+  "IndicadorCod" : "0013189",
+  "IndicadorDsg" : "Population's density (No./ km²) by Place of residence (NUTS - 2024); Annual - Statistics Portugal, Annual estimates of resident population",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013189&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:20.436Z",
+  "DataUltimoAtualizacao" : "2026-07-31",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2025" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "ind_string" : "123,9",
+      "valor" : "123.9"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

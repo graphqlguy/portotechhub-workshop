@@ -1,0 +1,25 @@
+[ {
+  "IndicadorCod" : "0000861",
+  "IndicadorDsg" : "Embarked passengers (No.) in airports by Geographic localization, Type of traffic and Nature of traffic; Monthly - Statistics Portugal, Airports and airfields survey",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0000861&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:24:09.284Z",
+  "DataUltimoAtualizacao" : "2026-10-29",
+  "UltimoPref" : "August 2026",
+  "Dados" : {
+    "August 2026" : [ {
+      "geocod" : "T",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "dim_4" : "T",
+      "dim_4_t" : "Total",
+      "ind_string" : "4 069 552",
+      "valor" : "4069552"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

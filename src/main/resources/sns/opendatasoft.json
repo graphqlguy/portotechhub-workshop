@@ -1,0 +1,6114 @@
+{
+ "datasets": [
+  {
+   "field": "snsEmergencyVisitsByType",
+   "dataset": "atendimentos-por-tipo-de-urgencia-hospitalar-link",
+   "type": "SnsEmergencyVisitsByType",
+   "filters": [
+    {
+     "name": "region",
+     "column": "regiao",
+     "kind": "search"
+    },
+    {
+     "name": "hospital",
+     "column": "instituicao",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "hospital": {
+     "key": "instituicao"
+    },
+    "general": {
+     "key": "urgencias_geral"
+    },
+    "paediatric": {
+     "key": "urgencias_pediatricas"
+    },
+    "obstetric": {
+     "key": "urgencia_obstetricia"
+    },
+    "psychiatric": {
+     "key": "urgencia_psiquiatrica"
+    },
+    "total": {
+     "key": "total_urgencias"
+    },
+    "latitude": {
+     "key": "localizacao_geografica/lat"
+    },
+    "longitude": {
+     "key": "localizacao_geografica/lon"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsHospitalConsultations",
+   "dataset": "01_sica_evolucao-mensal-das-consultas-medicas-hospitalares",
+   "type": "SnsHospitalConsultations",
+   "filters": [
+    {
+     "name": "region",
+     "column": "regiao",
+     "kind": "search"
+    },
+    {
+     "name": "hospital",
+     "column": "instituicao",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "hospital": {
+     "key": "instituicao"
+    },
+    "total": {
+     "key": "no_de_consultas_medicas_total"
+    },
+    "first": {
+     "key": "no_de_primeiras_consultas"
+    },
+    "followUp": {
+     "key": "no_de_consultas_subsequentes"
+    },
+    "latitude": {
+     "key": "localizacao_geografica/lat"
+    },
+    "longitude": {
+     "key": "localizacao_geografica/lon"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsTelemedicineConsultations",
+   "dataset": "consultas-em-telemedicina",
+   "type": "SnsTelemedicineConsultations",
+   "filters": [
+    {
+     "name": "region",
+     "column": "regiao",
+     "kind": "search"
+    },
+    {
+     "name": "hospital",
+     "column": "instituicao",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "hospital": {
+     "key": "instituicao"
+    },
+    "first": {
+     "key": "1as_consultas_telemedicina"
+    },
+    "followUp": {
+     "key": "consultas_subsequentes_telemedicina"
+    },
+    "total": {
+     "key": "total_consultas_telemedicina"
+    },
+    "latitude": {
+     "key": "localizacao_geografica/lat"
+    },
+    "longitude": {
+     "key": "localizacao_geografica/lon"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsNutritionConsultations",
+   "dataset": "evolucao-mensal-das-consultas-de-nutricao",
+   "type": "SnsNutritionConsultations",
+   "filters": [
+    {
+     "name": "region",
+     "column": "regiao",
+     "kind": "search"
+    },
+    {
+     "name": "hospital",
+     "column": "instituicao",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "hospital": {
+     "key": "instituicao"
+    },
+    "first": {
+     "key": "apoio_nutricional_e_dietetica_primeiras_consultas"
+    },
+    "followUp": {
+     "key": "apoio_nutricional_e_dietetica_consultas_subsequentes"
+    },
+    "total": {
+     "key": "apoio_nutricional_e_dietetica_total_de_consultas"
+    },
+    "latitude": {
+     "key": "localizacao_geografica/lat"
+    },
+    "longitude": {
+     "key": "localizacao_geografica/lon"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsPsychologyConsultations",
+   "dataset": "evolucao-mensal-das-consultas-de-psicologia",
+   "type": "SnsPsychologyConsultations",
+   "filters": [
+    {
+     "name": "region",
+     "column": "regiao",
+     "kind": "search"
+    },
+    {
+     "name": "hospital",
+     "column": "instituicao",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "hospital": {
+     "key": "instituicao"
+    },
+    "first": {
+     "key": "psicologia_primeiras_consultas"
+    },
+    "followUp": {
+     "key": "psicologia_consultas_subsequentes"
+    },
+    "total": {
+     "key": "psicologia_total_de_consultas"
+    },
+    "latitude": {
+     "key": "localizacao_geografica/lat"
+    },
+    "longitude": {
+     "key": "localizacao_geografica/lon"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsFirstConsultationsOnTime",
+   "dataset": "consultas-em-tempo-real",
+   "type": "SnsFirstConsultationsOnTime",
+   "filters": [
+    {
+     "name": "region",
+     "column": "regiao",
+     "kind": "search"
+    },
+    {
+     "name": "hospital",
+     "column": "instituicao",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "hospital": {
+     "key": "instituicao"
+    },
+    "onTime": {
+     "key": "no_primeiras_ce_prestadas_dentro_do_tmrg"
+    },
+    "referred": {
+     "key": "no_primeiras_ce_realizadas_com_registo_no_cth"
+    },
+    "onTimePercent": {
+     "key": "1as_consultas_realizadas_em_tempo_adequado"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsSurgeries",
+   "dataset": "intervencoes-cirurgicas",
+   "type": "SnsSurgeries",
+   "filters": [
+    {
+     "name": "region",
+     "column": "regiao",
+     "kind": "search"
+    },
+    {
+     "name": "hospital",
+     "column": "instituicao",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "hospital": {
+     "key": "instituicao"
+    },
+    "planned": {
+     "key": "no_intervencoes_cirurgicas_programadas"
+    },
+    "conventional": {
+     "key": "no_intervencoes_cirurgicas_convencionais"
+    },
+    "daySurgery": {
+     "key": "no_intervencoes_cirurgicas_de_ambulatorio"
+    },
+    "urgent": {
+     "key": "no_intervencoes_cirurgicas_urgentes"
+    },
+    "latitude": {
+     "key": "localizacao_geografica/lat"
+    },
+    "longitude": {
+     "key": "localizacao_geografica/lon"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsDaySurgeryShare",
+   "dataset": "cirurgias-em-ambulatorio",
+   "type": "SnsDaySurgeryShare",
+   "filters": [
+    {
+     "name": "region",
+     "column": "regiao",
+     "kind": "search"
+    },
+    {
+     "name": "hospital",
+     "column": "instituicao",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "hospital": {
+     "key": "instituicao"
+    },
+    "daySurgery": {
+     "key": "no_episodios_cirurgicos_ambulat_com_procedimentos_ambulatorizaveis"
+    },
+    "eligible": {
+     "key": "no_episodios_cirurgicos_ambulat_e_intern_com_proced_ambulatorizaveis"
+    },
+    "percent": {
+     "key": "cir_ambulatorio_gdh_para_procedimentos_ambulatorizaveis"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsDaysBeforeSurgery",
+   "dataset": "demora-media-antes-da-cirurgia",
+   "type": "SnsDaysBeforeSurgery",
+   "filters": [
+    {
+     "name": "region",
+     "column": "regiao",
+     "kind": "search"
+    },
+    {
+     "name": "hospital",
+     "column": "instituicao",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "hospital": {
+     "key": "instituicao"
+    },
+    "daysBeforeSurgery": {
+     "key": "no_de_dias_ate_cirurgia_em_episodios_de_gdh_cirurgicos_programados"
+    },
+    "stays": {
+     "key": "no_de_episodios_em_gdh_cirurgicos_de_internamento_programados_com_exclusoes"
+    },
+    "averageDays": {
+     "key": "demora_media_antes_da_cirurgia"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsHipFractureSurgeryWithin48h",
+   "dataset": "fraturas-da-anca-cirurgias-nas-primeiras-48h",
+   "type": "SnsHipFractureSurgeryWithin48h",
+   "filters": [
+    {
+     "name": "region",
+     "column": "regiao",
+     "kind": "search"
+    },
+    {
+     "name": "hospital",
+     "column": "instituicao",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "hospital": {
+     "key": "instituicao"
+    },
+    "within48h": {
+     "key": "no_episodios_utentes_idade_sup_65_anos_com_diag_princ_820_com_cir_realiz_nas_1as_48h_apos_admissao"
+    },
+    "operated": {
+     "key": "n_episodios_utentes_idade_sup_65_anos_com_diag_princ_820_com_cirurgia_realizada"
+    },
+    "percent": {
+     "key": "fraturas_anca_com_cirurgia_realizada_nas_primeiras_48_horas"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsBirths",
+   "dataset": "partos-e-cesarianas",
+   "type": "SnsBirths",
+   "filters": [
+    {
+     "name": "region",
+     "column": "regiao",
+     "kind": "search"
+    },
+    {
+     "name": "hospital",
+     "column": "instituicao",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "hospital": {
+     "key": "instituicao"
+    },
+    "births": {
+     "key": "no_de_partos"
+    },
+    "caesareans": {
+     "key": "no_de_cesarianas"
+    },
+    "latitude": {
+     "key": "localizacao_geografica/lat"
+    },
+    "longitude": {
+     "key": "localizacao_geografica/lon"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsInpatientActivity",
+   "dataset": "atividade-de-internamento-hospitalar",
+   "type": "SnsInpatientActivity",
+   "filters": [
+    {
+     "name": "region",
+     "column": "regiao",
+     "kind": "search"
+    },
+    {
+     "name": "hospital",
+     "column": "instituicao",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "hospital": {
+     "key": "instituicao"
+    },
+    "specialty": {
+     "key": "tipo_de_especialidade"
+    },
+    "discharges": {
+     "key": "doentes_saidos"
+    },
+    "inpatientDays": {
+     "key": "dias_de_internamento"
+    },
+    "latitude": {
+     "key": "localizacao_geografica/lat"
+    },
+    "longitude": {
+     "key": "localizacao_geografica/lon"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsBedOccupancy",
+   "dataset": "ocupacao-do-internamento",
+   "type": "SnsBedOccupancy",
+   "filters": [
+    {
+     "name": "region",
+     "column": "regiao",
+     "kind": "search"
+    },
+    {
+     "name": "hospital",
+     "column": "instituicao",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "hospital": {
+     "key": "instituicao"
+    },
+    "inpatientDays": {
+     "key": "no_de_dias_de_internamento"
+    },
+    "beds": {
+     "key": "lotacao_praticada"
+    },
+    "occupancyPercent": {
+     "key": "taxa_anual_de_ocupacao_em_internamento"
+    },
+    "latitude": {
+     "key": "localizacao_geografica/lat"
+    },
+    "longitude": {
+     "key": "localizacao_geografica/lon"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsHospitalBeds",
+   "dataset": "lotacao-praticada-por-tipo-de-cama",
+   "type": "SnsHospitalBeds",
+   "filters": [
+    {
+     "name": "region",
+     "column": "regiao",
+     "kind": "search"
+    },
+    {
+     "name": "hospital",
+     "column": "instituicao",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "hospital": {
+     "key": "instituicao"
+    },
+    "bedType": {
+     "key": "tipo_de_camas"
+    },
+    "beds": {
+     "key": "lotacao"
+    },
+    "latitude": {
+     "key": "localizacao_geografica/lat"
+    },
+    "longitude": {
+     "key": "localizacao_geografica/lon"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsStrokeMortality",
+   "dataset": "taxa-de-mortalidade-por-avc-isquemico-e-hemorragico",
+   "type": "SnsStrokeMortality",
+   "filters": [
+    {
+     "name": "region",
+     "column": "regiao",
+     "kind": "search"
+    },
+    {
+     "name": "hospital",
+     "column": "instituicao",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "hospital": {
+     "key": "instituicao"
+    },
+    "haemorrhagicPercent": {
+     "key": "mortalidade_avc_hemorragico_30_dias"
+    },
+    "ischaemicPercent": {
+     "key": "mortalidade_avc_isquemico_30_dias"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsSurgeryWaitList180Days",
+   "dataset": "inscritos-em-lic-dentro-do-tmrg-180-dias",
+   "type": "SnsSurgeryWaitList180Days",
+   "filters": [
+    {
+     "name": "region",
+     "column": "regiao",
+     "kind": "search"
+    },
+    {
+     "name": "hospital",
+     "column": "instituicao",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "hospital": {
+     "key": "instituicao"
+    },
+    "withinLimit": {
+     "key": "no_de_doentes_inscritos_dentro_do_tmrg_sigic"
+    },
+    "waiting": {
+     "key": "no_de_doentes_inscritos_sigic"
+    },
+    "withinLimitPercent": {
+     "key": "de_inscritos_em_lic_dentro_do_tmrg"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsSurgeryWaitList270Days",
+   "dataset": "inscritos-lic-dentro-tmrg",
+   "type": "SnsSurgeryWaitList270Days",
+   "filters": [
+    {
+     "name": "hospital",
+     "column": "instituicao",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "hospital": {
+     "key": "instituicao"
+    },
+    "withinLimit": {
+     "key": "no_de_doentes_inscritos_dentro_do_tmrg_sigic"
+    },
+    "waiting": {
+     "key": "no_de_doentes_inscritos_sigic"
+    },
+    "withinLimitPercent": {
+     "key": "de_inscritos_em_lic_dentro_do_tmrg"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsOvertimeCostShare",
+   "dataset": "percentagem-de-gastos-com-te-e-suplementos-no-total-gastos-com-pessoal",
+   "type": "SnsOvertimeCostShare",
+   "filters": [
+    {
+     "name": "region",
+     "column": "regiao",
+     "kind": "search"
+    },
+    {
+     "name": "hospital",
+     "column": "instituicao",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "hospital": {
+     "key": "instituicao"
+    },
+    "overtimeCost": {
+     "key": "gastos_com_te_e_suplementos"
+    },
+    "staffCost": {
+     "key": "gastos_com_pessoal"
+    },
+    "overtimePercent": {
+     "key": "gastos_com_te_e_suplementos_no_total_gastos_com_pessoal"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsInstitutionFinances",
+   "dataset": "agregados-economico-financeiros",
+   "type": "SnsInstitutionFinances",
+   "filters": [
+    {
+     "name": "region",
+     "column": "regiao",
+     "kind": "search"
+    },
+    {
+     "name": "entity",
+     "column": "entidade",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "entity": {
+     "key": "entidade"
+    },
+    "operatingIncome": {
+     "key": "rendimentos_operacionais"
+    },
+    "operatingCosts": {
+     "key": "gastos_operacionais"
+    },
+    "ebitda": {
+     "key": "ebitda"
+    },
+    "netResult": {
+     "key": "resultado_liquido"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsSupplierDebt",
+   "dataset": "divida-total-vencida-e-pagamentos",
+   "type": "SnsSupplierDebt",
+   "filters": [
+    {
+     "name": "region",
+     "column": "regiao",
+     "kind": "search"
+    },
+    {
+     "name": "entity",
+     "column": "entidade",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "entity": {
+     "key": "entidade"
+    },
+    "totalDebt": {
+     "key": "divida_total_fornecedores_externos"
+    },
+    "overdueDebt": {
+     "key": "divida_vencida_fornecedores_externos"
+    },
+    "arrears": {
+     "key": "pagamentos_em_atraso"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsSupplierPaymentDays",
+   "dataset": "tempo-medio-de-pagamento-das-instituicoes-do-sns-a-fornecedores",
+   "type": "SnsSupplierPaymentDays",
+   "filters": [
+    {
+     "name": "region",
+     "column": "regiao",
+     "kind": "search"
+    },
+    {
+     "name": "entity",
+     "column": "instituicao",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "hospital": {
+     "key": "instituicao"
+    },
+    "paymentDays": {
+     "key": "prazo_medio_de_pagamento"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsWorkersByContract",
+   "dataset": "trabalhadores-por-modalidade-de-vinculacao",
+   "type": "SnsWorkersByContract",
+   "filters": [
+    {
+     "name": "region",
+     "column": "regiao",
+     "kind": "search"
+    },
+    {
+     "name": "entity",
+     "column": "entidade",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "entity": {
+     "key": "entidade"
+    },
+    "contract": {
+     "key": "modalidade_de_vinculacao"
+    },
+    "workers": {
+     "key": "no_trabalhadores"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsWorkersByProfession",
+   "dataset": "trabalhadores-por-grupo-profissional",
+   "type": "SnsWorkersByProfession",
+   "filters": [
+    {
+     "name": "region",
+     "column": "regiao",
+     "kind": "search"
+    },
+    {
+     "name": "entity",
+     "column": "instituicao",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "hospital": {
+     "key": "instituicao"
+    },
+    "doctors": {
+     "key": "medicos_s_internos"
+    },
+    "doctorsInTraining": {
+     "key": "medicos_internos"
+    },
+    "nurses": {
+     "key": "enfermeiros"
+    },
+    "diagnosticTechnicians": {
+     "key": "tdt"
+    },
+    "technicalAssistants": {
+     "key": "at"
+    },
+    "operationalAssistants": {
+     "key": "ao"
+    },
+    "total": {
+     "key": "total_geral"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsWorkAbsenceDays",
+   "dataset": "contagem-dos-dias-de-ausencia-ao-trabalho-segundo-o-motivo-de-ausencia",
+   "type": "SnsWorkAbsenceDays",
+   "filters": [
+    {
+     "name": "region",
+     "column": "regiao",
+     "kind": "search"
+    },
+    {
+     "name": "entity",
+     "column": "entidade",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "entity": {
+     "key": "entidade"
+    },
+    "reason": {
+     "key": "tipologia_de_ausencia"
+    },
+    "days": {
+     "key": "valor"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsTrainingAbsenceDays",
+   "dataset": "ausencias-para-formacao-e-aperfeicoamento-profissional",
+   "type": "SnsTrainingAbsenceDays",
+   "filters": [
+    {
+     "name": "region",
+     "column": "regiao",
+     "kind": "search"
+    },
+    {
+     "name": "entity",
+     "column": "entidade",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "entity": {
+     "key": "entidade"
+    },
+    "doctors": {
+     "key": "pessoal_medico"
+    },
+    "nurses": {
+     "key": "pessoal_de_enfermagem"
+    },
+    "diagnosticTechnicians": {
+     "key": "pessoal_tecnico_de_diagnostico_e_terapeutica"
+    },
+    "technicalAssistants": {
+     "key": "assistente_tecnico"
+    },
+    "operationalAssistants": {
+     "key": "assistente_operacional"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsOvertimeAndNightHours",
+   "dataset": "contagem-das-horas-de-trabalho-nocturno-normal-e-extraordinario",
+   "type": "SnsOvertimeAndNightHours",
+   "filters": [
+    {
+     "name": "region",
+     "column": "regiao",
+     "kind": "search"
+    },
+    {
+     "name": "entity",
+     "column": "entidade",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "entity": {
+     "key": "entidade"
+    },
+    "overtimeDay": {
+     "key": "trabalho_extraordinario_diurno"
+    },
+    "overtimeNight": {
+     "key": "trabalho_extraordinario_nocturno"
+    },
+    "restDayHours": {
+     "key": "trabalho_em_dias_de_descanso_semanal_obrigatorio"
+    },
+    "holidayHours": {
+     "key": "trabalho_em_dias_feriados"
+    },
+    "nightHours": {
+     "key": "trabalho_nocturno_normal"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsBloodDonors",
+   "dataset": "dadores-de-sangue",
+   "type": "SnsBloodDonors",
+   "filters": [
+    {
+     "name": "entity",
+     "column": "entidade",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "entity": {
+     "key": "entidade"
+    },
+    "donors": {
+     "key": "dadores_inscritos"
+    },
+    "firstTimeDonors": {
+     "key": "dadores_de_1a_vez"
+    },
+    "regularDonors": {
+     "key": "dadores_regulares"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsBloodCollections",
+   "dataset": "colheita-de-sangue-total",
+   "type": "SnsBloodCollections",
+   "filters": [
+    {
+     "name": "entity",
+     "column": "entidade",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "entity": {
+     "key": "entidade"
+    },
+    "bloodGroup": {
+     "key": "grupo_sanguineo"
+    },
+    "units": {
+     "key": "no_total_de_unidades_de_sangue_colhidas"
+    },
+    "unitsUnder25": {
+     "key": "no_total_de_unidades_de_sangue_colhidas_no_grupo_etario_25_anos"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsBloodReserves",
+   "dataset": "reservas",
+   "type": "SnsBloodReserves",
+   "filters": [
+    {
+     "name": "entity",
+     "column": "entidade",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "entity": {
+     "key": "entidade"
+    },
+    "bloodGroup": {
+     "key": "grupo_sanguineo"
+    },
+    "units": {
+     "key": "reservas"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsDigitalBirthNotices",
+   "dataset": "noticias-de-nascimento-digital-e-registo-de-nascer-de-utentes",
+   "type": "SnsDigitalBirthNotices",
+   "filters": [
+    {
+     "name": "hospital",
+     "column": "entidade",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "entity": {
+     "key": "entidade"
+    },
+    "birthNotices": {
+     "key": "no_noticias_nascimento"
+    },
+    "newbornsRegistered": {
+     "key": "no_de_nascer_utente"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsAntibioticUse",
+   "dataset": "antibioticos",
+   "type": "SnsAntibioticUse",
+   "filters": [
+    {
+     "name": "hospital",
+     "column": "nome_hospital",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "region": {
+     "key": "ars_hospital"
+    },
+    "hospital": {
+     "key": "nome_hospital"
+    },
+    "antibioticUnits": {
+     "key": "unidades_antibioticos"
+    },
+    "totalUnits": {
+     "key": "unidades_totais"
+    },
+    "share": {
+     "key": "peso"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsCarbapenemUse",
+   "dataset": "antibioticos-carbapenemes",
+   "type": "SnsCarbapenemUse",
+   "filters": [
+    {
+     "name": "hospital",
+     "column": "nome_hospital",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "region": {
+     "key": "ars_hospital"
+    },
+    "hospital": {
+     "key": "nome_hospital"
+    },
+    "doses": {
+     "key": "ddd_consumidas_carbapenemes"
+    },
+    "otherAntibioticDoses": {
+     "key": "ddd_consumidas_restantes_antibioticos"
+    },
+    "share": {
+     "key": "peso"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsCephalosporinUse",
+   "dataset": "antibioticos-cefalosporinas",
+   "type": "SnsCephalosporinUse",
+   "filters": [
+    {
+     "name": "hospital",
+     "column": "nome_hospital",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "region": {
+     "key": "ars_hospital"
+    },
+    "hospital": {
+     "key": "nome_hospital"
+    },
+    "doses": {
+     "key": "ddd_consumidas_cefalosporinas"
+    },
+    "otherAntibioticDoses": {
+     "key": "ddd_consumidas_restantes_antibioticos"
+    },
+    "share": {
+     "key": "peso"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsFluoroquinoloneUse",
+   "dataset": "antibioticos-fluoroquinolonas",
+   "type": "SnsFluoroquinoloneUse",
+   "filters": [
+    {
+     "name": "hospital",
+     "column": "nome_hospital",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "region": {
+     "key": "ars_hospital"
+    },
+    "hospital": {
+     "key": "nome_hospital"
+    },
+    "doses": {
+     "key": "ddd_consumidas_fluoroquinolonas"
+    },
+    "otherAntibioticDoses": {
+     "key": "ddd_consumidas_restantes_antibioticos"
+    },
+    "share": {
+     "key": "peso"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsBiosimilarUse",
+   "dataset": "medicamentos-biossimilares",
+   "type": "SnsBiosimilarUse",
+   "filters": [
+    {
+     "name": "hospital",
+     "column": "nome_hospital",
+     "kind": "search"
+    },
+    {
+     "name": "substance",
+     "column": "dci",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "region": {
+     "key": "ars_hospital"
+    },
+    "hospital": {
+     "key": "nome_hospital"
+    },
+    "substance": {
+     "key": "dci"
+    },
+    "biosimilar": {
+     "key": "valor_biossimilar"
+    },
+    "reference": {
+     "key": "valor_nao_biossimilar"
+    },
+    "biosimilarShare": {
+     "key": "quota_biossimilar"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsHivTreatmentCost",
+   "dataset": "custo-de-tratamento-mensal-por-doente",
+   "type": "SnsHivTreatmentCost",
+   "filters": [
+    {
+     "name": "hospital",
+     "column": "instituicao_hospitalar",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "hospital": {
+     "key": "instituicao_hospitalar"
+    },
+    "spending": {
+     "key": "despesa"
+    },
+    "patients": {
+     "key": "n_o_doentes"
+    },
+    "monthlyCostPerPatient": {
+     "key": "custo_medio"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsPrimaryCareUnits",
+   "dataset": "evolucao-do-numero-de-unidades-funcionais",
+   "type": "SnsPrimaryCareUnits",
+   "filters": [
+    {
+     "name": "area",
+     "column": "entidade",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "area": {
+     "key": "entidade"
+    },
+    "units": {
+     "key": "total_usf"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsPrimaryCareNursingContacts",
+   "dataset": "evolucao-dos-contactos-de-enfermagem-nos-csp",
+   "type": "SnsPrimaryCareNursingContacts",
+   "filters": [
+    {
+     "name": "area",
+     "column": "entidade",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "area": {
+     "key": "entidade"
+    },
+    "inPerson": {
+     "key": "no_de_contactos_de_enfermagem_presenciais_qt"
+    },
+    "remote": {
+     "key": "no_de_contactos_de_enfermagem_nao_presenciais_qt"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsPrimaryCareConsultations",
+   "dataset": "evolucao-das-consultas-medicas-nos-csp",
+   "type": "SnsPrimaryCareConsultations",
+   "filters": [
+    {
+     "name": "area",
+     "column": "entidade",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "area": {
+     "key": "entidade"
+    },
+    "inPerson": {
+     "key": "no_de_consultas_medicas_presencias_qt"
+    },
+    "remote": {
+     "key": "no_de_consultas_medicas_nao_presenciais_ou_inespecificas_qt"
+    },
+    "atHome": {
+     "key": "no_de_consultas_medicas_ao_domicilio_qt"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsPrimaryCareAccess",
+   "dataset": "acesso-de-consultas-medicas-pela-populacao-inscrita",
+   "type": "SnsPrimaryCareAccess",
+   "filters": [
+    {
+     "name": "area",
+     "column": "entidade",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "area": {
+     "key": "entidade"
+    },
+    "oneYearPercent": {
+     "key": "taxa_de_utilizacao_global_de_consultas_medicas_1_ano"
+    },
+    "threeYearPercent": {
+     "key": "taxa_de_utilizacao_de_consultas_medicas_3_anos"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsCancerScreening",
+   "dataset": "rastreios-oncologicos",
+   "type": "SnsCancerScreening",
+   "filters": [
+    {
+     "name": "area",
+     "column": "area_csp",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "area": {
+     "key": "area_csp"
+    },
+    "mammographyPercent": {
+     "key": "proporcao_mulheres_50_70_a_c_mamogr_2_anos"
+    },
+    "cervicalPercent": {
+     "key": "proporcao_mulheres_25_60_a_c_colpoc_atuali"
+    },
+    "colorectalPercent": {
+     "key": "proporcao_utentes_50_75_a_c_rastreio_cancro_cr"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsDiabetesCare",
+   "dataset": "diabetes",
+   "type": "SnsDiabetesCare",
+   "filters": [
+    {
+     "name": "area",
+     "column": "area_csp",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "area": {
+     "key": "area_csp"
+    },
+    "footExamPercent": {
+     "key": "proporcao_dm_com_exame_pes_ultimo_ano"
+    },
+    "controlledPercent": {
+     "key": "proporcao_dm_c_ultima_hgba1c_8_0"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsHypertensionCare",
+   "dataset": "hipertensao",
+   "type": "SnsHypertensionCare",
+   "filters": [
+    {
+     "name": "area",
+     "column": "area_csp",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "area": {
+     "key": "area_csp"
+    },
+    "controlled": {
+     "key": "contagem_de_utentes_inscritos_com_hipertensao_arterial_com_pressao_arterial_inferior_a_150_90_mmhg_n"
+    },
+    "controlledPercent": {
+     "key": "proporcao_hipertensos_65_a_com_pa_150_90"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsNewbornCare",
+   "dataset": "saude-da-mulher-e-crianca",
+   "type": "SnsNewbornCare",
+   "filters": [
+    {
+     "name": "area",
+     "column": "area_csp",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "area": {
+     "key": "area_csp"
+    },
+    "checkUpPercent": {
+     "key": "proporcao_rn_c_cons_med_vigil_ate_28_dias_vida"
+    },
+    "homeVisitPercent": {
+     "key": "proporcao_rn_c_domicilio_enf_ate_15o_dia_de_vida"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsRegisteredPatientsByAces",
+   "dataset": "utentes-inscritos-em-cuidados-de-saude-primarios",
+   "type": "SnsRegisteredPatientsByAces",
+   "filters": [
+    {
+     "name": "aces",
+     "column": "aces",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "region": {
+     "key": "ars"
+    },
+    "aces": {
+     "key": "aces"
+    },
+    "registered": {
+     "key": "utentes_inscritos_csp"
+    },
+    "withFamilyDoctor": {
+     "key": "total_utentes_com_mdf_atribuido"
+    },
+    "withFamilyDoctorPercent": {
+     "key": "total_utentes_com_mdf_atribuido0"
+    },
+    "withoutFamilyDoctor": {
+     "key": "total_utentes_sem_mdf_atribuido"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsPrimaryCareRegistrations",
+   "dataset": "inscritoscuidadosdesaudeprimarios",
+   "type": "SnsPrimaryCareRegistrations",
+   "filters": [
+    {
+     "name": "uls",
+     "column": "uls",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "uls": {
+     "key": "uls"
+    },
+    "nationality": {
+     "key": "nacionalidade"
+    },
+    "registered": {
+     "key": "inscritos_em_csp"
+    },
+    "withFamilyDoctor": {
+     "key": "inscritos_em_csp_elegiveis_c_mdf_atribuido"
+    },
+    "withoutFamilyDoctor": {
+     "key": "inscritos_em_csp_elegiveis_s_mdf_atribuido"
+    },
+    "withFamilyDoctorPercent": {
+     "key": "taxa_utentes_c_mdf"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsNationalPatientRegister",
+   "dataset": "utentesregistonacionaldeutentes",
+   "type": "SnsNationalPatientRegister",
+   "filters": [
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "nationality": {
+     "key": "nacionalidade"
+    },
+    "ageGroup": {
+     "key": "grupo_etario"
+    },
+    "payer": {
+     "key": "responsabilidade_financeira"
+    },
+    "upToDate": {
+     "key": "registo_atualizado"
+    },
+    "incomplete": {
+     "key": "registo_incompleto"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsLivingWills",
+   "dataset": "registo-de-testamentos-vitais",
+   "type": "SnsLivingWills",
+   "filters": [
+    {
+     "name": "entity",
+     "column": "aces",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "ars"
+    },
+    "entity": {
+     "key": "aces"
+    },
+    "active": {
+     "key": "total_tv_ativos_de_utentes"
+    },
+    "viewsByProfessionals": {
+     "key": "consultas_tv_por_profissionais_de_saude_via_rse"
+    },
+    "deaths": {
+     "key": "obitos_de_utentes_com_tv"
+    },
+    "totalActiveToDate": {
+     "key": "total_acumulado_tv_ativos_de_utentes",
+     "conversion": "integer"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsDentalCheques",
+   "dataset": "saude-oral",
+   "type": "SnsDentalCheques",
+   "filters": [
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "provider": {
+     "key": "entidade"
+    },
+    "targetGroup": {
+     "key": "populacao_alvo"
+    },
+    "scope": {
+     "key": "ambito_de_intervencao"
+    },
+    "issued": {
+     "key": "no_de_cheques_emitidos"
+    },
+    "used": {
+     "key": "no_de_cheques_utilizados"
+    },
+    "treatments": {
+     "key": "no_de_tratamentos_efetuados"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsOralHealthReferrals",
+   "dataset": "referenciacoes-soep-emitidas-nos-centros-de-saude",
+   "type": "SnsOralHealthReferrals",
+   "filters": [
+    {
+     "name": "area",
+     "column": "area_dos_csp",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "area": {
+     "key": "area_dos_csp"
+    },
+    "sex": {
+     "key": "sexo"
+    },
+    "ageGroup": {
+     "key": "faixa_etaria"
+    },
+    "referrals": {
+     "key": "cheques_emitidos"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsOralHealthPatients",
+   "dataset": "utentes-atendidos-nos-centros-de-saude-no-ambito-da-soep",
+   "type": "SnsOralHealthPatients",
+   "filters": [
+    {
+     "name": "area",
+     "column": "area_dos_csp",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "area": {
+     "key": "area_dos_csp"
+    },
+    "sex": {
+     "key": "sexo"
+    },
+    "ageGroup": {
+     "key": "faixa_etaria"
+    },
+    "patients": {
+     "key": "no_utentes"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsOralHealthTreatments",
+   "dataset": "tratamentos-efetuados-no-ambito-soep",
+   "type": "SnsOralHealthTreatments",
+   "filters": [
+    {
+     "name": "area",
+     "column": "area_dos_csp",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "area": {
+     "key": "area_dos_csp"
+    },
+    "sex": {
+     "key": "sexo"
+    },
+    "ageGroup": {
+     "key": "faixa_etaria"
+    },
+    "treatments": {
+     "key": "tratamentos_efetuados"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsPrimaryCareDailyConsultations",
+   "dataset": "monitorizacao-sazonal-csp",
+   "type": "SnsPrimaryCareDailyConsultations",
+   "filters": [
+    {
+     "name": "region",
+     "column": "regiao",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "dia",
+     "kind": "date",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "dia",
+     "kind": "date",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "day": {
+     "key": "dia"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "consultations": {
+     "key": "no_consultas_nos_csp"
+    },
+    "unscheduled": {
+     "key": "no_consultas_csp_nao_programadas"
+    },
+    "scheduled": {
+     "key": "no_consultas_csp_programadas"
+    },
+    "unscheduled65Plus": {
+     "key": "no_consultas_med_csp_nao_programadas_e_65"
+    }
+   },
+   "orderBy": "dia desc"
+  },
+  {
+   "field": "snsPrimaryCareFluConsultations",
+   "dataset": "atendimentos-nos-csp-gripe",
+   "type": "SnsPrimaryCareFluConsultations",
+   "filters": [
+    {
+     "name": "region",
+     "column": "regiao",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "dia",
+     "kind": "date",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "dia",
+     "kind": "date",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "day": {
+     "key": "dia"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "consultations": {
+     "key": "no_consultas_nos_csp"
+    },
+    "unscheduled": {
+     "key": "no_consultas_csp_nao_programadas"
+    },
+    "scheduled": {
+     "key": "no_consultas_csp_programadas"
+    },
+    "flu": {
+     "key": "no_consultas_gripe_nos_csp"
+    }
+   },
+   "orderBy": "dia desc"
+  },
+  {
+   "field": "snsElectronicPrescriptions",
+   "dataset": "evolucao-da-prescricao-electronica-de-medicamentos",
+   "type": "SnsElectronicPrescriptions",
+   "filters": [
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "prescriptions": {
+     "key": "no_total_receitas_prescritas_eletronicas_qt"
+    },
+    "packsBySubstance": {
+     "key": "no_embalagens_prescritas_por_dci_cnpem_qt"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsDispensedPrescriptions",
+   "dataset": "evolucao-da-dispensa-de-medicamentos",
+   "type": "SnsDispensedPrescriptions",
+   "filters": [
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao_de_saude"
+    },
+    "electronic": {
+     "key": "no_de_receitas_eletronicas_dispensadas"
+    },
+    "paper": {
+     "key": "no_de_receitas_manuais_dispensadas"
+    },
+    "reimbursed": {
+     "key": "valor_comparticipado_pelo_sns"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsPharmacyMedicineSpending",
+   "dataset": "despesa-com-medicamentos-no-ambulatorio-sns",
+   "type": "SnsPharmacyMedicineSpending",
+   "filters": [
+    {
+     "name": "region",
+     "column": "regiao",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "snsCost": {
+     "key": "encargos_sns_ambulatorio"
+    },
+    "patientCost": {
+     "key": "encargos_utentes_ambulatorio"
+    },
+    "retailValue": {
+     "key": "valor_pvp_ambulatorio"
+    },
+    "snsCostGenerics": {
+     "key": "encargos_sns_genericos"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsHospitalMedicineSpending",
+   "dataset": "despesa-com-medicamentos-nos-hospitais-do-sns",
+   "type": "SnsHospitalMedicineSpending",
+   "filters": [
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "snsCost": {
+     "key": "encargos_sns_hospitalar"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsPharmacySpendingByGroup",
+   "dataset": "dispensa-de-medicamentos-por-grupo-farmacoterapeutico",
+   "type": "SnsPharmacySpendingByGroup",
+   "filters": [
+    {
+     "name": "group",
+     "column": "grupo_terapeutico",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "therapeuticGroup": {
+     "key": "grupo_terapeutico"
+    },
+    "snsCost": {
+     "key": "encargos_sns_ambulatorio"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsGenericMedicineShare",
+   "dataset": "genericos",
+   "type": "SnsGenericMedicineShare",
+   "filters": [
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "retailValue": {
+     "key": "valor_pvp_ambulatorio"
+    },
+    "genericsValue": {
+     "key": "valor_pvp_genericos"
+    },
+    "valueShare": {
+     "key": "qm_genericos_valor_pvp"
+    },
+    "packShare": {
+     "key": "qm_genericos_unidades_dispensadas"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsMedicinePackPrice",
+   "dataset": "preco-medio-por-embalagem",
+   "type": "SnsMedicinePackPrice",
+   "filters": [
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "packs": {
+     "key": "n_o_de_embalagens_ambulatorio"
+    },
+    "averagePrice": {
+     "key": "preco_medio_por_embalagem_ambulatorio"
+    },
+    "genericPacks": {
+     "key": "n_o_de_embalagens_genericos"
+    },
+    "averageGenericPrice": {
+     "key": "preco_medio_por_embalagem_genericos"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsPaperlessPrescriptions",
+   "dataset": "desmaterializacao-eletronica-da-receita",
+   "type": "SnsPaperlessPrescriptions",
+   "filters": [
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "date",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "date",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "day": {
+     "key": "periodo"
+    },
+    "paperPacks": {
+     "key": "receita_com_papel"
+    },
+    "paperlessPacks": {
+     "key": "receita_sem_papel"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsPrivatePaperlessPrescribers",
+   "dataset": "top-50-de-prescricao-rsp-em-locais-nao-sns",
+   "type": "SnsPrivatePaperlessPrescribers",
+   "filters": [
+    {
+     "name": "prescriber",
+     "column": "entidade_prescritora",
+     "kind": "search"
+    }
+   ],
+   "columns": {
+    "day": {
+     "key": "periodo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "prescriber": {
+     "key": "entidade_prescritora"
+    },
+    "packs": {
+     "key": "total_embalagens"
+    },
+    "paperlessPercent": {
+     "key": "percentagem"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsContinuingCareActivity",
+   "dataset": "dados-financeiros",
+   "type": "SnsContinuingCareActivity",
+   "filters": [
+    {
+     "name": "from",
+     "column": "data",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "data",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "data"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "typology": {
+     "key": "tipologia"
+    },
+    "beds": {
+     "key": "no_de_camas_lugares"
+    },
+    "admitted": {
+     "key": "utentes_admitidos"
+    },
+    "discharged": {
+     "key": "utentes_com_alta"
+    },
+    "occupancy": {
+     "key": "taxa_de_ocupacao"
+    }
+   },
+   "orderBy": "data desc"
+  },
+  {
+   "field": "snsContinuingCareWaitingList",
+   "dataset": "rncci-episodios",
+   "type": "SnsContinuingCareWaitingList",
+   "filters": [
+    {
+     "name": "region",
+     "column": "regiao",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "data",
+     "kind": "date",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "data",
+     "kind": "date",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "day": {
+     "key": "data"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "typology": {
+     "key": "tipologia"
+    },
+    "waiting": {
+     "key": "episodios"
+    }
+   },
+   "orderBy": "data desc"
+  },
+  {
+   "field": "snsContinuingCareReferrals",
+   "dataset": "utentes-referenciados-pelos-hospitais-e-cs-para-a-rede",
+   "type": "SnsContinuingCareReferrals",
+   "filters": [
+    {
+     "name": "referrer",
+     "column": "ega_cs",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "ultimo_dia",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "ultimo_dia",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "ultimo_dia"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "referrer": {
+     "key": "ega_cs"
+    },
+    "referrerType": {
+     "key": "tipo_de_instituicao"
+    },
+    "typology": {
+     "key": "tipologia"
+    },
+    "patients": {
+     "key": "numero_episodios"
+    }
+   },
+   "orderBy": "ultimo_dia desc"
+  },
+  {
+   "field": "snsContinuingCareDischarges",
+   "dataset": "distribuicao-do-destino-das-altas",
+   "type": "SnsContinuingCareDischarges",
+   "filters": [
+    {
+     "name": "from",
+     "column": "data",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "data",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "data"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "typology": {
+     "key": "tipologia"
+    },
+    "homeWithSupport": {
+     "key": "domicilio_com_suporte"
+    },
+    "homeWithoutSupport": {
+     "key": "domicilio_sem_suporte"
+    },
+    "careHome": {
+     "key": "lar"
+    },
+    "otherNetworkUnit": {
+     "key": "outra_resposta_da_rede"
+    },
+    "other": {
+     "key": "outra_resposta"
+    }
+   },
+   "orderBy": "data desc"
+  },
+  {
+   "field": "snsContinuingCareAdmissions",
+   "dataset": "utentes-admitidos-e-referenciados",
+   "type": "SnsContinuingCareAdmissions",
+   "filters": [
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "referred": {
+     "key": "no_de_utentes_referenciados"
+    },
+    "admitted": {
+     "key": "no_de_utentes_admitidos"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsContinuingCareFallsAndUlcers",
+   "dataset": "prevalencia-de-quedas-e-incidencias-de-ulceras-de-pressao",
+   "type": "SnsContinuingCareFallsAndUlcers",
+   "filters": [],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "halfYear": {
+     "key": "semestre_ano"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "fallsPercent": {
+     "key": "prevalencia_de_quedas"
+    },
+    "pressureUlcerPercent": {
+     "key": "incidencia_de_ulceras_de_pressao"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsAddictionTreatment",
+   "dataset": "movimento-clinico-de-utentes-com-problemas-de-comportamentos-aditivos-e-dependen",
+   "type": "SnsAddictionTreatment",
+   "filters": [
+    {
+     "name": "from",
+     "column": "ano",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "ano",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "ano"
+    },
+    "patientType": {
+     "key": "tipo_de_utentes"
+    },
+    "newPatients": {
+     "key": "utentes_novos"
+    },
+    "readmitted": {
+     "key": "utentes_readmitidos"
+    },
+    "consultations": {
+     "key": "no_de_consultas"
+    },
+    "inTreatment": {
+     "key": "utentes_em_tratamento"
+    }
+   },
+   "orderBy": "ano desc"
+  },
+  {
+   "field": "snsAddictionNewPatients",
+   "dataset": "utentes-novos-em-ambulatorio",
+   "type": "SnsAddictionNewPatients",
+   "filters": [
+    {
+     "name": "from",
+     "column": "ano",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "ano",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "ano"
+    },
+    "newPatients": {
+     "key": "utentes_novos_em_ambulatorio"
+    },
+    "injecting": {
+     "key": "utentes_novos_em_ambulatorio_com_consumo_ev"
+    },
+    "notInjecting": {
+     "key": "utentes_novos_em_ambulatorio_sem_consumo_ev"
+    }
+   },
+   "orderBy": "ano desc"
+  },
+  {
+   "field": "snsAddictionSubstances",
+   "dataset": "substancias",
+   "type": "SnsAddictionSubstances",
+   "filters": [
+    {
+     "name": "from",
+     "column": "ano",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "ano",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "ano"
+    },
+    "cannabis": {
+     "key": "cannabis"
+    },
+    "cocaine": {
+     "key": "cocaina_e_derivados"
+    },
+    "heroin": {
+     "key": "heroina_e_outros_opiaceos"
+    },
+    "alcohol": {
+     "key": "alcool",
+     "conversion": "integer"
+    },
+    "otherSubstances": {
+     "key": "outras_substancias"
+    }
+   },
+   "orderBy": "ano desc"
+  },
+  {
+   "field": "snsDrugDeterrenceCases",
+   "dataset": "dissuasao-da-toxicodependencia",
+   "type": "SnsDrugDeterrenceCases",
+   "filters": [
+    {
+     "name": "from",
+     "column": "ano",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "ano",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "ano"
+    },
+    "cases": {
+     "key": "no_de_processos_de_contraordenacao"
+    },
+    "dependent": {
+     "key": "no_de_indiciados_toxicodependentes"
+    },
+    "notDependent": {
+     "key": "no_de_indiciados_nao_toxicodependentes"
+    }
+   },
+   "orderBy": "ano desc"
+  },
+  {
+   "field": "snsSocialSectorConsultations",
+   "dataset": "consultas-medicas-setor-social",
+   "type": "SnsSocialSectorConsultations",
+   "filters": [
+    {
+     "name": "provider",
+     "column": "prestador",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "provider": {
+     "key": "prestador"
+    },
+    "first": {
+     "key": "primeira_consulta"
+    },
+    "followUp": {
+     "key": "consulta_subsquente"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsSocialSectorSurgeries",
+   "dataset": "intervencoes-cirurgicas-privado-sigic-sector-social",
+   "type": "SnsSocialSectorSurgeries",
+   "filters": [
+    {
+     "name": "provider",
+     "column": "prestador",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "provider": {
+     "key": "prestador"
+    },
+    "conventional": {
+     "key": "intervencao_cirurgica_convencional"
+    },
+    "daySurgery": {
+     "key": "intervencao_cirurgica_de_ambulatorio"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsSocialSectorEmergencyVisits",
+   "dataset": "atendimentos-urgencia-setor-social",
+   "type": "SnsSocialSectorEmergencyVisits",
+   "filters": [
+    {
+     "name": "provider",
+     "column": "prestador",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "provider": {
+     "key": "prestador"
+    },
+    "visits": {
+     "key": "episodios_de_urgencia_sap_cac"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsSickLeaveCertificates",
+   "dataset": "certificado-de-incapacidade-temporaria-dos-utentes",
+   "type": "SnsSickLeaveCertificates",
+   "filters": [
+    {
+     "name": "from",
+     "column": "des_dia",
+     "kind": "date",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "des_dia",
+     "kind": "date",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "day": {
+     "key": "des_dia"
+    },
+    "sex": {
+     "key": "des_sexo"
+    },
+    "ageGroup": {
+     "key": "grupo_etario"
+    },
+    "scheme": {
+     "key": "tipo_cit"
+    },
+    "created": {
+     "key": "qtd_item_dia"
+    },
+    "active": {
+     "key": "qtd_item_ativos"
+    }
+   },
+   "orderBy": "des_dia desc"
+  },
+  {
+   "field": "snsSickSelfDeclarations",
+   "dataset": "autodeclaracoes-de-doenca-dos-utentes",
+   "type": "SnsSickSelfDeclarations",
+   "filters": [
+    {
+     "name": "from",
+     "column": "des_dia",
+     "kind": "date",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "des_dia",
+     "kind": "date",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "day": {
+     "key": "des_dia"
+    },
+    "sex": {
+     "key": "des_sexo"
+    },
+    "ageGroup": {
+     "key": "grupo_etario"
+    },
+    "channel": {
+     "key": "tipo_origem"
+    },
+    "declarations": {
+     "key": "qtd_add"
+    }
+   },
+   "orderBy": "des_dia desc"
+  },
+  {
+   "field": "snsDeathCertificatesByInstitution",
+   "dataset": "certificados-de-obito-por-instituicao-de-saude",
+   "type": "SnsDeathCertificatesByInstitution",
+   "filters": [
+    {
+     "name": "institution",
+     "column": "instituicao_de_saude",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "data_certificacao",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "data_certificacao",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "data_certificacao"
+    },
+    "institution": {
+     "key": "instituicao_de_saude"
+    },
+    "deaths": {
+     "key": "mortalidade_mensal_por_instituicao_quantidade_1"
+    }
+   },
+   "orderBy": "data_certificacao desc"
+  },
+  {
+   "field": "snsDailyDeathCertificates",
+   "dataset": "evolucao-diaria-de-certificados-de-obito",
+   "type": "SnsDailyDeathCertificates",
+   "filters": [
+    {
+     "name": "from",
+     "column": "data_de_certificacao",
+     "kind": "date",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "data_de_certificacao",
+     "kind": "date",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "day": {
+     "key": "data_de_certificacao"
+    },
+    "deaths": {
+     "key": "no_de_certificados_de_obito_diarios"
+    }
+   },
+   "orderBy": "data_de_certificacao desc"
+  },
+  {
+   "field": "snsPoisonCentreCalls",
+   "dataset": "evolucao-mensal-do-no-de-chamadas-atendidas-no-centro-de-informacao-antivenenos",
+   "type": "SnsPoisonCentreCalls",
+   "filters": [
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "calls": {
+     "key": "no_de_chamadas_atendidas_no_centro_de_informacao_antivenenos"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsEmergencyCallsToSns24",
+   "dataset": "sns24",
+   "type": "SnsEmergencyCallsToSns24",
+   "filters": [
+    {
+     "name": "from",
+     "column": "data",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "data",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "data"
+    },
+    "calls": {
+     "key": "n_o_de_chamadas_de_emergencia_transferidas_para_a_saude_24"
+    }
+   },
+   "orderBy": "data desc"
+  },
+  {
+   "field": "snsCrisisLineCalls",
+   "dataset": "chamadas-capic",
+   "type": "SnsCrisisLineCalls",
+   "filters": [
+    {
+     "name": "from",
+     "column": "data",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "data",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "data"
+    },
+    "calls": {
+     "key": "n_o_de_chamadas_atendidas_no_capic"
+    },
+    "answerSeconds": {
+     "key": "tempo_medio_para_atendimento_das_chamadas_no_capic_segundos"
+    }
+   },
+   "orderBy": "data desc"
+  },
+  {
+   "field": "snsMaritimeEmergencyCalls",
+   "dataset": "codu-mar",
+   "type": "SnsMaritimeEmergencyCalls",
+   "filters": [
+    {
+     "name": "from",
+     "column": "data",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "data",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "data"
+    },
+    "incidents": {
+     "key": "no_de_ocorrencias_no_ambito_do_codu_mar"
+    }
+   },
+   "orderBy": "data desc"
+  },
+  {
+   "field": "snsEmergencyCallsAnswered",
+   "dataset": "atividade-gripe-inem",
+   "type": "SnsEmergencyCallsAnswered",
+   "filters": [
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "date",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "date",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "day": {
+     "key": "periodo"
+    },
+    "calls": {
+     "key": "n_o_registos"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsEmergencyVehicleDispatches",
+   "dataset": "acionamentos-de-meios-de-emergencia-medica",
+   "type": "SnsEmergencyVehicleDispatches",
+   "filters": [
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "date",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "date",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "day": {
+     "key": "periodo"
+    },
+    "helicopters": {
+     "key": "no_de_acionamentos_do_servico_de_helicopteros_de_emergencia_medica_shem"
+    },
+    "vmer": {
+     "key": "no_de_acionamentos_das_viaturas_medica_de_emergencia_e_reanimacao_vmer"
+    },
+    "siv": {
+     "key": "no_de_acionamentos_das_ambulancias_de_suporte_imediato_de_vida_siv"
+    },
+    "aem": {
+     "key": "no_de_acionamentos_das_ambulancias_de_emergencia_medica_aem"
+    },
+    "motorcycles": {
+     "key": "no_de_acionamentos_dos_motociclos_de_emergencia_medica_mem"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsPreHospitalIncidentsByPriority",
+   "dataset": "numero-de-ocorrencia-com-prioridade",
+   "type": "SnsPreHospitalIncidentsByPriority",
+   "filters": [
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "date",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "date",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "day": {
+     "key": "periodo"
+    },
+    "priority1": {
+     "key": "no_ocorrencias_emergentes_classificadas_com_prioridade_1_situacoes_associadas_a_risco_de_vida_iminen"
+    },
+    "priority2": {
+     "key": "no_ocorrencias_muito_urgentes_classificadas_com_prioridade_2_situacoes_com_risco_clinico_elevado_pre"
+    },
+    "priority3": {
+     "key": "no_ocorrencias_urgentes_classificadas_com_prioridade_3_situacoes_com_risco_de_agravamento_clinico_im"
+    },
+    "priority4": {
+     "key": "no_ocorrencias_pouco_urgentes_classificadas_com_prioridade_4_situacoes_associadas_a_risco_clinico_ba"
+    },
+    "priority5": {
+     "key": "no_ocorrencias_nao_urgentes_classificadas_com_prioridade_5_situacoes_que_nao_implicam_o_envio_de_mei"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsPreHospitalIncidentsByType",
+   "dataset": "evolucao-mensal-das-ocorrencias-pre-hospitalares-por-tipologia",
+   "type": "SnsPreHospitalIncidentsByType",
+   "filters": [
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "roadAccident": {
+     "key": "no_de_ocorrencias_com_a_tipologia_acidente_viacao"
+    },
+    "chestPain": {
+     "key": "no_de_ocorrencias_com_a_tipologia_dor_toracica"
+    },
+    "breathing": {
+     "key": "no_de_ocorrencias_com_a_tipologia_dispneia"
+    },
+    "cardiacArrest": {
+     "key": "no_de_ocorrencias_com_a_tipologia_paragem_cardiorrespiratoria"
+    },
+    "strokeSigns": {
+     "key": "no_de_ocorrencias_com_a_tipologia_defice_motor_sensitivo"
+    },
+    "trauma": {
+     "key": "no_de_ocorrencias_com_a_tipologia_trauma"
+    },
+    "psychiatric": {
+     "key": "no_de_ocorrencias_com_a_tipologia_problemas_psiquiatricos_suicidio"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsEmergencyCallSatisfaction",
+   "dataset": "satisfacao-do-utente-em-atendimento-telefonico",
+   "type": "SnsEmergencyCallSatisfaction",
+   "filters": [
+    {
+     "name": "from",
+     "column": "data",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "data",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "data"
+    },
+    "question": {
+     "key": "pergunta"
+    },
+    "excellent": {
+     "key": "inquiridos_com_satisfacao_excelente_atencao_e_disponibilidade_demonstradas_pelo_operador_que_atendeu"
+    },
+    "verySatisfied": {
+     "key": "inquiridos_muito_satisfeitos_atencao_e_disponibilidade_demonstradas_pelo_operador_que_atendeu_a_cham"
+    },
+    "satisfied": {
+     "key": "inquiridos_satisfeitos_atencao_e_disponibilidade_demonstradas_pelo_operador_que_atendeu_a_chamada"
+    },
+    "dissatisfied": {
+     "key": "inquiridos_insatisfeitos_atencao_e_disponibilidade_demonstradas_pelo_operador_que_atendeu_a_chamada"
+    }
+   },
+   "orderBy": "data desc"
+  },
+  {
+   "field": "snsSns24Activity",
+   "dataset": "atividade-operacional-do-sns-24",
+   "type": "SnsSns24Activity",
+   "filters": [
+    {
+     "name": "indicator",
+     "column": "indicador",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "indicator": {
+     "key": "indicador"
+    },
+    "value": {
+     "key": "valor"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsPregnancyLineTriage",
+   "dataset": "evolucao-mensal-linha-sns-gravida",
+   "type": "SnsPregnancyLineTriage",
+   "filters": [
+    {
+     "name": "uls",
+     "column": "uls",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "mes",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "mes",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "mes"
+    },
+    "uls": {
+     "key": "uls"
+    },
+    "triages": {
+     "key": "n_tt_triag_snsgrav"
+    },
+    "selfCare": {
+     "key": "n_triag_snsgrav_ac"
+    },
+    "primaryCare": {
+     "key": "n_triag_snsgrav_csp"
+    },
+    "emergency": {
+     "key": "n_triag_snsgrav_su"
+    },
+    "inem": {
+     "key": "n_triag_snsgrav_inem"
+    }
+   },
+   "orderBy": "mes desc"
+  },
+  {
+   "field": "snsStrokeAlerts",
+   "dataset": "evolucao-situacoes-doentes-sinais-sintomas-de-avc",
+   "type": "SnsStrokeAlerts",
+   "filters": [
+    {
+     "name": "district",
+     "column": "distrito_da_ocorrencia",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "district": {
+     "key": "distrito_da_ocorrencia"
+    },
+    "municipality": {
+     "key": "concelho_da_ocorrencia"
+    },
+    "sex": {
+     "key": "genero_da_vitima"
+    },
+    "destinationHospital": {
+     "key": "hospital_de_destino"
+    },
+    "ageGroup": {
+     "key": "faixa_etaria_da_vitima"
+    },
+    "patients": {
+     "key": "n_o_de_registos_via_verde_avc"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsHeartAttackAlerts",
+   "dataset": "evolucao-enfarte-agudo-miocardio-supra-desnivelamento",
+   "type": "SnsHeartAttackAlerts",
+   "filters": [
+    {
+     "name": "district",
+     "column": "distrito_da_ocorrencia",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "district": {
+     "key": "distrito_da_ocorrencia"
+    },
+    "municipality": {
+     "key": "concelho_da_ocorrencia"
+    },
+    "sex": {
+     "key": "genero_da_vitima"
+    },
+    "destinationHospital": {
+     "key": "hospital_de_destino"
+    },
+    "ageGroup": {
+     "key": "faixa_etaria_da_vitima"
+    },
+    "patients": {
+     "key": "n_o_de_registos_via_verde_coronaria"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsDefibrillatorVehicles",
+   "dataset": "evolucao-programas-dae-em-meios-de-emergencia-medica",
+   "type": "SnsDefibrillatorVehicles",
+   "filters": [
+    {
+     "name": "district",
+     "column": "distrito_do_meio",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "operator": {
+     "key": "tipo_de_meio"
+    },
+    "vehicle": {
+     "key": "meio"
+    },
+    "district": {
+     "key": "distrito_do_meio"
+    },
+    "municipality": {
+     "key": "concelho_de_meio"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsDefibrillatorPlaces",
+   "dataset": "evolucao-programas-dae-licenciados-em-espacos-publicos",
+   "type": "SnsDefibrillatorPlaces",
+   "filters": [
+    {
+     "name": "town",
+     "column": "localidade_estabelecimento",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "owner": {
+     "key": "estabelecimento"
+    },
+    "place": {
+     "key": "estabelecimento_especificado"
+    },
+    "placeType": {
+     "key": "tipo_de_entidade_estabelecimento"
+    },
+    "town": {
+     "key": "localidade_estabelecimento"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsEmergencyDepartmentServices",
+   "dataset": "caracterizacao-das-valencias-de-urgencia",
+   "type": "SnsEmergencyDepartmentServices",
+   "filters": [
+    {
+     "name": "town",
+     "column": "localidade",
+     "kind": "search"
+    }
+   ],
+   "columns": {
+    "region": {
+     "key": "regiao"
+    },
+    "hospital": {
+     "key": "unidade_hospitalar"
+    },
+    "address": {
+     "key": "endereco"
+    },
+    "town": {
+     "key": "localidade"
+    },
+    "level": {
+     "key": "tipo_de_urgencia"
+    },
+    "service": {
+     "key": "nome_da_valencia"
+    },
+    "walkIn": {
+     "key": "acesso_por_iniciativa_do_utente",
+     "conversion": "yes-no"
+    },
+    "viaSns24": {
+     "key": "acesso_por_via_saude_24",
+     "conversion": "yes-no"
+    },
+    "latitude": {
+     "key": "localizacao_geografica/lat"
+    },
+    "longitude": {
+     "key": "localizacao_geografica/lon"
+    }
+   }
+  },
+  {
+   "field": "snsHospitalEmergencyDaily",
+   "dataset": "monitorizacao-sazonal-csh",
+   "type": "SnsHospitalEmergencyDaily",
+   "filters": [
+    {
+     "name": "region",
+     "column": "ars",
+     "kind": "text",
+     "op": "="
+    },
+    {
+     "name": "indicator",
+     "column": "indicador",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "date",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "date",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "day": {
+     "key": "periodo"
+    },
+    "region": {
+     "key": "ars"
+    },
+    "indicator": {
+     "key": "indicador"
+    },
+    "value": {
+     "key": "valor"
+    },
+    "unit": {
+     "key": "unidade"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsHospitalEmergencyFluDaily",
+   "dataset": "atividade-sindrome-gripal-csh",
+   "type": "SnsHospitalEmergencyFluDaily",
+   "filters": [
+    {
+     "name": "region",
+     "column": "ars",
+     "kind": "text",
+     "op": "="
+    },
+    {
+     "name": "indicator",
+     "column": "indicador",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "date",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "date",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "day": {
+     "key": "periodo"
+    },
+    "region": {
+     "key": "ars"
+    },
+    "indicator": {
+     "key": "indicador"
+    },
+    "value": {
+     "key": "valor"
+    },
+    "unit": {
+     "key": "unidade"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsHeatHealthIndex",
+   "dataset": "evolucao-diaria-do-indice-icaro",
+   "type": "SnsHeatHealthIndex",
+   "filters": [
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "date",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "date",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "day": {
+     "key": "periodo"
+    },
+    "index": {
+     "key": "ii",
+     "conversion": "number"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsColdHealthIndex",
+   "dataset": "indice-friesa",
+   "type": "SnsColdHealthIndex",
+   "filters": [
+    {
+     "name": "from",
+     "column": "data",
+     "kind": "date",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "data",
+     "kind": "date",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "day": {
+     "key": "data"
+    },
+    "lisboa": {
+     "key": "lisboa"
+    },
+    "lisboa65Plus": {
+     "key": "lisboa65"
+    },
+    "porto": {
+     "key": "porto"
+    },
+    "porto65Plus": {
+     "key": "porto65"
+    }
+   },
+   "orderBy": "data desc"
+  },
+  {
+   "field": "snsRespiratoryAdmissionRates",
+   "dataset": "morbilidade-e-mortalidade-hospitalar-asma-dpoc-pneumo",
+   "type": "SnsRespiratoryAdmissionRates",
+   "filters": [
+    {
+     "name": "year",
+     "column": "ano",
+     "kind": "date",
+     "op": "="
+    },
+    {
+     "name": "quarter",
+     "column": "trimestre",
+     "kind": "text",
+     "op": "="
+    },
+    {
+     "name": "hospital",
+     "column": "instituicao",
+     "kind": "search"
+    }
+   ],
+   "columns": {
+    "year": {
+     "key": "ano"
+    },
+    "quarter": {
+     "key": "trimestre"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "hospital": {
+     "key": "instituicao"
+    },
+    "asthmaAdmissions": {
+     "key": "taxa_internamento_asma"
+    },
+    "asthmaCopdAdmissions": {
+     "key": "taxa_internamento_asma_dpoc"
+    },
+    "pneumoniaAdmissions": {
+     "key": "taxa_internamento_pneumonia"
+    },
+    "asthmaCopdDeaths": {
+     "key": "taxa_mortalidade_asma_dpoc"
+    },
+    "pneumoniaDeaths": {
+     "key": "taxa_mortalidade_pneumo"
+    }
+   },
+   "orderBy": "ano desc"
+  },
+  {
+   "field": "snsDiabetesAdmissionRates",
+   "dataset": "morbilidade-e-mortalidade-hospitalar-diabetes",
+   "type": "SnsDiabetesAdmissionRates",
+   "filters": [
+    {
+     "name": "year",
+     "column": "ano",
+     "kind": "date",
+     "op": "="
+    },
+    {
+     "name": "quarter",
+     "column": "trimestre",
+     "kind": "text",
+     "op": "="
+    },
+    {
+     "name": "hospital",
+     "column": "instituicao",
+     "kind": "search"
+    }
+   ],
+   "columns": {
+    "year": {
+     "key": "ano"
+    },
+    "quarter": {
+     "key": "trimestre"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "hospital": {
+     "key": "instituicao"
+    },
+    "uncontrolledAdmissions": {
+     "key": "taxa_int_diab_n_contr"
+    },
+    "acuteAdmissions": {
+     "key": "taxa_int_diab_comp_agud"
+    },
+    "chronicAdmissions": {
+     "key": "taxa_int_diab_comp_cron"
+    },
+    "amputations": {
+     "key": "taxa_int_amp"
+    },
+    "acuteDeaths": {
+     "key": "taxa_mort_diab_agud"
+    },
+    "chronicDeaths": {
+     "key": "taxa_mort_diab_cron"
+    }
+   },
+   "orderBy": "ano desc"
+  },
+  {
+   "field": "snsHeartAdmissionRates",
+   "dataset": "morbilidade-e-mortalidade-hospitalar-hipertensao-insuf-cardiaca",
+   "type": "SnsHeartAdmissionRates",
+   "filters": [
+    {
+     "name": "year",
+     "column": "ano",
+     "kind": "date",
+     "op": "="
+    },
+    {
+     "name": "quarter",
+     "column": "trimestre",
+     "kind": "text",
+     "op": "="
+    },
+    {
+     "name": "hospital",
+     "column": "instituicao",
+     "kind": "search"
+    }
+   ],
+   "columns": {
+    "year": {
+     "key": "ano"
+    },
+    "quarter": {
+     "key": "trimestre"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "hospital": {
+     "key": "instituicao"
+    },
+    "hypertensionAdmissions": {
+     "key": "taxa_internamento_hipert"
+    },
+    "heartFailureAdmissions": {
+     "key": "taxa_internamento_insuf_card"
+    },
+    "hypertensionDeaths": {
+     "key": "taxa_mortalidade_hipert"
+    },
+    "heartFailureDeaths": {
+     "key": "taxa_mortalidade_insuf_card"
+    }
+   },
+   "orderBy": "ano desc"
+  },
+  {
+   "field": "snsAdmissionRatesByHospital",
+   "dataset": "morbilidade-e-mortalidade-hospitalar",
+   "type": "SnsAdmissionRatesByHospital",
+   "filters": [
+    {
+     "name": "year",
+     "column": "ano",
+     "kind": "date",
+     "op": "="
+    },
+    {
+     "name": "quarter",
+     "column": "trimestre",
+     "kind": "text",
+     "op": "="
+    },
+    {
+     "name": "hospital",
+     "column": "instituicao",
+     "kind": "search"
+    }
+   ],
+   "columns": {
+    "year": {
+     "key": "ano"
+    },
+    "quarter": {
+     "key": "trimestre"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "hospital": {
+     "key": "instituicao"
+    },
+    "chapter": {
+     "key": "desc_capitulo"
+    },
+    "admissionRate": {
+     "key": "taxa_internamento"
+    },
+    "inpatientDays": {
+     "key": "dias_internamento"
+    },
+    "deathRate": {
+     "key": "taxa_mortalidade"
+    }
+   },
+   "orderBy": "ano desc"
+  },
+  {
+   "field": "snsAdmissionRatesByAge",
+   "dataset": "morbilidade-e-mortalidade-hospitalar-por-faixa-etaria",
+   "type": "SnsAdmissionRatesByAge",
+   "filters": [
+    {
+     "name": "year",
+     "column": "ano",
+     "kind": "date",
+     "op": "="
+    },
+    {
+     "name": "quarter",
+     "column": "trimestre",
+     "kind": "text",
+     "op": "="
+    },
+    {
+     "name": "region",
+     "column": "regiao",
+     "kind": "search"
+    }
+   ],
+   "columns": {
+    "year": {
+     "key": "ano"
+    },
+    "quarter": {
+     "key": "trimestre"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "ageGroup": {
+     "key": "faixa_etaria"
+    },
+    "chapter": {
+     "key": "desc_capitulo"
+    },
+    "admissionRate": {
+     "key": "taxa_internamento"
+    },
+    "deathRate": {
+     "key": "taxa_mortalidade"
+    }
+   },
+   "orderBy": "ano desc"
+  },
+  {
+   "field": "snsAdmissionRatesBySex",
+   "dataset": "morbilidade-e-mortalidade-hospitalar-por-sexo",
+   "type": "SnsAdmissionRatesBySex",
+   "filters": [
+    {
+     "name": "year",
+     "column": "ano",
+     "kind": "date",
+     "op": "="
+    },
+    {
+     "name": "quarter",
+     "column": "trimestre",
+     "kind": "text",
+     "op": "="
+    },
+    {
+     "name": "region",
+     "column": "regiao",
+     "kind": "search"
+    }
+   ],
+   "columns": {
+    "year": {
+     "key": "ano"
+    },
+    "quarter": {
+     "key": "trimestre"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "sex": {
+     "key": "sexo"
+    },
+    "chapter": {
+     "key": "desc_capitulo"
+    },
+    "admissionRate": {
+     "key": "taxa_internamento"
+    },
+    "deathRate": {
+     "key": "taxa_mortalidade"
+    }
+   },
+   "orderBy": "ano desc"
+  },
+  {
+   "field": "snsHospitalDischargesByDiagnosis",
+   "dataset": "morbilidade_mortalidade_hospit",
+   "type": "SnsHospitalDischargesByDiagnosis",
+   "filters": [
+    {
+     "name": "hospital",
+     "column": "instituicao",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "hospital": {
+     "key": "instituicao"
+    },
+    "chapter": {
+     "key": "desc_capitulo"
+    },
+    "ageGroup": {
+     "key": "faixa_etaria"
+    },
+    "sex": {
+     "key": "sexo"
+    },
+    "admissions": {
+     "key": "internamentos"
+    },
+    "inpatientDays": {
+     "key": "dias_internamentos"
+    },
+    "dayCases": {
+     "key": "ambulatorios"
+    },
+    "deaths": {
+     "key": "obitos"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsHaemodialysis",
+   "dataset": "gestao-integrada-da-doenca-insuficiencia-renal-cronica",
+   "type": "SnsHaemodialysis",
+   "filters": [
+    {
+     "name": "clinic",
+     "column": "entidade",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "clinic": {
+     "key": "entidade"
+    },
+    "ageGroup": {
+     "key": "faixa_etaria"
+    },
+    "newPatients": {
+     "key": "novos_utentes_registados"
+    },
+    "patients": {
+     "key": "utentes_em_hemodialise"
+    },
+    "treatments": {
+     "key": "tratamentos_em_hemodialise"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsOrganTransplants",
+   "dataset": "orgaos-colhidos-e-transplantados",
+   "type": "SnsOrganTransplants",
+   "filters": [
+    {
+     "name": "quarter",
+     "column": "trimestre",
+     "kind": "search"
+    }
+   ],
+   "columns": {
+    "quarter": {
+     "key": "trimestre"
+    },
+    "organ": {
+     "key": "orgao"
+    },
+    "transplanted": {
+     "key": "no_orgaos_transplantados"
+    }
+   }
+  },
+  {
+   "field": "snsOrgansRetrieved",
+   "dataset": "orgaos-colhidos",
+   "type": "SnsOrgansRetrieved",
+   "filters": [
+    {
+     "name": "quarter",
+     "column": "trimestre",
+     "kind": "search"
+    }
+   ],
+   "columns": {
+    "quarter": {
+     "key": "trimestre"
+    },
+    "organ": {
+     "key": "orgao"
+    },
+    "retrieved": {
+     "key": "no_orgaos_colhidos_dador_falecido_vivo_e_sequencial"
+    }
+   }
+  },
+  {
+   "field": "snsOrganDonors",
+   "dataset": "dadores-vivos-e-falecidos",
+   "type": "SnsOrganDonors",
+   "filters": [
+    {
+     "name": "quarter",
+     "column": "trimestre",
+     "kind": "search"
+    }
+   ],
+   "columns": {
+    "quarter": {
+     "key": "trimestre"
+    },
+    "donors": {
+     "key": "no_total_de_dadores_dador_falecido_e_vivo"
+    },
+    "deceasedDonors": {
+     "key": "no_total_de_dadores_dador_falecido"
+    },
+    "livingDonors": {
+     "key": "no_total_de_dadores_dador_vivo"
+    },
+    "donorsPerMillion": {
+     "key": "n_o_dadores_por_milhao_de_habitantes_pmh"
+    }
+   }
+  },
+  {
+   "field": "snsGeneralTrainingPlaces",
+   "dataset": "vagas-formacao-geral-internato",
+   "type": "SnsGeneralTrainingPlaces",
+   "filters": [
+    {
+     "name": "year",
+     "column": "periodo",
+     "kind": "date",
+     "op": "="
+    },
+    {
+     "name": "institution",
+     "column": "instituicao",
+     "kind": "search"
+    }
+   ],
+   "columns": {
+    "year": {
+     "key": "periodo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "institution": {
+     "key": "instituicao"
+    },
+    "places": {
+     "key": "vagas_disponiveis"
+    },
+    "filled": {
+     "key": "vagas_ocupadas"
+    },
+    "unfilled": {
+     "key": "vagas_nao_ocupadas"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsSpecialtyTrainingPlaces",
+   "dataset": "vagas-formacao-especializada-internato",
+   "type": "SnsSpecialtyTrainingPlaces",
+   "filters": [
+    {
+     "name": "year",
+     "column": "periodo",
+     "kind": "date",
+     "op": "="
+    },
+    {
+     "name": "specialty",
+     "column": "especialidade",
+     "kind": "search"
+    }
+   ],
+   "columns": {
+    "year": {
+     "key": "periodo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "specialty": {
+     "key": "especialidade"
+    },
+    "institution": {
+     "key": "instituicao"
+    },
+    "places": {
+     "key": "vagas_disponiveis"
+    },
+    "filled": {
+     "key": "vagas_ocupadas"
+    },
+    "unfilled": {
+     "key": "vagas_nao_ocupadas"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsNewSpecialists",
+   "dataset": "formacao-medica-medicos-recem-especialistas",
+   "type": "SnsNewSpecialists",
+   "filters": [
+    {
+     "name": "year",
+     "column": "periodo",
+     "kind": "date",
+     "op": "="
+    },
+    {
+     "name": "specialty",
+     "column": "especialidade",
+     "kind": "search"
+    }
+   ],
+   "columns": {
+    "year": {
+     "key": "periodo"
+    },
+    "specialty": {
+     "key": "especialidade"
+    },
+    "institution": {
+     "key": "instituicao_de_formacao"
+    },
+    "newSpecialists": {
+     "key": "medicos_recem_especialistas"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsNationalAccessExam",
+   "dataset": "formacao-medica-pna",
+   "type": "SnsNationalAccessExam",
+   "filters": [],
+   "columns": {
+    "year": {
+     "key": "periodo"
+    },
+    "candidates": {
+     "key": "candidatos"
+    },
+    "examsSat": {
+     "key": "provas_realizadas"
+    },
+    "absent": {
+     "key": "faltas"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsResidencyCandidates",
+   "dataset": "escolhas-formacao-medica",
+   "type": "SnsResidencyCandidates",
+   "filters": [],
+   "columns": {
+    "year": {
+     "key": "periodo"
+    },
+    "generalTraining": {
+     "key": "formacao_geral_candidatos_admitidos"
+    },
+    "specialtyTraining": {
+     "key": "formacao_especializada_candidatos_admitidos"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsFluVirusTypes",
+   "dataset": "frequencia-de-casos-confirmados-de-gripe",
+   "type": "SnsFluVirusTypes",
+   "filters": [],
+   "columns": {
+    "year": {
+     "key": "tempo"
+    },
+    "tested": {
+     "key": "no_casos_sindroma_gripal_testados"
+    },
+    "dominant": {
+     "key": "virus_da_gripe_dominante"
+    },
+    "flu": {
+     "key": "virus_da_gripe"
+    },
+    "fluAH1pdm09": {
+     "key": "virus_da_gripe_a_h1_pdm09"
+    },
+    "fluAH3": {
+     "key": "virus_da_gripe_a_h3"
+    },
+    "fluB": {
+     "key": "virus_da_gripe_b"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsOtherRespiratoryViruses",
+   "dataset": "frequencia-de-casos-de-sindrome-gripal-devido-a-infecao-por-outros-virus-respira",
+   "type": "SnsOtherRespiratoryViruses",
+   "filters": [],
+   "columns": {
+    "year": {
+     "key": "tempo"
+    },
+    "tested": {
+     "key": "no_casos_sindroma_gripal_testados"
+    },
+    "rhinovirus": {
+     "key": "rinovirus_humano"
+    },
+    "rsv": {
+     "key": "virus_sincicial_respiratorio"
+    },
+    "coronavirus": {
+     "key": "coronavirus_humano"
+    },
+    "adenovirus": {
+     "key": "adenovirus_humano"
+    },
+    "metapneumovirus": {
+     "key": "metapneumovirus"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsFluVaccineCoverage",
+   "dataset": "taxa-de-cobertura-da-vacina-antigripal-sazonal-na-populacao-em-portugal-continen",
+   "type": "SnsFluVaccineCoverage",
+   "filters": [],
+   "columns": {
+    "year": {
+     "key": "epoca_sazonal"
+    },
+    "all": {
+     "key": "taxa_de_cobertura_da_vacina_antigripal_sazonal_nos_individuos_da_amostra_ecos"
+    },
+    "under15": {
+     "key": "taxa_de_cobertura_da_vacina_antigripal_sazonal_nos_individuos_da_amostra_ecos_com_idade_inferior_a_1"
+    },
+    "age15to44": {
+     "key": "taxa_de_cobertura_da_vacina_antigripal_sazonal_nos_individuos_da_amostra_ecos_com_idade_entre_15_44_"
+    },
+    "age45to64": {
+     "key": "taxa_de_cobertura_da_vacina_antigripal_sazonal_nos_individuos_da_amostra_ecos_com_idade_entre_45_64_"
+    },
+    "age65Plus": {
+     "key": "taxa_de_cobertura_da_vacina_antigripal_sazonal_nos_individuos_da_amostra_ecos_com_idade_superior_ou_"
+    }
+   },
+   "orderBy": "epoca_sazonal desc"
+  },
+  {
+   "field": "snsCongenitalAnomalies",
+   "dataset": "registo-nacional-de-anomalias-congenitas",
+   "type": "SnsCongenitalAnomalies",
+   "filters": [],
+   "columns": {
+    "year": {
+     "key": "tempo"
+    },
+    "nervousSystem": {
+     "key": "anomalias_congenitas_do_sistema_nervoso_central"
+    },
+    "heart": {
+     "key": "anomalias_congenitas_do_aparelho_circulatorio"
+    },
+    "cleftLipPalate": {
+     "key": "fenda_labial_e_fenda_palatina"
+    },
+    "urinary": {
+     "key": "anomalias_congenitas_do_aparelho_urinario"
+    },
+    "musculoskeletal": {
+     "key": "anomalias_e_deformacoes_do_sistema_musculo_esqueletico"
+    },
+    "chromosomal": {
+     "key": "anomalias_cromossomicas"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsLegionellaTesting",
+   "dataset": "monitorizacao-ambiental-de-legionella",
+   "type": "SnsLegionellaTesting",
+   "filters": [],
+   "columns": {
+    "year": {
+     "key": "tempo"
+    },
+    "samples": {
+     "key": "no_total_amostras_analisadas"
+    },
+    "buildingPipes": {
+     "key": "no_total_amostras_rede_predial"
+    },
+    "coolingTowers": {
+     "key": "no_total_amostras_aguas_de_processo_torres_de_arrefecimento"
+    },
+    "positive": {
+     "key": "no_total_amostras_positivas"
+    },
+    "aboveLimit": {
+     "key": "no_total_amostras_positivas_que_excedem_o_valor_parametrico"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsNewbornScreening",
+   "dataset": "programa-nacional-de-diagnostico-precoce",
+   "type": "SnsNewbornScreening",
+   "filters": [],
+   "columns": {
+    "year": {
+     "key": "tempo"
+    },
+    "newbornsTested": {
+     "key": "recem_nascidos_analisados"
+    },
+    "casesFound": {
+     "key": "casos_detetados"
+    },
+    "daysToTreatment": {
+     "key": "tempo_medio_de_inicio_de_tratamento_dias_apos_o_diagnostico"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsCovidTestStock",
+   "dataset": "evolucao-mensal-stock-novo-coronavirus-2019-n-cov-para-extracao-de-rna-e-rt-pcr-",
+   "type": "SnsCovidTestStock",
+   "filters": [
+    {
+     "name": "from",
+     "column": "ex_tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "ex_tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "ex_tempo"
+    },
+    "rnaExtractionKits": {
+     "key": "stock_extracao_de_rna"
+    },
+    "rtPcrKits": {
+     "key": "stock_rt_pcr_amplificacao"
+    },
+    "antigenTests": {
+     "key": "stock_teste_antigenio"
+    }
+   },
+   "orderBy": "ex_tempo desc"
+  },
+  {
+   "field": "snsCovidTestDistribution",
+   "dataset": "evolucao-mensal-distribuicao-novo-coronavirus-2019-n-cov-para-extracao-de-rna-e-",
+   "type": "SnsCovidTestDistribution",
+   "filters": [
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "rnaExtractionKits": {
+     "key": "distribuicao_extracao_de_rna"
+    },
+    "rtPcrKits": {
+     "key": "distribuicao_rt_pcr_amplificacao"
+    },
+    "antigenTests": {
+     "key": "distribuicao_testes_antigenio"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsReserveMedicineDistribution",
+   "dataset": "distribuicao-da-reserva-estrategica-de-medicamentos",
+   "type": "SnsReserveMedicineDistribution",
+   "filters": [
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "item": {
+     "key": "item"
+    },
+    "quantity": {
+     "key": "saida"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsReserveMedicineStock",
+   "dataset": "stock-da-reserva-estrategica-de-medicamentos-existentes-a-nivel-central",
+   "type": "SnsReserveMedicineStock",
+   "filters": [
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "item": {
+     "key": "item"
+    },
+    "stock": {
+     "key": "valor_stock"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsReserveEquipmentStock",
+   "dataset": "stock-reserva-estrategica-equipamentos-de-proteccao-individual-epi-e-dispositvos",
+   "type": "SnsReserveEquipmentStock",
+   "filters": [
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "item": {
+     "key": "item"
+    },
+    "stock": {
+     "key": "valor_stock"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsReserveEquipmentDistribution",
+   "dataset": "distribuicao-da-reserva-estrategica-equipamentos-de-proteccao-individual-epi-e-d",
+   "type": "SnsReserveEquipmentDistribution",
+   "filters": [
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "item": {
+     "key": "item"
+    },
+    "receiver": {
+     "key": "entidade"
+    },
+    "quantity": {
+     "key": "saidas"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsAccounts",
+   "dataset": "conta-do-servico-nacional-de-saude",
+   "type": "SnsAccounts",
+   "filters": [
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "budgetRevenue": {
+     "key": "orcamento_receita_efectiva"
+    },
+    "budgetSpending": {
+     "key": "orcamento_despesa_efectiva"
+    },
+    "revenue": {
+     "key": "execucao_acumulada_receita_efectiva"
+    },
+    "spending": {
+     "key": "execucao_acumulada_despesa_efectiva"
+    },
+    "staff": {
+     "key": "execucao_acumulada_despesas_com_o_pessoal"
+    },
+    "pharmacies": {
+     "key": "execucao_acumulada_produtos_vendidos_em_farmacias"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsHealthProcurementSavings",
+   "dataset": "poupancas-obtidas-nos-processos-compras-bens-servicos-saude",
+   "type": "SnsHealthProcurementSavings",
+   "filters": [
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "category": {
+     "key": "tipo_medicamentos"
+    },
+    "awarded": {
+     "key": "volume_financeiro_adjudicado"
+    },
+    "savings": {
+     "key": "poupancas"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsGeneralProcurementSavings",
+   "dataset": "poupancas-obtidas-nos-processos-compras-bens-servicos-transversais",
+   "type": "SnsGeneralProcurementSavings",
+   "filters": [
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "category": {
+     "key": "categoria"
+    },
+    "awarded": {
+     "key": "volume_financeiro_adjudicado"
+    },
+    "savings": {
+     "key": "poupancas"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsHealthFrameworkAgreements",
+   "dataset": "acordos-quadro-na-area-da-saude",
+   "type": "SnsHealthFrameworkAgreements",
+   "filters": [
+    {
+     "name": "subject",
+     "column": "contrato_publico_de_aprovisionamento",
+     "kind": "search"
+    }
+   ],
+   "columns": {
+    "instrument": {
+     "key": "tipo_de_instrumento_de_compra"
+    },
+    "startDate": {
+     "key": "data_de_entrada_em_vigor"
+    },
+    "subject": {
+     "key": "contrato_publico_de_aprovisionamento"
+    },
+    "suppliers": {
+     "key": "numero_de_fornecedores"
+    },
+    "endDate": {
+     "key": "prazo_maximo_de_vigencia"
+    }
+   },
+   "orderBy": "data_de_entrada_em_vigor desc"
+  },
+  {
+   "field": "snsGeneralFrameworkAgreements",
+   "dataset": "acordos-quadro-sistemas-aquisicao-dinamicos-ativos",
+   "type": "SnsGeneralFrameworkAgreements",
+   "filters": [
+    {
+     "name": "subject",
+     "column": "contrato_publico_de_aprovisionamento",
+     "kind": "search"
+    }
+   ],
+   "columns": {
+    "instrument": {
+     "key": "tipo_de_instrumento_de_compra"
+    },
+    "startDate": {
+     "key": "data_de_entrada_em_vigor"
+    },
+    "subject": {
+     "key": "contrato_publico_de_aprovisionamento"
+    },
+    "suppliers": {
+     "key": "numero_de_fornecedores"
+    },
+    "endDate": {
+     "key": "prazo_maximo_de_vigencia"
+    }
+   },
+   "orderBy": "data_de_entrada_em_vigor desc"
+  },
+  {
+   "field": "snsPublicContracts",
+   "dataset": "portal-base",
+   "type": "SnsPublicContracts",
+   "filters": [
+    {
+     "name": "buyer",
+     "column": "entidades_adjudicantes_normalizado",
+     "kind": "search"
+    },
+    {
+     "name": "supplier",
+     "column": "entidades_adjudicatarias_normalizado",
+     "kind": "search"
+    },
+    {
+     "name": "subject",
+     "column": "objeto_do_contrato",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "data_de_celebracao_do_contrato",
+     "kind": "date",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "data_de_celebracao_do_contrato",
+     "kind": "date",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "signed": {
+     "key": "data_de_celebracao_do_contrato"
+    },
+    "subject": {
+     "key": "objeto_do_contrato"
+    },
+    "procedure": {
+     "key": "tipo_de_procedimento"
+    },
+    "buyer": {
+     "key": "entidades_adjudicantes_normalizado"
+    },
+    "supplier": {
+     "key": "entidades_adjudicatarias_normalizado"
+    },
+    "price": {
+     "key": "preco_contratual"
+    },
+    "finalPrice": {
+     "key": "preco_total_efetivo"
+    }
+   },
+   "orderBy": "data_de_celebracao_do_contrato desc"
+  },
+  {
+   "field": "snsNonUrgentTransport",
+   "dataset": "evolucao-anual-do-numero-de-transportes",
+   "type": "SnsNonUrgentTransport",
+   "filters": [
+    {
+     "name": "payer",
+     "column": "des_pagadora",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "cod_mes",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "cod_mes",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "cod_mes"
+    },
+    "payer": {
+     "key": "des_pagadora"
+    },
+    "trips": {
+     "key": "nr_transportes"
+    },
+    "patients": {
+     "key": "nr_utentes"
+    },
+    "amount": {
+     "key": "sum_valpagar_euros"
+    }
+   },
+   "orderBy": "cod_mes desc"
+  },
+  {
+   "field": "snsContractedExamsByProvider",
+   "dataset": "exames-convencionados-e-area-mcdt",
+   "type": "SnsContractedExamsByProvider",
+   "filters": [
+    {
+     "name": "provider",
+     "column": "descricao",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "data",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "data",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "data"
+    },
+    "region": {
+     "key": "regiao_faturacao"
+    },
+    "provider": {
+     "key": "descricao"
+    },
+    "area": {
+     "key": "area_mcdt"
+    },
+    "acts": {
+     "key": "atos_aceites"
+    },
+    "requests": {
+     "key": "requisicoes_aceites"
+    }
+   },
+   "orderBy": "data desc"
+  },
+  {
+   "field": "snsContractedExamsByArea",
+   "dataset": "evolucao-de-mcdt-realizados-no-convencionado",
+   "type": "SnsContractedExamsByArea",
+   "filters": [
+    {
+     "name": "area",
+     "column": "area_mcdt",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "area": {
+     "key": "area_mcdt"
+    },
+    "requests": {
+     "key": "no_requisicoes_aviadas_por_area_de_mcdt_qt"
+    },
+    "cost": {
+     "key": "encargos_c_setor_convencionado"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsHealthRecordUsePrimaryCare",
+   "dataset": "utilizacao-de-registo-saude-eletronico-por-profissionais-de-saude-em-csp",
+   "type": "SnsHealthRecordUsePrimaryCare",
+   "filters": [
+    {
+     "name": "unit",
+     "column": "entidade",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "unit": {
+     "key": "entidade"
+    },
+    "accesses": {
+     "key": "n_total_acessos_rse"
+    },
+    "visits": {
+     "key": "n_total_visitas"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsHealthRecordUseHospitals",
+   "dataset": "utilizacao-de-registo-saude-eletronico-por-profissionais-de-saude-em-hospitais-q",
+   "type": "SnsHealthRecordUseHospitals",
+   "filters": [
+    {
+     "name": "hospital",
+     "column": "entidade",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "hospital": {
+     "key": "entidade"
+    },
+    "accesses": {
+     "key": "n_total_acessos_rse"
+    },
+    "visits": {
+     "key": "n_total_visitas"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsRseLiveTeleconsultations",
+   "dataset": "teleconsultas-atraves-da-plataforma-live",
+   "type": "SnsRseLiveTeleconsultations",
+   "filters": [
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "conferences": {
+     "key": "total_de_conferencias"
+    },
+    "participants": {
+     "key": "total_de_participantes"
+    },
+    "minutes": {
+     "key": "total_de_minutos_de_conferencia"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsSns24Signups",
+   "dataset": "inscritos-na-area-pessoal-do-sns24",
+   "type": "SnsSns24Signups",
+   "filters": [
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "date",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "date",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "day": {
+     "key": "periodo"
+    },
+    "region": {
+     "key": "regiao"
+    },
+    "entity": {
+     "key": "entidade"
+    },
+    "signups": {
+     "key": "numero_de_novos_registos"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsRareDiseaseCards",
+   "dataset": "cartao-da-pessoa-com-doenca-rara",
+   "type": "SnsRareDiseaseCards",
+   "filters": [
+    {
+     "name": "hospital",
+     "column": "instituicao",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "uls": {
+     "key": "uls"
+    },
+    "hospital": {
+     "key": "instituicao"
+    },
+    "activeCards": {
+     "key": "no_cartoes_ativos"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsCertifiedHealthUnits",
+   "dataset": "acreditacao-de-unidades-de-saude",
+   "type": "SnsCertifiedHealthUnits",
+   "filters": [
+    {
+     "name": "institution",
+     "column": "designacao_da_instituicao",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "institution": {
+     "key": "designacao_da_instituicao"
+    },
+    "unit": {
+     "key": "designacao_da_unidade_servico"
+    },
+    "phase": {
+     "key": "fase_de_acreditacao"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsInspections",
+   "dataset": "no-de-entidades-inspecionadas-auditadas",
+   "type": "SnsInspections",
+   "filters": [],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "inspected": {
+     "key": "no_de_entidades_inspecionadas"
+    },
+    "audited": {
+     "key": "no_de_entidades_auditadas"
+    },
+    "disciplinaryCases": {
+     "key": "no_de_processos_de_natureza_disciplinar_instaurados_ou_avocados"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsSafetyIncidentReports",
+   "dataset": "notificacao-de-incidentes-de-seguranca-em-unidades-prestadoras-de-cuidados-de-sa",
+   "type": "SnsSafetyIncidentReports",
+   "filters": [],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "byProfessionals": {
+     "key": "no_de_notificacoes_por_profissionais"
+    },
+    "byCitizens": {
+     "key": "no_de_notificacoes_por_cidadaos"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsClinicalTrials",
+   "dataset": "ensaios-clinicos",
+   "type": "SnsClinicalTrials",
+   "filters": [
+    {
+     "name": "from",
+     "column": "tempo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "tempo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "tempo"
+    },
+    "submitted": {
+     "key": "n_o_de_ec_submetidos"
+    },
+    "phase1": {
+     "key": "fase_i"
+    },
+    "phase2": {
+     "key": "fase_ii"
+    },
+    "phase3": {
+     "key": "fase_iii"
+    },
+    "commercial": {
+     "key": "promotor_comercial"
+    },
+    "academic": {
+     "key": "promotor_academico"
+    }
+   },
+   "orderBy": "tempo desc"
+  },
+  {
+   "field": "snsUserChargeExemptions",
+   "dataset": "utentes-isentos",
+   "type": "SnsUserChargeExemptions",
+   "filters": [
+    {
+     "name": "reason",
+     "column": "criterio_de_isencao",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "periodo",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "periodo",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "periodo"
+    },
+    "reason": {
+     "key": "criterio_de_isencao"
+    },
+    "patients": {
+     "key": "no_utentes_isentos"
+    }
+   },
+   "orderBy": "periodo desc"
+  },
+  {
+   "field": "snsCostCentres",
+   "dataset": "mapeamento-entre-codigos-de-centros-de-custo-usados-no-rhv-e-codigos-da-hierarqu",
+   "type": "SnsCostCentres",
+   "filters": [
+    {
+     "name": "institution",
+     "column": "des_instituicao",
+     "kind": "search"
+    },
+    {
+     "name": "from",
+     "column": "cod_mes_atual",
+     "kind": "month",
+     "op": ">="
+    },
+    {
+     "name": "to",
+     "column": "cod_mes_atual",
+     "kind": "month",
+     "op": "<="
+    }
+   ],
+   "columns": {
+    "month": {
+     "key": "cod_mes_atual"
+    },
+    "institution": {
+     "key": "des_instituicao"
+    },
+    "costCentre": {
+     "key": "des_centro_custo"
+    },
+    "service": {
+     "key": "nome_uf_serv_depart_hier_loc"
+    },
+    "uls": {
+     "key": "uls_grupo"
+    }
+   },
+   "orderBy": "cod_mes_atual desc"
+  }
+ ]
+}

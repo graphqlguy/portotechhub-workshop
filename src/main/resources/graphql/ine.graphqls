@@ -1,0 +1,2116 @@
+# Statistics Portugal (INE, Instituto Nacional de Estatística) publishes the official statistics of Portugal 
+# through its indicator API. These fields read about a hundred of its indicators: population, births and deaths, 
+# housing and rents, prices, wages and jobs, tourism, businesses, foreign trade, crime, health, education, 
+# environment and agriculture. Each field returns the values of one indicator for one period, by place and by 
+# the indicator's other categories. A generator outside the repository writes this file and ine/indicators.json; 
+# the names and descriptions are written for the model.
+
+extend type Query {
+    """
+    The resident population of a place on 31 December, by sex and age group. The latest year is 2023, and one
+    request returns one year.
+    """
+    inePopulation(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place in INE's 2013 codes, such as PT for Portugal or 11A1312 for Porto. Lisboa is 1701106 here. A
+        place's name, such as Porto, works as well as its code.
+        """
+        place: String
+        "The sex: T for both, 1 for men, 2 for women."
+        sex: String
+        """
+        The age group: T for all, or five years such as 11 for 0 to 4, 12 for 5 to 9, 21 for 10 to 14, up to
+        92 for 85 and over.
+        """
+        ageGroup: String
+    ): [IneObservation!]
+
+    """
+    How many shops, clinics, offices and other sites of a kind a place has: the establishments in the place,
+    by economic activity and legal form. Activity 75000 is veterinary activities: pet clinics, vet clinics and
+    veterinary hospitals. 47762 is pet shops, 01493 pet breeders, and 96092 pet care services such as
+    grooming, pet sitting, training and boarding. A business can run several sites, so there are more
+    establishments than enterprises (ineEnterprises).
+    """
+    ineEstablishments(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+        """
+        The economic activity as a CAE Rev. 3 code: TOT for all, a section letter such as G for trade or I for
+        accommodation and food, or a five-digit subclass such as 75000 for pet clinics, 96092 for pet care
+        services, 56101 for restaurants or 47111 for supermarkets. A name, such as veterinary activities or
+        pet care, works as well as a code.
+        """
+        activity: String
+        "The legal form: T for all, 1 for sole proprietors, 2 for companies."
+        legalForm: String
+    ): [IneObservation!]
+
+    """
+    How many businesses of a kind a place has, such as pet shops, pet clinics, restaurants or hotels: the
+    enterprises based in the place, by economic activity and legal form. Activity 75000 is veterinary
+    activities: pet clinics, vet clinics and veterinary hospitals. 47762 is pet shops, 01493 pet breeders, and
+    96092 pet care services such as grooming, pet sitting, training and boarding. A business can run several
+    sites, which ineEstablishments counts one by one.
+    """
+    ineEnterprises(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+        """
+        The economic activity as a CAE Rev. 3 code: TOT for all, a section letter such as G for trade or I for
+        accommodation and food, or a five-digit subclass such as 75000 for pet clinics, 96092 for pet care
+        services, 56101 for restaurants or 47111 for supermarkets. A name, such as veterinary activities or
+        pet care, works as well as a code.
+        """
+        businessActivity: String
+        "The legal form: T for all, 1 for sole proprietors, 2 for companies."
+        businessLegalForm: String
+    ): [IneObservation!]
+
+    """
+    The crimes registered by the police in a place, by category of crime. Category 10 is crimes against pet
+    animals: killing, ill-treatment and abandonment of pets.
+    """
+    ineCrimes(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+        """
+        The category of crime: T for all, 1 for crimes against persons, 12194 for domestic violence, 2 for
+        crimes against property, 2831_2832 for theft of or from a car, 41682 for drunk driving, 10 for crimes
+        against pet animals.
+        """
+        crimeCategory: String
+    ): [IneObservation!]
+
+    """
+    The change of consumer prices from the same month a year earlier, in percent, by COICOP category: T for
+    all goods and services (the inflation rate), 0945 for veterinary and other services for pets (the price of
+    a pet clinic visit), 0932 for pets and pet products. The latest month comes out about six weeks after it
+    ends.
+    """
+    ineConsumerPriceChange(
+        "The month, written as year and month, such as 2026-09. Leave it out for the latest month."
+        month: String
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place: PT for Portugal or 1 for the mainland. A place's name, such as Porto, works as well as its
+        code.
+        """
+        place: String
+        """
+        The COICOP category: T for all, 01 for food and drinks, 04 for housing and energy, 07 for transport,
+        11 for restaurants and hotels, 0945 for veterinary and other services for pets, 0932 for pets and pet
+        products.
+        """
+        priceCategory: String
+    ): [IneObservation!]
+
+    """
+    The number of enterprises in Portugal by economic activity in the CAE Rev. 4 classification and by number
+    of persons employed, from 2024. Subclass 96992 is pet care services: grooming, pet sitting, training and
+    boarding. For 2023 and earlier, ineEnterprises gives pet care under its CAE Rev. 3 code, 96092.
+    """
+    ineEnterprisesCaeRev4(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place: PT for Portugal, the only place of this indicator. A place's name, such as Porto, works as
+        well as its code.
+        """
+        place: String
+        """
+        The economic activity as a CAE Rev. 4 code: TOT for all, or a subclass such as 96992 for pet care
+        services, 75000 for veterinary activities (pet clinics), 47762 for pet shops or 01483 for pet
+        breeders. T is the section of other services. A name, such as veterinary activities or pet care, works
+        as well as a code.
+        """
+        activityRev4: String
+        """
+        The persons employed: T for all sizes, 1 for fewer than 10, 2 for 10 to 49, 3 for 50 to 249, 4 for 250
+        or more.
+        """
+        sizeClass: String
+    ): [IneObservation!]
+
+    """
+    The imports of goods into Portugal in euros, by country of origin and product, one year at a time: which
+    countries Portugal buys a product from, and for how much. A product is a Combined Nomenclature code, such
+    as 230910 for dog or cat food, 2204 for wine or 0302 for fresh fish, or its name. Leave place out to get
+    every country: the rows mix countries with totals such as MUNDO (World) and INTRA (the European Union),
+    and the countries are the rows whose place code has two letters.
+    """
+    ineImports(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The country the goods come from, as a two-letter code, such as IT for Italy or CN for China, or MUNDO
+        for the world. Portugal is the country they go to. Leave it out for every country and total.
+        """
+        place: String
+        """
+        The product as a Combined Nomenclature code, digits without dots, such as 230910 for dog or cat food
+        put up for retail sale, a chapter such as 23, or T for all goods. A name, such as dog or cat food or
+        pet care, works as well as a code.
+        """
+        importedProduct: String
+    ): [IneObservation!]
+
+    """
+    The resident population of Portugal and its regions on 31 December, by sex and age, up to 2025. For a
+    municipality, use inePopulation.
+    """
+    inePopulationByRegion(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place: PT for Portugal, 1 for the mainland, or a region such as 11 for Norte or 1A for Grande
+        Lisboa. A place's name, such as Porto, works as well as its code.
+        """
+        place: String
+        "The sex: T for both, 1 for men, 2 for women."
+        regionalSex: String
+        """
+        The age: T for all, five years such as 11 for 0 to 4 or 92 for 85 and over, or one year such as 224
+        for 18.
+        """
+        age: String
+    ): [IneObservation!]
+
+    "The population density of a place, in inhabitants per square kilometre. The latest year is 2025."
+    inePopulationDensity(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+    ): [IneObservation!]
+
+    """
+    The ageing ratio of a place: residents aged 65 and over for every 100 residents under 15. The latest year
+    is 2025.
+    """
+    ineAgeingRatio(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+    ): [IneObservation!]
+
+    """
+    The old-age dependency ratio of a place: residents aged 65 and over for every 100 residents aged 15 to 64.
+    The latest year is 2025.
+    """
+    ineOldAgeDependencyRatio(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+    ): [IneObservation!]
+
+    """
+    The net migration of a place in a year: the people who moved in, from Portugal or abroad, minus those who
+    moved out. The latest year is 2025.
+    """
+    ineNetMigration(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+    ): [IneObservation!]
+
+    """
+    The permanent immigrants to Portugal in a year: people who came from abroad to live for at least a year,
+    by sex, age and nationality.
+    """
+    ineImmigrants(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place: PT for Portugal, the only place of this indicator. A place's name, such as Porto, works as
+        well as its code.
+        """
+        place: String
+        "The sex: T for both, 1 for men, 2 for women."
+        immigrantSex: String
+        """
+        The age: T for all, five years such as 11 for 0 to 4 or 92 for 85 and over, or one year such as 224
+        for 18.
+        """
+        immigrantAge: String
+        "The nationality: T for all, PT for Portuguese, EST for foreign."
+        nationality: String
+    ): [IneObservation!]
+
+    """
+    The permanent emigrants from Portugal in a year: residents who left to live abroad for at least a year, by
+    sex.
+    """
+    ineEmigrants(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place: PT for Portugal, the only place of this indicator. A place's name, such as Porto, works as
+        well as its code.
+        """
+        place: String
+        "The sex: T for both, 1 for men, 2 for women."
+        emigrantSex: String
+    ): [IneObservation!]
+
+    """
+    The foreign citizens living in Portugal with a legal residence status, by sex. The latest year is 2023.
+    """
+    ineForeignResidents(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place: PT for Portugal, the only place of this indicator. A place's name, such as Porto, works as
+        well as its code.
+        """
+        place: String
+        "The sex: T for both, 1 for men, 2 for women."
+        foreignResidentSex: String
+    ): [IneObservation!]
+
+    """
+    The resident population counted by the 2021 census, down to the parish, by sex. The census year 2021 is
+    the only year.
+    """
+    ineCensusPopulation(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The census code of the place: PT for Portugal, 11A for the Porto area, 1312 for Porto, or a parish
+        such as 131210 for Paranhos. A place's name, such as Porto, works as well as its code.
+        """
+        place: String
+        "The sex: T for both, 1 for men, 2 for women."
+        censusSex: String
+    ): [IneObservation!]
+
+    """
+    The private households counted by the 2021 census, down to the parish, by type of living quarters. The
+    census year 2021 is the only year.
+    """
+    ineCensusHouseholds(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The census code of the place: PT for Portugal, 11A for the Porto area, 1312 for Porto, or a parish
+        such as 131210 for Paranhos. A place's name, such as Porto, works as well as its code.
+        """
+        place: String
+        """
+        The type of living quarters: T for all, 1 for housing units, 2 for collective living quarters such as
+        care homes.
+        """
+        livingQuarters: String
+    ): [IneObservation!]
+
+    """
+    The crude birth rate of a place: live births in the year for every 1,000 residents. The latest year is
+    2025.
+    """
+    ineBirthRate(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+    ): [IneObservation!]
+
+    """
+    The live births of a month by the mother's place of residence and the baby's sex. It covers the months of
+    the current year.
+    """
+    ineMonthlyBirths(
+        "The month, written as year and month, such as 2026-09. Leave it out for the latest month."
+        month: String
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, down to the subregion, such as PT for Portugal, 11 for Norte or 11A for the Porto
+        metropolitan area. A place's name, such as Porto, works as well as its code.
+        """
+        place: String
+        "The baby's sex: T for both, 1 for boys, 2 for girls."
+        babySex: String
+    ): [IneObservation!]
+
+    """
+    The live births of a year by the mother's place of residence, down to the parish, and by the baby's sex.
+    The latest year is 2023.
+    """
+    ineBirths(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place in INE's 2013 codes, such as PT for Portugal or 11A1312 for Porto. Lisboa is 1701106 here. A
+        place's name, such as Porto, works as well as its code.
+        """
+        place: String
+        "The baby's sex: T for both, 1 for boys, 2 for girls."
+        newbornSex: String
+    ): [IneObservation!]
+
+    "The live births in Portugal to mothers aged 19 or younger, by the mother's age."
+    ineTeenageBirths(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place: PT for Portugal, the only place of this indicator. A place's name, such as Porto, works as
+        well as its code.
+        """
+        place: String
+        "The mother's age: T for 19 or younger, 01 for 11 years, 02 for 12, and so on up to 09 for 19 years."
+        motherAge: String
+    ): [IneObservation!]
+
+    """
+    The deaths of residents of Portugal and its regions, by sex, age group and day of death. The count for the
+    current year is partial and grows each month.
+    """
+    ineDeaths(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, down to the region, such as PT for Portugal, 1 for the mainland or 11 for Norte. A place's
+        name, such as Porto, works as well as its code.
+        """
+        place: String
+        "The sex: T for both, 1 for men, 2 for women."
+        deceasedSex: String
+        """
+        The age group: T for all, 00 for under 65, 01 for 65 to 69, 02 for 70 to 74, 03 for 75 to 79, 04 for
+        80 to 84, 05 for 85 or over.
+        """
+        deathAgeGroup: String
+        "The date: T for the year, a month such as 01 for January, or a day such as 0115 for 15 January."
+        dayOfDeath: String
+    ): [IneObservation!]
+
+    """
+    The crude death rate of a place: deaths in the year for every 1,000 residents. The latest year is 2023.
+    """
+    ineDeathRate(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place in INE's 2013 codes, such as PT for Portugal or 11A1312 for Porto. Lisboa is 1701106 here. A
+        place's name, such as Porto, works as well as its code.
+        """
+        place: String
+    ): [IneObservation!]
+
+    """
+    The death rate from cancer (malignant tumours) in a place: deaths for every 1,000 residents. The latest
+    year is 2024.
+    """
+    ineCancerDeathRate(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+    ): [IneObservation!]
+
+    """
+    The median rent of the new lease contracts for dwellings signed in a year, in euros per square metre per
+    month, down to the parish. The latest year is 2024.
+    """
+    ineMedianRent(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, down to the parish, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the
+        codes. A place's name, such as Porto, works as well as its code.
+        """
+        place: String
+    ): [IneObservation!]
+
+    """
+    The number of new lease contracts for dwellings signed in a year, down to the parish. The latest year is
+    2024.
+    """
+    ineNewLeases(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, down to the parish, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the
+        codes. A place's name, such as Porto, works as well as its code.
+        """
+        place: String
+    ): [IneObservation!]
+
+    """
+    The median value that banks put on homes when they assess them for a mortgage, in euros per square metre,
+    by type of home. It tracks house prices month by month.
+    """
+    ineBankValuation(
+        "The month, written as year and month, such as 2026-09. Leave it out for the latest month."
+        month: String
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+        "The type of home: T for all, 1 for flats, 2 for houses."
+        homeType: String
+    ): [IneObservation!]
+
+    """
+    The number of conventional dwellings (homes) that exist in a place, from INE's housing stock estimates.
+    The latest year is 2022.
+    """
+    ineHousingStock(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place in INE's 2013 codes, such as PT for Portugal or 11A1312 for Porto. Lisboa is 1701106 here. A
+        place's name, such as Porto, works as well as its code.
+        """
+        place: String
+    ): [IneObservation!]
+
+    """
+    The new homes licensed in a month in new buildings for families, down to the subregion, by number of
+    bedrooms.
+    """
+    ineLicensedDwellings(
+        "The month, written as year and month, such as 2026-09. Leave it out for the latest month."
+        month: String
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, down to the subregion, such as PT for Portugal, 11 for Norte or 11A for the Porto
+        metropolitan area. A place's name, such as Porto, works as well as its code.
+        """
+        place: String
+        """
+        The bedrooms: T for all, 1 for studios and one-bedroom homes, 2 for two, 3 for three, 4 for four or
+        more.
+        """
+        bedrooms: String
+    ): [IneObservation!]
+
+    "The buildings whose works were completed in a year, by type of work. The latest year is 2025."
+    ineCompletedBuildings(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+        """
+        The type of work: T for all, 11 for new buildings, 12 for enlargements, 13 for refurbishments, 2 for
+        demolitions.
+        """
+        workType: String
+    ): [IneObservation!]
+
+    """
+    The share of people in Portugal whose household spends more than 40% of its disposable income on housing,
+    in percent, by age group.
+    """
+    ineHousingCostOverburden(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place: PT for Portugal, the only place of this indicator. A place's name, such as Porto, works as
+        well as its code.
+        """
+        place: String
+        "The age group: T for all, 1 for 0 to 17, 2 for 18 to 64, 3 for 65 and over."
+        overburdenAge: String
+    ): [IneObservation!]
+
+    """
+    The share of people in Portugal who live in an overcrowded home, with fewer rooms than the household
+    needs, in percent, by age group.
+    """
+    ineOvercrowding(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place: PT for Portugal, the only place of this indicator. A place's name, such as Porto, works as
+        well as its code.
+        """
+        place: String
+        "The age group: T for all, 1 for 0 to 17, 2 for 18 to 64, 3 for 65 and over."
+        overcrowdingAge: String
+    ): [IneObservation!]
+
+    "The housing loans that banks hold in a place, in euros per inhabitant. The latest year is 2024."
+    ineHousingCredit(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+    ): [IneObservation!]
+
+    """
+    The change of consumer prices from the month before, in percent, for all goods and services or for an
+    aggregate such as energy.
+    """
+    ineMonthlyPriceChange(
+        "The month, written as year and month, such as 2026-09. Leave it out for the latest month."
+        month: String
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place: PT for Portugal or 1 for the mainland. A place's name, such as Porto, works as well as its
+        code.
+        """
+        place: String
+        """
+        The aggregate: T for all goods and services, 002 for core prices (without unprocessed food and
+        energy), 005 for unprocessed food, 007 for energy, 008 for goods, 009 for services.
+        """
+        changeAggregate: String
+    ): [IneObservation!]
+
+    "The index of the cost of building new homes in Portugal, with 2021 as 100, by production factor."
+    ineConstructionCostIndex(
+        "The month, written as year and month, such as 2026-09. Leave it out for the latest month."
+        month: String
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place: PT for Portugal, the only place of this indicator. A place's name, such as Porto, works as
+        well as its code.
+        """
+        place: String
+        "The production factor: T for all, 1 for materials, 2 for labour."
+        productionFactor: String
+    ): [IneObservation!]
+
+    "The price of Brent crude oil in euros per barrel, month by month."
+    ineBrentPrice(
+        "The month, written as year and month, such as 2026-09. Leave it out for the latest month."
+        month: String
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place: PT for Portugal, the only place of this indicator. A place's name, such as Porto, works as
+        well as its code.
+        """
+        place: String
+    ): [IneObservation!]
+
+    """
+    The average monthly earnings of employees working in a place, in euros before tax, by level of education.
+    The latest year is 2024.
+    """
+    ineAverageEarnings(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+        """
+        The level of education: T for all, 4 for lower secondary, 5 for upper secondary, 8 for a bachelor's
+        degree, 9 for a master's, 10 for a doctorate.
+        """
+        education: String
+    ): [IneObservation!]
+
+    """
+    The gross income declared for income tax per taxpayer in a place, in euros a year, down to the parish. The
+    latest year is 2024.
+    """
+    ineIncomePerTaxpayer(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, down to the parish, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the
+        codes. A place's name, such as Porto, works as well as its code.
+        """
+        place: String
+    ): [IneObservation!]
+
+    """
+    The median income declared for income tax after the tax paid, per taxpayer in a place, in euros a year,
+    down to the parish. The latest year is 2024.
+    """
+    ineMedianNetIncome(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, down to the parish, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the
+        codes. A place's name, such as Porto, works as well as its code.
+        """
+        place: String
+    ): [IneObservation!]
+
+    """
+    The purchasing power per person in a place, as an index where Portugal is 100. 2023 is the only year.
+    """
+    inePurchasingPower(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+    ): [IneObservation!]
+
+    """
+    The unemployment rate of Portugal and its regions in a year, in percent of the labour force, by sex. The
+    latest year is 2025.
+    """
+    ineUnemploymentRate(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, down to the region, such as PT for Portugal, 1 for the mainland or 11 for Norte. A place's
+        name, such as Porto, works as well as its code.
+        """
+        place: String
+        "The sex: T for both, 1 for men, 2 for women."
+        unemployedSex: String
+    ): [IneObservation!]
+
+    """
+    The unemployment rate in Portugal in a month, in percent of the labour force aged 16 to 74, by age group.
+    """
+    ineMonthlyUnemploymentRate(
+        "The month, written as year and month, such as 2026-09. Leave it out for the latest month."
+        month: String
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place: PT for Portugal, the only place of this indicator. A place's name, such as Porto, works as
+        well as its code.
+        """
+        place: String
+        "The age group: T for all, 1 for 15 to 24 (youth unemployment), 2 for 25 and over."
+        unemployedAge: String
+    ): [IneObservation!]
+
+    """
+    The employment rate of Portugal and its regions in a year: the share of working-age residents who have a
+    job, in percent, by sex and age group. The latest year is 2025.
+    """
+    ineEmploymentRate(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, down to the region, such as PT for Portugal, 1 for the mainland or 11 for Norte. A place's
+        name, such as Porto, works as well as its code.
+        """
+        place: String
+        "The sex: T for both, 1 for men, 2 for women."
+        employedSex: String
+        "The age group: T for all, 1 for 16 to 54, 2 for 55 to 64."
+        workingAge: String
+    ): [IneObservation!]
+
+    "The employed people aged 16 to 74 in Portugal in a month, in thousands, by age group."
+    ineEmployedPeople(
+        "The month, written as year and month, such as 2026-09. Leave it out for the latest month."
+        month: String
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place: PT for Portugal, the only place of this indicator. A place's name, such as Porto, works as
+        well as its code.
+        """
+        place: String
+        "The age group: T for all, 1 for 15 to 24, 2 for 25 and over."
+        employedAge: String
+    ): [IneObservation!]
+
+    """
+    The persons employed by the enterprises based in a place, by economic activity. The latest year is 2024.
+    """
+    ineEnterpriseEmployment(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+        """
+        The economic activity: TOT for all, a CAE Rev. 3 section letter such as I for accommodation and food,
+        or a two-digit division such as 56 for restaurants or 75 for veterinary activities.
+        """
+        employerActivity: String
+    ): [IneObservation!]
+
+    "The guests who checked in at tourist accommodation in a place in a month, by segment."
+    ineMonthlyGuests(
+        "The month, written as year and month, such as 2026-09. Leave it out for the latest month."
+        month: String
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+        """
+        The segment: T for all, 01 for hotels and similar, 02 for local accommodation (short-term rentals), 03
+        for rural tourism.
+        """
+        guestSegment: String
+    ): [IneObservation!]
+
+    "The nights that guests spent in tourist accommodation in a place in a month, by segment."
+    ineMonthlyNights(
+        "The month, written as year and month, such as 2026-09. Leave it out for the latest month."
+        month: String
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+        """
+        The segment: T for all, 01 for hotels and similar, 02 for local accommodation (short-term rentals), 03
+        for rural tourism.
+        """
+        nightSegment: String
+    ): [IneObservation!]
+
+    """
+    The nights that guests spent in tourist accommodation in a place in a year, by the guests' country of
+    residence. The latest year is 2025.
+    """
+    ineNightsByGuestCountry(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place in INE's 2013 codes, such as PT for Portugal or 11A1312 for Porto. Lisboa is 1701106 here. A
+        place's name, such as Porto, works as well as its code.
+        """
+        place: String
+        """
+        The guests' country of residence: T for all, PT for Portugal, E for all foreign countries, or a code
+        such as ES, FR, GB, DE or US.
+        """
+        guestCountry: String
+    ): [IneObservation!]
+
+    "The number of tourist accommodation establishments in a place, by type. The latest year is 2025."
+    ineTouristAccommodation(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+        """
+        The type: T for all, 01 for hotels and similar, 0101 for hotels, 010115 for five-star hotels, 02 for
+        local accommodation (short-term rentals), 03 for rural tourism.
+        """
+        accommodationType: String
+    ): [IneObservation!]
+
+    """
+    The net bed occupancy rate of tourist accommodation in a place, in percent, by type. The latest year is
+    2025.
+    """
+    ineBedOccupancy(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+        """
+        The type: T for all, 01 for hotels and similar, 0101 for hotels, 010115 for five-star hotels, 02 for
+        local accommodation (short-term rentals), 03 for rural tourism.
+        """
+        occupancyAccommodationType: String
+    ): [IneObservation!]
+
+    """
+    The turnover of the enterprises based in a place, in euros, down to the subregion, by economic activity.
+    The latest year is 2024.
+    """
+    ineTurnover(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, down to the subregion, such as PT for Portugal, 11 for Norte or 11A for the Porto
+        metropolitan area. A place's name, such as Porto, works as well as its code.
+        """
+        place: String
+        """
+        The economic activity: TOT for all, a CAE Rev. 3 section letter such as I, a division such as 56, or a
+        subclass such as 75000 for veterinary activities (pet clinics). A name, such as veterinary activities
+        or pet care, works as well as a code.
+        """
+        turnoverActivity: String
+    ): [IneObservation!]
+
+    "The companies and other legal persons formed in a place in a month, by economic activity."
+    ineNewCompanies(
+        "The month, written as year and month, such as 2026-09. Leave it out for the latest month."
+        month: String
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+        """
+        The economic activity: TOT for all, a CAE Rev. 3 section letter such as I for accommodation and food,
+        or a two-digit division such as 56 for restaurants or 75 for veterinary activities.
+        """
+        formationActivity: String
+    ): [IneObservation!]
+
+    "The companies and other legal persons dissolved in a place in a month, by economic activity."
+    ineDissolvedCompanies(
+        "The month, written as year and month, such as 2026-09. Leave it out for the latest month."
+        month: String
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+        """
+        The economic activity: TOT for all, a CAE Rev. 3 section letter such as I for accommodation and food,
+        or a two-digit division such as 56 for restaurants or 75 for veterinary activities.
+        """
+        dissolutionActivity: String
+    ): [IneObservation!]
+
+    """
+    The exports of goods from Portugal in euros, by country of destination and product. Leave place out to get
+    every country: the rows mix countries with totals such as MUNDO (World), and the countries are the rows
+    whose place code has two letters.
+    """
+    ineExports(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The country the goods go to, as a two-letter code, such as ES for Spain or US for the United States,
+        or MUNDO for the world. Portugal is the country they come from. Leave it out for every country and
+        total.
+        """
+        place: String
+        """
+        The product as a Combined Nomenclature code without dots: T for all goods, a chapter such as 23, or a
+        code such as 230910 for dog or cat food put up for retail sale. A name, such as dog or cat food or pet
+        care, works as well as a code.
+        """
+        exportedProduct: String
+    ): [IneObservation!]
+
+    """
+    The imports of goods by the businesses of a region of Portugal, in euros, down to the subregion. The
+    latest year is 2025.
+    """
+    ineRegionalImports(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, down to the subregion, such as PT for Portugal, 11 for Norte or 11A for the Porto
+        metropolitan area. A place's name, such as Porto, works as well as its code.
+        """
+        place: String
+    ): [IneObservation!]
+
+    """
+    The exports of goods by the businesses of a region of Portugal, in euros, down to the subregion. The
+    latest year is 2025.
+    """
+    ineRegionalExports(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, down to the subregion, such as PT for Portugal, 11 for Norte or 11A for the Porto
+        metropolitan area. A place's name, such as Porto, works as well as its code.
+        """
+        place: String
+    ): [IneObservation!]
+
+    """
+    The crime rate of a place: crimes registered by the police for every 1,000 residents, by category of
+    crime. The latest year is 2025.
+    """
+    ineCrimeRate(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+        """
+        The category of crime, with codes of its own: T for all, 1 for assault, 2 for theft in public places,
+        3 for car theft, 4 for drunk driving, 5 for driving without a licence, 6 for crimes against property.
+        """
+        rateCrimeCategory: String
+    ): [IneObservation!]
+
+    "The crimes of murder (voluntary homicide) registered by the police in Portugal in a year."
+    ineHomicides(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place: PT for Portugal, the only place of this indicator. A place's name, such as Porto, works as
+        well as its code.
+        """
+        place: String
+    ): [IneObservation!]
+
+    "The medical doctors for every 1,000 residents of a place. The latest year is 2025."
+    ineDoctorsPerThousand(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+    ): [IneObservation!]
+
+    "The nurses working in a place, by sex. The latest year is 2025."
+    ineNurses(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+        "The sex: T for both, 1 for men, 2 for women."
+        nurseSex: String
+    ): [IneObservation!]
+
+    "The hospitals in a place, by type. The latest year is 2024."
+    ineHospitals(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+        "The type of hospital: T for all, 1 for general hospitals, 2 for specialised hospitals."
+        hospitalType: String
+    ): [IneObservation!]
+
+    "The beds of the hospitals in a place, by type of hospital. The latest year is 2024."
+    ineHospitalBeds(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+        "The type of hospital: T for all, 1 for general hospitals, 2 for specialised hospitals."
+        bedHospitalType: String
+    ): [IneObservation!]
+
+    "The inpatient admissions to the hospitals of a place in a year. The latest year is 2024."
+    ineHospitalAdmissions(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+    ): [IneObservation!]
+
+    """
+    The pharmacies and mobile medicine posts for every 1,000 residents of a place. The latest year is 2025.
+    """
+    inePharmaciesPerThousand(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+    ): [IneObservation!]
+
+    """
+    The students enrolled in schools below higher education in a place, by level and by public or private
+    school. Its periods are school years, which the year argument cannot select: leave year out for the
+    latest, 2024/2025, or set allPeriods.
+    """
+    ineSchoolStudents(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+        """
+        The level: T for all, 1 for pre-school, 2 for grades 1 to 4, 3 for grades 5 and 6, 4 for grades 7 to
+        9, 5 for upper secondary, 6 for post-secondary.
+        """
+        schoolLevel: String
+        "The kind of institution: T for all, 1 for public, 2 for private."
+        schoolSector: String
+    ): [IneObservation!]
+
+    """
+    The students enrolled in higher education (universities and polytechnics) in a place, by public or private
+    institution. Its periods are school years, which the year argument cannot select: leave year out for the
+    latest, 2025/2026, or set allPeriods.
+    """
+    ineHigherEducationStudents(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+        "The kind of institution: T for all, 1 for public, 2 for private."
+        universitySector: String
+    ): [IneObservation!]
+
+    """
+    The share of residents aged 25 to 64 who completed higher education, in Portugal and its regions, in
+    percent, by sex and age group. The latest year is 2025.
+    """
+    ineHigherEducationRate(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, down to the region, such as PT for Portugal, 1 for the mainland or 11 for Norte. A place's
+        name, such as Porto, works as well as its code.
+        """
+        place: String
+        "The sex: T for both, 1 for men, 2 for women."
+        graduateSex: String
+        "The age group: T for 25 to 64, 1 for 25 to 34, 2 for 35 to 64."
+        graduateAge: String
+    ): [IneObservation!]
+
+    """
+    The urban waste collected in a place in a year, in tonnes, by kind of material collected separately. The
+    latest year is 2024.
+    """
+    ineUrbanWaste(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+        """
+        The material: T for all waste, 1 for paper and cardboard, 2 for plastic, 4 for glass, 11 for
+        biodegradable waste, 13 for textiles.
+        """
+        wasteMaterial: String
+    ): [IneObservation!]
+
+    "The urban waste collected per inhabitant of a place, in kilograms a year. The latest year is 2024."
+    ineUrbanWastePerPerson(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+    ): [IneObservation!]
+
+    """
+    The electricity consumed per inhabitant of a place, in kilowatt hours a year. The latest year is 2024.
+    """
+    ineElectricityPerPerson(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+    ): [IneObservation!]
+
+    """
+    The natural gas that households consume in a place, in normal cubic metres a year for every 1,000
+    inhabitants. The latest year is 2024.
+    """
+    ineHouseholdGas(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+    ): [IneObservation!]
+
+    """
+    The electricity produced in Portugal from renewable sources, in gigawatt hours, by source. The latest year
+    is 2024.
+    """
+    ineRenewableElectricity(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place: PT for Portugal, the only place of this indicator. A place's name, such as Porto, works as
+        well as its code.
+        """
+        place: String
+        """
+        The source: T for all, 1 for hydro, 2 for wind, 3 for thermal (biomass), 4 for geothermal, 5 for solar
+        photovoltaic.
+        """
+        renewableSource: String
+    ): [IneObservation!]
+
+    "The rural fires (wildfires) in a place in a year, by cause. The latest year is 2025."
+    ineRuralFires(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+        """
+        The cause: T for all, 1 for negligence, 2 for arson, 3 for natural causes, 4 for re-ignition, 5 for
+        undetermined.
+        """
+        fireCause: String
+    ): [IneObservation!]
+
+    """
+    The milk produced in Portugal and its regions, in thousands of litres, by type of milk. The latest year is
+    2025.
+    """
+    ineMilkProduction(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, down to the region, such as PT for Portugal, 1 for the mainland or 11 for Norte. A place's
+        name, such as Porto, works as well as its code.
+        """
+        place: String
+        "The milk: T for all, 1 for cow's milk, 2 for sheep's milk, 3 for goat's milk."
+        milkType: String
+    ): [IneObservation!]
+
+    """
+    The meat that people in Portugal eat, in kilograms per person a year, by type of meat. The latest year is
+    2025.
+    """
+    ineMeatConsumption(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place: PT for Portugal, the only place of this indicator. A place's name, such as Porto, works as
+        well as its code.
+        """
+        place: String
+        """
+        The meat: 41 for all meat and offal, 411 for beef, 412 for pork, 413 for lamb and goat, 415 for
+        poultry.
+        """
+        meatType: String
+    ): [IneObservation!]
+
+    "The wine that producers declared in a place, in hectolitres, by quality. The latest year is 2025."
+    ineWineProduction(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+        """
+        The quality: T for all, 1 for fortified wine with a designation of origin, such as Port, 2 for other
+        wine with a designation of origin (DOP), 3 for wine with a geographical indication (IGP), 5 for wine
+        without certification.
+        """
+        wineQuality: String
+    ): [IneObservation!]
+
+    """
+    The fish and seafood landed in the ports of Portugal, in tonnes, by port and species. The latest year is
+    2025.
+    """
+    ineFishCatch(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The port, with codes of its own: PT for Portugal, N03 for Matosinhos, N02 for Póvoa de Varzim, O03 for
+        Peniche, L02 for Lisboa, G03 for Olhão. A place's name, such as Porto, works as well as its code.
+        """
+        place: String
+        """
+        The species: T for all, B for sea fish, B35 for sardine, B20 for horse mackerel, C for crustaceans, D
+        for molluscs, D207 for octopus.
+        """
+        species: String
+    ): [IneObservation!]
+
+    """
+    The share of residents at risk of poverty or social exclusion, in Portugal and its regions, in percent, by
+    the European Union's 2030 definition. The latest year is 2025.
+    """
+    inePovertyRate(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place: PT for Portugal, or a region such as 11 for Norte, 1A for Grande Lisboa or 15 for Algarve.
+        A place's name, such as Porto, works as well as its code.
+        """
+        place: String
+    ): [IneObservation!]
+
+    """
+    The new vehicles registered by owners living in a place in a year, by type of vehicle. The latest year is
+    2025.
+    """
+    ineNewVehicles(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+        "The type: T for all, 1 for light vehicles such as cars, 2 for heavy vehicles, 3 for tractors."
+        vehicleType: String
+    ): [IneObservation!]
+
+    """
+    The passengers who boarded planes at the airports of Portugal in a month, by airport, type of flight and
+    destination.
+    """
+    ineAirportPassengers(
+        "The month, written as year and month, such as 2026-09. Leave it out for the latest month."
+        month: String
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The airport, with codes of its own: T for all airports, LPPR for Porto, LPPT for Lisboa, LPFR for
+        Faro, LPMA for Madeira. A place's name, such as Porto, works as well as its code.
+        """
+        place: String
+        "The flight: T for all, 1 for scheduled, 2 for non-scheduled."
+        flightType: String
+        """
+        The route: T for all, 1 for domestic, 2 for flights between the mainland and the islands, 3 for
+        international.
+        """
+        flightDestination: String
+    ): [IneObservation!]
+
+    "The passengers carried by the railways of Portugal in a month, in thousands, by type of service."
+    ineRailPassengers(
+        "The month, written as year and month, such as 2026-09. Leave it out for the latest month."
+        month: String
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place: PT for Portugal, the only place of this indicator. A place's name, such as Porto, works as
+        well as its code.
+        """
+        place: String
+        "The service: T for all, 1 for suburban, 2 for national, 3 for international."
+        railService: String
+    ): [IneObservation!]
+
+    "The fixed broadband Internet accesses in a place, by segment. The latest year is 2025."
+    ineBroadbandAccesses(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+        "The segment: T for all, 01 for homes, 02 for businesses and other non-residential users."
+        broadbandSegment: String
+    ): [IneObservation!]
+
+    "The visitors of the museums of Portugal in a year, by kind of museum. The latest year is 2025."
+    ineMuseumVisitors(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place: PT for Portugal, the only place of this indicator. A place's name, such as Porto, works as
+        well as its code.
+        """
+        place: String
+        """
+        The kind: T for all, 1.1 for art, 1.2 for archaeology, 1.3 for natural history, 1.7 for history
+        museums.
+        """
+        museumType: String
+    ): [IneObservation!]
+
+    "The area of a place in square kilometres, down to the parish."
+    ineArea(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, down to the parish, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the
+        codes. A place's name, such as Porto, works as well as its code.
+        """
+        place: String
+    ): [IneObservation!]
+
+    "The firefighters of the fire brigades of a place. The latest year is 2024."
+    ineFirefighters(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+    ): [IneObservation!]
+
+    "The cash machines (Multibanco ATMs) for every 10,000 residents of a place. The latest year is 2025."
+    ineCashMachines(
+        """
+        The year of the values. Leave it out for the latest year. For several years, make one request for each
+        year, or set allPeriods.
+        """
+        year: Int
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place, such as PT for Portugal or 11A1312 for Porto. inePlaces gives the codes. A place's name,
+        such as Porto, works as well as its code.
+        """
+        place: String
+    ): [IneObservation!]
+
+    """
+    The consumer confidence indicator of Portugal in a month: the balance of positive minus negative answers
+    to INE's consumer survey.
+    """
+    ineConsumerConfidence(
+        "The month, written as year and month, such as 2026-09. Leave it out for the latest month."
+        month: String
+        """
+        True for every period INE has, which can be a long list. The answer has one observation for each
+        period, so select period to know which period each value is for.
+        """
+        allPeriods: Boolean = false
+        """
+        The place: PT for Portugal, the only place of this indicator. A place's name, such as Porto, works as
+        well as its code.
+        """
+        place: String
+    ): [IneObservation!]
+
+    """
+    The codes that INE gives to the places of Portugal whose name contains a text, such as 11A1312 for the
+    municipality of Porto, 11A for the Porto metropolitan area, 11 for the Norte region and PT for Portugal.
+    The INE fields take these codes as their place, and ineImports and ineExports take countries.
+    """
+    inePlaces(
+        "A name or a part of one, such as Porto. Accents and case do not matter."
+        name: String!
+    ): [IneCode!]
+}
+
+"One value of an INE indicator, for one period, one place and one category of each other dimension."
+type IneObservation {
+    "The period of the value, such as 2023 for a year or September 2026 for a month."
+    period: String!
+    "INE's code of the place, such as PT for Portugal or 11A1312 for the municipality of Porto."
+    placeCode: String
+    "The name of the place, such as Porto."
+    place: String
+    "INE's code of the first category after the place, such as T for the total."
+    categoryCode: String
+    "The name of the first category after the place, such as Veterinary activities."
+    category: String
+    "Every category after the place, in the order of INE's dimensions."
+    categories: [IneCategory!]!
+    "The value as a number, or null when INE keeps it confidential or does not have one."
+    value: Float
+    "The value as INE writes it, with spaces between the thousands, such as 12 345."
+    valueText: String
+    "INE's note on the value, such as the reason it is confidential."
+    note: String
+}
+
+"A category of one dimension of an INE indicator, such as a sex, an age group or an economic activity."
+type IneCategory {
+    "The number of the dimension, counted from 3, because dimension 1 is the period and dimension 2 the place."
+    dimension: Int!
+    "INE's code of the category, such as 75000 for veterinary activities."
+    code: String
+    "The name of the category."
+    label: String
+}
+
+"A place of Portugal with the code that INE gives it."
+type IneCode {
+    "INE's code of the place, such as 11A1312 for the municipality of Porto."
+    code: String!
+    "The name of the place, such as Porto."
+    name: String!
+    "The level of the place: 1 for Portugal, then regions, subregions, and municipalities at the highest level."
+    level: String
+}

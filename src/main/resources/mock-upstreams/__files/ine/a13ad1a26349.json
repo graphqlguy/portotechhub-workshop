@@ -1,0 +1,21 @@
+[ {
+  "IndicadorCod" : "0013371",
+  "IndicadorDsg" : "Firemen (No.) by Geographic localization (NUTS - 2024); Annual - Statistics Portugal, Survey entities holding fire brigades",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013371&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:24:12.578Z",
+  "DataUltimoAtualizacao" : "2025-12-12",
+  "UltimoPref" : "2024",
+  "Dados" : {
+    "2024" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "ind_string" : "32 338",
+      "valor" : "32338"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

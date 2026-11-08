@@ -1,0 +1,21 @@
+[ {
+  "IndicadorCod" : "0012909",
+  "IndicadorDsg" : "Ageing ratio (No.) by Place of residence (NUTS - 2024); Annual - Statistics Portugal, Annual estimates of resident population",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0012909&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:21.122Z",
+  "DataUltimoAtualizacao" : "2026-06-22",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2025" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "ind_string" : "188,8",
+      "valor" : "188.8"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

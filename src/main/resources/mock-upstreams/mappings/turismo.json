@@ -1,0 +1,7038 @@
+{
+ "mappings": [
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_AL/MapServer/6/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "Concelho = 'Porto'"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/526749e41ae8.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_PatrimonioMundialUNESCO/MapServer/38/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao,Website"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/ceef50da2171.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_PatrimonioMundialUNESCO/MapServer/38/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/b1da36e647dd.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_OutrasRotasWalking/MapServer/3/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominaca,ExtTotalRo,Walking,Cycling,Website"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominaca"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/2890aa6e1fcd.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_OutrasRotasWalking/MapServer/3/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/b0cc242b7546.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_OutrasRotasCycling/MapServer/8/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominaca,ExtTotalRo,Walking,Cycling,Website"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominaca"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/62cc383c67df.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_OutrasRotasCycling/MapServer/8/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/fdd02a5f78eb.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_GrandesRotasWalking/MapServer/1/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominaca,ExtTotalRo,Walking,Cycling,Website"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominaca"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/9a174e4b42e6.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_GrandesRotasWalking/MapServer/1/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/2d219400ee2a.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_GrandesRotasCycling/MapServer/5/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominaca,ExtTotalRo,Walking,Cycling,Website"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominaca"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/bfcd7e9647fa.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_GrandesRotasCycling/MapServer/5/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/b52a9858eef7.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_Eurovelo/MapServer/6/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominaca,ExtTotalRo,Walking,Cycling,Website"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominaca"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/dfb24597c15e.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_Eurovelo/MapServer/6/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/e9c88a6ff481.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_EcopistasWalking/MapServer/2/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominaca,ExtTotalRo,Walking,Cycling,Website"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominaca"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/a3d30e595ed5.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_EcopistasWalking/MapServer/2/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/1f465c220328.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_EcopistasCycling/MapServer/7/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominaca,ExtTotalRo,Walking,Cycling,Website"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominaca"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/09d105ae094c.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_EcopistasCycling/MapServer/7/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/5d2bf63107a0.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_CaminhosSantiago/MapServer/44/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominaca,ExtTotalRo,Etapas,Website"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominaca"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/b9847a0cae2c.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_CaminhosSantiago/MapServer/44/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/da177ed84f1d.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_CaminhosFatima/MapServer/43/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominaca,ExtTotalRo,Etapas,Website"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominaca"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/22eef5a27033.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_CaminhosFatima/MapServer/43/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/4c588199ad37.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_CentrosBTT/MapServer/9/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "DESIGNACAO,Freguesia,CONCELHO,Distrito,LATITUDE,LONGITUDE"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "DESIGNACAO"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/fbe6b9625398.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_CentrosBTT/MapServer/9/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/c7a95890fea3.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_Termas/MapServer/27/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao,EntExplora,IndicTerapeu,ProgrBemEstar,Endereco,CodigoPostal,LocalidadeCP,Concelho,Distrito,Website"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/5001e3bd5ca6.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_Termas/MapServer/27/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/938562ef3a69.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_EscolasTdP/MapServer/12/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao,CapacidadeEscola,IdentCET,IdentCursosFormDualOTJ,HotelAplicacao,CapacAlojamentoHotel,RestauranteAplicacao,CapacAuditorio,Endereco,CodigoPostal,Concelho,Distrito"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/6b4ebb56057f.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_EscolasTdP/MapServer/12/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/10673293dd5c.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_EstacoesNauticas_POL/MapServer/27/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao,EntidadeCoordenadora,SedeSocial,ConcelhosAbrangidos,Distrito,NUTSIII"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/a3fbe77798fb.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_EstacoesNauticas_POL/MapServer/27/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/4ccd56101bae.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_EstacoesNauticas/MapServer/24/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao,EntidadeCoordenadora,SedeSocial,ConcelhosAbrangidos,Distrito,NUTSIII"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/4dc6b5763cd3.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_EstacoesNauticas/MapServer/24/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/1b32d27a11f2.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_TerminaisCruzeiros/MapServer/6/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao,EntidadeGestora,Porto,Cais,Fundos,Localidade,Concelho,Distrito,Website"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/0b97bb3da959.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_TerminaisCruzeiros/MapServer/6/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/2a709734c655.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_MarinasPortosDocas/MapServer/1/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao,Tipologia,Tipo,NrAmarracoes,CaladoMaxAmarr,CompMaxAmarr,BandeiraAzul,EntGestora,LocalidadeCP,Concelho,Distrito,Website"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/701231a8305e.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_MarinasPortosDocas/MapServer/1/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/e0e2985316d3.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_PortosMarinasBA/MapServer/31/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominação,Latitude,Longitude"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominação"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/13b4791b42f1.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_PortosMarinasBA/MapServer/31/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/d05e07e67732.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_EmbarcacoesBA/MapServer/0/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominação,Latitude,Longitude"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominação"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/94a8308968bb.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_EmbarcacoesBA/MapServer/0/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/1e80e6e4c1db.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_PraiasBA/MapServer/30/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominação,Tipo,DICO,Latitude,Longitude"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominação"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/3435577ae069.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_PraiasBA/MapServer/30/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/c662cac540b5.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_SpotsSurf/MapServer/3/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao,Campeonatos,Localidade,Freguesia,Concelho,Distrito,Website"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/f03a8c9dcaa5.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_SpotsSurf/MapServer/3/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/e94e23f2f40d.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_ReservaSurf/MapServer/5/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao,Praias,Ondas,AnoClassificacao,Freguesia,Concelho,Website"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/386d59f2358e.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_ReservaSurf/MapServer/5/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/6e978954df5d.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_CARNautica/MapServer/2/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao,EntGestora,Modalidades,Capacidade,AnoInauguracao,Endereco,LocalidadeCP,Concelho,Distrito,Website"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/af40dada0808.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_CARNautica/MapServer/2/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/a8fa16224d14.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_CARSurf/MapServer/4/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao,EntGestora,Modalidades,Capacidade,AnoInauguracao,Endereco,LocalidadeCP,Concelho,Distrito,Website"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/6574c8e93dcb.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_CARSurf/MapServer/4/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/b4b6cc874d8f.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_LegadoIslamico/MapServer/42/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao,Endereco,CodigoPostal,LocalidadeCP,Freguesia,Concelho,Distrito,Website"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/5215d2137b12.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_LegadoIslamico/MapServer/42/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/6e97aedf22bb.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_HerancaJudaica/MapServer/40/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao,Endereco,CodigoPostal,LocalidadeCP,Freguesia,Concelho,Distrito,Website"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/6e50d6a443d7.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_HerancaJudaica/MapServer/40/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/03a6e03195cb.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_AltaresMarianos/MapServer/39/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao,Endereco,CodigoPostal,LocalidadeCP,Freguesia,Concelho,Distrito,Website"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/5d5b06dfc92e.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_AltaresMarianos/MapServer/39/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/b749ac93a8e1.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_AldeiasXisto/MapServer/4/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao,EntidadeGestora,Link,Freguesia,Concelho,Distrito"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/9d69864cd2f4.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_AldeiasXisto/MapServer/4/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/38b9fe009726.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_AldeiasVinhateiras/MapServer/10/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao,EntidadeGestora,Link,Freguesia,Concelho,Distrito"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/89a3f0f6764f.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_AldeiasVinhateiras/MapServer/10/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/5b5485d37686.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_AldeiasMontanha/MapServer/7/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao,EntidadeGestora,Link,Freguesia,Concelho,Distrito"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/37e0b6d78eab.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_AldeiasMontanha/MapServer/7/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/10e192e028c0.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_AldeiasHistoricas/MapServer/1/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao,EntidadeGestora,Link,Freguesia,Concelho,Distrito"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/993854299702.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_AldeiasHistoricas/MapServer/1/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/35085b282c76.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_Golfe/MapServer/13/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao,NrBuracos,ParCampo,AnoInauguracao,ClubHouse,OutrasCompon,AreaCampoGolfe,Endereco,CodigoPostal,Concelho,Distrito,Website"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/e39a206e0541.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_Golfe/MapServer/13/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/342176a51601.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_Bingos/MapServer/11/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao,EntidadeExploradora,Lotacao,Bares,Restaurantes,Endereco,CodigoPostal,LocalidadeCP,Concelho,Distrito,Website"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/d693e60393e6.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_Bingos/MapServer/11/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/237a5076e819.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_Casinos/MapServer/10/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao,EntidadeExploradora,Lotacao,JogosBancados,Maquinas,SalaEspetaculos,Endereco,CodigoPostal,LocalidadeCP,Concelho,Distrito,Website"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/e5762b85c162.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_Casinos/MapServer/10/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/22ff087cb0ae.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_AAT/MapServer/8/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "NrRNAAT,Denominacao,Marcas,Tipologia,IdentActArLivreNaturAv,IdentActMarTuristicas,IdentActCulturais,Endereco,CodigoPostal,Concelho,Distrito,SeloCleanSafe"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/2e7bdca7145c.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_AAT/MapServer/8/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/ca1f3cdc1d92.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_AVT/MapServer/9/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "NrRNAVT,Denominacao,Marca,Website,Endereco,CodigoPostal,LocalidadeCP,Freguesia,Concelho,Distrito,SeloCleanSafe"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/99765e3ab467.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_AVT/MapServer/9/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/87ef2c88b550.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_PIN/MapServer/1/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao,NrPIN,AreaIntervencao,ET,NrTotalUnidAloj,NrTotalCamasTuristicas,EquipamentosRLAT,DataReconhecimentoPIN,Localidade,Concelho,Distrito"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/54db347e25d7.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_PIN/MapServer/1/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/225cec05dda8.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_PINAcompanhamento/MapServer/0/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao,NrPIN,AreaIntervencao,ET,NrTotalUnidAloj,NrTotalCamasTuristicas,EquipamentosRLAT,Investimento,PostosTrabalhoDiretos,DataReconhecimentoPIN,Concelho,Distrito"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/5ddd75aff479.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_PINAcompanhamento/MapServer/0/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/419173a204a4.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_CT_PIP_PF/MapServer/5/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao,PPFIntCT,CampoGolfe,SPA,OutrosEquip,CuboPPFCamas,CuboPPFAloj,CuboEtExistenteCamas,Localidade,Concelho,Distrito"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/0933c11d5e9c.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_CT_PIP_PF/MapServer/5/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/555ff2fcf3a6.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_CT_PF/MapServer/4/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao,PPFIntCT,CampoGolfe,SPA,OutrosEquip,CuboPPFCamas,CuboPPFAloj,CuboEtExistenteCamas,Localidade,Concelho,Distrito"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/3d1dff3406f3.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_CT_PF/MapServer/4/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/e8985ef3f88a.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_CTExistentes/MapServer/3/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "NrRNET,Denominacao,ETIntegradosCT,CampoGolfe,SPA,OutrosEquip,ClassificacaoTdP,CuboEtExistenteCamas,CuboEtExistenteAloj,Endereco,Concelho,Distrito"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/9b5f3d88e943.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_CTExistentes/MapServer/3/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/4fbf1fce52a2.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_ET_PIP_PF/MapServer/2/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao,TipologiaET,Categoria,NrUnidAloj,NrCamasFixas,NovasUnidAloj,NovasCamas,DataDespachoSuperior,Localidade,Freguesia,Concelho,Distrito"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/8a4c237c8533.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_ET_PIP_PF/MapServer/2/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/5d8309af652b.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_ET_PF/MapServer/1/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao,TipologiaET,Categoria,NrUnidAloj,NrCamasFixas,NovasUnidAloj,NovasCamas,DataDespachoSuperior,Localidade,Freguesia,Concelho,Distrito"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/530357730b61.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_ET_PF/MapServer/1/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/90d4dffeb337.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_ETExistentes/MapServer/0/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "NrRNET,Denominacao,TipologiaET,Categoria,NrUnidAloj,NrCamasFixas,DataTituloValAbert,Endereco,CodigoPostal,Concelho,Distrito,SeloCleanSafe"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominacao"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/e84ff0bd06b1.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_ETExistentes/MapServer/0/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/5bbb0b7a3c6f.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_AL/MapServer/6/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "NrRNAL,Denominacao,Modalidade,NrUtentes,Endereco,CodigoPostal,Freguesia,Concelho,Distrito,DataRegisto,DataAberturaPublico,SeloCleanSafe"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "NrRNAL"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/5e3d3e708228.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_AL/MapServer/6/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/bd5cbcc16ac2.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_PraiasBA/MapServer/30/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "DICO = 1312"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominação,Tipo,DICO,Latitude,Longitude"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "50"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominação"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/e0e06f0138f6.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_PraiasBA/MapServer/30/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "DICO = 1312"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/ef62bd5422d3.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_PraiasBA/MapServer/30/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "DICO = 1312"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominação,Tipo,DICO,Latitude,Longitude"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "20"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominação"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/80bdce444ba9.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "request": {
+    "urlPath": "/turismo/TDP/OpenData_PraiasBA/MapServer/30/query",
+    "method": "GET",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "DICO = 1312"
+       }
+      ]
+     },
+     "outFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominação,Tipo,DICO,Latitude,Longitude"
+       }
+      ]
+     },
+     "returnGeometry": {
+      "hasExactly": [
+       {
+        "equalTo": "false"
+       }
+      ]
+     },
+     "resultRecordCount": {
+      "hasExactly": [
+       {
+        "equalTo": "200"
+       }
+      ]
+     },
+     "f": {
+      "hasExactly": [
+       {
+        "equalTo": "json"
+       }
+      ]
+     },
+     "orderByFields": {
+      "hasExactly": [
+       {
+        "equalTo": "Denominação"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/6507a3db9052.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_AL/MapServer/6/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "Concelho = 'Porto'"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/526749e41ae8.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_PatrimonioMundialUNESCO/MapServer/38/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/ceef50da2171.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_PatrimonioMundialUNESCO/MapServer/38/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/b1da36e647dd.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_OutrasRotasWalking/MapServer/3/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/2890aa6e1fcd.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_OutrasRotasWalking/MapServer/3/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/b0cc242b7546.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_OutrasRotasCycling/MapServer/8/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/62cc383c67df.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_OutrasRotasCycling/MapServer/8/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/fdd02a5f78eb.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_GrandesRotasWalking/MapServer/1/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/9a174e4b42e6.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_GrandesRotasWalking/MapServer/1/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/2d219400ee2a.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_GrandesRotasCycling/MapServer/5/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/bfcd7e9647fa.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_GrandesRotasCycling/MapServer/5/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/b52a9858eef7.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_Eurovelo/MapServer/6/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/dfb24597c15e.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_Eurovelo/MapServer/6/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/e9c88a6ff481.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_EcopistasWalking/MapServer/2/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/a3d30e595ed5.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_EcopistasWalking/MapServer/2/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/1f465c220328.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_EcopistasCycling/MapServer/7/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/09d105ae094c.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_EcopistasCycling/MapServer/7/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/5d2bf63107a0.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_CaminhosSantiago/MapServer/44/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/b9847a0cae2c.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_CaminhosSantiago/MapServer/44/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/da177ed84f1d.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_CaminhosFatima/MapServer/43/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/22eef5a27033.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_CaminhosFatima/MapServer/43/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/4c588199ad37.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_CentrosBTT/MapServer/9/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/fbe6b9625398.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_CentrosBTT/MapServer/9/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/c7a95890fea3.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_Termas/MapServer/27/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/5001e3bd5ca6.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_Termas/MapServer/27/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/938562ef3a69.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_EscolasTdP/MapServer/12/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/6b4ebb56057f.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_EscolasTdP/MapServer/12/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/10673293dd5c.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_EstacoesNauticas_POL/MapServer/27/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/a3fbe77798fb.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_EstacoesNauticas_POL/MapServer/27/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/4ccd56101bae.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_EstacoesNauticas/MapServer/24/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/4dc6b5763cd3.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_EstacoesNauticas/MapServer/24/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/1b32d27a11f2.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_TerminaisCruzeiros/MapServer/6/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/0b97bb3da959.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_TerminaisCruzeiros/MapServer/6/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/2a709734c655.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_MarinasPortosDocas/MapServer/1/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/701231a8305e.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_MarinasPortosDocas/MapServer/1/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/e0e2985316d3.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_PortosMarinasBA/MapServer/31/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/13b4791b42f1.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_PortosMarinasBA/MapServer/31/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/d05e07e67732.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_EmbarcacoesBA/MapServer/0/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/94a8308968bb.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_EmbarcacoesBA/MapServer/0/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/1e80e6e4c1db.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_PraiasBA/MapServer/30/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/3435577ae069.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_PraiasBA/MapServer/30/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/c662cac540b5.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_SpotsSurf/MapServer/3/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/f03a8c9dcaa5.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_SpotsSurf/MapServer/3/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/e94e23f2f40d.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_ReservaSurf/MapServer/5/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/386d59f2358e.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_ReservaSurf/MapServer/5/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/6e978954df5d.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_CARNautica/MapServer/2/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/af40dada0808.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_CARNautica/MapServer/2/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/a8fa16224d14.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_CARSurf/MapServer/4/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/6574c8e93dcb.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_CARSurf/MapServer/4/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/b4b6cc874d8f.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_LegadoIslamico/MapServer/42/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/5215d2137b12.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_LegadoIslamico/MapServer/42/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/6e97aedf22bb.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_HerancaJudaica/MapServer/40/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/6e50d6a443d7.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_HerancaJudaica/MapServer/40/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/03a6e03195cb.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_AltaresMarianos/MapServer/39/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/5d5b06dfc92e.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_AltaresMarianos/MapServer/39/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/b749ac93a8e1.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_AldeiasXisto/MapServer/4/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/9d69864cd2f4.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_AldeiasXisto/MapServer/4/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/38b9fe009726.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_AldeiasVinhateiras/MapServer/10/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/89a3f0f6764f.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_AldeiasVinhateiras/MapServer/10/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/5b5485d37686.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_AldeiasMontanha/MapServer/7/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/37e0b6d78eab.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_AldeiasMontanha/MapServer/7/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/10e192e028c0.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_AldeiasHistoricas/MapServer/1/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/993854299702.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_AldeiasHistoricas/MapServer/1/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/35085b282c76.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_Golfe/MapServer/13/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/e39a206e0541.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_Golfe/MapServer/13/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/342176a51601.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_Bingos/MapServer/11/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/d693e60393e6.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_Bingos/MapServer/11/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/237a5076e819.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_Casinos/MapServer/10/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/e5762b85c162.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_Casinos/MapServer/10/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/22ff087cb0ae.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_AAT/MapServer/8/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/2e7bdca7145c.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_AAT/MapServer/8/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/ca1f3cdc1d92.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_AVT/MapServer/9/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/99765e3ab467.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_AVT/MapServer/9/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/87ef2c88b550.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_PIN/MapServer/1/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/54db347e25d7.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_PIN/MapServer/1/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/225cec05dda8.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_PINAcompanhamento/MapServer/0/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/5ddd75aff479.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_PINAcompanhamento/MapServer/0/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/419173a204a4.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_CT_PIP_PF/MapServer/5/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/0933c11d5e9c.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_CT_PIP_PF/MapServer/5/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/555ff2fcf3a6.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_CT_PF/MapServer/4/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/3d1dff3406f3.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_CT_PF/MapServer/4/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/e8985ef3f88a.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_CTExistentes/MapServer/3/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/9b5f3d88e943.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_CTExistentes/MapServer/3/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/4fbf1fce52a2.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_ET_PIP_PF/MapServer/2/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/8a4c237c8533.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_ET_PIP_PF/MapServer/2/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/5d8309af652b.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_ET_PF/MapServer/1/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/530357730b61.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_ET_PF/MapServer/1/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/90d4dffeb337.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_ETExistentes/MapServer/0/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/e84ff0bd06b1.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_ETExistentes/MapServer/0/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/5bbb0b7a3c6f.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_AL/MapServer/6/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/5e3d3e708228.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_AL/MapServer/6/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "1=1"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/bd5cbcc16ac2.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_PraiasBA/MapServer/30/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "DICO = 1312"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "absent": true
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/e0e06f0138f6.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  },
+  {
+   "priority": 10,
+   "request": {
+    "method": "GET",
+    "urlPath": "/turismo/TDP/OpenData_PraiasBA/MapServer/30/query",
+    "queryParameters": {
+     "where": {
+      "hasExactly": [
+       {
+        "equalTo": "DICO = 1312"
+       }
+      ]
+     },
+     "returnCountOnly": {
+      "hasExactly": [
+       {
+        "equalTo": "true"
+       }
+      ]
+     }
+    }
+   },
+   "response": {
+    "status": 200,
+    "bodyFileName": "turismo/ef62bd5422d3.json",
+    "headers": {
+     "Content-Type": "application/json; charset=UTF-8"
+    }
+   }
+  }
+ ]
+}

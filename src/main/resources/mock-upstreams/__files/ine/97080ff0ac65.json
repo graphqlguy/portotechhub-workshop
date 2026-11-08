@@ -1,0 +1,21 @@
+[ {
+  "IndicadorCod" : "0012837",
+  "IndicadorDsg" : "Medical doctors per 1000 inhabitants (No.) by Place of residence (NUTS - 2024); Annual - Statistics Portugal, Health personnel statistics",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0012837&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:56.479Z",
+  "DataUltimoAtualizacao" : "2026-07-28",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2025" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "ind_string" : "5,7",
+      "valor" : "5.7"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

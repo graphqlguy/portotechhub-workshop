@@ -1,0 +1,21 @@
+[ {
+  "IndicadorCod" : "0011866",
+  "IndicadorDsg" : "Area (km²) of territorial units by Geographic localization (NUTS - 2024); Annual - Directorate-General of Territorial Development",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0011866&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:24:11.941Z",
+  "DataUltimoAtualizacao" : "2026-07-31",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2025" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "ind_string" : "92 225,21",
+      "valor" : "92225.21"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

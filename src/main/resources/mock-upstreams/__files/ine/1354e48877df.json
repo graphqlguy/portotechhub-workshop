@@ -1,0 +1,23 @@
+[ {
+  "IndicadorCod" : "0014647",
+  "IndicadorDsg" : "Consumer price index (Year-on-year growth rate - Base 2025 - %) by Geographic localization and Individual consumption by purpose; Monthly - Statistics Portugal, Consumer price index",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:25:43.391Z",
+  "DataUltimoAtualizacao" : "2026-10-13",
+  "UltimoPref" : "September 2026",
+  "Dados" : {
+    "September 2026" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "0945",
+      "dim_3_t" : "Veterinary and other services for pets",
+      "ind_string" : "4,08",
+      "valor" : "4.08"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

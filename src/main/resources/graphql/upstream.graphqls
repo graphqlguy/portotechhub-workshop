@@ -1,0 +1,4 @@
+# The scalars that the fields of the public services use, besides the clinic's Date.
+
+"A date and a time with its offset from UTC, such as 2026-11-05T19:50:00Z."
+scalar DateTime @specifiedBy(url: "https://scalars.graphql.org/andimarek/date-time")

@@ -1,0 +1,23 @@
+[ {
+  "IndicadorCod" : "0012862",
+  "IndicadorDsg" : "Internments (No.) in hospitals by Geographic localization (NUTS - 2024); Annual - Statistics Portugal, Hospitals survey",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0012862&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:58.928Z",
+  "DataUltimoAtualizacao" : "2026-04-02",
+  "UltimoPref" : "2024",
+  "Dados" : {
+    "2024" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "sinal_conv" : "&",
+      "sinal_conv_desc" : "Provisional value",
+      "ind_string" : "1 159 346 &",
+      "valor" : "1159346"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

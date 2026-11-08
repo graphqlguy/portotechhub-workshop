@@ -1,0 +1,562 @@
+{
+ "datasets": [
+  {
+   "field": "eurostatConsumerPriceChange",
+   "code": "prc_hicp_minr",
+   "dimensions": [
+    {
+     "name": "countries",
+     "dim": "geo",
+     "list": true
+    },
+    {
+     "name": "category",
+     "dim": "coicop18",
+     "list": false
+    },
+    {
+     "name": "month",
+     "dim": "time",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "unit": "RCH_A"
+   }
+  },
+  {
+   "field": "eurostatConsumerPriceMonthlyChange",
+   "code": "prc_hicp_minr",
+   "dimensions": [
+    {
+     "name": "countries",
+     "dim": "geo",
+     "list": true
+    },
+    {
+     "name": "category",
+     "dim": "coicop18",
+     "list": false
+    },
+    {
+     "name": "month",
+     "dim": "time",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "unit": "RCH_M"
+   }
+  },
+  {
+   "field": "eurostatConsumerPriceIndex",
+   "code": "prc_hicp_minr",
+   "dimensions": [
+    {
+     "name": "countries",
+     "dim": "geo",
+     "list": true
+    },
+    {
+     "name": "category",
+     "dim": "coicop18",
+     "list": false
+    },
+    {
+     "name": "month",
+     "dim": "time",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "unit": "I25"
+   }
+  },
+  {
+   "field": "eurostatConsumerPriceCalendarYearChange",
+   "code": "prc_hicp_ainr",
+   "dimensions": [
+    {
+     "name": "countries",
+     "dim": "geo",
+     "list": true
+    },
+    {
+     "name": "category",
+     "dim": "coicop18",
+     "list": false
+    },
+    {
+     "name": "year",
+     "dim": "time",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "unit": "RCH_A_AVG"
+   }
+  },
+  {
+   "field": "eurostatConsumerSpendingWeights",
+   "code": "prc_hicp_iw",
+   "dimensions": [
+    {
+     "name": "countries",
+     "dim": "geo",
+     "list": true
+    },
+    {
+     "name": "category",
+     "dim": "coicop18",
+     "list": false
+    },
+    {
+     "name": "year",
+     "dim": "time",
+     "list": false
+    }
+   ],
+   "fixed": {}
+  },
+  {
+   "field": "eurostatPriceLevels",
+   "code": "prc_ppp_ind",
+   "dimensions": [
+    {
+     "name": "countries",
+     "dim": "geo",
+     "list": true
+    },
+    {
+     "name": "spending",
+     "dim": "ppp_cat",
+     "list": false
+    },
+    {
+     "name": "year",
+     "dim": "time",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "na_item": "PLI_EU27_2020"
+   }
+  },
+  {
+   "field": "eurostatPopulation",
+   "code": "demo_pjan",
+   "dimensions": [
+    {
+     "name": "countries",
+     "dim": "geo",
+     "list": true
+    },
+    {
+     "name": "age",
+     "dim": "age",
+     "list": false
+    },
+    {
+     "name": "sex",
+     "dim": "sex",
+     "list": false
+    },
+    {
+     "name": "year",
+     "dim": "time",
+     "list": false
+    }
+   ],
+   "fixed": {}
+  },
+  {
+   "field": "eurostatUnemploymentMonthly",
+   "code": "une_rt_m",
+   "dimensions": [
+    {
+     "name": "countries",
+     "dim": "geo",
+     "list": true
+    },
+    {
+     "name": "age",
+     "dim": "age",
+     "list": false
+    },
+    {
+     "name": "sex",
+     "dim": "sex",
+     "list": false
+    },
+    {
+     "name": "month",
+     "dim": "time",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "unit": "PC_ACT",
+    "s_adj": "SA"
+   }
+  },
+  {
+   "field": "eurostatUnemploymentYearly",
+   "code": "une_rt_a",
+   "dimensions": [
+    {
+     "name": "countries",
+     "dim": "geo",
+     "list": true
+    },
+    {
+     "name": "age",
+     "dim": "age",
+     "list": false
+    },
+    {
+     "name": "sex",
+     "dim": "sex",
+     "list": false
+    },
+    {
+     "name": "year",
+     "dim": "time",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "unit": "PC_ACT"
+   }
+  },
+  {
+   "field": "eurostatGdp",
+   "code": "nama_10_gdp",
+   "dimensions": [
+    {
+     "name": "countries",
+     "dim": "geo",
+     "list": true
+    },
+    {
+     "name": "unit",
+     "dim": "unit",
+     "list": false
+    },
+    {
+     "name": "year",
+     "dim": "time",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "na_item": "B1GQ"
+   }
+  },
+  {
+   "field": "eurostatGdpPerPerson",
+   "code": "nama_10_pc",
+   "dimensions": [
+    {
+     "name": "countries",
+     "dim": "geo",
+     "list": true
+    },
+    {
+     "name": "unit",
+     "dim": "unit",
+     "list": false
+    },
+    {
+     "name": "year",
+     "dim": "time",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "na_item": "B1GQ"
+   }
+  },
+  {
+   "field": "eurostatNetEarnings",
+   "code": "earn_nt_net",
+   "dimensions": [
+    {
+     "name": "countries",
+     "dim": "geo",
+     "list": true
+    },
+    {
+     "name": "household",
+     "dim": "ecase",
+     "list": false
+    },
+    {
+     "name": "part",
+     "dim": "estruct",
+     "list": false
+    },
+    {
+     "name": "currency",
+     "dim": "currency",
+     "list": false
+    },
+    {
+     "name": "year",
+     "dim": "time",
+     "list": false
+    }
+   ],
+   "fixed": {}
+  },
+  {
+   "field": "eurostatMinimumWage",
+   "code": "earn_mw_cur",
+   "dimensions": [
+    {
+     "name": "countries",
+     "dim": "geo",
+     "list": true
+    },
+    {
+     "name": "currency",
+     "dim": "currency",
+     "list": false
+    },
+    {
+     "name": "halfYear",
+     "dim": "time",
+     "list": false
+    }
+   ],
+   "fixed": {}
+  },
+  {
+   "field": "eurostatHousePrices",
+   "code": "prc_hpi_q",
+   "dimensions": [
+    {
+     "name": "countries",
+     "dim": "geo",
+     "list": true
+    },
+    {
+     "name": "purchase",
+     "dim": "purchase",
+     "list": false
+    },
+    {
+     "name": "unit",
+     "dim": "unit",
+     "list": false
+    },
+    {
+     "name": "quarter",
+     "dim": "time",
+     "list": false
+    }
+   ],
+   "fixed": {}
+  },
+  {
+   "field": "eurostatTourismNights",
+   "code": "tour_occ_nim",
+   "dimensions": [
+    {
+     "name": "countries",
+     "dim": "geo",
+     "list": true
+    },
+    {
+     "name": "residence",
+     "dim": "c_resid",
+     "list": false
+    },
+    {
+     "name": "accommodation",
+     "dim": "nace_r2",
+     "list": false
+    },
+    {
+     "name": "month",
+     "dim": "time",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "unit": "NR"
+   }
+  },
+  {
+   "field": "eurostatTourismArrivals",
+   "code": "tour_occ_arm",
+   "dimensions": [
+    {
+     "name": "countries",
+     "dim": "geo",
+     "list": true
+    },
+    {
+     "name": "residence",
+     "dim": "c_resid",
+     "list": false
+    },
+    {
+     "name": "accommodation",
+     "dim": "nace_r2",
+     "list": false
+    },
+    {
+     "name": "month",
+     "dim": "time",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "unit": "NR"
+   }
+  },
+  {
+   "field": "eurostatElectricityPrices",
+   "code": "nrg_pc_204",
+   "dimensions": [
+    {
+     "name": "countries",
+     "dim": "geo",
+     "list": true
+    },
+    {
+     "name": "consumption",
+     "dim": "nrg_cons",
+     "list": false
+    },
+    {
+     "name": "taxes",
+     "dim": "tax",
+     "list": false
+    },
+    {
+     "name": "halfYear",
+     "dim": "time",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "currency": "EUR"
+   }
+  },
+  {
+   "field": "eurostatGasPrices",
+   "code": "nrg_pc_202",
+   "dimensions": [
+    {
+     "name": "countries",
+     "dim": "geo",
+     "list": true
+    },
+    {
+     "name": "consumption",
+     "dim": "nrg_cons",
+     "list": false
+    },
+    {
+     "name": "taxes",
+     "dim": "tax",
+     "list": false
+    },
+    {
+     "name": "halfYear",
+     "dim": "time",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "unit": "KWH",
+    "currency": "EUR"
+   }
+  },
+  {
+   "field": "eurostatBusinessByActivity",
+   "code": "sbs_ovw_act",
+   "dimensions": [
+    {
+     "name": "countries",
+     "dim": "geo",
+     "list": true
+    },
+    {
+     "name": "activity",
+     "dim": "nace_r2",
+     "list": false
+    },
+    {
+     "name": "indicator",
+     "dim": "indic_sbs",
+     "list": false
+    },
+    {
+     "name": "year",
+     "dim": "time",
+     "list": false
+    }
+   ],
+   "fixed": {}
+  },
+  {
+   "field": "eurostatRegionalBusiness",
+   "code": "sbs_r_nuts2021",
+   "dimensions": [
+    {
+     "name": "regions",
+     "dim": "geo",
+     "list": true
+    },
+    {
+     "name": "activity",
+     "dim": "nace_r2",
+     "list": false
+    },
+    {
+     "name": "indicator",
+     "dim": "indic_sbs",
+     "list": false
+    },
+    {
+     "name": "year",
+     "dim": "time",
+     "list": false
+    }
+   ],
+   "fixed": {}
+  },
+  {
+   "field": "eurostatIncome",
+   "code": "ilc_di03",
+   "dimensions": [
+    {
+     "name": "countries",
+     "dim": "geo",
+     "list": true
+    },
+    {
+     "name": "statistic",
+     "dim": "statinfo",
+     "list": false
+    },
+    {
+     "name": "unit",
+     "dim": "unit",
+     "list": false
+    },
+    {
+     "name": "year",
+     "dim": "time",
+     "list": false
+    }
+   ],
+   "fixed": {
+    "age": "TOTAL",
+    "sex": "T"
+   }
+  }
+ ]
+}

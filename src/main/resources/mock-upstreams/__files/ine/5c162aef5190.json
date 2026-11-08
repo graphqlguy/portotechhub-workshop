@@ -1,0 +1,23 @@
+[ {
+  "IndicadorCod" : "0011748",
+  "IndicadorDsg" : "New housing construction cost index (Base - 2021) by Production factor; Monthly - Statistics Portugal, New housing construction cost index (Base 2021)",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0011748&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:37.667Z",
+  "DataUltimoAtualizacao" : "2026-10-09",
+  "UltimoPref" : "August 2026",
+  "Dados" : {
+    "August 2026" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "134,88",
+      "valor" : "134.88"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

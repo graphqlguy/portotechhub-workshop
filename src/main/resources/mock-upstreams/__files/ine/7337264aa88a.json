@@ -1,0 +1,23 @@
+[ {
+  "IndicadorCod" : "0007519",
+  "IndicadorDsg" : "Visitors (No.) of museums by Typology; Annual - Statistics Portugal, Museums survey",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0007519&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:24:11.224Z",
+  "DataUltimoAtualizacao" : "2026-09-11",
+  "UltimoPref" : "2025",
+  "Dados" : {
+    "2025" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "17 992 819",
+      "valor" : "17992819"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

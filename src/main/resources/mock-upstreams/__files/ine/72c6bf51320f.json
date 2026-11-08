@@ -1,0 +1,21 @@
+[ {
+  "IndicadorCod" : "0012757",
+  "IndicadorDsg" : "Median value of gross reported income less personal income paid tax per taxable person (€) by Geographic localization (NUTS - 2024); Annual - Statistics Portugal, Income Statistics at local level produced by Ministry of Finance - Tax and Customs Authority",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0012757&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:23:40.182Z",
+  "DataUltimoAtualizacao" : "2026-07-24",
+  "UltimoPref" : "2024",
+  "Dados" : {
+    "2024" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "ind_string" : "12 316",
+      "valor" : "12316"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

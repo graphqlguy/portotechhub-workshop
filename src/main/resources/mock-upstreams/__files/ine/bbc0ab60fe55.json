@@ -1,0 +1,23 @@
+[ {
+  "IndicadorCod" : "0000901",
+  "IndicadorDsg" : "Passengers carried (No.) by heavy railway carrier enterprises by Type of traffic; Monthly - Statistics Portugal, Rail traffic survey",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0000901&lingua=EN",
+  "DataExtracao" : "2026-11-05T22:24:09.921Z",
+  "DataUltimoAtualizacao" : "2026-10-30",
+  "UltimoPref" : "August 2026",
+  "Dados" : {
+    "August 2026" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "T",
+      "dim_3_t" : "Total",
+      "ind_string" : "19 921",
+      "valor" : "19921"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]

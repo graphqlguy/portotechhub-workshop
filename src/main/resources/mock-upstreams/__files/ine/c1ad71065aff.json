@@ -1,0 +1,45 @@
+[ {
+  "IndicadorCod" : "0012934",
+  "IndicadorDsg" : "Establishments (No.) by Geographic localization (NUTS - 2024), Economic activity (Subclass - CAE Rev. 3) and Legal form; Annual - Statistics Portugal, Integrated business accounts system",
+  "MetaInfUrl" : "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0012934&lingua=EN",
+  "DataExtracao" : "2026-11-06T00:25:24.962Z",
+  "DataUltimoAtualizacao" : "2026-05-01",
+  "UltimoPref" : "2024",
+  "Dados" : {
+    "2022" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "96092",
+      "dim_3_t" : "Pet care services activities",
+      "dim_4" : "T",
+      "dim_4_t" : "Total",
+      "ind_string" : "784",
+      "valor" : "784"
+    } ],
+    "2023" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "96092",
+      "dim_3_t" : "Pet care services activities",
+      "dim_4" : "T",
+      "dim_4_t" : "Total",
+      "ind_string" : "936",
+      "valor" : "936"
+    } ],
+    "2024" : [ {
+      "geocod" : "PT",
+      "geodsg" : "Portugal",
+      "dim_3" : "96092",
+      "dim_3_t" : "Pet care services activities",
+      "dim_4" : "T",
+      "dim_4_t" : "Total",
+      "ind_string" : "1 123",
+      "valor" : "1123"
+    } ]
+  },
+  "Sucesso" : {
+    "Verdadeiro" : [ {
+      "Msg" : "OK"
+    } ]
+  }
+} ]
