@@ -5,7 +5,7 @@
 >
 > Each chapter has a checkpoint branch with the code as it stands at the end of that chapter, [listed below](#branches), so you can catch up or compare at any point. `main` is the original Spring Petclinic, and `git diff main starting-point` shows everything the starting point prepares. The instructions are in the [`workshop/`](workshop/) folder.
 
-A three-hour hands-on workshop at **Porto Tech Hub**, presented by **Željko Kozina**. First we turn Spring Petclinic into a GraphQL API with Spring for GraphQL. Then we put that API in front of AI agents: as MCP tools curated with GATool, as tools of a chat inside the application, and as a schema an agent explores by itself.
+A three-hour hands-on workshop at **Porto Tech Hub**, presented by **Željko Kozina**. First we turn Spring Petclinic into a GraphQL API with Spring for GraphQL. Then we put that API in front of AI agents: as MCP tools curated with GATool, as tools of a chat inside the application, and as a schema an agent explores by itself, first the clinic's and then one that adds nine Portuguese public services.
 
 Start with [the setup page](workshop/00-setup.md). Some downloads are large, so do it before the workshop.
 
@@ -21,6 +21,7 @@ Each branch holds the code as it stands at the end of one chapter, exercises inc
 | [`checkpoint-04-curated-operations`](../../tree/checkpoint-04-curated-operations) | [4. Curated operations](workshop/04-curated-operations.md) |
 | [`checkpoint-05-in-app-assistant`](../../tree/checkpoint-05-in-app-assistant) | [5. An assistant inside the application](workshop/05-an-assistant-inside-the-application.md) |
 | [`checkpoint-06-dynamic-tools`](../../tree/checkpoint-06-dynamic-tools) | [6. Dynamic tools](workshop/06-dynamic-tools.md) |
+| [`checkpoint-07-large-schema`](../../tree/checkpoint-07-large-schema) | [7. A large schema built from Portuguese open data](workshop/07-a-large-schema-built-from-portuguese-open-data.md) |
 
 ## What the starting point adds to Spring Petclinic
 
