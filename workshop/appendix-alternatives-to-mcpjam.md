@@ -40,7 +40,7 @@ Both connect to the backend at `http://localhost:8080/mcp`, so start the backend
 ollmcp asks before it runs each tool the model calls. Press `Enter` to run it, or type `s` to run every tool without asking for the rest of the session. ollmcp reads the tools when it starts, so after the backend gains tools, end ollmcp with `/quit` and start it again.
 
 > [!NOTE]
-> Started with `-u http://localhost:8080/mcp`, ollmcp names the server after its address, `localhost_8080`, and each tool `localhost_8080.listPetTypes` and so on. In our runs with Ollama 0.40.14, `qwen3:8b` wrote the call to `localhost_8080.listPetTypes` correctly, but Ollama's answer to ollmcp did not contain the call, and ollmcp reported *The model produced no response or tool calls*. With the server named `petclinic`, every call reached the server.
+> Started with `-u http://localhost:8080/mcp`, ollmcp names the server after its address, `localhost_8080`, and each tool `localhost_8080.listPetTypes` and so on. In my runs with Ollama 0.40.14, `qwen3:8b` wrote the call to `localhost_8080.listPetTypes` correctly, but Ollama's answer to ollmcp did not contain the call, and ollmcp reported *The model produced no response or tool calls*. With the server named `petclinic`, every call reached the server.
 
 ## Claude Desktop, through mcp-remote
 

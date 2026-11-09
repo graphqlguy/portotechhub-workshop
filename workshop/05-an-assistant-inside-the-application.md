@@ -1,6 +1,6 @@
 # Chapter 5: An assistant inside the application
 
-> **User story** · As a receptionist, I want to ask the clinic's assistant in my own words, so that I can find owners and book visits without clicking through the pages.
+> **User story** · As a user of the Petclinic app, I want to ask the clinic's AI assistant in my own words, so that I can find owners and book visits without clicking through the pages.
 
 In this chapter the AI application is ours: a chat in the frontend, answered by a model in Ollama through [Spring AI](https://docs.spring.io/spring-ai/reference/), with chapter 4's operation files as tools that run inside the application.
 
@@ -77,7 +77,7 @@ logging.level.org.springframework.ai.model.tool=DEBUG
 | `gatool.in-process.operations.locations` | The operation files of the in-process tools. It is separate from the MCP server's setting, so the application's own assistant can get other tools. |
 | `spring.ai.ollama.chat.model` | The model from the setup. Ollama must be running: `ollama list` answers when it is. |
 | `spring.ai.ollama.chat.think` | `qwen3:8b` can reason before it answers. Step 6 shows what that costs and what it buys. |
-| `spring.ai.ollama.chat.num-ctx` | Everything the model reads for one answer must fit in this many tokens. In our runs, a booking used up to about 4,500, the model's reasoning included. With 8192, `qwen3:8b` takes 5.8 GB of memory. |
+| `spring.ai.ollama.chat.num-ctx` | Everything the model reads for one answer must fit in this many tokens. In my runs, a booking used up to about 4,500, the model's reasoning included. With 8192, `qwen3:8b` takes 5.8 GB of memory. |
 
 ## 4. The chat endpoint
 
@@ -162,7 +162,7 @@ GATool serves 10 in-process tools:
 Refresh the frontend. Every page now has an **Ask the assistant** button at the bottom right. Open it and ask:
 
 ```text
-Which vets work at the clinic, and what are their specialties?
+Can the clinic do operations?
 ```
 
 The first answer takes longer, while Ollama loads the model. The backend's log shows the tool the model chose:
@@ -171,7 +171,7 @@ The first answer takes longer, while Ollama loads the model. The backend's log s
 DEBUG ... o.s.a.m.tool.DefaultToolCallingManager   : Executing tool call: listVets
 ```
 
-The answer lists the six vets with their specialties, in about 6 seconds once the model is loaded. Models write Markdown, and the panel renders it.
+The answer says that it can, because Linda Douglas and Rafael Ortega have surgery among their specialties. The model read *operations* as surgery and found the specialties with `listVets`, which returns every vet with theirs. In my 5 runs, it called `listVets` every time and answered in 4 to 6 seconds once the model was loaded. Models write Markdown, and the panel renders it.
 
 ## 6. Check what the assistant did
 
@@ -181,7 +181,7 @@ Ask:
 Book a check-up for Leo, the cat of George Franklin, with Helen Leary next Wednesday.
 ```
 
-Then open George Franklin on the **Find owners** page, and look for the date and the vet under Leo's visits. We asked the same question with three different days, 5 times each, on Wednesday 2026-11-04, with `think` on and off:
+Then open George Franklin on the **Find owners** page, and look for the date and the vet under Leo's visits. I asked the same question with three different days, 5 times each, on Wednesday 2026-11-04, with `think` on and off:
 
 | Asked | `think=true` | `think=false` |
 |---|---|---|
@@ -192,11 +192,11 @@ Then open George Franklin on the **Find owners** page, and look for the date and
 
 To see the second column, set `spring.ai.ollama.chat.think=false`, restart, and ask again. With `think` on, the model works out the date before it calls a tool, which takes time. With `think` off, it answers at once and gets the weekday arithmetic wrong. A booking without a vet came each time the model skipped `listVets`: `vetId` is optional, so `addVisit` accepted it. With `think` on, the answer said so; with `think` off, it reported a plain success. The owner's page shows every booking, so you can check what any model changed.
 
-A small model also stumbles on names. We asked 19 times for *a check-up for Rosa, the cat of Porto Tech, with Helen Leary tomorrow*. In 7 runs the model searched for the last name `Porto Tech`, got an empty page, and stopped. In one more, it registered a second Porto Tech with a second Rosa, and booked her. Four runs booked Rosa with Helen Leary. For George Franklin, whose name reads as a first and a last name, the search found the owner every time.
+A small model also stumbles on names. I asked 19 times for *a check-up for Rosa, the cat of Porto Tech, with Helen Leary tomorrow*. In 7 runs the model searched for the last name `Porto Tech`, got an empty page, and stopped. In one more, it registered a second Porto Tech with a second Rosa, and booked her. Four runs booked Rosa with Helen Leary. For George Franklin, whose name reads as a first and a last name, the search found the owner every time.
 
 ## 7. Errors the model can act on
 
-With `think` off, the model guesses ids before it looks them up. In our runs it called `addVisit` with `petId: 123`, and got chapter 4's error:
+With `think` off, the model guesses ids before it looks them up. In my runs it called `addVisit` with `petId: 123`, and got chapter 4's error:
 
 ```json
 {
@@ -393,7 +393,7 @@ Restart and ask the two questions again:
 
 > The x-ray for Sly (cat) is booked for 2026-11-05 with Dr. Helen Leary.
 
-The memory lives in the backend, one conversation for each session, and a restart empties it. In all 3 of our runs with the memory, the model booked Sly with Helen Leary for tomorrow, and all 3 runs without it ended without a booking.
+The memory lives in the backend, one conversation for each session, and a restart empties it. In all 3 of my runs with the memory, the model booked Sly with Helen Leary for tomorrow, and all 3 runs without it ended without a booking.
 
 </details>
 
