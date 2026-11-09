@@ -185,7 +185,7 @@ Our resolver runs once per vet. Ask for all six vets and their visits, and it ru
 
 > **In REST** · A client has the same problem one level up: `GET /vets`, then `GET /vets/{id}/visits` for each vet, is 1 + N HTTP requests. GraphQL turns them into one request, and the 1 + N moves into the server, where we can fix it.
 
-On a laptop with an in-memory database, seven queries finish in milliseconds, so the presenter measures the cost on the projector. The starting point has two switches for that in `application.properties`, which the presenter turns on. Leave yours as they are:
+On a laptop with an in-memory database, seven queries finish in milliseconds, but on a production database, they would probably mean a large delay. The starting point has two switches in `application.properties` that make the cost visible:
 
 `src/main/resources/application.properties`
 
@@ -199,7 +199,7 @@ petclinic.demo.latency=1s
 
 The first prints every SQL statement. The second makes every service method pause for one second before it touches the database, as a round trip to a remote database would.
 
-With both on, the presenter restarts and runs:
+With both on, this query shows the cost:
 
 ```graphql
 query {
@@ -258,7 +258,7 @@ Compare the two signatures:
 
 Spring registers a DataLoader for the field: GraphQL collects every `Vet` that needs `visits`, hands the whole batch to our method in one call, and gives each vet its list from the map. A vet missing from the map gets the `getOrDefault` value, an empty list.
 
-Restart and run the `vets` query from step 3: the answer is the same as with `@SchemaMapping`. On the projector, with the two switches on, the presenter shows the difference:
+Restart and run the `vets` query from step 3: the answer is the same as with `@SchemaMapping`. With the two switches on:
 
 - The response time drops from about **seven seconds to two**: one paused call for the vets, and one for all their visits.
 - The console shows one statement for the visits, with all six ids: `... from visits v1_0 where v1_0.vet_id in (?,?,?,?,?,?) order by ...`
@@ -266,7 +266,7 @@ Restart and run the `vets` query from step 3: the answer is the same as with `@S
 
 ### The same trap behind a getter
 
-Lazy relationships that GraphQL reads through getters, such as `Owner.pets`, have the same problem: one query per owner. Petclinic's `application.properties` already sets `spring.jpa.properties.hibernate.default_batch_fetch_size=16`, so Hibernate loads the pets of up to 16 owners in one statement. The presenter shows it with the SQL log on:
+Lazy relationships that GraphQL reads through getters, such as `Owner.pets`, have the same problem: one query per owner. Petclinic's `application.properties` already sets `spring.jpa.properties.hibernate.default_batch_fetch_size=16`, so Hibernate loads the pets of up to 16 owners in one statement. With the SQL log on, this query shows it:
 
 ```graphql
 query {
@@ -286,7 +286,7 @@ The console shows three statements: the page of owners, its count, and one `... 
 > [!NOTE]
 > Hibernate's batch fetching works here because `spring.jpa.open-in-view=true` keeps the persistence context open while GraphQL calls the getters. With it set to `false`, as many applications run, the same query fails with a `LazyInitializationException`. Batch fetching also takes one statement for every 16 owners, so a page of 100 owners needs 7 statements for their pets. A `@BatchMapping` for each lazy relationship fixes both: it works with open-in-view off, and loads the field for every parent of the request in one call. The workshop keeps the getters to save time.
 
-The presenter then sets both switches back to `false` and `0s`.
+If you turned the switches on, set them back to `false` and `0s`, so the next chapters run at full speed.
 
 ## 5. Follow the graph both ways
 
