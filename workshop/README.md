@@ -1,6 +1,6 @@
 # Workshop guide
 
-Each chapter is one file: numbered steps with the complete code to copy, and most end with exercises whose solutions are folded below them (try first). Start with [the setup page](00-setup.md).
+Each chapter is one file: numbered steps with the complete code to copy. Chapters 1, 3 and 5 end with an exercise, with its solution folded below it. Start with [the setup page](00-setup.md).
 
 ## How it works
 
