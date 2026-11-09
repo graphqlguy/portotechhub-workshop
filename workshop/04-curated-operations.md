@@ -2,7 +2,7 @@
 
 > **User story** · As the clinic manager, I want the AI assistants the staff already use to work with our API through the operations our frontend already sends, so that they can look up owners and book visits by asking in their own words.
 
-The Model Context Protocol (MCP) is an open standard for connecting AI applications to the systems they work with. In this chapter, [GATool](https://github.com/api-agent-bridge/gatool) turns GraphQL operations into MCP tools: first one operation you write yourself, then the frontend's operation files.
+The Model Context Protocol (MCP) is an open standard for connecting AI applications to the systems they work with. In this chapter, we write an MCP tool by hand first, then let [GATool](https://github.com/api-agent-bridge/gatool) turn GraphQL operations into MCP tools: one operation you write yourself, then the frontend's operation files.
 
 ## 1. MCP in brief
 
@@ -10,7 +10,7 @@ The Model Context Protocol (MCP) is an open standard for connecting AI applicati
 |---|---|
 | MCP server | Publishes tools at an endpoint. Ours will be `http://localhost:8080/mcp`. |
 | Tool | A name, a description and a JSON Schema for its arguments. The model reads all three to choose a tool. |
-| MCP client | The part of an AI application that connects to a server, lists its tools, and calls the one the model picks. The MCP Inspector is a client for trying a server by hand. |
+| MCP client | The part of an AI application that connects to a server, lists its tools, and calls the one the model picks. |
 | `tools/list`, `tools/call` | The two requests this chapter uses. They are JSON-RPC messages, sent with HTTP POST to the endpoint (the **Streamable HTTP** transport). |
 
 ## 2. Add GATool
@@ -27,7 +27,7 @@ Add the starter next to the GraphQL starter:
 </dependency>
 ```
 
-GATool needs Java 21 or newer, which is why the workshop asks for it.
+The starter brings in Spring AI's MCP server, which answers MCP requests at `/mcp`. Spring AI publishes the tools we write in Java, and GATool adds the tools it makes from GraphQL operations. GATool needs Java 21 or newer, which is why the workshop asks for it.
 
 > [!NOTE]
 > With Gradle, add `implementation 'io.gatool:gatool-mcp-spring-boot-starter:0.1.0'` to `build.gradle`.
@@ -44,9 +44,116 @@ gatool.mcp.security.unsafe.allow-mcp-calls-without-authentication=true
 
 GATool secures the MCP endpoint by default. Without this line, startup stops with *GATool secures the MCP endpoint with Spring Security, which is missing from this application, so every caller that reaches the port would call every tool on it.* `/graphql` has been open the same way since chapter 1, and a deployed server puts Spring Security in front of both.
 
-## 3. Your first tool
+Restart. The log warns that *GATool serves zero MCP tools*, because GATool's tools come from operation files, and step 7 adds the first one.
 
-The first tool answers one question: what kinds of pet does the clinic treat? Write the query in GraphiQL first:
+## 3. A tool written by hand
+
+An MCP tool can be a Java method. To keep the example short, we add it to `OwnerGraphQLController`, which is already a bean. A real application would keep its tools in a class of their own. Add the import and the method:
+
+`src/main/java/org/springframework/samples/petclinic/owner/OwnerGraphQLController.java`
+
+```java
+import org.springframework.ai.mcp.annotation.McpTool;
+
+@Controller
+class OwnerGraphQLController {
+
+	// ...the constructor and the existing methods...
+
+	@McpTool(description = "Returns the default greeting of the workshop.")
+	String helloWorld() {
+		return "Hello, World!";
+	}
+
+}
+```
+
+| Element | Meaning |
+|---|---|
+| `@McpTool` | Publishes the method as an MCP tool. Spring AI finds these methods on every bean. The tool takes the method's name, `helloWorld`, unless `name` sets another. |
+| `description` | What a model reads to decide when to call the tool. |
+| The return value | The tool's answer, which Spring AI sends to the client as text. An object goes as JSON. |
+
+Restart. The log line `Registered tools: 1` comes from Spring AI's MCP server, and the tool is `helloWorld`.
+
+## 4. The MCP Inspector
+
+The MCP Inspector is the testing tool of the MCP project, which Anthropic started when it introduced MCP in November 2024. It runs in the browser and connects to one server. It lists the server's tools, calls the one you choose with the arguments you type, and shows every JSON-RPC message it sends and receives, so you can try a server by hand before any model uses it.
+
+In a new terminal, start the MCP Inspector with our server's address:
+
+```bash
+npx -y @modelcontextprotocol/inspector@2.9.0 --web --transport http --server-url http://localhost:8080/mcp
+```
+
+The Inspector opens in your browser, with one server card, `localhost:8080`.
+
+1. Flip the switch on the card. It says **Connected**, and the **Messages** panel on the right lists the requests the Inspector sent, `INITIALIZE` and `TOOLS/LIST` among them.
+2. Open the **Tools** tab at the top. It lists `helloWorld`, with its description.
+3. Select `helloWorld` and click **Execute Tool**. The answer is `Hello, World!`.
+
+Click the arrow ↕ on the `TOOLS/LIST` entry in the **Messages** panel. Spring AI marks `helloWorld` with `"readOnlyHint": false` and `"destructiveHint": true`, because its defaults assume that a tool may change data. Step 7 shows how GATool sets these hints from the operation type.
+
+## 5. A model picks the tool
+
+In the Inspector, you chose the tool yourself. In a real application, the model reads the descriptions of all the tools, and depending on the task, it may choose to call one or several of them. We watch a model do this in [MCPJam](https://www.mcpjam.com), an MCP client with a chat that uses the Ollama model from the setup.
+
+> [!NOTE]
+> MCPJam is free, but it asks you to register an account. If you cannot install it or would rather not register, [the appendix](appendix-alternatives-to-mcpjam.md) lists alternatives: ollmcp, in the terminal and without an account, and Claude Desktop.
+
+1. Stop the MCP Inspector with `Ctrl+C` in its terminal. MCPJam uses the same port, 6274, and while the Inspector runs, MCPJam stops with *Default port 6274 is already in use. Please free the port*.
+2. Start MCPJam with our server:
+
+   ```bash
+   npx -y @mcpjam/inspector@latest --url http://localhost:8080/mcp --name petclinic
+   ```
+
+   It opens in the browser and asks you to sign in.
+3. Open the chat, choose **Ollama** as the provider, and `qwen3:8b` as the model.
+4. Ask *What is the default greeting of the workshop?*
+
+The model reads the description of `helloWorld`, *Returns the default greeting of the workshop.*, calls the tool, and answers *The default greeting of the workshop is: Hello, World!* Step 10 comes back to MCPJam with questions that need several of the clinic's tools.
+
+## 6. A tool that calls the GraphQL API
+
+A tool for the clinic sends a GraphQL operation to the API. Written by hand with Spring's `HttpSyncGraphQlClient`, a tool that lists the kinds of pet looks like this. Read it without typing it, because step 7 builds the same tool from a file:
+
+```java
+@Component
+class PetTypeTools {
+
+	record PetType(String name) {
+	}
+
+	private final HttpSyncGraphQlClient graphQlClient = HttpSyncGraphQlClient
+		.create(RestClient.create("http://localhost:8080/graphql"));
+
+	@McpTool(name = "listPetTypes", description = "Lists the kinds of pet the clinic treats, such as cat or dog.")
+	List<PetType> listPetTypes() {
+		return graphQlClient.document("""
+				query ListPetTypes {
+				  petTypes {
+				    name
+				  }
+				}""")
+			.retrieveSync("petTypes")
+			.toEntityList(PetType.class);
+	}
+
+}
+```
+
+`document` holds the query, `retrieveSync("petTypes")` sends it and takes the `petTypes` field out of the answer, and `toEntityList` turns that field into a list of records. Each operation needs a method like this one: the query in a string, a parameter with `@McpToolParam` for every variable, a type for the answer, and a description. A change to the schema means checking every method by hand.
+
+GATool makes these tools from `.graphql` files. It checks every file against the schema at startup, and it runs each document inside the application, without an HTTP request to `/graphql`.
+
+## 7. A tool from an operation file
+
+From here on, every tool comes from an operation file, so **delete the `helloWorld` method** and the `McpTool` import from `OwnerGraphQLController`.
+
+These files are the chapter's **curated operations**: we choose each operation an agent may run, write it and review it, as we did for the frontend's pages. The agent calls them with its own arguments, and it runs only these operations. Chapter 6 lets the model write its own queries.
+
+The first operation answers the same question: what kinds of pet does the clinic treat? Write the query in GraphiQL first:
 
 ```graphql
 query {
@@ -58,7 +165,7 @@ query {
 
 The answer lists bird, cat, dog, hamster, lizard and snake.
 
-A tool is an operation in a `.graphql` file. GATool reads these files from `src/main/resources/gatool/mcp/`, its default folder. **Create a folder named `gatool`** in `src/main/resources`, **a folder named `mcp`** in it, and in that **a file named `listPetTypes.graphql`**:
+For GATool, a tool is an operation in a `.graphql` file. GATool reads these files from `src/main/resources/gatool/mcp/`, its default folder. **Create a folder named `gatool`** in `src/main/resources`, **a folder named `mcp`** in it, and in that **a file named `listPetTypes.graphql`**:
 
 `src/main/resources/gatool/mcp/listPetTypes.graphql`
 
@@ -98,19 +205,7 @@ GATool read the operation files and found 1 problem:
   - Validation error (FieldUndefined@[petTypes/nickname]) : Field 'nickname' in type 'PetType' is undefined (line 5, column 5)
 ```
 
-## 4. Call the tool from the MCP Inspector
-
-In a new terminal, start the MCP Inspector with our server's address:
-
-```bash
-npx -y @modelcontextprotocol/inspector@2.9.0 --web --transport http --server-url http://localhost:8080/mcp
-```
-
-The Inspector opens in your browser, with one server card, `localhost:8080`.
-
-1. Flip the switch on the card. It says **Connected**, and the **Messages** panel on the right lists the requests the Inspector sent, `INITIALIZE` and `TOOLS/LIST` among them.
-2. Open the **Tools** tab at the top. It lists `listPetTypes`, with the `#` line as its description.
-3. Select `listPetTypes` and click **Execute Tool**. The answer holds the six kinds of pet that GraphiQL showed.
+Stop MCPJam with `Ctrl+C`, start the Inspector again with the command of step 4, flip the switch, and open the **Tools** tab. It lists `listPetTypes`. Select it and click **Execute Tool**. The answer holds the six kinds of pet that GraphiQL showed, inside the `data` field: GATool returns the whole GraphQL response, with `errors` next to `data` when a call fails.
 
 Each part of a tool comes from the file:
 
@@ -118,11 +213,11 @@ Each part of a tool comes from the file:
 |---|---|
 | Name | The operation's name in camel case: `ListPetTypes` becomes `listPetTypes` |
 | Description | The `#` lines right above the operation |
-| Arguments | The variables, with their types and defaults. Each one's description is the schema's description of the argument or input field the variable fills. Step 5 shows them on `findOwners`. |
+| Arguments | The variables, with their types and defaults. Each one's description is the schema's description of the argument or input field the variable fills. Step 8 shows them on `findOwners`. |
 | Answer | The selection |
 | **READ-ONLY**, **IDEMPOTENT**, **DESTRUCTIVE** | The operation type: GATool marks every query **READ-ONLY** and **IDEMPOTENT**, and every mutation **DESTRUCTIVE** |
 
-## 5. The frontend's operations
+## 8. The frontend's operations
 
 The frontend already keeps every operation it sends in a file of its own, in two folders:
 
@@ -146,7 +241,7 @@ The ten files in `operations` are the tools an assistant needs to look up owners
 | `mutations/updatePet.graphql` | Changes a pet's details |
 | `mutations/addVisit.graphql` | Books a visit for a pet |
 
-`queries/listPetTypes.graphql` is the tool you wrote in step 3, with `id` in the selection, because `addPet` and `updatePet` take a type's id.
+`queries/listPetTypes.graphql` is the tool you wrote in step 7, with `id` in the selection, because `addPet` and `updatePet` take a type's id.
 
 Point GATool at the frontend's folder. Add two lines below `# MCP`:
 
@@ -228,7 +323,7 @@ Dates have a type too. Click the arrow ↕ on the `TOOLS/LIST` entry in the **Me
 }
 ```
 
-## 6. Errors a model can act on
+## 9. Errors a model can act on
 
 Run `getVetDetails` with `99` as the **id**. The Inspector shows a **Tool Error** classified as `INTERNAL_ERROR`, the answer that `vet(id: 99)` gave in chapter 1's exercise: GraphQL sends an exception it does not know as `INTERNAL_ERROR`, and the reason stays in the log. A person can read the log, but a model reads only the answer, and `INTERNAL_ERROR` leaves it to guess whether to call again, try another id, or stop.
 
@@ -353,20 +448,9 @@ Run `addOwner` with an empty **lastName** and `123` as the **telephone**. Each b
 }
 ```
 
-## 7. A model picks the tools
+## 10. The model picks among ten tools
 
-Until now, you chose each tool and its arguments in the Inspector. In an AI application, the model reads the ten tools and chooses the calls itself, often several in a row. We watch a model do this in [MCPJam](https://www.mcpjam.com), an MCP client with a chat that uses the Ollama model from the setup. MCPJam asks you to sign in with an account. To ask the same questions on your laptop, with ollmcp and without an account, or with Claude Desktop, follow [the appendix](appendix-a-model-calls-the-tools.md).
-
-1. Stop the MCP Inspector with `Ctrl+C` in its terminal. MCPJam uses the same port, 6274, and while the Inspector runs, MCPJam stops with *Default port 6274 is already in use. Please free the port*.
-2. Start MCPJam with our server:
-
-   ```bash
-   npx -y @mcpjam/inspector@latest --url http://localhost:8080/mcp --name petclinic
-   ```
-
-   It opens in the browser and asks you to sign in.
-3. Open the chat, choose **Ollama** as the provider, and `qwen3:8b` as the model.
-4. Ask *Which pets does George Franklin own, and when were they born?*
+With the ten tools, the model can answer questions that need more than one call. Stop the Inspector with `Ctrl+C`, start MCPJam with the command of step 5, and ask *Which pets does George Franklin own, and when were they born?*
 
 The model calls `findOwners` with `lastName` set to `Franklin`. The answer has George Franklin's id and his pet Leo, but leaves out the birth date, so the model calls `getOwnerDetails` with the id `1`, as the `#` lines of `getOwnerDetails` say: *The findOwners tool gives the id of an owner.* Then it answers that Leo, a cat, was born on 7 September 2010.
 
@@ -375,6 +459,7 @@ Ask a second question, *Can the clinic perform surgery?* No tool has surgery in 
 ## Recap
 
 - MCP lets an AI application call the tools a server publishes, and GATool publishes GraphQL operations as tools.
+- Spring AI's `@McpTool` publishes a Java method as a tool. A tool written by hand that calls the API holds its query in a string and maps the answer itself, and GATool builds the same tool from a `.graphql` file.
 - GATool reads operation files from `gatool/mcp/` by default, and `gatool.mcp.operations.locations` names other folders in its place. It checks every file against the schema at startup.
 - The file decides the tool: its name, its description from the `#` lines, its arguments from the variables, and its answer from the selection.
 - `@GraphQlExceptionHandler` turns our exceptions into `NOT_FOUND` and `BAD_REQUEST` errors, which a model can act on, and the descriptions say what each one means.
