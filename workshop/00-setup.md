@@ -76,9 +76,9 @@ The chat model needs about 8 GB of free memory, so a laptop with 16 GB of RAM wo
 | Windows | Settings > System > About > Installed RAM |
 | Linux | `free -h` |
 
-> **With 8 GB of RAM**, the operating system, the IDE, the browser and the application already use most of it, so `qwen3:8b` may fail to load or answer very slowly. Pull `qwen3:4b` instead (2.5 GB, [all sizes](https://ollama.com/library/qwen3)), and in chapter 5 set `spring.ai.ollama.chat.model=qwen3:4b`. It took 3.9 GB in our runs, and booked chapter 5's visit on the right day with the right vet 5 times in 5, in 35 to 48 seconds. If both run too slowly, chapter 5 shows how to use a hosted model instead.
+> **With 8 GB of RAM**, the operating system, the IDE, the browser and the application already use most of it, so `qwen3:8b` may fail to load or answer very slowly. Pull `qwen3:4b` instead (2.5 GB, [all sizes](https://ollama.com/library/qwen3)), and in chapter 5 set `spring.ai.ollama.chat.model=qwen3:4b`. It took 3.9 GB in my runs, and booked chapter 5's visit on the right day with the right vet 5 times in 5, in 35 to 48 seconds. If both run too slowly, chapter 5 shows how to use a hosted model instead.
 
-Other chat models that call tools, to try in chapter 5 by setting `spring.ai.ollama.chat.model` to their name. Pick one whose download is at most about 60% of your RAM, about 9.6 GB on a laptop with 16 GB. A running model takes more memory than its download, and the operating system, the IDE and the browser need the rest. We ran the workshop with `qwen3:8b` and `qwen3:4b`.
+Other chat models that call tools, to try in chapter 5 by setting `spring.ai.ollama.chat.model` to their name. Pick one whose download is at most about 60% of your RAM, about 9.6 GB on a laptop with 16 GB. A running model takes more memory than its download, and the operating system, the IDE and the browser need the rest. I ran the workshop with `qwen3:8b` and `qwen3:4b`.
 
 ```bash
 # 1.2 to 1.3 GB
