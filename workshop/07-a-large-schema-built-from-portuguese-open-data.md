@@ -34,7 +34,7 @@ INFO ... i.g.b.i.search.EmbeddingSchemaSearch     : GATool is embedding 3529 sch
 INFO ... i.g.b.a.GAToolAutoConfiguration          : GATool publishes searchSchema, introspectType, executeGraphql, ranking 3529 schema coordinates with EMBEDDING and returning up to 2000 tokens of results per call.
 ```
 
-The embedding took 40 seconds on our laptop, and later starts read the vectors from the cache. Every new field calls a service on the internet. On a slow or missing connection, start with the recorded answers of step 3.
+The embedding took 40 seconds on my laptop (MacBook M5), and 3 minutes on an older MacBook M1. Later starts read the vectors from the cache. Every new field calls a service on the internet. On a slow or missing connection, start with the recorded answers of step 3.
 
 ## 2. What we integrated with
 
@@ -52,7 +52,7 @@ Each service has a schema file of its own in `src/main/resources/graphql`:
 | `dgeg.graphqls` | The fuel prices of every filling station | DGEG, the Directorate-General for Energy and Geology | 1 |
 | `ropi.graphqls` | The parks and gardens of Porto | Porto Digital (ROPI) | 1 |
 
-Together they add 517 root fields to the clinic's 6. We counted about 158,000 tokens with the `cl100k_base` encoding of [tiktoken](https://github.com/openai/tiktoken), about 19 times the 8,192 tokens that chapter 5 gave `qwen3:8b`, and one `searchSchema` call returns at most 2,000 of them. Every service answers without a key. Most publish their API with documentation; DGEG's fuel prices come from the API behind its own portal, which its terms allow us to reuse if we name DGEG and give the time of each price. `src/main/resources/mock-upstreams/SOURCES.md` lists the terms of each service.
+Together they add 517 root fields to the clinic's 6. I counted about 158,000 tokens with the `cl100k_base` encoding of [tiktoken](https://github.com/openai/tiktoken), about 19 times the 8,192 tokens that chapter 5 gave `qwen3:8b`, and one `searchSchema` call returns at most 2,000 of them. Every service answers without a key. Most publish their API with documentation; DGEG's fuel prices come from the API behind its own portal, which its terms allow us to reuse if we name DGEG and give the time of each price. `src/main/resources/mock-upstreams/SOURCES.md` lists the terms of each service.
 
 ## 3. Without wifi
 
@@ -74,7 +74,7 @@ The tests start the application with this profile, so they run without the inter
 
 The system prompt of chapter 6 names the clinic's data alone. In this chapter, it says where the clinic is and names the topics of the public services, so the model searches the schema before it decides that a question is outside a clinic's API. An MCP client's model reads the same topics in the server's instructions, `spring.ai.mcp.server.instructions` in `application.properties`.
 
-Open the chat panel in the frontend, and ask the questions below. Each one shows the answer to expect, the request to the public service behind it, which you can send yourself with `curl` or a browser, and the part of the response that answers it. The answers come from the recordings; a live answer can differ, and the questions about today change every day. We asked each question five times with `qwen3:8b` under the `mock` profile, each time in a new conversation, and an answer took between 5 and 234 seconds. We counted an answer as right when it gave the expected values with their right period. The model called the right field in 81 of the 90 runs, and 21 of the 30 wrong answers came from runs that had called it: the note under each question says what went wrong.
+Open the chat panel in the frontend, and ask the questions below. Each one shows the answer to expect, the request to the public service behind it, which you can send yourself with `curl` or a browser, and the part of the response that answers it. The answers come from the recordings; a live answer can differ, and the questions about today change every day. I asked each question five times with `qwen3:8b` under the `mock` profile, each time in a new conversation, and an answer took between 5 and 234 seconds. I counted an answer as right when it gave the expected values with their right period. The model called the right field in 81 of the 90 runs, and 21 of the 30 wrong answers came from runs that had called it: the note under each question says what went wrong.
 
 ### What is the weather forecast for Porto tomorrow?
 
@@ -89,7 +89,7 @@ GET https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1131200.json
 
 IPMA forecasts five days for each city, and 1131200 is Porto. Weather type 10 is "Light rain" in IPMA's list of types, which `ipmaWeatherTypes` reads.
 
-**In our runs:** right in 2 of 5. In the other three, one answer called weather type 10 "heavy rain or showers" without asking `ipmaWeatherTypes`, which names it light rain; one gave a forecast of its own after four queries that failed; and one asked Porto's own weather forecast, found it empty, and stopped.
+**In my runs:** right in 2 of 5. In the other three, one answer called weather type 10 "heavy rain or showers" without asking `ipmaWeatherTypes`, which names it light rain; one gave a forecast of its own after four queries that failed; and one asked Porto's own weather forecast, found it empty, and stopped.
 
 ### How clean is the air in Porto right now?
 
@@ -104,7 +104,7 @@ GET https://broker.fiware.urbanplatform.portodigital.pt/v2/entities?type=AirQual
 
 Five of Porto Digital's 13 stations still report, so the query asks for the ones that reported in the last hour. The broker sends raw readings without a clean-or-polluted index, so the model judges "clean" itself.
 
-**In our runs:** right in 5 of 5.
+**In my runs:** right in 5 of 5.
 
 ### Which park is closest to the Alfândega?
 
@@ -119,7 +119,7 @@ GET https://api.ropi.porto.digital/CitySDK/pois?category=Parques%20e%20Jardins
 
 ROPI, Porto's register of points of interest, lists 35 parks and gardens. The application finds the Alfândega among Porto Digital's points of interest, at 41.14321, -8.62146, and computes the distances.
 
-**In our runs:** right in 5 of 5.
+**In my runs:** right in 5 of 5.
 
 ### Which bus is the fastest right now?
 
@@ -134,7 +134,7 @@ GET https://broker.fiware.urbanplatform.portodigital.pt/v2/entities?type=Vehicle
 
 The broker sorts the buses that reported in the last five minutes by speed itself. It does not say the unit of `speed`; comparing two positions of 137 buses a minute apart showed metres per second, so the field converts it to km/h.
 
-**In our runs:** right in 4 of 5. In the other one, the model asked for the ten fastest buses and named line 204 at 38.9 km/h, from further down the list.
+**In my runs:** right in 4 of 5. In the other one, the model asked for the ten fastest buses and named line 204 at 38.9 km/h, from further down the list.
 
 ### Where is the cheapest 95 petrol in the Porto district?
 
@@ -149,7 +149,7 @@ GET https://precoscombustiveis.dgeg.gov.pt/api/PrecoComb/PesquisarPostos?idsTipo
 
 3201 is DGEG's id of 95 petrol, and 13 the district of Porto, with 452 stations. Each price comes with the time the station last changed it, which DGEG's terms ask every reuser to give.
 
-**In our runs:** right in 5 of 5.
+**In my runs:** right in 5 of 5.
 
 ### Where is the cheapest diesel within 3 km of the Alfândega?
 
@@ -164,7 +164,7 @@ GET https://precoscombustiveis.dgeg.gov.pt/api/PrecoComb/PesquisarPostos?idsTipo
 
 The same request with 2101, DGEG's id of diesel. The application keeps the 22 stations within 3 km of the Alfândega and sorts them by price.
 
-**In our runs:** right in 5 of 5.
+**In my runs:** right in 5 of 5.
 
 ### Which beaches in Porto have a blue flag?
 
@@ -179,7 +179,7 @@ GET https://sniambgeoogc.apambiente.pt/getogc/rest/services/Dashboard/Praias_das
 
 APA lists the 761 bathing waters of Portugal, and writes the municipality in capitals. All 10 of Porto's have water fit for bathing.
 
-**In our runs:** right in 5 of 5.
+**In my runs:** right in 5 of 5.
 
 ### How many people live in Porto, and how has that changed in ten years?
 
@@ -194,7 +194,7 @@ GET https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0008273&Dim1=S7
 
 One request returns one year, so the model asks twice, with `S7A2023` and `S7A2013`, and compares the two. 11A1312 is INE's code of the municipality of Porto, which `inePlaces` finds by name.
 
-**In our runs:** right in 1 of 5. In the other four, two answers compared 2011 with 2023 and called it ten years; one sent Porto's municipal code to `inePopulationByRegion`, whose places are regions, and stopped at the error; and one came after 234 seconds, with advice on GraphQL aliases.
+**In my runs:** right in 1 of 5. In the other four, two answers compared 2011 with 2023 and called it ten years; one sent Porto's municipal code to `inePopulationByRegion`, whose places are regions, and stopped at the error; and one came after 234 seconds, with advice on GraphQL aliases.
 
 ### Which hospital in the Norte region had the most emergency visits in August?
 
@@ -209,7 +209,7 @@ GET https://transparencia.sns.gov.pt/api/explore/v2.1/catalog/datasets/atendimen
 
 The dataset says "por mês" (per month), but its counts add up from January: São João's 168,830 visits in August are the visits since 1 January. August alone is 168,830 minus July's 147,767, and `snsEmergencyVisitsInMonth` does that subtraction for every hospital.
 
-**In our runs:** right in 5 of 5.
+**In my runs:** right in 5 of 5.
 
 ### What was the strongest earthquake in Portugal in the last month, and did people feel it?
 
@@ -224,7 +224,7 @@ GET https://api.ipma.pt/open-data/observation/seismic/7.json
 
 Area 7 is mainland Portugal and Madeira, and the file holds the last 30 days, 329 earthquakes. The Azores have their own file, area 3.
 
-**In our runs:** right in 3 of 5. In the other two, one answer gave the 4.2 and that people felt it without saying where, and one stopped at the area argument without calling `introspectType`, which lists its two values.
+**In my runs:** right in 3 of 5. In the other two, one answer gave the 4.2 and that people felt it without saying where, and one stopped at the area argument without calling `introspectType`, which lists its two values.
 
 ### How many local lodging units are registered in Porto?
 
@@ -239,7 +239,7 @@ GET https://geo.turismodeportugal.pt/server/rest/services/TDP/OpenData_AL/MapSer
 
 The local lodging register (RNAL) of Turismo de Portugal is an ArcGIS layer, and the field asks the server for the count alone, without the 9,942 records.
 
-**In our runs:** right in 5 of 5.
+**In my runs:** right in 5 of 5.
 
 ### How many pet clinics are there in Porto?
 
@@ -254,7 +254,7 @@ GET https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0012934&Dim1=S7
 
 INE calls pet clinics "veterinary activities", code 75000, so the description says that this count covers pet clinics. Indicator 0012934 counts establishments, the clinics themselves; 0014064 counts the businesses that run them.
 
-**In our runs:** right in 1 of 5. In the other four, the model asked for 2023, a year before INE's latest, and answered with that year's 104 businesses.
+**In my runs:** right in 1 of 5. In the other four, the model asked for 2023, a year before INE's latest, and answered with that year's 104 businesses.
 
 ### How many crimes against pets were recorded in Porto last year?
 
@@ -269,7 +269,7 @@ GET https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0012261&Dim1=S7
 
 The figures are the police's, published by INE: crime category 10 is the killing, ill-treatment and abandonment of pets. Portugal recorded 1,665 such crimes that year.
 
-**In our runs:** right in 5 of 5.
+**In my runs:** right in 5 of 5.
 
 ### Has the price of a visit to a pet clinic changed in the last year?
 
@@ -284,7 +284,7 @@ GET https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014647&Dim1=S3
 
 0945 is the category of veterinary and other services for pets in the consumer price index, and the indicator is the change from the same month a year earlier. INE publishes a month about six weeks after it ends.
 
-**In our runs:** right in 1 of 5. In the other four, one answer read twelve months from Eurostat and gave a range of 3.9% to 4.4%; one asked INE for November 2026, which INE has yet to publish, and stopped at the error that says to leave the month out; one sent the month as "Oct", which the mock answers with September's recording, and gave 4.08% as October's change; and one came in five seconds, without a call, saying that the API does not track prices.
+**In my runs:** right in 1 of 5. In the other four, one answer read twelve months from Eurostat and gave a range of 3.9% to 4.4%; one asked INE for November 2026, which INE has yet to publish, and stopped at the error that says to leave the month out; one sent the month as "Oct", which the mock answers with September's recording, and gave 4.08% as October's change; and one came in five seconds, without a call, saying that the API does not track prices.
 
 ### Has the number of pet care businesses in Portugal changed?
 
@@ -299,7 +299,7 @@ GET https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014972&Dim1=T&
 
 Pet care, code 96992, is grooming, pet sitting, training and boarding. INE publishes this series for Portugal alone, from 2024, and `Dim1=T` asks for every year.
 
-**In our runs:** right in 4 of 5. In the other one, the model compared 930 businesses in 2023, from the older classification, with 1,117 in 2024, and left out 2025.
+**In my runs:** right in 4 of 5. In the other one, the model compared 930 businesses in 2023, from the older classification, with 1,117 in 2024, and left out 2025.
 
 ### Which countries does Portugal import dog and cat food from?
 
@@ -314,7 +314,7 @@ GET https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0005719&Dim1=S7
 
 The answer mixes countries with totals, such as World and Intra European Union, so the description tells the model that a country has a two-letter code.
 
-**In our runs:** right in 0 of 5. Three answers listed the first countries of INE's answer, in its order and without their values, and missed Spain and France, the two largest. One sent `place: PT`, which is the country the goods come from, and answered that the imports were €0. One said, after two queries that failed, that the field leaves out the countries of origin.
+**In my runs:** right in 0 of 5. Three answers listed the first countries of INE's answer, in its order and without their values, and missed Spain and France, the two largest. One sent `place: PT`, which is the country the goods come from, and answered that the imports were €0. One said, after two queries that failed, that the field leaves out the countries of origin.
 
 ### How does the change in pet clinic prices in Portugal compare with the EU?
 
@@ -329,7 +329,7 @@ GET https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp
 
 Eurostat answers in JSON-stat: each value is keyed by a position, and `dimension` says which country each position belongs to. The field turns that into a country and a value for each row.
 
-**In our runs:** right in 2 of 5. In the other three, one answer used `eurostatPriceLevels`, the price levels of health care against the EU, in place of the change of prices; one gave Portugal 3.3% and the EU 4.1%, the two swapped; and one gave both 4.1%.
+**In my runs:** right in 2 of 5. In the other three, one answer used `eurostatPriceLevels`, the price levels of health care against the EU, in place of the change of prices; one gave Portugal 3.3% and the EU 4.1%, the two swapped; and one gave both 4.1%.
 
 ### How many pet shops are there in Porto?
 
@@ -344,7 +344,7 @@ GET https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014064&Dim1=S7
 
 The same indicators as the pet clinics, with the activity code of pet shops, 47762. The model can give either count, and the two together answer the question best.
 
-**In our runs:** right in 2 of 5. In the other three, two answers asked for 2023 and gave that year's 22 businesses, and one stopped after two queries that failed.
+**In my runs:** right in 2 of 5. In the other three, two answers asked for 2023 and gave that year's 22 businesses, and one stopped after two queries that failed.
 
 ## 5. Everything a field needs goes in its description
 
@@ -355,7 +355,7 @@ The model sees a field through two tools: `searchSchema` ranks it by its declara
 - a trap in the data, such as counts that add up from January;
 - the codes an argument takes, such as `11A1312` for Porto or `75000` for pet clinics.
 
-We asked each question five times, changed a description or the shape of a field where the model went wrong, and asked all 18 again. We made these changes:
+I asked each question five times, changed a description or the shape of a field where the model went wrong, and asked all 18 again. I made these changes:
 
 - **A value in a description becomes an answer without a call.** The first description of `turismoLocalLodging` said that Porto has about 9,900 units. In four runs of five, the model answered 9,900 straight from the description, without a query. With the sentence gone, it queried in every run and answered 9,942. A later run answered "Portugal at 85 in 2024" from the description of `eurostatPriceLevels`, so we took every figure out of the descriptions: the counts of records, such as "about 7,700 dams", and the example values copied from records, such as 84.4 for the bed occupancy of a hospital. A description documents the API, and the data stays in the answers.
 - **An example value can come back as data.** With "such as 1.75" on the price of a station, one run answered "1.75 € at Shell", a price and a station the model invented. A field that holds a value now gives its unit and its scale, such as "a fraction, where 0.5 is 50 percent".
