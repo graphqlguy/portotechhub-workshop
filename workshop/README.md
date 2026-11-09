@@ -16,7 +16,11 @@ The frontend checks the backend's schema at startup and shows only the pages the
 
 ## Part 2: agents
 
-4. [Curated operations](04-curated-operations.md): MCP in brief, GATool, the MCP Inspector, the frontend's operation files as tools, errors a model can act on
+4. [Curated operations](04-curated-operations.md): MCP in brief, GATool, the MCP Inspector, the frontend's operation files as tools, errors a model can act on, a model choosing the tools in MCPJam
 5. [An assistant inside the application](05-an-assistant-inside-the-application.md): Spring AI's `ChatClient` with the operation files as in-process tools, checking what the model did, errors a model can act on, hosted models, conversation memory
 6. [Dynamic tools](06-dynamic-tools.md): `searchSchema`, `introspectType` and `executeGraphql`, a system prompt that says when to write a query, a schema search by meaning with an embedding model, the checks on a query the model wrote
 7. [A large schema built from Portuguese open data](07-a-large-schema-built-from-portuguese-open-data.md): nine public services of Portugal, Porto and the EU in one schema of about 158,000 tokens, recorded answers for working offline, prepared questions, and what a field needs in its description
+
+## Appendix
+
+- [A model calls the tools on your laptop](appendix-a-model-calls-the-tools.md): chapter 4's tools from a chat, with ollmcp and Ollama in the terminal, or with Claude Desktop through mcp-remote
