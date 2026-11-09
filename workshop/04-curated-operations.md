@@ -116,7 +116,7 @@ The model reads the description of `helloWorld`, *Returns the default greeting o
 
 ## 6. A tool that calls the GraphQL API
 
-A tool for the clinic sends a GraphQL operation to the API. Written by hand with Spring's `HttpSyncGraphQlClient`, a tool that lists the kinds of pet looks like this. Read it without typing it, because step 7 builds the same tool from a file:
+A tool for the clinic sends a GraphQL operation to the API. Written by hand with Spring's `HttpSyncGraphQlClient`, a tool that lists the kinds of pet the clinic treats would look something like this. We show it only as an example, because step 7 takes a different approach and builds the same tool from a file:
 
 ```java
 @Component
