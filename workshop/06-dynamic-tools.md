@@ -1,6 +1,6 @@
 # Chapter 6: Dynamic tools
 
-> **User story** · As the clinic manager, I want to ask the assistant any question about the clinic's data, such as whether the clinic has a surgeon, so that I get the answer without waiting for a new operation file.
+> **User story** · As the clinic manager, I want to ask the assistant any question about the clinic's data that the API serves, so that I get the answer without waiting for a new operation file.
 
 Each operation file answers a question we planned for, and every new question needs a new file and a new release. With three other tools from GATool, the model writes its own query: it searches the schema for the fields it needs, reads a type when it needs more details, and runs the query.
 
@@ -30,7 +30,7 @@ curl -s http://localhost:11434/api/embed -d '{"model": "qwen3-graphql-embedder",
 {"model":"qwen3-graphql-embedder","embeddings":[[0.015182828,-0.02370876,-0.0013484629,0.09673668,...
 ```
 
-The vector holds 1,024 numbers. Two vectors are compared by the angle between them, the **cosine similarity**: 1 means the same direction, and 0 means the texts are unrelated. We compared `doctors` with the first sentence of three descriptions in our schema:
+The vector holds 1,024 numbers. Two vectors are compared by the angle between them, the **cosine similarity**: 1 means the same direction, and 0 means the texts are unrelated. I compared `doctors` with the first sentence of three descriptions in our schema:
 
 | Text | Describes | Similarity to `doctors` |
 |---|---|---|
@@ -85,7 +85,7 @@ WARN ... i.g.b.a.GAToolAutoConfiguration          : gatool.dev.experimental.gene
 INFO ... i.g.b.a.GAToolAutoConfiguration          : GATool publishes searchSchema, introspectType, executeGraphql, ranking 41 schema coordinates with EMBEDDING and returning up to 2000 tokens of results per call.
 ```
 
-The first warning is what the missing folder is for, and the second concerns queries the model writes, which step 6 covers. The 41 coordinates are 5 fields on `Query` and 36 on the types behind them. The mutations and the deprecated `ownersAll` stay out of the search. On our laptop, embedding them took under a second, and the next start reads them from the cache.
+The first warning is what the missing folder is for, and the second concerns queries the model writes, which step 6 covers. The 41 coordinates are 5 fields on `Query` and 36 on the types behind them. The mutations and the deprecated `ownersAll` stay out of the search. On my laptop, embedding them took under a second, and the next start reads them from the cache.
 
 > [!NOTE]
 > With a hosted model from chapter 5, add `gatool.dev.experimental.dynamic-operations.search-backend=bm25` to its `application-<name>.properties`: BM25 ranks the fields by their words and works without an embedding model. With the Mistral or OpenAI starter, the application holds two embedding models, and GATool stops at startup and asks which one to use. The tests run without Ollama, so `src/test/resources/config/application.properties` sets `bm25` for them.
@@ -172,7 +172,7 @@ DEBUG ... o.s.a.m.tool.DefaultToolCallingManager   : Executing tool call: search
 DEBUG ... o.s.a.m.tool.DefaultToolCallingManager   : Executing tool call: executeGraphql
 ```
 
-In our 10 runs with `qwen3:8b`, the model called `searchSchema` first every time, and `introspectType` in 2 of them. Nine runs ran a query and named the two surgeons, Linda Douglas and Rafael Ortega, one of them by id alone (*Vets 3 and 4 specialize in surgery*), within 11 to 41 seconds. The tenth answered yes after the search alone.
+In my 10 runs with `qwen3:8b`, the model called `searchSchema` first every time, and `introspectType` in 2 of them. Nine runs ran a query and named the two surgeons, Linda Douglas and Rafael Ortega, one of them by id alone (*Vets 3 and 4 specialize in surgery*), within 11 to 41 seconds. The tenth answered yes after the search alone.
 
 Now ask:
 
@@ -180,13 +180,13 @@ Now ask:
 What kinds of pets does the clinic treat?
 ```
 
-In 2 of our 5 runs, the model ran a query and named the six kinds the clinic treats: birds, cats, dogs, hamsters, lizards and snakes. The other 3 stopped after `searchSchema` and answered from the schema, with a guess such as *dogs, cats, birds*. The operation file `listPetTypes` answers this question in one call.
+In 2 of my 5 runs, the model ran a query and named the six kinds the clinic treats: birds, cats, dogs, hamsters, lizards and snakes. The other 3 stopped after `searchSchema` and answered from the schema, with a guess such as *dogs, cats, birds*. The operation file `listPetTypes` answers this question in one call.
 
 A real application can serve both kinds of tools: the operation files to every caller, and the three tools to the callers it trusts with them, once the MCP endpoint has sign-in.
 
 ## 6. What a query from the model can do
 
-A query the model wrote passes through every check of the API, and GATool adds checks of its own. We sent these documents with `executeGraphql` from the Inspector:
+A query the model wrote passes through every check of the API, and GATool adds checks of its own. I sent these documents with `executeGraphql` from the Inspector:
 
 | Document | Answer |
 |---|---|
