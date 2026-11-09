@@ -1,19 +1,19 @@
-# Appendix: a model calls the tools on your laptop
+# Appendix: alternatives to MCPJam
 
-In chapter 4, we saw a model calling the clinic's tools in MCPJam, which asks you to sign in with an account. The two clients below let you ask the same questions on your laptop:
+If you cannot run MCPJam, or would rather not sign in to it, these two clients also let a model call the tools of our MCP server:
 
 | Client | Model | Needs |
 |---|---|---|
 | [ollmcp](#ollmcp-in-the-terminal), in the terminal | `qwen3:8b` from the setup, in Ollama | uv, a Python package manager. It works without an account. |
 | [Claude Desktop](#claude-desktop-through-mcp-remote) | Claude | A Claude account, and Node.js from the setup |
 
-Both connect to the backend of chapter 4, so start it first and check that its log lists the ten tools. The branch `checkpoint-04-curated-operations` has the same backend.
+Both connect to the backend at `http://localhost:8080/mcp`, so start the backend first.
 
 ## ollmcp, in the terminal
 
-[ollmcp](https://github.com/jonigl/mcp-client-for-ollama) is an MCP client that sends your questions to Ollama, together with the tools of the servers it connects to. It runs with `uvx`, which comes with [uv](https://docs.astral.sh/uv/getting-started/installation/). uv also downloads the Python version that ollmcp needs.
+[ollmcp](https://github.com/jonigl/mcp-client-for-ollama) is a chat in the terminal for the models in Ollama. It sends your question to the model together with the tools of the MCP servers it connects to, and runs the tools the model calls.
 
-1. Install uv:
+1. Install [uv](https://docs.astral.sh/uv/getting-started/installation/), which runs ollmcp with `uvx` and downloads the Python version that ollmcp needs:
 
    | System | Command |
    |--------|---------|
@@ -35,18 +35,12 @@ Both connect to the backend of chapter 4, so start it first and check that its l
    uvx --from mcp-client-for-ollama ollmcp -m qwen3:8b
    ```
 
-   It prints `Successfully connected to petclinic with 10 tool(s)` and waits for a question at the prompt `qwen3/show-thinking/10-tools❯`. If you pulled `qwen3:4b` in the setup, use it in place of `qwen3:8b`.
+   It prints `Successfully connected to petclinic` with the number of tools the backend serves, and waits for a question. If you pulled `qwen3:4b` in the setup, use it in place of `qwen3:8b`.
 
-4. Ask *Which pets does George Franklin own, and when were they born?*
-
-   The model's reasoning appears under **Thinking**, then the tool it chose: `petclinic.findOwners`, with `lastName` set to `Franklin`. ollmcp asks before it runs each tool. Press `Enter` to run it, or type `s` to run every tool without asking for the rest of the session. `findOwners` returns George Franklin with his id and his pet Leo, but without the birth date, so the model calls `petclinic.getOwnerDetails` with the id `1` and answers that Leo, a cat, was born on 7 September 2010.
-
-5. Ask *Can the clinic perform surgery?* The model calls `petclinic.listVets`, which returns every vet with their specialties, and answers that Linda Douglas and Rafael Ortega have surgery among their specialties.
-
-`/quit` ends ollmcp.
+ollmcp asks before it runs each tool the model calls. Press `Enter` to run it, or type `s` to run every tool without asking for the rest of the session. ollmcp reads the tools when it starts, so after the backend gains tools, end ollmcp with `/quit` and start it again.
 
 > [!NOTE]
-> Started with `-u http://localhost:8080/mcp`, ollmcp names the server after its address, `localhost_8080`, and each tool `localhost_8080.findOwners` and so on. In our runs with Ollama 0.40.14, `qwen3:8b` wrote the call to `localhost_8080.listPetTypes` correctly, but Ollama's answer to ollmcp did not contain the call, and ollmcp reported *The model produced no response or tool calls*. With the server named `petclinic`, every call reached the server.
+> Started with `-u http://localhost:8080/mcp`, ollmcp names the server after its address, `localhost_8080`, and each tool `localhost_8080.listPetTypes` and so on. In our runs with Ollama 0.40.14, `qwen3:8b` wrote the call to `localhost_8080.listPetTypes` correctly, but Ollama's answer to ollmcp did not contain the call, and ollmcp reported *The model produced no response or tool calls*. With the server named `petclinic`, every call reached the server.
 
 ## Claude Desktop, through mcp-remote
 
@@ -80,9 +74,9 @@ The connectors you add by URL in Claude's settings connect from Anthropic's serv
 
 4. Quit Claude Desktop and start it again. Closing the window leaves it running, so on macOS use **Claude > Quit Claude**, and on Windows right-click the Claude icon in the system tray and choose **Quit**.
 
-5. **Settings > Developer** lists `petclinic` as running. In a new chat, the tools button below the message box lists `petclinic` with its ten tools.
+5. **Settings > Developer** lists `petclinic` as running. In a new chat, the tools button below the message box lists `petclinic` with its tools.
 
-6. Ask *Which pets does George Franklin own, and when were they born?* Claude asks your permission before it runs each tool.
+Claude asks your permission before it runs each tool. After the backend gains tools, quit Claude Desktop and start it again, so that it lists them.
 
 If `petclinic` shows an error, its log says why:
 
@@ -95,7 +89,7 @@ If `petclinic` shows an error, its log says why:
 |---|---|
 | `Proxy established successfully between local STDIO and remote StreamableHTTPClientTransport`, then `tools/list` | mcp-remote reached the server and passed the tools to Claude Desktop. |
 | `Discovering OAuth server configuration...` | mcp-remote checks whether the server asks you to sign in. Ours lets every caller in, so mcp-remote connects. |
-| `ECONNREFUSED`, then `Server disconnected` | Nothing answered at `localhost:8080`. Start the backend, wait for `GATool serves 10 MCP tools`, and restart Claude Desktop. |
+| `ECONNREFUSED`, then `Server disconnected` | Nothing answered at `localhost:8080`. Start the backend, wait for `Started PetClinicApplication`, and restart Claude Desktop. |
 
 The line `Using MCP server command: ... with path:` names the `npx` that Claude Desktop found and the folders it searched. mcp-remote needs Node.js 18 or newer. When the log says that `npx` or `node` cannot be found, or names an older Node.js, give the full path that `which npx` prints (`where npx` on Windows) as `"command"`, and its folder as the `PATH` of the program:
 
