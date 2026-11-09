@@ -353,6 +353,25 @@ Run `addOwner` with an empty **lastName** and `123` as the **telephone**. Each b
 }
 ```
 
+## 7. A model picks the tools
+
+Until now, you chose each tool and its arguments in the Inspector. In an AI application, the model reads the ten tools and chooses the calls itself, often several in a row. We watch a model do this in [MCPJam](https://www.mcpjam.com), an MCP client with a chat that uses the Ollama model from the setup. MCPJam asks you to sign in with an account. To ask the same questions on your laptop, with ollmcp and without an account, or with Claude Desktop, follow [the appendix](appendix-a-model-calls-the-tools.md).
+
+1. Stop the MCP Inspector with `Ctrl+C` in its terminal. MCPJam uses the same port, 6274, and while the Inspector runs, MCPJam stops with *Default port 6274 is already in use. Please free the port*.
+2. Start MCPJam with our server:
+
+   ```bash
+   npx -y @mcpjam/inspector@latest --url http://localhost:8080/mcp --name petclinic
+   ```
+
+   It opens in the browser and asks you to sign in.
+3. Open the chat, choose **Ollama** as the provider, and `qwen3:8b` as the model.
+4. Ask *Which pets does George Franklin own, and when were they born?*
+
+The model calls `findOwners` with `lastName` set to `Franklin`. The answer has George Franklin's id and his pet Leo, but leaves out the birth date, so the model calls `getOwnerDetails` with the id `1`, as the `#` lines of `getOwnerDetails` say: *The findOwners tool gives the id of an owner.* Then it answers that Leo, a cat, was born on 7 September 2010.
+
+Ask a second question, *Can the clinic perform surgery?* No tool has surgery in its name, but `listVets` returns every vet with their specialties, so the model calls it and answers that Linda Douglas and Rafael Ortega have surgery among their specialties.
+
 ## Recap
 
 - MCP lets an AI application call the tools a server publishes, and GATool publishes GraphQL operations as tools.
@@ -360,3 +379,4 @@ Run `addOwner` with an empty **lastName** and `123` as the **telephone**. Each b
 - The file decides the tool: its name, its description from the `#` lines, its arguments from the variables, and its answer from the selection.
 - `@GraphQlExceptionHandler` turns our exceptions into `NOT_FOUND` and `BAD_REQUEST` errors, which a model can act on, and the descriptions say what each one means.
 - The agent's tools and the frontend use the same files, so a change to a file changes both, after a restart.
+- A model chooses the tools from their names and descriptions, and chains them: `findOwners` gives the id that `getOwnerDetails` takes.
